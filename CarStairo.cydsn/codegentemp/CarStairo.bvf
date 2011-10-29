@@ -1,0 +1,304 @@
+
+----------------------------------------------------------------------
+
+Verifying bitstream.
+
+-----------------------------------------------------------------------
+
+
+---------Mapping jacks.---------
+
+
+---------Processing bitstream.---------
+
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,0)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,0)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(0,1)]"
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,2)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,2)]"
+Utilized "udb_hv_b@[Chip=0][UDB Pair=(0,3)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,3)]"
+Utilized "udb_hv_a@[Chip=0][UDB Pair=(0,4)]"
+Utilized "udb_hc@[Chip=0][UDB Pair=(0,4)]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,0)][side=top]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,0)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,1)][side=top]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(0,1)][side=top]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,2)][side=top]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(1,2)][side=bottom]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,3)][side=top]"
+Utilized "dsi_hv_a@[Chip=0][DSI=(0,3)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(1,3)][side=bottom]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(1,3)][side=bottom]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,4)][side=top]"
+Utilized "dsi_hv_b@[Chip=0][DSI=(0,4)][side=top]"
+Utilized "dsi_hc@[Chip=0][DSI=(1,4)][side=bottom]"
+Utilized "dsi_hc@[Chip=0][DSI=(0,5)][side=top]"
+
+---------Propagating signals.---------
+
+Found signal "Net_17_2" on jack "pld0:out0[Chip=0][UDB=(0,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_2[Chip=0][IOP=(2)]"
+    
+    
+
+Found signal "\UART:BUART:tx_bitclk\" on jack "pld0:out1[Chip=0][UDB=(0,0)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in1[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld1:in10[Chip=0][UDB=(0,3)]"
+    
+    3. Connected jack name: "clkrst:in1[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_17_3" on jack "pld0:out2[Chip=0][UDB=(0,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_3[Chip=0][IOP=(2)]"
+    
+    
+
+Found signal "Net_17_1" on jack "pld0:out3[Chip=0][UDB=(0,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_1[Chip=0][IOP=(2)]"
+    
+    
+
+Found signal "\UART:BUART:TXcounter_dp\" on jack "dp:out4[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "pld1:in1[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld0:in6[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\UART:BUART:tx_bitclk_dp\" on jack "dp:out5[Chip=0][UDB=(0,2)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in3[Chip=0][UDB=(0,0)]"
+    
+    
+
+Found signal "\UART:BUART:tx_state_0\" on jack "pld0:out0[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in4[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld1:in4[Chip=0][UDB=(0,3)]"
+    
+    3. Connected jack name: "dp:in3[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\UART:BUART:tx_state_2\" on jack "pld0:out1[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "pld0:in2[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld1:in2[Chip=0][UDB=(0,3)]"
+    
+    3. Connected jack name: "dp:in2[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_17_0" on jack "pld0:out2[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_0[Chip=0][IOP=(2)]"
+    
+    
+
+Found signal "\UART:BUART:tx_status_0\" on jack "pld0:out3[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in0[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_43" on jack "pld1:out0[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_1[Chip=0][IOP=(0)]"
+    
+    
+
+Found signal "\UART:BUART:counter_load_not\" on jack "pld1:out1[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "dp:in2[Chip=0][UDB=(0,2)]"
+    
+    
+
+Found signal "\UART:BUART:tx_state_1\" on jack "pld1:out2[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 3.
+
+    1. Connected jack name: "dp:in4[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld1:in0[Chip=0][UDB=(0,3)]"
+    
+    3. Connected jack name: "pld0:in9[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_43" on jack "pld1:out3[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in7[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\UART:BUART:tx_fifo_notfull\" on jack "dp:out1[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 2.
+
+    1. Connected jack name: "statctrl:in3[Chip=0][UDB=(0,3)]"
+    
+    2. Connected jack name: "pld1:in11[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "\UART:BUART:tx_shift_out\" on jack "dp:out2[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld1:in3[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\UART:BUART:tx_fifo_empty\" on jack "dp:out3[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in5[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\UART:BUART:tx_fifo_empty\" on jack "dp:out4[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in1[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_42_0" on jack "statctrl:out0[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in0[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "Net_42_1" on jack "statctrl:out1[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in1[Chip=0][UDB=(0,0)]"
+    
+    
+
+Found signal "Net_42_2" on jack "statctrl:out2[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in9[Chip=0][UDB=(0,0)]"
+    
+    
+
+Found signal "Net_42_3" on jack "statctrl:out3[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in7[Chip=0][UDB=(0,0)]"
+    
+    
+
+Found signal "Net_42_4" on jack "statctrl:out4[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in7[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "Net_42_5" on jack "statctrl:out5[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in6[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "Net_42_6" on jack "statctrl:out6[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in10[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "Net_42_7" on jack "statctrl:out7[Chip=0][UDB=(0,3)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "pld0:in11[Chip=0][UDB=(0,4)]"
+    
+    
+
+Found signal "Net_17_7" on jack "pld0:out0[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_3[Chip=0][IOP=(4)]"
+    
+    
+
+Found signal "Net_17_6" on jack "pld0:out1[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_2[Chip=0][IOP=(4)]"
+    
+    
+
+Found signal "Net_17_5" on jack "pld0:out2[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_1[Chip=0][IOP=(4)]"
+    
+    
+
+Found signal "Net_17_4" on jack "pld0:out3[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "io_ijack_0[Chip=0][IOP=(4)]"
+    
+    
+
+Found signal "\UART:BUART:tx_status_2\" on jack "pld1:out1[Chip=0][UDB=(0,4)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "statctrl:in2[Chip=0][UDB=(0,3)]"
+    
+    
+
+Found signal "\Volume_ADC:Net_221_local\" on jack "dclk[0][Chip=0][FFB(Clock,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "clk_udb[Chip=0][FFB(SAR,0)]"
+    
+    
+
+Found signal "Net_4" on jack "eof_udb[Chip=0][FFB(SAR,0)]".
+Number of connected bvjacks: 1.
+
+    1. Connected jack name: "interrupt_jack[Chip=0][IntrHod=(0)][IntrId=(12)]"
+    
+    
+
+
+---------Verifying signals (routing).---------
+
+
+---------Verifying configuration.---------
+
+
+
+----------------------------------------------------------------------
+
+Bitstream verification passed.
+
+-----------------------------------------------------------------------
+

@@ -1,0 +1,2307 @@
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -d CY8C5588AXI-060 -s C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\Generated_Source\PSoC5 -w 0 -- -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+ADD: pft.M0028: warning: Clock Warning: (Volume_ADC_theACLK's accuracy range '12.000 MHz ?1%, (11.880 MHz - 12.120 MHz)' is not within the specified tolerance range '14.000 MHz ?5%, (13.300 MHz - 14.700 MHz)'.).
+ * C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ADC_SAR_v1_10\PSoC5\ADC_SAR_v1_10.cysch (Instance 'theACLK')
+
+</CYPRESSTAG>
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dcpsoc3 CarStairo.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dcpsoc3 CarStairo.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   vlogfe
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dcpsoc3 -verilog CarStairo.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Wed Oct 26 10:17:35 2011
+
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   vpp
+Options  :    -yv2 -q10 CarStairo.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Wed Oct 26 10:17:35 2011
+
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_0\CyControlReg_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'CarStairo.ctl'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 821, col 55):  Note: Substituting module 'add_vv_vv' for '+'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 830, col 48):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 988, col 61):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 1020, col 41):  Note: Substituting module 'cmp_vv_vv' for '/='.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 1079, col 43):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 1123, col 55):  Note: Substituting module 'cmp_vv_vv' for '<'.
+C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v (line 1124, col 42):  Note: Substituting module 'cmp_vv_vv' for '<'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   tovif
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dcpsoc3 -verilog CarStairo.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Wed Oct 26 10:17:35 2011
+
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\codegentemp\CarStairo.ctl'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\codegentemp\CarStairo.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_0\CyControlReg_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  CarStairo.v
+Program  :   topld
+Options  :    -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dcpsoc3 -verilog CarStairo.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Wed Oct 26 10:17:36 2011
+
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\codegentemp\CarStairo.ctl'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\codegentemp\CarStairo.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_UART_v1_20\B_UART_v1_20.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyControlReg_v1_0\CyControlReg_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	Net_36
+	Net_37
+	\UART:BUART:HalfDuplexSend\
+	\UART:BUART:FinalAddrMode_2\
+	\UART:BUART:FinalAddrMode_1\
+	\UART:BUART:FinalAddrMode_0\
+	\UART:BUART:tx_bitclk_pre\
+	\UART:BUART:counter_load\
+	Net_32
+	Net_104
+	Net_101
+	Net_102
+	\Counter_1:Net_89\
+	\Counter_1:Net_95\
+	\Counter_1:Net_102\
+
+
+Deleted 15 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing \Volume_ADC:vp_ctl_2\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vn_ctl_1\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vn_ctl_3\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vp_ctl_1\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vp_ctl_3\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vn_ctl_0\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Volume_ADC:vn_ctl_2\ to \Volume_ADC:vp_ctl_0\
+Aliasing zero to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__Button_net_0 to \Volume_ADC:soc\
+Aliasing tmpOE__Volum_Line_net_0 to \Volume_ADC:soc\
+Aliasing tmpOE__TX_net_0 to \Volume_ADC:soc\
+Aliasing \UART:BUART:FinalParityType_1\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:FinalParityType_0\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_ctrl_mark\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:sTX:sCLOCK:dpTXBitClkGen:cs_addr_2\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:sTX:sCLOCK:dpTXBitClkGen:cs_addr_1\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_status_6\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_status_5\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_status_4\ to \Volume_ADC:vp_ctl_0\
+Aliasing Net_43R to \Volume_ADC:vp_ctl_0\
+Aliasing Net_44 to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_state_2\\R\ to Net_43S
+Aliasing \UART:BUART:tx_state_2\\S\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_state_1\\R\ to Net_43S
+Aliasing \UART:BUART:tx_state_1\\S\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_state_0\\R\ to Net_43S
+Aliasing \UART:BUART:tx_state_0\\S\ to \Volume_ADC:vp_ctl_0\
+Aliasing \UART:BUART:tx_mark\\R\ to Net_43S
+Aliasing \UART:BUART:tx_mark\\S\ to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_LSB_net_3 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_LSB_net_2 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_LSB_net_1 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_LSB_net_0 to \Volume_ADC:soc\
+Aliasing tmpOE__dPins_MSB_net_3 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_MSB_net_2 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_MSB_net_1 to \Volume_ADC:vp_ctl_0\
+Aliasing tmpOE__dPins_MSB_net_0 to \Volume_ADC:soc\
+Aliasing Net_100 to \Volume_ADC:vp_ctl_0\
+Aliasing \Counter_1:Net_82\ to \Volume_ADC:vp_ctl_0\
+Aliasing \Counter_1:Net_91\ to \Volume_ADC:vp_ctl_0\
+Removing Lhs of wire \Volume_ADC:vp_ctl_2\[6] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vn_ctl_1\[7] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vn_ctl_3\[8] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vp_ctl_1\[9] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vp_ctl_3\[10] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vn_ctl_0\[11] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:vn_ctl_2\[12] = \Volume_ADC:vp_ctl_0\[5]
+Removing Lhs of wire \Volume_ADC:Net_188\[15] = \Volume_ADC:Net_221\[14]
+Removing Rhs of wire zero[22] = \Volume_ADC:vp_ctl_0\[5]
+Removing Rhs of wire tmpOE__Button_net_0[46] = \Volume_ADC:soc\[21]
+Removing Lhs of wire tmpOE__Volum_Line_net_0[52] = tmpOE__Button_net_0[46]
+Removing Lhs of wire tmpOE__TX_net_0[58] = tmpOE__Button_net_0[46]
+Removing Lhs of wire \UART:Net_61\[66] = \UART:Net_9\[65]
+Removing Lhs of wire \UART:BUART:FinalParityType_1\[71] = zero[22]
+Removing Lhs of wire \UART:BUART:FinalParityType_0\[72] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_ctrl_mark\[79] = zero[22]
+Removing Lhs of wire \UART:BUART:sTX:sCLOCK:dpTXBitClkGen:cs_addr_2\[108] = zero[22]
+Removing Lhs of wire \UART:BUART:sTX:sCLOCK:dpTXBitClkGen:cs_addr_1\[109] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_status_6\[127] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_status_5\[128] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_status_4\[129] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_status_1\[131] = \UART:BUART:tx_fifo_empty\[98]
+Removing Lhs of wire \UART:BUART:tx_status_3\[133] = \UART:BUART:tx_fifo_notfull\[97]
+Removing Lhs of wire Net_43R[138] = zero[22]
+Removing Lhs of wire Net_44[139] = zero[22]
+Removing Lhs of wire Net_43S[140] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_2\\R\[141] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_2\\S\[142] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_1\\R\[143] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_1\\S\[144] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_0\\R\[145] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_state_0\\S\[146] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_mark\\R\[147] = zero[22]
+Removing Lhs of wire \UART:BUART:tx_mark\\S\[148] = zero[22]
+Removing Rhs of wire Net_42_7[150] = \LED_Control_Reg:control_7\[172]
+Removing Rhs of wire Net_42_6[152] = \LED_Control_Reg:control_6\[171]
+Removing Rhs of wire Net_42_5[154] = \LED_Control_Reg:control_5\[170]
+Removing Rhs of wire Net_42_4[156] = \LED_Control_Reg:control_4\[169]
+Removing Rhs of wire Net_42_3[158] = \LED_Control_Reg:control_3\[168]
+Removing Rhs of wire Net_42_2[160] = \LED_Control_Reg:control_2\[167]
+Removing Rhs of wire Net_42_1[162] = \LED_Control_Reg:control_1\[166]
+Removing Rhs of wire Net_42_0[164] = \LED_Control_Reg:control_0\[165]
+Removing Lhs of wire tmpOE__dPins_LSB_net_3[175] = zero[22]
+Removing Lhs of wire tmpOE__dPins_LSB_net_2[176] = zero[22]
+Removing Lhs of wire tmpOE__dPins_LSB_net_1[177] = zero[22]
+Removing Lhs of wire tmpOE__dPins_LSB_net_0[178] = tmpOE__Button_net_0[46]
+Removing Lhs of wire tmpOE__dPins_MSB_net_3[190] = zero[22]
+Removing Lhs of wire tmpOE__dPins_MSB_net_2[191] = zero[22]
+Removing Lhs of wire tmpOE__dPins_MSB_net_1[192] = zero[22]
+Removing Lhs of wire tmpOE__dPins_MSB_net_0[193] = tmpOE__Button_net_0[46]
+Removing Lhs of wire Net_100[204] = zero[22]
+Removing Lhs of wire \Counter_1:Net_60\[208] = Net_52[206]
+Removing Lhs of wire \Counter_1:Net_82\[209] = zero[22]
+Removing Lhs of wire \Counter_1:Net_91\[210] = zero[22]
+
+------------------------------------------------------
+Aliased 0 equations, 54 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+Note:  Expanding virtual equation for 'zero' (cost = 0):
+zero <=  ('0') ;
+
+Note:  Expanding virtual equation for '\UART:BUART:TXcounter_tc\' (cost = 0):
+\UART:BUART:TXcounter_tc\ <= (not \UART:BUART:TXcounter_dp\);
+
+
+Substituting virtuals - pass 2:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 2 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Removing Lhs of wire \UART:BUART:tx_mark\\D\[226] = \UART:BUART:tx_mark\[137]
+
+------------------------------------------------------
+Aliased 0 equations, 1 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Eliminating unused logic - pass 1:
+
+
+Eliminating unused logic - pass 2:
+
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp
+Warp Program   : C:\Program Files\Cypress\PSoC Creator\1.0\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya "-.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj" -dcpsoc3 CarStairo.v -verilog
+</CYPRESSTAG>
+Setting sirev to DEFAULT
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V1.0.0.6049, Family: PSoC3, Started at: Wednesday, 26 October 2011 10:17:37
+Options: -yv2 -v3 -ygs -q10 -o2 -.fftcfgtype=LE -.fftp3sirev=DEFAULT -ya -.fftprj=C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\CarStairo.cyprj -dCY8C5588AXI-060 CarStairo.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.259ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+
+Global Clock Selection
+    Digital Clock 0: Automatic-assigning  clock 'Volume_ADC_theACLK'. Fanout=1, Signal=\Volume_ADC:Net_221\
+    Digital Clock 1: Automatic-assigning  clock 'UART_IntClock'. Fanout=9, Signal=\UART:Net_9\
+    Digital Clock 2: Automatic-assigning  clock 'timer_clock'. Fanout=1, Signal=Net_52
+End Global Clock Selection
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation 'Net_43D:macrocell'
+    Removed unused cell/equation '\UART:BUART:tx_bitclk\\D\:macrocell'
+    Removed unused cell/equation '\UART:BUART:tx_parity_bit\\D\:macrocell'
+    Removed unused cell/equation '\UART:BUART:tx_state_0\\D\:macrocell'
+    Removed unused cell/equation '\UART:BUART:tx_state_1\\D\:macrocell'
+    Removed unused cell/equation '\UART:BUART:tx_state_2\\D\:macrocell'
+    Removed unused cell/equation 'zero:macrocell'
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+
+Removing duplicate macrocells
+    Removing \UART:BUART:tx_parity_bit\, Duplicate of \UART:BUART:tx_mark\ 
+    MacroCell: Name=\UART:BUART:tx_parity_bit\, Mode=(T-Register)
+        Total # of inputs        : 0
+        Total # of product terms : 0
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 0 pterms
+        (
+            0
+        );
+        Output = \UART:BUART:tx_parity_bit\ (fanout=0)
+
+
+Removing unused cells resulting from optimization
+    Removed unused cell/equation '\UART:BUART:tx_mark\:macrocell'
+Done removing unused cells.
+End removing duplicate macrocells: used 1 pass
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="IO cell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    IO cell listing
+    ------------------------------------------------------------
+
+    iocell: Name = Button(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: SYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_DOWN
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: True
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pad => Button(0)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = TX(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_43 ,
+            pad => TX(0)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = Volum_Line(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_ANALOG
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: True
+            Can contain Digital: False
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 2
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            analog_term => Net_1 ,
+            pad => Volum_Line(0)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_LSB(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_0 ,
+            pad => dPins_LSB(0)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_LSB(1)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_1 ,
+            pad => dPins_LSB(1)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_LSB(2)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_2 ,
+            pad => dPins_LSB(2)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_LSB(3)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_3 ,
+            pad => dPins_LSB(3)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_MSB(0)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_4 ,
+            pad => dPins_MSB(0)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_MSB(1)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_5 ,
+            pad => dPins_MSB(1)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_MSB(2)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_6 ,
+            pad => dPins_MSB(2)_PAD );
+        Properties:
+        {
+        }
+
+    iocell: Name = dPins_MSB(3)
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: False
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO RefSel: VCC_IO
+            Required Capabilitites: 1
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            input => Net_17_7 ,
+            pad => dPins_MSB(3)_PAD );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+
+    ------------------------------------------------------------
+    Macrocell listing
+    ------------------------------------------------------------
+
+    MacroCell: Name=Net_17_0, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_0
+        );
+        Output = Net_17_0 (fanout=1)
+
+    MacroCell: Name=Net_17_1, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_1
+        );
+        Output = Net_17_1 (fanout=1)
+
+    MacroCell: Name=Net_17_2, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_2
+        );
+        Output = Net_17_2 (fanout=1)
+
+    MacroCell: Name=Net_17_3, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_3
+        );
+        Output = Net_17_3 (fanout=1)
+
+    MacroCell: Name=Net_17_4, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_4
+        );
+        Output = Net_17_4 (fanout=1)
+
+    MacroCell: Name=Net_17_5, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_5
+        );
+        Output = Net_17_5 (fanout=1)
+
+    MacroCell: Name=Net_17_6, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_6
+        );
+        Output = Net_17_6 (fanout=1)
+
+    MacroCell: Name=Net_17_7, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_7
+        );
+        Output = Net_17_7 (fanout=1)
+
+    MacroCell: Name=Net_43, Mode=(D-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 5 pterms
+        !(
+              !Net_43 * !\UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_1\
+            + !Net_43 * \UART:BUART:tx_state_2\ * \UART:BUART:tx_state_1\
+            + !\UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              !\UART:BUART:tx_state_1\ * \UART:BUART:tx_state_0\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_0\ * 
+              !\UART:BUART:tx_shift_out\ * \UART:BUART:TXcounter_dp\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              \UART:BUART:tx_state_0\ * !\UART:BUART:tx_shift_out\
+        );
+        Output = Net_43 (fanout=2)
+
+    MacroCell: Name=\UART:BUART:counter_load_not\, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        !(
+              !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:counter_load_not\ (fanout=1)
+
+    MacroCell: Name=\UART:BUART:tx_bitclk\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 1 pterm
+        (
+              !\UART:BUART:tx_bitclk_dp\
+        );
+        Output = \UART:BUART:tx_bitclk\ (fanout=5)
+
+    MacroCell: Name=\UART:BUART:tx_state_0\, Mode=(D-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 3 pterms
+        (
+              !\UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_0\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\ * !\UART:BUART:tx_fifo_empty\
+            + \UART:BUART:tx_state_2\ * \UART:BUART:tx_state_1\ * 
+              \UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:tx_state_0\ (fanout=7)
+
+    MacroCell: Name=\UART:BUART:tx_state_1\, Mode=(T-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 2 pterms
+        (
+              \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_1\ * !\UART:BUART:TXcounter_dp\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:tx_state_1\ (fanout=7)
+
+    MacroCell: Name=\UART:BUART:tx_state_2\, Mode=(D-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 3 pterms
+        !(
+              !\UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_1\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_0\ * 
+              \UART:BUART:TXcounter_dp\
+        );
+        Output = \UART:BUART:tx_state_2\ (fanout=7)
+
+    MacroCell: Name=\UART:BUART:tx_status_0\, Mode=(Combinatorial)
+        Total # of inputs        : 4
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              \UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\ * \UART:BUART:tx_fifo_empty\
+        );
+        Output = \UART:BUART:tx_status_0\ (fanout=1)
+
+    MacroCell: Name=\UART:BUART:tx_status_2\, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !\UART:BUART:tx_fifo_notfull\
+        );
+        Output = \UART:BUART:tx_status_2\ (fanout=1)
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+
+    ------------------------------------------------------------
+    Datapath listing
+    ------------------------------------------------------------
+
+    datapathcell: Name =\UART:BUART:sTX:dpTXShifter:u0\
+        PORT MAP (
+            clk => \UART:BUART:tx_bitclk\ ,
+            cs_addr_2 => \UART:BUART:tx_state_2\ ,
+            cs_addr_1 => \UART:BUART:tx_state_1\ ,
+            cs_addr_0 => \UART:BUART:tx_state_0\ ,
+            so => \UART:BUART:tx_shift_out\ ,
+            f0_bus_stat => \UART:BUART:tx_fifo_notfull\ ,
+            f0_blk_stat => \UART:BUART:tx_fifo_empty\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "0000000000000000000000001100000000000010010000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+    Clock Polarity: Active High
+
+    datapathcell: Name =\UART:BUART:sTX:sCLOCK:dpTXBitClkGen:u0\
+        PORT MAP (
+            clk => \UART:Net_9\ ,
+            cs_addr_0 => \UART:BUART:counter_load_not\ ,
+            cl0 => \UART:BUART:tx_bitclk_dp\ ,
+            cl1 => \UART:BUART:TXcounter_dp\ );
+        Properties:
+        {
+            a0_init = "00000000"
+            a1_init = "00000000"
+            ce0_sync = 1
+            ce1_sync = 1
+            cl0_sync = 1
+            cl1_sync = 1
+            cmsb_sync = 1
+            co_msb_sync = 1
+            cy_dpconfig = "1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000"
+            d0_init = "00000000"
+            d1_init = "00000000"
+            f0_blk_sync = 1
+            f0_bus_sync = 1
+            f1_blk_sync = 1
+            f1_bus_sync = 1
+            ff0_sync = 1
+            ff1_sync = 1
+            ov_msb_sync = 1
+            so_sync = 1
+            z0_sync = 1
+            z1_sync = 1
+        }
+    Clock Polarity: Active High
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+
+    ------------------------------------------------------------
+    StatusI register listing
+    ------------------------------------------------------------
+
+    statusicell: Name =\UART:BUART:sTX:tx_sts\
+        PORT MAP (
+            clock => \UART:Net_9\ ,
+            status_3 => \UART:BUART:tx_fifo_notfull\ ,
+            status_2 => \UART:BUART:tx_status_2\ ,
+            status_1 => \UART:BUART:tx_fifo_empty\ ,
+            status_0 => \UART:BUART:tx_status_0\ );
+        Properties:
+        {
+            cy_force_order = 1
+            cy_int_mask = "1111111"
+            cy_md_select = "0000001"
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+
+    ------------------------------------------------------------
+    Control register listing
+    ------------------------------------------------------------
+
+    controlcell: Name =\LED_Control_Reg:ctrl_reg\
+        PORT MAP (
+            control_7 => Net_42_7 ,
+            control_6 => Net_42_6 ,
+            control_5 => Net_42_5 ,
+            control_4 => Net_42_4 ,
+            control_3 => Net_42_3 ,
+            control_2 => Net_42_2 ,
+            control_1 => Net_42_1 ,
+            control_0 => Net_42_0 );
+        Properties:
+        {
+            cy_force_order = 1
+            cy_init_value = "00000000"
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =\Volume_ADC:IRQ\
+        PORT MAP (
+            interrupt => Net_4 );
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" icon="FILE_RPT_UTILIZATION">
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+            Resource Type : Used : Free :  Max :  % Used
+    ====================================================
+               Macrocells :   16 :  176 :  192 :   8.33%
+            Unique Pterms :   25 :  359 :  384 :   6.51%
+             Total Pterms :   25 :  359 :  384 :   6.51%
+                 IO Cells :   14 :   58 :   72 :  19.44%
+           Datapath Cells :    2 :   22 :   24 :   8.33%
+            Control Cells :    1 :   23 :   24 :   4.17%
+                     Drqs :    0 :   24 :   24 :   0.00%
+               Interrupts :    1 :   31 :   32 :   3.13%
+         DSM Fixed Blocks :    0 :    1 :    1 :   0.00%
+       VIDAC Fixed Blocks :    0 :    4 :    4 :   0.00%
+          SC Fixed Blocks :    0 :    4 :    4 :   0.00%
+  Comparator Fixed Blocks :    0 :    4 :    4 :   0.00%
+       Opamp Fixed Blocks :    0 :    4 :    4 :   0.00%
+         CapSense Buffers :    0 :    2 :    2 :   0.00%
+         CAN Fixed Blocks :    0 :    1 :    1 :   0.00%
+   Decimator Fixed Blocks :    0 :    1 :    1 :   0.00%
+         I2C Fixed Blocks :    0 :    1 :    1 :   0.00%
+       Timer Fixed Blocks :    1 :    3 :    4 :  25.00%
+         DFB Fixed Blocks :    0 :    1 :    1 :   0.00%
+         USB Fixed Blocks :    0 :    1 :    1 :   0.00%
+         LCD Fixed Blocks :    0 :    1 :    1 :   0.00%
+        EMIF Fixed Blocks :    0 :    1 :    1 :   0.00%
+         LPF Fixed Blocks :    0 :    2 :    2 :   0.00%
+         SAR Fixed Blocks :    1 :    1 :    2 :  50.00%
+             Status Cells :    1 :   23 :   24 :   4.17%
+             Count7 Cells :    0 :   23 :   23 :   0.00%
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.658ms
+Tech mapping phase: Elapsed time ==> 1s.695ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog component placement">
+Log: apr.M0018: Beginning the initial analog placement phase. (App=cydsfit)
+Initial Analog Placement Results:
+IO_5@[Chip=0][IOP=(0)][IoId=(5)]: Button(0) (fixed)
+IO_1@[Chip=0][IOP=(0)][IoId=(1)]: TX(0) (fixed)
+IO_7@[Chip=0][IOP=(0)][IoId=(7)]: Volum_Line(0) (fixed)
+IO_0@[Chip=0][IOP=(2)][IoId=(0)]: dPins_LSB(0) (fixed)
+IO_1@[Chip=0][IOP=(2)][IoId=(1)]: dPins_LSB(1) (fixed)
+IO_2@[Chip=0][IOP=(2)][IoId=(2)]: dPins_LSB(2) (fixed)
+IO_3@[Chip=0][IOP=(2)][IoId=(3)]: dPins_LSB(3) (fixed)
+IO_0@[Chip=0][IOP=(4)][IoId=(0)]: dPins_MSB(0) (fixed)
+IO_1@[Chip=0][IOP=(4)][IoId=(1)]: dPins_MSB(1) (fixed)
+IO_2@[Chip=0][IOP=(4)][IoId=(2)]: dPins_MSB(2) (fixed)
+IO_3@[Chip=0][IOP=(4)][IoId=(3)]: dPins_MSB(3) (fixed)
+SAR[0]@[Chip=0][FFB(SAR,0)]: \Volume_ADC:ADC_SAR\
+Vref[1]@[Chip=0][FFB(Vref,1)]: \Volume_ADC:vRef_Vdda\
+Log: apr.M0019: The analog placement iterative improvement phase is beginning. (App=cydsfit)
+Analog Placement Results:
+IO_5@[Chip=0][IOP=(0)][IoId=(5)]: Button(0) (fixed)
+IO_1@[Chip=0][IOP=(0)][IoId=(1)]: TX(0) (fixed)
+IO_7@[Chip=0][IOP=(0)][IoId=(7)]: Volum_Line(0) (fixed)
+IO_0@[Chip=0][IOP=(2)][IoId=(0)]: dPins_LSB(0) (fixed)
+IO_1@[Chip=0][IOP=(2)][IoId=(1)]: dPins_LSB(1) (fixed)
+IO_2@[Chip=0][IOP=(2)][IoId=(2)]: dPins_LSB(2) (fixed)
+IO_3@[Chip=0][IOP=(2)][IoId=(3)]: dPins_LSB(3) (fixed)
+IO_0@[Chip=0][IOP=(4)][IoId=(0)]: dPins_MSB(0) (fixed)
+IO_1@[Chip=0][IOP=(4)][IoId=(1)]: dPins_MSB(1) (fixed)
+IO_2@[Chip=0][IOP=(4)][IoId=(2)]: dPins_MSB(2) (fixed)
+IO_3@[Chip=0][IOP=(4)][IoId=(3)]: dPins_MSB(3) (fixed)
+SAR[0]@[Chip=0][FFB(SAR,0)]: \Volume_ADC:ADC_SAR\
+Vref[1]@[Chip=0][FFB(Vref,1)]: \Volume_ADC:vRef_Vdda\
+
+Analog component placement phase: Elapsed time ==> 1s.525ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog component routing">
+Log: apr.M0016: Beginning the initial analog routing phase. (App=cydsfit)
+============ VeraRouter Final Answer Routes ============
+Connect Signal: Net_1 => (GPIO P0[7] (109)) (SAR0 Vp (644)) 
+Route#005: 
+  (SAR0 Vp (644)) [SAR vplus wire L [683]] 
+    (SAR vplus sw L__3a (655)) [SAR vplus sw L__3b [258]] (SAR vplus sw L__3c (656)##) [AGL[7] [544]] 
+    (GPIO P0[7] Sw__1c (113)##) [GPIO P0[7] Sw__1b [041]] (GPIO P0[7] Sw__1a (112)) [GPIO P0[7] Wire [569]] 
+    (GPIO P0[7] (109)) 
+Connect Signal: \Volume_ADC:Net_126\ => (SAR0 Vn (645)) (SAR0 vrefhi_out (646)) 
+Route#006: 
+  (SAR0 vrefhi_out (646)) [SAR vrefhi_out wire L [685]] 
+    (SAR vminus sw L__8c (688)##) [SAR vminus sw L__8b [274]] (SAR vminus sw L__8a (687)) [SAR vminus wire L [684]] 
+    (SAR0 Vn (645)) 
+Connect Signal: \Volume_ADC:Net_215\ => (SAR0 extvref (647)) 
+Route#007: 
+  (SAR0 extvref (647)) 
+Connect Signal: \Volume_ADC:Net_248\ => (SAR0 vref (648)) (VRef Block Vdda/2 (1150)) 
+Route#008: 
+  (VRef Block Vdda/2 (1150)) [Vdda/2 [731]] 
+    (Vdda v Vdda/2 Mux__1c (1177)!!) [Vdda v Vdda/2 Mux__1b [495]] (Vdda v Vdda/2 Mux__1a (1176)) [vref6 [688]] 
+    (SAR vref sw L__3c (696)!!) [SAR vref sw L__3b [278]] (SAR vref sw L__3a (695)) [SAR vref wire L [686]] 
+    (SAR0 vref (648)) 
+Analog component routing phase: Elapsed time ==> 0s.055ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital component placement">
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary">
+
+------------------------------------------------------------
+PLD Packing Summary
+------------------------------------------------------------
+Packed 16 macrocells into 5 PLDs.
+
+        PLD Resource Type :     Average/LAB
+    =======================================
+                   Inputs :            4.60
+                   Pterms :            5.00
+               Macrocells :            3.20
+<CYPRESSTAG name="Packed PLD Contents">
+Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.055ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.279ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Simulated Annealing">
+Annealing: Elapsed time ==> 0s.300ms
+<CYPRESSTAG name="Simulated Annealing Results">
+The seed used for moves was 114161200.
+Inital cost was 206, final cost is 76 (63.11% improvement).</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          4 :       4.50 :       4.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [Chip=0][UDB=(0,0)] contents:
+LAB@[Chip=0][UDB=(0,0)][LB=0] #macrocells=4, #inputs=4, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=\UART:BUART:tx_bitclk\, Mode=(D-Register)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 1 pterm
+        (
+              !\UART:BUART:tx_bitclk_dp\
+        );
+        Output = \UART:BUART:tx_bitclk\ (fanout=5)
+
+    [McSlotId=1]:     MacroCell: Name=Net_17_1, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_1
+        );
+        Output = Net_17_1 (fanout=1)
+
+    [McSlotId=2]:     MacroCell: Name=Net_17_2, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_2
+        );
+        Output = Net_17_2 (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=Net_17_3, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_3
+        );
+        Output = Net_17_3 (fanout=1)
+}
+
+UDB [Chip=0][UDB=(0,1)] is empty.
+UDB [Chip=0][UDB=(0,2)] contents:
+datapathcell: Name =\UART:BUART:sTX:sCLOCK:dpTXBitClkGen:u0\
+    PORT MAP (
+        clk => \UART:Net_9\ ,
+        cs_addr_0 => \UART:BUART:counter_load_not\ ,
+        cl0 => \UART:BUART:tx_bitclk_dp\ ,
+        cl1 => \UART:BUART:TXcounter_dp\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "1010100001000000001000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111100000111001000000100000000000101111100000000000000001000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+Clock Polarity: Active High
+
+UDB [Chip=0][UDB=(0,3)] contents:
+LAB@[Chip=0][UDB=(0,3)][LB=0] #macrocells=4, #inputs=7, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=\UART:BUART:tx_state_0\, Mode=(D-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 3 pterms
+        (
+              !\UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_0\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\ * !\UART:BUART:tx_fifo_empty\
+            + \UART:BUART:tx_state_2\ * \UART:BUART:tx_state_1\ * 
+              \UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:tx_state_0\ (fanout=7)
+
+    [McSlotId=1]:     MacroCell: Name=\UART:BUART:tx_state_2\, Mode=(D-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 3
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 3 pterms
+        !(
+              !\UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_1\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_0\ * 
+              \UART:BUART:TXcounter_dp\
+        );
+        Output = \UART:BUART:tx_state_2\ (fanout=7)
+
+    [McSlotId=2]:     MacroCell: Name=\UART:BUART:tx_status_0\, Mode=(Combinatorial)
+        Total # of inputs        : 4
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              \UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\ * \UART:BUART:tx_fifo_empty\
+        );
+        Output = \UART:BUART:tx_status_0\ (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=Net_17_0, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_0
+        );
+        Output = Net_17_0 (fanout=1)
+}
+
+LAB@[Chip=0][UDB=(0,3)][LB=1] #macrocells=3, #inputs=7, #pterms=8
+{
+    [McSlotId=0]:     MacroCell: Name=Net_43, Mode=(D-Register)
+        Total # of inputs        : 7
+        Total # of product terms : 5
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 5 pterms
+        !(
+              !Net_43 * !\UART:BUART:tx_bitclk\ * \UART:BUART:tx_state_1\
+            + !Net_43 * \UART:BUART:tx_state_2\ * \UART:BUART:tx_state_1\
+            + !\UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              !\UART:BUART:tx_state_1\ * \UART:BUART:tx_state_0\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_1\ * !\UART:BUART:tx_state_0\ * 
+              !\UART:BUART:tx_shift_out\ * \UART:BUART:TXcounter_dp\
+            + !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              \UART:BUART:tx_state_0\ * !\UART:BUART:tx_shift_out\
+        );
+        Output = Net_43 (fanout=2)
+
+    [McSlotId=1]:     MacroCell: Name=\UART:BUART:tx_state_1\, Mode=(T-Register)
+        Total # of inputs        : 5
+        Total # of product terms : 2
+        List of special equations: 
+            Clock  = (\UART:Net_9\) => Global
+        Main Equation            : 2 pterms
+        (
+              \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_1\ * !\UART:BUART:TXcounter_dp\
+            + \UART:BUART:tx_bitclk\ * !\UART:BUART:tx_state_2\ * 
+              \UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:tx_state_1\ (fanout=7)
+
+    [McSlotId=2]:     MacroCell: Name=\UART:BUART:counter_load_not\, Mode=(Combinatorial)
+        Total # of inputs        : 3
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        !(
+              !\UART:BUART:tx_state_2\ * !\UART:BUART:tx_state_1\ * 
+              !\UART:BUART:tx_state_0\
+        );
+        Output = \UART:BUART:counter_load_not\ (fanout=1)
+
+    [McSlotId=3]: (empty)
+}
+
+datapathcell: Name =\UART:BUART:sTX:dpTXShifter:u0\
+    PORT MAP (
+        clk => \UART:BUART:tx_bitclk\ ,
+        cs_addr_2 => \UART:BUART:tx_state_2\ ,
+        cs_addr_1 => \UART:BUART:tx_state_1\ ,
+        cs_addr_0 => \UART:BUART:tx_state_0\ ,
+        so => \UART:BUART:tx_shift_out\ ,
+        f0_bus_stat => \UART:BUART:tx_fifo_notfull\ ,
+        f0_blk_stat => \UART:BUART:tx_fifo_empty\ );
+    Properties:
+    {
+        a0_init = "00000000"
+        a1_init = "00000000"
+        ce0_sync = 1
+        ce1_sync = 1
+        cl0_sync = 1
+        cl1_sync = 1
+        cmsb_sync = 1
+        co_msb_sync = 1
+        cy_dpconfig = "0000000000000000000000001100000000000010010000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001000"
+        d0_init = "00000000"
+        d1_init = "00000000"
+        f0_blk_sync = 1
+        f0_bus_sync = 1
+        f1_blk_sync = 1
+        f1_bus_sync = 1
+        ff0_sync = 1
+        ff1_sync = 1
+        ov_msb_sync = 1
+        so_sync = 1
+        z0_sync = 1
+        z1_sync = 1
+    }
+Clock Polarity: Active High
+
+statusicell: Name =\UART:BUART:sTX:tx_sts\
+    PORT MAP (
+        clock => \UART:Net_9\ ,
+        status_3 => \UART:BUART:tx_fifo_notfull\ ,
+        status_2 => \UART:BUART:tx_status_2\ ,
+        status_1 => \UART:BUART:tx_fifo_empty\ ,
+        status_0 => \UART:BUART:tx_status_0\ );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_int_mask = "1111111"
+        cy_md_select = "0000001"
+    }
+
+controlcell: Name =\LED_Control_Reg:ctrl_reg\
+    PORT MAP (
+        control_7 => Net_42_7 ,
+        control_6 => Net_42_6 ,
+        control_5 => Net_42_5 ,
+        control_4 => Net_42_4 ,
+        control_3 => Net_42_3 ,
+        control_2 => Net_42_2 ,
+        control_1 => Net_42_1 ,
+        control_0 => Net_42_0 );
+    Properties:
+    {
+        cy_force_order = 1
+        cy_init_value = "00000000"
+    }
+
+UDB [Chip=0][UDB=(0,4)] contents:
+LAB@[Chip=0][UDB=(0,4)][LB=0] #macrocells=4, #inputs=4, #pterms=4
+{
+    [McSlotId=0]:     MacroCell: Name=Net_17_4, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_4
+        );
+        Output = Net_17_4 (fanout=1)
+
+    [McSlotId=1]:     MacroCell: Name=Net_17_5, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_5
+        );
+        Output = Net_17_5 (fanout=1)
+
+    [McSlotId=2]:     MacroCell: Name=Net_17_6, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_6
+        );
+        Output = Net_17_6 (fanout=1)
+
+    [McSlotId=3]:     MacroCell: Name=Net_17_7, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !Net_42_7
+        );
+        Output = Net_17_7 (fanout=1)
+}
+
+LAB@[Chip=0][UDB=(0,4)][LB=1] #macrocells=1, #inputs=1, #pterms=1
+{
+    [McSlotId=0]:     MacroCell: Name=\UART:BUART:tx_status_2\, Mode=(Combinatorial)
+        Total # of inputs        : 1
+        Total # of product terms : 1
+        Main Equation            : 1 pterm
+        (
+              !\UART:BUART:tx_fifo_notfull\
+        );
+        Output = \UART:BUART:tx_status_2\ (fanout=1)
+
+    [McSlotId=1]: (empty)
+    [McSlotId=2]: (empty)
+    [McSlotId=3]: (empty)
+}
+
+UDB [Chip=0][UDB=(0,5)] is empty.
+UDB [Chip=0][UDB=(1,0)] is empty.
+UDB [Chip=0][UDB=(1,1)] is empty.
+UDB [Chip=0][UDB=(1,2)] is empty.
+UDB [Chip=0][UDB=(1,3)] is empty.
+UDB [Chip=0][UDB=(1,4)] is empty.
+UDB [Chip=0][UDB=(1,5)] is empty.
+UDB [Chip=0][UDB=(2,0)] is empty.
+UDB [Chip=0][UDB=(2,1)] is empty.
+UDB [Chip=0][UDB=(2,2)] is empty.
+UDB [Chip=0][UDB=(2,3)] is empty.
+UDB [Chip=0][UDB=(2,4)] is empty.
+UDB [Chip=0][UDB=(2,5)] is empty.
+UDB [Chip=0][UDB=(3,0)] is empty.
+UDB [Chip=0][UDB=(3,1)] is empty.
+UDB [Chip=0][UDB=(3,2)] is empty.
+UDB [Chip=0][UDB=(3,3)] is empty.
+UDB [Chip=0][UDB=(3,4)] is empty.
+UDB [Chip=0][UDB=(3,5)] is empty.
+Intr hod @ [Chip=0][IntrHod=(0)]: 
+  Intr@ [Chip=0][IntrHod=(0)][IntrId=(12)] 
+    interrupt: Name =\Volume_ADC:IRQ\
+        PORT MAP (
+            interrupt => Net_4 );
+Drq hod @ [Chip=0][DrqHod=(0)]: empty
+IO Port 0 contains the following IO cells:
+[IoId=1]: 
+iocell: Name = TX(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_43 ,
+        pad => TX(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=5]: 
+iocell: Name = Button(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: SYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_DOWN
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: True
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pad => Button(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+iocell: Name = Volum_Line(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_ANALOG
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: True
+        Can contain Digital: False
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 2
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        analog_term => Net_1 ,
+        pad => Volum_Line(0)_PAD );
+    Properties:
+    {
+    }
+
+IO Port 1 is empty
+IO Port 2 contains the following IO cells:
+[IoId=0]: 
+iocell: Name = dPins_LSB(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_0 ,
+        pad => dPins_LSB(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+iocell: Name = dPins_LSB(1)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_1 ,
+        pad => dPins_LSB(1)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=2]: 
+iocell: Name = dPins_LSB(2)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_2 ,
+        pad => dPins_LSB(2)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=3]: 
+iocell: Name = dPins_LSB(3)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_3 ,
+        pad => dPins_LSB(3)_PAD );
+    Properties:
+    {
+    }
+
+IO Port 3 is empty
+IO Port 4 contains the following IO cells:
+[IoId=0]: 
+iocell: Name = dPins_MSB(0)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_4 ,
+        pad => dPins_MSB(0)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+iocell: Name = dPins_MSB(1)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_5 ,
+        pad => dPins_MSB(1)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=2]: 
+iocell: Name = dPins_MSB(2)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_6 ,
+        pad => dPins_MSB(2)_PAD );
+    Properties:
+    {
+    }
+
+[IoId=3]: 
+iocell: Name = dPins_MSB(3)
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: False
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO RefSel: VCC_IO
+        Required Capabilitites: 1
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        input => Net_17_7 ,
+        pad => dPins_MSB(3)_PAD );
+    Properties:
+    {
+    }
+
+IO Port 5 is empty
+IO Port 6 is empty
+IO Port 12 is empty
+IO Port 15 is empty
+Fixed Function block hod @ [Chip=0][FFB(CAN,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Cache,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(CapSense,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Clock,0)]: 
+    Clock Block @ [Chip=0][FFB(Clock,0)]: 
+    clockblockcell: Name =ClockBlock
+        PORT MAP (
+            clk_bus => ClockBlock_BUS_CLK ,
+            clk_sync => ClockBlock_MASTER_CLK ,
+            clk_32k_xtal => ClockBlock_XTAL 32kHz ,
+            xtal => ClockBlock_XTAL ,
+            ilo => ClockBlock_ILO ,
+            clk_100k => ClockBlock_100k ,
+            clk_1k => ClockBlock_1k ,
+            clk_32k => ClockBlock_32k ,
+            pllout => ClockBlock_PLL_OUT ,
+            imo => ClockBlock_IMO ,
+            dclk_glb_0 => \Volume_ADC:Net_221\ ,
+            dclk_0 => \Volume_ADC:Net_221_local\ ,
+            dclk_glb_1 => \UART:Net_9\ ,
+            dclk_1 => \UART:Net_9_local\ ,
+            dclk_glb_2 => Net_52 ,
+            dclk_2 => Net_52_local );
+Fixed Function block hod @ [Chip=0][FFB(Comparator,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(DFB,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(DSM,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Decimator,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(EMIF,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(I2C,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(LCD,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(LVD,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(PM,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(SC,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(SPC,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Timer,0)]: 
+    Timer Block @ [Chip=0][FFB(Timer,0)]: 
+    timercell: Name =\Counter_1:CounterHW\
+        PORT MAP (
+            clock => Net_52 ,
+            tc => \Counter_1:Net_48\ ,
+            cmp => \Counter_1:Net_54\ ,
+            irq => \Counter_1:Net_42\ );
+        Properties:
+        {
+            cy_registers = ""
+        }
+Fixed Function block hod @ [Chip=0][FFB(USB,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(VIDAC,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Abuf,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(CsAbuf,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(Vref,0)]: 
+    Vref Block @ [Chip=0][FFB(Vref,1)]: 
+    vrefcell: Name =\Volume_ADC:vRef_Vdda\
+        PORT MAP (
+            vout => \Volume_ADC:Net_248\ );
+        Properties:
+        {
+            guid = "4720866E-BC14-478d-B8A0-3E44F38CADAC"
+        }
+Fixed Function block hod @ [Chip=0][FFB(LPF,0)]: empty
+Fixed Function block hod @ [Chip=0][FFB(SAR,0)]: 
+    SAR @ [Chip=0][FFB(SAR,0)]: 
+    sarcell: Name =\Volume_ADC:ADC_SAR\
+        PORT MAP (
+            vplus => Net_1 ,
+            vminus => \Volume_ADC:Net_126\ ,
+            ext_pin => \Volume_ADC:Net_215\ ,
+            vrefhi_out => \Volume_ADC:Net_126\ ,
+            vref => \Volume_ADC:Net_248\ ,
+            clk_udb => \Volume_ADC:Net_221_local\ ,
+            sof_udb => tmpOE__Button_net_0 ,
+            irq => \Volume_ADC:Net_252\ ,
+            data_out_udb_11 => \Volume_ADC:Net_207_11\ ,
+            data_out_udb_10 => \Volume_ADC:Net_207_10\ ,
+            data_out_udb_9 => \Volume_ADC:Net_207_9\ ,
+            data_out_udb_8 => \Volume_ADC:Net_207_8\ ,
+            data_out_udb_7 => \Volume_ADC:Net_207_7\ ,
+            data_out_udb_6 => \Volume_ADC:Net_207_6\ ,
+            data_out_udb_5 => \Volume_ADC:Net_207_5\ ,
+            data_out_udb_4 => \Volume_ADC:Net_207_4\ ,
+            data_out_udb_3 => \Volume_ADC:Net_207_3\ ,
+            data_out_udb_2 => \Volume_ADC:Net_207_2\ ,
+            data_out_udb_1 => \Volume_ADC:Net_207_1\ ,
+            data_out_udb_0 => \Volume_ADC:Net_207_0\ ,
+            eof_udb => Net_4 );
+        Properties:
+        {
+            cy_registers = ""
+        }
+Fixed Function block hod @ [Chip=0][FFB(TimingFault,0)]: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuraiton Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |               | 
+Port | Pin | Fixed |      Type |       Drive Mode |          Name | Connections
+-----+-----+-------+-----------+------------------+---------------+--------------
+   0 |   1 |     * |      NONE |         CMOS_OUT |         TX(0) | In(Net_43)
+     |   5 |     * |      NONE |    RES_PULL_DOWN |     Button(0) | 
+     |   7 |     * |      NONE |      HI_Z_ANALOG | Volum_Line(0) | Analog(Net_1)
+-----+-----+-------+-----------+------------------+---------------+--------------
+   2 |   0 |     * |      NONE |         CMOS_OUT |  dPins_LSB(0) | In(Net_17_0)
+     |   1 |     * |      NONE |         CMOS_OUT |  dPins_LSB(1) | In(Net_17_1)
+     |   2 |     * |      NONE |         CMOS_OUT |  dPins_LSB(2) | In(Net_17_2)
+     |   3 |     * |      NONE |         CMOS_OUT |  dPins_LSB(3) | In(Net_17_3)
+-----+-----+-------+-----------+------------------+---------------+--------------
+   4 |   0 |     * |      NONE |         CMOS_OUT |  dPins_MSB(0) | In(Net_17_4)
+     |   1 |     * |      NONE |         CMOS_OUT |  dPins_MSB(1) | In(Net_17_5)
+     |   2 |     * |      NONE |         CMOS_OUT |  dPins_MSB(2) | In(Net_17_6)
+     |   3 |     * |      NONE |         CMOS_OUT |  dPins_MSB(3) | In(Net_17_7)
+---------------------------------------------------------------------------------
+</CYPRESSTAG>
+Info: plm.M0032: Pin "TX(0)" at "P0[1]" prevents usage of OPAMP0OUT. (App=cydsfit)
+Info: plm.M0032: Pin "Volum_Line(0)" at "P0[7]" prevents usage of IDAC2. (App=cydsfit)
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.059ms
+Digital component placement phase: Elapsed time ==> 0s.748ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital component routing">
+Would route: (Signal Net_43)
+right@[Chip=0][UDB=(0,3)][LB=1] IO_1@[Chip=0][IOP=(0)][IoId=(1)] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal Net_17_0)
+left@[Chip=0][UDB=(0,3)][LB=0] IO_0@[Chip=0][IOP=(2)][IoId=(0)] 
+Would route: (Signal Net_17_1)
+left@[Chip=0][UDB=(0,0)][LB=0] IO_1@[Chip=0][IOP=(2)][IoId=(1)] 
+Would route: (Signal Net_17_2)
+left@[Chip=0][UDB=(0,0)][LB=0] IO_2@[Chip=0][IOP=(2)][IoId=(2)] 
+Would route: (Signal Net_17_3)
+left@[Chip=0][UDB=(0,0)][LB=0] IO_3@[Chip=0][IOP=(2)][IoId=(3)] 
+Would route: (Signal Net_17_4)
+left@[Chip=0][UDB=(0,4)][LB=0] IO_0@[Chip=0][IOP=(4)][IoId=(0)] 
+Would route: (Signal Net_17_5)
+left@[Chip=0][UDB=(0,4)][LB=0] IO_1@[Chip=0][IOP=(4)][IoId=(1)] 
+Would route: (Signal Net_17_6)
+left@[Chip=0][UDB=(0,4)][LB=0] IO_2@[Chip=0][IOP=(4)][IoId=(2)] 
+Would route: (Signal Net_17_7)
+left@[Chip=0][UDB=(0,4)][LB=0] IO_3@[Chip=0][IOP=(4)][IoId=(3)] 
+Would route: (Signal \UART:BUART:tx_bitclk_dp\)
+dpu@[Chip=0][UDB=(0,2)] left@[Chip=0][UDB=(0,0)][LB=0] 
+Would route: (Signal Net_42_3)
+'outcontrol_3' on control@[Chip=0][UDB=(0,3)] @ JackIdx=3 left@[Chip=0][UDB=(0,0)][LB=0] 
+Would route: (Signal Net_42_2)
+'outcontrol_2' on control@[Chip=0][UDB=(0,3)] @ JackIdx=2 left@[Chip=0][UDB=(0,0)][LB=0] 
+Would route: (Signal Net_42_1)
+'outcontrol_1' on control@[Chip=0][UDB=(0,3)] @ JackIdx=1 left@[Chip=0][UDB=(0,0)][LB=0] 
+Would route: (Signal \UART:BUART:tx_bitclk\)
+left@[Chip=0][UDB=(0,0)][LB=0] cr@[Chip=0][UDB=(0,3)] left@[Chip=0][UDB=(0,3)][LB=0] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:counter_load_not\)
+right@[Chip=0][UDB=(0,3)][LB=1] dpu@[Chip=0][UDB=(0,2)] 
+Would route: (Signal \UART:BUART:TXcounter_dp\)
+dpu@[Chip=0][UDB=(0,2)] left@[Chip=0][UDB=(0,3)][LB=0] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:tx_state_2\)
+left@[Chip=0][UDB=(0,3)][LB=0] dpu@[Chip=0][UDB=(0,3)] left@[Chip=0][UDB=(0,3)][LB=0] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:tx_state_1\)
+right@[Chip=0][UDB=(0,3)][LB=1] dpu@[Chip=0][UDB=(0,3)] left@[Chip=0][UDB=(0,3)][LB=0] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:tx_state_0\)
+left@[Chip=0][UDB=(0,3)][LB=0] dpu@[Chip=0][UDB=(0,3)] left@[Chip=0][UDB=(0,3)][LB=0] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:tx_shift_out\)
+dpu@[Chip=0][UDB=(0,3)] right@[Chip=0][UDB=(0,3)][LB=1] 
+Would route: (Signal \UART:BUART:tx_fifo_notfull\)
+dpu@[Chip=0][UDB=(0,3)] right@[Chip=0][UDB=(0,4)][LB=1] 'instatus_3' on status@[Chip=0][UDB=(0,3)] @ JackIdx=3 
+Would route: (Signal \UART:BUART:tx_fifo_empty\)
+dpu@[Chip=0][UDB=(0,3)] left@[Chip=0][UDB=(0,3)][LB=0] 'instatus_1' on status@[Chip=0][UDB=(0,3)] @ JackIdx=1 
+Would route: (Signal Net_42_0)
+'outcontrol_0' on control@[Chip=0][UDB=(0,3)] @ JackIdx=0 left@[Chip=0][UDB=(0,3)][LB=0] 
+Would route: (Signal \UART:BUART:tx_status_0\)
+left@[Chip=0][UDB=(0,3)][LB=0] 'instatus_0' on status@[Chip=0][UDB=(0,3)] @ JackIdx=0 
+Would route: (Signal Net_42_7)
+'outcontrol_7' on control@[Chip=0][UDB=(0,3)] @ JackIdx=7 left@[Chip=0][UDB=(0,4)][LB=0] 
+Would route: (Signal Net_42_6)
+'outcontrol_6' on control@[Chip=0][UDB=(0,3)] @ JackIdx=6 left@[Chip=0][UDB=(0,4)][LB=0] 
+Would route: (Signal Net_42_5)
+'outcontrol_5' on control@[Chip=0][UDB=(0,3)] @ JackIdx=5 left@[Chip=0][UDB=(0,4)][LB=0] 
+Would route: (Signal Net_42_4)
+'outcontrol_4' on control@[Chip=0][UDB=(0,3)] @ JackIdx=4 left@[Chip=0][UDB=(0,4)][LB=0] 
+Would route: (Signal \UART:BUART:tx_status_2\)
+right@[Chip=0][UDB=(0,4)][LB=1] 'instatus_2' on status@[Chip=0][UDB=(0,3)] @ JackIdx=2 
+Would route: (Signal Net_4)
+'eof_udb' on SAR[0]@[Chip=0][FFB(SAR,0)] @ JackIdx=13 'input_1' on interrupt12@[Chip=0][IntrHod=(0)][IntrId=(12)] @ JackIdx=0 
+Would route: (Signal \Volume_ADC:Net_221_local\)
+'dclk[0]' on Clock[0]@[Chip=0][FFB(Clock,0)] @ JackIdx=13 'clk_udb' on SAR[0]@[Chip=0][FFB(SAR,0)] @ JackIdx=0 
+
+Routed Successfully
+Routing Results:
+Net_43: Jack[15]@right@[Chip=0][UDB=(0,3)][LB=1] udb_bus[16(0)] Jack[199]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[71(3)] udb_bus[24(0)] Jack[7]@right@[Chip=0][UDB=(0,3)][LB=1] Jack[12]@right@[Chip=0][UDB=(0,3)][LB=1] udb_bus[19(0)] Jack[218]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[90(3)] Jack[106]@hvswitch@[Chip=0][UDB=(1,2)][side=right] vchan_2[21(1)] Jack[3]@vchan_2@[Chip=0]_SegSwitch@[Chip=0][SegId=(21)] vchan_2[21(0)] Jack[24]@hvswitch@[Chip=0][UDB=(0,2)][side=right] hchan_0[8(3)] Jack[2]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(296)] hchan_0[8(4)] Jack[2]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(392)] hchan_0[8(5)] Jack[136]@dsiswitch_top@[Chip=0][DSI=(0,5)][side=top] dsi@[Chip=0][DSI=(0,5)]_dsi_bus[41(0)] Jack[4]@O_1_4_to_1_output_mux@[Chip=0][IOP=(0)][IoId=(1)][MuxId=(0)] ioport_0@[Chip=0][IOP=(0)]_port_bus[1(0)] Jack[0]@IO_1@[Chip=0][IOP=(0)][IoId=(1)] 
+Net_43: 12
+Net_17_0: Jack[14]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[14(0)] Jack[217]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[89(3)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(281)] hchan_1[89(2)] Jack[105]@hvswitch@[Chip=0][UDB=(1,1)][side=right] vchan_1[25(1)] Jack[3]@vchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(25)] vchan_1[25(0)] Jack[19]@hvswitch@[Chip=0][UDB=(0,1)][side=right] hchan_0[3(2)] Jack[3]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(99)] hchan_0[3(1)] Jack[3]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(3)] hchan_0[3(0)] Jack[131]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[42(0)] Jack[4]@O_0_4_to_1_output_mux@[Chip=0][IOP=(2)][IoId=(0)][MuxId=(0)] ioport_2@[Chip=0][IOP=(2)]_port_bus[0(0)] Jack[0]@IO_0@[Chip=0][IOP=(2)][IoId=(0)] 
+Net_17_0: 10
+Net_17_1: Jack[15]@left@[Chip=0][UDB=(0,0)][LB=0] udb_bus[15(0)] Jack[220]@udbswitch@[Chip=0][UDB=(0,0)][side=top] hchan_1[92(0)] Jack[108]@hvswitch@[Chip=0][UDB=(1,0)][side=left] vchan_0[13(1)] Jack[3]@vchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(13)] vchan_0[13(0)] Jack[22]@hvswitch@[Chip=0][UDB=(0,0)][side=left] hchan_0[6(0)] Jack[134]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[32(0)] Jack[167]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] hchan_0[39(0)] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[40(0)] Jack[4]@O_1_4_to_1_output_mux@[Chip=0][IOP=(2)][IoId=(1)][MuxId=(0)] ioport_2@[Chip=0][IOP=(2)]_port_bus[1(0)] Jack[0]@IO_1@[Chip=0][IOP=(2)][IoId=(1)] 
+Net_17_1: 9
+Net_17_2: Jack[12]@left@[Chip=0][UDB=(0,0)][LB=0] udb_bus[12(0)] Jack[205]@udbswitch@[Chip=0][UDB=(0,0)][side=top] hchan_1[77(0)] Jack[93]@hvswitch@[Chip=0][UDB=(1,0)][side=left] vchan_0[3(1)] Jack[3]@vchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(3)] vchan_0[3(0)] Jack[21]@hvswitch@[Chip=0][UDB=(0,0)][side=left] hchan_0[5(0)] Jack[133]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[37(0)] Jack[214]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] hchan_0[86(0)] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[41(0)] Jack[4]@O_2_4_to_1_output_mux@[Chip=0][IOP=(2)][IoId=(2)][MuxId=(0)] ioport_2@[Chip=0][IOP=(2)]_port_bus[2(0)] Jack[0]@IO_2@[Chip=0][IOP=(2)][IoId=(2)] 
+Net_17_2: 9
+Net_17_3: Jack[14]@left@[Chip=0][UDB=(0,0)][LB=0] udb_bus[14(0)] Jack[217]@udbswitch@[Chip=0][UDB=(0,0)][side=top] hchan_1[89(0)] Jack[105]@hvswitch@[Chip=0][UDB=(1,0)][side=left] vchan_0[7(1)] Jack[3]@vchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(7)] vchan_0[7(0)] Jack[18]@hvswitch@[Chip=0][UDB=(0,0)][side=left] hchan_0[2(0)] Jack[130]@dsiswitch_top@[Chip=0][DSI=(0,0)][side=top] dsi@[Chip=0][DSI=(0,0)]_dsi_bus[43(0)] Jack[4]@O_3_4_to_1_output_mux@[Chip=0][IOP=(2)][IoId=(3)][MuxId=(0)] ioport_2@[Chip=0][IOP=(2)]_port_bus[3(0)] Jack[0]@IO_3@[Chip=0][IOP=(2)][IoId=(3)] 
+Net_17_3: 7
+Net_17_4: Jack[15]@left@[Chip=0][UDB=(0,4)][LB=0] udb_bus[15(0)] Jack[220]@udbswitch@[Chip=0][UDB=(0,4)][side=top] hchan_1[92(4)] Jack[108]@hvswitch@[Chip=0][UDB=(1,3)][side=right] vchan_3[18(1)] Jack[3]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(18)] vchan_3[18(0)] Jack[75]@hvswitch@[Chip=0][UDB=(0,3)][side=right] hchan_0[59(4)] Jack[187]@dsiswitch_top@[Chip=0][DSI=(0,4)][side=top] dsi@[Chip=0][DSI=(0,4)]_dsi_bus[40(0)] Jack[4]@O_0_4_to_1_output_mux@[Chip=0][IOP=(4)][IoId=(0)][MuxId=(0)] ioport_4@[Chip=0][IOP=(4)]_port_bus[0(0)] Jack[0]@IO_0@[Chip=0][IOP=(4)][IoId=(0)] 
+Net_17_4: 7
+Net_17_5: Jack[14]@left@[Chip=0][UDB=(0,4)][LB=0] udb_bus[14(0)] Jack[214]@udbswitch@[Chip=0][UDB=(0,4)][side=top] hchan_1[86(4)] Jack[102]@hvswitch@[Chip=0][UDB=(1,3)][side=right] vchan_3[20(1)] Jack[3]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(20)] vchan_3[20(0)] Jack[63]@hvswitch@[Chip=0][UDB=(0,3)][side=right] hchan_0[47(4)] Jack[175]@dsiswitch_top@[Chip=0][DSI=(0,4)][side=top] dsi@[Chip=0][DSI=(0,4)]_dsi_bus[41(0)] Jack[4]@O_1_4_to_1_output_mux@[Chip=0][IOP=(4)][IoId=(1)][MuxId=(0)] ioport_4@[Chip=0][IOP=(4)]_port_bus[1(0)] Jack[0]@IO_1@[Chip=0][IOP=(4)][IoId=(1)] 
+Net_17_5: 7
+Net_17_6: Jack[13]@left@[Chip=0][UDB=(0,4)][LB=0] udb_bus[13(0)] Jack[191]@udbswitch@[Chip=0][UDB=(0,4)][side=top] hchan_1[63(4)] Jack[79]@hvswitch@[Chip=0][UDB=(1,4)][side=left] vchan_4[9(1)] Jack[3]@vchan_4@[Chip=0]_SegSwitch@[Chip=0][SegId=(9)] vchan_4[9(0)] Jack[34]@hvswitch@[Chip=0][UDB=(0,4)][side=left] hchan_0[18(4)] Jack[146]@dsiswitch_top@[Chip=0][DSI=(0,4)][side=top] dsi@[Chip=0][DSI=(0,4)]_dsi_bus[43(0)] Jack[4]@O_2_4_to_1_output_mux@[Chip=0][IOP=(4)][IoId=(2)][MuxId=(0)] ioport_4@[Chip=0][IOP=(4)]_port_bus[2(0)] Jack[0]@IO_2@[Chip=0][IOP=(4)][IoId=(2)] 
+Net_17_6: 7
+Net_17_7: Jack[12]@left@[Chip=0][UDB=(0,4)][LB=0] udb_bus[12(0)] Jack[205]@udbswitch@[Chip=0][UDB=(0,4)][side=top] hchan_1[77(4)] Jack[93]@hvswitch@[Chip=0][UDB=(1,3)][side=right] vchan_3[28(1)] Jack[3]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(28)] vchan_3[28(0)] Jack[21]@hvswitch@[Chip=0][UDB=(0,3)][side=right] hchan_0[5(4)] Jack[133]@dsiswitch_top@[Chip=0][DSI=(0,4)][side=top] dsi@[Chip=0][DSI=(0,4)]_dsi_bus[42(0)] Jack[4]@O_3_4_to_1_output_mux@[Chip=0][IOP=(4)][IoId=(3)][MuxId=(0)] ioport_4@[Chip=0][IOP=(4)]_port_bus[3(0)] Jack[0]@IO_3@[Chip=0][IOP=(4)][IoId=(3)] 
+Net_17_7: 7
+\UART:BUART:tx_bitclk_dp\: Jack[11]@dpu@[Chip=0][UDB=(0,2)] udb_bus[43(0)] Jack[181]@udbswitch@[Chip=0][UDB=(0,2)][side=top] hchan_1[53(2)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(149)] hchan_1[53(1)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(53)] hchan_1[53(0)] Jack[181]@udbswitch@[Chip=0][UDB=(0,0)][side=top] udb_bus[3(0)] Jack[3]@left@[Chip=0][UDB=(0,0)][LB=0] 
+\UART:BUART:tx_bitclk_dp\: 5
+Net_42_3: Jack[3]@control@[Chip=0][UDB=(0,3)] Jack[3]@control@[Chip=0][UDB=(0,3)] udb_bus[55(0)] Jack[176]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[48(3)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(240)] hchan_1[48(2)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(144)] hchan_1[48(1)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(48)] hchan_1[48(0)] Jack[176]@udbswitch@[Chip=0][UDB=(0,0)][side=top] udb_bus[7(0)] Jack[7]@left@[Chip=0][UDB=(0,0)][LB=0] 
+Net_42_3: 6
+Net_42_2: Jack[2]@control@[Chip=0][UDB=(0,3)] Jack[2]@control@[Chip=0][UDB=(0,3)] udb_bus[54(0)] Jack[145]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[17(3)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(209)] hchan_1[17(2)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(113)] hchan_1[17(1)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(17)] hchan_1[17(0)] Jack[145]@udbswitch@[Chip=0][UDB=(0,0)][side=top] udb_bus[9(0)] Jack[9]@left@[Chip=0][UDB=(0,0)][LB=0] 
+Net_42_2: 6
+Net_42_1: Jack[1]@control@[Chip=0][UDB=(0,3)] Jack[1]@control@[Chip=0][UDB=(0,3)] udb_bus[53(0)] Jack[136]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[8(3)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(200)] hchan_1[8(2)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(104)] hchan_1[8(1)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(8)] hchan_1[8(0)] Jack[136]@udbswitch@[Chip=0][UDB=(0,0)][side=top] udb_bus[1(0)] Jack[1]@left@[Chip=0][UDB=(0,0)][LB=0] 
+Net_42_1: 6
+\UART:BUART:tx_bitclk\: Jack[13]@left@[Chip=0][UDB=(0,0)][LB=0] udb_bus[13(0)] Jack[208]@udbswitch@[Chip=0][UDB=(0,0)][side=top] hchan_1[80(0)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(80)] hchan_1[80(1)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(176)] hchan_1[80(2)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(272)] hchan_1[80(3)] Jack[208]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[61(0)] Jack[1]@cr@[Chip=0][UDB=(0,3)] Jack[162]@udbswitch@[Chip=0][UDB=(0,0)][side=top] hchan_1[34(0)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(34)] hchan_1[34(1)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(130)] hchan_1[34(2)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(226)] hchan_1[34(3)] Jack[162]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[1(0)] Jack[1]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[21(0)] Jack[10]@right@[Chip=0][UDB=(0,3)][LB=1] 
+\UART:BUART:tx_bitclk\: 12
+\UART:BUART:counter_load_not\: Jack[13]@right@[Chip=0][UDB=(0,3)][LB=1] udb_bus[18(0)] Jack[163]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[35(3)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(227)] hchan_1[35(2)] Jack[163]@udbswitch@[Chip=0][UDB=(0,2)][side=top] udb_bus[34(0)] Jack[2]@dpu@[Chip=0][UDB=(0,2)] 
+\UART:BUART:counter_load_not\: 4
+\UART:BUART:TXcounter_dp\: Jack[10]@dpu@[Chip=0][UDB=(0,2)] udb_bus[42(0)] Jack[137]@udbswitch@[Chip=0][UDB=(0,2)][side=top] hchan_1[9(2)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(201)] hchan_1[9(3)] Jack[137]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[30(0)] Jack[1]@right@[Chip=0][UDB=(0,3)][LB=1] Jack[209]@udbswitch@[Chip=0][UDB=(0,2)][side=top] hchan_1[81(2)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(273)] hchan_1[81(3)] Jack[209]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[6(0)] Jack[6]@left@[Chip=0][UDB=(0,3)][LB=0] 
+\UART:BUART:TXcounter_dp\: 7
+\UART:BUART:tx_state_2\: Jack[13]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[13(0)] Jack[140]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[12(3)] udb_bus[29(0)] Jack[2]@right@[Chip=0][UDB=(0,3)][LB=1] udb_bus[2(0)] Jack[2]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[34(0)] Jack[2]@dpu@[Chip=0][UDB=(0,3)] 
+\UART:BUART:tx_state_2\: 5
+\UART:BUART:tx_state_1\: Jack[14]@right@[Chip=0][UDB=(0,3)][LB=1] udb_bus[17(0)] Jack[210]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[82(3)] udb_bus[9(0)] Jack[9]@left@[Chip=0][UDB=(0,3)][LB=0] Jack[98]@hvswitch@[Chip=0][UDB=(1,2)][side=right] vchan_2[29(1)] Jack[3]@vchan_2@[Chip=0]_SegSwitch@[Chip=0][SegId=(29)] vchan_2[29(0)] Jack[22]@hvswitch@[Chip=0][UDB=(0,2)][side=right] hchan_0[6(3)] Jack[22]@hvswitch@[Chip=0][UDB=(0,3)][side=left] vchan_3[2(0)] Jack[2]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(2)] vchan_3[2(1)] Jack[21]@hvswitch@[Chip=0][UDB=(1,3)][side=left] hchan_1[5(3)] Jack[133]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[36(0)] Jack[4]@dpu@[Chip=0][UDB=(0,3)] Jack[65]@hvswitch@[Chip=0][UDB=(1,3)][side=left] hchan_1[49(3)] Jack[177]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[31(0)] Jack[0]@right@[Chip=0][UDB=(0,3)][LB=1] 
+\UART:BUART:tx_state_1\: 12
+\UART:BUART:tx_state_0\: Jack[12]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[12(0)] Jack[205]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[77(3)] udb_bus[35(0)] Jack[3]@dpu@[Chip=0][UDB=(0,3)] udb_bus[27(0)] Jack[4]@right@[Chip=0][UDB=(0,3)][LB=1] Jack[197]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[69(3)] udb_bus[4(0)] Jack[4]@left@[Chip=0][UDB=(0,3)][LB=0] 
+\UART:BUART:tx_state_0\: 6
+\UART:BUART:tx_shift_out\: Jack[8]@dpu@[Chip=0][UDB=(0,3)] udb_bus[40(0)] Jack[149]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[21(3)] udb_bus[28(0)] Jack[3]@right@[Chip=0][UDB=(0,3)][LB=1] 
+\UART:BUART:tx_shift_out\: 3
+\UART:BUART:tx_fifo_notfull\: Jack[7]@dpu@[Chip=0][UDB=(0,3)] udb_bus[39(0)] Jack[156]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[28(3)] udb_bus[47(0)] Jack[3]@status@[Chip=0][UDB=(0,3)] Jack[132]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[4(3)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(292)] hchan_1[4(4)] Jack[132]@udbswitch@[Chip=0][UDB=(0,4)][side=top] udb_bus[20(0)] Jack[11]@right@[Chip=0][UDB=(0,4)][LB=1] 
+\UART:BUART:tx_fifo_notfull\: 6
+\UART:BUART:tx_fifo_empty\: Jack[10]@dpu@[Chip=0][UDB=(0,3)] udb_bus[42(0)] Jack[187]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[59(3)] udb_bus[61(0)] Jack[144]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[16(3)] udb_bus[45(0)] Jack[1]@status@[Chip=0][UDB=(0,3)] Jack[9]@dpu@[Chip=0][UDB=(0,3)] udb_bus[41(0)] Jack[215]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[87(3)] udb_bus[5(0)] Jack[5]@left@[Chip=0][UDB=(0,3)][LB=0] 
+\UART:BUART:tx_fifo_empty\: 8
+Net_42_0: Jack[0]@control@[Chip=0][UDB=(0,3)] Jack[0]@control@[Chip=0][UDB=(0,3)] udb_bus[52(0)] Jack[130]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[2(3)] udb_bus[0(0)] Jack[0]@left@[Chip=0][UDB=(0,3)][LB=0] 
+Net_42_0: 3
+\UART:BUART:tx_status_0\: Jack[15]@left@[Chip=0][UDB=(0,3)][LB=0] udb_bus[15(0)] Jack[174]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[46(3)] udb_bus[44(0)] Jack[0]@status@[Chip=0][UDB=(0,3)] 
+\UART:BUART:tx_status_0\: 3
+Net_42_7: Jack[7]@control@[Chip=0][UDB=(0,3)] Jack[7]@control@[Chip=0][UDB=(0,3)] udb_bus[59(0)] Jack[222]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[94(3)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(382)] hchan_1[94(4)] Jack[222]@udbswitch@[Chip=0][UDB=(0,4)][side=top] udb_bus[11(0)] Jack[11]@left@[Chip=0][UDB=(0,4)][LB=0] 
+Net_42_7: 4
+Net_42_6: Jack[6]@control@[Chip=0][UDB=(0,3)] Jack[6]@control@[Chip=0][UDB=(0,3)] udb_bus[58(0)] Jack[216]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[88(3)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(376)] hchan_1[88(4)] Jack[216]@udbswitch@[Chip=0][UDB=(0,4)][side=top] udb_bus[10(0)] Jack[10]@left@[Chip=0][UDB=(0,4)][LB=0] 
+Net_42_6: 4
+Net_42_5: Jack[5]@control@[Chip=0][UDB=(0,3)] Jack[5]@control@[Chip=0][UDB=(0,3)] udb_bus[57(0)] Jack[169]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[41(3)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(329)] hchan_1[41(4)] Jack[169]@udbswitch@[Chip=0][UDB=(0,4)][side=top] udb_bus[6(0)] Jack[6]@left@[Chip=0][UDB=(0,4)][LB=0] 
+Net_42_5: 4
+Net_42_4: Jack[4]@control@[Chip=0][UDB=(0,3)] Jack[4]@control@[Chip=0][UDB=(0,3)] udb_bus[56(0)] Jack[175]@udbswitch@[Chip=0][UDB=(0,3)][side=top] hchan_1[47(3)] Jack[2]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(335)] hchan_1[47(4)] Jack[175]@udbswitch@[Chip=0][UDB=(0,4)][side=top] udb_bus[7(0)] Jack[7]@left@[Chip=0][UDB=(0,4)][LB=0] 
+Net_42_4: 4
+\UART:BUART:tx_status_2\: Jack[13]@right@[Chip=0][UDB=(0,4)][LB=1] udb_bus[18(0)] Jack[185]@udbswitch@[Chip=0][UDB=(0,4)][side=top] hchan_1[57(4)] Jack[3]@hchan_1@[Chip=0]_SegSwitch@[Chip=0][SegId=(345)] hchan_1[57(3)] Jack[185]@udbswitch@[Chip=0][UDB=(0,3)][side=top] udb_bus[46(0)] Jack[2]@status@[Chip=0][UDB=(0,3)] 
+\UART:BUART:tx_status_2\: 4
+Net_4: Jack[13]@SAR[0]@[Chip=0][FFB(SAR,0)] Jack[13]@SAR[0]@[Chip=0][FFB(SAR,0)] dsi@[Chip=0][DSI=(0,3)]_dsi_bus[20(0)] Jack[189]@dsiswitch_top@[Chip=0][DSI=(0,3)][side=top] hchan_0[61(3)] Jack[77]@hvswitch@[Chip=0][UDB=(0,3)][side=left] vchan_3[1(0)] Jack[2]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(1)] vchan_3[1(1)] Jack[2]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(33)] vchan_3[1(2)] Jack[2]@vchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(65)] vchan_3[1(3)] Jack[27]@hvswitch@[Chip=0][UDB=(3,3)][side=left] hchan_3[11(3)] Jack[139]@dsiswitch_top@[Chip=0][DSI=(1,3)][side=top] dsi@[Chip=0][DSI=(1,3)]_dsi_bus[26(0)] Jack[3]@irq_12_3_to_1_mux@[Chip=0][IntrHod=(0)][IntrId=(12)][MuxId=(0)] intc_0@[Chip=0][IntrHod=(0)]_irq_bus[12(0)] Jack[0]@interrupt12@[Chip=0][IntrHod=(0)][IntrId=(12)] 
+Net_4: 9
+\Volume_ADC:Net_221_local\: Jack[13]@Clock[0]@[Chip=0][FFB(Clock,0)] Jack[13]@Clock[0]@[Chip=0][FFB(Clock,0)] dsi@[Chip=0][DSI=(1,4)]_dsi_bus[8(0)] Jack[210]@dsiswitch_top@[Chip=0][DSI=(1,4)][side=top] hchan_3[82(4)] Jack[3]@hchan_3@[Chip=0]_SegSwitch@[Chip=0][SegId=(370)] hchan_3[82(3)] Jack[98]@hvswitch@[Chip=0][UDB=(3,2)][side=right] vchan_2[28(3)] Jack[3]@vchan_2@[Chip=0]_SegSwitch@[Chip=0][SegId=(92)] vchan_2[28(2)] Jack[3]@vchan_2@[Chip=0]_SegSwitch@[Chip=0][SegId=(60)] vchan_2[28(1)] Jack[3]@vchan_2@[Chip=0]_SegSwitch@[Chip=0][SegId=(28)] vchan_2[28(0)] Jack[57]@hvswitch@[Chip=0][UDB=(0,2)][side=right] hchan_0[41(3)] Jack[3]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(233)] hchan_0[41(2)] Jack[3]@hchan_0@[Chip=0]_SegSwitch@[Chip=0][SegId=(137)] hchan_0[41(1)] Jack[169]@dsiswitch_top@[Chip=0][DSI=(0,1)][side=top] dsi@[Chip=0][DSI=(0,1)]_dsi_bus[24(0)] Jack[0]@SAR[0]@[Chip=0][FFB(SAR,0)] 
+\Volume_ADC:Net_221_local\: 11
+Routed 31 signals
+Routing took 1.4860822 second(s)
+Digital component routing phase: Elapsed time ==> 2s.026ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream and API generation">
+Bitstream and API generation phase: Elapsed time ==> 1s.382ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream verification">
+Bitstream verification phase: Elapsed time ==> 0s.314ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save: Elapsed time ==> 0s.456ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 8s.511ms
+</CYPRESSTAG>

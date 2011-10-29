@@ -1,0 +1,4 @@
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/ARM_CM3-GCC_421/Debug/CyBootAsmGnu.o : C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CyBootAsmGnu.s : 
+

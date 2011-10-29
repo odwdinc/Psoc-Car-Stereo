@@ -1,0 +1,3313 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"Volume_ADC.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 AC010000 		.text
+  20      02004900 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.global	Volume_ADC_initVar
+  23              		.bss
+  24              		.type	Volume_ADC_initVar, %object
+  25              		.size	Volume_ADC_initVar, 1
+  26              	Volume_ADC_initVar:
+  27 0000 00       		.space	1
+  28              		.global	Volume_ADC_Offset
+  29 0001 00       		.align	1
+  30              		.type	Volume_ADC_Offset, %object
+  31              		.size	Volume_ADC_Offset, 2
+  32              	Volume_ADC_Offset:
+  33 0002 0000     		.space	2
+  34              		.section	.text.Volume_ADC_Start,"ax",%progbits
+  35              		.align	2
+  36              		.global	Volume_ADC_Start
+  37              		.thumb
+  38              		.thumb_func
+  39              		.type	Volume_ADC_Start, %function
+  40              	Volume_ADC_Start:
+  41              	.LFB2:
+  42              		.file 1 "./Generated_Source/PSoC5/Volume_ADC.c"
+   1:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/Volume_ADC.c **** * File Name: Volume_ADC.c
+   3:./Generated_Source/PSoC5/Volume_ADC.c **** * Version 1.10
+   4:./Generated_Source/PSoC5/Volume_ADC.c **** *
+   5:./Generated_Source/PSoC5/Volume_ADC.c **** * Description:
+   6:./Generated_Source/PSoC5/Volume_ADC.c **** *  This file provides the source code to the API for the Successive
+   7:./Generated_Source/PSoC5/Volume_ADC.c **** *  approximation ADC Component.
+   8:./Generated_Source/PSoC5/Volume_ADC.c **** *
+   9:./Generated_Source/PSoC5/Volume_ADC.c **** * Note:
+  10:./Generated_Source/PSoC5/Volume_ADC.c **** *
+  11:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 2
+
+
+  12:./Generated_Source/PSoC5/Volume_ADC.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  13:./Generated_Source/PSoC5/Volume_ADC.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:./Generated_Source/PSoC5/Volume_ADC.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:./Generated_Source/PSoC5/Volume_ADC.c **** * the software package with which this file was provided.
+  16:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+  17:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  18:./Generated_Source/PSoC5/Volume_ADC.c **** #include "CyLib.h"
+  19:./Generated_Source/PSoC5/Volume_ADC.c **** #include "Volume_ADC.h"
+  20:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  21:./Generated_Source/PSoC5/Volume_ADC.c **** #if(Volume_ADC_DEFAULT_INTERNAL_CLK)
+  22:./Generated_Source/PSoC5/Volume_ADC.c ****     #include "Volume_ADC_theACLK.h"
+  23:./Generated_Source/PSoC5/Volume_ADC.c **** #endif /* End Volume_ADC_DEFAULT_INTERNAL_CLK */
+  24:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  25:./Generated_Source/PSoC5/Volume_ADC.c **** uint8 Volume_ADC_initVar = 0;
+  26:./Generated_Source/PSoC5/Volume_ADC.c **** int16 Volume_ADC_Offset = 0;
+  27:./Generated_Source/PSoC5/Volume_ADC.c **** int16 Volume_ADC_CountsPerVolt;   // Gain compensation
+  28:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  29:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetRef(int8 refMode);
+  30:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_CalcGain(uint8 resolution);
+  31:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  32:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  33:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+  34:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_Start
+  35:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+  36:./Generated_Source/PSoC5/Volume_ADC.c **** *
+  37:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+  38:./Generated_Source/PSoC5/Volume_ADC.c **** *  Performs all required initialization for this component and enables the
+  39:./Generated_Source/PSoC5/Volume_ADC.c **** *  power.
+  40:./Generated_Source/PSoC5/Volume_ADC.c **** *
+  41:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+  42:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+  43:./Generated_Source/PSoC5/Volume_ADC.c **** *
+  44:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+  45:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+  46:./Generated_Source/PSoC5/Volume_ADC.c **** *
+  47:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+  48:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_Start(void)
+  49:./Generated_Source/PSoC5/Volume_ADC.c **** {
+  43              	me = 8
+  44              		@ frame_needed = 1, uses_anonymous_args = 0
+  45              		push	{r7, lr}
+  46 0000 80B5     	.LCFI0:
+  47              		sub	sp, sp, #8
+  48 0002 82B0     	.LCFI1:
+  49              		add	r7, sp, #0
+  50 0004 00AF     	.LCFI2:
+  51              		.loc 1 53 0
+  50:./Generated_Source/PSoC5/Volume_ADC.c ****     uint8 tmpReg;
+  51:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  52:./Generated_Source/PSoC5/Volume_ADC.c ****     /* If not Initialized then initialize all required hardware and software */
+  53:./Generated_Source/PSoC5/Volume_ADC.c ****     if(Volume_ADC_initVar == 0)
+  52              	.L5
+  53 0006 2D4B     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  54 0008 1B78     		cmp	r3, #0
+  55 000a 002B     		bne	.L2
+  56 000c 34D1     		.loc 1 55 0
+  54:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 3
+
+
+  55:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_initVar = 1;
+  57              	r2, .L5
+  58 000e 2B4A     		mov	r3, #1
+  59 0010 4FF00103 		strb	r3, [r2, #0]
+  60 0014 1370     		.loc 1 58 0
+  56:./Generated_Source/PSoC5/Volume_ADC.c ****         /* This is only valid if there is an internal clock */
+  57:./Generated_Source/PSoC5/Volume_ADC.c ****         #if(Volume_ADC_DEFAULT_INTERNAL_CLK)
+  58:./Generated_Source/PSoC5/Volume_ADC.c ****             Volume_ADC_theACLK_SetMode(CYCLK_DUTY);
+  61              		r0, #16
+  62 0016 4FF01000 		bl	Volume_ADC_theACLK_SetMode
+  63 001a FFF7FEFF 		.loc 1 62 0
+  59:./Generated_Source/PSoC5/Volume_ADC.c ****         #endif /* End Volume_ADC_DEFAULT_INTERNAL_CLK */
+  60:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  61:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Start and set interrupt vector */
+  62:./Generated_Source/PSoC5/Volume_ADC.c ****         CyIntSetPriority(Volume_ADC_INTC_NUMBER, Volume_ADC_INTC_PRIOR_NUMBER);
+  64              	v	r0, #12
+  65 001e 4FF00C00 		mov	r1, #7
+  66 0022 4FF00701 		bl	CyIntSetPriority
+  67 0026 FFF7FEFF 		.loc 1 63 0
+  63:./Generated_Source/PSoC5/Volume_ADC.c ****         CyIntSetVector(Volume_ADC_INTC_NUMBER, Volume_ADC_ISR );
+  68              		r0, #12
+  69 002a 4FF00C00 		ldr	r1, .L5+4
+  70 002e 2449     		bl	CyIntSetVector
+  71 0030 FFF7FEFF 		.loc 1 66 0
+  64:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  65:./Generated_Source/PSoC5/Volume_ADC.c ****         /* default CSR0=0 */
+  66:./Generated_Source/PSoC5/Volume_ADC.c ****         tmpReg = Volume_ADC_SAR_CSR0;
+  72              		r3, .L5+8
+  73 0034 234B     		ldrb	r3, [r3, #0]
+  74 0036 1B78     		strb	r3, [r7, #7]
+  75 0038 FB71     		.loc 1 72 0
+  67:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  68:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Set Power parameter  */
+  69:./Generated_Source/PSoC5/Volume_ADC.c ****         tmpReg |= (Volume_ADC_DEFAULT_POWER << Volume_ADC_SAR_POWER_SHIFT);
+  70:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  71:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Clear DAC value at beginning of sampling */
+  72:./Generated_Source/PSoC5/Volume_ADC.c ****         tmpReg |= Volume_ADC_SAR_HIZ_CLEAR;
+  76              	b	r3, [r7, #7]
+  77 003a FB79     		orr	r3, r3, #8
+  78 003c 43F00803 		strb	r3, [r7, #7]
+  79 0040 FB71     		.loc 1 80 0
+  73:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  74:./Generated_Source/PSoC5/Volume_ADC.c ****         /*Set Convertion mode */
+  75:./Generated_Source/PSoC5/Volume_ADC.c ****         if(Volume_ADC_DEFAULT_CONV_MODE)                /* If triggered mode */
+  76:./Generated_Source/PSoC5/Volume_ADC.c ****         {
+  77:./Generated_Source/PSoC5/Volume_ADC.c ****             tmpReg |= Volume_ADC_SAR_MX_SOF_UDB;            /* source: UDB */
+  78:./Generated_Source/PSoC5/Volume_ADC.c ****             tmpReg |= Volume_ADC_SAR_SOF_MODE_EDGE;        /* Set edge-sensitive sof source */
+  79:./Generated_Source/PSoC5/Volume_ADC.c ****          }
+  80:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SAR_CSR0 = tmpReg;
+  80              		r2, .L5+8
+  81 0042 204A     		ldrb	r3, [r7, #7]
+  82 0044 FB79     		strb	r3, [r2, #0]
+  83 0046 1370     		.loc 1 83 0
+  81:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  82:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Enable IRQ mode*/
+  83:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SAR_CSR1 |= Volume_ADC_SAR_IRQ_MASK_EN | Volume_ADC_SAR_IRQ_MODE_EDGE;
+  84              		r2, .L5+12
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 4
+
+
+  85 0048 1F4A     		ldr	r3, .L5+12
+  86 004a 1F4B     		ldrb	r3, [r3, #0]
+  87 004c 1B78     		uxtb	r3, r3
+  88 004e DBB2     		orr	r3, r3, #6
+  89 0050 43F00603 		uxtb	r3, r3
+  90 0054 DBB2     		strb	r3, [r2, #0]
+  91 0056 1370     		.loc 1 86 0
+  84:./Generated_Source/PSoC5/Volume_ADC.c ****         
+  85:./Generated_Source/PSoC5/Volume_ADC.c ****         /*Set SAR ADC resolution ADC */
+  86:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SetResolution(Volume_ADC_DEFAULT_RESOLUTION);
+  92              	 #8
+  93 0058 4FF00800 		bl	Volume_ADC_SetResolution
+  94 005c FFF7FEFF 		.loc 1 97 0
+  87:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  88:./Generated_Source/PSoC5/Volume_ADC.c ****         /*Sets input range of the ADC*/
+  89:./Generated_Source/PSoC5/Volume_ADC.c ****         switch (Volume_ADC_DEFAULT_RANGE)
+  90:./Generated_Source/PSoC5/Volume_ADC.c ****         {
+  91:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSS_TO_VREF:
+  92:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC_DEFAULT_RANGE);
+  93:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+  94:./Generated_Source/PSoC5/Volume_ADC.c **** 
+  95:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSSA_TO_VDDA:
+  96:./Generated_Source/PSoC5/Volume_ADC.c ****                 /* Set bit for VDD/2 mode */
+  97:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_RESVDA_EN;
+  95              	r	r2, .L5+16
+  96 0060 1A4A     		ldr	r3, .L5+16
+  97 0062 1A4B     		ldrb	r3, [r3, #0]
+  98 0064 1B78     		uxtb	r3, r3
+  99 0066 DBB2     		orr	r3, r3, #64
+ 100 0068 43F04003 		uxtb	r3, r3
+ 101 006c DBB2     		strb	r3, [r2, #0]
+ 102 006e 1370     		.loc 1 98 0
+  98:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC__VSSA_TO_VDDA);
+ 103              	 #1
+ 104 0070 4FF00100 		bl	Volume_ADC_SetRef
+ 105 0074 FFF7FEFF 	.L2:
+ 106              		.loc 1 138 0
+  99:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 100:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSSA_TO_VDAC:
+ 101:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC__VSSA_TO_VDDA);
+ 102:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 103:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 104:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VREF_DIFF:
+ 105:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_CP_EN;         /* Enable charge pump*/
+ 106:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VCM_EN;    /* Enable VCM reference buf
+ 107:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC_DEFAULT_RANGE);
+ 108:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 109:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 110:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDDA_DIFF:
+ 111:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_CP_EN;         /* Enable charge pump*/
+ 112:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VCM_EN;    /* Enable VCM reference buf
+ 113:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC__VSSA_TO_VDDA);
+ 114:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 115:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 116:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDDA_2_DIFF:
+ 117:./Generated_Source/PSoC5/Volume_ADC.c ****                  /* Set bit for VDD/2 mode*/
+ 118:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_RESVDA_EN;
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 5
+
+
+ 119:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_CP_EN;         /* Enable charge pump*/
+ 120:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VCM_EN;    /* Enable VCM reference buf
+ 121:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC__VSSA_TO_VDDA);
+ 122:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 123:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDAC_DIFF:
+ 124:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SetRef(Volume_ADC__VSSA_TO_VDDA);
+ 125:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 126:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 127:./Generated_Source/PSoC5/Volume_ADC.c ****             default:
+ 128:./Generated_Source/PSoC5/Volume_ADC.c ****                 /* if default case is hit, invalid argument was passed.*/
+ 129:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 130:./Generated_Source/PSoC5/Volume_ADC.c ****          }
+ 131:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 132:./Generated_Source/PSoC5/Volume_ADC.c ****     } /* End Volume_ADC_initVar */
+ 133:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 134:./Generated_Source/PSoC5/Volume_ADC.c ****     /*Volume_ADC_SAR_TR0 = Volume_ADC_SAR_CAP_TRIM_4;*/ /*Set attenuation capacitor*/
+ 135:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 136:./Generated_Source/PSoC5/Volume_ADC.c ****     /* This is only valid if there is an internal clock */
+ 137:./Generated_Source/PSoC5/Volume_ADC.c ****     #if(Volume_ADC_DEFAULT_INTERNAL_CLK)
+ 138:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_PWRMGR_CLK |= Volume_ADC_ACT_PWR_CLK_EN;
+ 107              		r2, .L5+20
+ 108 0078 154A     		ldr	r3, .L5+20
+ 109 007a 154B     		ldrb	r3, [r3, #0]
+ 110 007c 1B78     		uxtb	r3, r3
+ 111 007e DBB2     		orr	r3, r3, #1
+ 112 0080 43F00103 		uxtb	r3, r3
+ 113 0084 DBB2     		strb	r3, [r2, #0]
+ 114 0086 1370     		.loc 1 139 0
+ 139:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_theACLK_Enable();
+ 115              	me_ADC_theACLK_Start
+ 116 0088 FFF7FEFF 		.loc 1 143 0
+ 140:./Generated_Source/PSoC5/Volume_ADC.c ****     #endif /* End Volume_ADC_DEFAULT_INTERNAL_CLK */
+ 141:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 142:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Enable clock for SAR ADC*/
+ 143:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CLK |= Volume_ADC_SAR_MX_CLK_EN;
+ 117              	dr	r2, .L5+24
+ 118 008c 114A     		ldr	r3, .L5+24
+ 119 008e 114B     		ldrb	r3, [r3, #0]
+ 120 0090 1B78     		uxtb	r3, r3
+ 121 0092 DBB2     		orr	r3, r3, #8
+ 122 0094 43F00803 		uxtb	r3, r3
+ 123 0098 DBB2     		strb	r3, [r2, #0]
+ 124 009a 1370     		.loc 1 146 0
+ 144:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 145:./Generated_Source/PSoC5/Volume_ADC.c ****      /* Enable power for ADC */
+ 146:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_PWRMGR_SAR |= Volume_ADC_ACT_PWR_SAR_EN;
+ 125              	 .L5+28
+ 126 009c 0E4A     		ldr	r3, .L5+28
+ 127 009e 0E4B     		ldrb	r3, [r3, #0]
+ 128 00a0 1B78     		uxtb	r3, r3
+ 129 00a2 DBB2     		orr	r3, r3, #1
+ 130 00a4 43F00103 		uxtb	r3, r3
+ 131 00a8 DBB2     		strb	r3, [r2, #0]
+ 132 00aa 1370     		.loc 1 149 0
+ 147:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 148:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Clear a pending interrupt */
+ 149:./Generated_Source/PSoC5/Volume_ADC.c ****     CyIntClearPending(Volume_ADC_INTC_NUMBER);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 6
+
+
+ 133              	 #12
+ 134 00ac 4FF00C00 		bl	CyIntClearPending
+ 135 00b0 FFF7FEFF 		.loc 1 150 0
+ 150:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 136              	d	r7, r7, #8
+ 137 00b4 07F10807 		mov	sp, r7
+ 138 00b8 BD46     		pop	{r7, pc}
+ 139 00ba 80BD     	.L6:
+ 140              		.align	2
+ 141              	.L5:
+ 142              		.word	Volume_ADC_initVar
+ 143 00bc 00000000 		.word	Volume_ADC_ISR
+ 144 00c0 00000000 		.word	1073764608
+ 145 00c4 00590040 		.word	1073764609
+ 146 00c8 01590040 		.word	1073764611
+ 147 00cc 03590040 		.word	1073759138
+ 148 00d0 A2430040 		.word	1073765159
+ 149 00d4 275B0040 		.word	1073759147
+ 150 00d8 AB430040 	.LFE2:
+ 151              		.size	Volume_ADC_Start, .-Volume_ADC_Start
+ 152              		.section	.text.Volume_ADC_SetRef,"ax",%progbits
+ 153              		.align	2
+ 154              		.global	Volume_ADC_SetRef
+ 155              		.thumb
+ 156              		.thumb_func
+ 157              		.type	Volume_ADC_SetRef, %function
+ 158              	Volume_ADC_SetRef:
+ 159              	.LFB3:
+ 160              		.loc 1 168 0
+ 151:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 152:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 153:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 154:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_SetRef
+ 155:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 156:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 157:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 158:./Generated_Source/PSoC5/Volume_ADC.c **** *   Sets reference for ADC
+ 159:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 160:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 161:./Generated_Source/PSoC5/Volume_ADC.c **** *  refMode: Reference configuration.
+ 162:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 163:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 164:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 165:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 166:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 167:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetRef(int8 refMode)
+ 168:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 161              	 frame = 16
+ 162              		@ frame_needed = 1, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164              		push	{r7}
+ 165 0000 80B4     	.LCFI3:
+ 166              		sub	sp, sp, #20
+ 167 0002 85B0     	.LCFI4:
+ 168              		add	r7, sp, #0
+ 169 0004 00AF     	.LCFI5:
+ 170              		@ lr needed for prologue
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 7
+
+
+ 171              		mov	r3, r0
+ 172 0006 0346     		strb	r3, [r7, #7]
+ 173 0008 FB71     		.loc 1 170 0
+ 169:./Generated_Source/PSoC5/Volume_ADC.c ****     uint8 tmpReg;
+ 170:./Generated_Source/PSoC5/Volume_ADC.c ****     if(refMode == Volume_ADC__VSSA_TO_VDDA)
+ 174              	7, #7]
+ 175 000a 97F90730 		cmp	r3, #1
+ 176 000e 012B     		bne	.L8
+ 177 0010 0BD1     		.loc 1 173 0
+ 171:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 172:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Use internal reference*/
+ 173:./Generated_Source/PSoC5/Volume_ADC.c ****         tmpReg = Volume_ADC_SAR_REF_S3_LSB_EN | Volume_ADC_SAR_REF_S4_LSB_EN;
+ 178              		r3, #24
+ 179 0012 4FF01803 		strb	r3, [r7, #15]
+ 180 0016 FB73     		.loc 1 175 0
+ 174:./Generated_Source/PSoC5/Volume_ADC.c ****         /*tmpReg = Volume_ADC_SAR_REF_S4_LSB_EN | Volume_ADC_SAR_REF_S7_LSB_EN;*/   /*IROS need upd
+ 175:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VREF_EN;    /* Enable Int Ref Amp*/
+ 181              	r	r2, .L12
+ 182 0018 0F4A     		ldr	r3, .L12
+ 183 001a 0F4B     		ldrb	r3, [r3, #0]
+ 184 001c 1B78     		uxtb	r3, r3
+ 185 001e DBB2     		orr	r3, r3, #1
+ 186 0020 43F00103 		uxtb	r3, r3
+ 187 0024 DBB2     		strb	r3, [r2, #0]
+ 188 0026 1370     		b	.L10
+ 189 0028 0AE0     	.L8:
+ 190              		.loc 1 182 0
+ 176:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 177:./Generated_Source/PSoC5/Volume_ADC.c ****     else
+ 178:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 179:./Generated_Source/PSoC5/Volume_ADC.c ****         switch (Volume_ADC_DEFAULT_REFERENCE)
+ 180:./Generated_Source/PSoC5/Volume_ADC.c ****         {
+ 181:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__INT_REF_NOT_BYPASSED:
+ 182:./Generated_Source/PSoC5/Volume_ADC.c ****                 tmpReg = Volume_ADC_SAR_REF_S3_LSB_EN | Volume_ADC_SAR_REF_S4_LSB_EN;
+ 191              	24
+ 192 002a 4FF01803 		strb	r3, [r7, #15]
+ 193 002e FB73     		.loc 1 183 0
+ 183:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VREF_EN; /* Enable Int Ref Amp*/
+ 194              	r	r2, .L12
+ 195 0030 094A     		ldr	r3, .L12
+ 196 0032 094B     		ldrb	r3, [r3, #0]
+ 197 0034 1B78     		uxtb	r3, r3
+ 198 0036 DBB2     		orr	r3, r3, #1
+ 199 0038 43F00103 		uxtb	r3, r3
+ 200 003c DBB2     		strb	r3, [r2, #0]
+ 201 003e 1370     	.L10:
+ 202              		.loc 1 201 0
+ 184:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 185:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__INT_REF_BYPASS:
+ 186:./Generated_Source/PSoC5/Volume_ADC.c ****                 tmpReg = Volume_ADC_SAR_REF_S2_LSB_EN | 
+ 187:./Generated_Source/PSoC5/Volume_ADC.c ****                          Volume_ADC_SAR_REF_S3_LSB_EN | 
+ 188:./Generated_Source/PSoC5/Volume_ADC.c ****                          Volume_ADC_SAR_REF_S4_LSB_EN;
+ 189:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VREF_EN; /* Enable Int Ref Amp*/
+ 190:./Generated_Source/PSoC5/Volume_ADC.c ****                 //Volume_ADC_SAR_CSR3 |= Volume_ADC_SAR_EN_BUF_VCM_EN;  /* Enable VCM Ref Amp*/
+ 191:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 192:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__EXT_REF:
+ 193:./Generated_Source/PSoC5/Volume_ADC.c ****                 tmpReg = Volume_ADC_SAR_REF_S2_LSB_EN;
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 8
+
+
+ 194:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_SAR_CSR3 &= ~Volume_ADC_SAR_EN_BUF_VREF_EN; /* Disable Int Ref Amp*/
+ 195:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 196:./Generated_Source/PSoC5/Volume_ADC.c ****             default:
+ 197:./Generated_Source/PSoC5/Volume_ADC.c ****                 /* if default case is hit, invalid argument was passed.*/
+ 198:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 199:./Generated_Source/PSoC5/Volume_ADC.c ****          }
+ 200:./Generated_Source/PSoC5/Volume_ADC.c ****      }
+ 201:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR6 = tmpReg;
+ 203              	.L12+4
+ 204 0040 064A     		ldrb	r3, [r7, #15]
+ 205 0042 FB7B     		strb	r3, [r2, #0]
+ 206 0044 1370     		.loc 1 202 0
+ 202:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR7 = Volume_ADC_SAR_REF_S_MSB_DIS;
+ 207              		r2, .L12+8
+ 208 0046 064A     		mov	r3, #0
+ 209 0048 4FF00003 		strb	r3, [r2, #0]
+ 210 004c 1370     		.loc 1 204 0
+ 203:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 204:./Generated_Source/PSoC5/Volume_ADC.c ****  }
+ 211              		r7, r7, #20
+ 212 004e 07F11407 		mov	sp, r7
+ 213 0052 BD46     		pop	{r7}
+ 214 0054 80BC     		bx	lr
+ 215 0056 7047     	.L13:
+ 216              		.align	2
+ 217              	.L12:
+ 218              		.word	1073764611
+ 219 0058 03590040 		.word	1073764614
+ 220 005c 06590040 		.word	1073764615
+ 221 0060 07590040 	.LFE3:
+ 222              		.size	Volume_ADC_SetRef, .-Volume_ADC_SetRef
+ 223              		.section	.text.Volume_ADC_Stop,"ax",%progbits
+ 224              		.align	2
+ 225              		.global	Volume_ADC_Stop
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.type	Volume_ADC_Stop, %function
+ 229              	Volume_ADC_Stop:
+ 230              	.LFB4:
+ 231              		.loc 1 222 0
+ 205:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 206:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 207:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 208:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_Stop
+ 209:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 210:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 211:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 212:./Generated_Source/PSoC5/Volume_ADC.c **** *  Stops and powers the SAR ADC component off.
+ 213:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 214:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 215:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 216:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 217:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 218:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 219:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 220:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 221:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_Stop(void)
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 9
+
+
+ 222:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 232              	= 0, frame = 0
+ 233              		@ frame_needed = 1, uses_anonymous_args = 0
+ 234              		push	{r7, lr}
+ 235 0000 80B5     	.LCFI6:
+ 236              		add	r7, sp, #0
+ 237 0002 00AF     	.LCFI7:
+ 238              		.loc 1 224 0
+ 223:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Stop all conversions */
+ 224:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR0 &= ~Volume_ADC_SAR_SOF_START_CONV;
+ 239              	, .L16
+ 240 0004 0C4A     		ldr	r3, .L16
+ 241 0006 0C4B     		ldrb	r3, [r3, #0]
+ 242 0008 1B78     		uxtb	r3, r3
+ 243 000a DBB2     		and	r3, r3, #254
+ 244 000c 03F0FE03 		strb	r3, [r2, #0]
+ 245 0010 1370     		.loc 1 227 0
+ 225:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 226:./Generated_Source/PSoC5/Volume_ADC.c ****          /* Disable power for ADC */
+ 227:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_PWRMGR_SAR &= ~Volume_ADC_ACT_PWR_SAR_EN;
+ 246              	, .L16+4
+ 247 0012 0A4A     		ldr	r3, .L16+4
+ 248 0014 094B     		ldrb	r3, [r3, #0]
+ 249 0016 1B78     		uxtb	r3, r3
+ 250 0018 DBB2     		and	r3, r3, #254
+ 251 001a 03F0FE03 		strb	r3, [r2, #0]
+ 252 001e 1370     		.loc 1 231 0
+ 228:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 229:./Generated_Source/PSoC5/Volume_ADC.c ****     /* This is only valid if there is an internal clock */
+ 230:./Generated_Source/PSoC5/Volume_ADC.c ****     #if(Volume_ADC_DEFAULT_INTERNAL_CLK)
+ 231:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_PWRMGR_CLK &= ~Volume_ADC_ACT_PWR_CLK_EN;
+ 253              	, .L16+8
+ 254 0020 074A     		ldr	r3, .L16+8
+ 255 0022 074B     		ldrb	r3, [r3, #0]
+ 256 0024 1B78     		uxtb	r3, r3
+ 257 0026 DBB2     		and	r3, r3, #254
+ 258 0028 03F0FE03 		strb	r3, [r2, #0]
+ 259 002c 1370     		.loc 1 232 0
+ 232:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_theACLK_Disable();
+ 260              	ume_ADC_theACLK_Stop
+ 261 002e FFF7FEFF 		.loc 1 235 0
+ 233:./Generated_Source/PSoC5/Volume_ADC.c ****     #endif /* End Volume_ADC_DEFAULT_INTERNAL_CLK */
+ 234:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 235:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 262              	ov	sp, r7
+ 263 0032 BD46     		pop	{r7, pc}
+ 264 0034 80BD     	.L17:
+ 265              		.align	2
+ 266 0036 C046     	.L16:
+ 267              		.word	1073764608
+ 268 0038 00590040 		.word	1073759147
+ 269 003c AB430040 		.word	1073759138
+ 270 0040 A2430040 	.LFE4:
+ 271              		.size	Volume_ADC_Stop, .-Volume_ADC_Stop
+ 272              		.section	.text.Volume_ADC_IRQ_Enable,"ax",%progbits
+ 273              		.align	2
+ 274              		.global	Volume_ADC_IRQ_Enable
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 10
+
+
+ 275              		.thumb
+ 276              		.thumb_func
+ 277              		.type	Volume_ADC_IRQ_Enable, %function
+ 278              	Volume_ADC_IRQ_Enable:
+ 279              	.LFB5:
+ 280              		.loc 1 255 0
+ 236:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 237:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 238:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 239:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_IRQ_Enable
+ 240:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 241:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 242:./Generated_Source/PSoC5/Volume_ADC.c **** *   Enables the interrupt.
+ 243:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 244:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 245:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 246:./Generated_Source/PSoC5/Volume_ADC.c **** *   void.
+ 247:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 248:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 249:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 250:./Generated_Source/PSoC5/Volume_ADC.c **** *   void.
+ 251:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 252:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 253:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 254:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_IRQ_Enable(void)
+ 255:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 281              	d = 0, frame = 0
+ 282              		@ frame_needed = 1, uses_anonymous_args = 0
+ 283              		push	{r7, lr}
+ 284 0000 80B5     	.LCFI8:
+ 285              		add	r7, sp, #0
+ 286 0002 00AF     	.LCFI9:
+ 287              		.loc 1 257 0
+ 256:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Enable the general interrupt. */
+ 257:./Generated_Source/PSoC5/Volume_ADC.c ****     CyIntEnable(Volume_ADC_INTC_NUMBER);
+ 288              	, #12
+ 289 0004 4FF00C00 		bl	CyIntEnable
+ 290 0008 FFF7FEFF 		.loc 1 258 0
+ 258:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 291              	v	sp, r7
+ 292 000c BD46     		pop	{r7, pc}
+ 293 000e 80BD     	.LFE5:
+ 294              		.size	Volume_ADC_IRQ_Enable, .-Volume_ADC_IRQ_Enable
+ 295              		.section	.text.Volume_ADC_IRQ_Disable,"ax",%progbits
+ 296              		.align	2
+ 297              		.global	Volume_ADC_IRQ_Disable
+ 298              		.thumb
+ 299              		.thumb_func
+ 300              		.type	Volume_ADC_IRQ_Disable, %function
+ 301              	Volume_ADC_IRQ_Disable:
+ 302              	.LFB6:
+ 303              		.loc 1 278 0
+ 259:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 260:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 261:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 262:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_IRQ_Disable
+ 263:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 11
+
+
+ 264:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 265:./Generated_Source/PSoC5/Volume_ADC.c **** *   Disables the Interrupt.
+ 266:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 267:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 268:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 269:./Generated_Source/PSoC5/Volume_ADC.c **** *   void.
+ 270:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 271:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 272:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 273:./Generated_Source/PSoC5/Volume_ADC.c **** *   void.
+ 274:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 275:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 276:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 277:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_IRQ_Disable(void)
+ 278:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 304              	pretend = 0, frame = 0
+ 305              		@ frame_needed = 1, uses_anonymous_args = 0
+ 306              		push	{r7, lr}
+ 307 0000 80B5     	.LCFI10:
+ 308              		add	r7, sp, #0
+ 309 0002 00AF     	.LCFI11:
+ 310              		.loc 1 280 0
+ 279:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Disable the general interrupt. */
+ 280:./Generated_Source/PSoC5/Volume_ADC.c ****     CyIntDisable(Volume_ADC_INTC_NUMBER);
+ 311              	, #12
+ 312 0004 4FF00C00 		bl	CyIntDisable
+ 313 0008 FFF7FEFF 		.loc 1 281 0
+ 281:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 314              	v	sp, r7
+ 315 000c BD46     		pop	{r7, pc}
+ 316 000e 80BD     	.LFE6:
+ 317              		.size	Volume_ADC_IRQ_Disable, .-Volume_ADC_IRQ_Disable
+ 318              		.section	.text.Volume_ADC_SetPower,"ax",%progbits
+ 319              		.align	2
+ 320              		.global	Volume_ADC_SetPower
+ 321              		.thumb
+ 322              		.thumb_func
+ 323              		.type	Volume_ADC_SetPower, %function
+ 324              	Volume_ADC_SetPower:
+ 325              	.LFB7:
+ 326              		.loc 1 303 0
+ 282:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 283:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 284:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 285:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_SetPower
+ 286:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 287:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 288:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 289:./Generated_Source/PSoC5/Volume_ADC.c **** *  Sets the Power mode.
+ 290:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 291:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 292:./Generated_Source/PSoC5/Volume_ADC.c **** *  power:  Power setting for ADC
+ 293:./Generated_Source/PSoC5/Volume_ADC.c **** *  0 ->    Normal
+ 294:./Generated_Source/PSoC5/Volume_ADC.c **** *  1 ->    Half power
+ 295:./Generated_Source/PSoC5/Volume_ADC.c **** *  2 ->    1/3rd power
+ 296:./Generated_Source/PSoC5/Volume_ADC.c **** *  3 ->    Quarter power.
+ 297:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 12
+
+
+ 298:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 299:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 300:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 301:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 302:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetPower(uint8 power)
+ 303:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 327              	pretend = 0, frame = 16
+ 328              		@ frame_needed = 1, uses_anonymous_args = 0
+ 329              		@ link register save eliminated.
+ 330              		push	{r7}
+ 331 0000 80B4     	.LCFI12:
+ 332              		sub	sp, sp, #20
+ 333 0002 85B0     	.LCFI13:
+ 334              		add	r7, sp, #0
+ 335 0004 00AF     	.LCFI14:
+ 336              		@ lr needed for prologue
+ 337              		mov	r3, r0
+ 338 0006 0346     		strb	r3, [r7, #7]
+ 339 0008 FB71     		.loc 1 307 0
+ 304:./Generated_Source/PSoC5/Volume_ADC.c ****     uint8 tmpReg;
+ 305:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 306:./Generated_Source/PSoC5/Volume_ADC.c ****     /* mask off invalid power settings */
+ 307:./Generated_Source/PSoC5/Volume_ADC.c ****     power &= ~Volume_ADC_SAR_API_POWER_MASK;
+ 340              	, #7]
+ 341 000a FB79     		bic	r3, r3, #3
+ 342 000c 23F00303 		strb	r3, [r7, #7]
+ 343 0010 FB71     		.loc 1 310 0
+ 308:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 309:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Set Power parameter  */
+ 310:./Generated_Source/PSoC5/Volume_ADC.c ****     tmpReg = Volume_ADC_SAR_CSR0 & ~Volume_ADC_SAR_POWER_MASK;
+ 344              		r3, .L24
+ 345 0012 0C4B     		ldrb	r3, [r3, #0]
+ 346 0014 1B78     		uxtb	r3, r3
+ 347 0016 DBB2     		and	r3, r3, #63
+ 348 0018 03F03F03 		strb	r3, [r7, #15]
+ 349 001c FB73     		.loc 1 311 0
+ 311:./Generated_Source/PSoC5/Volume_ADC.c ****     tmpReg |= (power << Volume_ADC_SAR_POWER_SHIFT);
+ 350              	r3, [r7, #7]	@ zero_extendqisi2
+ 351 001e FB79     		lsl	r3, r3, #6
+ 352 0020 4FEA8313 		uxtb	r3, r3
+ 353 0024 DBB2     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
+ 354 0026 FA7B     		mov	r1, r3
+ 355 0028 1946     		mov	r3, r2
+ 356 002a 1346     		orr	r3, r1, r3
+ 357 002c 41EA0303 		uxtb	r3, r3
+ 358 0030 DBB2     		strb	r3, [r7, #15]
+ 359 0032 FB73     		.loc 1 312 0
+ 312:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR0 = tmpReg;
+ 360              	L24
+ 361 0034 034A     		ldrb	r3, [r7, #15]
+ 362 0036 FB7B     		strb	r3, [r2, #0]
+ 363 0038 1370     		.loc 1 313 0
+ 313:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 364              		r7, r7, #20
+ 365 003a 07F11407 		mov	sp, r7
+ 366 003e BD46     		pop	{r7}
+ 367 0040 80BC     		bx	lr
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 13
+
+
+ 368 0042 7047     	.L25:
+ 369              		.align	2
+ 370              	.L24:
+ 371              		.word	1073764608
+ 372 0044 00590040 	.LFE7:
+ 373              		.size	Volume_ADC_SetPower, .-Volume_ADC_SetPower
+ 374              		.section	.text.Volume_ADC_SetResolution,"ax",%progbits
+ 375              		.align	2
+ 376              		.global	Volume_ADC_SetResolution
+ 377              		.thumb
+ 378              		.thumb_func
+ 379              		.type	Volume_ADC_SetResolution, %function
+ 380              	Volume_ADC_SetResolution:
+ 381              	.LFB8:
+ 382              		.loc 1 339 0
+ 314:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 315:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 316:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 317:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_SetResolution
+ 318:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 319:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 320:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 321:./Generated_Source/PSoC5/Volume_ADC.c **** *  Sets the Relution of the SAR.
+ 322:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 323:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 324:./Generated_Source/PSoC5/Volume_ADC.c **** *  resolution:
+ 325:./Generated_Source/PSoC5/Volume_ADC.c **** *  12 ->    RES12
+ 326:./Generated_Source/PSoC5/Volume_ADC.c **** *  10 ->    RES10
+ 327:./Generated_Source/PSoC5/Volume_ADC.c **** *  8  ->    RES8
+ 328:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 329:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 330:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 331:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 332:./Generated_Source/PSoC5/Volume_ADC.c **** * Theory:
+ 333:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 334:./Generated_Source/PSoC5/Volume_ADC.c **** * Side Effects:
+ 335:./Generated_Source/PSoC5/Volume_ADC.c **** *  This function calls CalcGain procedure to calculate new gain based on 
+ 336:./Generated_Source/PSoC5/Volume_ADC.c **** *  resolution 
+ 337:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 338:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetResolution(uint8 resolution)
+ 339:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 383              	d = 0, frame = 16
+ 384              		@ frame_needed = 1, uses_anonymous_args = 0
+ 385              		push	{r7, lr}
+ 386 0000 80B5     	.LCFI15:
+ 387              		sub	sp, sp, #16
+ 388 0002 84B0     	.LCFI16:
+ 389              		add	r7, sp, #0
+ 390 0004 00AF     	.LCFI17:
+ 391              		mov	r3, r0
+ 392 0006 0346     		strb	r3, [r7, #7]
+ 393 0008 FB71     		.loc 1 343 0
+ 340:./Generated_Source/PSoC5/Volume_ADC.c ****     uint8 tmpReg;
+ 341:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 342:./Generated_Source/PSoC5/Volume_ADC.c ****     /*Set SAR ADC resolution ADC */
+ 343:./Generated_Source/PSoC5/Volume_ADC.c ****     switch (resolution)
+ 394              	r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 14
+
+
+ 395 000a FB79     		str	r3, [r7, #0]
+ 396 000c 3B60     		ldr	r3, [r7, #0]
+ 397 000e 3B68     		cmp	r3, #10
+ 398 0010 0A2B     		beq	.L29
+ 399 0012 0AD0     		ldr	r3, [r7, #0]
+ 400 0014 3B68     		cmp	r3, #12
+ 401 0016 0C2B     		beq	.L30
+ 402 0018 03D0     		ldr	r3, [r7, #0]
+ 403 001a 3B68     		cmp	r3, #8
+ 404 001c 082B     		beq	.L28
+ 405 001e 08D0     		b	.L27
+ 406 0020 0AE0     	.L30:
+ 407              		.loc 1 346 0
+ 344:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 345:./Generated_Source/PSoC5/Volume_ADC.c ****         case Volume_ADC__BITS_12:
+ 346:./Generated_Source/PSoC5/Volume_ADC.c ****             tmpReg = Volume_ADC_SAR_RESOLUTION_12BIT;
+ 408              	strb	r3, [r7, #15]
+ 409 0022 6FF03F03 		.loc 1 347 0
+ 410 0026 FB73     		b	.L27
+ 347:./Generated_Source/PSoC5/Volume_ADC.c ****             break;
+ 411              	9:
+ 412 0028 06E0     		.loc 1 349 0
+ 413              		mvn	r3, #127
+ 348:./Generated_Source/PSoC5/Volume_ADC.c ****         case Volume_ADC__BITS_10:
+ 349:./Generated_Source/PSoC5/Volume_ADC.c ****             tmpReg = Volume_ADC_SAR_RESOLUTION_10BIT;
+ 414              	rb	r3, [r7, #15]
+ 415 002a 6FF07F03 		.loc 1 350 0
+ 416 002e FB73     		b	.L27
+ 350:./Generated_Source/PSoC5/Volume_ADC.c ****             break;
+ 417              	8:
+ 418 0030 02E0     		.loc 1 352 0
+ 419              		mov	r3, #64
+ 351:./Generated_Source/PSoC5/Volume_ADC.c ****         case Volume_ADC__BITS_8:
+ 352:./Generated_Source/PSoC5/Volume_ADC.c ****             tmpReg = Volume_ADC_SAR_RESOLUTION_8BIT;
+ 420              	rb	r3, [r7, #15]
+ 421 0032 4FF04003 	.L27:
+ 422 0036 FB73     		.loc 1 359 0
+ 423              		ldrb	r3, [r7, #15]
+ 353:./Generated_Source/PSoC5/Volume_ADC.c ****             break;
+ 354:./Generated_Source/PSoC5/Volume_ADC.c ****         default:
+ 355:./Generated_Source/PSoC5/Volume_ADC.c ****             /* if default case is hit, invalid argument was passed.*/
+ 356:./Generated_Source/PSoC5/Volume_ADC.c ****             break;
+ 357:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 358:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 359:./Generated_Source/PSoC5/Volume_ADC.c ****      tmpReg |= Volume_ADC_SAR_SAMPLE_WIDTH;   /* 17 conversion cycles @ 12bits + 1 gap*/
+ 424              		r3, r3, #4
+ 425 0038 FB7B     		strb	r3, [r7, #15]
+ 426 003a 43F00403 		.loc 1 360 0
+ 427 003e FB73     		ldr	r2, .L32
+ 360:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR2 = tmpReg;
+ 428              	b	r3, [r7, #15]
+ 429 0040 054A     		strb	r3, [r2, #0]
+ 430 0042 FB7B     		.loc 1 363 0
+ 431 0044 1370     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 361:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 362:./Generated_Source/PSoC5/Volume_ADC.c ****      /* Calculate gain for convert counts to volts */
+ 363:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_CalcGain(resolution);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 15
+
+
+ 432              		r0, r3
+ 433 0046 FB79     		bl	Volume_ADC_CalcGain
+ 434 0048 1846     		.loc 1 365 0
+ 435 004a FFF7FEFF 		add	r7, r7, #16
+ 364:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 365:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 436              		sp, r7
+ 437 004e 07F11007 		pop	{r7, pc}
+ 438 0052 BD46     	.L33:
+ 439 0054 80BD     		.align	2
+ 440              	.L32:
+ 441 0056 C046     		.word	1073764610
+ 442              	.LFE8:
+ 443 0058 02590040 		.size	Volume_ADC_SetResolution, .-Volume_ADC_SetResolution
+ 444              		.section	.text.Volume_ADC_StartConvert,"ax",%progbits
+ 445              		.align	2
+ 446              		.global	Volume_ADC_StartConvert
+ 447              		.thumb
+ 448              		.thumb_func
+ 449              		.type	Volume_ADC_StartConvert, %function
+ 450              	Volume_ADC_StartConvert:
+ 451              	.LFB9:
+ 452              		.loc 1 391 0
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 366:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 367:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 368:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 369:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_StartConvert
+ 370:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 371:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 372:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 373:./Generated_Source/PSoC5/Volume_ADC.c **** *  Starts ADC conversion using the given mode.
+ 374:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 375:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 376:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 377:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 378:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 379:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 380:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 381:./Generated_Source/PSoC5/Volume_ADC.c **** * Theory:
+ 382:./Generated_Source/PSoC5/Volume_ADC.c **** *  Forces the ADC to initiate a conversion. In Free Running mode, the ADC will 
+ 383:./Generated_Source/PSoC5/Volume_ADC.c **** *  run continuously. In a triggered mode the function also acts as a software
+ 384:./Generated_Source/PSoC5/Volume_ADC.c **** *  version of the SOC. Here every conversion has to be triggered by the routine. 
+ 385:./Generated_Source/PSoC5/Volume_ADC.c **** *  This writes into the SOC bit in SAR_CTRL reg.
+ 386:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 387:./Generated_Source/PSoC5/Volume_ADC.c **** * Side Effects:
+ 388:./Generated_Source/PSoC5/Volume_ADC.c **** *  
+ 389:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 390:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_StartConvert(void)
+ 391:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 454              	1, uses_anonymous_args = 0
+ 455              		@ link register save eliminated.
+ 456              		push	{r7}
+ 457              	.LCFI18:
+ 458 0000 80B4     		add	r7, sp, #0
+ 459              	.LCFI19:
+ 460 0002 00AF     		@ lr needed for prologue
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 16
+
+
+ 461              		.loc 1 398 0
+ 462              		ldr	r2, .L36
+ 392:./Generated_Source/PSoC5/Volume_ADC.c ****     if(Volume_ADC_DEFAULT_CONV_MODE)                /* If triggered mode */
+ 393:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 394:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SAR_CSR0 &= ~Volume_ADC_SAR_MX_SOF_UDB;   /* source: SOF bit */
+ 395:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 396:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 397:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Start the conversion */
+ 398:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR0 |= Volume_ADC_SAR_SOF_START_CONV;
+ 463              	.L36
+ 464 0004 054A     		ldrb	r3, [r3, #0]
+ 465 0006 054B     		uxtb	r3, r3
+ 466 0008 1B78     		orr	r3, r3, #1
+ 467 000a DBB2     		uxtb	r3, r3
+ 468 000c 43F00103 		strb	r3, [r2, #0]
+ 469 0010 DBB2     		.loc 1 400 0
+ 470 0012 1370     		mov	sp, r7
+ 399:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 400:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 471              	}
+ 472 0014 BD46     		bx	lr
+ 473 0016 80BC     	.L37:
+ 474 0018 7047     		.align	2
+ 475              	.L36:
+ 476 001a C046     		.word	1073764608
+ 477              	.LFE9:
+ 478 001c 00590040 		.size	Volume_ADC_StartConvert, .-Volume_ADC_StartConvert
+ 479              		.section	.text.Volume_ADC_StopConvert,"ax",%progbits
+ 480              		.align	2
+ 481              		.global	Volume_ADC_StopConvert
+ 482              		.thumb
+ 483              		.thumb_func
+ 484              		.type	Volume_ADC_StopConvert, %function
+ 485              	Volume_ADC_StopConvert:
+ 486              	.LFB10:
+ 487              		.loc 1 426 0
+ 488              		@ args = 0, pretend = 0, frame = 0
+ 401:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 402:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 403:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 404:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_StopConvert
+ 405:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 406:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 407:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 408:./Generated_Source/PSoC5/Volume_ADC.c **** *  Stops ADC conversion using the given mode.
+ 409:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 410:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 411:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 412:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 413:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 414:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 415:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 416:./Generated_Source/PSoC5/Volume_ADC.c **** * Theory:
+ 417:./Generated_Source/PSoC5/Volume_ADC.c **** *  Stops ADC conversion in Free Running mode. 
+ 418:./Generated_Source/PSoC5/Volume_ADC.c **** *  In a triggered mode the function set a software version of the SOC to low level
+ 419:./Generated_Source/PSoC5/Volume_ADC.c **** *  and return SOF source to hardware SOF signal.
+ 420:./Generated_Source/PSoC5/Volume_ADC.c **** *  This writes into the SOC bit in SAR_CTRL reg.
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 17
+
+
+ 421:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 422:./Generated_Source/PSoC5/Volume_ADC.c **** * Side Effects:
+ 423:./Generated_Source/PSoC5/Volume_ADC.c **** *  
+ 424:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 425:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_StopConvert(void)
+ 426:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 489              	1, uses_anonymous_args = 0
+ 490              		@ link register save eliminated.
+ 491              		push	{r7}
+ 492              	.LCFI20:
+ 493 0000 80B4     		add	r7, sp, #0
+ 494              	.LCFI21:
+ 495 0002 00AF     		@ lr needed for prologue
+ 496              		.loc 1 428 0
+ 497              		ldr	r2, .L40
+ 427:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Stop all conversions */
+ 428:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_SAR_CSR0 &= ~Volume_ADC_SAR_SOF_START_CONV;
+ 498              	.L40
+ 499 0004 044A     		ldrb	r3, [r3, #0]
+ 500 0006 044B     		uxtb	r3, r3
+ 501 0008 1B78     		and	r3, r3, #254
+ 502 000a DBB2     		strb	r3, [r2, #0]
+ 503 000c 03F0FE03 		.loc 1 436 0
+ 504 0010 1370     		mov	sp, r7
+ 429:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 430:./Generated_Source/PSoC5/Volume_ADC.c ****     if(Volume_ADC_DEFAULT_CONV_MODE)                /* If triggered mode */
+ 431:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 432:./Generated_Source/PSoC5/Volume_ADC.c ****         /* Return source to UDB for hardware SOF signal */
+ 433:./Generated_Source/PSoC5/Volume_ADC.c ****         Volume_ADC_SAR_CSR0 |= Volume_ADC_SAR_MX_SOF_UDB;    /* source: UDB */
+ 434:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 435:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 436:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 505              	7}
+ 506 0012 BD46     		bx	lr
+ 507 0014 80BC     	.L41:
+ 508 0016 7047     		.align	2
+ 509              	.L40:
+ 510              		.word	1073764608
+ 511              	.LFE10:
+ 512 0018 00590040 		.size	Volume_ADC_StopConvert, .-Volume_ADC_StopConvert
+ 513              		.section	.text.Volume_ADC_IsEndConversion,"ax",%progbits
+ 514              		.align	2
+ 515              		.global	Volume_ADC_IsEndConversion
+ 516              		.thumb
+ 517              		.thumb_func
+ 518              		.type	Volume_ADC_IsEndConversion, %function
+ 519              	Volume_ADC_IsEndConversion:
+ 520              	.LFB11:
+ 521              		.loc 1 457 0
+ 522              		@ args = 0, pretend = 0, frame = 16
+ 437:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 438:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 439:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 440:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_IsEndConversion
+ 441:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 442:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 443:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 18
+
+
+ 444:./Generated_Source/PSoC5/Volume_ADC.c **** *  Queries the ADC to see if conversion is complete
+ 445:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 446:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 447:./Generated_Source/PSoC5/Volume_ADC.c **** *  retMode:  Wait mode,
+ 448:./Generated_Source/PSoC5/Volume_ADC.c **** *   0 if return with answer imediately.
+ 449:./Generated_Source/PSoC5/Volume_ADC.c **** *   1 if wait until conversion is complete, then return.
+ 450:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 451:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 452:./Generated_Source/PSoC5/Volume_ADC.c **** *  (uint8)  0 =>  Conversion not complete.
+ 453:./Generated_Source/PSoC5/Volume_ADC.c **** *           1 =>  Conversion complete.
+ 454:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 455:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 456:./Generated_Source/PSoC5/Volume_ADC.c **** uint8 Volume_ADC_IsEndConversion(uint8 retMode)
+ 457:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 523              	1, uses_anonymous_args = 0
+ 524              		@ link register save eliminated.
+ 525              		push	{r7}
+ 526              	.LCFI22:
+ 527 0000 80B4     		sub	sp, sp, #20
+ 528              	.LCFI23:
+ 529 0002 85B0     		add	r7, sp, #0
+ 530              	.LCFI24:
+ 531 0004 00AF     		@ lr needed for prologue
+ 532              		mov	r3, r0
+ 533              		strb	r3, [r7, #7]
+ 534 0006 0346     	.L43:
+ 535 0008 FB71     		.loc 1 462 0
+ 536              		ldr	r3, .L47
+ 458:./Generated_Source/PSoC5/Volume_ADC.c ****     uint8 status;
+ 459:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 460:./Generated_Source/PSoC5/Volume_ADC.c ****     do
+ 461:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 462:./Generated_Source/PSoC5/Volume_ADC.c ****         status = Volume_ADC_SAR_CSR1 & Volume_ADC_SAR_EOF_1;
+ 537              	 #0]
+ 538 000a 094B     		uxtb	r3, r3
+ 539 000c 1B78     		and	r3, r3, #1
+ 540 000e DBB2     		strb	r3, [r7, #15]
+ 541 0010 03F00103 		.loc 1 463 0
+ 542 0014 FB73     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 463:./Generated_Source/PSoC5/Volume_ADC.c ****     } while ((status != Volume_ADC_SAR_EOF_1) && (retMode == Volume_ADC_WAIT_FOR_RESULT));
+ 543              	3, #1
+ 544 0016 FB7B     		beq	.L44
+ 545 0018 012B     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 546 001a 02D0     		cmp	r3, #0
+ 547 001c FB79     		beq	.L43
+ 548 001e 002B     	.L44:
+ 549 0020 F3D0     		.loc 1 465 0
+ 550              		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 464:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 465:./Generated_Source/PSoC5/Volume_ADC.c ****     return(status);
+ 551              	466 0
+ 552 0022 FB7B     		mov	r0, r3
+ 466:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 553              	dd	r7, r7, #20
+ 554 0024 1846     		mov	sp, r7
+ 555 0026 07F11407 		pop	{r7}
+ 556 002a BD46     		bx	lr
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 19
+
+
+ 557 002c 80BC     	.L48:
+ 558 002e 7047     		.align	2
+ 559              	.L47:
+ 560              		.word	1073764609
+ 561              	.LFE11:
+ 562 0030 01590040 		.size	Volume_ADC_IsEndConversion, .-Volume_ADC_IsEndConversion
+ 563              		.section	.text.Volume_ADC_GetResult8,"ax",%progbits
+ 564              		.align	2
+ 565              		.global	Volume_ADC_GetResult8
+ 566              		.thumb
+ 567              		.thumb_func
+ 568              		.type	Volume_ADC_GetResult8, %function
+ 569              	Volume_ADC_GetResult8:
+ 570              	.LFB12:
+ 571              		.loc 1 484 0
+ 572              		@ args = 0, pretend = 0, frame = 0
+ 467:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 468:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 469:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 470:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_GetResult8
+ 471:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 472:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 473:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 474:./Generated_Source/PSoC5/Volume_ADC.c **** *  Returns an 8-bit result or the LSB of the last conversion.
+ 475:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 476:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 477:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 478:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 479:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 480:./Generated_Source/PSoC5/Volume_ADC.c **** *  ADC result.
+ 481:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 482:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 483:./Generated_Source/PSoC5/Volume_ADC.c **** int8 Volume_ADC_GetResult8( void )
+ 484:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 573              	 uses_anonymous_args = 0
+ 574              		@ link register save eliminated.
+ 575              		push	{r7}
+ 576              	.LCFI25:
+ 577 0000 80B4     		add	r7, sp, #0
+ 578              	.LCFI26:
+ 579 0002 00AF     		@ lr needed for prologue
+ 580              		.loc 1 485 0
+ 581              		ldr	r3, .L51
+ 485:./Generated_Source/PSoC5/Volume_ADC.c ****     return( Volume_ADC_SAR_WRK0 );
+ 582              	 [r3, #0]
+ 583 0004 034B     		uxtb	r3, r3
+ 584 0006 1B78     		sxtb	r3, r3
+ 585 0008 DBB2     		.loc 1 486 0
+ 586 000a 5BB2     		mov	r0, r3
+ 486:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 587              	sp, r7
+ 588 000c 1846     		pop	{r7}
+ 589 000e BD46     		bx	lr
+ 590 0010 80BC     	.L52:
+ 591 0012 7047     		.align	2
+ 592              	.L51:
+ 593              		.word	1073765280
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 20
+
+
+ 594              	.LFE12:
+ 595 0014 A05B0040 		.size	Volume_ADC_GetResult8, .-Volume_ADC_GetResult8
+ 596              		.section	.text.Volume_ADC_GetResult16,"ax",%progbits
+ 597              		.align	2
+ 598              		.global	Volume_ADC_GetResult16
+ 599              		.thumb
+ 600              		.thumb_func
+ 601              		.type	Volume_ADC_GetResult16, %function
+ 602              	Volume_ADC_GetResult16:
+ 603              	.LFB13:
+ 604              		.loc 1 504 0
+ 605              		@ args = 0, pretend = 0, frame = 0
+ 487:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 488:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 489:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 490:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_GetResult16
+ 491:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 492:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 493:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 494:./Generated_Source/PSoC5/Volume_ADC.c **** *  Gets the data available in the SAR DATA registers.
+ 495:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 496:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 497:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 498:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 499:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 500:./Generated_Source/PSoC5/Volume_ADC.c **** *  ADC result. WORD value which has the converted 12bits.
+ 501:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 502:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 503:./Generated_Source/PSoC5/Volume_ADC.c **** int16 Volume_ADC_GetResult16( void )
+ 504:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 606              	, uses_anonymous_args = 0
+ 607              		@ link register save eliminated.
+ 608              		push	{r7}
+ 609              	.LCFI27:
+ 610 0000 80B4     		add	r7, sp, #0
+ 611              	.LCFI28:
+ 612 0002 00AF     		@ lr needed for prologue
+ 613              		.loc 1 505 0
+ 614              		ldr	r3, .L55
+ 505:./Generated_Source/PSoC5/Volume_ADC.c ****     return( (Volume_ADC_SAR_WRK1 << 8 ) | Volume_ADC_SAR_WRK0 );
+ 615              	 [r3, #0]
+ 616 0004 084B     		uxtb	r3, r3
+ 617 0006 1B78     		lsl	r3, r3, #8
+ 618 0008 DBB2     		uxth	r2, r3
+ 619 000a 4FEA0323 		ldr	r3, .L55+4
+ 620 000e 9AB2     		ldrb	r3, [r3, #0]
+ 621 0010 064B     		uxtb	r3, r3
+ 622 0012 1B78     		orr	r3, r2, r3
+ 623 0014 DBB2     		uxth	r3, r3
+ 624 0016 42EA0303 		sxth	r3, r3
+ 625 001a 9BB2     		.loc 1 506 0
+ 626 001c 1BB2     		mov	r0, r3
+ 506:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 627              		pop	{r7}
+ 628 001e 1846     		bx	lr
+ 629 0020 BD46     	.L56:
+ 630 0022 80BC     		.align	2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 21
+
+
+ 631 0024 7047     	.L55:
+ 632              		.word	1073765281
+ 633 0026 C046     		.word	1073765280
+ 634              	.LFE13:
+ 635 0028 A15B0040 		.size	Volume_ADC_GetResult16, .-Volume_ADC_GetResult16
+ 636 002c A05B0040 		.section	.text.Volume_ADC_SetOffset,"ax",%progbits
+ 637              		.align	2
+ 638              		.global	Volume_ADC_SetOffset
+ 639              		.thumb
+ 640              		.thumb_func
+ 641              		.type	Volume_ADC_SetOffset, %function
+ 642              	Volume_ADC_SetOffset:
+ 643              	.LFB14:
+ 644              		.loc 1 524 0
+ 645              		@ args = 0, pretend = 0, frame = 8
+ 646              		@ frame_needed = 1, uses_anonymous_args = 0
+ 507:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 508:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 509:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 510:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_SetOffset
+ 511:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 512:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 513:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 514:./Generated_Source/PSoC5/Volume_ADC.c **** *  This function sets the offset for voltage readings.
+ 515:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 516:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 517:./Generated_Source/PSoC5/Volume_ADC.c **** *  int16  offset  Offset in counts
+ 518:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 519:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 520:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 521:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 522:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 523:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetOffset(int16 offset)
+ 524:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 647              	e eliminated.
+ 648              		push	{r7}
+ 649              	.LCFI29:
+ 650              		sub	sp, sp, #12
+ 651 0000 80B4     	.LCFI30:
+ 652              		add	r7, sp, #0
+ 653 0002 83B0     	.LCFI31:
+ 654              		@ lr needed for prologue
+ 655 0004 00AF     		mov	r3, r0
+ 656              		strh	r3, [r7, #6]	@ movhi
+ 657              		.loc 1 526 0
+ 658 0006 0346     		ldr	r2, .L59
+ 659 0008 FB80     		ldrh	r3, [r7, #6]	@ movhi
+ 525:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 526:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_Offset = offset;
+ 660              	, #0]	@ movhi
+ 661 000a 044A     		.loc 1 527 0
+ 662 000c FB88     		add	r7, r7, #12
+ 663 000e 1380     		mov	sp, r7
+ 527:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 664              		{r7}
+ 665 0010 07F10C07 		bx	lr
+ 666 0014 BD46     	.L60:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 22
+
+
+ 667 0016 80BC     		.align	2
+ 668 0018 7047     	.L59:
+ 669              		.word	Volume_ADC_Offset
+ 670 001a C046     	.LFE14:
+ 671              		.size	Volume_ADC_SetOffset, .-Volume_ADC_SetOffset
+ 672 001c 00000000 		.section	.text.Volume_ADC_CalcGain,"ax",%progbits
+ 673              		.align	2
+ 674              		.global	Volume_ADC_CalcGain
+ 675              		.thumb
+ 676              		.thumb_func
+ 677              		.type	Volume_ADC_CalcGain, %function
+ 678              	Volume_ADC_CalcGain:
+ 679              	.LFB15:
+ 680              		.loc 1 545 0
+ 681              		@ args = 0, pretend = 0, frame = 16
+ 682              		@ frame_needed = 1, uses_anonymous_args = 0
+ 528:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 529:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 530:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 531:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_CalcGain
+ 532:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 533:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 534:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 535:./Generated_Source/PSoC5/Volume_ADC.c **** *  This function calculates the ADC gain in counts per volt.
+ 536:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 537:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 538:./Generated_Source/PSoC5/Volume_ADC.c **** *  uint8: resolution
+ 539:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 540:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 541:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 542:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 543:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 544:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_CalcGain( uint8 resolution )
+ 545:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 683              	ve eliminated.
+ 684              		push	{r7}
+ 685              	.LCFI32:
+ 686              		sub	sp, sp, #20
+ 687 0000 80B4     	.LCFI33:
+ 688              		add	r7, sp, #0
+ 689 0002 85B0     	.LCFI34:
+ 690              		@ lr needed for prologue
+ 691 0004 00AF     		mov	r3, r0
+ 692              		strb	r3, [r7, #7]
+ 693              		.loc 1 546 0
+ 694 0006 0346     		movw	r3, #4095
+ 695 0008 FB71     		str	r3, [r7, #8]
+ 546:./Generated_Source/PSoC5/Volume_ADC.c ****     uint32 counts = 0xFFF; /*default 12 bits*/
+ 696              	
+ 697 000a 40F6FF73 		mov	r3, #2048
+ 698 000e BB60     		strh	r3, [r7, #14]	@ movhi
+ 547:./Generated_Source/PSoC5/Volume_ADC.c ****     uint16 diff_zero = 0x800;
+ 699              	loc 1 549 0
+ 700 0010 4FF40063 		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 701 0014 FB81     		cmp	r3, #10
+ 548:./Generated_Source/PSoC5/Volume_ADC.c ****     
+ 549:./Generated_Source/PSoC5/Volume_ADC.c ****     if(resolution == Volume_ADC__BITS_10)
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 23
+
+
+ 702              	e	.L62
+ 703 0016 FB79     		.loc 1 551 0
+ 704 0018 0A2B     		ldr	r3, [r7, #8]
+ 705 001a 07D1     		lsr	r3, r3, #2
+ 550:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 551:./Generated_Source/PSoC5/Volume_ADC.c ****         counts >>= 2;
+ 706              		r3, [r7, #8]
+ 707 001c BB68     		.loc 1 552 0
+ 708 001e 4FEA9303 		ldrh	r3, [r7, #14]
+ 709 0022 BB60     		lsr	r3, r3, #2
+ 552:./Generated_Source/PSoC5/Volume_ADC.c ****         diff_zero >>= 2;
+ 710              	h	r3, [r7, #14]	@ movhi
+ 711 0024 FB89     	.L62:
+ 712 0026 4FEA9303 		.loc 1 554 0
+ 713 002a FB81     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 714              		cmp	r3, #8
+ 553:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 554:./Generated_Source/PSoC5/Volume_ADC.c ****     if(resolution == Volume_ADC__BITS_8)
+ 715              	.L64
+ 716 002c FB79     		.loc 1 556 0
+ 717 002e 082B     		ldr	r3, [r7, #8]
+ 718 0030 07D1     		lsr	r3, r3, #4
+ 555:./Generated_Source/PSoC5/Volume_ADC.c ****     {
+ 556:./Generated_Source/PSoC5/Volume_ADC.c ****         counts >>= 4;
+ 719              		r3, [r7, #8]
+ 720 0032 BB68     		.loc 1 557 0
+ 721 0034 4FEA1313 		ldrh	r3, [r7, #14]
+ 722 0038 BB60     		lsr	r3, r3, #4
+ 557:./Generated_Source/PSoC5/Volume_ADC.c ****         diff_zero >>= 4;
+ 723              	h	r3, [r7, #14]	@ movhi
+ 724 003a FB89     	.L64:
+ 725 003c 4FEA1313 		.loc 1 559 0
+ 726 0040 FB81     		ldr	r1, [r7, #8]
+ 727              		mov	r3, r1
+ 558:./Generated_Source/PSoC5/Volume_ADC.c ****     }
+ 559:./Generated_Source/PSoC5/Volume_ADC.c ****     counts *= 1000; /* To avoid float point arithmetic*/
+ 728              	r2, r3, #2
+ 729 0042 B968     		lsl	r3, r2, #5
+ 730 0044 0B46     		rsb	r3, r2, r3
+ 731 0046 4FEA8302 		add	r3, r3, r1
+ 732 004a 4FEA4213 		lsl	r3, r3, #3
+ 733 004e C2EB0303 		str	r3, [r7, #8]
+ 734 0052 0B44     		.loc 1 569 0
+ 735 0054 4FEAC303 		ldr	r3, [r7, #8]
+ 736 0058 BB60     		lsr	r2, r3, #2
+ 560:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 561:./Generated_Source/PSoC5/Volume_ADC.c ****         switch (Volume_ADC_DEFAULT_RANGE)
+ 562:./Generated_Source/PSoC5/Volume_ADC.c ****         {   /*TODO: use float point when it will be available*/
+ 563:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSS_TO_VREF:
+ 564:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV / 2;
+ 565:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = 0;
+ 566:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 567:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 568:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSSA_TO_VDDA:
+ 569:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV;
+ 737              	.L67
+ 738 005a BB68     		umull	r1, r3, r3, r2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 24
+
+
+ 739 005c 4FEA9302 		lsr	r3, r3, #6
+ 740 0060 084B     		uxth	r3, r3
+ 741 0062 A3FB0213 		ldr	r2, .L67+4
+ 742 0066 4FEA9313 		strh	r3, [r2, #0]	@ movhi
+ 743 006a 9BB2     		.loc 1 570 0
+ 744 006c 064A     		ldr	r2, .L67+8
+ 745 006e 1380     		mov	r3, #0
+ 570:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = 0;
+ 746              	 [r2, #0]	@ movhi
+ 747 0070 064A     		.loc 1 602 0
+ 748 0072 4FF00003 		add	r7, r7, #20
+ 749 0076 1380     		mov	sp, r7
+ 571:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 572:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 573:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VSSA_TO_VDAC:
+ 574:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV / 2;
+ 575:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = 0;
+ 576:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 577:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 578:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VREF_DIFF:
+ 579:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV / 2;
+ 580:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = diff_zero;
+ 581:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 582:./Generated_Source/PSoC5/Volume_ADC.c ****                 
+ 583:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDDA_DIFF:
+ 584:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV / 2;
+ 585:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = diff_zero;
+ 586:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 587:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 588:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDDA_2_DIFF:
+ 589:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV;
+ 590:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = diff_zero;
+ 591:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 592:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 593:./Generated_Source/PSoC5/Volume_ADC.c ****             case Volume_ADC__VNEG_VDAC_DIFF:
+ 594:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_CountsPerVolt = counts / Volume_ADC_DEFAULT_REF_VOLTAGE_MV / 2;
+ 595:./Generated_Source/PSoC5/Volume_ADC.c ****                 Volume_ADC_Offset = diff_zero;
+ 596:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 597:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 598:./Generated_Source/PSoC5/Volume_ADC.c ****             default:
+ 599:./Generated_Source/PSoC5/Volume_ADC.c ****                 /* if default case is hit, invalid argument was passed.*/
+ 600:./Generated_Source/PSoC5/Volume_ADC.c ****                 break;
+ 601:./Generated_Source/PSoC5/Volume_ADC.c ****          }
+ 602:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 750              		{r7}
+ 751 0078 07F11407 		bx	lr
+ 752 007c BD46     	.L68:
+ 753 007e 80BC     		.align	2
+ 754 0080 7047     	.L67:
+ 755              		.word	297165305
+ 756 0082 C046     		.word	Volume_ADC_CountsPerVolt
+ 757              		.word	Volume_ADC_Offset
+ 758 0084 F961B611 	.LFE15:
+ 759 0088 00000000 		.size	Volume_ADC_CalcGain, .-Volume_ADC_CalcGain
+ 760 008c 00000000 		.section	.text.Volume_ADC_SetGain,"ax",%progbits
+ 761              		.align	2
+ 762              		.global	Volume_ADC_SetGain
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 25
+
+
+ 763              		.thumb
+ 764              		.thumb_func
+ 765              		.type	Volume_ADC_SetGain, %function
+ 766              	Volume_ADC_SetGain:
+ 767              	.LFB16:
+ 768              		.loc 1 620 0
+ 769              		@ args = 0, pretend = 0, frame = 8
+ 770              		@ frame_needed = 1, uses_anonymous_args = 0
+ 603:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 604:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 605:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 606:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_SetGain
+ 607:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 608:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 609:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 610:./Generated_Source/PSoC5/Volume_ADC.c **** *  This function sets the ADC gain in counts per volt.
+ 611:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 612:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 613:./Generated_Source/PSoC5/Volume_ADC.c **** *  int16  adcGain  counts per volt
+ 614:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 615:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 616:./Generated_Source/PSoC5/Volume_ADC.c **** *  void
+ 617:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 618:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 619:./Generated_Source/PSoC5/Volume_ADC.c **** void Volume_ADC_SetGain(int16 adcGain)
+ 620:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 771              	 eliminated.
+ 772              		push	{r7}
+ 773              	.LCFI35:
+ 774              		sub	sp, sp, #12
+ 775 0000 80B4     	.LCFI36:
+ 776              		add	r7, sp, #0
+ 777 0002 83B0     	.LCFI37:
+ 778              		@ lr needed for prologue
+ 779 0004 00AF     		mov	r3, r0
+ 780              		strh	r3, [r7, #6]	@ movhi
+ 781              		.loc 1 622 0
+ 782 0006 0346     		ldr	r2, .L71
+ 783 0008 FB80     		ldrh	r3, [r7, #6]	@ movhi
+ 621:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 622:./Generated_Source/PSoC5/Volume_ADC.c ****     Volume_ADC_CountsPerVolt = adcGain;
+ 784              	, #0]	@ movhi
+ 785 000a 044A     		.loc 1 623 0
+ 786 000c FB88     		add	r7, r7, #12
+ 787 000e 1380     		mov	sp, r7
+ 623:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 788              		{r7}
+ 789 0010 07F10C07 		bx	lr
+ 790 0014 BD46     	.L72:
+ 791 0016 80BC     		.align	2
+ 792 0018 7047     	.L71:
+ 793              		.word	Volume_ADC_CountsPerVolt
+ 794 001a C046     	.LFE16:
+ 795              		.size	Volume_ADC_SetGain, .-Volume_ADC_SetGain
+ 796 001c 00000000 		.section	.text.Volume_ADC_CountsTo_mVolts,"ax",%progbits
+ 797              		.align	2
+ 798              		.global	Volume_ADC_CountsTo_mVolts
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 26
+
+
+ 799              		.thumb
+ 800              		.thumb_func
+ 801              		.type	Volume_ADC_CountsTo_mVolts, %function
+ 802              	Volume_ADC_CountsTo_mVolts:
+ 803              	.LFB17:
+ 804              		.loc 1 641 0
+ 805              		@ args = 0, pretend = 0, frame = 16
+ 806              		@ frame_needed = 1, uses_anonymous_args = 0
+ 624:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 625:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 626:./Generated_Source/PSoC5/Volume_ADC.c **** /*******************************************************************************
+ 627:./Generated_Source/PSoC5/Volume_ADC.c **** * Function Name: Volume_ADC_CountsTo_mVolts
+ 628:./Generated_Source/PSoC5/Volume_ADC.c **** ********************************************************************************
+ 629:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 630:./Generated_Source/PSoC5/Volume_ADC.c **** * Summary:
+ 631:./Generated_Source/PSoC5/Volume_ADC.c **** *  This function converts ADC counts to mVolts
+ 632:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 633:./Generated_Source/PSoC5/Volume_ADC.c **** * Parameters:
+ 634:./Generated_Source/PSoC5/Volume_ADC.c **** *  int16  adcCounts   Reading from ADC.
+ 635:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 636:./Generated_Source/PSoC5/Volume_ADC.c **** * Return:
+ 637:./Generated_Source/PSoC5/Volume_ADC.c **** *  int16  Result in mVolts
+ 638:./Generated_Source/PSoC5/Volume_ADC.c **** *
+ 639:./Generated_Source/PSoC5/Volume_ADC.c **** *******************************************************************************/
+ 640:./Generated_Source/PSoC5/Volume_ADC.c **** int16 Volume_ADC_CountsTo_mVolts( int16 adcCounts)
+ 641:./Generated_Source/PSoC5/Volume_ADC.c **** {
+ 807              	ve eliminated.
+ 808              		push	{r7}
+ 809              	.LCFI38:
+ 810              		sub	sp, sp, #20
+ 811 0000 80B4     	.LCFI39:
+ 812              		add	r7, sp, #0
+ 813 0002 85B0     	.LCFI40:
+ 814              		@ lr needed for prologue
+ 815 0004 00AF     		mov	r3, r0
+ 816              		strh	r3, [r7, #6]	@ movhi
+ 817              		.loc 1 643 0
+ 818 0006 0346     		mov	r3, #0
+ 819 0008 FB80     		strh	r3, [r7, #14]	@ movhi
+ 642:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 643:./Generated_Source/PSoC5/Volume_ADC.c ****     int16 mVolts = 0;
+ 820              	
+ 821 000a 4FF00003 		ldrh	r2, [r7, #6]
+ 822 000e FB81     		ldr	r3, .L75
+ 644:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 645:./Generated_Source/PSoC5/Volume_ADC.c ****     /* Subtract ADC offset */
+ 646:./Generated_Source/PSoC5/Volume_ADC.c ****     adcCounts -= Volume_ADC_Offset;
+ 823              	drh	r3, [r3, #0]
+ 824 0010 FA88     		uxth	r3, r3
+ 825 0012 114B     		rsb	r3, r3, r2
+ 826 0014 1B88     		uxth	r3, r3
+ 827 0016 9BB2     		strh	r3, [r7, #6]	@ movhi
+ 828 0018 C3EB0203 		.loc 1 648 0
+ 829 001c 9BB2     		ldrsh	r1, [r7, #6]
+ 830 001e FB80     		mov	r3, r1
+ 647:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 648:./Generated_Source/PSoC5/Volume_ADC.c ****     mVolts = ( (int32)adcCounts * 1000 ) / Volume_ADC_CountsPerVolt ;
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 27
+
+
+ 831              	 r3, #2
+ 832 0020 B7F90610 		lsl	r3, r2, #5
+ 833 0024 0B46     		rsb	r3, r2, r3
+ 834 0026 4FEA8302 		add	r3, r3, r1
+ 835 002a 4FEA4213 		lsl	r3, r3, #3
+ 836 002e C2EB0303 		mov	r2, r3
+ 837 0032 0B44     		ldr	r3, .L75+4
+ 838 0034 4FEAC303 		ldrh	r3, [r3, #0]
+ 839 0038 1A46     		sxth	r3, r3
+ 840 003a 084B     		sdiv	r3, r2, r3
+ 841 003c 1B88     		strh	r3, [r7, #14]	@ movhi
+ 842 003e 1BB2     		.loc 1 650 0
+ 843 0040 92FBF3F3 		ldrsh	r3, [r7, #14]
+ 844 0044 FB81     		.loc 1 651 0
+ 649:./Generated_Source/PSoC5/Volume_ADC.c **** 
+ 650:./Generated_Source/PSoC5/Volume_ADC.c ****     return( mVolts );
+ 845              	dd	r7, r7, #20
+ 846 0046 B7F90E30 		mov	sp, r7
+ 651:./Generated_Source/PSoC5/Volume_ADC.c **** }
+ 847              	op	{r7}
+ 848 004a 1846     		bx	lr
+ 849 004c 07F11407 	.L76:
+ 850 0050 BD46     		.align	2
+ 851 0052 80BC     	.L75:
+ 852 0054 7047     		.word	Volume_ADC_Offset
+ 853              		.word	Volume_ADC_CountsPerVolt
+ 854 0056 C046     	.LFE17:
+ 855              		.size	Volume_ADC_CountsTo_mVolts, .-Volume_ADC_CountsTo_mVolts
+ 856 0058 00000000 		.comm	Volume_ADC_CountsPerVolt,2,2
+ 857 005c 00000000 		.section	.debug_frame,"",%progbits
+ 858              	.Lframe0:
+ 859              		.4byte	.LECIE0-.LSCIE0
+ 860              	.LSCIE0:
+ 861              		.4byte	0xffffffff
+ 862              		.byte	0x1
+ 863 0000 0C000000 		.ascii	"\000"
+ 864              		.uleb128 0x1
+ 865 0004 FFFFFFFF 		.sleb128 -4
+ 866 0008 01       		.byte	0xe
+ 867 0009 00       		.byte	0xc
+ 868 000a 01       		.uleb128 0xd
+ 869 000b 7C       		.uleb128 0x0
+ 870 000c 0E       		.align	2
+ 871 000d 0C       	.LECIE0:
+ 872 000e 0D       	.LSFDE0:
+ 873 000f 00       		.4byte	.LEFDE0-.LASFDE0
+ 874              	.LASFDE0:
+ 875              		.4byte	.Lframe0
+ 876              		.4byte	.LFB2
+ 877 0010 1C000000 		.4byte	.LFE2-.LFB2
+ 878              		.byte	0x4
+ 879 0014 00000000 		.4byte	.LCFI0-.LFB2
+ 880 0018 00000000 		.byte	0xe
+ 881 001c DC000000 		.uleb128 0x8
+ 882 0020 42       		.byte	0x4
+ 883              		.4byte	.LCFI1-.LCFI0
+ 884 0021 0E       		.byte	0xe
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 28
+
+
+ 885 0022 08       		.uleb128 0x10
+ 886 0023 42       		.byte	0x8e
+ 887              		.uleb128 0x1
+ 888 0024 0E       		.byte	0x87
+ 889 0025 10       		.uleb128 0x2
+ 890 0026 8E       		.byte	0x4
+ 891 0027 01       		.4byte	.LCFI2-.LCFI1
+ 892 0028 87       		.byte	0xd
+ 893 0029 02       		.uleb128 0x7
+ 894 002a 42       		.align	2
+ 895              	.LEFDE0:
+ 896 002b 0D       	.LSFDE2:
+ 897 002c 07       		.4byte	.LEFDE2-.LASFDE2
+ 898 002d 000000   	.LASFDE2:
+ 899              		.4byte	.Lframe0
+ 900              		.4byte	.LFB3
+ 901 0030 18000000 		.4byte	.LFE3-.LFB3
+ 902              		.byte	0x4
+ 903 0034 00000000 		.4byte	.LCFI3-.LFB3
+ 904 0038 00000000 		.byte	0xe
+ 905 003c 64000000 		.uleb128 0x4
+ 906 0040 42       		.byte	0x4
+ 907              		.4byte	.LCFI4-.LCFI3
+ 908 0041 0E       		.byte	0xe
+ 909 0042 04       		.uleb128 0x18
+ 910 0043 42       		.byte	0x87
+ 911              		.uleb128 0x1
+ 912 0044 0E       		.byte	0x4
+ 913 0045 18       		.4byte	.LCFI5-.LCFI4
+ 914 0046 87       		.byte	0xd
+ 915 0047 01       		.uleb128 0x7
+ 916 0048 42       		.align	2
+ 917              	.LEFDE2:
+ 918 0049 0D       	.LSFDE4:
+ 919 004a 07       		.4byte	.LEFDE4-.LASFDE4
+ 920 004b 00       	.LASFDE4:
+ 921              		.4byte	.Lframe0
+ 922              		.4byte	.LFB4
+ 923 004c 18000000 		.4byte	.LFE4-.LFB4
+ 924              		.byte	0x4
+ 925 0050 00000000 		.4byte	.LCFI6-.LFB4
+ 926 0054 00000000 		.byte	0xe
+ 927 0058 44000000 		.uleb128 0x8
+ 928 005c 42       		.byte	0x8e
+ 929              		.uleb128 0x1
+ 930 005d 0E       		.byte	0x87
+ 931 005e 08       		.uleb128 0x2
+ 932 005f 8E       		.byte	0x4
+ 933 0060 01       		.4byte	.LCFI7-.LCFI6
+ 934 0061 87       		.byte	0xd
+ 935 0062 02       		.uleb128 0x7
+ 936 0063 42       		.align	2
+ 937              	.LEFDE4:
+ 938 0064 0D       	.LSFDE6:
+ 939 0065 07       		.4byte	.LEFDE6-.LASFDE6
+ 940 0066 0000     	.LASFDE6:
+ 941              		.4byte	.Lframe0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 29
+
+
+ 942              		.4byte	.LFB5
+ 943 0068 18000000 		.4byte	.LFE5-.LFB5
+ 944              		.byte	0x4
+ 945 006c 00000000 		.4byte	.LCFI8-.LFB5
+ 946 0070 00000000 		.byte	0xe
+ 947 0074 10000000 		.uleb128 0x8
+ 948 0078 42       		.byte	0x8e
+ 949              		.uleb128 0x1
+ 950 0079 0E       		.byte	0x87
+ 951 007a 08       		.uleb128 0x2
+ 952 007b 8E       		.byte	0x4
+ 953 007c 01       		.4byte	.LCFI9-.LCFI8
+ 954 007d 87       		.byte	0xd
+ 955 007e 02       		.uleb128 0x7
+ 956 007f 42       		.align	2
+ 957              	.LEFDE6:
+ 958 0080 0D       	.LSFDE8:
+ 959 0081 07       		.4byte	.LEFDE8-.LASFDE8
+ 960 0082 0000     	.LASFDE8:
+ 961              		.4byte	.Lframe0
+ 962              		.4byte	.LFB6
+ 963 0084 18000000 		.4byte	.LFE6-.LFB6
+ 964              		.byte	0x4
+ 965 0088 00000000 		.4byte	.LCFI10-.LFB6
+ 966 008c 00000000 		.byte	0xe
+ 967 0090 10000000 		.uleb128 0x8
+ 968 0094 42       		.byte	0x8e
+ 969              		.uleb128 0x1
+ 970 0095 0E       		.byte	0x87
+ 971 0096 08       		.uleb128 0x2
+ 972 0097 8E       		.byte	0x4
+ 973 0098 01       		.4byte	.LCFI11-.LCFI10
+ 974 0099 87       		.byte	0xd
+ 975 009a 02       		.uleb128 0x7
+ 976 009b 42       		.align	2
+ 977              	.LEFDE8:
+ 978 009c 0D       	.LSFDE10:
+ 979 009d 07       		.4byte	.LEFDE10-.LASFDE10
+ 980 009e 0000     	.LASFDE10:
+ 981              		.4byte	.Lframe0
+ 982              		.4byte	.LFB7
+ 983 00a0 18000000 		.4byte	.LFE7-.LFB7
+ 984              		.byte	0x4
+ 985 00a4 00000000 		.4byte	.LCFI12-.LFB7
+ 986 00a8 00000000 		.byte	0xe
+ 987 00ac 48000000 		.uleb128 0x4
+ 988 00b0 42       		.byte	0x4
+ 989              		.4byte	.LCFI13-.LCFI12
+ 990 00b1 0E       		.byte	0xe
+ 991 00b2 04       		.uleb128 0x18
+ 992 00b3 42       		.byte	0x87
+ 993              		.uleb128 0x1
+ 994 00b4 0E       		.byte	0x4
+ 995 00b5 18       		.4byte	.LCFI14-.LCFI13
+ 996 00b6 87       		.byte	0xd
+ 997 00b7 01       		.uleb128 0x7
+ 998 00b8 42       		.align	2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 30
+
+
+ 999              	.LEFDE10:
+ 1000 00b9 0D       	.LSFDE12:
+ 1001 00ba 07       		.4byte	.LEFDE12-.LASFDE12
+ 1002 00bb 00       	.LASFDE12:
+ 1003              		.4byte	.Lframe0
+ 1004              		.4byte	.LFB8
+ 1005 00bc 1C000000 		.4byte	.LFE8-.LFB8
+ 1006              		.byte	0x4
+ 1007 00c0 00000000 		.4byte	.LCFI15-.LFB8
+ 1008 00c4 00000000 		.byte	0xe
+ 1009 00c8 5C000000 		.uleb128 0x8
+ 1010 00cc 42       		.byte	0x4
+ 1011              		.4byte	.LCFI16-.LCFI15
+ 1012 00cd 0E       		.byte	0xe
+ 1013 00ce 08       		.uleb128 0x18
+ 1014 00cf 42       		.byte	0x8e
+ 1015              		.uleb128 0x1
+ 1016 00d0 0E       		.byte	0x87
+ 1017 00d1 18       		.uleb128 0x2
+ 1018 00d2 8E       		.byte	0x4
+ 1019 00d3 01       		.4byte	.LCFI17-.LCFI16
+ 1020 00d4 87       		.byte	0xd
+ 1021 00d5 02       		.uleb128 0x7
+ 1022 00d6 42       		.align	2
+ 1023              	.LEFDE12:
+ 1024 00d7 0D       	.LSFDE14:
+ 1025 00d8 07       		.4byte	.LEFDE14-.LASFDE14
+ 1026 00d9 000000   	.LASFDE14:
+ 1027              		.4byte	.Lframe0
+ 1028              		.4byte	.LFB9
+ 1029 00dc 14000000 		.4byte	.LFE9-.LFB9
+ 1030              		.byte	0x4
+ 1031 00e0 00000000 		.4byte	.LCFI18-.LFB9
+ 1032 00e4 00000000 		.byte	0xe
+ 1033 00e8 20000000 		.uleb128 0x4
+ 1034 00ec 42       		.byte	0x87
+ 1035              		.uleb128 0x1
+ 1036 00ed 0E       		.byte	0x4
+ 1037 00ee 04       		.4byte	.LCFI19-.LCFI18
+ 1038 00ef 87       		.byte	0xd
+ 1039 00f0 01       		.uleb128 0x7
+ 1040 00f1 42       		.align	2
+ 1041              	.LEFDE14:
+ 1042 00f2 0D       	.LSFDE16:
+ 1043 00f3 07       		.4byte	.LEFDE16-.LASFDE16
+ 1044              	.LASFDE16:
+ 1045              		.4byte	.Lframe0
+ 1046              		.4byte	.LFB10
+ 1047 00f4 14000000 		.4byte	.LFE10-.LFB10
+ 1048              		.byte	0x4
+ 1049 00f8 00000000 		.4byte	.LCFI20-.LFB10
+ 1050 00fc 00000000 		.byte	0xe
+ 1051 0100 1C000000 		.uleb128 0x4
+ 1052 0104 42       		.byte	0x87
+ 1053              		.uleb128 0x1
+ 1054 0105 0E       		.byte	0x4
+ 1055 0106 04       		.4byte	.LCFI21-.LCFI20
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 31
+
+
+ 1056 0107 87       		.byte	0xd
+ 1057 0108 01       		.uleb128 0x7
+ 1058 0109 42       		.align	2
+ 1059              	.LEFDE16:
+ 1060 010a 0D       	.LSFDE18:
+ 1061 010b 07       		.4byte	.LEFDE18-.LASFDE18
+ 1062              	.LASFDE18:
+ 1063              		.4byte	.Lframe0
+ 1064              		.4byte	.LFB11
+ 1065 010c 18000000 		.4byte	.LFE11-.LFB11
+ 1066              		.byte	0x4
+ 1067 0110 00000000 		.4byte	.LCFI22-.LFB11
+ 1068 0114 00000000 		.byte	0xe
+ 1069 0118 34000000 		.uleb128 0x4
+ 1070 011c 42       		.byte	0x4
+ 1071              		.4byte	.LCFI23-.LCFI22
+ 1072 011d 0E       		.byte	0xe
+ 1073 011e 04       		.uleb128 0x18
+ 1074 011f 42       		.byte	0x87
+ 1075              		.uleb128 0x1
+ 1076 0120 0E       		.byte	0x4
+ 1077 0121 18       		.4byte	.LCFI24-.LCFI23
+ 1078 0122 87       		.byte	0xd
+ 1079 0123 01       		.uleb128 0x7
+ 1080 0124 42       		.align	2
+ 1081              	.LEFDE18:
+ 1082 0125 0D       	.LSFDE20:
+ 1083 0126 07       		.4byte	.LEFDE20-.LASFDE20
+ 1084 0127 00       	.LASFDE20:
+ 1085              		.4byte	.Lframe0
+ 1086              		.4byte	.LFB12
+ 1087 0128 14000000 		.4byte	.LFE12-.LFB12
+ 1088              		.byte	0x4
+ 1089 012c 00000000 		.4byte	.LCFI25-.LFB12
+ 1090 0130 00000000 		.byte	0xe
+ 1091 0134 18000000 		.uleb128 0x4
+ 1092 0138 42       		.byte	0x87
+ 1093              		.uleb128 0x1
+ 1094 0139 0E       		.byte	0x4
+ 1095 013a 04       		.4byte	.LCFI26-.LCFI25
+ 1096 013b 87       		.byte	0xd
+ 1097 013c 01       		.uleb128 0x7
+ 1098 013d 42       		.align	2
+ 1099              	.LEFDE20:
+ 1100 013e 0D       	.LSFDE22:
+ 1101 013f 07       		.4byte	.LEFDE22-.LASFDE22
+ 1102              	.LASFDE22:
+ 1103              		.4byte	.Lframe0
+ 1104              		.4byte	.LFB13
+ 1105 0140 14000000 		.4byte	.LFE13-.LFB13
+ 1106              		.byte	0x4
+ 1107 0144 00000000 		.4byte	.LCFI27-.LFB13
+ 1108 0148 00000000 		.byte	0xe
+ 1109 014c 30000000 		.uleb128 0x4
+ 1110 0150 42       		.byte	0x87
+ 1111              		.uleb128 0x1
+ 1112 0151 0E       		.byte	0x4
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 32
+
+
+ 1113 0152 04       		.4byte	.LCFI28-.LCFI27
+ 1114 0153 87       		.byte	0xd
+ 1115 0154 01       		.uleb128 0x7
+ 1116 0155 42       		.align	2
+ 1117              	.LEFDE22:
+ 1118 0156 0D       	.LSFDE24:
+ 1119 0157 07       		.4byte	.LEFDE24-.LASFDE24
+ 1120              	.LASFDE24:
+ 1121              		.4byte	.Lframe0
+ 1122              		.4byte	.LFB14
+ 1123 0158 18000000 		.4byte	.LFE14-.LFB14
+ 1124              		.byte	0x4
+ 1125 015c 00000000 		.4byte	.LCFI29-.LFB14
+ 1126 0160 00000000 		.byte	0xe
+ 1127 0164 20000000 		.uleb128 0x4
+ 1128 0168 42       		.byte	0x4
+ 1129              		.4byte	.LCFI30-.LCFI29
+ 1130 0169 0E       		.byte	0xe
+ 1131 016a 04       		.uleb128 0x10
+ 1132 016b 42       		.byte	0x87
+ 1133              		.uleb128 0x1
+ 1134 016c 0E       		.byte	0x4
+ 1135 016d 10       		.4byte	.LCFI31-.LCFI30
+ 1136 016e 87       		.byte	0xd
+ 1137 016f 01       		.uleb128 0x7
+ 1138 0170 42       		.align	2
+ 1139              	.LEFDE24:
+ 1140 0171 0D       	.LSFDE26:
+ 1141 0172 07       		.4byte	.LEFDE26-.LASFDE26
+ 1142 0173 00       	.LASFDE26:
+ 1143              		.4byte	.Lframe0
+ 1144              		.4byte	.LFB15
+ 1145 0174 18000000 		.4byte	.LFE15-.LFB15
+ 1146              		.byte	0x4
+ 1147 0178 00000000 		.4byte	.LCFI32-.LFB15
+ 1148 017c 00000000 		.byte	0xe
+ 1149 0180 90000000 		.uleb128 0x4
+ 1150 0184 42       		.byte	0x4
+ 1151              		.4byte	.LCFI33-.LCFI32
+ 1152 0185 0E       		.byte	0xe
+ 1153 0186 04       		.uleb128 0x18
+ 1154 0187 42       		.byte	0x87
+ 1155              		.uleb128 0x1
+ 1156 0188 0E       		.byte	0x4
+ 1157 0189 18       		.4byte	.LCFI34-.LCFI33
+ 1158 018a 87       		.byte	0xd
+ 1159 018b 01       		.uleb128 0x7
+ 1160 018c 42       		.align	2
+ 1161              	.LEFDE26:
+ 1162 018d 0D       	.LSFDE28:
+ 1163 018e 07       		.4byte	.LEFDE28-.LASFDE28
+ 1164 018f 00       	.LASFDE28:
+ 1165              		.4byte	.Lframe0
+ 1166              		.4byte	.LFB16
+ 1167 0190 18000000 		.4byte	.LFE16-.LFB16
+ 1168              		.byte	0x4
+ 1169 0194 00000000 		.4byte	.LCFI35-.LFB16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 33
+
+
+ 1170 0198 00000000 		.byte	0xe
+ 1171 019c 20000000 		.uleb128 0x4
+ 1172 01a0 42       		.byte	0x4
+ 1173              		.4byte	.LCFI36-.LCFI35
+ 1174 01a1 0E       		.byte	0xe
+ 1175 01a2 04       		.uleb128 0x10
+ 1176 01a3 42       		.byte	0x87
+ 1177              		.uleb128 0x1
+ 1178 01a4 0E       		.byte	0x4
+ 1179 01a5 10       		.4byte	.LCFI37-.LCFI36
+ 1180 01a6 87       		.byte	0xd
+ 1181 01a7 01       		.uleb128 0x7
+ 1182 01a8 42       		.align	2
+ 1183              	.LEFDE28:
+ 1184 01a9 0D       	.LSFDE30:
+ 1185 01aa 07       		.4byte	.LEFDE30-.LASFDE30
+ 1186 01ab 00       	.LASFDE30:
+ 1187              		.4byte	.Lframe0
+ 1188              		.4byte	.LFB17
+ 1189 01ac 18000000 		.4byte	.LFE17-.LFB17
+ 1190              		.byte	0x4
+ 1191 01b0 00000000 		.4byte	.LCFI38-.LFB17
+ 1192 01b4 00000000 		.byte	0xe
+ 1193 01b8 60000000 		.uleb128 0x4
+ 1194 01bc 42       		.byte	0x4
+ 1195              		.4byte	.LCFI39-.LCFI38
+ 1196 01bd 0E       		.byte	0xe
+ 1197 01be 04       		.uleb128 0x18
+ 1198 01bf 42       		.byte	0x87
+ 1199              		.uleb128 0x1
+ 1200 01c0 0E       		.byte	0x4
+ 1201 01c1 18       		.4byte	.LCFI40-.LCFI39
+ 1202 01c2 87       		.byte	0xd
+ 1203 01c3 01       		.uleb128 0x7
+ 1204 01c4 42       		.align	2
+ 1205              	.LEFDE30:
+ 1206 01c5 0D       		.text
+ 1207 01c6 07       	.Letext0:
+ 1208 01c7 00       		.section	.debug_loc,"",%progbits
+ 1209              	.Ldebug_loc0:
+ 1210              	.LLST0:
+ 1211              		.4byte	.LFB2
+ 1212              		.4byte	.LCFI0
+ 1213              		.2byte	0x1
+ 1214              		.byte	0x5d
+ 1215 0000 00000000 		.4byte	.LCFI0
+ 1216 0004 02000000 		.4byte	.LCFI1
+ 1217 0008 0100     		.2byte	0x2
+ 1218 000a 5D       		.byte	0x7d
+ 1219 000b 02000000 		.sleb128 8
+ 1220 000f 04000000 		.4byte	.LCFI1
+ 1221 0013 0200     		.4byte	.LCFI2
+ 1222 0015 7D       		.2byte	0x2
+ 1223 0016 08       		.byte	0x7d
+ 1224 0017 04000000 		.sleb128 16
+ 1225 001b 06000000 		.4byte	.LCFI2
+ 1226 001f 0200     		.4byte	.LFE2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 34
+
+
+ 1227 0021 7D       		.2byte	0x2
+ 1228 0022 10       		.byte	0x77
+ 1229 0023 06000000 		.sleb128 16
+ 1230 0027 DC000000 		.4byte	0x0
+ 1231 002b 0200     		.4byte	0x0
+ 1232 002d 77       	.LLST1:
+ 1233 002e 10       		.4byte	.LFB3
+ 1234 002f 00000000 		.4byte	.LCFI3
+ 1235 0033 00000000 		.2byte	0x1
+ 1236              		.byte	0x5d
+ 1237 0037 00000000 		.4byte	.LCFI3
+ 1238 003b 02000000 		.4byte	.LCFI4
+ 1239 003f 0100     		.2byte	0x2
+ 1240 0041 5D       		.byte	0x7d
+ 1241 0042 02000000 		.sleb128 4
+ 1242 0046 04000000 		.4byte	.LCFI4
+ 1243 004a 0200     		.4byte	.LCFI5
+ 1244 004c 7D       		.2byte	0x2
+ 1245 004d 04       		.byte	0x7d
+ 1246 004e 04000000 		.sleb128 24
+ 1247 0052 06000000 		.4byte	.LCFI5
+ 1248 0056 0200     		.4byte	.LFE3
+ 1249 0058 7D       		.2byte	0x2
+ 1250 0059 18       		.byte	0x77
+ 1251 005a 06000000 		.sleb128 24
+ 1252 005e 64000000 		.4byte	0x0
+ 1253 0062 0200     		.4byte	0x0
+ 1254 0064 77       	.LLST2:
+ 1255 0065 18       		.4byte	.LFB4
+ 1256 0066 00000000 		.4byte	.LCFI6
+ 1257 006a 00000000 		.2byte	0x1
+ 1258              		.byte	0x5d
+ 1259 006e 00000000 		.4byte	.LCFI6
+ 1260 0072 02000000 		.4byte	.LCFI7
+ 1261 0076 0100     		.2byte	0x2
+ 1262 0078 5D       		.byte	0x7d
+ 1263 0079 02000000 		.sleb128 8
+ 1264 007d 04000000 		.4byte	.LCFI7
+ 1265 0081 0200     		.4byte	.LFE4
+ 1266 0083 7D       		.2byte	0x2
+ 1267 0084 08       		.byte	0x77
+ 1268 0085 04000000 		.sleb128 8
+ 1269 0089 44000000 		.4byte	0x0
+ 1270 008d 0200     		.4byte	0x0
+ 1271 008f 77       	.LLST3:
+ 1272 0090 08       		.4byte	.LFB5
+ 1273 0091 00000000 		.4byte	.LCFI8
+ 1274 0095 00000000 		.2byte	0x1
+ 1275              		.byte	0x5d
+ 1276 0099 00000000 		.4byte	.LCFI8
+ 1277 009d 02000000 		.4byte	.LCFI9
+ 1278 00a1 0100     		.2byte	0x2
+ 1279 00a3 5D       		.byte	0x7d
+ 1280 00a4 02000000 		.sleb128 8
+ 1281 00a8 04000000 		.4byte	.LCFI9
+ 1282 00ac 0200     		.4byte	.LFE5
+ 1283 00ae 7D       		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 35
+
+
+ 1284 00af 08       		.byte	0x77
+ 1285 00b0 04000000 		.sleb128 8
+ 1286 00b4 10000000 		.4byte	0x0
+ 1287 00b8 0200     		.4byte	0x0
+ 1288 00ba 77       	.LLST4:
+ 1289 00bb 08       		.4byte	.LFB6
+ 1290 00bc 00000000 		.4byte	.LCFI10
+ 1291 00c0 00000000 		.2byte	0x1
+ 1292              		.byte	0x5d
+ 1293 00c4 00000000 		.4byte	.LCFI10
+ 1294 00c8 02000000 		.4byte	.LCFI11
+ 1295 00cc 0100     		.2byte	0x2
+ 1296 00ce 5D       		.byte	0x7d
+ 1297 00cf 02000000 		.sleb128 8
+ 1298 00d3 04000000 		.4byte	.LCFI11
+ 1299 00d7 0200     		.4byte	.LFE6
+ 1300 00d9 7D       		.2byte	0x2
+ 1301 00da 08       		.byte	0x77
+ 1302 00db 04000000 		.sleb128 8
+ 1303 00df 10000000 		.4byte	0x0
+ 1304 00e3 0200     		.4byte	0x0
+ 1305 00e5 77       	.LLST5:
+ 1306 00e6 08       		.4byte	.LFB7
+ 1307 00e7 00000000 		.4byte	.LCFI12
+ 1308 00eb 00000000 		.2byte	0x1
+ 1309              		.byte	0x5d
+ 1310 00ef 00000000 		.4byte	.LCFI12
+ 1311 00f3 02000000 		.4byte	.LCFI13
+ 1312 00f7 0100     		.2byte	0x2
+ 1313 00f9 5D       		.byte	0x7d
+ 1314 00fa 02000000 		.sleb128 4
+ 1315 00fe 04000000 		.4byte	.LCFI13
+ 1316 0102 0200     		.4byte	.LCFI14
+ 1317 0104 7D       		.2byte	0x2
+ 1318 0105 04       		.byte	0x7d
+ 1319 0106 04000000 		.sleb128 24
+ 1320 010a 06000000 		.4byte	.LCFI14
+ 1321 010e 0200     		.4byte	.LFE7
+ 1322 0110 7D       		.2byte	0x2
+ 1323 0111 18       		.byte	0x77
+ 1324 0112 06000000 		.sleb128 24
+ 1325 0116 48000000 		.4byte	0x0
+ 1326 011a 0200     		.4byte	0x0
+ 1327 011c 77       	.LLST6:
+ 1328 011d 18       		.4byte	.LFB8
+ 1329 011e 00000000 		.4byte	.LCFI15
+ 1330 0122 00000000 		.2byte	0x1
+ 1331              		.byte	0x5d
+ 1332 0126 00000000 		.4byte	.LCFI15
+ 1333 012a 02000000 		.4byte	.LCFI16
+ 1334 012e 0100     		.2byte	0x2
+ 1335 0130 5D       		.byte	0x7d
+ 1336 0131 02000000 		.sleb128 8
+ 1337 0135 04000000 		.4byte	.LCFI16
+ 1338 0139 0200     		.4byte	.LCFI17
+ 1339 013b 7D       		.2byte	0x2
+ 1340 013c 08       		.byte	0x7d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 36
+
+
+ 1341 013d 04000000 		.sleb128 24
+ 1342 0141 06000000 		.4byte	.LCFI17
+ 1343 0145 0200     		.4byte	.LFE8
+ 1344 0147 7D       		.2byte	0x2
+ 1345 0148 18       		.byte	0x77
+ 1346 0149 06000000 		.sleb128 24
+ 1347 014d 5C000000 		.4byte	0x0
+ 1348 0151 0200     		.4byte	0x0
+ 1349 0153 77       	.LLST7:
+ 1350 0154 18       		.4byte	.LFB9
+ 1351 0155 00000000 		.4byte	.LCFI18
+ 1352 0159 00000000 		.2byte	0x1
+ 1353              		.byte	0x5d
+ 1354 015d 00000000 		.4byte	.LCFI18
+ 1355 0161 02000000 		.4byte	.LCFI19
+ 1356 0165 0100     		.2byte	0x2
+ 1357 0167 5D       		.byte	0x7d
+ 1358 0168 02000000 		.sleb128 4
+ 1359 016c 04000000 		.4byte	.LCFI19
+ 1360 0170 0200     		.4byte	.LFE9
+ 1361 0172 7D       		.2byte	0x2
+ 1362 0173 04       		.byte	0x77
+ 1363 0174 04000000 		.sleb128 4
+ 1364 0178 20000000 		.4byte	0x0
+ 1365 017c 0200     		.4byte	0x0
+ 1366 017e 77       	.LLST8:
+ 1367 017f 04       		.4byte	.LFB10
+ 1368 0180 00000000 		.4byte	.LCFI20
+ 1369 0184 00000000 		.2byte	0x1
+ 1370              		.byte	0x5d
+ 1371 0188 00000000 		.4byte	.LCFI20
+ 1372 018c 02000000 		.4byte	.LCFI21
+ 1373 0190 0100     		.2byte	0x2
+ 1374 0192 5D       		.byte	0x7d
+ 1375 0193 02000000 		.sleb128 4
+ 1376 0197 04000000 		.4byte	.LCFI21
+ 1377 019b 0200     		.4byte	.LFE10
+ 1378 019d 7D       		.2byte	0x2
+ 1379 019e 04       		.byte	0x77
+ 1380 019f 04000000 		.sleb128 4
+ 1381 01a3 1C000000 		.4byte	0x0
+ 1382 01a7 0200     		.4byte	0x0
+ 1383 01a9 77       	.LLST9:
+ 1384 01aa 04       		.4byte	.LFB11
+ 1385 01ab 00000000 		.4byte	.LCFI22
+ 1386 01af 00000000 		.2byte	0x1
+ 1387              		.byte	0x5d
+ 1388 01b3 00000000 		.4byte	.LCFI22
+ 1389 01b7 02000000 		.4byte	.LCFI23
+ 1390 01bb 0100     		.2byte	0x2
+ 1391 01bd 5D       		.byte	0x7d
+ 1392 01be 02000000 		.sleb128 4
+ 1393 01c2 04000000 		.4byte	.LCFI23
+ 1394 01c6 0200     		.4byte	.LCFI24
+ 1395 01c8 7D       		.2byte	0x2
+ 1396 01c9 04       		.byte	0x7d
+ 1397 01ca 04000000 		.sleb128 24
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 37
+
+
+ 1398 01ce 06000000 		.4byte	.LCFI24
+ 1399 01d2 0200     		.4byte	.LFE11
+ 1400 01d4 7D       		.2byte	0x2
+ 1401 01d5 18       		.byte	0x77
+ 1402 01d6 06000000 		.sleb128 24
+ 1403 01da 34000000 		.4byte	0x0
+ 1404 01de 0200     		.4byte	0x0
+ 1405 01e0 77       	.LLST10:
+ 1406 01e1 18       		.4byte	.LFB12
+ 1407 01e2 00000000 		.4byte	.LCFI25
+ 1408 01e6 00000000 		.2byte	0x1
+ 1409              		.byte	0x5d
+ 1410 01ea 00000000 		.4byte	.LCFI25
+ 1411 01ee 02000000 		.4byte	.LCFI26
+ 1412 01f2 0100     		.2byte	0x2
+ 1413 01f4 5D       		.byte	0x7d
+ 1414 01f5 02000000 		.sleb128 4
+ 1415 01f9 04000000 		.4byte	.LCFI26
+ 1416 01fd 0200     		.4byte	.LFE12
+ 1417 01ff 7D       		.2byte	0x2
+ 1418 0200 04       		.byte	0x77
+ 1419 0201 04000000 		.sleb128 4
+ 1420 0205 18000000 		.4byte	0x0
+ 1421 0209 0200     		.4byte	0x0
+ 1422 020b 77       	.LLST11:
+ 1423 020c 04       		.4byte	.LFB13
+ 1424 020d 00000000 		.4byte	.LCFI27
+ 1425 0211 00000000 		.2byte	0x1
+ 1426              		.byte	0x5d
+ 1427 0215 00000000 		.4byte	.LCFI27
+ 1428 0219 02000000 		.4byte	.LCFI28
+ 1429 021d 0100     		.2byte	0x2
+ 1430 021f 5D       		.byte	0x7d
+ 1431 0220 02000000 		.sleb128 4
+ 1432 0224 04000000 		.4byte	.LCFI28
+ 1433 0228 0200     		.4byte	.LFE13
+ 1434 022a 7D       		.2byte	0x2
+ 1435 022b 04       		.byte	0x77
+ 1436 022c 04000000 		.sleb128 4
+ 1437 0230 30000000 		.4byte	0x0
+ 1438 0234 0200     		.4byte	0x0
+ 1439 0236 77       	.LLST12:
+ 1440 0237 04       		.4byte	.LFB14
+ 1441 0238 00000000 		.4byte	.LCFI29
+ 1442 023c 00000000 		.2byte	0x1
+ 1443              		.byte	0x5d
+ 1444 0240 00000000 		.4byte	.LCFI29
+ 1445 0244 02000000 		.4byte	.LCFI30
+ 1446 0248 0100     		.2byte	0x2
+ 1447 024a 5D       		.byte	0x7d
+ 1448 024b 02000000 		.sleb128 4
+ 1449 024f 04000000 		.4byte	.LCFI30
+ 1450 0253 0200     		.4byte	.LCFI31
+ 1451 0255 7D       		.2byte	0x2
+ 1452 0256 04       		.byte	0x7d
+ 1453 0257 04000000 		.sleb128 16
+ 1454 025b 06000000 		.4byte	.LCFI31
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 38
+
+
+ 1455 025f 0200     		.4byte	.LFE14
+ 1456 0261 7D       		.2byte	0x2
+ 1457 0262 10       		.byte	0x77
+ 1458 0263 06000000 		.sleb128 16
+ 1459 0267 20000000 		.4byte	0x0
+ 1460 026b 0200     		.4byte	0x0
+ 1461 026d 77       	.LLST13:
+ 1462 026e 10       		.4byte	.LFB15
+ 1463 026f 00000000 		.4byte	.LCFI32
+ 1464 0273 00000000 		.2byte	0x1
+ 1465              		.byte	0x5d
+ 1466 0277 00000000 		.4byte	.LCFI32
+ 1467 027b 02000000 		.4byte	.LCFI33
+ 1468 027f 0100     		.2byte	0x2
+ 1469 0281 5D       		.byte	0x7d
+ 1470 0282 02000000 		.sleb128 4
+ 1471 0286 04000000 		.4byte	.LCFI33
+ 1472 028a 0200     		.4byte	.LCFI34
+ 1473 028c 7D       		.2byte	0x2
+ 1474 028d 04       		.byte	0x7d
+ 1475 028e 04000000 		.sleb128 24
+ 1476 0292 06000000 		.4byte	.LCFI34
+ 1477 0296 0200     		.4byte	.LFE15
+ 1478 0298 7D       		.2byte	0x2
+ 1479 0299 18       		.byte	0x77
+ 1480 029a 06000000 		.sleb128 24
+ 1481 029e 90000000 		.4byte	0x0
+ 1482 02a2 0200     		.4byte	0x0
+ 1483 02a4 77       	.LLST14:
+ 1484 02a5 18       		.4byte	.LFB16
+ 1485 02a6 00000000 		.4byte	.LCFI35
+ 1486 02aa 00000000 		.2byte	0x1
+ 1487              		.byte	0x5d
+ 1488 02ae 00000000 		.4byte	.LCFI35
+ 1489 02b2 02000000 		.4byte	.LCFI36
+ 1490 02b6 0100     		.2byte	0x2
+ 1491 02b8 5D       		.byte	0x7d
+ 1492 02b9 02000000 		.sleb128 4
+ 1493 02bd 04000000 		.4byte	.LCFI36
+ 1494 02c1 0200     		.4byte	.LCFI37
+ 1495 02c3 7D       		.2byte	0x2
+ 1496 02c4 04       		.byte	0x7d
+ 1497 02c5 04000000 		.sleb128 16
+ 1498 02c9 06000000 		.4byte	.LCFI37
+ 1499 02cd 0200     		.4byte	.LFE16
+ 1500 02cf 7D       		.2byte	0x2
+ 1501 02d0 10       		.byte	0x77
+ 1502 02d1 06000000 		.sleb128 16
+ 1503 02d5 20000000 		.4byte	0x0
+ 1504 02d9 0200     		.4byte	0x0
+ 1505 02db 77       	.LLST15:
+ 1506 02dc 10       		.4byte	.LFB17
+ 1507 02dd 00000000 		.4byte	.LCFI38
+ 1508 02e1 00000000 		.2byte	0x1
+ 1509              		.byte	0x5d
+ 1510 02e5 00000000 		.4byte	.LCFI38
+ 1511 02e9 02000000 		.4byte	.LCFI39
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 39
+
+
+ 1512 02ed 0100     		.2byte	0x2
+ 1513 02ef 5D       		.byte	0x7d
+ 1514 02f0 02000000 		.sleb128 4
+ 1515 02f4 04000000 		.4byte	.LCFI39
+ 1516 02f8 0200     		.4byte	.LCFI40
+ 1517 02fa 7D       		.2byte	0x2
+ 1518 02fb 04       		.byte	0x7d
+ 1519 02fc 04000000 		.sleb128 24
+ 1520 0300 06000000 		.4byte	.LCFI40
+ 1521 0304 0200     		.4byte	.LFE17
+ 1522 0306 7D       		.2byte	0x2
+ 1523 0307 18       		.byte	0x77
+ 1524 0308 06000000 		.sleb128 24
+ 1525 030c 60000000 		.4byte	0x0
+ 1526 0310 0200     		.4byte	0x0
+ 1527 0312 77       		.file 2 "./Generated_Source/PSoC5/CYTYPES.H"
+ 1528 0313 18       		.section	.debug_info
+ 1529 0314 00000000 		.4byte	0x55a
+ 1530 0318 00000000 		.2byte	0x2
+ 1531              		.4byte	.Ldebug_abbrev0
+ 1532              		.byte	0x4
+ 1533 0000 5A050000 		.uleb128 0x1
+ 1534 0004 0200     		.ascii	"GNU C 4.2.1\000"
+ 1535 0006 00000000 		.byte	0x1
+ 1536 000a 04       		.ascii	"./Generated_Source/PSoC5/Volume_ADC.c\000"
+ 1537 000b 01       		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 1538 000c 474E5520 		.ascii	"ro\\CarStairo.cydsn\000"
+ 1538      4320342E 
+ 1538      322E3100 
+ 1539 0018 01       		.4byte	0x0
+ 1540 0019 2E2F4765 		.4byte	.Ldebug_line0
+ 1540      6E657261 
+ 1540      7465645F 
+ 1540      536F7572 
+ 1540      63652F50 
+ 1541 003f 433A5C55 		.uleb128 0x2
+ 1541      73657273 
+ 1541      5C626C69 
+ 1541      6E6B795C 
+ 1541      446F6375 
+ 1542 006d 726F5C43 		.byte	0x1
+ 1542      61725374 
+ 1542      6169726F 
+ 1542      2E637964 
+ 1542      736E00
+ 1543 0080 00000000 		.byte	0x8
+ 1544 0084 00000000 		.ascii	"unsigned char\000"
+ 1545 0088 02       		.uleb128 0x3
+ 1546 0089 01       		.ascii	"uint8\000"
+ 1547 008a 08       		.byte	0x2
+ 1548 008b 756E7369 		.byte	0x25
+ 1548      676E6564 
+ 1548      20636861 
+ 1548      7200
+ 1549 0099 03       		.4byte	0x88
+ 1550 009a 75696E74 		.uleb128 0x3
+ 1550      3800
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 40
+
+
+ 1551 00a0 02       		.ascii	"uint16\000"
+ 1552 00a1 25       		.byte	0x2
+ 1553 00a2 88000000 		.byte	0x26
+ 1554 00a6 03       		.4byte	0xb4
+ 1555 00a7 75696E74 		.uleb128 0x2
+ 1555      313600
+ 1556 00ae 02       		.byte	0x2
+ 1557 00af 26       		.byte	0x7
+ 1558 00b0 B4000000 		.ascii	"short unsigned int\000"
+ 1559 00b4 02       		.uleb128 0x3
+ 1560 00b5 02       		.ascii	"uint32\000"
+ 1561 00b6 07       		.byte	0x2
+ 1562 00b7 73686F72 		.byte	0x27
+ 1562      7420756E 
+ 1562      7369676E 
+ 1562      65642069 
+ 1562      6E7400
+ 1563 00ca 03       		.4byte	0xd8
+ 1564 00cb 75696E74 		.uleb128 0x2
+ 1564      333200
+ 1565 00d2 02       		.byte	0x4
+ 1566 00d3 27       		.byte	0x7
+ 1567 00d4 D8000000 		.ascii	"long unsigned int\000"
+ 1568 00d8 02       		.uleb128 0x3
+ 1569 00d9 04       		.ascii	"int8\000"
+ 1570 00da 07       		.byte	0x2
+ 1571 00db 6C6F6E67 		.byte	0x29
+ 1571      20756E73 
+ 1571      69676E65 
+ 1571      6420696E 
+ 1571      7400
+ 1572 00ed 03       		.4byte	0xf9
+ 1573 00ee 696E7438 		.uleb128 0x2
+ 1573      00
+ 1574 00f3 02       		.byte	0x1
+ 1575 00f4 29       		.byte	0x6
+ 1576 00f5 F9000000 		.ascii	"signed char\000"
+ 1577 00f9 02       		.uleb128 0x3
+ 1578 00fa 01       		.ascii	"int16\000"
+ 1579 00fb 06       		.byte	0x2
+ 1580 00fc 7369676E 		.byte	0x2a
+ 1580      65642063 
+ 1580      68617200 
+ 1581 0108 03       		.4byte	0x115
+ 1582 0109 696E7431 		.uleb128 0x2
+ 1582      3600
+ 1583 010f 02       		.byte	0x2
+ 1584 0110 2A       		.byte	0x5
+ 1585 0111 15010000 		.ascii	"short int\000"
+ 1586 0115 02       		.uleb128 0x2
+ 1587 0116 02       		.byte	0x4
+ 1588 0117 05       		.byte	0x5
+ 1589 0118 73686F72 		.ascii	"long int\000"
+ 1589      7420696E 
+ 1589      7400
+ 1590 0122 02       		.uleb128 0x4
+ 1591 0123 04       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 41
+
+
+ 1592 0124 05       		.ascii	"Volume_ADC_Start\000"
+ 1593 0125 6C6F6E67 		.byte	0x1
+ 1593      20696E74 
+ 1593      00
+ 1594 012e 04       		.byte	0x31
+ 1595 012f 01       		.byte	0x1
+ 1596 0130 566F6C75 		.4byte	.LFB2
+ 1596      6D655F41 
+ 1596      44435F53 
+ 1596      74617274 
+ 1596      00
+ 1597 0141 01       		.4byte	.LFE2
+ 1598 0142 31       		.4byte	.LLST0
+ 1599 0143 01       		.4byte	0x163
+ 1600 0144 00000000 		.uleb128 0x5
+ 1601 0148 DC000000 		.4byte	.LASF0
+ 1602 014c 00000000 		.byte	0x1
+ 1603 0150 63010000 		.byte	0x32
+ 1604 0154 05       		.4byte	0x99
+ 1605 0155 0B000000 		.byte	0x2
+ 1606 0159 01       		.byte	0x91
+ 1607 015a 32       		.sleb128 -9
+ 1608 015b 99000000 		.byte	0x0
+ 1609 015f 02       		.uleb128 0x4
+ 1610 0160 91       		.byte	0x1
+ 1611 0161 77       		.ascii	"Volume_ADC_SetRef\000"
+ 1612 0162 00       		.byte	0x1
+ 1613 0163 04       		.byte	0xa8
+ 1614 0164 01       		.byte	0x1
+ 1615 0165 566F6C75 		.4byte	.LFB3
+ 1615      6D655F41 
+ 1615      44435F53 
+ 1615      65745265 
+ 1615      6600
+ 1616 0177 01       		.4byte	.LFE3
+ 1617 0178 A8       		.4byte	.LLST1
+ 1618 0179 01       		.4byte	0x1ab
+ 1619 017a 00000000 		.uleb128 0x6
+ 1620 017e 64000000 		.ascii	"refMode\000"
+ 1621 0182 37000000 		.byte	0x1
+ 1622 0186 AB010000 		.byte	0xa7
+ 1623 018a 06       		.4byte	0xed
+ 1624 018b 7265664D 		.byte	0x2
+ 1624      6F646500 
+ 1625 0193 01       		.byte	0x91
+ 1626 0194 A7       		.sleb128 -17
+ 1627 0195 ED000000 		.uleb128 0x5
+ 1628 0199 02       		.4byte	.LASF0
+ 1629 019a 91       		.byte	0x1
+ 1630 019b 6F       		.byte	0xa9
+ 1631 019c 05       		.4byte	0x99
+ 1632 019d 0B000000 		.byte	0x2
+ 1633 01a1 01       		.byte	0x91
+ 1634 01a2 A9       		.sleb128 -9
+ 1635 01a3 99000000 		.byte	0x0
+ 1636 01a7 02       		.uleb128 0x7
+ 1637 01a8 91       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 42
+
+
+ 1638 01a9 77       		.ascii	"Volume_ADC_Stop\000"
+ 1639 01aa 00       		.byte	0x1
+ 1640 01ab 07       		.byte	0xde
+ 1641 01ac 01       		.byte	0x1
+ 1642 01ad 566F6C75 		.4byte	.LFB4
+ 1642      6D655F41 
+ 1642      44435F53 
+ 1642      746F7000 
+ 1643 01bd 01       		.4byte	.LFE4
+ 1644 01be DE       		.4byte	.LLST2
+ 1645 01bf 01       		.uleb128 0x7
+ 1646 01c0 00000000 		.byte	0x1
+ 1647 01c4 44000000 		.ascii	"Volume_ADC_IRQ_Enable\000"
+ 1648 01c8 6E000000 		.byte	0x1
+ 1649 01cc 07       		.byte	0xff
+ 1650 01cd 01       		.byte	0x1
+ 1651 01ce 566F6C75 		.4byte	.LFB5
+ 1651      6D655F41 
+ 1651      44435F49 
+ 1651      52515F45 
+ 1651      6E61626C 
+ 1652 01e4 01       		.4byte	.LFE5
+ 1653 01e5 FF       		.4byte	.LLST3
+ 1654 01e6 01       		.uleb128 0x8
+ 1655 01e7 00000000 		.byte	0x1
+ 1656 01eb 10000000 		.ascii	"Volume_ADC_IRQ_Disable\000"
+ 1657 01ef 99000000 		.byte	0x1
+ 1658 01f3 08       		.2byte	0x116
+ 1659 01f4 01       		.byte	0x1
+ 1660 01f5 566F6C75 		.4byte	.LFB6
+ 1660      6D655F41 
+ 1660      44435F49 
+ 1660      52515F44 
+ 1660      69736162 
+ 1661 020c 01       		.4byte	.LFE6
+ 1662 020d 1601     		.4byte	.LLST4
+ 1663 020f 01       		.uleb128 0x9
+ 1664 0210 00000000 		.byte	0x1
+ 1665 0214 10000000 		.ascii	"Volume_ADC_SetPower\000"
+ 1666 0218 C4000000 		.byte	0x1
+ 1667 021c 09       		.2byte	0x12f
+ 1668 021d 01       		.byte	0x1
+ 1669 021e 566F6C75 		.4byte	.LFB7
+ 1669      6D655F41 
+ 1669      44435F53 
+ 1669      6574506F 
+ 1669      77657200 
+ 1670 0232 01       		.4byte	.LFE7
+ 1671 0233 2F01     		.4byte	.LLST5
+ 1672 0235 01       		.4byte	0x267
+ 1673 0236 00000000 		.uleb128 0xa
+ 1674 023a 48000000 		.ascii	"power\000"
+ 1675 023e EF000000 		.byte	0x1
+ 1676 0242 67020000 		.2byte	0x12e
+ 1677 0246 0A       		.4byte	0x99
+ 1678 0247 706F7765 		.byte	0x2
+ 1678      7200
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 43
+
+
+ 1679 024d 01       		.byte	0x91
+ 1680 024e 2E01     		.sleb128 -17
+ 1681 0250 99000000 		.uleb128 0xb
+ 1682 0254 02       		.4byte	.LASF0
+ 1683 0255 91       		.byte	0x1
+ 1684 0256 6F       		.2byte	0x130
+ 1685 0257 0B       		.4byte	0x99
+ 1686 0258 0B000000 		.byte	0x2
+ 1687 025c 01       		.byte	0x91
+ 1688 025d 3001     		.sleb128 -9
+ 1689 025f 99000000 		.byte	0x0
+ 1690 0263 02       		.uleb128 0x9
+ 1691 0264 91       		.byte	0x1
+ 1692 0265 77       		.ascii	"Volume_ADC_SetResolution\000"
+ 1693 0266 00       		.byte	0x1
+ 1694 0267 09       		.2byte	0x153
+ 1695 0268 01       		.byte	0x1
+ 1696 0269 566F6C75 		.4byte	.LFB8
+ 1696      6D655F41 
+ 1696      44435F53 
+ 1696      65745265 
+ 1696      736F6C75 
+ 1697 0282 01       		.4byte	.LFE8
+ 1698 0283 5301     		.4byte	.LLST6
+ 1699 0285 01       		.4byte	0x2b5
+ 1700 0286 00000000 		.uleb128 0xc
+ 1701 028a 5C000000 		.4byte	.LASF1
+ 1702 028e 26010000 		.byte	0x1
+ 1703 0292 B5020000 		.2byte	0x152
+ 1704 0296 0C       		.4byte	0x99
+ 1705 0297 00000000 		.byte	0x2
+ 1706 029b 01       		.byte	0x91
+ 1707 029c 5201     		.sleb128 -17
+ 1708 029e 99000000 		.uleb128 0xb
+ 1709 02a2 02       		.4byte	.LASF0
+ 1710 02a3 91       		.byte	0x1
+ 1711 02a4 6F       		.2byte	0x154
+ 1712 02a5 0B       		.4byte	0x99
+ 1713 02a6 0B000000 		.byte	0x2
+ 1714 02aa 01       		.byte	0x91
+ 1715 02ab 5401     		.sleb128 -9
+ 1716 02ad 99000000 		.byte	0x0
+ 1717 02b1 02       		.uleb128 0x8
+ 1718 02b2 91       		.byte	0x1
+ 1719 02b3 77       		.ascii	"Volume_ADC_StartConvert\000"
+ 1720 02b4 00       		.byte	0x1
+ 1721 02b5 08       		.2byte	0x187
+ 1722 02b6 01       		.byte	0x1
+ 1723 02b7 566F6C75 		.4byte	.LFB9
+ 1723      6D655F41 
+ 1723      44435F53 
+ 1723      74617274 
+ 1723      436F6E76 
+ 1724 02cf 01       		.4byte	.LFE9
+ 1725 02d0 8701     		.4byte	.LLST7
+ 1726 02d2 01       		.uleb128 0x8
+ 1727 02d3 00000000 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 44
+
+
+ 1728 02d7 20000000 		.ascii	"Volume_ADC_StopConvert\000"
+ 1729 02db 5D010000 		.byte	0x1
+ 1730 02df 08       		.2byte	0x1aa
+ 1731 02e0 01       		.byte	0x1
+ 1732 02e1 566F6C75 		.4byte	.LFB10
+ 1732      6D655F41 
+ 1732      44435F53 
+ 1732      746F7043 
+ 1732      6F6E7665 
+ 1733 02f8 01       		.4byte	.LFE10
+ 1734 02f9 AA01     		.4byte	.LLST8
+ 1735 02fb 01       		.uleb128 0xd
+ 1736 02fc 00000000 		.byte	0x1
+ 1737 0300 1C000000 		.ascii	"Volume_ADC_IsEndConversion\000"
+ 1738 0304 88010000 		.byte	0x1
+ 1739 0308 0D       		.2byte	0x1c9
+ 1740 0309 01       		.byte	0x1
+ 1741 030a 566F6C75 		.4byte	0x99
+ 1741      6D655F41 
+ 1741      44435F49 
+ 1741      73456E64 
+ 1741      436F6E76 
+ 1742 0325 01       		.4byte	.LFB11
+ 1743 0326 C901     		.4byte	.LFE11
+ 1744 0328 01       		.4byte	.LLST9
+ 1745 0329 99000000 		.4byte	0x363
+ 1746 032d 00000000 		.uleb128 0xa
+ 1747 0331 34000000 		.ascii	"retMode\000"
+ 1748 0335 B3010000 		.byte	0x1
+ 1749 0339 63030000 		.2byte	0x1c8
+ 1750 033d 0A       		.4byte	0x99
+ 1751 033e 7265744D 		.byte	0x2
+ 1751      6F646500 
+ 1752 0346 01       		.byte	0x91
+ 1753 0347 C801     		.sleb128 -17
+ 1754 0349 99000000 		.uleb128 0xe
+ 1755 034d 02       		.ascii	"status\000"
+ 1756 034e 91       		.byte	0x1
+ 1757 034f 6F       		.2byte	0x1ca
+ 1758 0350 0E       		.4byte	0x99
+ 1759 0351 73746174 		.byte	0x2
+ 1759      757300
+ 1760 0358 01       		.byte	0x91
+ 1761 0359 CA01     		.sleb128 -9
+ 1762 035b 99000000 		.byte	0x0
+ 1763 035f 02       		.uleb128 0xf
+ 1764 0360 91       		.byte	0x1
+ 1765 0361 77       		.ascii	"Volume_ADC_GetResult8\000"
+ 1766 0362 00       		.byte	0x1
+ 1767 0363 0F       		.2byte	0x1e4
+ 1768 0364 01       		.byte	0x1
+ 1769 0365 566F6C75 		.4byte	0xed
+ 1769      6D655F41 
+ 1769      44435F47 
+ 1769      65745265 
+ 1769      73756C74 
+ 1770 037b 01       		.4byte	.LFB12
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 45
+
+
+ 1771 037c E401     		.4byte	.LFE12
+ 1772 037e 01       		.4byte	.LLST10
+ 1773 037f ED000000 		.uleb128 0xf
+ 1774 0383 00000000 		.byte	0x1
+ 1775 0387 18000000 		.ascii	"Volume_ADC_GetResult16\000"
+ 1776 038b EA010000 		.byte	0x1
+ 1777 038f 0F       		.2byte	0x1f8
+ 1778 0390 01       		.byte	0x1
+ 1779 0391 566F6C75 		.4byte	0x108
+ 1779      6D655F41 
+ 1779      44435F47 
+ 1779      65745265 
+ 1779      73756C74 
+ 1780 03a8 01       		.4byte	.LFB13
+ 1781 03a9 F801     		.4byte	.LFE13
+ 1782 03ab 01       		.4byte	.LLST11
+ 1783 03ac 08010000 		.uleb128 0x9
+ 1784 03b0 00000000 		.byte	0x1
+ 1785 03b4 30000000 		.ascii	"Volume_ADC_SetOffset\000"
+ 1786 03b8 15020000 		.byte	0x1
+ 1787 03bc 09       		.2byte	0x20c
+ 1788 03bd 01       		.byte	0x1
+ 1789 03be 566F6C75 		.4byte	.LFB14
+ 1789      6D655F41 
+ 1789      44435F53 
+ 1789      65744F66 
+ 1789      66736574 
+ 1790 03d3 01       		.4byte	.LFE14
+ 1791 03d4 0C02     		.4byte	.LLST12
+ 1792 03d6 01       		.4byte	0x3fa
+ 1793 03d7 00000000 		.uleb128 0xa
+ 1794 03db 20000000 		.ascii	"offset\000"
+ 1795 03df 40020000 		.byte	0x1
+ 1796 03e3 FA030000 		.2byte	0x20b
+ 1797 03e7 0A       		.4byte	0x108
+ 1798 03e8 6F666673 		.byte	0x2
+ 1798      657400
+ 1799 03ef 01       		.byte	0x91
+ 1800 03f0 0B02     		.sleb128 -10
+ 1801 03f2 08010000 		.byte	0x0
+ 1802 03f6 02       		.uleb128 0x9
+ 1803 03f7 91       		.byte	0x1
+ 1804 03f8 76       		.ascii	"Volume_ADC_CalcGain\000"
+ 1805 03f9 00       		.byte	0x1
+ 1806 03fa 09       		.2byte	0x221
+ 1807 03fb 01       		.byte	0x1
+ 1808 03fc 566F6C75 		.4byte	.LFB15
+ 1808      6D655F41 
+ 1808      44435F43 
+ 1808      616C6347 
+ 1808      61696E00 
+ 1809 0410 01       		.4byte	.LFE15
+ 1810 0411 2102     		.4byte	.LLST13
+ 1811 0413 01       		.4byte	0x45b
+ 1812 0414 00000000 		.uleb128 0xc
+ 1813 0418 90000000 		.4byte	.LASF1
+ 1814 041c 77020000 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 46
+
+
+ 1815 0420 5B040000 		.2byte	0x220
+ 1816 0424 0C       		.4byte	0x99
+ 1817 0425 00000000 		.byte	0x2
+ 1818 0429 01       		.byte	0x91
+ 1819 042a 2002     		.sleb128 -17
+ 1820 042c 99000000 		.uleb128 0xe
+ 1821 0430 02       		.ascii	"counts\000"
+ 1822 0431 91       		.byte	0x1
+ 1823 0432 6F       		.2byte	0x222
+ 1824 0433 0E       		.4byte	0xca
+ 1825 0434 636F756E 		.byte	0x2
+ 1825      747300
+ 1826 043b 01       		.byte	0x91
+ 1827 043c 2202     		.sleb128 -16
+ 1828 043e CA000000 		.uleb128 0xe
+ 1829 0442 02       		.ascii	"diff_zero\000"
+ 1830 0443 91       		.byte	0x1
+ 1831 0444 70       		.2byte	0x223
+ 1832 0445 0E       		.4byte	0xa6
+ 1833 0446 64696666 		.byte	0x2
+ 1833      5F7A6572 
+ 1833      6F00
+ 1834 0450 01       		.byte	0x91
+ 1835 0451 2302     		.sleb128 -10
+ 1836 0453 A6000000 		.byte	0x0
+ 1837 0457 02       		.uleb128 0x9
+ 1838 0458 91       		.byte	0x1
+ 1839 0459 76       		.ascii	"Volume_ADC_SetGain\000"
+ 1840 045a 00       		.byte	0x1
+ 1841 045b 09       		.2byte	0x26c
+ 1842 045c 01       		.byte	0x1
+ 1843 045d 566F6C75 		.4byte	.LFB16
+ 1843      6D655F41 
+ 1843      44435F53 
+ 1843      65744761 
+ 1843      696E00
+ 1844 0470 01       		.4byte	.LFE16
+ 1845 0471 6C02     		.4byte	.LLST14
+ 1846 0473 01       		.4byte	0x498
+ 1847 0474 00000000 		.uleb128 0xa
+ 1848 0478 20000000 		.ascii	"adcGain\000"
+ 1849 047c AE020000 		.byte	0x1
+ 1850 0480 98040000 		.2byte	0x26b
+ 1851 0484 0A       		.4byte	0x108
+ 1852 0485 61646347 		.byte	0x2
+ 1852      61696E00 
+ 1853 048d 01       		.byte	0x91
+ 1854 048e 6B02     		.sleb128 -10
+ 1855 0490 08010000 		.byte	0x0
+ 1856 0494 02       		.uleb128 0xd
+ 1857 0495 91       		.byte	0x1
+ 1858 0496 76       		.ascii	"Volume_ADC_CountsTo_mVolts\000"
+ 1859 0497 00       		.byte	0x1
+ 1860 0498 0D       		.2byte	0x281
+ 1861 0499 01       		.byte	0x1
+ 1862 049a 566F6C75 		.4byte	0x108
+ 1862      6D655F41 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 47
+
+
+ 1862      44435F43 
+ 1862      6F756E74 
+ 1862      73546F5F 
+ 1863 04b5 01       		.4byte	.LFB17
+ 1864 04b6 8102     		.4byte	.LFE17
+ 1865 04b8 01       		.4byte	.LLST15
+ 1866 04b9 08010000 		.4byte	0x4f5
+ 1867 04bd 00000000 		.uleb128 0xa
+ 1868 04c1 60000000 		.ascii	"adcCounts\000"
+ 1869 04c5 E5020000 		.byte	0x1
+ 1870 04c9 F5040000 		.2byte	0x280
+ 1871 04cd 0A       		.4byte	0x108
+ 1872 04ce 61646343 		.byte	0x2
+ 1872      6F756E74 
+ 1872      7300
+ 1873 04d8 01       		.byte	0x91
+ 1874 04d9 8002     		.sleb128 -18
+ 1875 04db 08010000 		.uleb128 0xe
+ 1876 04df 02       		.ascii	"mVolts\000"
+ 1877 04e0 91       		.byte	0x1
+ 1878 04e1 6E       		.2byte	0x283
+ 1879 04e2 0E       		.4byte	0x108
+ 1880 04e3 6D566F6C 		.byte	0x2
+ 1880      747300
+ 1881 04ea 01       		.byte	0x91
+ 1882 04eb 8302     		.sleb128 -10
+ 1883 04ed 08010000 		.byte	0x0
+ 1884 04f1 02       		.uleb128 0x10
+ 1885 04f2 91       		.ascii	"Volume_ADC_initVar\000"
+ 1886 04f3 76       		.byte	0x1
+ 1887 04f4 00       		.byte	0x19
+ 1888 04f5 10       		.4byte	0x99
+ 1889 04f6 566F6C75 		.byte	0x1
+ 1889      6D655F41 
+ 1889      44435F69 
+ 1889      6E697456 
+ 1889      617200
+ 1890 0509 01       		.byte	0x5
+ 1891 050a 19       		.byte	0x3
+ 1892 050b 99000000 		.4byte	Volume_ADC_initVar
+ 1893 050f 01       		.uleb128 0x10
+ 1894 0510 05       		.ascii	"Volume_ADC_Offset\000"
+ 1895 0511 03       		.byte	0x1
+ 1896 0512 00000000 		.byte	0x1a
+ 1897 0516 10       		.4byte	0x108
+ 1898 0517 566F6C75 		.byte	0x1
+ 1898      6D655F41 
+ 1898      44435F4F 
+ 1898      66667365 
+ 1898      7400
+ 1899 0529 01       		.byte	0x5
+ 1900 052a 1A       		.byte	0x3
+ 1901 052b 08010000 		.4byte	Volume_ADC_Offset
+ 1902 052f 01       		.uleb128 0x10
+ 1903 0530 05       		.ascii	"Volume_ADC_CountsPerVolt\000"
+ 1904 0531 03       		.byte	0x1
+ 1905 0532 00000000 		.byte	0x1b
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 48
+
+
+ 1906 0536 10       		.4byte	0x108
+ 1907 0537 566F6C75 		.byte	0x1
+ 1907      6D655F41 
+ 1907      44435F43 
+ 1907      6F756E74 
+ 1907      73506572 
+ 1908 0550 01       		.byte	0x5
+ 1909 0551 1B       		.byte	0x3
+ 1910 0552 08010000 		.4byte	Volume_ADC_CountsPerVolt
+ 1911 0556 01       		.byte	0x0
+ 1912 0557 05       		.section	.debug_abbrev
+ 1913 0558 03       		.uleb128 0x1
+ 1914 0559 00000000 		.uleb128 0x11
+ 1915 055d 00       		.byte	0x1
+ 1916              		.uleb128 0x25
+ 1917 0000 01       		.uleb128 0x8
+ 1918 0001 11       		.uleb128 0x13
+ 1919 0002 01       		.uleb128 0xb
+ 1920 0003 25       		.uleb128 0x3
+ 1921 0004 08       		.uleb128 0x8
+ 1922 0005 13       		.uleb128 0x1b
+ 1923 0006 0B       		.uleb128 0x8
+ 1924 0007 03       		.uleb128 0x52
+ 1925 0008 08       		.uleb128 0x1
+ 1926 0009 1B       		.uleb128 0x10
+ 1927 000a 08       		.uleb128 0x6
+ 1928 000b 52       		.byte	0x0
+ 1929 000c 01       		.byte	0x0
+ 1930 000d 10       		.uleb128 0x2
+ 1931 000e 06       		.uleb128 0x24
+ 1932 000f 00       		.byte	0x0
+ 1933 0010 00       		.uleb128 0xb
+ 1934 0011 02       		.uleb128 0xb
+ 1935 0012 24       		.uleb128 0x3e
+ 1936 0013 00       		.uleb128 0xb
+ 1937 0014 0B       		.uleb128 0x3
+ 1938 0015 0B       		.uleb128 0x8
+ 1939 0016 3E       		.byte	0x0
+ 1940 0017 0B       		.byte	0x0
+ 1941 0018 03       		.uleb128 0x3
+ 1942 0019 08       		.uleb128 0x16
+ 1943 001a 00       		.byte	0x0
+ 1944 001b 00       		.uleb128 0x3
+ 1945 001c 03       		.uleb128 0x8
+ 1946 001d 16       		.uleb128 0x3a
+ 1947 001e 00       		.uleb128 0xb
+ 1948 001f 03       		.uleb128 0x3b
+ 1949 0020 08       		.uleb128 0xb
+ 1950 0021 3A       		.uleb128 0x49
+ 1951 0022 0B       		.uleb128 0x13
+ 1952 0023 3B       		.byte	0x0
+ 1953 0024 0B       		.byte	0x0
+ 1954 0025 49       		.uleb128 0x4
+ 1955 0026 13       		.uleb128 0x2e
+ 1956 0027 00       		.byte	0x1
+ 1957 0028 00       		.uleb128 0x3f
+ 1958 0029 04       		.uleb128 0xc
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 49
+
+
+ 1959 002a 2E       		.uleb128 0x3
+ 1960 002b 01       		.uleb128 0x8
+ 1961 002c 3F       		.uleb128 0x3a
+ 1962 002d 0C       		.uleb128 0xb
+ 1963 002e 03       		.uleb128 0x3b
+ 1964 002f 08       		.uleb128 0xb
+ 1965 0030 3A       		.uleb128 0x27
+ 1966 0031 0B       		.uleb128 0xc
+ 1967 0032 3B       		.uleb128 0x11
+ 1968 0033 0B       		.uleb128 0x1
+ 1969 0034 27       		.uleb128 0x12
+ 1970 0035 0C       		.uleb128 0x1
+ 1971 0036 11       		.uleb128 0x40
+ 1972 0037 01       		.uleb128 0x6
+ 1973 0038 12       		.uleb128 0x1
+ 1974 0039 01       		.uleb128 0x13
+ 1975 003a 40       		.byte	0x0
+ 1976 003b 06       		.byte	0x0
+ 1977 003c 01       		.uleb128 0x5
+ 1978 003d 13       		.uleb128 0x34
+ 1979 003e 00       		.byte	0x0
+ 1980 003f 00       		.uleb128 0x3
+ 1981 0040 05       		.uleb128 0xe
+ 1982 0041 34       		.uleb128 0x3a
+ 1983 0042 00       		.uleb128 0xb
+ 1984 0043 03       		.uleb128 0x3b
+ 1985 0044 0E       		.uleb128 0xb
+ 1986 0045 3A       		.uleb128 0x49
+ 1987 0046 0B       		.uleb128 0x13
+ 1988 0047 3B       		.uleb128 0x2
+ 1989 0048 0B       		.uleb128 0xa
+ 1990 0049 49       		.byte	0x0
+ 1991 004a 13       		.byte	0x0
+ 1992 004b 02       		.uleb128 0x6
+ 1993 004c 0A       		.uleb128 0x5
+ 1994 004d 00       		.byte	0x0
+ 1995 004e 00       		.uleb128 0x3
+ 1996 004f 06       		.uleb128 0x8
+ 1997 0050 05       		.uleb128 0x3a
+ 1998 0051 00       		.uleb128 0xb
+ 1999 0052 03       		.uleb128 0x3b
+ 2000 0053 08       		.uleb128 0xb
+ 2001 0054 3A       		.uleb128 0x49
+ 2002 0055 0B       		.uleb128 0x13
+ 2003 0056 3B       		.uleb128 0x2
+ 2004 0057 0B       		.uleb128 0xa
+ 2005 0058 49       		.byte	0x0
+ 2006 0059 13       		.byte	0x0
+ 2007 005a 02       		.uleb128 0x7
+ 2008 005b 0A       		.uleb128 0x2e
+ 2009 005c 00       		.byte	0x0
+ 2010 005d 00       		.uleb128 0x3f
+ 2011 005e 07       		.uleb128 0xc
+ 2012 005f 2E       		.uleb128 0x3
+ 2013 0060 00       		.uleb128 0x8
+ 2014 0061 3F       		.uleb128 0x3a
+ 2015 0062 0C       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 50
+
+
+ 2016 0063 03       		.uleb128 0x3b
+ 2017 0064 08       		.uleb128 0xb
+ 2018 0065 3A       		.uleb128 0x27
+ 2019 0066 0B       		.uleb128 0xc
+ 2020 0067 3B       		.uleb128 0x11
+ 2021 0068 0B       		.uleb128 0x1
+ 2022 0069 27       		.uleb128 0x12
+ 2023 006a 0C       		.uleb128 0x1
+ 2024 006b 11       		.uleb128 0x40
+ 2025 006c 01       		.uleb128 0x6
+ 2026 006d 12       		.byte	0x0
+ 2027 006e 01       		.byte	0x0
+ 2028 006f 40       		.uleb128 0x8
+ 2029 0070 06       		.uleb128 0x2e
+ 2030 0071 00       		.byte	0x0
+ 2031 0072 00       		.uleb128 0x3f
+ 2032 0073 08       		.uleb128 0xc
+ 2033 0074 2E       		.uleb128 0x3
+ 2034 0075 00       		.uleb128 0x8
+ 2035 0076 3F       		.uleb128 0x3a
+ 2036 0077 0C       		.uleb128 0xb
+ 2037 0078 03       		.uleb128 0x3b
+ 2038 0079 08       		.uleb128 0x5
+ 2039 007a 3A       		.uleb128 0x27
+ 2040 007b 0B       		.uleb128 0xc
+ 2041 007c 3B       		.uleb128 0x11
+ 2042 007d 05       		.uleb128 0x1
+ 2043 007e 27       		.uleb128 0x12
+ 2044 007f 0C       		.uleb128 0x1
+ 2045 0080 11       		.uleb128 0x40
+ 2046 0081 01       		.uleb128 0x6
+ 2047 0082 12       		.byte	0x0
+ 2048 0083 01       		.byte	0x0
+ 2049 0084 40       		.uleb128 0x9
+ 2050 0085 06       		.uleb128 0x2e
+ 2051 0086 00       		.byte	0x1
+ 2052 0087 00       		.uleb128 0x3f
+ 2053 0088 09       		.uleb128 0xc
+ 2054 0089 2E       		.uleb128 0x3
+ 2055 008a 01       		.uleb128 0x8
+ 2056 008b 3F       		.uleb128 0x3a
+ 2057 008c 0C       		.uleb128 0xb
+ 2058 008d 03       		.uleb128 0x3b
+ 2059 008e 08       		.uleb128 0x5
+ 2060 008f 3A       		.uleb128 0x27
+ 2061 0090 0B       		.uleb128 0xc
+ 2062 0091 3B       		.uleb128 0x11
+ 2063 0092 05       		.uleb128 0x1
+ 2064 0093 27       		.uleb128 0x12
+ 2065 0094 0C       		.uleb128 0x1
+ 2066 0095 11       		.uleb128 0x40
+ 2067 0096 01       		.uleb128 0x6
+ 2068 0097 12       		.uleb128 0x1
+ 2069 0098 01       		.uleb128 0x13
+ 2070 0099 40       		.byte	0x0
+ 2071 009a 06       		.byte	0x0
+ 2072 009b 01       		.uleb128 0xa
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 51
+
+
+ 2073 009c 13       		.uleb128 0x5
+ 2074 009d 00       		.byte	0x0
+ 2075 009e 00       		.uleb128 0x3
+ 2076 009f 0A       		.uleb128 0x8
+ 2077 00a0 05       		.uleb128 0x3a
+ 2078 00a1 00       		.uleb128 0xb
+ 2079 00a2 03       		.uleb128 0x3b
+ 2080 00a3 08       		.uleb128 0x5
+ 2081 00a4 3A       		.uleb128 0x49
+ 2082 00a5 0B       		.uleb128 0x13
+ 2083 00a6 3B       		.uleb128 0x2
+ 2084 00a7 05       		.uleb128 0xa
+ 2085 00a8 49       		.byte	0x0
+ 2086 00a9 13       		.byte	0x0
+ 2087 00aa 02       		.uleb128 0xb
+ 2088 00ab 0A       		.uleb128 0x34
+ 2089 00ac 00       		.byte	0x0
+ 2090 00ad 00       		.uleb128 0x3
+ 2091 00ae 0B       		.uleb128 0xe
+ 2092 00af 34       		.uleb128 0x3a
+ 2093 00b0 00       		.uleb128 0xb
+ 2094 00b1 03       		.uleb128 0x3b
+ 2095 00b2 0E       		.uleb128 0x5
+ 2096 00b3 3A       		.uleb128 0x49
+ 2097 00b4 0B       		.uleb128 0x13
+ 2098 00b5 3B       		.uleb128 0x2
+ 2099 00b6 05       		.uleb128 0xa
+ 2100 00b7 49       		.byte	0x0
+ 2101 00b8 13       		.byte	0x0
+ 2102 00b9 02       		.uleb128 0xc
+ 2103 00ba 0A       		.uleb128 0x5
+ 2104 00bb 00       		.byte	0x0
+ 2105 00bc 00       		.uleb128 0x3
+ 2106 00bd 0C       		.uleb128 0xe
+ 2107 00be 05       		.uleb128 0x3a
+ 2108 00bf 00       		.uleb128 0xb
+ 2109 00c0 03       		.uleb128 0x3b
+ 2110 00c1 0E       		.uleb128 0x5
+ 2111 00c2 3A       		.uleb128 0x49
+ 2112 00c3 0B       		.uleb128 0x13
+ 2113 00c4 3B       		.uleb128 0x2
+ 2114 00c5 05       		.uleb128 0xa
+ 2115 00c6 49       		.byte	0x0
+ 2116 00c7 13       		.byte	0x0
+ 2117 00c8 02       		.uleb128 0xd
+ 2118 00c9 0A       		.uleb128 0x2e
+ 2119 00ca 00       		.byte	0x1
+ 2120 00cb 00       		.uleb128 0x3f
+ 2121 00cc 0D       		.uleb128 0xc
+ 2122 00cd 2E       		.uleb128 0x3
+ 2123 00ce 01       		.uleb128 0x8
+ 2124 00cf 3F       		.uleb128 0x3a
+ 2125 00d0 0C       		.uleb128 0xb
+ 2126 00d1 03       		.uleb128 0x3b
+ 2127 00d2 08       		.uleb128 0x5
+ 2128 00d3 3A       		.uleb128 0x27
+ 2129 00d4 0B       		.uleb128 0xc
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 52
+
+
+ 2130 00d5 3B       		.uleb128 0x49
+ 2131 00d6 05       		.uleb128 0x13
+ 2132 00d7 27       		.uleb128 0x11
+ 2133 00d8 0C       		.uleb128 0x1
+ 2134 00d9 49       		.uleb128 0x12
+ 2135 00da 13       		.uleb128 0x1
+ 2136 00db 11       		.uleb128 0x40
+ 2137 00dc 01       		.uleb128 0x6
+ 2138 00dd 12       		.uleb128 0x1
+ 2139 00de 01       		.uleb128 0x13
+ 2140 00df 40       		.byte	0x0
+ 2141 00e0 06       		.byte	0x0
+ 2142 00e1 01       		.uleb128 0xe
+ 2143 00e2 13       		.uleb128 0x34
+ 2144 00e3 00       		.byte	0x0
+ 2145 00e4 00       		.uleb128 0x3
+ 2146 00e5 0E       		.uleb128 0x8
+ 2147 00e6 34       		.uleb128 0x3a
+ 2148 00e7 00       		.uleb128 0xb
+ 2149 00e8 03       		.uleb128 0x3b
+ 2150 00e9 08       		.uleb128 0x5
+ 2151 00ea 3A       		.uleb128 0x49
+ 2152 00eb 0B       		.uleb128 0x13
+ 2153 00ec 3B       		.uleb128 0x2
+ 2154 00ed 05       		.uleb128 0xa
+ 2155 00ee 49       		.byte	0x0
+ 2156 00ef 13       		.byte	0x0
+ 2157 00f0 02       		.uleb128 0xf
+ 2158 00f1 0A       		.uleb128 0x2e
+ 2159 00f2 00       		.byte	0x0
+ 2160 00f3 00       		.uleb128 0x3f
+ 2161 00f4 0F       		.uleb128 0xc
+ 2162 00f5 2E       		.uleb128 0x3
+ 2163 00f6 00       		.uleb128 0x8
+ 2164 00f7 3F       		.uleb128 0x3a
+ 2165 00f8 0C       		.uleb128 0xb
+ 2166 00f9 03       		.uleb128 0x3b
+ 2167 00fa 08       		.uleb128 0x5
+ 2168 00fb 3A       		.uleb128 0x27
+ 2169 00fc 0B       		.uleb128 0xc
+ 2170 00fd 3B       		.uleb128 0x49
+ 2171 00fe 05       		.uleb128 0x13
+ 2172 00ff 27       		.uleb128 0x11
+ 2173 0100 0C       		.uleb128 0x1
+ 2174 0101 49       		.uleb128 0x12
+ 2175 0102 13       		.uleb128 0x1
+ 2176 0103 11       		.uleb128 0x40
+ 2177 0104 01       		.uleb128 0x6
+ 2178 0105 12       		.byte	0x0
+ 2179 0106 01       		.byte	0x0
+ 2180 0107 40       		.uleb128 0x10
+ 2181 0108 06       		.uleb128 0x34
+ 2182 0109 00       		.byte	0x0
+ 2183 010a 00       		.uleb128 0x3
+ 2184 010b 10       		.uleb128 0x8
+ 2185 010c 34       		.uleb128 0x3a
+ 2186 010d 00       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 53
+
+
+ 2187 010e 03       		.uleb128 0x3b
+ 2188 010f 08       		.uleb128 0xb
+ 2189 0110 3A       		.uleb128 0x49
+ 2190 0111 0B       		.uleb128 0x13
+ 2191 0112 3B       		.uleb128 0x3f
+ 2192 0113 0B       		.uleb128 0xc
+ 2193 0114 49       		.uleb128 0x2
+ 2194 0115 13       		.uleb128 0xa
+ 2195 0116 3F       		.byte	0x0
+ 2196 0117 0C       		.byte	0x0
+ 2197 0118 02       		.byte	0x0
+ 2198 0119 0A       		.section	.debug_pubnames,"",%progbits
+ 2199 011a 00       		.4byte	0x1f3
+ 2200 011b 00       		.2byte	0x2
+ 2201 011c 00       		.4byte	.Ldebug_info0
+ 2202              		.4byte	0x55e
+ 2203 0000 F3010000 		.4byte	0x12e
+ 2204 0004 0200     		.ascii	"Volume_ADC_Start\000"
+ 2205 0006 00000000 		.4byte	0x163
+ 2206 000a 5E050000 		.ascii	"Volume_ADC_SetRef\000"
+ 2207 000e 2E010000 		.4byte	0x1ab
+ 2208 0012 566F6C75 		.ascii	"Volume_ADC_Stop\000"
+ 2208      6D655F41 
+ 2208      44435F53 
+ 2208      74617274 
+ 2208      00
+ 2209 0023 63010000 		.4byte	0x1cc
+ 2210 0027 566F6C75 		.ascii	"Volume_ADC_IRQ_Enable\000"
+ 2210      6D655F41 
+ 2210      44435F53 
+ 2210      65745265 
+ 2210      6600
+ 2211 0039 AB010000 		.4byte	0x1f3
+ 2212 003d 566F6C75 		.ascii	"Volume_ADC_IRQ_Disable\000"
+ 2212      6D655F41 
+ 2212      44435F53 
+ 2212      746F7000 
+ 2213 004d CC010000 		.4byte	0x21c
+ 2214 0051 566F6C75 		.ascii	"Volume_ADC_SetPower\000"
+ 2214      6D655F41 
+ 2214      44435F49 
+ 2214      52515F45 
+ 2214      6E61626C 
+ 2215 0067 F3010000 		.4byte	0x267
+ 2216 006b 566F6C75 		.ascii	"Volume_ADC_SetResolution\000"
+ 2216      6D655F41 
+ 2216      44435F49 
+ 2216      52515F44 
+ 2216      69736162 
+ 2217 0082 1C020000 		.4byte	0x2b5
+ 2218 0086 566F6C75 		.ascii	"Volume_ADC_StartConvert\000"
+ 2218      6D655F41 
+ 2218      44435F53 
+ 2218      6574506F 
+ 2218      77657200 
+ 2219 009a 67020000 		.4byte	0x2df
+ 2220 009e 566F6C75 		.ascii	"Volume_ADC_StopConvert\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 54
+
+
+ 2220      6D655F41 
+ 2220      44435F53 
+ 2220      65745265 
+ 2220      736F6C75 
+ 2221 00b7 B5020000 		.4byte	0x308
+ 2222 00bb 566F6C75 		.ascii	"Volume_ADC_IsEndConversion\000"
+ 2222      6D655F41 
+ 2222      44435F53 
+ 2222      74617274 
+ 2222      436F6E76 
+ 2223 00d3 DF020000 		.4byte	0x363
+ 2224 00d7 566F6C75 		.ascii	"Volume_ADC_GetResult8\000"
+ 2224      6D655F41 
+ 2224      44435F53 
+ 2224      746F7043 
+ 2224      6F6E7665 
+ 2225 00ee 08030000 		.4byte	0x38f
+ 2226 00f2 566F6C75 		.ascii	"Volume_ADC_GetResult16\000"
+ 2226      6D655F41 
+ 2226      44435F49 
+ 2226      73456E64 
+ 2226      436F6E76 
+ 2227 010d 63030000 		.4byte	0x3bc
+ 2228 0111 566F6C75 		.ascii	"Volume_ADC_SetOffset\000"
+ 2228      6D655F41 
+ 2228      44435F47 
+ 2228      65745265 
+ 2228      73756C74 
+ 2229 0127 8F030000 		.4byte	0x3fa
+ 2230 012b 566F6C75 		.ascii	"Volume_ADC_CalcGain\000"
+ 2230      6D655F41 
+ 2230      44435F47 
+ 2230      65745265 
+ 2230      73756C74 
+ 2231 0142 BC030000 		.4byte	0x45b
+ 2232 0146 566F6C75 		.ascii	"Volume_ADC_SetGain\000"
+ 2232      6D655F41 
+ 2232      44435F53 
+ 2232      65744F66 
+ 2232      66736574 
+ 2233 015b FA030000 		.4byte	0x498
+ 2234 015f 566F6C75 		.ascii	"Volume_ADC_CountsTo_mVolts\000"
+ 2234      6D655F41 
+ 2234      44435F43 
+ 2234      616C6347 
+ 2234      61696E00 
+ 2235 0173 5B040000 		.4byte	0x4f5
+ 2236 0177 566F6C75 		.ascii	"Volume_ADC_initVar\000"
+ 2236      6D655F41 
+ 2236      44435F53 
+ 2236      65744761 
+ 2236      696E00
+ 2237 018a 98040000 		.4byte	0x516
+ 2238 018e 566F6C75 		.ascii	"Volume_ADC_Offset\000"
+ 2238      6D655F41 
+ 2238      44435F43 
+ 2238      6F756E74 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 55
+
+
+ 2238      73546F5F 
+ 2239 01a9 F5040000 		.4byte	0x536
+ 2240 01ad 566F6C75 		.ascii	"Volume_ADC_CountsPerVolt\000"
+ 2240      6D655F41 
+ 2240      44435F69 
+ 2240      6E697456 
+ 2240      617200
+ 2241 01c0 16050000 		.4byte	0x0
+ 2242 01c4 566F6C75 		.section	.debug_aranges,"",%progbits
+ 2242      6D655F41 
+ 2242      44435F4F 
+ 2242      66667365 
+ 2242      7400
+ 2243 01d6 36050000 		.4byte	0x94
+ 2244 01da 566F6C75 		.2byte	0x2
+ 2244      6D655F41 
+ 2244      44435F43 
+ 2244      6F756E74 
+ 2244      73506572 
+ 2245 01f3 00000000 		.4byte	.Ldebug_info0
+ 2246              		.byte	0x4
+ 2247 0000 94000000 		.byte	0x0
+ 2248 0004 0200     		.2byte	0x0
+ 2249 0006 00000000 		.2byte	0x0
+ 2250 000a 04       		.4byte	.LFB2
+ 2251 000b 00       		.4byte	.LFE2-.LFB2
+ 2252 000c 0000     		.4byte	.LFB3
+ 2253 000e 0000     		.4byte	.LFE3-.LFB3
+ 2254 0010 00000000 		.4byte	.LFB4
+ 2255 0014 DC000000 		.4byte	.LFE4-.LFB4
+ 2256 0018 00000000 		.4byte	.LFB5
+ 2257 001c 64000000 		.4byte	.LFE5-.LFB5
+ 2258 0020 00000000 		.4byte	.LFB6
+ 2259 0024 44000000 		.4byte	.LFE6-.LFB6
+ 2260 0028 00000000 		.4byte	.LFB7
+ 2261 002c 10000000 		.4byte	.LFE7-.LFB7
+ 2262 0030 00000000 		.4byte	.LFB8
+ 2263 0034 10000000 		.4byte	.LFE8-.LFB8
+ 2264 0038 00000000 		.4byte	.LFB9
+ 2265 003c 48000000 		.4byte	.LFE9-.LFB9
+ 2266 0040 00000000 		.4byte	.LFB10
+ 2267 0044 5C000000 		.4byte	.LFE10-.LFB10
+ 2268 0048 00000000 		.4byte	.LFB11
+ 2269 004c 20000000 		.4byte	.LFE11-.LFB11
+ 2270 0050 00000000 		.4byte	.LFB12
+ 2271 0054 1C000000 		.4byte	.LFE12-.LFB12
+ 2272 0058 00000000 		.4byte	.LFB13
+ 2273 005c 34000000 		.4byte	.LFE13-.LFB13
+ 2274 0060 00000000 		.4byte	.LFB14
+ 2275 0064 18000000 		.4byte	.LFE14-.LFB14
+ 2276 0068 00000000 		.4byte	.LFB15
+ 2277 006c 30000000 		.4byte	.LFE15-.LFB15
+ 2278 0070 00000000 		.4byte	.LFB16
+ 2279 0074 20000000 		.4byte	.LFE16-.LFB16
+ 2280 0078 00000000 		.4byte	.LFB17
+ 2281 007c 90000000 		.4byte	.LFE17-.LFB17
+ 2282 0080 00000000 		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccSwbaaa.s 			page 56
+
+
+ 2283 0084 20000000 		.4byte	0x0
+ 2284 0088 00000000 		.section	.debug_str,"",%progbits
+ 2285 008c 60000000 	.LASF1:
+ 2286 0090 00000000 		.ascii	"resolution\000"
+ 2287 0094 00000000 	.LASF0:
+ 2288              		.ascii	"tmpReg\000"
+ 2289              		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 2290 0000 7265736F 	...
+ 2290      6C757469 
+ 2290      6F6E00

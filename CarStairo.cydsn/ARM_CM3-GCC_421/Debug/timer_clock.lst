@@ -1,0 +1,1329 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"timer_clock.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 C9000000 		.text
+  20      02004A00 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.text.timer_clock_Start,"ax",%progbits
+  23              		.align	2
+  24              		.global	timer_clock_Start
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	timer_clock_Start, %function
+  28              	timer_clock_Start:
+  29              	.LFB2:
+  30              		.file 1 "./Generated_Source/PSoC5/timer_clock.c"
+   1:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/timer_clock.c **** * File Name: timer_clock.c
+   3:./Generated_Source/PSoC5/timer_clock.c **** * Version 1.0
+   4:./Generated_Source/PSoC5/timer_clock.c **** *
+   5:./Generated_Source/PSoC5/timer_clock.c **** *  Description:
+   6:./Generated_Source/PSoC5/timer_clock.c **** *    API for controlling a clock.
+   7:./Generated_Source/PSoC5/timer_clock.c **** *
+   8:./Generated_Source/PSoC5/timer_clock.c **** *    A clock has an input source and a divider.  These are assigned 
+   9:./Generated_Source/PSoC5/timer_clock.c **** *    by CyDesigner.  Durring code generation, CyDesigner creates
+  10:./Generated_Source/PSoC5/timer_clock.c **** *    the necessary defines for manipulating the registers associated
+  11:./Generated_Source/PSoC5/timer_clock.c **** *    with the assigned clock.  This API uses those register definitions
+  12:./Generated_Source/PSoC5/timer_clock.c **** *    to control the clock.  
+  13:./Generated_Source/PSoC5/timer_clock.c **** *
+  14:./Generated_Source/PSoC5/timer_clock.c **** *   Note:
+  15:./Generated_Source/PSoC5/timer_clock.c **** *
+  16:./Generated_Source/PSoC5/timer_clock.c **** *
+  17:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+  18:./Generated_Source/PSoC5/timer_clock.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  19:./Generated_Source/PSoC5/timer_clock.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  20:./Generated_Source/PSoC5/timer_clock.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  21:./Generated_Source/PSoC5/timer_clock.c **** * the software package with which this file was provided.
+  22:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************/
+  23:./Generated_Source/PSoC5/timer_clock.c **** 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 2
+
+
+  24:./Generated_Source/PSoC5/timer_clock.c **** 
+  25:./Generated_Source/PSoC5/timer_clock.c **** #include <CYDEVICE.H>
+  26:./Generated_Source/PSoC5/timer_clock.c **** #include "timer_clock.H"
+  27:./Generated_Source/PSoC5/timer_clock.c **** 
+  28:./Generated_Source/PSoC5/timer_clock.c **** 
+  29:./Generated_Source/PSoC5/timer_clock.c **** 
+  30:./Generated_Source/PSoC5/timer_clock.c **** 
+  31:./Generated_Source/PSoC5/timer_clock.c **** 
+  32:./Generated_Source/PSoC5/timer_clock.c **** 
+  33:./Generated_Source/PSoC5/timer_clock.c **** 
+  34:./Generated_Source/PSoC5/timer_clock.c **** /* Clock Distribution registers. */
+  35:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_CR                  ((reg8 *) CYDEV_CLKDIST_CR)
+  36:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_LD                  ((reg8 *) CYDEV_CLKDIST_LD)
+  37:./Generated_Source/PSoC5/timer_clock.c **** 
+  38:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_BCFG0               ((reg8 *) CYDEV_CLKDIST_BCFG0)
+  39:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_BCFG1               ((reg8 *) CYDEV_CLKDIST_BCFG1)
+  40:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_BCFG2               ((reg8 *) CYDEV_CLKDIST_BCFG2)
+  41:./Generated_Source/PSoC5/timer_clock.c **** 
+  42:./Generated_Source/PSoC5/timer_clock.c **** #define BCFG2_SHADOW_MASK            (0x80)
+  43:./Generated_Source/PSoC5/timer_clock.c **** 
+  44:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_WRK0                ((reg8 *) CYDEV_CLKDIST_WRK0)
+  45:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_WRK1                ((reg8 *) CYDEV_CLKDIST_WRK1)
+  46:./Generated_Source/PSoC5/timer_clock.c **** 
+  47:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_DMASK               ((reg8 *) CYDEV_CLKDIST_DMASK)
+  48:./Generated_Source/PSoC5/timer_clock.c **** #define CLK_DIST_AMASK               ((reg8 *) CYDEV_CLKDIST_AMASK)
+  49:./Generated_Source/PSoC5/timer_clock.c **** 
+  50:./Generated_Source/PSoC5/timer_clock.c **** 
+  51:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+  52:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_Start
+  53:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+  54:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+  55:./Generated_Source/PSoC5/timer_clock.c **** *   Enables the clock by setting the enable bit in the 'Active Power Mode
+  56:./Generated_Source/PSoC5/timer_clock.c **** *   Configuration Register' corresponding to this clock.
+  57:./Generated_Source/PSoC5/timer_clock.c **** *
+  58:./Generated_Source/PSoC5/timer_clock.c **** *
+  59:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+  60:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+  61:./Generated_Source/PSoC5/timer_clock.c **** *
+  62:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+  63:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+  64:./Generated_Source/PSoC5/timer_clock.c **** *   
+  65:./Generated_Source/PSoC5/timer_clock.c **** *
+  66:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+  67:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_Start(void)
+  68:./Generated_Source/PSoC5/timer_clock.c **** {
+  31              	end = 0, frame = 0
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		push	{r7}
+  35 0000 80B4     	.LCFI0:
+  36              		add	r7, sp, #0
+  37 0002 00AF     	.LCFI1:
+  38              		@ lr needed for prologue
+  39              		.loc 1 70 0
+  69:./Generated_Source/PSoC5/timer_clock.c ****     /* Set the bit to enable the clock. */
+  70:./Generated_Source/PSoC5/timer_clock.c ****     *timer_clock_CLKEN |= timer_clock_CLKEN_MASK;
+  40              	.L3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 3
+
+
+  41 0004 054A     		ldr	r3, .L3
+  42 0006 054B     		ldrb	r3, [r3, #0]
+  43 0008 1B78     		uxtb	r3, r3
+  44 000a DBB2     		orr	r3, r3, #4
+  45 000c 43F00403 		uxtb	r3, r3
+  46 0010 DBB2     		strb	r3, [r2, #0]
+  47 0012 1370     		.loc 1 71 0
+  71:./Generated_Source/PSoC5/timer_clock.c **** }
+  48              	 r7
+  49 0014 BD46     		pop	{r7}
+  50 0016 80BC     		bx	lr
+  51 0018 7047     	.L4:
+  52              		.align	2
+  53 001a C046     	.L3:
+  54              		.word	1073759138
+  55 001c A2430040 	.LFE2:
+  56              		.size	timer_clock_Start, .-timer_clock_Start
+  57              		.section	.text.timer_clock_Stop,"ax",%progbits
+  58              		.align	2
+  59              		.global	timer_clock_Stop
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	timer_clock_Stop, %function
+  63              	timer_clock_Stop:
+  64              	.LFB3:
+  65              		.loc 1 94 0
+  72:./Generated_Source/PSoC5/timer_clock.c **** 
+  73:./Generated_Source/PSoC5/timer_clock.c **** 
+  74:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+  75:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_Stop
+  76:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+  77:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+  78:./Generated_Source/PSoC5/timer_clock.c **** *   Disables the clock by clearing the enable bit in the 'Active Power Mode
+  79:./Generated_Source/PSoC5/timer_clock.c **** *   Configuration Register' corresponding to this clock.
+  80:./Generated_Source/PSoC5/timer_clock.c **** *
+  81:./Generated_Source/PSoC5/timer_clock.c **** *   if the clock is disabled, the output will be held at logic 0 when the
+  82:./Generated_Source/PSoC5/timer_clock.c **** *   signal transitions to a logic 0.
+  83:./Generated_Source/PSoC5/timer_clock.c **** *
+  84:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+  85:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+  86:./Generated_Source/PSoC5/timer_clock.c **** *
+  87:./Generated_Source/PSoC5/timer_clock.c **** *
+  88:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+  89:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+  90:./Generated_Source/PSoC5/timer_clock.c **** *   
+  91:./Generated_Source/PSoC5/timer_clock.c **** *
+  92:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+  93:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_Stop(void)
+  94:./Generated_Source/PSoC5/timer_clock.c **** {
+  66              	nd = 0, frame = 0
+  67              		@ frame_needed = 1, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69              		push	{r7}
+  70 0000 80B4     	.LCFI2:
+  71              		add	r7, sp, #0
+  72 0002 00AF     	.LCFI3:
+  73              		@ lr needed for prologue
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 4
+
+
+  74              		.loc 1 96 0
+  95:./Generated_Source/PSoC5/timer_clock.c ****     /* Clear the bit to enable the clock. */
+  96:./Generated_Source/PSoC5/timer_clock.c ****     *timer_clock_CLKEN &= ~timer_clock_CLKEN_MASK;
+  75              	.L7
+  76 0004 044A     		ldr	r3, .L7
+  77 0006 044B     		ldrb	r3, [r3, #0]
+  78 0008 1B78     		uxtb	r3, r3
+  79 000a DBB2     		and	r3, r3, #251
+  80 000c 03F0FB03 		strb	r3, [r2, #0]
+  81 0010 1370     		.loc 1 97 0
+  97:./Generated_Source/PSoC5/timer_clock.c **** }
+  82              	, r7
+  83 0012 BD46     		pop	{r7}
+  84 0014 80BC     		bx	lr
+  85 0016 7047     	.L8:
+  86              		.align	2
+  87              	.L7:
+  88              		.word	1073759138
+  89 0018 A2430040 	.LFE3:
+  90              		.size	timer_clock_Stop, .-timer_clock_Stop
+  91              		.section	.text.timer_clock_StandbyPower,"ax",%progbits
+  92              		.align	2
+  93              		.global	timer_clock_StandbyPower
+  94              		.thumb
+  95              		.thumb_func
+  96              		.type	timer_clock_StandbyPower, %function
+  97              	timer_clock_StandbyPower:
+  98              	.LFB4:
+  99              		.loc 1 117 0
+  98:./Generated_Source/PSoC5/timer_clock.c **** 
+  99:./Generated_Source/PSoC5/timer_clock.c **** 
+ 100:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+ 101:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_StandbyPower
+ 102:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+ 103:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+ 104:./Generated_Source/PSoC5/timer_clock.c **** *   Selects the power state for this clock when in standby power mode.
+ 105:./Generated_Source/PSoC5/timer_clock.c **** *
+ 106:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+ 107:./Generated_Source/PSoC5/timer_clock.c **** *   state:
+ 108:./Generated_Source/PSoC5/timer_clock.c **** *       state of this clock during standby power mode. 1 is active, 0 inactive.
+ 109:./Generated_Source/PSoC5/timer_clock.c **** *
+ 110:./Generated_Source/PSoC5/timer_clock.c **** *   
+ 111:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+ 112:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+ 113:./Generated_Source/PSoC5/timer_clock.c **** *
+ 114:./Generated_Source/PSoC5/timer_clock.c **** *
+ 115:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+ 116:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_StandbyPower(uint8 state)
+ 117:./Generated_Source/PSoC5/timer_clock.c **** {
+ 100              	nd = 0, frame = 8
+ 101              		@ frame_needed = 1, uses_anonymous_args = 0
+ 102              		@ link register save eliminated.
+ 103              		push	{r7}
+ 104 0000 80B4     	.LCFI4:
+ 105              		sub	sp, sp, #12
+ 106 0002 83B0     	.LCFI5:
+ 107              		add	r7, sp, #0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 5
+
+
+ 108 0004 00AF     	.LCFI6:
+ 109              		@ lr needed for prologue
+ 110              		mov	r3, r0
+ 111 0006 0346     		strb	r3, [r7, #7]
+ 112 0008 FB71     		.loc 1 118 0
+ 118:./Generated_Source/PSoC5/timer_clock.c ****     if(state == 0)
+ 113              	, #7]	@ zero_extendqisi2
+ 114 000a FB79     		cmp	r3, #0
+ 115 000c 002B     		bne	.L10
+ 116 000e 07D1     		.loc 1 120 0
+ 119:./Generated_Source/PSoC5/timer_clock.c ****     {
+ 120:./Generated_Source/PSoC5/timer_clock.c ****         *timer_clock_CLKSTBY &= ~timer_clock_CLKSTBY_MASK;
+ 117              		r2, .L14
+ 118 0010 0A4A     		ldr	r3, .L14
+ 119 0012 0A4B     		ldrb	r3, [r3, #0]
+ 120 0014 1B78     		uxtb	r3, r3
+ 121 0016 DBB2     		and	r3, r3, #251
+ 122 0018 03F0FB03 		strb	r3, [r2, #0]
+ 123 001c 1370     		b	.L13
+ 124 001e 07E0     	.L10:
+ 125              		.loc 1 124 0
+ 121:./Generated_Source/PSoC5/timer_clock.c ****     }
+ 122:./Generated_Source/PSoC5/timer_clock.c ****     else
+ 123:./Generated_Source/PSoC5/timer_clock.c ****     {
+ 124:./Generated_Source/PSoC5/timer_clock.c ****         *timer_clock_CLKSTBY |= timer_clock_CLKSTBY_MASK;
+ 126              	.L14
+ 127 0020 064A     		ldr	r3, .L14
+ 128 0022 064B     		ldrb	r3, [r3, #0]
+ 129 0024 1B78     		uxtb	r3, r3
+ 130 0026 DBB2     		orr	r3, r3, #4
+ 131 0028 43F00403 		uxtb	r3, r3
+ 132 002c DBB2     		strb	r3, [r2, #0]
+ 133 002e 1370     	.L13:
+ 134              		.loc 1 126 0
+ 125:./Generated_Source/PSoC5/timer_clock.c ****     }
+ 126:./Generated_Source/PSoC5/timer_clock.c **** }
+ 135              	r7, #12
+ 136 0030 07F10C07 		mov	sp, r7
+ 137 0034 BD46     		pop	{r7}
+ 138 0036 80BC     		bx	lr
+ 139 0038 7047     	.L15:
+ 140              		.align	2
+ 141 003a C046     	.L14:
+ 142              		.word	1073759154
+ 143 003c B2430040 	.LFE4:
+ 144              		.size	timer_clock_StandbyPower, .-timer_clock_StandbyPower
+ 145              		.section	.text.timer_clock_SetDivider,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	timer_clock_SetDivider
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	timer_clock_SetDivider, %function
+ 151              	timer_clock_SetDivider:
+ 152              	.LFB5:
+ 153              		.loc 1 151 0
+ 127:./Generated_Source/PSoC5/timer_clock.c **** 
+ 128:./Generated_Source/PSoC5/timer_clock.c **** 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 6
+
+
+ 129:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+ 130:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_SetDivider
+ 131:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+ 132:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+ 133:./Generated_Source/PSoC5/timer_clock.c **** *   Sets the divider of the clock.
+ 134:./Generated_Source/PSoC5/timer_clock.c **** *
+ 135:./Generated_Source/PSoC5/timer_clock.c **** *
+ 136:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+ 137:./Generated_Source/PSoC5/timer_clock.c **** * clkDivider:
+ 138:./Generated_Source/PSoC5/timer_clock.c **** *   Value to device the input clock by.
+ 139:./Generated_Source/PSoC5/timer_clock.c **** *
+ 140:./Generated_Source/PSoC5/timer_clock.c **** *
+ 141:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+ 142:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+ 143:./Generated_Source/PSoC5/timer_clock.c **** *   
+ 144:./Generated_Source/PSoC5/timer_clock.c **** *
+ 145:./Generated_Source/PSoC5/timer_clock.c **** * Theory:
+ 146:./Generated_Source/PSoC5/timer_clock.c **** *   Any value other than zero is acceptable.
+ 147:./Generated_Source/PSoC5/timer_clock.c **** *
+ 148:./Generated_Source/PSoC5/timer_clock.c **** *
+ 149:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+ 150:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_SetDivider(uint16 clkDivider)
+ 151:./Generated_Source/PSoC5/timer_clock.c **** {
+ 154              	d = 0, frame = 8
+ 155              		@ frame_needed = 1, uses_anonymous_args = 0
+ 156              		@ link register save eliminated.
+ 157              		push	{r7}
+ 158 0000 80B4     	.LCFI7:
+ 159              		sub	sp, sp, #12
+ 160 0002 83B0     	.LCFI8:
+ 161              		add	r7, sp, #0
+ 162 0004 00AF     	.LCFI9:
+ 163              		@ lr needed for prologue
+ 164              		mov	r3, r0
+ 165 0006 0346     		strh	r3, [r7, #6]	@ movhi
+ 166 0008 FB80     		.loc 1 157 0
+ 152:./Generated_Source/PSoC5/timer_clock.c ****     // Clear all the mask bits except ours.
+ 153:./Generated_Source/PSoC5/timer_clock.c **** #if defined(timer_clock__CFG3)
+ 154:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_AMASK = timer_clock_CLKEN_MASK;
+ 155:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_DMASK = 0;
+ 156:./Generated_Source/PSoC5/timer_clock.c **** #else
+ 157:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_DMASK = timer_clock_CLKEN_MASK;
+ 167              	
+ 168 000a 134A     		mov	r3, #4
+ 169 000c 4FF00403 		strb	r3, [r2, #0]
+ 170 0010 1370     		.loc 1 158 0
+ 158:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_AMASK = 0;
+ 171              	r	r2, .L18+4
+ 172 0012 124A     		mov	r3, #0
+ 173 0014 4FF00003 		strb	r3, [r2, #0]
+ 174 0018 1370     		.loc 1 162 0
+ 159:./Generated_Source/PSoC5/timer_clock.c **** #endif
+ 160:./Generated_Source/PSoC5/timer_clock.c **** 
+ 161:./Generated_Source/PSoC5/timer_clock.c ****     /* Set the mask bit to enable shadow loads. */
+ 162:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_BCFG2 |= BCFG2_SHADOW_MASK;
+ 175              		r2, .L18+8
+ 176 001a 114A     		ldr	r3, .L18+8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 7
+
+
+ 177 001c 104B     		ldrb	r3, [r3, #0]
+ 178 001e 1B78     		uxtb	r3, r3
+ 179 0020 DBB2     		mvn	r3, r3, lsl #25
+ 180 0022 6FEA4363 		mvn	r3, r3, lsr #25
+ 181 0026 6FEA5363 		uxtb	r3, r3
+ 182 002a DBB2     		strb	r3, [r2, #0]
+ 183 002c 1370     		.loc 1 164 0
+ 163:./Generated_Source/PSoC5/timer_clock.c **** 
+ 164:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_WRK0 = LO8(clkDivider);
+ 184              	.L18+12
+ 185 002e 0D4A     		ldrh	r3, [r7, #6]	@ movhi
+ 186 0030 FB88     		uxtb	r3, r3
+ 187 0032 DBB2     		strb	r3, [r2, #0]
+ 188 0034 1370     		.loc 1 165 0
+ 165:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_WRK1 = HI8(clkDivider);
+ 189              	r2, .L18+16
+ 190 0036 0C4A     		ldrh	r3, [r7, #6]
+ 191 0038 FB88     		lsr	r3, r3, #8
+ 192 003a 4FEA1323 		uxth	r3, r3
+ 193 003e 9BB2     		uxtb	r3, r3
+ 194 0040 DBB2     		strb	r3, [r2, #0]
+ 195 0042 1370     		.loc 1 168 0
+ 166:./Generated_Source/PSoC5/timer_clock.c **** 
+ 167:./Generated_Source/PSoC5/timer_clock.c ****     /* Load mask and restart together. */
+ 168:./Generated_Source/PSoC5/timer_clock.c ****     *CLK_DIST_LD = 3;
+ 196              	, .L18+20
+ 197 0044 094A     		mov	r3, #3
+ 198 0046 4FF00303 		strb	r3, [r2, #0]
+ 199 004a 1370     		.loc 1 169 0
+ 169:./Generated_Source/PSoC5/timer_clock.c **** }
+ 200              		r7, r7, #12
+ 201 004c 07F10C07 		mov	sp, r7
+ 202 0050 BD46     		pop	{r7}
+ 203 0052 80BC     		bx	lr
+ 204 0054 7047     	.L19:
+ 205              		.align	2
+ 206 0056 C046     	.L18:
+ 207              		.word	1073758224
+ 208 0058 10400040 		.word	1073758228
+ 209 005c 14400040 		.word	1073758216
+ 210 0060 08400040 		.word	1073758210
+ 211 0064 02400040 		.word	1073758211
+ 212 0068 03400040 		.word	1073758209
+ 213 006c 01400040 	.LFE5:
+ 214              		.size	timer_clock_SetDivider, .-timer_clock_SetDivider
+ 215              		.section	.text.timer_clock_SetMode,"ax",%progbits
+ 216              		.align	2
+ 217              		.global	timer_clock_SetMode
+ 218              		.thumb
+ 219              		.thumb_func
+ 220              		.type	timer_clock_SetMode, %function
+ 221              	timer_clock_SetMode:
+ 222              	.LFB6:
+ 223              		.loc 1 194 0
+ 170:./Generated_Source/PSoC5/timer_clock.c **** 
+ 171:./Generated_Source/PSoC5/timer_clock.c **** 
+ 172:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 8
+
+
+ 173:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_SetMode
+ 174:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+ 175:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+ 176:./Generated_Source/PSoC5/timer_clock.c **** *   Sets the operating mode of the clock.
+ 177:./Generated_Source/PSoC5/timer_clock.c **** *
+ 178:./Generated_Source/PSoC5/timer_clock.c **** *
+ 179:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+ 180:./Generated_Source/PSoC5/timer_clock.c **** * clkMode: The following optional bits or'ed together.
+ 181:./Generated_Source/PSoC5/timer_clock.c **** *
+ 182:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_PIPE 
+ 183:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SSS  
+ 184:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_EARLY
+ 185:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_DUTY 
+ 186:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SYNC 
+ 187:./Generated_Source/PSoC5/timer_clock.c **** *
+ 188:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+ 189:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+ 190:./Generated_Source/PSoC5/timer_clock.c **** *   
+ 191:./Generated_Source/PSoC5/timer_clock.c **** *
+ 192:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+ 193:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_SetMode(uint8 clkMode)
+ 194:./Generated_Source/PSoC5/timer_clock.c **** {
+ 224              	, frame = 16
+ 225              		@ frame_needed = 1, uses_anonymous_args = 0
+ 226              		@ link register save eliminated.
+ 227              		push	{r7}
+ 228 0000 80B4     	.LCFI10:
+ 229              		sub	sp, sp, #20
+ 230 0002 85B0     	.LCFI11:
+ 231              		add	r7, sp, #0
+ 232 0004 00AF     	.LCFI12:
+ 233              		@ lr needed for prologue
+ 234              		mov	r3, r0
+ 235 0006 0346     		strb	r3, [r7, #7]
+ 236 0008 FB71     		.loc 1 199 0
+ 195:./Generated_Source/PSoC5/timer_clock.c ****     uint8 value;
+ 196:./Generated_Source/PSoC5/timer_clock.c **** 
+ 197:./Generated_Source/PSoC5/timer_clock.c **** 
+ 198:./Generated_Source/PSoC5/timer_clock.c ****     /* Get the mode and source for the clock. */
+ 199:./Generated_Source/PSoC5/timer_clock.c ****     value = *timer_clock_MOD_SRC;
+ 237              	
+ 238 000a 0A4B     		ldrb	r3, [r3, #0]
+ 239 000c 1B78     		strb	r3, [r7, #15]
+ 240 000e FB73     		.loc 1 202 0
+ 200:./Generated_Source/PSoC5/timer_clock.c **** 
+ 201:./Generated_Source/PSoC5/timer_clock.c ****     /* Clear out the mode. */
+ 202:./Generated_Source/PSoC5/timer_clock.c ****     value &= 0x07u;
+ 241              	rb	r3, [r7, #15]
+ 242 0010 FB7B     		and	r3, r3, #7
+ 243 0012 03F00703 		strb	r3, [r7, #15]
+ 244 0016 FB73     		.loc 1 205 0
+ 203:./Generated_Source/PSoC5/timer_clock.c **** 
+ 204:./Generated_Source/PSoC5/timer_clock.c ****     /* Write the new mode. */
+ 205:./Generated_Source/PSoC5/timer_clock.c ****     value |= clkMode;
+ 245              	b	r2, [r7, #15]
+ 246 0018 FA7B     		ldrb	r3, [r7, #7]
+ 247 001a FB79     		orr	r3, r2, r3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 9
+
+
+ 248 001c 42EA0303 		strb	r3, [r7, #15]
+ 249 0020 FB73     		.loc 1 208 0
+ 206:./Generated_Source/PSoC5/timer_clock.c **** 
+ 207:./Generated_Source/PSoC5/timer_clock.c ****     /* Set the new mode of the clock. */
+ 208:./Generated_Source/PSoC5/timer_clock.c ****     *timer_clock_MOD_SRC = value;
+ 250              	r2, .L22
+ 251 0022 044A     		ldrb	r3, [r7, #15]
+ 252 0024 FB7B     		strb	r3, [r2, #0]
+ 253 0026 1370     		.loc 1 209 0
+ 209:./Generated_Source/PSoC5/timer_clock.c **** }
+ 254              		r7, r7, #20
+ 255 0028 07F11407 		mov	sp, r7
+ 256 002c BD46     		pop	{r7}
+ 257 002e 80BC     		bx	lr
+ 258 0030 7047     	.L23:
+ 259              		.align	2
+ 260 0032 C046     	.L22:
+ 261              		.word	1073758346
+ 262 0034 8A400040 	.LFE6:
+ 263              		.size	timer_clock_SetMode, .-timer_clock_SetMode
+ 264              		.section	.text.timer_clock_SetSource,"ax",%progbits
+ 265              		.align	2
+ 266              		.global	timer_clock_SetSource
+ 267              		.thumb
+ 268              		.thumb_func
+ 269              		.type	timer_clock_SetSource, %function
+ 270              	timer_clock_SetSource:
+ 271              	.LFB7:
+ 272              		.loc 1 237 0
+ 210:./Generated_Source/PSoC5/timer_clock.c **** 
+ 211:./Generated_Source/PSoC5/timer_clock.c **** 
+ 212:./Generated_Source/PSoC5/timer_clock.c **** /*******************************************************************************
+ 213:./Generated_Source/PSoC5/timer_clock.c **** * Function Name: timer_clock_SetSource
+ 214:./Generated_Source/PSoC5/timer_clock.c **** ********************************************************************************
+ 215:./Generated_Source/PSoC5/timer_clock.c **** * Summary:
+ 216:./Generated_Source/PSoC5/timer_clock.c **** *   Sets the input source of the clock.
+ 217:./Generated_Source/PSoC5/timer_clock.c **** *
+ 218:./Generated_Source/PSoC5/timer_clock.c **** * Parameters:
+ 219:./Generated_Source/PSoC5/timer_clock.c **** * clkSource:
+ 220:./Generated_Source/PSoC5/timer_clock.c **** *   One of the following input sources.
+ 221:./Generated_Source/PSoC5/timer_clock.c **** *
+ 222:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_SYNC_DIG
+ 223:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_IMO  
+ 224:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_XTALM
+ 225:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_ILO  
+ 226:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_PLL  
+ 227:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_XTALK
+ 228:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_DSI_G
+ 229:./Generated_Source/PSoC5/timer_clock.c **** *   CYCLK_SRC_SEL_DSI_D
+ 230:./Generated_Source/PSoC5/timer_clock.c **** *
+ 231:./Generated_Source/PSoC5/timer_clock.c **** * Return:
+ 232:./Generated_Source/PSoC5/timer_clock.c **** *   void.
+ 233:./Generated_Source/PSoC5/timer_clock.c **** *   
+ 234:./Generated_Source/PSoC5/timer_clock.c **** *
+ 235:./Generated_Source/PSoC5/timer_clock.c **** *******************************************************************************/
+ 236:./Generated_Source/PSoC5/timer_clock.c **** void timer_clock_SetSource(uint8 clkSource)
+ 237:./Generated_Source/PSoC5/timer_clock.c **** {
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 10
+
+
+ 273              	d = 0, frame = 16
+ 274              		@ frame_needed = 1, uses_anonymous_args = 0
+ 275              		@ link register save eliminated.
+ 276              		push	{r7}
+ 277 0000 80B4     	.LCFI13:
+ 278              		sub	sp, sp, #20
+ 279 0002 85B0     	.LCFI14:
+ 280              		add	r7, sp, #0
+ 281 0004 00AF     	.LCFI15:
+ 282              		@ lr needed for prologue
+ 283              		mov	r3, r0
+ 284 0006 0346     		strb	r3, [r7, #7]
+ 285 0008 FB71     		.loc 1 242 0
+ 238:./Generated_Source/PSoC5/timer_clock.c ****     uint8 value;
+ 239:./Generated_Source/PSoC5/timer_clock.c **** 
+ 240:./Generated_Source/PSoC5/timer_clock.c **** 
+ 241:./Generated_Source/PSoC5/timer_clock.c ****     /* Get the mode and source for the clock. */
+ 242:./Generated_Source/PSoC5/timer_clock.c ****     value = *timer_clock_MOD_SRC;
+ 286              	
+ 287 000a 0A4B     		ldrb	r3, [r3, #0]
+ 288 000c 1B78     		strb	r3, [r7, #15]
+ 289 000e FB73     		.loc 1 245 0
+ 243:./Generated_Source/PSoC5/timer_clock.c **** 
+ 244:./Generated_Source/PSoC5/timer_clock.c ****     /* Clear out the source. */
+ 245:./Generated_Source/PSoC5/timer_clock.c ****     value &= 0xF8u;
+ 290              	rb	r3, [r7, #15]
+ 291 0010 FB7B     		bic	r3, r3, #7
+ 292 0012 23F00703 		strb	r3, [r7, #15]
+ 293 0016 FB73     		.loc 1 248 0
+ 246:./Generated_Source/PSoC5/timer_clock.c **** 
+ 247:./Generated_Source/PSoC5/timer_clock.c ****     /* Write the new source. */
+ 248:./Generated_Source/PSoC5/timer_clock.c ****     value |= clkSource;
+ 294              	b	r2, [r7, #15]
+ 295 0018 FA7B     		ldrb	r3, [r7, #7]
+ 296 001a FB79     		orr	r3, r2, r3
+ 297 001c 42EA0303 		strb	r3, [r7, #15]
+ 298 0020 FB73     		.loc 1 251 0
+ 249:./Generated_Source/PSoC5/timer_clock.c **** 
+ 250:./Generated_Source/PSoC5/timer_clock.c ****     /* Set the new mode of the clock. */
+ 251:./Generated_Source/PSoC5/timer_clock.c ****     *timer_clock_MOD_SRC = value;
+ 299              	r2, .L26
+ 300 0022 044A     		ldrb	r3, [r7, #15]
+ 301 0024 FB7B     		strb	r3, [r2, #0]
+ 302 0026 1370     		.loc 1 252 0
+ 252:./Generated_Source/PSoC5/timer_clock.c **** }
+ 303              		r7, r7, #20
+ 304 0028 07F11407 		mov	sp, r7
+ 305 002c BD46     		pop	{r7}
+ 306 002e 80BC     		bx	lr
+ 307 0030 7047     	.L27:
+ 308              		.align	2
+ 309 0032 C046     	.L26:
+ 310              		.word	1073758346
+ 311 0034 8A400040 	.LFE7:
+ 312              		.size	timer_clock_SetSource, .-timer_clock_SetSource
+ 313              		.section	.debug_frame,"",%progbits
+ 314              	.Lframe0:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 11
+
+
+ 315              		.4byte	.LECIE0-.LSCIE0
+ 316 0000 0C000000 	.LSCIE0:
+ 317              		.4byte	0xffffffff
+ 318 0004 FFFFFFFF 		.byte	0x1
+ 319 0008 01       		.ascii	"\000"
+ 320 0009 00       		.uleb128 0x1
+ 321 000a 01       		.sleb128 -4
+ 322 000b 7C       		.byte	0xe
+ 323 000c 0E       		.byte	0xc
+ 324 000d 0C       		.uleb128 0xd
+ 325 000e 0D       		.uleb128 0x0
+ 326 000f 00       		.align	2
+ 327              	.LECIE0:
+ 328              	.LSFDE0:
+ 329              		.4byte	.LEFDE0-.LASFDE0
+ 330 0010 14000000 	.LASFDE0:
+ 331              		.4byte	.Lframe0
+ 332 0014 00000000 		.4byte	.LFB2
+ 333 0018 00000000 		.4byte	.LFE2-.LFB2
+ 334 001c 20000000 		.byte	0x4
+ 335 0020 42       		.4byte	.LCFI0-.LFB2
+ 336              		.byte	0xe
+ 337 0021 0E       		.uleb128 0x4
+ 338 0022 04       		.byte	0x87
+ 339 0023 87       		.uleb128 0x1
+ 340 0024 01       		.byte	0x4
+ 341 0025 42       		.4byte	.LCFI1-.LCFI0
+ 342              		.byte	0xd
+ 343 0026 0D       		.uleb128 0x7
+ 344 0027 07       		.align	2
+ 345              	.LEFDE0:
+ 346              	.LSFDE2:
+ 347              		.4byte	.LEFDE2-.LASFDE2
+ 348 0028 14000000 	.LASFDE2:
+ 349              		.4byte	.Lframe0
+ 350 002c 00000000 		.4byte	.LFB3
+ 351 0030 00000000 		.4byte	.LFE3-.LFB3
+ 352 0034 1C000000 		.byte	0x4
+ 353 0038 42       		.4byte	.LCFI2-.LFB3
+ 354              		.byte	0xe
+ 355 0039 0E       		.uleb128 0x4
+ 356 003a 04       		.byte	0x87
+ 357 003b 87       		.uleb128 0x1
+ 358 003c 01       		.byte	0x4
+ 359 003d 42       		.4byte	.LCFI3-.LCFI2
+ 360              		.byte	0xd
+ 361 003e 0D       		.uleb128 0x7
+ 362 003f 07       		.align	2
+ 363              	.LEFDE2:
+ 364              	.LSFDE4:
+ 365              		.4byte	.LEFDE4-.LASFDE4
+ 366 0040 18000000 	.LASFDE4:
+ 367              		.4byte	.Lframe0
+ 368 0044 00000000 		.4byte	.LFB4
+ 369 0048 00000000 		.4byte	.LFE4-.LFB4
+ 370 004c 40000000 		.byte	0x4
+ 371 0050 42       		.4byte	.LCFI4-.LFB4
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 12
+
+
+ 372              		.byte	0xe
+ 373 0051 0E       		.uleb128 0x4
+ 374 0052 04       		.byte	0x4
+ 375 0053 42       		.4byte	.LCFI5-.LCFI4
+ 376              		.byte	0xe
+ 377 0054 0E       		.uleb128 0x10
+ 378 0055 10       		.byte	0x87
+ 379 0056 87       		.uleb128 0x1
+ 380 0057 01       		.byte	0x4
+ 381 0058 42       		.4byte	.LCFI6-.LCFI5
+ 382              		.byte	0xd
+ 383 0059 0D       		.uleb128 0x7
+ 384 005a 07       		.align	2
+ 385 005b 00       	.LEFDE4:
+ 386              	.LSFDE6:
+ 387              		.4byte	.LEFDE6-.LASFDE6
+ 388 005c 18000000 	.LASFDE6:
+ 389              		.4byte	.Lframe0
+ 390 0060 00000000 		.4byte	.LFB5
+ 391 0064 00000000 		.4byte	.LFE5-.LFB5
+ 392 0068 70000000 		.byte	0x4
+ 393 006c 42       		.4byte	.LCFI7-.LFB5
+ 394              		.byte	0xe
+ 395 006d 0E       		.uleb128 0x4
+ 396 006e 04       		.byte	0x4
+ 397 006f 42       		.4byte	.LCFI8-.LCFI7
+ 398              		.byte	0xe
+ 399 0070 0E       		.uleb128 0x10
+ 400 0071 10       		.byte	0x87
+ 401 0072 87       		.uleb128 0x1
+ 402 0073 01       		.byte	0x4
+ 403 0074 42       		.4byte	.LCFI9-.LCFI8
+ 404              		.byte	0xd
+ 405 0075 0D       		.uleb128 0x7
+ 406 0076 07       		.align	2
+ 407 0077 00       	.LEFDE6:
+ 408              	.LSFDE8:
+ 409              		.4byte	.LEFDE8-.LASFDE8
+ 410 0078 18000000 	.LASFDE8:
+ 411              		.4byte	.Lframe0
+ 412 007c 00000000 		.4byte	.LFB6
+ 413 0080 00000000 		.4byte	.LFE6-.LFB6
+ 414 0084 38000000 		.byte	0x4
+ 415 0088 42       		.4byte	.LCFI10-.LFB6
+ 416              		.byte	0xe
+ 417 0089 0E       		.uleb128 0x4
+ 418 008a 04       		.byte	0x4
+ 419 008b 42       		.4byte	.LCFI11-.LCFI10
+ 420              		.byte	0xe
+ 421 008c 0E       		.uleb128 0x18
+ 422 008d 18       		.byte	0x87
+ 423 008e 87       		.uleb128 0x1
+ 424 008f 01       		.byte	0x4
+ 425 0090 42       		.4byte	.LCFI12-.LCFI11
+ 426              		.byte	0xd
+ 427 0091 0D       		.uleb128 0x7
+ 428 0092 07       		.align	2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 13
+
+
+ 429 0093 00       	.LEFDE8:
+ 430              	.LSFDE10:
+ 431              		.4byte	.LEFDE10-.LASFDE10
+ 432 0094 18000000 	.LASFDE10:
+ 433              		.4byte	.Lframe0
+ 434 0098 00000000 		.4byte	.LFB7
+ 435 009c 00000000 		.4byte	.LFE7-.LFB7
+ 436 00a0 38000000 		.byte	0x4
+ 437 00a4 42       		.4byte	.LCFI13-.LFB7
+ 438              		.byte	0xe
+ 439 00a5 0E       		.uleb128 0x4
+ 440 00a6 04       		.byte	0x4
+ 441 00a7 42       		.4byte	.LCFI14-.LCFI13
+ 442              		.byte	0xe
+ 443 00a8 0E       		.uleb128 0x18
+ 444 00a9 18       		.byte	0x87
+ 445 00aa 87       		.uleb128 0x1
+ 446 00ab 01       		.byte	0x4
+ 447 00ac 42       		.4byte	.LCFI15-.LCFI14
+ 448              		.byte	0xd
+ 449 00ad 0D       		.uleb128 0x7
+ 450 00ae 07       		.align	2
+ 451 00af 00       	.LEFDE10:
+ 452              		.text
+ 453              	.Letext0:
+ 454              		.section	.debug_loc,"",%progbits
+ 455              	.Ldebug_loc0:
+ 456              	.LLST0:
+ 457              		.4byte	.LFB2
+ 458 0000 00000000 		.4byte	.LCFI0
+ 459 0004 02000000 		.2byte	0x1
+ 460 0008 0100     		.byte	0x5d
+ 461 000a 5D       		.4byte	.LCFI0
+ 462 000b 02000000 		.4byte	.LCFI1
+ 463 000f 04000000 		.2byte	0x2
+ 464 0013 0200     		.byte	0x7d
+ 465 0015 7D       		.sleb128 4
+ 466 0016 04       		.4byte	.LCFI1
+ 467 0017 04000000 		.4byte	.LFE2
+ 468 001b 20000000 		.2byte	0x2
+ 469 001f 0200     		.byte	0x77
+ 470 0021 77       		.sleb128 4
+ 471 0022 04       		.4byte	0x0
+ 472 0023 00000000 		.4byte	0x0
+ 473 0027 00000000 	.LLST1:
+ 474              		.4byte	.LFB3
+ 475 002b 00000000 		.4byte	.LCFI2
+ 476 002f 02000000 		.2byte	0x1
+ 477 0033 0100     		.byte	0x5d
+ 478 0035 5D       		.4byte	.LCFI2
+ 479 0036 02000000 		.4byte	.LCFI3
+ 480 003a 04000000 		.2byte	0x2
+ 481 003e 0200     		.byte	0x7d
+ 482 0040 7D       		.sleb128 4
+ 483 0041 04       		.4byte	.LCFI3
+ 484 0042 04000000 		.4byte	.LFE3
+ 485 0046 1C000000 		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 14
+
+
+ 486 004a 0200     		.byte	0x77
+ 487 004c 77       		.sleb128 4
+ 488 004d 04       		.4byte	0x0
+ 489 004e 00000000 		.4byte	0x0
+ 490 0052 00000000 	.LLST2:
+ 491              		.4byte	.LFB4
+ 492 0056 00000000 		.4byte	.LCFI4
+ 493 005a 02000000 		.2byte	0x1
+ 494 005e 0100     		.byte	0x5d
+ 495 0060 5D       		.4byte	.LCFI4
+ 496 0061 02000000 		.4byte	.LCFI5
+ 497 0065 04000000 		.2byte	0x2
+ 498 0069 0200     		.byte	0x7d
+ 499 006b 7D       		.sleb128 4
+ 500 006c 04       		.4byte	.LCFI5
+ 501 006d 04000000 		.4byte	.LCFI6
+ 502 0071 06000000 		.2byte	0x2
+ 503 0075 0200     		.byte	0x7d
+ 504 0077 7D       		.sleb128 16
+ 505 0078 10       		.4byte	.LCFI6
+ 506 0079 06000000 		.4byte	.LFE4
+ 507 007d 40000000 		.2byte	0x2
+ 508 0081 0200     		.byte	0x77
+ 509 0083 77       		.sleb128 16
+ 510 0084 10       		.4byte	0x0
+ 511 0085 00000000 		.4byte	0x0
+ 512 0089 00000000 	.LLST3:
+ 513              		.4byte	.LFB5
+ 514 008d 00000000 		.4byte	.LCFI7
+ 515 0091 02000000 		.2byte	0x1
+ 516 0095 0100     		.byte	0x5d
+ 517 0097 5D       		.4byte	.LCFI7
+ 518 0098 02000000 		.4byte	.LCFI8
+ 519 009c 04000000 		.2byte	0x2
+ 520 00a0 0200     		.byte	0x7d
+ 521 00a2 7D       		.sleb128 4
+ 522 00a3 04       		.4byte	.LCFI8
+ 523 00a4 04000000 		.4byte	.LCFI9
+ 524 00a8 06000000 		.2byte	0x2
+ 525 00ac 0200     		.byte	0x7d
+ 526 00ae 7D       		.sleb128 16
+ 527 00af 10       		.4byte	.LCFI9
+ 528 00b0 06000000 		.4byte	.LFE5
+ 529 00b4 70000000 		.2byte	0x2
+ 530 00b8 0200     		.byte	0x77
+ 531 00ba 77       		.sleb128 16
+ 532 00bb 10       		.4byte	0x0
+ 533 00bc 00000000 		.4byte	0x0
+ 534 00c0 00000000 	.LLST4:
+ 535              		.4byte	.LFB6
+ 536 00c4 00000000 		.4byte	.LCFI10
+ 537 00c8 02000000 		.2byte	0x1
+ 538 00cc 0100     		.byte	0x5d
+ 539 00ce 5D       		.4byte	.LCFI10
+ 540 00cf 02000000 		.4byte	.LCFI11
+ 541 00d3 04000000 		.2byte	0x2
+ 542 00d7 0200     		.byte	0x7d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 15
+
+
+ 543 00d9 7D       		.sleb128 4
+ 544 00da 04       		.4byte	.LCFI11
+ 545 00db 04000000 		.4byte	.LCFI12
+ 546 00df 06000000 		.2byte	0x2
+ 547 00e3 0200     		.byte	0x7d
+ 548 00e5 7D       		.sleb128 24
+ 549 00e6 18       		.4byte	.LCFI12
+ 550 00e7 06000000 		.4byte	.LFE6
+ 551 00eb 38000000 		.2byte	0x2
+ 552 00ef 0200     		.byte	0x77
+ 553 00f1 77       		.sleb128 24
+ 554 00f2 18       		.4byte	0x0
+ 555 00f3 00000000 		.4byte	0x0
+ 556 00f7 00000000 	.LLST5:
+ 557              		.4byte	.LFB7
+ 558 00fb 00000000 		.4byte	.LCFI13
+ 559 00ff 02000000 		.2byte	0x1
+ 560 0103 0100     		.byte	0x5d
+ 561 0105 5D       		.4byte	.LCFI13
+ 562 0106 02000000 		.4byte	.LCFI14
+ 563 010a 04000000 		.2byte	0x2
+ 564 010e 0200     		.byte	0x7d
+ 565 0110 7D       		.sleb128 4
+ 566 0111 04       		.4byte	.LCFI14
+ 567 0112 04000000 		.4byte	.LCFI15
+ 568 0116 06000000 		.2byte	0x2
+ 569 011a 0200     		.byte	0x7d
+ 570 011c 7D       		.sleb128 24
+ 571 011d 18       		.4byte	.LCFI15
+ 572 011e 06000000 		.4byte	.LFE7
+ 573 0122 38000000 		.2byte	0x2
+ 574 0126 0200     		.byte	0x77
+ 575 0128 77       		.sleb128 24
+ 576 0129 18       		.4byte	0x0
+ 577 012a 00000000 		.4byte	0x0
+ 578 012e 00000000 		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 579              		.section	.debug_info
+ 580              		.4byte	0x263
+ 581 0000 63020000 		.2byte	0x2
+ 582 0004 0200     		.4byte	.Ldebug_abbrev0
+ 583 0006 00000000 		.byte	0x4
+ 584 000a 04       		.uleb128 0x1
+ 585 000b 01       		.ascii	"GNU C 4.2.1\000"
+ 586 000c 474E5520 		.byte	0x1
+ 586      4320342E 
+ 586      322E3100 
+ 587 0018 01       		.ascii	"./Generated_Source/PSoC5/timer_clock.c\000"
+ 588 0019 2E2F4765 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 588      6E657261 
+ 588      7465645F 
+ 588      536F7572 
+ 588      63652F50 
+ 589 0040 433A5C55 		.ascii	"ro\\CarStairo.cydsn\000"
+ 589      73657273 
+ 589      5C626C69 
+ 589      6E6B795C 
+ 589      446F6375 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 16
+
+
+ 590 006e 726F5C43 		.4byte	0x0
+ 590      61725374 
+ 590      6169726F 
+ 590      2E637964 
+ 590      736E00
+ 591 0081 00000000 		.4byte	.Ldebug_line0
+ 592 0085 00000000 		.uleb128 0x2
+ 593 0089 02       		.byte	0x1
+ 594 008a 01       		.byte	0x8
+ 595 008b 08       		.ascii	"unsigned char\000"
+ 596 008c 756E7369 		.uleb128 0x3
+ 596      676E6564 
+ 596      20636861 
+ 596      7200
+ 597 009a 03       		.ascii	"uint8\000"
+ 598 009b 75696E74 		.byte	0x2
+ 598      3800
+ 599 00a1 02       		.byte	0x25
+ 600 00a2 25       		.4byte	0x89
+ 601 00a3 89000000 		.uleb128 0x3
+ 602 00a7 03       		.ascii	"uint16\000"
+ 603 00a8 75696E74 		.byte	0x2
+ 603      313600
+ 604 00af 02       		.byte	0x26
+ 605 00b0 26       		.4byte	0xb5
+ 606 00b1 B5000000 		.uleb128 0x2
+ 607 00b5 02       		.byte	0x2
+ 608 00b6 02       		.byte	0x7
+ 609 00b7 07       		.ascii	"short unsigned int\000"
+ 610 00b8 73686F72 		.uleb128 0x2
+ 610      7420756E 
+ 610      7369676E 
+ 610      65642069 
+ 610      6E7400
+ 611 00cb 02       		.byte	0x4
+ 612 00cc 04       		.byte	0x7
+ 613 00cd 07       		.ascii	"long unsigned int\000"
+ 614 00ce 6C6F6E67 		.uleb128 0x2
+ 614      20756E73 
+ 614      69676E65 
+ 614      6420696E 
+ 614      7400
+ 615 00e0 02       		.byte	0x1
+ 616 00e1 01       		.byte	0x6
+ 617 00e2 06       		.ascii	"signed char\000"
+ 618 00e3 7369676E 		.uleb128 0x2
+ 618      65642063 
+ 618      68617200 
+ 619 00ef 02       		.byte	0x2
+ 620 00f0 02       		.byte	0x5
+ 621 00f1 05       		.ascii	"short int\000"
+ 622 00f2 73686F72 		.uleb128 0x2
+ 622      7420696E 
+ 622      7400
+ 623 00fc 02       		.byte	0x4
+ 624 00fd 04       		.byte	0x5
+ 625 00fe 05       		.ascii	"long int\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 17
+
+
+ 626 00ff 6C6F6E67 		.uleb128 0x4
+ 626      20696E74 
+ 626      00
+ 627 0108 04       		.byte	0x1
+ 628 0109 01       		.ascii	"timer_clock_Start\000"
+ 629 010a 74696D65 		.byte	0x1
+ 629      725F636C 
+ 629      6F636B5F 
+ 629      53746172 
+ 629      7400
+ 630 011c 01       		.byte	0x44
+ 631 011d 44       		.byte	0x1
+ 632 011e 01       		.4byte	.LFB2
+ 633 011f 00000000 		.4byte	.LFE2
+ 634 0123 20000000 		.4byte	.LLST0
+ 635 0127 00000000 		.uleb128 0x4
+ 636 012b 04       		.byte	0x1
+ 637 012c 01       		.ascii	"timer_clock_Stop\000"
+ 638 012d 74696D65 		.byte	0x1
+ 638      725F636C 
+ 638      6F636B5F 
+ 638      53746F70 
+ 638      00
+ 639 013e 01       		.byte	0x5e
+ 640 013f 5E       		.byte	0x1
+ 641 0140 01       		.4byte	.LFB3
+ 642 0141 00000000 		.4byte	.LFE3
+ 643 0145 1C000000 		.4byte	.LLST1
+ 644 0149 2B000000 		.uleb128 0x5
+ 645 014d 05       		.byte	0x1
+ 646 014e 01       		.ascii	"timer_clock_StandbyPower\000"
+ 647 014f 74696D65 		.byte	0x1
+ 647      725F636C 
+ 647      6F636B5F 
+ 647      5374616E 
+ 647      64627950 
+ 648 0168 01       		.byte	0x75
+ 649 0169 75       		.byte	0x1
+ 650 016a 01       		.4byte	.LFB4
+ 651 016b 00000000 		.4byte	.LFE4
+ 652 016f 40000000 		.4byte	.LLST2
+ 653 0173 56000000 		.4byte	0x18c
+ 654 0177 8C010000 		.uleb128 0x6
+ 655 017b 06       		.ascii	"state\000"
+ 656 017c 73746174 		.byte	0x1
+ 656      6500
+ 657 0182 01       		.byte	0x74
+ 658 0183 74       		.4byte	0x9a
+ 659 0184 9A000000 		.byte	0x2
+ 660 0188 02       		.byte	0x91
+ 661 0189 91       		.sleb128 -9
+ 662 018a 77       		.byte	0x0
+ 663 018b 00       		.uleb128 0x5
+ 664 018c 05       		.byte	0x1
+ 665 018d 01       		.ascii	"timer_clock_SetDivider\000"
+ 666 018e 74696D65 		.byte	0x1
+ 666      725F636C 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 18
+
+
+ 666      6F636B5F 
+ 666      53657444 
+ 666      69766964 
+ 667 01a5 01       		.byte	0x97
+ 668 01a6 97       		.byte	0x1
+ 669 01a7 01       		.4byte	.LFB5
+ 670 01a8 00000000 		.4byte	.LFE5
+ 671 01ac 70000000 		.4byte	.LLST3
+ 672 01b0 8D000000 		.4byte	0x1ce
+ 673 01b4 CE010000 		.uleb128 0x6
+ 674 01b8 06       		.ascii	"clkDivider\000"
+ 675 01b9 636C6B44 		.byte	0x1
+ 675      69766964 
+ 675      657200
+ 676 01c4 01       		.byte	0x96
+ 677 01c5 96       		.4byte	0xa7
+ 678 01c6 A7000000 		.byte	0x2
+ 679 01ca 02       		.byte	0x91
+ 680 01cb 91       		.sleb128 -10
+ 681 01cc 76       		.byte	0x0
+ 682 01cd 00       		.uleb128 0x5
+ 683 01ce 05       		.byte	0x1
+ 684 01cf 01       		.ascii	"timer_clock_SetMode\000"
+ 685 01d0 74696D65 		.byte	0x1
+ 685      725F636C 
+ 685      6F636B5F 
+ 685      5365744D 
+ 685      6F646500 
+ 686 01e4 01       		.byte	0xc2
+ 687 01e5 C2       		.byte	0x1
+ 688 01e6 01       		.4byte	.LFB6
+ 689 01e7 00000000 		.4byte	.LFE6
+ 690 01eb 38000000 		.4byte	.LLST4
+ 691 01ef C4000000 		.4byte	0x21a
+ 692 01f3 1A020000 		.uleb128 0x6
+ 693 01f7 06       		.ascii	"clkMode\000"
+ 694 01f8 636C6B4D 		.byte	0x1
+ 694      6F646500 
+ 695 0200 01       		.byte	0xc1
+ 696 0201 C1       		.4byte	0x9a
+ 697 0202 9A000000 		.byte	0x2
+ 698 0206 02       		.byte	0x91
+ 699 0207 91       		.sleb128 -17
+ 700 0208 6F       		.uleb128 0x7
+ 701 0209 07       		.ascii	"value\000"
+ 702 020a 76616C75 		.byte	0x1
+ 702      6500
+ 703 0210 01       		.byte	0xc3
+ 704 0211 C3       		.4byte	0x9a
+ 705 0212 9A000000 		.byte	0x2
+ 706 0216 02       		.byte	0x91
+ 707 0217 91       		.sleb128 -9
+ 708 0218 77       		.byte	0x0
+ 709 0219 00       		.uleb128 0x8
+ 710 021a 08       		.byte	0x1
+ 711 021b 01       		.ascii	"timer_clock_SetSource\000"
+ 712 021c 74696D65 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 19
+
+
+ 712      725F636C 
+ 712      6F636B5F 
+ 712      53657453 
+ 712      6F757263 
+ 713 0232 01       		.byte	0xed
+ 714 0233 ED       		.byte	0x1
+ 715 0234 01       		.4byte	.LFB7
+ 716 0235 00000000 		.4byte	.LFE7
+ 717 0239 38000000 		.4byte	.LLST5
+ 718 023d FB000000 		.uleb128 0x6
+ 719 0241 06       		.ascii	"clkSource\000"
+ 720 0242 636C6B53 		.byte	0x1
+ 720      6F757263 
+ 720      6500
+ 721 024c 01       		.byte	0xec
+ 722 024d EC       		.4byte	0x9a
+ 723 024e 9A000000 		.byte	0x2
+ 724 0252 02       		.byte	0x91
+ 725 0253 91       		.sleb128 -17
+ 726 0254 6F       		.uleb128 0x7
+ 727 0255 07       		.ascii	"value\000"
+ 728 0256 76616C75 		.byte	0x1
+ 728      6500
+ 729 025c 01       		.byte	0xee
+ 730 025d EE       		.4byte	0x9a
+ 731 025e 9A000000 		.byte	0x2
+ 732 0262 02       		.byte	0x91
+ 733 0263 91       		.sleb128 -9
+ 734 0264 77       		.byte	0x0
+ 735 0265 00       		.byte	0x0
+ 736 0266 00       		.section	.debug_abbrev
+ 737              		.uleb128 0x1
+ 738 0000 01       		.uleb128 0x11
+ 739 0001 11       		.byte	0x1
+ 740 0002 01       		.uleb128 0x25
+ 741 0003 25       		.uleb128 0x8
+ 742 0004 08       		.uleb128 0x13
+ 743 0005 13       		.uleb128 0xb
+ 744 0006 0B       		.uleb128 0x3
+ 745 0007 03       		.uleb128 0x8
+ 746 0008 08       		.uleb128 0x1b
+ 747 0009 1B       		.uleb128 0x8
+ 748 000a 08       		.uleb128 0x52
+ 749 000b 52       		.uleb128 0x1
+ 750 000c 01       		.uleb128 0x10
+ 751 000d 10       		.uleb128 0x6
+ 752 000e 06       		.byte	0x0
+ 753 000f 00       		.byte	0x0
+ 754 0010 00       		.uleb128 0x2
+ 755 0011 02       		.uleb128 0x24
+ 756 0012 24       		.byte	0x0
+ 757 0013 00       		.uleb128 0xb
+ 758 0014 0B       		.uleb128 0xb
+ 759 0015 0B       		.uleb128 0x3e
+ 760 0016 3E       		.uleb128 0xb
+ 761 0017 0B       		.uleb128 0x3
+ 762 0018 03       		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 20
+
+
+ 763 0019 08       		.byte	0x0
+ 764 001a 00       		.byte	0x0
+ 765 001b 00       		.uleb128 0x3
+ 766 001c 03       		.uleb128 0x16
+ 767 001d 16       		.byte	0x0
+ 768 001e 00       		.uleb128 0x3
+ 769 001f 03       		.uleb128 0x8
+ 770 0020 08       		.uleb128 0x3a
+ 771 0021 3A       		.uleb128 0xb
+ 772 0022 0B       		.uleb128 0x3b
+ 773 0023 3B       		.uleb128 0xb
+ 774 0024 0B       		.uleb128 0x49
+ 775 0025 49       		.uleb128 0x13
+ 776 0026 13       		.byte	0x0
+ 777 0027 00       		.byte	0x0
+ 778 0028 00       		.uleb128 0x4
+ 779 0029 04       		.uleb128 0x2e
+ 780 002a 2E       		.byte	0x0
+ 781 002b 00       		.uleb128 0x3f
+ 782 002c 3F       		.uleb128 0xc
+ 783 002d 0C       		.uleb128 0x3
+ 784 002e 03       		.uleb128 0x8
+ 785 002f 08       		.uleb128 0x3a
+ 786 0030 3A       		.uleb128 0xb
+ 787 0031 0B       		.uleb128 0x3b
+ 788 0032 3B       		.uleb128 0xb
+ 789 0033 0B       		.uleb128 0x27
+ 790 0034 27       		.uleb128 0xc
+ 791 0035 0C       		.uleb128 0x11
+ 792 0036 11       		.uleb128 0x1
+ 793 0037 01       		.uleb128 0x12
+ 794 0038 12       		.uleb128 0x1
+ 795 0039 01       		.uleb128 0x40
+ 796 003a 40       		.uleb128 0x6
+ 797 003b 06       		.byte	0x0
+ 798 003c 00       		.byte	0x0
+ 799 003d 00       		.uleb128 0x5
+ 800 003e 05       		.uleb128 0x2e
+ 801 003f 2E       		.byte	0x1
+ 802 0040 01       		.uleb128 0x3f
+ 803 0041 3F       		.uleb128 0xc
+ 804 0042 0C       		.uleb128 0x3
+ 805 0043 03       		.uleb128 0x8
+ 806 0044 08       		.uleb128 0x3a
+ 807 0045 3A       		.uleb128 0xb
+ 808 0046 0B       		.uleb128 0x3b
+ 809 0047 3B       		.uleb128 0xb
+ 810 0048 0B       		.uleb128 0x27
+ 811 0049 27       		.uleb128 0xc
+ 812 004a 0C       		.uleb128 0x11
+ 813 004b 11       		.uleb128 0x1
+ 814 004c 01       		.uleb128 0x12
+ 815 004d 12       		.uleb128 0x1
+ 816 004e 01       		.uleb128 0x40
+ 817 004f 40       		.uleb128 0x6
+ 818 0050 06       		.uleb128 0x1
+ 819 0051 01       		.uleb128 0x13
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 21
+
+
+ 820 0052 13       		.byte	0x0
+ 821 0053 00       		.byte	0x0
+ 822 0054 00       		.uleb128 0x6
+ 823 0055 06       		.uleb128 0x5
+ 824 0056 05       		.byte	0x0
+ 825 0057 00       		.uleb128 0x3
+ 826 0058 03       		.uleb128 0x8
+ 827 0059 08       		.uleb128 0x3a
+ 828 005a 3A       		.uleb128 0xb
+ 829 005b 0B       		.uleb128 0x3b
+ 830 005c 3B       		.uleb128 0xb
+ 831 005d 0B       		.uleb128 0x49
+ 832 005e 49       		.uleb128 0x13
+ 833 005f 13       		.uleb128 0x2
+ 834 0060 02       		.uleb128 0xa
+ 835 0061 0A       		.byte	0x0
+ 836 0062 00       		.byte	0x0
+ 837 0063 00       		.uleb128 0x7
+ 838 0064 07       		.uleb128 0x34
+ 839 0065 34       		.byte	0x0
+ 840 0066 00       		.uleb128 0x3
+ 841 0067 03       		.uleb128 0x8
+ 842 0068 08       		.uleb128 0x3a
+ 843 0069 3A       		.uleb128 0xb
+ 844 006a 0B       		.uleb128 0x3b
+ 845 006b 3B       		.uleb128 0xb
+ 846 006c 0B       		.uleb128 0x49
+ 847 006d 49       		.uleb128 0x13
+ 848 006e 13       		.uleb128 0x2
+ 849 006f 02       		.uleb128 0xa
+ 850 0070 0A       		.byte	0x0
+ 851 0071 00       		.byte	0x0
+ 852 0072 00       		.uleb128 0x8
+ 853 0073 08       		.uleb128 0x2e
+ 854 0074 2E       		.byte	0x1
+ 855 0075 01       		.uleb128 0x3f
+ 856 0076 3F       		.uleb128 0xc
+ 857 0077 0C       		.uleb128 0x3
+ 858 0078 03       		.uleb128 0x8
+ 859 0079 08       		.uleb128 0x3a
+ 860 007a 3A       		.uleb128 0xb
+ 861 007b 0B       		.uleb128 0x3b
+ 862 007c 3B       		.uleb128 0xb
+ 863 007d 0B       		.uleb128 0x27
+ 864 007e 27       		.uleb128 0xc
+ 865 007f 0C       		.uleb128 0x11
+ 866 0080 11       		.uleb128 0x1
+ 867 0081 01       		.uleb128 0x12
+ 868 0082 12       		.uleb128 0x1
+ 869 0083 01       		.uleb128 0x40
+ 870 0084 40       		.uleb128 0x6
+ 871 0085 06       		.byte	0x0
+ 872 0086 00       		.byte	0x0
+ 873 0087 00       		.byte	0x0
+ 874 0088 00       		.section	.debug_pubnames,"",%progbits
+ 875              		.4byte	0xa3
+ 876 0000 A3000000 		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 22
+
+
+ 877 0004 0200     		.4byte	.Ldebug_info0
+ 878 0006 00000000 		.4byte	0x267
+ 879 000a 67020000 		.4byte	0x108
+ 880 000e 08010000 		.ascii	"timer_clock_Start\000"
+ 881 0012 74696D65 		.4byte	0x12b
+ 881      725F636C 
+ 881      6F636B5F 
+ 881      53746172 
+ 881      7400
+ 882 0024 2B010000 		.ascii	"timer_clock_Stop\000"
+ 883 0028 74696D65 		.4byte	0x14d
+ 883      725F636C 
+ 883      6F636B5F 
+ 883      53746F70 
+ 883      00
+ 884 0039 4D010000 		.ascii	"timer_clock_StandbyPower\000"
+ 885 003d 74696D65 		.4byte	0x18c
+ 885      725F636C 
+ 885      6F636B5F 
+ 885      5374616E 
+ 885      64627950 
+ 886 0056 8C010000 		.ascii	"timer_clock_SetDivider\000"
+ 887 005a 74696D65 		.4byte	0x1ce
+ 887      725F636C 
+ 887      6F636B5F 
+ 887      53657444 
+ 887      69766964 
+ 888 0071 CE010000 		.ascii	"timer_clock_SetMode\000"
+ 889 0075 74696D65 		.4byte	0x21a
+ 889      725F636C 
+ 889      6F636B5F 
+ 889      5365744D 
+ 889      6F646500 
+ 890 0089 1A020000 		.ascii	"timer_clock_SetSource\000"
+ 891 008d 74696D65 		.4byte	0x0
+ 891      725F636C 
+ 891      6F636B5F 
+ 891      53657453 
+ 891      6F757263 
+ 892 00a3 00000000 		.section	.debug_aranges,"",%progbits
+ 893              		.4byte	0x44
+ 894 0000 44000000 		.2byte	0x2
+ 895 0004 0200     		.4byte	.Ldebug_info0
+ 896 0006 00000000 		.byte	0x4
+ 897 000a 04       		.byte	0x0
+ 898 000b 00       		.2byte	0x0
+ 899 000c 0000     		.2byte	0x0
+ 900 000e 0000     		.4byte	.LFB2
+ 901 0010 00000000 		.4byte	.LFE2-.LFB2
+ 902 0014 20000000 		.4byte	.LFB3
+ 903 0018 00000000 		.4byte	.LFE3-.LFB3
+ 904 001c 1C000000 		.4byte	.LFB4
+ 905 0020 00000000 		.4byte	.LFE4-.LFB4
+ 906 0024 40000000 		.4byte	.LFB5
+ 907 0028 00000000 		.4byte	.LFE5-.LFB5
+ 908 002c 70000000 		.4byte	.LFB6
+ 909 0030 00000000 		.4byte	.LFE6-.LFB6
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccI5aaaa.s 			page 23
+
+
+ 910 0034 38000000 		.4byte	.LFB7
+ 911 0038 00000000 		.4byte	.LFE7-.LFB7
+ 912 003c 38000000 		.4byte	0x0
+ 913 0040 00000000 		.4byte	0x0
+ 914 0044 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 915              	...

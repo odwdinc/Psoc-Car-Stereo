@@ -1,0 +1,995 @@
+Archive member included because of file (symbol)
+
+c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+                              C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o (__ctype_ptr)
+c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+                              C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o (__errno)
+c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+                              c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o) (_impure_ptr)
+
+Allocating common symbols
+Common symbol       size              file
+
+cyCommand           0x10              C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+cyCommandSize       0x1               C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+Volume_ADC_CountsPerVolt
+                    0x2               C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+dieTemperature      0x2               C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .text.Button_Write
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .text.Button_SetDriveMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .text.Button_ReadDataReg
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_GetInterruptSource
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_ReadStatusRegister
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_ReadControlRegister
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_WriteControlRegister
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text.Counter_1_ReadCapture
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .text.pvt_CheckBootloader
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyEnterCriticalSection
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyExitCriticalSection
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmacError
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmacClearError
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmacErrorAddress
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChAlloc
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChFree
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChEnable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChDisable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChPriority
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChSetExtendedAddress
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChSetInitialTd
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChSetRequest
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChGetRequest
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChStatus
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaChSetConfiguration
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdAllocate
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdFree
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdFreeCount
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdSetConfiguration
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdGetConfiguration
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdSetAddress
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text.CyDmaTdGetAddress
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CySetTemp
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CySetFlashEEBuffer
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CyWriteRowData
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CyWriteRowConfig
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CyFlashEEActivePower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text.CyFlashEEStandbyPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ COMMON         0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cymemmove
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cymemcmp
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cymemchr
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrcat
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrcpy
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrncpy
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrlen
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrcmp
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrncmp
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrncat
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrchr
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrrchr
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrstr
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.cystrtol
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyDisableDigitalArray
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyDelay  0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyDelayUs
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyDelayFreq
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyDisableInts
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyEnableInts
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CYDEV_FATAL_ABORT
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CySoftwareReset
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyFlushCache
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntSetSysVector
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntGetSysVector
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntGetVector
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntGetPriority
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntEnable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntGetState
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntDisable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text.CyIntSetPending
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._sbrk    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._wait    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._exit    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._kill    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._link    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._unlink  0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._symlink
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._readlink
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._open    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._close   0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text.isatty   0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._write   0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._read    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._lseek   0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._fstat   0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._stat    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._getpid  0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text._fork    0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcLock
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcWriteCommand
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcReadData
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcUnlock
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdLoadMultiByte
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdLoadRow
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdReadMultiByte
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdWriteRow
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdProgramRow
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdEraseSector
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdGetTemp
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdSetupTs
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcCreateCmdDisableTs
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcActivePower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text.CySpcStandbyPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ COMMON         0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .text.dPins_LSB_Write
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .text.dPins_LSB_SetDriveMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .text.dPins_LSB_Read
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .text.dPins_LSB_ReadDataReg
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .text.dPins_MSB_Write
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .text.dPins_MSB_SetDriveMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .text.dPins_MSB_Read
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .text.dPins_MSB_ReadDataReg
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .text.LED_Control_Reg_Read
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text.timer_clock_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text.timer_clock_StandbyPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text.timer_clock_SetDivider
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text.timer_clock_SetMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text.timer_clock_SetSource
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .text.TX_Write
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .text.TX_SetDriveMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .text.TX_Read  0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .text.TX_ReadDataReg
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_ReadControlRegister
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_WriteControlRegister
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_SetTxInterruptMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_ReadTxStatus
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_GetTxInterruptSource
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_PutChar
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_PutArray
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_PutCRLF
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_GetTxBufferSize
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_ClearTxBuffer
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_SendBreak
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text.UART_SetTxAddressMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_Start
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_StandbyPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_SetDivider
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_SetMode
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text.UART_IntClock_SetSource
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_IRQ_Enable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_IRQ_Disable
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_SetPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_StopConvert
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_GetResult16
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_SetOffset
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_SetGain
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text.Volume_ADC_CountsTo_mVolts
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .text.Volume_ADC_theACLK_Stop
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .text.Volume_ADC_theACLK_StandbyPower
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .text.Volume_ADC_theACLK_SetDivider
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .text.Volume_ADC_theACLK_SetSource
+                0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .text          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .rodata        0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+ .rodata        0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+ .rodata.str1.4
+                0x00000000        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00040000         xr
+IRAM             0x1fff8000         0x000000c8         xrw
+SRAM             0x1fff80c8         0x0000ff38         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+LOAD C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+START GROUP
+LOAD c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/thumb2\libgcc.a
+LOAD c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a
+END GROUP
+
+.text           0x00000000     0x1274
+                0x00000000                . = ALIGN (0x4)
+ *(.romvectors)
+ .romvectors    0x00000000       0xc0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+                0x00000000                RomVectors
+ *(.romvectors*)
+                0x000000c0                . = ALIGN (0x4)
+ *(.dma_init)
+ .dma_init      0x000000c0       0x2d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+                0x000000f0                . = ALIGN (0x4)
+ *fill*         0x000000ed        0x3 00
+ *(.text*)
+ .text.main     0x000000f0      0x1cc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+                0x000000f0                main
+ .text.Button_Read
+                0x000002bc       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+                0x000002bc                Button_Read
+ .text.Counter_1_Start
+                0x000002dc       0x9c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x000002dc                Counter_1_Start
+ .text.Counter_1_SetInterruptMode
+                0x00000378       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x00000378                Counter_1_SetInterruptMode
+ .text.Counter_1_WriteCounter
+                0x00000398       0x24 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x00000398                Counter_1_WriteCounter
+ .text.Counter_1_ReadCounter
+                0x000003bc       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x000003bc                Counter_1_ReadCounter
+ .text.Counter_1_WritePeriod
+                0x000003dc       0x24 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x000003dc                Counter_1_WritePeriod
+ .text.Counter_1_ReadPeriod
+                0x00000400       0x18 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x00000400                Counter_1_ReadPeriod
+ .text.IntDefaultHandler
+                0x00000418        0x8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+                0x00000418                IntDefaultHandler
+ .text.Reset    0x00000420       0xbc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+                0x00000420                Reset
+ .text.CyDmacConfigure
+                0x000004dc       0x6c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+                0x000004dc                CyDmacConfigure
+ .text.cymemset
+                0x00000548       0x40 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x00000548                cymemset
+ .text.cymemcpy
+                0x00000588       0x4c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x00000588                cymemcpy
+ .text.CyEnableDigitalArray
+                0x000005d4       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x000005d4                CyEnableDigitalArray
+ .text.CyIntSetVector
+                0x0000061c       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x0000061c                CyIntSetVector
+ .text.CyIntSetPriority
+                0x00000664       0x30 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x00000664                CyIntSetPriority
+ .text.CyIntClearPending
+                0x00000694       0x30 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+                0x00000694                CyIntClearPending
+ .text.CySetReg24
+                0x000006c4       0x34 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+                0x000006c4                CySetReg24
+ .text.LED_Control_Reg_Write
+                0x000006f8       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+                0x000006f8                LED_Control_Reg_Write
+ .text.timer_clock_Start
+                0x00000718       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+                0x00000718                timer_clock_Start
+ .text.UART_Start
+                0x00000738       0x6c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+                0x00000738                UART_Start
+ .text.UART_WriteTxData
+                0x000007a4       0x30 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+                0x000007a4                UART_WriteTxData
+ .text.UART_PutString
+                0x000007d4       0x2c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+                0x000007d4                UART_PutString
+ .text.Volume_ADC_Start
+                0x00000800       0xdc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x00000800                Volume_ADC_Start
+ .text.Volume_ADC_SetRef
+                0x000008dc       0x64 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x000008dc                Volume_ADC_SetRef
+ .text.Volume_ADC_SetResolution
+                0x00000940       0x5c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x00000940                Volume_ADC_SetResolution
+ .text.Volume_ADC_StartConvert
+                0x0000099c       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x0000099c                Volume_ADC_StartConvert
+ .text.Volume_ADC_IsEndConversion
+                0x000009bc       0x34 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x000009bc                Volume_ADC_IsEndConversion
+ .text.Volume_ADC_GetResult8
+                0x000009f0       0x18 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x000009f0                Volume_ADC_GetResult8
+ .text.Volume_ADC_CalcGain
+                0x00000a08       0x90 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x00000a08                Volume_ADC_CalcGain
+ .text.Volume_ADC_ISR
+                0x00000a98        0xc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+                0x00000a98                Volume_ADC_ISR
+ .text.Volume_ADC_theACLK_Start
+                0x00000aa4       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+                0x00000aa4                Volume_ADC_theACLK_Start
+ .text.Volume_ADC_theACLK_SetMode
+                0x00000ac4       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+                0x00000ac4                Volume_ADC_theACLK_SetMode
+ .text.cfg_write_bytes32
+                0x00000afc       0x8c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text.cymemzero8
+                0x00000b88       0x44 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text.cymemcpy8
+                0x00000bcc       0x50 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text.ClockSetup
+                0x00000c1c      0x130 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text.AnalogSetDefault
+                0x00000d4c       0x54 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+                0x00000d4c                AnalogSetDefault
+ .text.EnableDigitalRouting
+                0x00000da0       0x34 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .text.cyfitter_cfg
+                0x00000dd4      0x1a8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+                0x00000dd4                cyfitter_cfg
+ *(.rodata*)
+ .rodata        0x00000f7c       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .rodata        0x00000fb4      0x2c0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ *(.jcr)
+ *(.fini)
+ *(.fini_array)
+ *(.eh_frame)
+ *(.init)
+ *(.init_array)
+ *(.ARM.extab*)
+ *(.bootloader)
+                0x00001274                __exidx_start = .
+
+.glue_7         0x00001274        0x0
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .glue_7        0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .glue_7        0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .glue_7        0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .glue_7        0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+
+.glue_7t        0x00001274        0x0
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .glue_7t       0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .glue_7t       0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .glue_7t       0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .glue_7t       0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+
+.vfp11_veneer   0x00001274        0x0
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .vfp11_veneer  0x00001274        0x0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .vfp11_veneer  0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .vfp11_veneer  0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .vfp11_veneer  0x00001274        0x0 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+
+.ARM.exidx      0x00001274        0x0
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00001274                __exidx_end = .
+
+.text.align     0x00001274        0x0
+                0x00001274                __etext = .
+                0x00001274                PROVIDE (_etext, .)
+
+.ramvectors     0x1fff8000       0x80
+                0x1fff8000                . = ALIGN (0x4)
+ *(.ramvectors)
+ .ramvectors    0x1fff8000       0x80 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+                0x1fff8000                CyRamVectors
+
+.data           0x1fff80c8        0x0 load address 0x00001274
+                0x1fff80c8                . = ALIGN (0x4)
+                0x1fff80c8                PROVIDE (_data, .)
+ *(.data*)
+                0x1fff80c8                PROVIDE (_edata, .)
+
+.bss            0x1fff80c8       0x18 load address 0x00001274
+                0x1fff80c8                PROVIDE (_bss, .)
+ *(.bss*)
+ .bss           0x1fff80c8        0x1 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+                0x1fff80c8                Counter_1_initvar
+ *fill*         0x1fff80c9        0x3 00
+ .bss           0x1fff80cc        0x8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .bss           0x1fff80d4        0x1 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+                0x1fff80d4                UART_initvar
+ *fill*         0x1fff80d5        0x1 00
+ .bss           0x1fff80d6        0x4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x1fff80d6                Volume_ADC_initVar
+                0x1fff80d8                Volume_ADC_Offset
+ *(COMMON)
+ COMMON         0x1fff80da        0x2 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+                0x1fff80da                Volume_ADC_CountsPerVolt
+                0x1fff80dc                PROVIDE (_ebss, .)
+                0x1fff80e0                . = ALIGN (0x8)
+ *fill*         0x1fff80dc        0x4 00
+                0x1fff80e0                PROVIDE (_end, .)
+
+.heap           0x1fff80e0        0x0 load address 0x0000128c
+                0x1fff80e0                PROVIDE (_heap, .)
+                0x20008000                PROVIDE (_stack, ((0xff38 - SIZEOF (.data)) - SIZEOF (.bss)))
+OUTPUT(C:/Users/blinky/Documents/PSoC Creator/CarStairo/CarStairo.cydsn/ARM_CM3-GCC_421/Debug/CarStairo.elf elf32-littlearm)
+
+.debug_abbrev   0x00000000      0xff9
+ .debug_abbrev  0x00000000       0x55 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_abbrev  0x00000055       0x76 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_abbrev  0x000000cb       0xd9 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_abbrev  0x000001a4       0xc5 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_abbrev  0x00000269       0x14 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .debug_abbrev  0x0000027d      0x170 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_abbrev  0x000003ed      0x125 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_abbrev  0x00000512       0xf7 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_abbrev  0x00000609      0x127 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_abbrev  0x00000730      0x126 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_abbrev  0x00000856       0x9d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_abbrev  0x000008f3       0x76 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_abbrev  0x00000969       0x76 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_abbrev  0x000009df       0x67 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_abbrev  0x00000a46       0x89 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_abbrev  0x00000acf       0x76 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_abbrev  0x00000b45      0x11f C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_abbrev  0x00000c64       0x1f C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .debug_abbrev  0x00000c83       0x89 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_abbrev  0x00000d0c      0x11d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_abbrev  0x00000e29       0x32 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_abbrev  0x00000e5b       0x89 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_abbrev  0x00000ee4      0x115 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.debug_info     0x00000000     0x54ea
+ .debug_info    0x00000000      0x114 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_info    0x00000114      0x1c0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_info    0x000002d4      0x3c2 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_info    0x00000696      0x25c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_info    0x000008f2       0x92 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .debug_info    0x00000984      0xa29 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_info    0x000013ad      0x41b C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_info    0x000017c8      0xdcb C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_info    0x00002593      0x665 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_info    0x00002bf8      0x731 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_info    0x00003329      0x1a1 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_info    0x000034ca      0x1cf C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_info    0x00003699      0x1cf C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_info    0x00003868      0x167 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_info    0x000039cf      0x267 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_info    0x00003c36      0x1ac C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_info    0x00003de2      0x48f C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_info    0x00004271       0xef C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .debug_info    0x00004360      0x275 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_info    0x000045d5      0x55e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_info    0x00004b33      0x111 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_info    0x00004c44      0x298 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_info    0x00004edc      0x60e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.debug_line     0x00000000     0x18f2
+ .debug_line    0x00000000       0x94 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_line    0x00000094       0x96 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_line    0x0000012a      0x13a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_line    0x00000264       0x9b C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_line    0x000002ff       0x5e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .debug_line    0x0000035d      0x282 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_line    0x000005df      0x108 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_line    0x000006e7      0x490 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_line    0x00000b77      0x1ae C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_line    0x00000d25      0x1d4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_line    0x00000ef9       0x65 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_line    0x00000f5e       0x9c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_line    0x00000ffa       0x9c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_line    0x00001096       0x7a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_line    0x00001110       0xcd C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_line    0x000011dd       0x92 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_line    0x0000126f      0x19a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_line    0x00001409       0x1d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .debug_line    0x00001426       0xcf C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_line    0x000014f5      0x1b0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_line    0x000016a5       0x5c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_line    0x00001701       0xd4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_line    0x000017d5      0x11d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.debug_frame    0x00000000     0x1680
+ .debug_frame   0x00000000       0x30 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_frame   0x00000030       0x78 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_frame   0x000000a8      0x144 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_frame   0x000001ec       0x60 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_frame   0x0000024c      0x2b8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_frame   0x00000504       0xd0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_frame   0x000005d4      0x41c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_frame   0x000009f0      0x244 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_frame   0x00000c34      0x1bc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_frame   0x00000df0       0x2c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_frame   0x00000e1c       0x78 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_frame   0x00000e94       0x78 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_frame   0x00000f0c       0x44 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_frame   0x00000f50       0xb0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_frame   0x00001000       0x78 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_frame   0x00001078      0x1c4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_frame   0x0000123c       0xb0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_frame   0x000012ec      0x1c8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_frame   0x000014b4       0x28 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_frame   0x000014dc       0xb0 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_frame   0x0000158c       0xd4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .debug_frame   0x00001660       0x20 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+
+.debug_loc      0x00000000     0x2715
+ .debug_loc     0x00000000       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_loc     0x00000037       0xc4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_loc     0x000000fb      0x234 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_loc     0x0000032f       0x8d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_loc     0x000003bc      0x4f8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_loc     0x000008b4      0x14a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_loc     0x000009fe      0x7d1 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_loc     0x000011cf      0x3c6 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_loc     0x00001595      0x32d C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_loc     0x000018c2       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_loc     0x000018f9       0xc4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_loc     0x000019bd       0xc4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_loc     0x00001a81       0x62 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_loc     0x00001ae3      0x132 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_loc     0x00001c15       0xc4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_loc     0x00001cd9      0x328 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_loc     0x00002001      0x132 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_loc     0x00002133      0x31c C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_loc     0x0000244f       0x2b C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_loc     0x0000247a      0x132 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_loc     0x000025ac      0x169 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.debug_pubnames
+                0x00000000     0x1235
+ .debug_pubnames
+                0x00000000       0x1b C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_pubnames
+                0x0000001b       0x62 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_pubnames
+                0x0000007d      0x177 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_pubnames
+                0x000001f4       0x6a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_pubnames
+                0x0000025e      0x21e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_pubnames
+                0x0000047c       0xa5 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_pubnames
+                0x00000521      0x2cc C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_pubnames
+                0x000007ed       0xfd C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_pubnames
+                0x000008ea      0x1b4 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_pubnames
+                0x00000a9e       0x21 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_pubnames
+                0x00000abf       0x6e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_pubnames
+                0x00000b2d       0x6e C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_pubnames
+                0x00000b9b       0x45 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_pubnames
+                0x00000be0       0xa7 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_pubnames
+                0x00000c87       0x52 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_pubnames
+                0x00000cd9      0x184 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_pubnames
+                0x00000e5d       0xb3 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_pubnames
+                0x00000f10      0x1f7 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_pubnames
+                0x00001107       0x25 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_pubnames
+                0x0000112c       0xd1 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_pubnames
+                0x000011fd       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.debug_aranges  0x00000000      0x820
+ .debug_aranges
+                0x00000000       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .debug_aranges
+                0x00000020       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .debug_aranges
+                0x00000058       0x78 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .debug_aranges
+                0x000000d0       0x30 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .debug_aranges
+                0x00000100       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .debug_aranges
+                0x00000120       0xd8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_aranges
+                0x000001f8       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_aranges
+                0x00000240      0x140 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_aranges
+                0x00000380       0xa8 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_aranges
+                0x00000428       0x90 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_aranges
+                0x000004b8       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .debug_aranges
+                0x000004d8       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .debug_aranges
+                0x00000510       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .debug_aranges
+                0x00000548       0x28 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .debug_aranges
+                0x00000570       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .debug_aranges
+                0x000005b8       0x38 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .debug_aranges
+                0x000005f0       0x98 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_aranges
+                0x00000688       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .debug_aranges
+                0x000006d0       0x98 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .debug_aranges
+                0x00000768       0x20 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .debug_aranges
+                0x00000788       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .debug_aranges
+                0x000007d0       0x50 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.comment        0x00000000      0x4ba
+ .comment       0x00000000       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .comment       0x00000037       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .comment       0x0000006e       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .comment       0x000000a5       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .comment       0x000000dc       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .comment       0x00000113       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .comment       0x0000014a       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .comment       0x00000181       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .comment       0x000001b8       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .comment       0x000001ef       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .comment       0x00000226       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .comment       0x0000025d       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .comment       0x00000294       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .comment       0x000002cb       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .comment       0x00000302       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .comment       0x00000339       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .comment       0x00000370       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .comment       0x000003a7       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .comment       0x000003de       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .comment       0x00000415       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .comment       0x0000044c       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .comment       0x00000483       0x37 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+
+.ARM.attributes
+                0x00000000       0x31
+ .ARM.attributes
+                0x00000000       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\main.o
+ .ARM.attributes
+                0x00000031       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Button.o
+ .ARM.attributes
+                0x00000062       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Counter_1.o
+ .ARM.attributes
+                0x00000093       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Cm3Start.o
+ .ARM.attributes
+                0x000000c4       0x21 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyBootAsmGnu.o
+ .ARM.attributes
+                0x000000e5       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .ARM.attributes
+                0x00000116       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .ARM.attributes
+                0x00000147       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .ARM.attributes
+                0x00000178       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .ARM.attributes
+                0x000001a9       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .ARM.attributes
+                0x000001da       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyutils.o
+ .ARM.attributes
+                0x0000020b       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_LSB.o
+ .ARM.attributes
+                0x0000023c       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\dPins_MSB.o
+ .ARM.attributes
+                0x0000026d       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\LED_Control_Reg.o
+ .ARM.attributes
+                0x0000029e       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\timer_clock.o
+ .ARM.attributes
+                0x000002cf       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\TX.o
+ .ARM.attributes
+                0x00000300       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .ARM.attributes
+                0x00000331       0x2f C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_INT.o
+ .ARM.attributes
+                0x00000360       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART_IntClock.o
+ .ARM.attributes
+                0x00000391       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o
+ .ARM.attributes
+                0x000003c2       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_INT.o
+ .ARM.attributes
+                0x000003f3       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC_theACLK.o
+ .ARM.attributes
+                0x00000424       0x31 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x00000455       0x25 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-ctype_.o)
+ .ARM.attributes
+                0x0000047a       0x27 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000004a1       0x25 c:/program files/cypress/psoc creator/1.0/psoc creator/import/gnu_cs/cm3/4.2/bin/../lib/gcc/arm-none-eabi/4.2.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-impure.o)
+
+.debug_str      0x00000000       0xc1
+ .debug_str     0x00000000       0x48 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyDmac.o
+ .debug_str     0x00000048       0x1a C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyFlash.o
+ .debug_str     0x00000062       0x28 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLib.o
+ .debug_str     0x0000008a        0x5 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CyLibNoOS.o
+ .debug_str     0x0000008f       0x15 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\CySpc.o
+ .debug_str     0x000000a4        0xb C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\UART.o
+ .debug_str     0x000000af       0x12 C:\Users\blinky\Documents\PSoC Creator\CarStairo\CarStairo.cydsn\ARM_CM3-GCC_421\Debug\Volume_ADC.o

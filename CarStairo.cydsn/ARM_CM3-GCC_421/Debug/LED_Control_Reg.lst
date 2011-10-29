@@ -1,0 +1,527 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"LED_Control_Reg.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 76000000 		.text
+  20      02004E00 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.text.LED_Control_Reg_Write,"ax",%progbits
+  23              		.align	2
+  24              		.global	LED_Control_Reg_Write
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	LED_Control_Reg_Write, %function
+  28              	LED_Control_Reg_Write:
+  29              	.LFB2:
+  30              		.file 1 "./Generated_Source/PSoC5/LED_Control_Reg.c"
+   1:./Generated_Source/PSoC5/LED_Control_Reg.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/LED_Control_Reg.c **** * File Name: LED_Control_Reg.c  
+   3:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Version 1.0
+   4:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+   5:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Description:
+   6:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  This file contains API to enable firmware control of a control register.
+   7:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+   8:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Note:
+   9:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+  10:./Generated_Source/PSoC5/LED_Control_Reg.c **** ********************************************************************************
+  11:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  12:./Generated_Source/PSoC5/LED_Control_Reg.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:./Generated_Source/PSoC5/LED_Control_Reg.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:./Generated_Source/PSoC5/LED_Control_Reg.c **** * the software package with which this file was provided.
+  15:./Generated_Source/PSoC5/LED_Control_Reg.c **** ********************************************************************************/
+  16:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  17:./Generated_Source/PSoC5/LED_Control_Reg.c **** #include "cytypes.h"
+  18:./Generated_Source/PSoC5/LED_Control_Reg.c **** #include "LED_Control_Reg.h"
+  19:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  20:./Generated_Source/PSoC5/LED_Control_Reg.c **** #if !defined(LED_Control_Reg_ctrl_reg__REMOVED) /* Check for removal by optimization */
+  21:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  22:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  23:./Generated_Source/PSoC5/LED_Control_Reg.c **** /*******************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 2
+
+
+  24:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Function Name: LED_Control_Reg_Write
+  25:./Generated_Source/PSoC5/LED_Control_Reg.c **** ********************************************************************************
+  26:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Summary:
+  27:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  Write a byte to a control register.
+  28:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+  29:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Parameters:  
+  30:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  control:  The value to be assigned to the control register. 
+  31:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+  32:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Return: 
+  33:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  void 
+  34:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  
+  35:./Generated_Source/PSoC5/LED_Control_Reg.c **** *******************************************************************************/
+  36:./Generated_Source/PSoC5/LED_Control_Reg.c **** void LED_Control_Reg_Write(uint8 control)
+  37:./Generated_Source/PSoC5/LED_Control_Reg.c **** {
+  31              	end = 0, frame = 8
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		push	{r7}
+  35 0000 80B4     	.LCFI0:
+  36              		sub	sp, sp, #12
+  37 0002 83B0     	.LCFI1:
+  38              		add	r7, sp, #0
+  39 0004 00AF     	.LCFI2:
+  40              		@ lr needed for prologue
+  41              		mov	r3, r0
+  42 0006 0346     		strb	r3, [r7, #7]
+  43 0008 FB71     		.loc 1 38 0
+  38:./Generated_Source/PSoC5/LED_Control_Reg.c **** 	LED_Control_Reg_Control = control;
+  44              		ldrb	r3, [r7, #7]
+  45 000a 044A     		strb	r3, [r2, #0]
+  46 000c FB79     		.loc 1 39 0
+  47 000e 1370     		add	r7, r7, #12
+  39:./Generated_Source/PSoC5/LED_Control_Reg.c **** }
+  48              		sp, r7
+  49 0010 07F10C07 		pop	{r7}
+  50 0014 BD46     		bx	lr
+  51 0016 80BC     	.L4:
+  52 0018 7047     		.align	2
+  53              	.L3:
+  54 001a C046     		.word	1073767546
+  55              	.LFE2:
+  56 001c 7A640040 		.size	LED_Control_Reg_Write, .-LED_Control_Reg_Write
+  57              		.section	.text.LED_Control_Reg_Read,"ax",%progbits
+  58              		.align	2
+  59              		.global	LED_Control_Reg_Read
+  60              		.thumb
+  61              		.thumb_func
+  62              		.type	LED_Control_Reg_Read, %function
+  63              	LED_Control_Reg_Read:
+  64              	.LFB3:
+  65              		.loc 1 56 0
+  66              		@ args = 0, pretend = 0, frame = 0
+  40:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  41:./Generated_Source/PSoC5/LED_Control_Reg.c **** 
+  42:./Generated_Source/PSoC5/LED_Control_Reg.c **** /*******************************************************************************
+  43:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Function Name: LED_Control_Reg_Read
+  44:./Generated_Source/PSoC5/LED_Control_Reg.c **** ********************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 3
+
+
+  45:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Summary:
+  46:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  Read the current value assigned to a control register.
+  47:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+  48:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Parameters:  
+  49:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  void 
+  50:./Generated_Source/PSoC5/LED_Control_Reg.c **** *
+  51:./Generated_Source/PSoC5/LED_Control_Reg.c **** * Return: 
+  52:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  Returns the current value assigned to the control register
+  53:./Generated_Source/PSoC5/LED_Control_Reg.c **** *  
+  54:./Generated_Source/PSoC5/LED_Control_Reg.c **** *******************************************************************************/
+  55:./Generated_Source/PSoC5/LED_Control_Reg.c **** uint8 LED_Control_Reg_Read(void)
+  56:./Generated_Source/PSoC5/LED_Control_Reg.c **** {
+  67              	, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69              		push	{r7}
+  70              	.LCFI3:
+  71 0000 80B4     		add	r7, sp, #0
+  72              	.LCFI4:
+  73 0002 00AF     		@ lr needed for prologue
+  74              		.loc 1 57 0
+  75              		ldr	r3, .L7
+  57:./Generated_Source/PSoC5/LED_Control_Reg.c **** 	return LED_Control_Reg_Control;
+  76              	 [r3, #0]
+  77 0004 034B     		uxtb	r3, r3
+  78 0006 1B78     		.loc 1 58 0
+  79 0008 DBB2     		mov	r0, r3
+  58:./Generated_Source/PSoC5/LED_Control_Reg.c **** }
+  80              		sp, r7
+  81 000a 1846     		pop	{r7}
+  82 000c BD46     		bx	lr
+  83 000e 80BC     	.L8:
+  84 0010 7047     		.align	2
+  85              	.L7:
+  86 0012 C046     		.word	1073767546
+  87              	.LFE3:
+  88 0014 7A640040 		.size	LED_Control_Reg_Read, .-LED_Control_Reg_Read
+  89              		.section	.debug_frame,"",%progbits
+  90              	.Lframe0:
+  91              		.4byte	.LECIE0-.LSCIE0
+  92              	.LSCIE0:
+  93 0000 0C000000 		.4byte	0xffffffff
+  94              		.byte	0x1
+  95 0004 FFFFFFFF 		.ascii	"\000"
+  96 0008 01       		.uleb128 0x1
+  97 0009 00       		.sleb128 -4
+  98 000a 01       		.byte	0xe
+  99 000b 7C       		.byte	0xc
+ 100 000c 0E       		.uleb128 0xd
+ 101 000d 0C       		.uleb128 0x0
+ 102 000e 0D       		.align	2
+ 103 000f 00       	.LECIE0:
+ 104              	.LSFDE0:
+ 105              		.4byte	.LEFDE0-.LASFDE0
+ 106              	.LASFDE0:
+ 107 0010 18000000 		.4byte	.Lframe0
+ 108              		.4byte	.LFB2
+ 109 0014 00000000 		.4byte	.LFE2-.LFB2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 4
+
+
+ 110 0018 00000000 		.byte	0x4
+ 111 001c 20000000 		.4byte	.LCFI0-.LFB2
+ 112 0020 42       		.byte	0xe
+ 113              		.uleb128 0x4
+ 114 0021 0E       		.byte	0x4
+ 115 0022 04       		.4byte	.LCFI1-.LCFI0
+ 116 0023 42       		.byte	0xe
+ 117              		.uleb128 0x10
+ 118 0024 0E       		.byte	0x87
+ 119 0025 10       		.uleb128 0x1
+ 120 0026 87       		.byte	0x4
+ 121 0027 01       		.4byte	.LCFI2-.LCFI1
+ 122 0028 42       		.byte	0xd
+ 123              		.uleb128 0x7
+ 124 0029 0D       		.align	2
+ 125 002a 07       	.LEFDE0:
+ 126 002b 00       	.LSFDE2:
+ 127              		.4byte	.LEFDE2-.LASFDE2
+ 128              	.LASFDE2:
+ 129 002c 14000000 		.4byte	.Lframe0
+ 130              		.4byte	.LFB3
+ 131 0030 00000000 		.4byte	.LFE3-.LFB3
+ 132 0034 00000000 		.byte	0x4
+ 133 0038 18000000 		.4byte	.LCFI3-.LFB3
+ 134 003c 42       		.byte	0xe
+ 135              		.uleb128 0x4
+ 136 003d 0E       		.byte	0x87
+ 137 003e 04       		.uleb128 0x1
+ 138 003f 87       		.byte	0x4
+ 139 0040 01       		.4byte	.LCFI4-.LCFI3
+ 140 0041 42       		.byte	0xd
+ 141              		.uleb128 0x7
+ 142 0042 0D       		.align	2
+ 143 0043 07       	.LEFDE2:
+ 144              		.text
+ 145              	.Letext0:
+ 146              		.section	.debug_loc,"",%progbits
+ 147              	.Ldebug_loc0:
+ 148              	.LLST0:
+ 149              		.4byte	.LFB2
+ 150              		.4byte	.LCFI0
+ 151 0000 00000000 		.2byte	0x1
+ 152 0004 02000000 		.byte	0x5d
+ 153 0008 0100     		.4byte	.LCFI0
+ 154 000a 5D       		.4byte	.LCFI1
+ 155 000b 02000000 		.2byte	0x2
+ 156 000f 04000000 		.byte	0x7d
+ 157 0013 0200     		.sleb128 4
+ 158 0015 7D       		.4byte	.LCFI1
+ 159 0016 04       		.4byte	.LCFI2
+ 160 0017 04000000 		.2byte	0x2
+ 161 001b 06000000 		.byte	0x7d
+ 162 001f 0200     		.sleb128 16
+ 163 0021 7D       		.4byte	.LCFI2
+ 164 0022 10       		.4byte	.LFE2
+ 165 0023 06000000 		.2byte	0x2
+ 166 0027 20000000 		.byte	0x77
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 5
+
+
+ 167 002b 0200     		.sleb128 16
+ 168 002d 77       		.4byte	0x0
+ 169 002e 10       		.4byte	0x0
+ 170 002f 00000000 	.LLST1:
+ 171 0033 00000000 		.4byte	.LFB3
+ 172              		.4byte	.LCFI3
+ 173 0037 00000000 		.2byte	0x1
+ 174 003b 02000000 		.byte	0x5d
+ 175 003f 0100     		.4byte	.LCFI3
+ 176 0041 5D       		.4byte	.LCFI4
+ 177 0042 02000000 		.2byte	0x2
+ 178 0046 04000000 		.byte	0x7d
+ 179 004a 0200     		.sleb128 4
+ 180 004c 7D       		.4byte	.LCFI4
+ 181 004d 04       		.4byte	.LFE3
+ 182 004e 04000000 		.2byte	0x2
+ 183 0052 18000000 		.byte	0x77
+ 184 0056 0200     		.sleb128 4
+ 185 0058 77       		.4byte	0x0
+ 186 0059 04       		.4byte	0x0
+ 187 005a 00000000 		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 188 005e 00000000 		.section	.debug_info
+ 189              		.4byte	0x163
+ 190              		.2byte	0x2
+ 191 0000 63010000 		.4byte	.Ldebug_abbrev0
+ 192 0004 0200     		.byte	0x4
+ 193 0006 00000000 		.uleb128 0x1
+ 194 000a 04       		.ascii	"GNU C 4.2.1\000"
+ 195 000b 01       		.byte	0x1
+ 196 000c 474E5520 		.ascii	"./Generated_Source/PSoC5/LED_Control_Reg.c\000"
+ 196      4320342E 
+ 196      322E3100 
+ 197 0018 01       		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 198 0019 2E2F4765 		.ascii	"ro\\CarStairo.cydsn\000"
+ 198      6E657261 
+ 198      7465645F 
+ 198      536F7572 
+ 198      63652F50 
+ 199 0044 433A5C55 		.4byte	0x0
+ 199      73657273 
+ 199      5C626C69 
+ 199      6E6B795C 
+ 199      446F6375 
+ 200 0072 726F5C43 		.4byte	.Ldebug_line0
+ 200      61725374 
+ 200      6169726F 
+ 200      2E637964 
+ 200      736E00
+ 201 0085 00000000 		.uleb128 0x2
+ 202 0089 00000000 		.byte	0x1
+ 203 008d 02       		.byte	0x8
+ 204 008e 01       		.ascii	"unsigned char\000"
+ 205 008f 08       		.uleb128 0x3
+ 206 0090 756E7369 		.ascii	"uint8\000"
+ 206      676E6564 
+ 206      20636861 
+ 206      7200
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 6
+
+
+ 207 009e 03       		.byte	0x2
+ 208 009f 75696E74 		.byte	0x25
+ 208      3800
+ 209 00a5 02       		.4byte	0x8d
+ 210 00a6 25       		.uleb128 0x2
+ 211 00a7 8D000000 		.byte	0x2
+ 212 00ab 02       		.byte	0x7
+ 213 00ac 02       		.ascii	"short unsigned int\000"
+ 214 00ad 07       		.uleb128 0x2
+ 215 00ae 73686F72 		.byte	0x4
+ 215      7420756E 
+ 215      7369676E 
+ 215      65642069 
+ 215      6E7400
+ 216 00c1 02       		.byte	0x7
+ 217 00c2 04       		.ascii	"long unsigned int\000"
+ 218 00c3 07       		.uleb128 0x2
+ 219 00c4 6C6F6E67 		.byte	0x1
+ 219      20756E73 
+ 219      69676E65 
+ 219      6420696E 
+ 219      7400
+ 220 00d6 02       		.byte	0x6
+ 221 00d7 01       		.ascii	"signed char\000"
+ 222 00d8 06       		.uleb128 0x2
+ 223 00d9 7369676E 		.byte	0x2
+ 223      65642063 
+ 223      68617200 
+ 224 00e5 02       		.byte	0x5
+ 225 00e6 02       		.ascii	"short int\000"
+ 226 00e7 05       		.uleb128 0x2
+ 227 00e8 73686F72 		.byte	0x4
+ 227      7420696E 
+ 227      7400
+ 228 00f2 02       		.byte	0x5
+ 229 00f3 04       		.ascii	"long int\000"
+ 230 00f4 05       		.uleb128 0x4
+ 231 00f5 6C6F6E67 		.byte	0x1
+ 231      20696E74 
+ 231      00
+ 232 00fe 04       		.ascii	"LED_Control_Reg_Write\000"
+ 233 00ff 01       		.byte	0x1
+ 234 0100 4C45445F 		.byte	0x25
+ 234      436F6E74 
+ 234      726F6C5F 
+ 234      5265675F 
+ 234      57726974 
+ 235 0116 01       		.byte	0x1
+ 236 0117 25       		.4byte	.LFB2
+ 237 0118 01       		.4byte	.LFE2
+ 238 0119 00000000 		.4byte	.LLST0
+ 239 011d 20000000 		.4byte	0x13c
+ 240 0121 00000000 		.uleb128 0x5
+ 241 0125 3C010000 		.ascii	"control\000"
+ 242 0129 05       		.byte	0x1
+ 243 012a 636F6E74 		.byte	0x24
+ 243      726F6C00 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 7
+
+
+ 244 0132 01       		.4byte	0x9e
+ 245 0133 24       		.byte	0x2
+ 246 0134 9E000000 		.byte	0x91
+ 247 0138 02       		.sleb128 -9
+ 248 0139 91       		.byte	0x0
+ 249 013a 77       		.uleb128 0x6
+ 250 013b 00       		.byte	0x1
+ 251 013c 06       		.ascii	"LED_Control_Reg_Read\000"
+ 252 013d 01       		.byte	0x1
+ 253 013e 4C45445F 		.byte	0x38
+ 253      436F6E74 
+ 253      726F6C5F 
+ 253      5265675F 
+ 253      52656164 
+ 254 0153 01       		.byte	0x1
+ 255 0154 38       		.4byte	0x9e
+ 256 0155 01       		.4byte	.LFB3
+ 257 0156 9E000000 		.4byte	.LFE3
+ 258 015a 00000000 		.4byte	.LLST1
+ 259 015e 18000000 		.byte	0x0
+ 260 0162 37000000 		.section	.debug_abbrev
+ 261 0166 00       		.uleb128 0x1
+ 262              		.uleb128 0x11
+ 263 0000 01       		.byte	0x1
+ 264 0001 11       		.uleb128 0x25
+ 265 0002 01       		.uleb128 0x8
+ 266 0003 25       		.uleb128 0x13
+ 267 0004 08       		.uleb128 0xb
+ 268 0005 13       		.uleb128 0x3
+ 269 0006 0B       		.uleb128 0x8
+ 270 0007 03       		.uleb128 0x1b
+ 271 0008 08       		.uleb128 0x8
+ 272 0009 1B       		.uleb128 0x52
+ 273 000a 08       		.uleb128 0x1
+ 274 000b 52       		.uleb128 0x10
+ 275 000c 01       		.uleb128 0x6
+ 276 000d 10       		.byte	0x0
+ 277 000e 06       		.byte	0x0
+ 278 000f 00       		.uleb128 0x2
+ 279 0010 00       		.uleb128 0x24
+ 280 0011 02       		.byte	0x0
+ 281 0012 24       		.uleb128 0xb
+ 282 0013 00       		.uleb128 0xb
+ 283 0014 0B       		.uleb128 0x3e
+ 284 0015 0B       		.uleb128 0xb
+ 285 0016 3E       		.uleb128 0x3
+ 286 0017 0B       		.uleb128 0x8
+ 287 0018 03       		.byte	0x0
+ 288 0019 08       		.byte	0x0
+ 289 001a 00       		.uleb128 0x3
+ 290 001b 00       		.uleb128 0x16
+ 291 001c 03       		.byte	0x0
+ 292 001d 16       		.uleb128 0x3
+ 293 001e 00       		.uleb128 0x8
+ 294 001f 03       		.uleb128 0x3a
+ 295 0020 08       		.uleb128 0xb
+ 296 0021 3A       		.uleb128 0x3b
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 8
+
+
+ 297 0022 0B       		.uleb128 0xb
+ 298 0023 3B       		.uleb128 0x49
+ 299 0024 0B       		.uleb128 0x13
+ 300 0025 49       		.byte	0x0
+ 301 0026 13       		.byte	0x0
+ 302 0027 00       		.uleb128 0x4
+ 303 0028 00       		.uleb128 0x2e
+ 304 0029 04       		.byte	0x1
+ 305 002a 2E       		.uleb128 0x3f
+ 306 002b 01       		.uleb128 0xc
+ 307 002c 3F       		.uleb128 0x3
+ 308 002d 0C       		.uleb128 0x8
+ 309 002e 03       		.uleb128 0x3a
+ 310 002f 08       		.uleb128 0xb
+ 311 0030 3A       		.uleb128 0x3b
+ 312 0031 0B       		.uleb128 0xb
+ 313 0032 3B       		.uleb128 0x27
+ 314 0033 0B       		.uleb128 0xc
+ 315 0034 27       		.uleb128 0x11
+ 316 0035 0C       		.uleb128 0x1
+ 317 0036 11       		.uleb128 0x12
+ 318 0037 01       		.uleb128 0x1
+ 319 0038 12       		.uleb128 0x40
+ 320 0039 01       		.uleb128 0x6
+ 321 003a 40       		.uleb128 0x1
+ 322 003b 06       		.uleb128 0x13
+ 323 003c 01       		.byte	0x0
+ 324 003d 13       		.byte	0x0
+ 325 003e 00       		.uleb128 0x5
+ 326 003f 00       		.uleb128 0x5
+ 327 0040 05       		.byte	0x0
+ 328 0041 05       		.uleb128 0x3
+ 329 0042 00       		.uleb128 0x8
+ 330 0043 03       		.uleb128 0x3a
+ 331 0044 08       		.uleb128 0xb
+ 332 0045 3A       		.uleb128 0x3b
+ 333 0046 0B       		.uleb128 0xb
+ 334 0047 3B       		.uleb128 0x49
+ 335 0048 0B       		.uleb128 0x13
+ 336 0049 49       		.uleb128 0x2
+ 337 004a 13       		.uleb128 0xa
+ 338 004b 02       		.byte	0x0
+ 339 004c 0A       		.byte	0x0
+ 340 004d 00       		.uleb128 0x6
+ 341 004e 00       		.uleb128 0x2e
+ 342 004f 06       		.byte	0x0
+ 343 0050 2E       		.uleb128 0x3f
+ 344 0051 00       		.uleb128 0xc
+ 345 0052 3F       		.uleb128 0x3
+ 346 0053 0C       		.uleb128 0x8
+ 347 0054 03       		.uleb128 0x3a
+ 348 0055 08       		.uleb128 0xb
+ 349 0056 3A       		.uleb128 0x3b
+ 350 0057 0B       		.uleb128 0xb
+ 351 0058 3B       		.uleb128 0x27
+ 352 0059 0B       		.uleb128 0xc
+ 353 005a 27       		.uleb128 0x49
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccMBbaaa.s 			page 9
+
+
+ 354 005b 0C       		.uleb128 0x13
+ 355 005c 49       		.uleb128 0x11
+ 356 005d 13       		.uleb128 0x1
+ 357 005e 11       		.uleb128 0x12
+ 358 005f 01       		.uleb128 0x1
+ 359 0060 12       		.uleb128 0x40
+ 360 0061 01       		.uleb128 0x6
+ 361 0062 40       		.byte	0x0
+ 362 0063 06       		.byte	0x0
+ 363 0064 00       		.byte	0x0
+ 364 0065 00       		.section	.debug_pubnames,"",%progbits
+ 365 0066 00       		.4byte	0x41
+ 366              		.2byte	0x2
+ 367 0000 41000000 		.4byte	.Ldebug_info0
+ 368 0004 0200     		.4byte	0x167
+ 369 0006 00000000 		.4byte	0xfe
+ 370 000a 67010000 		.ascii	"LED_Control_Reg_Write\000"
+ 371 000e FE000000 		.4byte	0x13c
+ 372 0012 4C45445F 		.ascii	"LED_Control_Reg_Read\000"
+ 372      436F6E74 
+ 372      726F6C5F 
+ 372      5265675F 
+ 372      57726974 
+ 373 0028 3C010000 		.4byte	0x0
+ 374 002c 4C45445F 		.section	.debug_aranges,"",%progbits
+ 374      436F6E74 
+ 374      726F6C5F 
+ 374      5265675F 
+ 374      52656164 
+ 375 0041 00000000 		.4byte	0x24
+ 376              		.2byte	0x2
+ 377 0000 24000000 		.4byte	.Ldebug_info0
+ 378 0004 0200     		.byte	0x4
+ 379 0006 00000000 		.byte	0x0
+ 380 000a 04       		.2byte	0x0
+ 381 000b 00       		.2byte	0x0
+ 382 000c 0000     		.4byte	.LFB2
+ 383 000e 0000     		.4byte	.LFE2-.LFB2
+ 384 0010 00000000 		.4byte	.LFB3
+ 385 0014 20000000 		.4byte	.LFE3-.LFB3
+ 386 0018 00000000 		.4byte	0x0
+ 387 001c 18000000 		.4byte	0x0
+ 388 0020 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 389 0024 00000000 	...

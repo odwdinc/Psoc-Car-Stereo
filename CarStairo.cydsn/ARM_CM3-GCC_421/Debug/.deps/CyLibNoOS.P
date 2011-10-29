@@ -1,0 +1,6 @@
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/ARM_CM3-GCC_421/Debug/CyLibNoOS.o : C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CyLibNoOS.c 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CyLibNoOS.c : 
+

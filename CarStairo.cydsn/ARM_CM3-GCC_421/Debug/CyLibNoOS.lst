@@ -1,0 +1,3050 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"CyLibNoOS.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 AA010000 		.text
+  20      02004800 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.global	__env
+  23              		.bss
+  24              		.align	2
+  25              		.type	__env, %object
+  26              		.size	__env, 4
+  27              	__env:
+  28 0000 00000000 		.space	4
+  29              		.global	environ
+  30              		.data
+  31              		.align	2
+  32              		.type	environ, %object
+  33              		.size	environ, 4
+  34              	environ:
+  35 0000 00000000 		.word	__env
+  36              		.align	2
+  37              		.type	CyHeap, %object
+  38              		.size	CyHeap, 4
+  39              	CyHeap:
+  40 0004 00000000 		.word	_heap
+  41              		.section	.text._sbrk,"ax",%progbits
+  42              		.align	2
+  43              		.global	_sbrk
+  44              		.thumb
+  45              		.thumb_func
+  46              		.type	_sbrk, %function
+  47              	_sbrk:
+  48              	.LFB2:
+  49              		.file 1 "./Generated_Source/PSoC5/CyLibNoOS.c"
+   1:./Generated_Source/PSoC5/CyLibNoOS.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/CyLibNoOS.c **** * File Name: CyLibNoOS.c  
+   3:./Generated_Source/PSoC5/CyLibNoOS.c **** * Version 1.40
+   4:./Generated_Source/PSoC5/CyLibNoOS.c **** *
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 2
+
+
+   5:./Generated_Source/PSoC5/CyLibNoOS.c **** *  Description:
+   6:./Generated_Source/PSoC5/CyLibNoOS.c **** *   Provides standard library support for an Operating System, we have no os
+   7:./Generated_Source/PSoC5/CyLibNoOS.c **** *   so the functions are mostly stubs.
+   8:./Generated_Source/PSoC5/CyLibNoOS.c **** *
+   9:./Generated_Source/PSoC5/CyLibNoOS.c **** *  Note:
+  10:./Generated_Source/PSoC5/CyLibNoOS.c **** *
+  11:./Generated_Source/PSoC5/CyLibNoOS.c **** *   
+  12:./Generated_Source/PSoC5/CyLibNoOS.c **** *
+  13:./Generated_Source/PSoC5/CyLibNoOS.c **** *******************************************************************************
+  14:./Generated_Source/PSoC5/CyLibNoOS.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  15:./Generated_Source/PSoC5/CyLibNoOS.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  16:./Generated_Source/PSoC5/CyLibNoOS.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  17:./Generated_Source/PSoC5/CyLibNoOS.c **** * the software package with which this file was provided.
+  18:./Generated_Source/PSoC5/CyLibNoOS.c **** ********************************************************************************/
+  19:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  20:./Generated_Source/PSoC5/CyLibNoOS.c **** #if (defined(__GNUC__))
+  21:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  22:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  23:./Generated_Source/PSoC5/CyLibNoOS.c **** #include <cytypes.h>
+  24:./Generated_Source/PSoC5/CyLibNoOS.c **** #include <errno.h>
+  25:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  26:./Generated_Source/PSoC5/CyLibNoOS.c **** /* Add user support code between the following #START and #END tags */
+  27:./Generated_Source/PSoC5/CyLibNoOS.c **** /* `#START _exit`  */
+  28:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  29:./Generated_Source/PSoC5/CyLibNoOS.c **** /* `#END`  */
+  30:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  31:./Generated_Source/PSoC5/CyLibNoOS.c **** int errno;
+  32:./Generated_Source/PSoC5/CyLibNoOS.c **** char * __env[1] = { 0 }; 
+  33:./Generated_Source/PSoC5/CyLibNoOS.c **** char * * environ = __env; 
+  34:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  35:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  36:./Generated_Source/PSoC5/CyLibNoOS.c **** /* Defined in the linker descriptor file. */
+  37:./Generated_Source/PSoC5/CyLibNoOS.c **** extern unsigned long _heap;
+  38:./Generated_Source/PSoC5/CyLibNoOS.c **** static uint8 * CyHeap = (uint8 *) &_heap;
+  39:./Generated_Source/PSoC5/CyLibNoOS.c **** register char * stackPointer asm ("sp");
+  40:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  41:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  42:./Generated_Source/PSoC5/CyLibNoOS.c **** void * _sbrk(int size)
+  43:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+  50              	
+  51              		@ frame_needed = 1, uses_anonymous_args = 0
+  52              		push	{r7, lr}
+  53 0000 80B5     	.LCFI0:
+  54              		sub	sp, sp, #16
+  55 0002 84B0     	.LCFI1:
+  56              		add	r7, sp, #0
+  57 0004 00AF     	.LCFI2:
+  58              		str	r0, [r7, #4]
+  59 0006 7860     		.loc 1 52 0
+  44:./Generated_Source/PSoC5/CyLibNoOS.c ****     void * memory; 
+  45:./Generated_Source/PSoC5/CyLibNoOS.c ****     uint8 * previous;
+  46:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  47:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+  48:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _sbrk`  */
+  49:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  50:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+  51:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 3
+
+
+  52:./Generated_Source/PSoC5/CyLibNoOS.c ****     previous = CyHeap; 
+  60              	.L6
+  61 0008 104B     		ldr	r3, [r3, #0]
+  62 000a 1B68     		str	r3, [r7, #12]
+  63 000c FB60     		.loc 1 54 0
+  53:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  54:./Generated_Source/PSoC5/CyLibNoOS.c ****     if((uint32) previous + (uint32) size > (uint32) stackPointer)
+  64              		r3, [r7, #12]
+  65 000e FB68     		mov	r2, r3
+  66 0010 1A46     		ldr	r3, [r7, #4]
+  67 0012 7B68     		add	r2, r2, r3
+  68 0014 1A44     		mov	r3, sp
+  69 0016 6B46     		cmp	r2, r3
+  70 0018 9A42     		bls	.L2
+  71 001a 09D9     		.loc 1 56 0
+  55:./Generated_Source/PSoC5/CyLibNoOS.c ****     {
+  56:./Generated_Source/PSoC5/CyLibNoOS.c ****          errno = ENOMEM;
+  72              	rno
+  73 001c FFF7FEFF 		mov	r3, r0
+  74 0020 0346     		mov	r2, #12
+  75 0022 4FF00C02 		str	r2, [r3, #0]
+  76 0026 1A60     		.loc 1 57 0
+  57:./Generated_Source/PSoC5/CyLibNoOS.c ****          memory = (void *) -1;
+  77              	r3, #-1
+  78 0028 4FF0FF33 		str	r3, [r7, #8]
+  79 002c BB60     		b	.L4
+  80 002e 07E0     	.L2:
+  81              		.loc 1 61 0
+  58:./Generated_Source/PSoC5/CyLibNoOS.c ****     }
+  59:./Generated_Source/PSoC5/CyLibNoOS.c ****     else
+  60:./Generated_Source/PSoC5/CyLibNoOS.c ****     {
+  61:./Generated_Source/PSoC5/CyLibNoOS.c ****         CyHeap += size;
+  82              	r3, .L6
+  83 0030 064B     		ldr	r2, [r3, #0]
+  84 0032 1A68     		ldr	r3, [r7, #4]
+  85 0034 7B68     		add	r2, r2, r3
+  86 0036 1A44     		ldr	r3, .L6
+  87 0038 044B     		str	r2, [r3, #0]
+  88 003a 1A60     		.loc 1 62 0
+  62:./Generated_Source/PSoC5/CyLibNoOS.c ****         memory = (void *) previous;
+  89              	, [r7, #12]
+  90 003c FB68     		str	r3, [r7, #8]
+  91 003e BB60     	.L4:
+  92              		.loc 1 65 0
+  63:./Generated_Source/PSoC5/CyLibNoOS.c ****     }
+  64:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  65:./Generated_Source/PSoC5/CyLibNoOS.c ****     return memory; 
+  93              		r3, [r7, #8]
+  94 0040 BB68     		.loc 1 66 0
+  66:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+  95              	ov	r0, r3
+  96 0042 1846     		add	r7, r7, #16
+  97 0044 07F11007 		mov	sp, r7
+  98 0048 BD46     		pop	{r7, pc}
+  99 004a 80BD     	.L7:
+ 100              		.align	2
+ 101              	.L6:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 4
+
+
+ 102              		.word	CyHeap
+ 103 004c 04000000 	.LFE2:
+ 104              		.size	_sbrk, .-_sbrk
+ 105              		.section	.text._wait,"ax",%progbits
+ 106              		.align	2
+ 107              		.global	_wait
+ 108              		.thumb
+ 109              		.thumb_func
+ 110              		.type	_wait, %function
+ 111              	_wait:
+ 112              	.LFB3:
+ 113              		.loc 1 69 0
+  67:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  68:./Generated_Source/PSoC5/CyLibNoOS.c **** int _wait(int * status)
+  69:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 114              	d = 0, frame = 8
+ 115              		@ frame_needed = 1, uses_anonymous_args = 0
+ 116              		push	{r7, lr}
+ 117 0000 80B5     	.LCFI3:
+ 118              		sub	sp, sp, #8
+ 119 0002 82B0     	.LCFI4:
+ 120              		add	r7, sp, #0
+ 121 0004 00AF     	.LCFI5:
+ 122              		str	r0, [r7, #4]
+ 123 0006 7860     		.loc 1 75 0
+  70:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+  71:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _wait` */
+  72:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  73:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+  74:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  75:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 124              	o
+ 125 0008 FFF7FEFF 		mov	r2, r0
+ 126 000c 0246     		mov	r3, #88
+ 127 000e 4FF05803 		str	r3, [r2, #0]
+ 128 0012 1360     		.loc 1 76 0
+  76:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 129              	r3, #-1
+ 130 0014 4FF0FF33 		.loc 1 77 0
+  77:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 131              	ov	r0, r3
+ 132 0018 1846     		add	r7, r7, #8
+ 133 001a 07F10807 		mov	sp, r7
+ 134 001e BD46     		pop	{r7, pc}
+ 135 0020 80BD     	.LFE3:
+ 136              		.size	_wait, .-_wait
+ 137              		.section	.text._exit,"ax",%progbits
+ 138 0022 C046     		.align	2
+ 139              		.global	_exit
+ 140              		.thumb
+ 141              		.thumb_func
+ 142              		.type	_exit, %function
+ 143              	_exit:
+ 144              	.LFB4:
+ 145              		.loc 1 80 0
+  78:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  79:./Generated_Source/PSoC5/CyLibNoOS.c **** void _exit(int status)
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 5
+
+
+  80:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 146              	etend = 0, frame = 8
+ 147              		@ frame_needed = 1, uses_anonymous_args = 0
+ 148              		@ link register save eliminated.
+ 149              		push	{r7}
+ 150 0000 80B4     	.LCFI6:
+ 151              		sub	sp, sp, #12
+ 152 0002 83B0     	.LCFI7:
+ 153              		add	r7, sp, #0
+ 154 0004 00AF     	.LCFI8:
+ 155              		@ lr needed for prologue
+ 156              		str	r0, [r7, #4]
+ 157 0006 7860     	.L11:
+ 158              		.loc 1 89 0
+  81:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+  82:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _exit` */
+  83:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  84:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+  85:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  86:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  87:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Don't return. */
+  88:./Generated_Source/PSoC5/CyLibNoOS.c ****     while(42)
+  89:./Generated_Source/PSoC5/CyLibNoOS.c ****         ;
+ 159              	:
+ 160 0008 FEE7     		.size	_exit, .-_exit
+ 161              		.section	.text._kill,"ax",%progbits
+ 162              		.align	2
+ 163 000a C046     		.global	_kill
+ 164              		.thumb
+ 165              		.thumb_func
+ 166              		.type	_kill, %function
+ 167              	_kill:
+ 168              	.LFB5:
+ 169              		.loc 1 94 0
+ 170              		@ args = 0, pretend = 0, frame = 8
+  90:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+  91:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  92:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  93:./Generated_Source/PSoC5/CyLibNoOS.c **** int _kill(int pid, int sig)
+  94:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 171              	ded = 1, uses_anonymous_args = 0
+ 172              		push	{r7, lr}
+ 173              	.LCFI9:
+ 174 0000 80B5     		sub	sp, sp, #8
+ 175              	.LCFI10:
+ 176 0002 82B0     		add	r7, sp, #0
+ 177              	.LCFI11:
+ 178 0004 00AF     		str	r0, [r7, #4]
+ 179              		str	r1, [r7, #0]
+ 180 0006 7860     		.loc 1 100 0
+ 181 0008 3960     		bl	__errno
+  95:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+  96:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _kill` */
+  97:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+  98:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+  99:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 100:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 6
+
+
+ 182              	
+ 183 000a FFF7FEFF 		mov	r3, #88
+ 184 000e 0246     		str	r3, [r2, #0]
+ 185 0010 4FF05803 		.loc 1 101 0
+ 186 0014 1360     		mov	r3, #-1
+ 101:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 187              	c 1 102 0
+ 188 0016 4FF0FF33 		mov	r0, r3
+ 102:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 189              	dd	r7, r7, #8
+ 190 001a 1846     		mov	sp, r7
+ 191 001c 07F10807 		pop	{r7, pc}
+ 192 0020 BD46     	.LFE5:
+ 193 0022 80BD     		.size	_kill, .-_kill
+ 194              		.section	.text._link,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	_link
+ 197              		.thumb
+ 198              		.thumb_func
+ 199              		.type	_link, %function
+ 200              	_link:
+ 201              	.LFB6:
+ 202              		.loc 1 106 0
+ 203              		@ args = 0, pretend = 0, frame = 8
+ 103:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 104:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 105:./Generated_Source/PSoC5/CyLibNoOS.c **** int _link(char * existing, char * new)
+ 106:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 204              	 = 1, uses_anonymous_args = 0
+ 205              		push	{r7, lr}
+ 206              	.LCFI12:
+ 207 0000 80B5     		sub	sp, sp, #8
+ 208              	.LCFI13:
+ 209 0002 82B0     		add	r7, sp, #0
+ 210              	.LCFI14:
+ 211 0004 00AF     		str	r0, [r7, #4]
+ 212              		str	r1, [r7, #0]
+ 213 0006 7860     		.loc 1 112 0
+ 214 0008 3960     		bl	__errno
+ 107:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 108:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _link` */
+ 109:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 110:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 111:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 112:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 215              	
+ 216 000a FFF7FEFF 		mov	r3, #88
+ 217 000e 0246     		str	r3, [r2, #0]
+ 218 0010 4FF05803 		.loc 1 113 0
+ 219 0014 1360     		mov	r3, #-1
+ 113:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 220              	c 1 114 0
+ 221 0016 4FF0FF33 		mov	r0, r3
+ 114:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 222              	dd	r7, r7, #8
+ 223 001a 1846     		mov	sp, r7
+ 224 001c 07F10807 		pop	{r7, pc}
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 7
+
+
+ 225 0020 BD46     	.LFE6:
+ 226 0022 80BD     		.size	_link, .-_link
+ 227              		.section	.text._unlink,"ax",%progbits
+ 228              		.align	2
+ 229              		.global	_unlink
+ 230              		.thumb
+ 231              		.thumb_func
+ 232              		.type	_unlink, %function
+ 233              	_unlink:
+ 234              	.LFB7:
+ 235              		.loc 1 117 0
+ 236              		@ args = 0, pretend = 0, frame = 8
+ 115:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 116:./Generated_Source/PSoC5/CyLibNoOS.c **** int _unlink(char * name)
+ 117:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 237              	 = 1, uses_anonymous_args = 0
+ 238              		push	{r7, lr}
+ 239              	.LCFI15:
+ 240 0000 80B5     		sub	sp, sp, #8
+ 241              	.LCFI16:
+ 242 0002 82B0     		add	r7, sp, #0
+ 243              	.LCFI17:
+ 244 0004 00AF     		str	r0, [r7, #4]
+ 245              		.loc 1 123 0
+ 246 0006 7860     		bl	__errno
+ 118:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 119:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _unlink` */
+ 120:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 121:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 122:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 123:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 247              	0
+ 248 0008 FFF7FEFF 		mov	r3, #88
+ 249 000c 0246     		str	r3, [r2, #0]
+ 250 000e 4FF05803 		.loc 1 124 0
+ 251 0012 1360     		mov	r3, #-1
+ 124:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 252              	 1 125 0
+ 253 0014 4FF0FF33 		mov	r0, r3
+ 125:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 254              	dd	r7, r7, #8
+ 255 0018 1846     		mov	sp, r7
+ 256 001a 07F10807 		pop	{r7, pc}
+ 257 001e BD46     	.LFE7:
+ 258 0020 80BD     		.size	_unlink, .-_unlink
+ 259              		.section	.text._symlink,"ax",%progbits
+ 260              		.align	2
+ 261 0022 C046     		.global	_symlink
+ 262              		.thumb
+ 263              		.thumb_func
+ 264              		.type	_symlink, %function
+ 265              	_symlink:
+ 266              	.LFB8:
+ 267              		.loc 1 129 0
+ 268              		@ args = 0, pretend = 0, frame = 8
+ 126:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 127:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 8
+
+
+ 128:./Generated_Source/PSoC5/CyLibNoOS.c **** int _symlink(const char *path1, const char *path2)
+ 129:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 269              	 = 1, uses_anonymous_args = 0
+ 270              		push	{r7, lr}
+ 271              	.LCFI18:
+ 272 0000 80B5     		sub	sp, sp, #8
+ 273              	.LCFI19:
+ 274 0002 82B0     		add	r7, sp, #0
+ 275              	.LCFI20:
+ 276 0004 00AF     		str	r0, [r7, #4]
+ 277              		str	r1, [r7, #0]
+ 278 0006 7860     		.loc 1 135 0
+ 279 0008 3960     		bl	__errno
+ 130:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 131:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _symlink` */
+ 132:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 133:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 134:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 135:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 280              	
+ 281 000a FFF7FEFF 		mov	r3, #88
+ 282 000e 0246     		str	r3, [r2, #0]
+ 283 0010 4FF05803 		.loc 1 136 0
+ 284 0014 1360     		mov	r3, #-1
+ 136:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 285              	c 1 137 0
+ 286 0016 4FF0FF33 		mov	r0, r3
+ 137:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 287              	dd	r7, r7, #8
+ 288 001a 1846     		mov	sp, r7
+ 289 001c 07F10807 		pop	{r7, pc}
+ 290 0020 BD46     	.LFE8:
+ 291 0022 80BD     		.size	_symlink, .-_symlink
+ 292              		.section	.text._readlink,"ax",%progbits
+ 293              		.align	2
+ 294              		.global	_readlink
+ 295              		.thumb
+ 296              		.thumb_func
+ 297              		.type	_readlink, %function
+ 298              	_readlink:
+ 299              	.LFB9:
+ 300              		.loc 1 143 0
+ 301              		@ args = 0, pretend = 0, frame = 16
+ 138:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 139:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 140:./Generated_Source/PSoC5/CyLibNoOS.c **** typedef int size_t;
+ 141:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 142:./Generated_Source/PSoC5/CyLibNoOS.c **** int _readlink(const char * path,  char * buffer,  size_t bufferSize)
+ 143:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 302              	 = 1, uses_anonymous_args = 0
+ 303              		push	{r7, lr}
+ 304              	.LCFI21:
+ 305 0000 80B5     		sub	sp, sp, #16
+ 306              	.LCFI22:
+ 307 0002 84B0     		add	r7, sp, #0
+ 308              	.LCFI23:
+ 309 0004 00AF     		str	r0, [r7, #12]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 9
+
+
+ 310              		str	r1, [r7, #8]
+ 311 0006 F860     		str	r2, [r7, #4]
+ 312 0008 B960     		.loc 1 149 0
+ 313 000a 7A60     		bl	__errno
+ 144:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 145:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _readlink` */
+ 146:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 147:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 148:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 149:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 314              		mov	r3, #88
+ 315 000c FFF7FEFF 		str	r3, [r2, #0]
+ 316 0010 0246     		.loc 1 150 0
+ 317 0012 4FF05803 		mov	r3, #-1
+ 318 0016 1360     		.loc 1 151 0
+ 150:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 319              	r0, r3
+ 320 0018 4FF0FF33 		add	r7, r7, #16
+ 151:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 321              	ov	sp, r7
+ 322 001c 1846     		pop	{r7, pc}
+ 323 001e 07F11007 	.LFE9:
+ 324 0022 BD46     		.size	_readlink, .-_readlink
+ 325 0024 80BD     		.section	.text._open,"ax",%progbits
+ 326              		.align	2
+ 327              		.global	_open
+ 328 0026 C046     		.thumb
+ 329              		.thumb_func
+ 330              		.type	_open, %function
+ 331              	_open:
+ 332              	.LFB10:
+ 333              		.loc 1 155 0
+ 334              		@ args = 0, pretend = 0, frame = 16
+ 335              		@ frame_needed = 1, uses_anonymous_args = 0
+ 152:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 153:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 154:./Generated_Source/PSoC5/CyLibNoOS.c **** int _open(char * file, int flags, int mode)
+ 155:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 336              	.LCFI24:
+ 337              		sub	sp, sp, #16
+ 338              	.LCFI25:
+ 339 0000 80B5     		add	r7, sp, #0
+ 340              	.LCFI26:
+ 341 0002 84B0     		str	r0, [r7, #12]
+ 342              		str	r1, [r7, #8]
+ 343 0004 00AF     		str	r2, [r7, #4]
+ 344              		.loc 1 161 0
+ 345 0006 F860     		bl	__errno
+ 346 0008 B960     		mov	r2, r0
+ 347 000a 7A60     		mov	r3, #88
+ 156:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 157:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _open` */
+ 158:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 159:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 160:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 161:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 348              	, #0]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 10
+
+
+ 349 000c FFF7FEFF 		.loc 1 162 0
+ 350 0010 0246     		mov	r3, #-1
+ 351 0012 4FF05803 		.loc 1 163 0
+ 352 0016 1360     		mov	r0, r3
+ 162:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 353              	r7, r7, #16
+ 354 0018 4FF0FF33 		mov	sp, r7
+ 163:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 355              	op	{r7, pc}
+ 356 001c 1846     	.LFE10:
+ 357 001e 07F11007 		.size	_open, .-_open
+ 358 0022 BD46     		.section	.text._close,"ax",%progbits
+ 359 0024 80BD     		.align	2
+ 360              		.global	_close
+ 361              		.thumb
+ 362 0026 C046     		.thumb_func
+ 363              		.type	_close, %function
+ 364              	_close:
+ 365              	.LFB11:
+ 366              		.loc 1 167 0
+ 367              		@ args = 0, pretend = 0, frame = 8
+ 368              		@ frame_needed = 1, uses_anonymous_args = 0
+ 369              		push	{r7, lr}
+ 164:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 165:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 166:./Generated_Source/PSoC5/CyLibNoOS.c **** int _close(int fileDescriptor)
+ 167:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 370              	p, sp, #8
+ 371              	.LCFI28:
+ 372              		add	r7, sp, #0
+ 373 0000 80B5     	.LCFI29:
+ 374              		str	r0, [r7, #4]
+ 375 0002 82B0     		.loc 1 173 0
+ 376              		bl	__errno
+ 377 0004 00AF     		mov	r2, r0
+ 378              		mov	r3, #88
+ 379 0006 7860     		str	r3, [r2, #0]
+ 168:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 169:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _close` */
+ 170:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 171:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 172:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 173:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 380              	4 0
+ 381 0008 FFF7FEFF 		mov	r3, #-1
+ 382 000c 0246     		.loc 1 175 0
+ 383 000e 4FF05803 		mov	r0, r3
+ 384 0012 1360     		add	r7, r7, #8
+ 174:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 385              	sp, r7
+ 386 0014 4FF0FF33 		pop	{r7, pc}
+ 175:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 387              	FE11:
+ 388 0018 1846     		.size	_close, .-_close
+ 389 001a 07F10807 		.section	.text.isatty,"ax",%progbits
+ 390 001e BD46     		.align	2
+ 391 0020 80BD     		.global	isatty
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 11
+
+
+ 392              		.thumb
+ 393              		.thumb_func
+ 394 0022 C046     		.type	isatty, %function
+ 395              	isatty:
+ 396              	.LFB12:
+ 397              		.loc 1 178 0
+ 398              		@ args = 0, pretend = 0, frame = 8
+ 399              		@ frame_needed = 1, uses_anonymous_args = 0
+ 400              		push	{r7, lr}
+ 401              	.LCFI30:
+ 176:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 177:./Generated_Source/PSoC5/CyLibNoOS.c **** int isatty(int file)
+ 178:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 402              	
+ 403              	.LCFI31:
+ 404              		add	r7, sp, #0
+ 405 0000 80B5     	.LCFI32:
+ 406              		str	r0, [r7, #4]
+ 407 0002 82B0     		.loc 1 184 0
+ 408              		bl	__errno
+ 409 0004 00AF     		mov	r2, r0
+ 410              		mov	r3, #88
+ 411 0006 7860     		str	r3, [r2, #0]
+ 179:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 180:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _isatty` */
+ 181:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 182:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 183:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 184:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 412              	85 0
+ 413 0008 FFF7FEFF 		mov	r3, #0
+ 414 000c 0246     		.loc 1 186 0
+ 415 000e 4FF05803 		mov	r0, r3
+ 416 0012 1360     		add	r7, r7, #8
+ 185:./Generated_Source/PSoC5/CyLibNoOS.c ****     return 0;
+ 417              	sp, r7
+ 418 0014 4FF00003 		pop	{r7, pc}
+ 186:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 419              	FE12:
+ 420 0018 1846     		.size	isatty, .-isatty
+ 421 001a 07F10807 		.section	.text._write,"ax",%progbits
+ 422 001e BD46     		.align	2
+ 423 0020 80BD     		.global	_write
+ 424              		.thumb
+ 425              		.thumb_func
+ 426 0022 C046     		.type	_write, %function
+ 427              	_write:
+ 428              	.LFB13:
+ 429              		.loc 1 189 0
+ 430              		@ args = 0, pretend = 0, frame = 16
+ 431              		@ frame_needed = 1, uses_anonymous_args = 0
+ 432              		push	{r7, lr}
+ 433              	.LCFI33:
+ 187:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 188:./Generated_Source/PSoC5/CyLibNoOS.c **** int _write(int file, char * pointer, int length)
+ 189:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 434              	6
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 12
+
+
+ 435              	.LCFI34:
+ 436              		add	r7, sp, #0
+ 437 0000 80B5     	.LCFI35:
+ 438              		str	r0, [r7, #12]
+ 439 0002 84B0     		str	r1, [r7, #8]
+ 440              		str	r2, [r7, #4]
+ 441 0004 00AF     		.loc 1 195 0
+ 442              		bl	__errno
+ 443 0006 F860     		mov	r2, r0
+ 444 0008 B960     		mov	r3, #88
+ 445 000a 7A60     		str	r3, [r2, #0]
+ 190:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 191:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _write` */
+ 192:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 193:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 194:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 195:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 446              	0
+ 447 000c FFF7FEFF 		mov	r3, #-1
+ 448 0010 0246     		.loc 1 197 0
+ 449 0012 4FF05803 		mov	r0, r3
+ 450 0016 1360     		add	r7, r7, #16
+ 196:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 451              	sp, r7
+ 452 0018 4FF0FF33 		pop	{r7, pc}
+ 197:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 453              	FE13:
+ 454 001c 1846     		.size	_write, .-_write
+ 455 001e 07F11007 		.section	.text._read,"ax",%progbits
+ 456 0022 BD46     		.align	2
+ 457 0024 80BD     		.global	_read
+ 458              		.thumb
+ 459              		.thumb_func
+ 460 0026 C046     		.type	_read, %function
+ 461              	_read:
+ 462              	.LFB14:
+ 463              		.loc 1 201 0
+ 464              		@ args = 0, pretend = 0, frame = 16
+ 465              		@ frame_needed = 1, uses_anonymous_args = 0
+ 466              		push	{r7, lr}
+ 467              	.LCFI36:
+ 198:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 199:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 200:./Generated_Source/PSoC5/CyLibNoOS.c **** int _read(int file, char *ptr, int length)
+ 201:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 468              	6
+ 469              	.LCFI37:
+ 470              		add	r7, sp, #0
+ 471 0000 80B5     	.LCFI38:
+ 472              		str	r0, [r7, #12]
+ 473 0002 84B0     		str	r1, [r7, #8]
+ 474              		str	r2, [r7, #4]
+ 475 0004 00AF     		.loc 1 207 0
+ 476              		bl	__errno
+ 477 0006 F860     		mov	r2, r0
+ 478 0008 B960     		mov	r3, #88
+ 479 000a 7A60     		str	r3, [r2, #0]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 13
+
+
+ 202:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 203:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _read` */
+ 204:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 205:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 206:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 207:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 480              	0
+ 481 000c FFF7FEFF 		mov	r3, #-1
+ 482 0010 0246     		.loc 1 209 0
+ 483 0012 4FF05803 		mov	r0, r3
+ 484 0016 1360     		add	r7, r7, #16
+ 208:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 485              	sp, r7
+ 486 0018 4FF0FF33 		pop	{r7, pc}
+ 209:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 487              	FE14:
+ 488 001c 1846     		.size	_read, .-_read
+ 489 001e 07F11007 		.section	.text._lseek,"ax",%progbits
+ 490 0022 BD46     		.align	2
+ 491 0024 80BD     		.global	_lseek
+ 492              		.thumb
+ 493              		.thumb_func
+ 494 0026 C046     		.type	_lseek, %function
+ 495              	_lseek:
+ 496              	.LFB15:
+ 497              		.loc 1 213 0
+ 498              		@ args = 0, pretend = 0, frame = 16
+ 499              		@ frame_needed = 1, uses_anonymous_args = 0
+ 500              		push	{r7, lr}
+ 501              	.LCFI39:
+ 210:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 211:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 212:./Generated_Source/PSoC5/CyLibNoOS.c **** int _lseek(int file, int ptr, int dir)
+ 213:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 502              	6
+ 503              	.LCFI40:
+ 504              		add	r7, sp, #0
+ 505 0000 80B5     	.LCFI41:
+ 506              		str	r0, [r7, #12]
+ 507 0002 84B0     		str	r1, [r7, #8]
+ 508              		str	r2, [r7, #4]
+ 509 0004 00AF     		.loc 1 219 0
+ 510              		bl	__errno
+ 511 0006 F860     		mov	r2, r0
+ 512 0008 B960     		mov	r3, #88
+ 513 000a 7A60     		str	r3, [r2, #0]
+ 214:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 215:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _lseek` */
+ 216:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 217:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 218:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 219:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 514              	0
+ 515 000c FFF7FEFF 		mov	r3, #-1
+ 516 0010 0246     		.loc 1 221 0
+ 517 0012 4FF05803 		mov	r0, r3
+ 518 0016 1360     		add	r7, r7, #16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 14
+
+
+ 220:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 519              	sp, r7
+ 520 0018 4FF0FF33 		pop	{r7, pc}
+ 221:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 521              	FE15:
+ 522 001c 1846     		.size	_lseek, .-_lseek
+ 523 001e 07F11007 		.section	.text._fstat,"ax",%progbits
+ 524 0022 BD46     		.align	2
+ 525 0024 80BD     		.global	_fstat
+ 526              		.thumb
+ 527              		.thumb_func
+ 528 0026 C046     		.type	_fstat, %function
+ 529              	_fstat:
+ 530              	.LFB16:
+ 531              		.loc 1 231 0
+ 532              		@ args = 0, pretend = 0, frame = 8
+ 533              		@ frame_needed = 1, uses_anonymous_args = 0
+ 534              		push	{r7, lr}
+ 535              	.LCFI42:
+ 222:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 223:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 224:./Generated_Source/PSoC5/CyLibNoOS.c **** /* We don't support this functionality so the struct is only ... */
+ 225:./Generated_Source/PSoC5/CyLibNoOS.c **** struct stat
+ 226:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 227:./Generated_Source/PSoC5/CyLibNoOS.c **** 	uint8 useless;
+ 228:./Generated_Source/PSoC5/CyLibNoOS.c **** };
+ 229:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 230:./Generated_Source/PSoC5/CyLibNoOS.c **** int _fstat(int fildes, struct stat * buffer)
+ 231:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 536              	
+ 537              	.LCFI43:
+ 538              		add	r7, sp, #0
+ 539 0000 80B5     	.LCFI44:
+ 540              		str	r0, [r7, #4]
+ 541 0002 82B0     		str	r1, [r7, #0]
+ 542              		.loc 1 237 0
+ 543 0004 00AF     		bl	__errno
+ 544              		mov	r2, r0
+ 545 0006 7860     		mov	r3, #88
+ 546 0008 3960     		str	r3, [r2, #0]
+ 232:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 233:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _fstat` */
+ 234:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 235:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 236:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 237:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 547              	8 0
+ 548 000a FFF7FEFF 		mov	r3, #-1
+ 549 000e 0246     		.loc 1 239 0
+ 550 0010 4FF05803 		mov	r0, r3
+ 551 0014 1360     		add	r7, r7, #8
+ 238:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 552              	sp, r7
+ 553 0016 4FF0FF33 		pop	{r7, pc}
+ 239:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 554              	FE16:
+ 555 001a 1846     		.size	_fstat, .-_fstat
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 15
+
+
+ 556 001c 07F10807 		.section	.text._stat,"ax",%progbits
+ 557 0020 BD46     		.align	2
+ 558 0022 80BD     		.global	_stat
+ 559              		.thumb
+ 560              		.thumb_func
+ 561              		.type	_stat, %function
+ 562              	_stat:
+ 563              	.LFB17:
+ 564              		.loc 1 242 0
+ 565              		@ args = 0, pretend = 0, frame = 8
+ 566              		@ frame_needed = 1, uses_anonymous_args = 0
+ 567              		push	{r7, lr}
+ 568              	.LCFI45:
+ 240:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 241:./Generated_Source/PSoC5/CyLibNoOS.c **** int _stat(const char * file, struct stat *st)
+ 242:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 569              	
+ 570              	.LCFI46:
+ 571              		add	r7, sp, #0
+ 572 0000 80B5     	.LCFI47:
+ 573              		str	r0, [r7, #4]
+ 574 0002 82B0     		str	r1, [r7, #0]
+ 575              		.loc 1 248 0
+ 576 0004 00AF     		bl	__errno
+ 577              		mov	r2, r0
+ 578 0006 7860     		mov	r3, #88
+ 579 0008 3960     		str	r3, [r2, #0]
+ 243:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 244:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _stat` */
+ 245:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 246:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 247:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 248:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 580              	9 0
+ 581 000a FFF7FEFF 		mov	r3, #-1
+ 582 000e 0246     		.loc 1 250 0
+ 583 0010 4FF05803 		mov	r0, r3
+ 584 0014 1360     		add	r7, r7, #8
+ 249:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 585              	sp, r7
+ 586 0016 4FF0FF33 		pop	{r7, pc}
+ 250:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 587              	FE17:
+ 588 001a 1846     		.size	_stat, .-_stat
+ 589 001c 07F10807 		.section	.text._getpid,"ax",%progbits
+ 590 0020 BD46     		.align	2
+ 591 0022 80BD     		.global	_getpid
+ 592              		.thumb
+ 593              		.thumb_func
+ 594              		.type	_getpid, %function
+ 595              	_getpid:
+ 596              	.LFB18:
+ 597              		.loc 1 253 0
+ 598              		@ args = 0, pretend = 0, frame = 0
+ 599              		@ frame_needed = 1, uses_anonymous_args = 0
+ 600              		push	{r7, lr}
+ 601              	.LCFI48:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 16
+
+
+ 251:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 252:./Generated_Source/PSoC5/CyLibNoOS.c **** int _getpid(void)
+ 253:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 602              	
+ 603              	.LCFI49:
+ 604              		.loc 1 259 0
+ 605 0000 80B5     		bl	__errno
+ 606              		mov	r2, r0
+ 607 0002 00AF     		mov	r3, #88
+ 608              		str	r3, [r2, #0]
+ 254:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 255:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _getpid` */
+ 256:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 257:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 258:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 259:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 609              	1 260 0
+ 610 0004 FFF7FEFF 		mov	r3, #-1
+ 611 0008 0246     		.loc 1 261 0
+ 612 000a 4FF05803 		mov	r0, r3
+ 613 000e 1360     		mov	sp, r7
+ 260:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 614              	{r7, pc}
+ 615 0010 4FF0FF33 	.LFE18:
+ 261:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 616              	size	_getpid, .-_getpid
+ 617 0014 1846     		.section	.text._fork,"ax",%progbits
+ 618 0016 BD46     		.align	2
+ 619 0018 80BD     		.global	_fork
+ 620              		.thumb
+ 621              		.thumb_func
+ 622 001a C046     		.type	_fork, %function
+ 623              	_fork:
+ 624              	.LFB19:
+ 625              		.loc 1 264 0
+ 626              		@ args = 0, pretend = 0, frame = 0
+ 627              		@ frame_needed = 1, uses_anonymous_args = 0
+ 628              		push	{r7, lr}
+ 629              	.LCFI50:
+ 262:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 263:./Generated_Source/PSoC5/CyLibNoOS.c **** int _fork(void)
+ 264:./Generated_Source/PSoC5/CyLibNoOS.c **** {
+ 630              	0
+ 631              	.LCFI51:
+ 632              		.loc 1 270 0
+ 633 0000 80B5     		bl	__errno
+ 634              		mov	r2, r0
+ 635 0002 00AF     		mov	r3, #88
+ 636              		str	r3, [r2, #0]
+ 265:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* Add user function code between the following #START and #END tags */
+ 266:./Generated_Source/PSoC5/CyLibNoOS.c ****     /* `#START _fork` */
+ 267:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 268:./Generated_Source/PSoC5/CyLibNoOS.c ****   	/* `#END`  */
+ 269:./Generated_Source/PSoC5/CyLibNoOS.c **** 
+ 270:./Generated_Source/PSoC5/CyLibNoOS.c ****     errno = ENOSYS;
+ 637              	 271 0
+ 638 0004 FFF7FEFF 		mov	r3, #-1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 17
+
+
+ 639 0008 0246     		.loc 1 272 0
+ 640 000a 4FF05803 		mov	r0, r3
+ 641 000e 1360     		mov	sp, r7
+ 271:./Generated_Source/PSoC5/CyLibNoOS.c ****     return -1;
+ 642              	{r7, pc}
+ 643 0010 4FF0FF33 	.LFE19:
+ 272:./Generated_Source/PSoC5/CyLibNoOS.c **** }
+ 644              	size	_fork, .-_fork
+ 645 0014 1846     		.section	.debug_frame,"",%progbits
+ 646 0016 BD46     	.Lframe0:
+ 647 0018 80BD     		.4byte	.LECIE0-.LSCIE0
+ 648              	.LSCIE0:
+ 649              		.4byte	0xffffffff
+ 650 001a C046     		.byte	0x1
+ 651              		.ascii	"\000"
+ 652 0000 0C000000 		.uleb128 0x1
+ 653              		.sleb128 -4
+ 654 0004 FFFFFFFF 		.byte	0xe
+ 655 0008 01       		.byte	0xc
+ 656 0009 00       		.uleb128 0xd
+ 657 000a 01       		.uleb128 0x0
+ 658 000b 7C       		.align	2
+ 659 000c 0E       	.LECIE0:
+ 660 000d 0C       	.LSFDE0:
+ 661 000e 0D       		.4byte	.LEFDE0-.LASFDE0
+ 662 000f 00       	.LASFDE0:
+ 663              		.4byte	.Lframe0
+ 664              		.4byte	.LFB2
+ 665              		.4byte	.LFE2-.LFB2
+ 666 0010 1C000000 		.byte	0x4
+ 667              		.4byte	.LCFI0-.LFB2
+ 668 0014 00000000 		.byte	0xe
+ 669 0018 00000000 		.uleb128 0x8
+ 670 001c 50000000 		.byte	0x4
+ 671 0020 42       		.4byte	.LCFI1-.LCFI0
+ 672              		.byte	0xe
+ 673 0021 0E       		.uleb128 0x18
+ 674 0022 08       		.byte	0x8e
+ 675 0023 42       		.uleb128 0x1
+ 676              		.byte	0x87
+ 677 0024 0E       		.uleb128 0x2
+ 678 0025 18       		.byte	0x4
+ 679 0026 8E       		.4byte	.LCFI2-.LCFI1
+ 680 0027 01       		.byte	0xd
+ 681 0028 87       		.uleb128 0x7
+ 682 0029 02       		.align	2
+ 683 002a 42       	.LEFDE0:
+ 684              	.LSFDE2:
+ 685 002b 0D       		.4byte	.LEFDE2-.LASFDE2
+ 686 002c 07       	.LASFDE2:
+ 687 002d 000000   		.4byte	.Lframe0
+ 688              		.4byte	.LFB3
+ 689              		.4byte	.LFE3-.LFB3
+ 690 0030 1C000000 		.byte	0x4
+ 691              		.4byte	.LCFI3-.LFB3
+ 692 0034 00000000 		.byte	0xe
+ 693 0038 00000000 		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 18
+
+
+ 694 003c 22000000 		.byte	0x4
+ 695 0040 42       		.4byte	.LCFI4-.LCFI3
+ 696              		.byte	0xe
+ 697 0041 0E       		.uleb128 0x10
+ 698 0042 08       		.byte	0x8e
+ 699 0043 42       		.uleb128 0x1
+ 700              		.byte	0x87
+ 701 0044 0E       		.uleb128 0x2
+ 702 0045 10       		.byte	0x4
+ 703 0046 8E       		.4byte	.LCFI5-.LCFI4
+ 704 0047 01       		.byte	0xd
+ 705 0048 87       		.uleb128 0x7
+ 706 0049 02       		.align	2
+ 707 004a 42       	.LEFDE2:
+ 708              	.LSFDE4:
+ 709 004b 0D       		.4byte	.LEFDE4-.LASFDE4
+ 710 004c 07       	.LASFDE4:
+ 711 004d 000000   		.4byte	.Lframe0
+ 712              		.4byte	.LFB4
+ 713              		.4byte	.LFE4-.LFB4
+ 714 0050 18000000 		.byte	0x4
+ 715              		.4byte	.LCFI6-.LFB4
+ 716 0054 00000000 		.byte	0xe
+ 717 0058 00000000 		.uleb128 0x4
+ 718 005c 0A000000 		.byte	0x4
+ 719 0060 42       		.4byte	.LCFI7-.LCFI6
+ 720              		.byte	0xe
+ 721 0061 0E       		.uleb128 0x10
+ 722 0062 04       		.byte	0x87
+ 723 0063 42       		.uleb128 0x1
+ 724              		.byte	0x4
+ 725 0064 0E       		.4byte	.LCFI8-.LCFI7
+ 726 0065 10       		.byte	0xd
+ 727 0066 87       		.uleb128 0x7
+ 728 0067 01       		.align	2
+ 729 0068 42       	.LEFDE4:
+ 730              	.LSFDE6:
+ 731 0069 0D       		.4byte	.LEFDE6-.LASFDE6
+ 732 006a 07       	.LASFDE6:
+ 733 006b 00       		.4byte	.Lframe0
+ 734              		.4byte	.LFB5
+ 735              		.4byte	.LFE5-.LFB5
+ 736 006c 1C000000 		.byte	0x4
+ 737              		.4byte	.LCFI9-.LFB5
+ 738 0070 00000000 		.byte	0xe
+ 739 0074 00000000 		.uleb128 0x8
+ 740 0078 24000000 		.byte	0x4
+ 741 007c 42       		.4byte	.LCFI10-.LCFI9
+ 742              		.byte	0xe
+ 743 007d 0E       		.uleb128 0x10
+ 744 007e 08       		.byte	0x8e
+ 745 007f 42       		.uleb128 0x1
+ 746              		.byte	0x87
+ 747 0080 0E       		.uleb128 0x2
+ 748 0081 10       		.byte	0x4
+ 749 0082 8E       		.4byte	.LCFI11-.LCFI10
+ 750 0083 01       		.byte	0xd
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 19
+
+
+ 751 0084 87       		.uleb128 0x7
+ 752 0085 02       		.align	2
+ 753 0086 42       	.LEFDE6:
+ 754              	.LSFDE8:
+ 755 0087 0D       		.4byte	.LEFDE8-.LASFDE8
+ 756 0088 07       	.LASFDE8:
+ 757 0089 000000   		.4byte	.Lframe0
+ 758              		.4byte	.LFB6
+ 759              		.4byte	.LFE6-.LFB6
+ 760 008c 1C000000 		.byte	0x4
+ 761              		.4byte	.LCFI12-.LFB6
+ 762 0090 00000000 		.byte	0xe
+ 763 0094 00000000 		.uleb128 0x8
+ 764 0098 24000000 		.byte	0x4
+ 765 009c 42       		.4byte	.LCFI13-.LCFI12
+ 766              		.byte	0xe
+ 767 009d 0E       		.uleb128 0x10
+ 768 009e 08       		.byte	0x8e
+ 769 009f 42       		.uleb128 0x1
+ 770              		.byte	0x87
+ 771 00a0 0E       		.uleb128 0x2
+ 772 00a1 10       		.byte	0x4
+ 773 00a2 8E       		.4byte	.LCFI14-.LCFI13
+ 774 00a3 01       		.byte	0xd
+ 775 00a4 87       		.uleb128 0x7
+ 776 00a5 02       		.align	2
+ 777 00a6 42       	.LEFDE8:
+ 778              	.LSFDE10:
+ 779 00a7 0D       		.4byte	.LEFDE10-.LASFDE10
+ 780 00a8 07       	.LASFDE10:
+ 781 00a9 000000   		.4byte	.Lframe0
+ 782              		.4byte	.LFB7
+ 783              		.4byte	.LFE7-.LFB7
+ 784 00ac 1C000000 		.byte	0x4
+ 785              		.4byte	.LCFI15-.LFB7
+ 786 00b0 00000000 		.byte	0xe
+ 787 00b4 00000000 		.uleb128 0x8
+ 788 00b8 22000000 		.byte	0x4
+ 789 00bc 42       		.4byte	.LCFI16-.LCFI15
+ 790              		.byte	0xe
+ 791 00bd 0E       		.uleb128 0x10
+ 792 00be 08       		.byte	0x8e
+ 793 00bf 42       		.uleb128 0x1
+ 794              		.byte	0x87
+ 795 00c0 0E       		.uleb128 0x2
+ 796 00c1 10       		.byte	0x4
+ 797 00c2 8E       		.4byte	.LCFI17-.LCFI16
+ 798 00c3 01       		.byte	0xd
+ 799 00c4 87       		.uleb128 0x7
+ 800 00c5 02       		.align	2
+ 801 00c6 42       	.LEFDE10:
+ 802              	.LSFDE12:
+ 803 00c7 0D       		.4byte	.LEFDE12-.LASFDE12
+ 804 00c8 07       	.LASFDE12:
+ 805 00c9 000000   		.4byte	.Lframe0
+ 806              		.4byte	.LFB8
+ 807              		.4byte	.LFE8-.LFB8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 20
+
+
+ 808 00cc 1C000000 		.byte	0x4
+ 809              		.4byte	.LCFI18-.LFB8
+ 810 00d0 00000000 		.byte	0xe
+ 811 00d4 00000000 		.uleb128 0x8
+ 812 00d8 24000000 		.byte	0x4
+ 813 00dc 42       		.4byte	.LCFI19-.LCFI18
+ 814              		.byte	0xe
+ 815 00dd 0E       		.uleb128 0x10
+ 816 00de 08       		.byte	0x8e
+ 817 00df 42       		.uleb128 0x1
+ 818              		.byte	0x87
+ 819 00e0 0E       		.uleb128 0x2
+ 820 00e1 10       		.byte	0x4
+ 821 00e2 8E       		.4byte	.LCFI20-.LCFI19
+ 822 00e3 01       		.byte	0xd
+ 823 00e4 87       		.uleb128 0x7
+ 824 00e5 02       		.align	2
+ 825 00e6 42       	.LEFDE12:
+ 826              	.LSFDE14:
+ 827 00e7 0D       		.4byte	.LEFDE14-.LASFDE14
+ 828 00e8 07       	.LASFDE14:
+ 829 00e9 000000   		.4byte	.Lframe0
+ 830              		.4byte	.LFB9
+ 831              		.4byte	.LFE9-.LFB9
+ 832 00ec 1C000000 		.byte	0x4
+ 833              		.4byte	.LCFI21-.LFB9
+ 834 00f0 00000000 		.byte	0xe
+ 835 00f4 00000000 		.uleb128 0x8
+ 836 00f8 26000000 		.byte	0x4
+ 837 00fc 42       		.4byte	.LCFI22-.LCFI21
+ 838              		.byte	0xe
+ 839 00fd 0E       		.uleb128 0x18
+ 840 00fe 08       		.byte	0x8e
+ 841 00ff 42       		.uleb128 0x1
+ 842              		.byte	0x87
+ 843 0100 0E       		.uleb128 0x2
+ 844 0101 18       		.byte	0x4
+ 845 0102 8E       		.4byte	.LCFI23-.LCFI22
+ 846 0103 01       		.byte	0xd
+ 847 0104 87       		.uleb128 0x7
+ 848 0105 02       		.align	2
+ 849 0106 42       	.LEFDE14:
+ 850              	.LSFDE16:
+ 851 0107 0D       		.4byte	.LEFDE16-.LASFDE16
+ 852 0108 07       	.LASFDE16:
+ 853 0109 000000   		.4byte	.Lframe0
+ 854              		.4byte	.LFB10
+ 855              		.4byte	.LFE10-.LFB10
+ 856 010c 1C000000 		.byte	0x4
+ 857              		.4byte	.LCFI24-.LFB10
+ 858 0110 00000000 		.byte	0xe
+ 859 0114 00000000 		.uleb128 0x8
+ 860 0118 26000000 		.byte	0x4
+ 861 011c 42       		.4byte	.LCFI25-.LCFI24
+ 862              		.byte	0xe
+ 863 011d 0E       		.uleb128 0x18
+ 864 011e 08       		.byte	0x8e
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 21
+
+
+ 865 011f 42       		.uleb128 0x1
+ 866              		.byte	0x87
+ 867 0120 0E       		.uleb128 0x2
+ 868 0121 18       		.byte	0x4
+ 869 0122 8E       		.4byte	.LCFI26-.LCFI25
+ 870 0123 01       		.byte	0xd
+ 871 0124 87       		.uleb128 0x7
+ 872 0125 02       		.align	2
+ 873 0126 42       	.LEFDE16:
+ 874              	.LSFDE18:
+ 875 0127 0D       		.4byte	.LEFDE18-.LASFDE18
+ 876 0128 07       	.LASFDE18:
+ 877 0129 000000   		.4byte	.Lframe0
+ 878              		.4byte	.LFB11
+ 879              		.4byte	.LFE11-.LFB11
+ 880 012c 1C000000 		.byte	0x4
+ 881              		.4byte	.LCFI27-.LFB11
+ 882 0130 00000000 		.byte	0xe
+ 883 0134 00000000 		.uleb128 0x8
+ 884 0138 22000000 		.byte	0x4
+ 885 013c 42       		.4byte	.LCFI28-.LCFI27
+ 886              		.byte	0xe
+ 887 013d 0E       		.uleb128 0x10
+ 888 013e 08       		.byte	0x8e
+ 889 013f 42       		.uleb128 0x1
+ 890              		.byte	0x87
+ 891 0140 0E       		.uleb128 0x2
+ 892 0141 10       		.byte	0x4
+ 893 0142 8E       		.4byte	.LCFI29-.LCFI28
+ 894 0143 01       		.byte	0xd
+ 895 0144 87       		.uleb128 0x7
+ 896 0145 02       		.align	2
+ 897 0146 42       	.LEFDE18:
+ 898              	.LSFDE20:
+ 899 0147 0D       		.4byte	.LEFDE20-.LASFDE20
+ 900 0148 07       	.LASFDE20:
+ 901 0149 000000   		.4byte	.Lframe0
+ 902              		.4byte	.LFB12
+ 903              		.4byte	.LFE12-.LFB12
+ 904 014c 1C000000 		.byte	0x4
+ 905              		.4byte	.LCFI30-.LFB12
+ 906 0150 00000000 		.byte	0xe
+ 907 0154 00000000 		.uleb128 0x8
+ 908 0158 22000000 		.byte	0x4
+ 909 015c 42       		.4byte	.LCFI31-.LCFI30
+ 910              		.byte	0xe
+ 911 015d 0E       		.uleb128 0x10
+ 912 015e 08       		.byte	0x8e
+ 913 015f 42       		.uleb128 0x1
+ 914              		.byte	0x87
+ 915 0160 0E       		.uleb128 0x2
+ 916 0161 10       		.byte	0x4
+ 917 0162 8E       		.4byte	.LCFI32-.LCFI31
+ 918 0163 01       		.byte	0xd
+ 919 0164 87       		.uleb128 0x7
+ 920 0165 02       		.align	2
+ 921 0166 42       	.LEFDE20:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 22
+
+
+ 922              	.LSFDE22:
+ 923 0167 0D       		.4byte	.LEFDE22-.LASFDE22
+ 924 0168 07       	.LASFDE22:
+ 925 0169 000000   		.4byte	.Lframe0
+ 926              		.4byte	.LFB13
+ 927              		.4byte	.LFE13-.LFB13
+ 928 016c 1C000000 		.byte	0x4
+ 929              		.4byte	.LCFI33-.LFB13
+ 930 0170 00000000 		.byte	0xe
+ 931 0174 00000000 		.uleb128 0x8
+ 932 0178 26000000 		.byte	0x4
+ 933 017c 42       		.4byte	.LCFI34-.LCFI33
+ 934              		.byte	0xe
+ 935 017d 0E       		.uleb128 0x18
+ 936 017e 08       		.byte	0x8e
+ 937 017f 42       		.uleb128 0x1
+ 938              		.byte	0x87
+ 939 0180 0E       		.uleb128 0x2
+ 940 0181 18       		.byte	0x4
+ 941 0182 8E       		.4byte	.LCFI35-.LCFI34
+ 942 0183 01       		.byte	0xd
+ 943 0184 87       		.uleb128 0x7
+ 944 0185 02       		.align	2
+ 945 0186 42       	.LEFDE22:
+ 946              	.LSFDE24:
+ 947 0187 0D       		.4byte	.LEFDE24-.LASFDE24
+ 948 0188 07       	.LASFDE24:
+ 949 0189 000000   		.4byte	.Lframe0
+ 950              		.4byte	.LFB14
+ 951              		.4byte	.LFE14-.LFB14
+ 952 018c 1C000000 		.byte	0x4
+ 953              		.4byte	.LCFI36-.LFB14
+ 954 0190 00000000 		.byte	0xe
+ 955 0194 00000000 		.uleb128 0x8
+ 956 0198 26000000 		.byte	0x4
+ 957 019c 42       		.4byte	.LCFI37-.LCFI36
+ 958              		.byte	0xe
+ 959 019d 0E       		.uleb128 0x18
+ 960 019e 08       		.byte	0x8e
+ 961 019f 42       		.uleb128 0x1
+ 962              		.byte	0x87
+ 963 01a0 0E       		.uleb128 0x2
+ 964 01a1 18       		.byte	0x4
+ 965 01a2 8E       		.4byte	.LCFI38-.LCFI37
+ 966 01a3 01       		.byte	0xd
+ 967 01a4 87       		.uleb128 0x7
+ 968 01a5 02       		.align	2
+ 969 01a6 42       	.LEFDE24:
+ 970              	.LSFDE26:
+ 971 01a7 0D       		.4byte	.LEFDE26-.LASFDE26
+ 972 01a8 07       	.LASFDE26:
+ 973 01a9 000000   		.4byte	.Lframe0
+ 974              		.4byte	.LFB15
+ 975              		.4byte	.LFE15-.LFB15
+ 976 01ac 1C000000 		.byte	0x4
+ 977              		.4byte	.LCFI39-.LFB15
+ 978 01b0 00000000 		.byte	0xe
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 23
+
+
+ 979 01b4 00000000 		.uleb128 0x8
+ 980 01b8 26000000 		.byte	0x4
+ 981 01bc 42       		.4byte	.LCFI40-.LCFI39
+ 982              		.byte	0xe
+ 983 01bd 0E       		.uleb128 0x18
+ 984 01be 08       		.byte	0x8e
+ 985 01bf 42       		.uleb128 0x1
+ 986              		.byte	0x87
+ 987 01c0 0E       		.uleb128 0x2
+ 988 01c1 18       		.byte	0x4
+ 989 01c2 8E       		.4byte	.LCFI41-.LCFI40
+ 990 01c3 01       		.byte	0xd
+ 991 01c4 87       		.uleb128 0x7
+ 992 01c5 02       		.align	2
+ 993 01c6 42       	.LEFDE26:
+ 994              	.LSFDE28:
+ 995 01c7 0D       		.4byte	.LEFDE28-.LASFDE28
+ 996 01c8 07       	.LASFDE28:
+ 997 01c9 000000   		.4byte	.Lframe0
+ 998              		.4byte	.LFB16
+ 999              		.4byte	.LFE16-.LFB16
+ 1000 01cc 1C000000 		.byte	0x4
+ 1001              		.4byte	.LCFI42-.LFB16
+ 1002 01d0 00000000 		.byte	0xe
+ 1003 01d4 00000000 		.uleb128 0x8
+ 1004 01d8 24000000 		.byte	0x4
+ 1005 01dc 42       		.4byte	.LCFI43-.LCFI42
+ 1006              		.byte	0xe
+ 1007 01dd 0E       		.uleb128 0x10
+ 1008 01de 08       		.byte	0x8e
+ 1009 01df 42       		.uleb128 0x1
+ 1010              		.byte	0x87
+ 1011 01e0 0E       		.uleb128 0x2
+ 1012 01e1 10       		.byte	0x4
+ 1013 01e2 8E       		.4byte	.LCFI44-.LCFI43
+ 1014 01e3 01       		.byte	0xd
+ 1015 01e4 87       		.uleb128 0x7
+ 1016 01e5 02       		.align	2
+ 1017 01e6 42       	.LEFDE28:
+ 1018              	.LSFDE30:
+ 1019 01e7 0D       		.4byte	.LEFDE30-.LASFDE30
+ 1020 01e8 07       	.LASFDE30:
+ 1021 01e9 000000   		.4byte	.Lframe0
+ 1022              		.4byte	.LFB17
+ 1023              		.4byte	.LFE17-.LFB17
+ 1024 01ec 1C000000 		.byte	0x4
+ 1025              		.4byte	.LCFI45-.LFB17
+ 1026 01f0 00000000 		.byte	0xe
+ 1027 01f4 00000000 		.uleb128 0x8
+ 1028 01f8 24000000 		.byte	0x4
+ 1029 01fc 42       		.4byte	.LCFI46-.LCFI45
+ 1030              		.byte	0xe
+ 1031 01fd 0E       		.uleb128 0x10
+ 1032 01fe 08       		.byte	0x8e
+ 1033 01ff 42       		.uleb128 0x1
+ 1034              		.byte	0x87
+ 1035 0200 0E       		.uleb128 0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 24
+
+
+ 1036 0201 10       		.byte	0x4
+ 1037 0202 8E       		.4byte	.LCFI47-.LCFI46
+ 1038 0203 01       		.byte	0xd
+ 1039 0204 87       		.uleb128 0x7
+ 1040 0205 02       		.align	2
+ 1041 0206 42       	.LEFDE30:
+ 1042              	.LSFDE32:
+ 1043 0207 0D       		.4byte	.LEFDE32-.LASFDE32
+ 1044 0208 07       	.LASFDE32:
+ 1045 0209 000000   		.4byte	.Lframe0
+ 1046              		.4byte	.LFB18
+ 1047              		.4byte	.LFE18-.LFB18
+ 1048 020c 18000000 		.byte	0x4
+ 1049              		.4byte	.LCFI48-.LFB18
+ 1050 0210 00000000 		.byte	0xe
+ 1051 0214 00000000 		.uleb128 0x8
+ 1052 0218 1A000000 		.byte	0x8e
+ 1053 021c 42       		.uleb128 0x1
+ 1054              		.byte	0x87
+ 1055 021d 0E       		.uleb128 0x2
+ 1056 021e 08       		.byte	0x4
+ 1057 021f 8E       		.4byte	.LCFI49-.LCFI48
+ 1058 0220 01       		.byte	0xd
+ 1059 0221 87       		.uleb128 0x7
+ 1060 0222 02       		.align	2
+ 1061 0223 42       	.LEFDE32:
+ 1062              	.LSFDE34:
+ 1063 0224 0D       		.4byte	.LEFDE34-.LASFDE34
+ 1064 0225 07       	.LASFDE34:
+ 1065 0226 0000     		.4byte	.Lframe0
+ 1066              		.4byte	.LFB19
+ 1067              		.4byte	.LFE19-.LFB19
+ 1068 0228 18000000 		.byte	0x4
+ 1069              		.4byte	.LCFI50-.LFB19
+ 1070 022c 00000000 		.byte	0xe
+ 1071 0230 00000000 		.uleb128 0x8
+ 1072 0234 1A000000 		.byte	0x8e
+ 1073 0238 42       		.uleb128 0x1
+ 1074              		.byte	0x87
+ 1075 0239 0E       		.uleb128 0x2
+ 1076 023a 08       		.byte	0x4
+ 1077 023b 8E       		.4byte	.LCFI51-.LCFI50
+ 1078 023c 01       		.byte	0xd
+ 1079 023d 87       		.uleb128 0x7
+ 1080 023e 02       		.align	2
+ 1081 023f 42       	.LEFDE34:
+ 1082              		.text
+ 1083 0240 0D       	.Letext0:
+ 1084 0241 07       		.section	.debug_loc,"",%progbits
+ 1085 0242 0000     	.Ldebug_loc0:
+ 1086              	.LLST0:
+ 1087              		.4byte	.LFB2
+ 1088              		.4byte	.LCFI0
+ 1089              		.2byte	0x1
+ 1090              		.byte	0x5d
+ 1091              		.4byte	.LCFI0
+ 1092 0000 00000000 		.4byte	.LCFI1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 25
+
+
+ 1093 0004 02000000 		.2byte	0x2
+ 1094 0008 0100     		.byte	0x7d
+ 1095 000a 5D       		.sleb128 8
+ 1096 000b 02000000 		.4byte	.LCFI1
+ 1097 000f 04000000 		.4byte	.LCFI2
+ 1098 0013 0200     		.2byte	0x2
+ 1099 0015 7D       		.byte	0x7d
+ 1100 0016 08       		.sleb128 24
+ 1101 0017 04000000 		.4byte	.LCFI2
+ 1102 001b 06000000 		.4byte	.LFE2
+ 1103 001f 0200     		.2byte	0x2
+ 1104 0021 7D       		.byte	0x77
+ 1105 0022 18       		.sleb128 24
+ 1106 0023 06000000 		.4byte	0x0
+ 1107 0027 50000000 		.4byte	0x0
+ 1108 002b 0200     	.LLST1:
+ 1109 002d 77       		.4byte	.LFB3
+ 1110 002e 18       		.4byte	.LCFI3
+ 1111 002f 00000000 		.2byte	0x1
+ 1112 0033 00000000 		.byte	0x5d
+ 1113              		.4byte	.LCFI3
+ 1114 0037 00000000 		.4byte	.LCFI4
+ 1115 003b 02000000 		.2byte	0x2
+ 1116 003f 0100     		.byte	0x7d
+ 1117 0041 5D       		.sleb128 8
+ 1118 0042 02000000 		.4byte	.LCFI4
+ 1119 0046 04000000 		.4byte	.LCFI5
+ 1120 004a 0200     		.2byte	0x2
+ 1121 004c 7D       		.byte	0x7d
+ 1122 004d 08       		.sleb128 16
+ 1123 004e 04000000 		.4byte	.LCFI5
+ 1124 0052 06000000 		.4byte	.LFE3
+ 1125 0056 0200     		.2byte	0x2
+ 1126 0058 7D       		.byte	0x77
+ 1127 0059 10       		.sleb128 16
+ 1128 005a 06000000 		.4byte	0x0
+ 1129 005e 22000000 		.4byte	0x0
+ 1130 0062 0200     	.LLST2:
+ 1131 0064 77       		.4byte	.LFB4
+ 1132 0065 10       		.4byte	.LCFI6
+ 1133 0066 00000000 		.2byte	0x1
+ 1134 006a 00000000 		.byte	0x5d
+ 1135              		.4byte	.LCFI6
+ 1136 006e 00000000 		.4byte	.LCFI7
+ 1137 0072 02000000 		.2byte	0x2
+ 1138 0076 0100     		.byte	0x7d
+ 1139 0078 5D       		.sleb128 4
+ 1140 0079 02000000 		.4byte	.LCFI7
+ 1141 007d 04000000 		.4byte	.LCFI8
+ 1142 0081 0200     		.2byte	0x2
+ 1143 0083 7D       		.byte	0x7d
+ 1144 0084 04       		.sleb128 16
+ 1145 0085 04000000 		.4byte	.LCFI8
+ 1146 0089 06000000 		.4byte	.LFE4
+ 1147 008d 0200     		.2byte	0x2
+ 1148 008f 7D       		.byte	0x77
+ 1149 0090 10       		.sleb128 16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 26
+
+
+ 1150 0091 06000000 		.4byte	0x0
+ 1151 0095 0A000000 		.4byte	0x0
+ 1152 0099 0200     	.LLST3:
+ 1153 009b 77       		.4byte	.LFB5
+ 1154 009c 10       		.4byte	.LCFI9
+ 1155 009d 00000000 		.2byte	0x1
+ 1156 00a1 00000000 		.byte	0x5d
+ 1157              		.4byte	.LCFI9
+ 1158 00a5 00000000 		.4byte	.LCFI10
+ 1159 00a9 02000000 		.2byte	0x2
+ 1160 00ad 0100     		.byte	0x7d
+ 1161 00af 5D       		.sleb128 8
+ 1162 00b0 02000000 		.4byte	.LCFI10
+ 1163 00b4 04000000 		.4byte	.LCFI11
+ 1164 00b8 0200     		.2byte	0x2
+ 1165 00ba 7D       		.byte	0x7d
+ 1166 00bb 08       		.sleb128 16
+ 1167 00bc 04000000 		.4byte	.LCFI11
+ 1168 00c0 06000000 		.4byte	.LFE5
+ 1169 00c4 0200     		.2byte	0x2
+ 1170 00c6 7D       		.byte	0x77
+ 1171 00c7 10       		.sleb128 16
+ 1172 00c8 06000000 		.4byte	0x0
+ 1173 00cc 24000000 		.4byte	0x0
+ 1174 00d0 0200     	.LLST4:
+ 1175 00d2 77       		.4byte	.LFB6
+ 1176 00d3 10       		.4byte	.LCFI12
+ 1177 00d4 00000000 		.2byte	0x1
+ 1178 00d8 00000000 		.byte	0x5d
+ 1179              		.4byte	.LCFI12
+ 1180 00dc 00000000 		.4byte	.LCFI13
+ 1181 00e0 02000000 		.2byte	0x2
+ 1182 00e4 0100     		.byte	0x7d
+ 1183 00e6 5D       		.sleb128 8
+ 1184 00e7 02000000 		.4byte	.LCFI13
+ 1185 00eb 04000000 		.4byte	.LCFI14
+ 1186 00ef 0200     		.2byte	0x2
+ 1187 00f1 7D       		.byte	0x7d
+ 1188 00f2 08       		.sleb128 16
+ 1189 00f3 04000000 		.4byte	.LCFI14
+ 1190 00f7 06000000 		.4byte	.LFE6
+ 1191 00fb 0200     		.2byte	0x2
+ 1192 00fd 7D       		.byte	0x77
+ 1193 00fe 10       		.sleb128 16
+ 1194 00ff 06000000 		.4byte	0x0
+ 1195 0103 24000000 		.4byte	0x0
+ 1196 0107 0200     	.LLST5:
+ 1197 0109 77       		.4byte	.LFB7
+ 1198 010a 10       		.4byte	.LCFI15
+ 1199 010b 00000000 		.2byte	0x1
+ 1200 010f 00000000 		.byte	0x5d
+ 1201              		.4byte	.LCFI15
+ 1202 0113 00000000 		.4byte	.LCFI16
+ 1203 0117 02000000 		.2byte	0x2
+ 1204 011b 0100     		.byte	0x7d
+ 1205 011d 5D       		.sleb128 8
+ 1206 011e 02000000 		.4byte	.LCFI16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 27
+
+
+ 1207 0122 04000000 		.4byte	.LCFI17
+ 1208 0126 0200     		.2byte	0x2
+ 1209 0128 7D       		.byte	0x7d
+ 1210 0129 08       		.sleb128 16
+ 1211 012a 04000000 		.4byte	.LCFI17
+ 1212 012e 06000000 		.4byte	.LFE7
+ 1213 0132 0200     		.2byte	0x2
+ 1214 0134 7D       		.byte	0x77
+ 1215 0135 10       		.sleb128 16
+ 1216 0136 06000000 		.4byte	0x0
+ 1217 013a 22000000 		.4byte	0x0
+ 1218 013e 0200     	.LLST6:
+ 1219 0140 77       		.4byte	.LFB8
+ 1220 0141 10       		.4byte	.LCFI18
+ 1221 0142 00000000 		.2byte	0x1
+ 1222 0146 00000000 		.byte	0x5d
+ 1223              		.4byte	.LCFI18
+ 1224 014a 00000000 		.4byte	.LCFI19
+ 1225 014e 02000000 		.2byte	0x2
+ 1226 0152 0100     		.byte	0x7d
+ 1227 0154 5D       		.sleb128 8
+ 1228 0155 02000000 		.4byte	.LCFI19
+ 1229 0159 04000000 		.4byte	.LCFI20
+ 1230 015d 0200     		.2byte	0x2
+ 1231 015f 7D       		.byte	0x7d
+ 1232 0160 08       		.sleb128 16
+ 1233 0161 04000000 		.4byte	.LCFI20
+ 1234 0165 06000000 		.4byte	.LFE8
+ 1235 0169 0200     		.2byte	0x2
+ 1236 016b 7D       		.byte	0x77
+ 1237 016c 10       		.sleb128 16
+ 1238 016d 06000000 		.4byte	0x0
+ 1239 0171 24000000 		.4byte	0x0
+ 1240 0175 0200     	.LLST7:
+ 1241 0177 77       		.4byte	.LFB9
+ 1242 0178 10       		.4byte	.LCFI21
+ 1243 0179 00000000 		.2byte	0x1
+ 1244 017d 00000000 		.byte	0x5d
+ 1245              		.4byte	.LCFI21
+ 1246 0181 00000000 		.4byte	.LCFI22
+ 1247 0185 02000000 		.2byte	0x2
+ 1248 0189 0100     		.byte	0x7d
+ 1249 018b 5D       		.sleb128 8
+ 1250 018c 02000000 		.4byte	.LCFI22
+ 1251 0190 04000000 		.4byte	.LCFI23
+ 1252 0194 0200     		.2byte	0x2
+ 1253 0196 7D       		.byte	0x7d
+ 1254 0197 08       		.sleb128 24
+ 1255 0198 04000000 		.4byte	.LCFI23
+ 1256 019c 06000000 		.4byte	.LFE9
+ 1257 01a0 0200     		.2byte	0x2
+ 1258 01a2 7D       		.byte	0x77
+ 1259 01a3 18       		.sleb128 24
+ 1260 01a4 06000000 		.4byte	0x0
+ 1261 01a8 26000000 		.4byte	0x0
+ 1262 01ac 0200     	.LLST8:
+ 1263 01ae 77       		.4byte	.LFB10
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 28
+
+
+ 1264 01af 18       		.4byte	.LCFI24
+ 1265 01b0 00000000 		.2byte	0x1
+ 1266 01b4 00000000 		.byte	0x5d
+ 1267              		.4byte	.LCFI24
+ 1268 01b8 00000000 		.4byte	.LCFI25
+ 1269 01bc 02000000 		.2byte	0x2
+ 1270 01c0 0100     		.byte	0x7d
+ 1271 01c2 5D       		.sleb128 8
+ 1272 01c3 02000000 		.4byte	.LCFI25
+ 1273 01c7 04000000 		.4byte	.LCFI26
+ 1274 01cb 0200     		.2byte	0x2
+ 1275 01cd 7D       		.byte	0x7d
+ 1276 01ce 08       		.sleb128 24
+ 1277 01cf 04000000 		.4byte	.LCFI26
+ 1278 01d3 06000000 		.4byte	.LFE10
+ 1279 01d7 0200     		.2byte	0x2
+ 1280 01d9 7D       		.byte	0x77
+ 1281 01da 18       		.sleb128 24
+ 1282 01db 06000000 		.4byte	0x0
+ 1283 01df 26000000 		.4byte	0x0
+ 1284 01e3 0200     	.LLST9:
+ 1285 01e5 77       		.4byte	.LFB11
+ 1286 01e6 18       		.4byte	.LCFI27
+ 1287 01e7 00000000 		.2byte	0x1
+ 1288 01eb 00000000 		.byte	0x5d
+ 1289              		.4byte	.LCFI27
+ 1290 01ef 00000000 		.4byte	.LCFI28
+ 1291 01f3 02000000 		.2byte	0x2
+ 1292 01f7 0100     		.byte	0x7d
+ 1293 01f9 5D       		.sleb128 8
+ 1294 01fa 02000000 		.4byte	.LCFI28
+ 1295 01fe 04000000 		.4byte	.LCFI29
+ 1296 0202 0200     		.2byte	0x2
+ 1297 0204 7D       		.byte	0x7d
+ 1298 0205 08       		.sleb128 16
+ 1299 0206 04000000 		.4byte	.LCFI29
+ 1300 020a 06000000 		.4byte	.LFE11
+ 1301 020e 0200     		.2byte	0x2
+ 1302 0210 7D       		.byte	0x77
+ 1303 0211 10       		.sleb128 16
+ 1304 0212 06000000 		.4byte	0x0
+ 1305 0216 22000000 		.4byte	0x0
+ 1306 021a 0200     	.LLST10:
+ 1307 021c 77       		.4byte	.LFB12
+ 1308 021d 10       		.4byte	.LCFI30
+ 1309 021e 00000000 		.2byte	0x1
+ 1310 0222 00000000 		.byte	0x5d
+ 1311              		.4byte	.LCFI30
+ 1312 0226 00000000 		.4byte	.LCFI31
+ 1313 022a 02000000 		.2byte	0x2
+ 1314 022e 0100     		.byte	0x7d
+ 1315 0230 5D       		.sleb128 8
+ 1316 0231 02000000 		.4byte	.LCFI31
+ 1317 0235 04000000 		.4byte	.LCFI32
+ 1318 0239 0200     		.2byte	0x2
+ 1319 023b 7D       		.byte	0x7d
+ 1320 023c 08       		.sleb128 16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 29
+
+
+ 1321 023d 04000000 		.4byte	.LCFI32
+ 1322 0241 06000000 		.4byte	.LFE12
+ 1323 0245 0200     		.2byte	0x2
+ 1324 0247 7D       		.byte	0x77
+ 1325 0248 10       		.sleb128 16
+ 1326 0249 06000000 		.4byte	0x0
+ 1327 024d 22000000 		.4byte	0x0
+ 1328 0251 0200     	.LLST11:
+ 1329 0253 77       		.4byte	.LFB13
+ 1330 0254 10       		.4byte	.LCFI33
+ 1331 0255 00000000 		.2byte	0x1
+ 1332 0259 00000000 		.byte	0x5d
+ 1333              		.4byte	.LCFI33
+ 1334 025d 00000000 		.4byte	.LCFI34
+ 1335 0261 02000000 		.2byte	0x2
+ 1336 0265 0100     		.byte	0x7d
+ 1337 0267 5D       		.sleb128 8
+ 1338 0268 02000000 		.4byte	.LCFI34
+ 1339 026c 04000000 		.4byte	.LCFI35
+ 1340 0270 0200     		.2byte	0x2
+ 1341 0272 7D       		.byte	0x7d
+ 1342 0273 08       		.sleb128 24
+ 1343 0274 04000000 		.4byte	.LCFI35
+ 1344 0278 06000000 		.4byte	.LFE13
+ 1345 027c 0200     		.2byte	0x2
+ 1346 027e 7D       		.byte	0x77
+ 1347 027f 18       		.sleb128 24
+ 1348 0280 06000000 		.4byte	0x0
+ 1349 0284 26000000 		.4byte	0x0
+ 1350 0288 0200     	.LLST12:
+ 1351 028a 77       		.4byte	.LFB14
+ 1352 028b 18       		.4byte	.LCFI36
+ 1353 028c 00000000 		.2byte	0x1
+ 1354 0290 00000000 		.byte	0x5d
+ 1355              		.4byte	.LCFI36
+ 1356 0294 00000000 		.4byte	.LCFI37
+ 1357 0298 02000000 		.2byte	0x2
+ 1358 029c 0100     		.byte	0x7d
+ 1359 029e 5D       		.sleb128 8
+ 1360 029f 02000000 		.4byte	.LCFI37
+ 1361 02a3 04000000 		.4byte	.LCFI38
+ 1362 02a7 0200     		.2byte	0x2
+ 1363 02a9 7D       		.byte	0x7d
+ 1364 02aa 08       		.sleb128 24
+ 1365 02ab 04000000 		.4byte	.LCFI38
+ 1366 02af 06000000 		.4byte	.LFE14
+ 1367 02b3 0200     		.2byte	0x2
+ 1368 02b5 7D       		.byte	0x77
+ 1369 02b6 18       		.sleb128 24
+ 1370 02b7 06000000 		.4byte	0x0
+ 1371 02bb 26000000 		.4byte	0x0
+ 1372 02bf 0200     	.LLST13:
+ 1373 02c1 77       		.4byte	.LFB15
+ 1374 02c2 18       		.4byte	.LCFI39
+ 1375 02c3 00000000 		.2byte	0x1
+ 1376 02c7 00000000 		.byte	0x5d
+ 1377              		.4byte	.LCFI39
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 30
+
+
+ 1378 02cb 00000000 		.4byte	.LCFI40
+ 1379 02cf 02000000 		.2byte	0x2
+ 1380 02d3 0100     		.byte	0x7d
+ 1381 02d5 5D       		.sleb128 8
+ 1382 02d6 02000000 		.4byte	.LCFI40
+ 1383 02da 04000000 		.4byte	.LCFI41
+ 1384 02de 0200     		.2byte	0x2
+ 1385 02e0 7D       		.byte	0x7d
+ 1386 02e1 08       		.sleb128 24
+ 1387 02e2 04000000 		.4byte	.LCFI41
+ 1388 02e6 06000000 		.4byte	.LFE15
+ 1389 02ea 0200     		.2byte	0x2
+ 1390 02ec 7D       		.byte	0x77
+ 1391 02ed 18       		.sleb128 24
+ 1392 02ee 06000000 		.4byte	0x0
+ 1393 02f2 26000000 		.4byte	0x0
+ 1394 02f6 0200     	.LLST14:
+ 1395 02f8 77       		.4byte	.LFB16
+ 1396 02f9 18       		.4byte	.LCFI42
+ 1397 02fa 00000000 		.2byte	0x1
+ 1398 02fe 00000000 		.byte	0x5d
+ 1399              		.4byte	.LCFI42
+ 1400 0302 00000000 		.4byte	.LCFI43
+ 1401 0306 02000000 		.2byte	0x2
+ 1402 030a 0100     		.byte	0x7d
+ 1403 030c 5D       		.sleb128 8
+ 1404 030d 02000000 		.4byte	.LCFI43
+ 1405 0311 04000000 		.4byte	.LCFI44
+ 1406 0315 0200     		.2byte	0x2
+ 1407 0317 7D       		.byte	0x7d
+ 1408 0318 08       		.sleb128 16
+ 1409 0319 04000000 		.4byte	.LCFI44
+ 1410 031d 06000000 		.4byte	.LFE16
+ 1411 0321 0200     		.2byte	0x2
+ 1412 0323 7D       		.byte	0x77
+ 1413 0324 10       		.sleb128 16
+ 1414 0325 06000000 		.4byte	0x0
+ 1415 0329 24000000 		.4byte	0x0
+ 1416 032d 0200     	.LLST15:
+ 1417 032f 77       		.4byte	.LFB17
+ 1418 0330 10       		.4byte	.LCFI45
+ 1419 0331 00000000 		.2byte	0x1
+ 1420 0335 00000000 		.byte	0x5d
+ 1421              		.4byte	.LCFI45
+ 1422 0339 00000000 		.4byte	.LCFI46
+ 1423 033d 02000000 		.2byte	0x2
+ 1424 0341 0100     		.byte	0x7d
+ 1425 0343 5D       		.sleb128 8
+ 1426 0344 02000000 		.4byte	.LCFI46
+ 1427 0348 04000000 		.4byte	.LCFI47
+ 1428 034c 0200     		.2byte	0x2
+ 1429 034e 7D       		.byte	0x7d
+ 1430 034f 08       		.sleb128 16
+ 1431 0350 04000000 		.4byte	.LCFI47
+ 1432 0354 06000000 		.4byte	.LFE17
+ 1433 0358 0200     		.2byte	0x2
+ 1434 035a 7D       		.byte	0x77
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 31
+
+
+ 1435 035b 10       		.sleb128 16
+ 1436 035c 06000000 		.4byte	0x0
+ 1437 0360 24000000 		.4byte	0x0
+ 1438 0364 0200     	.LLST16:
+ 1439 0366 77       		.4byte	.LFB18
+ 1440 0367 10       		.4byte	.LCFI48
+ 1441 0368 00000000 		.2byte	0x1
+ 1442 036c 00000000 		.byte	0x5d
+ 1443              		.4byte	.LCFI48
+ 1444 0370 00000000 		.4byte	.LCFI49
+ 1445 0374 02000000 		.2byte	0x2
+ 1446 0378 0100     		.byte	0x7d
+ 1447 037a 5D       		.sleb128 8
+ 1448 037b 02000000 		.4byte	.LCFI49
+ 1449 037f 04000000 		.4byte	.LFE18
+ 1450 0383 0200     		.2byte	0x2
+ 1451 0385 7D       		.byte	0x77
+ 1452 0386 08       		.sleb128 8
+ 1453 0387 04000000 		.4byte	0x0
+ 1454 038b 1A000000 		.4byte	0x0
+ 1455 038f 0200     	.LLST17:
+ 1456 0391 77       		.4byte	.LFB19
+ 1457 0392 08       		.4byte	.LCFI50
+ 1458 0393 00000000 		.2byte	0x1
+ 1459 0397 00000000 		.byte	0x5d
+ 1460              		.4byte	.LCFI50
+ 1461 039b 00000000 		.4byte	.LCFI51
+ 1462 039f 02000000 		.2byte	0x2
+ 1463 03a3 0100     		.byte	0x7d
+ 1464 03a5 5D       		.sleb128 8
+ 1465 03a6 02000000 		.4byte	.LCFI51
+ 1466 03aa 04000000 		.4byte	.LFE19
+ 1467 03ae 0200     		.2byte	0x2
+ 1468 03b0 7D       		.byte	0x77
+ 1469 03b1 08       		.sleb128 8
+ 1470 03b2 04000000 		.4byte	0x0
+ 1471 03b6 1A000000 		.4byte	0x0
+ 1472 03ba 0200     		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 1473 03bc 77       		.section	.debug_info
+ 1474 03bd 08       		.4byte	0x661
+ 1475 03be 00000000 		.2byte	0x2
+ 1476 03c2 00000000 		.4byte	.Ldebug_abbrev0
+ 1477              		.byte	0x4
+ 1478              		.uleb128 0x1
+ 1479 0000 61060000 		.ascii	"GNU C 4.2.1\000"
+ 1480 0004 0200     		.byte	0x1
+ 1481 0006 00000000 		.ascii	"./Generated_Source/PSoC5/CyLibNoOS.c\000"
+ 1482 000a 04       		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 1483 000b 01       		.ascii	"ro\\CarStairo.cydsn\000"
+ 1484 000c 474E5520 		.4byte	0x0
+ 1484      4320342E 
+ 1484      322E3100 
+ 1485 0018 01       		.4byte	.Ldebug_line0
+ 1486 0019 2E2F4765 		.uleb128 0x2
+ 1486      6E657261 
+ 1486      7465645F 
+ 1486      536F7572 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 32
+
+
+ 1486      63652F50 
+ 1487 003e 433A5C55 		.byte	0x1
+ 1487      73657273 
+ 1487      5C626C69 
+ 1487      6E6B795C 
+ 1487      446F6375 
+ 1488 006c 726F5C43 		.byte	0x8
+ 1488      61725374 
+ 1488      6169726F 
+ 1488      2E637964 
+ 1488      736E00
+ 1489 007f 00000000 		.ascii	"unsigned char\000"
+ 1490 0083 00000000 		.uleb128 0x3
+ 1491 0087 02       		.ascii	"uint8\000"
+ 1492 0088 01       		.byte	0x2
+ 1493 0089 08       		.byte	0x25
+ 1494 008a 756E7369 		.4byte	0x87
+ 1494      676E6564 
+ 1494      20636861 
+ 1494      7200
+ 1495 0098 03       		.uleb128 0x2
+ 1496 0099 75696E74 		.byte	0x2
+ 1496      3800
+ 1497 009f 02       		.byte	0x7
+ 1498 00a0 25       		.ascii	"short unsigned int\000"
+ 1499 00a1 87000000 		.uleb128 0x2
+ 1500 00a5 02       		.byte	0x4
+ 1501 00a6 02       		.byte	0x7
+ 1502 00a7 07       		.ascii	"long unsigned int\000"
+ 1503 00a8 73686F72 		.uleb128 0x2
+ 1503      7420756E 
+ 1503      7369676E 
+ 1503      65642069 
+ 1503      6E7400
+ 1504 00bb 02       		.byte	0x1
+ 1505 00bc 04       		.byte	0x6
+ 1506 00bd 07       		.ascii	"signed char\000"
+ 1507 00be 6C6F6E67 		.uleb128 0x2
+ 1507      20756E73 
+ 1507      69676E65 
+ 1507      6420696E 
+ 1507      7400
+ 1508 00d0 02       		.byte	0x2
+ 1509 00d1 01       		.byte	0x5
+ 1510 00d2 06       		.ascii	"short int\000"
+ 1511 00d3 7369676E 		.uleb128 0x2
+ 1511      65642063 
+ 1511      68617200 
+ 1512 00df 02       		.byte	0x4
+ 1513 00e0 02       		.byte	0x5
+ 1514 00e1 05       		.ascii	"long int\000"
+ 1515 00e2 73686F72 		.uleb128 0x2
+ 1515      7420696E 
+ 1515      7400
+ 1516 00ec 02       		.byte	0x4
+ 1517 00ed 04       		.byte	0x5
+ 1518 00ee 05       		.ascii	"int\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 33
+
+
+ 1519 00ef 6C6F6E67 		.uleb128 0x2
+ 1519      20696E74 
+ 1519      00
+ 1520 00f8 02       		.byte	0x8
+ 1521 00f9 04       		.byte	0x5
+ 1522 00fa 05       		.ascii	"long long int\000"
+ 1523 00fb 696E7400 		.uleb128 0x2
+ 1524 00ff 02       		.byte	0x4
+ 1525 0100 08       		.byte	0x7
+ 1526 0101 05       		.ascii	"unsigned int\000"
+ 1527 0102 6C6F6E67 		.uleb128 0x4
+ 1527      206C6F6E 
+ 1527      6720696E 
+ 1527      7400
+ 1528 0110 02       		.byte	0x4
+ 1529 0111 04       		.byte	0x7
+ 1530 0112 07       		.uleb128 0x5
+ 1531 0113 756E7369 		.byte	0x4
+ 1531      676E6564 
+ 1531      20696E74 
+ 1531      00
+ 1532 0120 04       		.uleb128 0x6
+ 1533 0121 04       		.byte	0x4
+ 1534 0122 07       		.4byte	0x12b
+ 1535 0123 05       		.uleb128 0x2
+ 1536 0124 04       		.byte	0x1
+ 1537 0125 06       		.byte	0x8
+ 1538 0126 04       		.ascii	"char\000"
+ 1539 0127 2B010000 		.uleb128 0x6
+ 1540 012b 02       		.byte	0x4
+ 1541 012c 01       		.4byte	0x139
+ 1542 012d 08       		.uleb128 0x7
+ 1543 012e 63686172 		.4byte	0x12b
+ 1543      00
+ 1544 0133 06       		.uleb128 0x2
+ 1545 0134 04       		.byte	0x8
+ 1546 0135 39010000 		.byte	0x7
+ 1547 0139 07       		.ascii	"long long unsigned int\000"
+ 1548 013a 2B010000 		.uleb128 0x8
+ 1549 013e 02       		.byte	0x1
+ 1550 013f 08       		.ascii	"_sbrk\000"
+ 1551 0140 07       		.byte	0x1
+ 1552 0141 6C6F6E67 		.byte	0x2b
+ 1552      206C6F6E 
+ 1552      6720756E 
+ 1552      7369676E 
+ 1552      65642069 
+ 1553 0158 08       		.byte	0x1
+ 1554 0159 01       		.4byte	0x123
+ 1555 015a 5F736272 		.4byte	.LFB2
+ 1555      6B00
+ 1556 0160 01       		.4byte	.LFE2
+ 1557 0161 2B       		.4byte	.LLST0
+ 1558 0162 01       		.4byte	0x1ab
+ 1559 0163 23010000 		.uleb128 0x9
+ 1560 0167 00000000 		.ascii	"size\000"
+ 1561 016b 50000000 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 34
+
+
+ 1562 016f 00000000 		.byte	0x2a
+ 1563 0173 AB010000 		.4byte	0xf8
+ 1564 0177 09       		.byte	0x2
+ 1565 0178 73697A65 		.byte	0x91
+ 1565      00
+ 1566 017d 01       		.sleb128 -20
+ 1567 017e 2A       		.uleb128 0xa
+ 1568 017f F8000000 		.ascii	"memory\000"
+ 1569 0183 02       		.byte	0x1
+ 1570 0184 91       		.byte	0x2c
+ 1571 0185 6C       		.4byte	0x123
+ 1572 0186 0A       		.byte	0x2
+ 1573 0187 6D656D6F 		.byte	0x91
+ 1573      727900
+ 1574 018e 01       		.sleb128 -16
+ 1575 018f 2C       		.uleb128 0xa
+ 1576 0190 23010000 		.ascii	"previous\000"
+ 1577 0194 02       		.byte	0x1
+ 1578 0195 91       		.byte	0x2d
+ 1579 0196 70       		.4byte	0x1ab
+ 1580 0197 0A       		.byte	0x2
+ 1581 0198 70726576 		.byte	0x91
+ 1581      696F7573 
+ 1581      00
+ 1582 01a1 01       		.sleb128 -12
+ 1583 01a2 2D       		.byte	0x0
+ 1584 01a3 AB010000 		.uleb128 0x6
+ 1585 01a7 02       		.byte	0x4
+ 1586 01a8 91       		.4byte	0x98
+ 1587 01a9 74       		.uleb128 0x8
+ 1588 01aa 00       		.byte	0x1
+ 1589 01ab 06       		.ascii	"_wait\000"
+ 1590 01ac 04       		.byte	0x1
+ 1591 01ad 98000000 		.byte	0x45
+ 1592 01b1 08       		.byte	0x1
+ 1593 01b2 01       		.4byte	0xf8
+ 1594 01b3 5F776169 		.4byte	.LFB3
+ 1594      7400
+ 1595 01b9 01       		.4byte	.LFE3
+ 1596 01ba 45       		.4byte	.LLST1
+ 1597 01bb 01       		.4byte	0x1e2
+ 1598 01bc F8000000 		.uleb128 0x9
+ 1599 01c0 00000000 		.ascii	"status\000"
+ 1600 01c4 22000000 		.byte	0x1
+ 1601 01c8 37000000 		.byte	0x44
+ 1602 01cc E2010000 		.4byte	0x1e2
+ 1603 01d0 09       		.byte	0x2
+ 1604 01d1 73746174 		.byte	0x91
+ 1604      757300
+ 1605 01d8 01       		.sleb128 -12
+ 1606 01d9 44       		.byte	0x0
+ 1607 01da E2010000 		.uleb128 0x6
+ 1608 01de 02       		.byte	0x4
+ 1609 01df 91       		.4byte	0xf8
+ 1610 01e0 74       		.uleb128 0xb
+ 1611 01e1 00       		.byte	0x1
+ 1612 01e2 06       		.ascii	"_exit\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 35
+
+
+ 1613 01e3 04       		.byte	0x1
+ 1614 01e4 F8000000 		.byte	0x50
+ 1615 01e8 0B       		.byte	0x1
+ 1616 01e9 01       		.4byte	.LFB4
+ 1617 01ea 5F657869 		.4byte	.LFE4
+ 1617      7400
+ 1618 01f0 01       		.4byte	.LLST2
+ 1619 01f1 50       		.4byte	0x215
+ 1620 01f2 01       		.uleb128 0x9
+ 1621 01f3 00000000 		.ascii	"status\000"
+ 1622 01f7 0A000000 		.byte	0x1
+ 1623 01fb 6E000000 		.byte	0x4f
+ 1624 01ff 15020000 		.4byte	0xf8
+ 1625 0203 09       		.byte	0x2
+ 1626 0204 73746174 		.byte	0x91
+ 1626      757300
+ 1627 020b 01       		.sleb128 -12
+ 1628 020c 4F       		.byte	0x0
+ 1629 020d F8000000 		.uleb128 0x8
+ 1630 0211 02       		.byte	0x1
+ 1631 0212 91       		.ascii	"_kill\000"
+ 1632 0213 74       		.byte	0x1
+ 1633 0214 00       		.byte	0x5e
+ 1634 0215 08       		.byte	0x1
+ 1635 0216 01       		.4byte	0xf8
+ 1636 0217 5F6B696C 		.4byte	.LFB5
+ 1636      6C00
+ 1637 021d 01       		.4byte	.LFE5
+ 1638 021e 5E       		.4byte	.LLST3
+ 1639 021f 01       		.4byte	0x251
+ 1640 0220 F8000000 		.uleb128 0x9
+ 1641 0224 00000000 		.ascii	"pid\000"
+ 1642 0228 24000000 		.byte	0x1
+ 1643 022c A5000000 		.byte	0x5d
+ 1644 0230 51020000 		.4byte	0xf8
+ 1645 0234 09       		.byte	0x2
+ 1646 0235 70696400 		.byte	0x91
+ 1647 0239 01       		.sleb128 -12
+ 1648 023a 5D       		.uleb128 0x9
+ 1649 023b F8000000 		.ascii	"sig\000"
+ 1650 023f 02       		.byte	0x1
+ 1651 0240 91       		.byte	0x5d
+ 1652 0241 74       		.4byte	0xf8
+ 1653 0242 09       		.byte	0x2
+ 1654 0243 73696700 		.byte	0x91
+ 1655 0247 01       		.sleb128 -16
+ 1656 0248 5D       		.byte	0x0
+ 1657 0249 F8000000 		.uleb128 0x8
+ 1658 024d 02       		.byte	0x1
+ 1659 024e 91       		.ascii	"_link\000"
+ 1660 024f 70       		.byte	0x1
+ 1661 0250 00       		.byte	0x6a
+ 1662 0251 08       		.byte	0x1
+ 1663 0252 01       		.4byte	0xf8
+ 1664 0253 5F6C696E 		.4byte	.LFB6
+ 1664      6B00
+ 1665 0259 01       		.4byte	.LFE6
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 36
+
+
+ 1666 025a 6A       		.4byte	.LLST4
+ 1667 025b 01       		.4byte	0x292
+ 1668 025c F8000000 		.uleb128 0x9
+ 1669 0260 00000000 		.ascii	"existing\000"
+ 1670 0264 24000000 		.byte	0x1
+ 1671 0268 DC000000 		.byte	0x69
+ 1672 026c 92020000 		.4byte	0x125
+ 1673 0270 09       		.byte	0x2
+ 1674 0271 65786973 		.byte	0x91
+ 1674      74696E67 
+ 1674      00
+ 1675 027a 01       		.sleb128 -12
+ 1676 027b 69       		.uleb128 0x9
+ 1677 027c 25010000 		.ascii	"new\000"
+ 1678 0280 02       		.byte	0x1
+ 1679 0281 91       		.byte	0x69
+ 1680 0282 74       		.4byte	0x125
+ 1681 0283 09       		.byte	0x2
+ 1682 0284 6E657700 		.byte	0x91
+ 1683 0288 01       		.sleb128 -16
+ 1684 0289 69       		.byte	0x0
+ 1685 028a 25010000 		.uleb128 0x8
+ 1686 028e 02       		.byte	0x1
+ 1687 028f 91       		.ascii	"_unlink\000"
+ 1688 0290 70       		.byte	0x1
+ 1689 0291 00       		.byte	0x75
+ 1690 0292 08       		.byte	0x1
+ 1691 0293 01       		.4byte	0xf8
+ 1692 0294 5F756E6C 		.4byte	.LFB7
+ 1692      696E6B00 
+ 1693 029c 01       		.4byte	.LFE7
+ 1694 029d 75       		.4byte	.LLST5
+ 1695 029e 01       		.4byte	0x2c3
+ 1696 029f F8000000 		.uleb128 0x9
+ 1697 02a3 00000000 		.ascii	"name\000"
+ 1698 02a7 22000000 		.byte	0x1
+ 1699 02ab 13010000 		.byte	0x74
+ 1700 02af C3020000 		.4byte	0x125
+ 1701 02b3 09       		.byte	0x2
+ 1702 02b4 6E616D65 		.byte	0x91
+ 1702      00
+ 1703 02b9 01       		.sleb128 -12
+ 1704 02ba 74       		.byte	0x0
+ 1705 02bb 25010000 		.uleb128 0x8
+ 1706 02bf 02       		.byte	0x1
+ 1707 02c0 91       		.ascii	"_symlink\000"
+ 1708 02c1 74       		.byte	0x1
+ 1709 02c2 00       		.byte	0x81
+ 1710 02c3 08       		.byte	0x1
+ 1711 02c4 01       		.4byte	0xf8
+ 1712 02c5 5F73796D 		.4byte	.LFB8
+ 1712      6C696E6B 
+ 1712      00
+ 1713 02ce 01       		.4byte	.LFE8
+ 1714 02cf 81       		.4byte	.LLST6
+ 1715 02d0 01       		.4byte	0x306
+ 1716 02d1 F8000000 		.uleb128 0x9
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 37
+
+
+ 1717 02d5 00000000 		.ascii	"path1\000"
+ 1718 02d9 24000000 		.byte	0x1
+ 1719 02dd 4A010000 		.byte	0x80
+ 1720 02e1 06030000 		.4byte	0x133
+ 1721 02e5 09       		.byte	0x2
+ 1722 02e6 70617468 		.byte	0x91
+ 1722      3100
+ 1723 02ec 01       		.sleb128 -12
+ 1724 02ed 80       		.uleb128 0x9
+ 1725 02ee 33010000 		.ascii	"path2\000"
+ 1726 02f2 02       		.byte	0x1
+ 1727 02f3 91       		.byte	0x80
+ 1728 02f4 74       		.4byte	0x133
+ 1729 02f5 09       		.byte	0x2
+ 1730 02f6 70617468 		.byte	0x91
+ 1730      3200
+ 1731 02fc 01       		.sleb128 -16
+ 1732 02fd 80       		.byte	0x0
+ 1733 02fe 33010000 		.uleb128 0x3
+ 1734 0302 02       		.ascii	"size_t\000"
+ 1735 0303 91       		.byte	0x1
+ 1736 0304 70       		.byte	0x8c
+ 1737 0305 00       		.4byte	0xf8
+ 1738 0306 03       		.uleb128 0x8
+ 1739 0307 73697A65 		.byte	0x1
+ 1739      5F7400
+ 1740 030e 01       		.ascii	"_readlink\000"
+ 1741 030f 8C       		.byte	0x1
+ 1742 0310 F8000000 		.byte	0x8f
+ 1743 0314 08       		.byte	0x1
+ 1744 0315 01       		.4byte	0xf8
+ 1745 0316 5F726561 		.4byte	.LFB9
+ 1745      646C696E 
+ 1745      6B00
+ 1746 0320 01       		.4byte	.LFE9
+ 1747 0321 8F       		.4byte	.LLST7
+ 1748 0322 01       		.4byte	0x36d
+ 1749 0323 F8000000 		.uleb128 0x9
+ 1750 0327 00000000 		.ascii	"path\000"
+ 1751 032b 26000000 		.byte	0x1
+ 1752 032f 81010000 		.byte	0x8e
+ 1753 0333 6D030000 		.4byte	0x133
+ 1754 0337 09       		.byte	0x2
+ 1755 0338 70617468 		.byte	0x91
+ 1755      00
+ 1756 033d 01       		.sleb128 -12
+ 1757 033e 8E       		.uleb128 0x9
+ 1758 033f 33010000 		.ascii	"buffer\000"
+ 1759 0343 02       		.byte	0x1
+ 1760 0344 91       		.byte	0x8e
+ 1761 0345 74       		.4byte	0x125
+ 1762 0346 09       		.byte	0x2
+ 1763 0347 62756666 		.byte	0x91
+ 1763      657200
+ 1764 034e 01       		.sleb128 -16
+ 1765 034f 8E       		.uleb128 0x9
+ 1766 0350 25010000 		.ascii	"bufferSize\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 38
+
+
+ 1767 0354 02       		.byte	0x1
+ 1768 0355 91       		.byte	0x8e
+ 1769 0356 70       		.4byte	0x306
+ 1770 0357 09       		.byte	0x2
+ 1771 0358 62756666 		.byte	0x91
+ 1771      65725369 
+ 1771      7A6500
+ 1772 0363 01       		.sleb128 -20
+ 1773 0364 8E       		.byte	0x0
+ 1774 0365 06030000 		.uleb128 0x8
+ 1775 0369 02       		.byte	0x1
+ 1776 036a 91       		.ascii	"_open\000"
+ 1777 036b 6C       		.byte	0x1
+ 1778 036c 00       		.byte	0x9b
+ 1779 036d 08       		.byte	0x1
+ 1780 036e 01       		.4byte	0xf8
+ 1781 036f 5F6F7065 		.4byte	.LFB10
+ 1781      6E00
+ 1782 0375 01       		.4byte	.LFE10
+ 1783 0376 9B       		.4byte	.LLST8
+ 1784 0377 01       		.4byte	0x3ba
+ 1785 0378 F8000000 		.uleb128 0xc
+ 1786 037c 00000000 		.4byte	.LASF0
+ 1787 0380 26000000 		.byte	0x1
+ 1788 0384 B8010000 		.byte	0x9a
+ 1789 0388 BA030000 		.4byte	0x125
+ 1790 038c 0C       		.byte	0x2
+ 1791 038d 00000000 		.byte	0x91
+ 1792 0391 01       		.sleb128 -12
+ 1793 0392 9A       		.uleb128 0x9
+ 1794 0393 25010000 		.ascii	"flags\000"
+ 1795 0397 02       		.byte	0x1
+ 1796 0398 91       		.byte	0x9a
+ 1797 0399 74       		.4byte	0xf8
+ 1798 039a 09       		.byte	0x2
+ 1799 039b 666C6167 		.byte	0x91
+ 1799      7300
+ 1800 03a1 01       		.sleb128 -16
+ 1801 03a2 9A       		.uleb128 0x9
+ 1802 03a3 F8000000 		.ascii	"mode\000"
+ 1803 03a7 02       		.byte	0x1
+ 1804 03a8 91       		.byte	0x9a
+ 1805 03a9 70       		.4byte	0xf8
+ 1806 03aa 09       		.byte	0x2
+ 1807 03ab 6D6F6465 		.byte	0x91
+ 1807      00
+ 1808 03b0 01       		.sleb128 -20
+ 1809 03b1 9A       		.byte	0x0
+ 1810 03b2 F8000000 		.uleb128 0x8
+ 1811 03b6 02       		.byte	0x1
+ 1812 03b7 91       		.ascii	"_close\000"
+ 1813 03b8 6C       		.byte	0x1
+ 1814 03b9 00       		.byte	0xa7
+ 1815 03ba 08       		.byte	0x1
+ 1816 03bb 01       		.4byte	0xf8
+ 1817 03bc 5F636C6F 		.4byte	.LFB11
+ 1817      736500
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 39
+
+
+ 1818 03c3 01       		.4byte	.LFE11
+ 1819 03c4 A7       		.4byte	.LLST9
+ 1820 03c5 01       		.4byte	0x3f4
+ 1821 03c6 F8000000 		.uleb128 0x9
+ 1822 03ca 00000000 		.ascii	"fileDescriptor\000"
+ 1823 03ce 22000000 		.byte	0x1
+ 1824 03d2 EF010000 		.byte	0xa6
+ 1825 03d6 F4030000 		.4byte	0xf8
+ 1826 03da 09       		.byte	0x2
+ 1827 03db 66696C65 		.byte	0x91
+ 1827      44657363 
+ 1827      72697074 
+ 1827      6F7200
+ 1828 03ea 01       		.sleb128 -12
+ 1829 03eb A6       		.byte	0x0
+ 1830 03ec F8000000 		.uleb128 0x8
+ 1831 03f0 02       		.byte	0x1
+ 1832 03f1 91       		.ascii	"isatty\000"
+ 1833 03f2 74       		.byte	0x1
+ 1834 03f3 00       		.byte	0xb2
+ 1835 03f4 08       		.byte	0x1
+ 1836 03f5 01       		.4byte	0xf8
+ 1837 03f6 69736174 		.4byte	.LFB12
+ 1837      747900
+ 1838 03fd 01       		.4byte	.LFE12
+ 1839 03fe B2       		.4byte	.LLST10
+ 1840 03ff 01       		.4byte	0x423
+ 1841 0400 F8000000 		.uleb128 0xc
+ 1842 0404 00000000 		.4byte	.LASF0
+ 1843 0408 22000000 		.byte	0x1
+ 1844 040c 26020000 		.byte	0xb1
+ 1845 0410 23040000 		.4byte	0xf8
+ 1846 0414 0C       		.byte	0x2
+ 1847 0415 00000000 		.byte	0x91
+ 1848 0419 01       		.sleb128 -12
+ 1849 041a B1       		.byte	0x0
+ 1850 041b F8000000 		.uleb128 0x8
+ 1851 041f 02       		.byte	0x1
+ 1852 0420 91       		.ascii	"_write\000"
+ 1853 0421 74       		.byte	0x1
+ 1854 0422 00       		.byte	0xbd
+ 1855 0423 08       		.byte	0x1
+ 1856 0424 01       		.4byte	0xf8
+ 1857 0425 5F777269 		.4byte	.LFB13
+ 1857      746500
+ 1858 042c 01       		.4byte	.LFE13
+ 1859 042d BD       		.4byte	.LLST11
+ 1860 042e 01       		.4byte	0x475
+ 1861 042f F8000000 		.uleb128 0xc
+ 1862 0433 00000000 		.4byte	.LASF0
+ 1863 0437 26000000 		.byte	0x1
+ 1864 043b 5D020000 		.byte	0xbc
+ 1865 043f 75040000 		.4byte	0xf8
+ 1866 0443 0C       		.byte	0x2
+ 1867 0444 00000000 		.byte	0x91
+ 1868 0448 01       		.sleb128 -12
+ 1869 0449 BC       		.uleb128 0x9
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 40
+
+
+ 1870 044a F8000000 		.ascii	"pointer\000"
+ 1871 044e 02       		.byte	0x1
+ 1872 044f 91       		.byte	0xbc
+ 1873 0450 74       		.4byte	0x125
+ 1874 0451 09       		.byte	0x2
+ 1875 0452 706F696E 		.byte	0x91
+ 1875      74657200 
+ 1876 045a 01       		.sleb128 -16
+ 1877 045b BC       		.uleb128 0x9
+ 1878 045c 25010000 		.ascii	"length\000"
+ 1879 0460 02       		.byte	0x1
+ 1880 0461 91       		.byte	0xbc
+ 1881 0462 70       		.4byte	0xf8
+ 1882 0463 09       		.byte	0x2
+ 1883 0464 6C656E67 		.byte	0x91
+ 1883      746800
+ 1884 046b 01       		.sleb128 -20
+ 1885 046c BC       		.byte	0x0
+ 1886 046d F8000000 		.uleb128 0x8
+ 1887 0471 02       		.byte	0x1
+ 1888 0472 91       		.ascii	"_read\000"
+ 1889 0473 6C       		.byte	0x1
+ 1890 0474 00       		.byte	0xc9
+ 1891 0475 08       		.byte	0x1
+ 1892 0476 01       		.4byte	0xf8
+ 1893 0477 5F726561 		.4byte	.LFB14
+ 1893      6400
+ 1894 047d 01       		.4byte	.LFE14
+ 1895 047e C9       		.4byte	.LLST12
+ 1896 047f 01       		.4byte	0x4c2
+ 1897 0480 F8000000 		.uleb128 0xc
+ 1898 0484 00000000 		.4byte	.LASF0
+ 1899 0488 26000000 		.byte	0x1
+ 1900 048c 94020000 		.byte	0xc8
+ 1901 0490 C2040000 		.4byte	0xf8
+ 1902 0494 0C       		.byte	0x2
+ 1903 0495 00000000 		.byte	0x91
+ 1904 0499 01       		.sleb128 -12
+ 1905 049a C8       		.uleb128 0x9
+ 1906 049b F8000000 		.ascii	"ptr\000"
+ 1907 049f 02       		.byte	0x1
+ 1908 04a0 91       		.byte	0xc8
+ 1909 04a1 74       		.4byte	0x125
+ 1910 04a2 09       		.byte	0x2
+ 1911 04a3 70747200 		.byte	0x91
+ 1912 04a7 01       		.sleb128 -16
+ 1913 04a8 C8       		.uleb128 0x9
+ 1914 04a9 25010000 		.ascii	"length\000"
+ 1915 04ad 02       		.byte	0x1
+ 1916 04ae 91       		.byte	0xc8
+ 1917 04af 70       		.4byte	0xf8
+ 1918 04b0 09       		.byte	0x2
+ 1919 04b1 6C656E67 		.byte	0x91
+ 1919      746800
+ 1920 04b8 01       		.sleb128 -20
+ 1921 04b9 C8       		.byte	0x0
+ 1922 04ba F8000000 		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 41
+
+
+ 1923 04be 02       		.byte	0x1
+ 1924 04bf 91       		.ascii	"_lseek\000"
+ 1925 04c0 6C       		.byte	0x1
+ 1926 04c1 00       		.byte	0xd5
+ 1927 04c2 08       		.byte	0x1
+ 1928 04c3 01       		.4byte	0xf8
+ 1929 04c4 5F6C7365 		.4byte	.LFB15
+ 1929      656B00
+ 1930 04cb 01       		.4byte	.LFE15
+ 1931 04cc D5       		.4byte	.LLST13
+ 1932 04cd 01       		.4byte	0x50d
+ 1933 04ce F8000000 		.uleb128 0xc
+ 1934 04d2 00000000 		.4byte	.LASF0
+ 1935 04d6 26000000 		.byte	0x1
+ 1936 04da CB020000 		.byte	0xd4
+ 1937 04de 0D050000 		.4byte	0xf8
+ 1938 04e2 0C       		.byte	0x2
+ 1939 04e3 00000000 		.byte	0x91
+ 1940 04e7 01       		.sleb128 -12
+ 1941 04e8 D4       		.uleb128 0x9
+ 1942 04e9 F8000000 		.ascii	"ptr\000"
+ 1943 04ed 02       		.byte	0x1
+ 1944 04ee 91       		.byte	0xd4
+ 1945 04ef 74       		.4byte	0xf8
+ 1946 04f0 09       		.byte	0x2
+ 1947 04f1 70747200 		.byte	0x91
+ 1948 04f5 01       		.sleb128 -16
+ 1949 04f6 D4       		.uleb128 0x9
+ 1950 04f7 F8000000 		.ascii	"dir\000"
+ 1951 04fb 02       		.byte	0x1
+ 1952 04fc 91       		.byte	0xd4
+ 1953 04fd 70       		.4byte	0xf8
+ 1954 04fe 09       		.byte	0x2
+ 1955 04ff 64697200 		.byte	0x91
+ 1956 0503 01       		.sleb128 -20
+ 1957 0504 D4       		.byte	0x0
+ 1958 0505 F8000000 		.uleb128 0xd
+ 1959 0509 02       		.ascii	"stat\000"
+ 1960 050a 91       		.byte	0x1
+ 1961 050b 6C       		.byte	0x1
+ 1962 050c 00       		.byte	0xe2
+ 1963 050d 0D       		.4byte	0x52d
+ 1964 050e 73746174 		.uleb128 0xe
+ 1964      00
+ 1965 0513 01       		.ascii	"useless\000"
+ 1966 0514 01       		.byte	0x1
+ 1967 0515 E2       		.byte	0xe3
+ 1968 0516 2D050000 		.4byte	0x98
+ 1969 051a 0E       		.byte	0x2
+ 1970 051b 7573656C 		.byte	0x23
+ 1970      65737300 
+ 1971 0523 01       		.uleb128 0x0
+ 1972 0524 E3       		.byte	0x0
+ 1973 0525 98000000 		.uleb128 0x8
+ 1974 0529 02       		.byte	0x1
+ 1975 052a 23       		.ascii	"_fstat\000"
+ 1976 052b 00       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 42
+
+
+ 1977 052c 00       		.byte	0xe7
+ 1978 052d 08       		.byte	0x1
+ 1979 052e 01       		.4byte	0xf8
+ 1980 052f 5F667374 		.4byte	.LFB16
+ 1980      617400
+ 1981 0536 01       		.4byte	.LFE16
+ 1982 0537 E7       		.4byte	.LLST14
+ 1983 0538 01       		.4byte	0x570
+ 1984 0539 F8000000 		.uleb128 0x9
+ 1985 053d 00000000 		.ascii	"fildes\000"
+ 1986 0541 24000000 		.byte	0x1
+ 1987 0545 02030000 		.byte	0xe6
+ 1988 0549 70050000 		.4byte	0xf8
+ 1989 054d 09       		.byte	0x2
+ 1990 054e 66696C64 		.byte	0x91
+ 1990      657300
+ 1991 0555 01       		.sleb128 -12
+ 1992 0556 E6       		.uleb128 0x9
+ 1993 0557 F8000000 		.ascii	"buffer\000"
+ 1994 055b 02       		.byte	0x1
+ 1995 055c 91       		.byte	0xe6
+ 1996 055d 74       		.4byte	0x570
+ 1997 055e 09       		.byte	0x2
+ 1998 055f 62756666 		.byte	0x91
+ 1998      657200
+ 1999 0566 01       		.sleb128 -16
+ 2000 0567 E6       		.byte	0x0
+ 2001 0568 70050000 		.uleb128 0x6
+ 2002 056c 02       		.byte	0x4
+ 2003 056d 91       		.4byte	0x50d
+ 2004 056e 70       		.uleb128 0x8
+ 2005 056f 00       		.byte	0x1
+ 2006 0570 06       		.ascii	"_stat\000"
+ 2007 0571 04       		.byte	0x1
+ 2008 0572 0D050000 		.byte	0xf2
+ 2009 0576 08       		.byte	0x1
+ 2010 0577 01       		.4byte	0xf8
+ 2011 0578 5F737461 		.4byte	.LFB17
+ 2011      7400
+ 2012 057e 01       		.4byte	.LFE17
+ 2013 057f F2       		.4byte	.LLST15
+ 2014 0580 01       		.4byte	0x5b1
+ 2015 0581 F8000000 		.uleb128 0xc
+ 2016 0585 00000000 		.4byte	.LASF0
+ 2017 0589 24000000 		.byte	0x1
+ 2018 058d 39030000 		.byte	0xf1
+ 2019 0591 B1050000 		.4byte	0x133
+ 2020 0595 0C       		.byte	0x2
+ 2021 0596 00000000 		.byte	0x91
+ 2022 059a 01       		.sleb128 -12
+ 2023 059b F1       		.uleb128 0x9
+ 2024 059c 33010000 		.ascii	"st\000"
+ 2025 05a0 02       		.byte	0x1
+ 2026 05a1 91       		.byte	0xf1
+ 2027 05a2 74       		.4byte	0x570
+ 2028 05a3 09       		.byte	0x2
+ 2029 05a4 737400   		.byte	0x91
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 43
+
+
+ 2030 05a7 01       		.sleb128 -16
+ 2031 05a8 F1       		.byte	0x0
+ 2032 05a9 70050000 		.uleb128 0xf
+ 2033 05ad 02       		.byte	0x1
+ 2034 05ae 91       		.ascii	"_getpid\000"
+ 2035 05af 70       		.byte	0x1
+ 2036 05b0 00       		.byte	0xfd
+ 2037 05b1 0F       		.byte	0x1
+ 2038 05b2 01       		.4byte	0xf8
+ 2039 05b3 5F676574 		.4byte	.LFB18
+ 2039      70696400 
+ 2040 05bb 01       		.4byte	.LFE18
+ 2041 05bc FD       		.4byte	.LLST16
+ 2042 05bd 01       		.uleb128 0x10
+ 2043 05be F8000000 		.byte	0x1
+ 2044 05c2 00000000 		.ascii	"_fork\000"
+ 2045 05c6 1A000000 		.byte	0x1
+ 2046 05ca 70030000 		.2byte	0x108
+ 2047 05ce 10       		.byte	0x1
+ 2048 05cf 01       		.4byte	0xf8
+ 2049 05d0 5F666F72 		.4byte	.LFB19
+ 2049      6B00
+ 2050 05d6 01       		.4byte	.LFE19
+ 2051 05d7 0801     		.4byte	.LLST17
+ 2052 05d9 01       		.uleb128 0xa
+ 2053 05da F8000000 		.ascii	"CyHeap\000"
+ 2054 05de 00000000 		.byte	0x1
+ 2055 05e2 1A000000 		.byte	0x26
+ 2056 05e6 9B030000 		.4byte	0x1ab
+ 2057 05ea 0A       		.byte	0x5
+ 2058 05eb 43794865 		.byte	0x3
+ 2058      617000
+ 2059 05f2 01       		.4byte	CyHeap
+ 2060 05f3 26       		.uleb128 0x11
+ 2061 05f4 AB010000 		.4byte	0x125
+ 2062 05f8 05       		.4byte	0x60e
+ 2063 05f9 03       		.uleb128 0x12
+ 2064 05fa 04000000 		.4byte	0x120
+ 2065 05fe 11       		.byte	0x0
+ 2066 05ff 25010000 		.byte	0x0
+ 2067 0603 0E060000 		.uleb128 0x13
+ 2068 0607 12       		.ascii	"__env\000"
+ 2069 0608 20010000 		.byte	0x1
+ 2070 060c 00       		.byte	0x20
+ 2071 060d 00       		.4byte	0x5fe
+ 2072 060e 13       		.byte	0x1
+ 2073 060f 5F5F656E 		.byte	0x5
+ 2073      7600
+ 2074 0615 01       		.byte	0x3
+ 2075 0616 20       		.4byte	__env
+ 2076 0617 FE050000 		.uleb128 0x13
+ 2077 061b 01       		.ascii	"environ\000"
+ 2078 061c 05       		.byte	0x1
+ 2079 061d 03       		.byte	0x21
+ 2080 061e 00000000 		.4byte	0x638
+ 2081 0622 13       		.byte	0x1
+ 2082 0623 656E7669 		.byte	0x5
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 44
+
+
+ 2082      726F6E00 
+ 2083 062b 01       		.byte	0x3
+ 2084 062c 21       		.4byte	environ
+ 2085 062d 38060000 		.uleb128 0x6
+ 2086 0631 01       		.byte	0x4
+ 2087 0632 05       		.4byte	0x125
+ 2088 0633 03       		.uleb128 0x14
+ 2089 0634 00000000 		.ascii	"_heap\000"
+ 2090 0638 06       		.byte	0x1
+ 2091 0639 04       		.byte	0x25
+ 2092 063a 25010000 		.4byte	0xbb
+ 2093 063e 14       		.byte	0x1
+ 2094 063f 5F686561 		.byte	0x1
+ 2094      7000
+ 2095 0645 01       		.uleb128 0x13
+ 2096 0646 25       		.ascii	"stackPointer\000"
+ 2097 0647 BB000000 		.byte	0x1
+ 2098 064b 01       		.byte	0x27
+ 2099 064c 01       		.4byte	0x125
+ 2100 064d 13       		.byte	0x1
+ 2101 064e 73746163 		.byte	0x1
+ 2101      6B506F69 
+ 2101      6E746572 
+ 2101      00
+ 2102 065b 01       		.byte	0x5d
+ 2103 065c 27       		.byte	0x0
+ 2104 065d 25010000 		.section	.debug_abbrev
+ 2105 0661 01       		.uleb128 0x1
+ 2106 0662 01       		.uleb128 0x11
+ 2107 0663 5D       		.byte	0x1
+ 2108 0664 00       		.uleb128 0x25
+ 2109              		.uleb128 0x8
+ 2110 0000 01       		.uleb128 0x13
+ 2111 0001 11       		.uleb128 0xb
+ 2112 0002 01       		.uleb128 0x3
+ 2113 0003 25       		.uleb128 0x8
+ 2114 0004 08       		.uleb128 0x1b
+ 2115 0005 13       		.uleb128 0x8
+ 2116 0006 0B       		.uleb128 0x52
+ 2117 0007 03       		.uleb128 0x1
+ 2118 0008 08       		.uleb128 0x10
+ 2119 0009 1B       		.uleb128 0x6
+ 2120 000a 08       		.byte	0x0
+ 2121 000b 52       		.byte	0x0
+ 2122 000c 01       		.uleb128 0x2
+ 2123 000d 10       		.uleb128 0x24
+ 2124 000e 06       		.byte	0x0
+ 2125 000f 00       		.uleb128 0xb
+ 2126 0010 00       		.uleb128 0xb
+ 2127 0011 02       		.uleb128 0x3e
+ 2128 0012 24       		.uleb128 0xb
+ 2129 0013 00       		.uleb128 0x3
+ 2130 0014 0B       		.uleb128 0x8
+ 2131 0015 0B       		.byte	0x0
+ 2132 0016 3E       		.byte	0x0
+ 2133 0017 0B       		.uleb128 0x3
+ 2134 0018 03       		.uleb128 0x16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 45
+
+
+ 2135 0019 08       		.byte	0x0
+ 2136 001a 00       		.uleb128 0x3
+ 2137 001b 00       		.uleb128 0x8
+ 2138 001c 03       		.uleb128 0x3a
+ 2139 001d 16       		.uleb128 0xb
+ 2140 001e 00       		.uleb128 0x3b
+ 2141 001f 03       		.uleb128 0xb
+ 2142 0020 08       		.uleb128 0x49
+ 2143 0021 3A       		.uleb128 0x13
+ 2144 0022 0B       		.byte	0x0
+ 2145 0023 3B       		.byte	0x0
+ 2146 0024 0B       		.uleb128 0x4
+ 2147 0025 49       		.uleb128 0x24
+ 2148 0026 13       		.byte	0x0
+ 2149 0027 00       		.uleb128 0xb
+ 2150 0028 00       		.uleb128 0xb
+ 2151 0029 04       		.uleb128 0x3e
+ 2152 002a 24       		.uleb128 0xb
+ 2153 002b 00       		.byte	0x0
+ 2154 002c 0B       		.byte	0x0
+ 2155 002d 0B       		.uleb128 0x5
+ 2156 002e 3E       		.uleb128 0xf
+ 2157 002f 0B       		.byte	0x0
+ 2158 0030 00       		.uleb128 0xb
+ 2159 0031 00       		.uleb128 0xb
+ 2160 0032 05       		.byte	0x0
+ 2161 0033 0F       		.byte	0x0
+ 2162 0034 00       		.uleb128 0x6
+ 2163 0035 0B       		.uleb128 0xf
+ 2164 0036 0B       		.byte	0x0
+ 2165 0037 00       		.uleb128 0xb
+ 2166 0038 00       		.uleb128 0xb
+ 2167 0039 06       		.uleb128 0x49
+ 2168 003a 0F       		.uleb128 0x13
+ 2169 003b 00       		.byte	0x0
+ 2170 003c 0B       		.byte	0x0
+ 2171 003d 0B       		.uleb128 0x7
+ 2172 003e 49       		.uleb128 0x26
+ 2173 003f 13       		.byte	0x0
+ 2174 0040 00       		.uleb128 0x49
+ 2175 0041 00       		.uleb128 0x13
+ 2176 0042 07       		.byte	0x0
+ 2177 0043 26       		.byte	0x0
+ 2178 0044 00       		.uleb128 0x8
+ 2179 0045 49       		.uleb128 0x2e
+ 2180 0046 13       		.byte	0x1
+ 2181 0047 00       		.uleb128 0x3f
+ 2182 0048 00       		.uleb128 0xc
+ 2183 0049 08       		.uleb128 0x3
+ 2184 004a 2E       		.uleb128 0x8
+ 2185 004b 01       		.uleb128 0x3a
+ 2186 004c 3F       		.uleb128 0xb
+ 2187 004d 0C       		.uleb128 0x3b
+ 2188 004e 03       		.uleb128 0xb
+ 2189 004f 08       		.uleb128 0x27
+ 2190 0050 3A       		.uleb128 0xc
+ 2191 0051 0B       		.uleb128 0x49
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 46
+
+
+ 2192 0052 3B       		.uleb128 0x13
+ 2193 0053 0B       		.uleb128 0x11
+ 2194 0054 27       		.uleb128 0x1
+ 2195 0055 0C       		.uleb128 0x12
+ 2196 0056 49       		.uleb128 0x1
+ 2197 0057 13       		.uleb128 0x40
+ 2198 0058 11       		.uleb128 0x6
+ 2199 0059 01       		.uleb128 0x1
+ 2200 005a 12       		.uleb128 0x13
+ 2201 005b 01       		.byte	0x0
+ 2202 005c 40       		.byte	0x0
+ 2203 005d 06       		.uleb128 0x9
+ 2204 005e 01       		.uleb128 0x5
+ 2205 005f 13       		.byte	0x0
+ 2206 0060 00       		.uleb128 0x3
+ 2207 0061 00       		.uleb128 0x8
+ 2208 0062 09       		.uleb128 0x3a
+ 2209 0063 05       		.uleb128 0xb
+ 2210 0064 00       		.uleb128 0x3b
+ 2211 0065 03       		.uleb128 0xb
+ 2212 0066 08       		.uleb128 0x49
+ 2213 0067 3A       		.uleb128 0x13
+ 2214 0068 0B       		.uleb128 0x2
+ 2215 0069 3B       		.uleb128 0xa
+ 2216 006a 0B       		.byte	0x0
+ 2217 006b 49       		.byte	0x0
+ 2218 006c 13       		.uleb128 0xa
+ 2219 006d 02       		.uleb128 0x34
+ 2220 006e 0A       		.byte	0x0
+ 2221 006f 00       		.uleb128 0x3
+ 2222 0070 00       		.uleb128 0x8
+ 2223 0071 0A       		.uleb128 0x3a
+ 2224 0072 34       		.uleb128 0xb
+ 2225 0073 00       		.uleb128 0x3b
+ 2226 0074 03       		.uleb128 0xb
+ 2227 0075 08       		.uleb128 0x49
+ 2228 0076 3A       		.uleb128 0x13
+ 2229 0077 0B       		.uleb128 0x2
+ 2230 0078 3B       		.uleb128 0xa
+ 2231 0079 0B       		.byte	0x0
+ 2232 007a 49       		.byte	0x0
+ 2233 007b 13       		.uleb128 0xb
+ 2234 007c 02       		.uleb128 0x2e
+ 2235 007d 0A       		.byte	0x1
+ 2236 007e 00       		.uleb128 0x3f
+ 2237 007f 00       		.uleb128 0xc
+ 2238 0080 0B       		.uleb128 0x3
+ 2239 0081 2E       		.uleb128 0x8
+ 2240 0082 01       		.uleb128 0x3a
+ 2241 0083 3F       		.uleb128 0xb
+ 2242 0084 0C       		.uleb128 0x3b
+ 2243 0085 03       		.uleb128 0xb
+ 2244 0086 08       		.uleb128 0x27
+ 2245 0087 3A       		.uleb128 0xc
+ 2246 0088 0B       		.uleb128 0x11
+ 2247 0089 3B       		.uleb128 0x1
+ 2248 008a 0B       		.uleb128 0x12
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 47
+
+
+ 2249 008b 27       		.uleb128 0x1
+ 2250 008c 0C       		.uleb128 0x40
+ 2251 008d 11       		.uleb128 0x6
+ 2252 008e 01       		.uleb128 0x1
+ 2253 008f 12       		.uleb128 0x13
+ 2254 0090 01       		.byte	0x0
+ 2255 0091 40       		.byte	0x0
+ 2256 0092 06       		.uleb128 0xc
+ 2257 0093 01       		.uleb128 0x5
+ 2258 0094 13       		.byte	0x0
+ 2259 0095 00       		.uleb128 0x3
+ 2260 0096 00       		.uleb128 0xe
+ 2261 0097 0C       		.uleb128 0x3a
+ 2262 0098 05       		.uleb128 0xb
+ 2263 0099 00       		.uleb128 0x3b
+ 2264 009a 03       		.uleb128 0xb
+ 2265 009b 0E       		.uleb128 0x49
+ 2266 009c 3A       		.uleb128 0x13
+ 2267 009d 0B       		.uleb128 0x2
+ 2268 009e 3B       		.uleb128 0xa
+ 2269 009f 0B       		.byte	0x0
+ 2270 00a0 49       		.byte	0x0
+ 2271 00a1 13       		.uleb128 0xd
+ 2272 00a2 02       		.uleb128 0x13
+ 2273 00a3 0A       		.byte	0x1
+ 2274 00a4 00       		.uleb128 0x3
+ 2275 00a5 00       		.uleb128 0x8
+ 2276 00a6 0D       		.uleb128 0xb
+ 2277 00a7 13       		.uleb128 0xb
+ 2278 00a8 01       		.uleb128 0x3a
+ 2279 00a9 03       		.uleb128 0xb
+ 2280 00aa 08       		.uleb128 0x3b
+ 2281 00ab 0B       		.uleb128 0xb
+ 2282 00ac 0B       		.uleb128 0x1
+ 2283 00ad 3A       		.uleb128 0x13
+ 2284 00ae 0B       		.byte	0x0
+ 2285 00af 3B       		.byte	0x0
+ 2286 00b0 0B       		.uleb128 0xe
+ 2287 00b1 01       		.uleb128 0xd
+ 2288 00b2 13       		.byte	0x0
+ 2289 00b3 00       		.uleb128 0x3
+ 2290 00b4 00       		.uleb128 0x8
+ 2291 00b5 0E       		.uleb128 0x3a
+ 2292 00b6 0D       		.uleb128 0xb
+ 2293 00b7 00       		.uleb128 0x3b
+ 2294 00b8 03       		.uleb128 0xb
+ 2295 00b9 08       		.uleb128 0x49
+ 2296 00ba 3A       		.uleb128 0x13
+ 2297 00bb 0B       		.uleb128 0x38
+ 2298 00bc 3B       		.uleb128 0xa
+ 2299 00bd 0B       		.byte	0x0
+ 2300 00be 49       		.byte	0x0
+ 2301 00bf 13       		.uleb128 0xf
+ 2302 00c0 38       		.uleb128 0x2e
+ 2303 00c1 0A       		.byte	0x0
+ 2304 00c2 00       		.uleb128 0x3f
+ 2305 00c3 00       		.uleb128 0xc
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 48
+
+
+ 2306 00c4 0F       		.uleb128 0x3
+ 2307 00c5 2E       		.uleb128 0x8
+ 2308 00c6 00       		.uleb128 0x3a
+ 2309 00c7 3F       		.uleb128 0xb
+ 2310 00c8 0C       		.uleb128 0x3b
+ 2311 00c9 03       		.uleb128 0xb
+ 2312 00ca 08       		.uleb128 0x27
+ 2313 00cb 3A       		.uleb128 0xc
+ 2314 00cc 0B       		.uleb128 0x49
+ 2315 00cd 3B       		.uleb128 0x13
+ 2316 00ce 0B       		.uleb128 0x11
+ 2317 00cf 27       		.uleb128 0x1
+ 2318 00d0 0C       		.uleb128 0x12
+ 2319 00d1 49       		.uleb128 0x1
+ 2320 00d2 13       		.uleb128 0x40
+ 2321 00d3 11       		.uleb128 0x6
+ 2322 00d4 01       		.byte	0x0
+ 2323 00d5 12       		.byte	0x0
+ 2324 00d6 01       		.uleb128 0x10
+ 2325 00d7 40       		.uleb128 0x2e
+ 2326 00d8 06       		.byte	0x0
+ 2327 00d9 00       		.uleb128 0x3f
+ 2328 00da 00       		.uleb128 0xc
+ 2329 00db 10       		.uleb128 0x3
+ 2330 00dc 2E       		.uleb128 0x8
+ 2331 00dd 00       		.uleb128 0x3a
+ 2332 00de 3F       		.uleb128 0xb
+ 2333 00df 0C       		.uleb128 0x3b
+ 2334 00e0 03       		.uleb128 0x5
+ 2335 00e1 08       		.uleb128 0x27
+ 2336 00e2 3A       		.uleb128 0xc
+ 2337 00e3 0B       		.uleb128 0x49
+ 2338 00e4 3B       		.uleb128 0x13
+ 2339 00e5 05       		.uleb128 0x11
+ 2340 00e6 27       		.uleb128 0x1
+ 2341 00e7 0C       		.uleb128 0x12
+ 2342 00e8 49       		.uleb128 0x1
+ 2343 00e9 13       		.uleb128 0x40
+ 2344 00ea 11       		.uleb128 0x6
+ 2345 00eb 01       		.byte	0x0
+ 2346 00ec 12       		.byte	0x0
+ 2347 00ed 01       		.uleb128 0x11
+ 2348 00ee 40       		.uleb128 0x1
+ 2349 00ef 06       		.byte	0x1
+ 2350 00f0 00       		.uleb128 0x49
+ 2351 00f1 00       		.uleb128 0x13
+ 2352 00f2 11       		.uleb128 0x1
+ 2353 00f3 01       		.uleb128 0x13
+ 2354 00f4 01       		.byte	0x0
+ 2355 00f5 49       		.byte	0x0
+ 2356 00f6 13       		.uleb128 0x12
+ 2357 00f7 01       		.uleb128 0x21
+ 2358 00f8 13       		.byte	0x0
+ 2359 00f9 00       		.uleb128 0x49
+ 2360 00fa 00       		.uleb128 0x13
+ 2361 00fb 12       		.uleb128 0x2f
+ 2362 00fc 21       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 49
+
+
+ 2363 00fd 00       		.byte	0x0
+ 2364 00fe 49       		.byte	0x0
+ 2365 00ff 13       		.uleb128 0x13
+ 2366 0100 2F       		.uleb128 0x34
+ 2367 0101 0B       		.byte	0x0
+ 2368 0102 00       		.uleb128 0x3
+ 2369 0103 00       		.uleb128 0x8
+ 2370 0104 13       		.uleb128 0x3a
+ 2371 0105 34       		.uleb128 0xb
+ 2372 0106 00       		.uleb128 0x3b
+ 2373 0107 03       		.uleb128 0xb
+ 2374 0108 08       		.uleb128 0x49
+ 2375 0109 3A       		.uleb128 0x13
+ 2376 010a 0B       		.uleb128 0x3f
+ 2377 010b 3B       		.uleb128 0xc
+ 2378 010c 0B       		.uleb128 0x2
+ 2379 010d 49       		.uleb128 0xa
+ 2380 010e 13       		.byte	0x0
+ 2381 010f 3F       		.byte	0x0
+ 2382 0110 0C       		.uleb128 0x14
+ 2383 0111 02       		.uleb128 0x34
+ 2384 0112 0A       		.byte	0x0
+ 2385 0113 00       		.uleb128 0x3
+ 2386 0114 00       		.uleb128 0x8
+ 2387 0115 14       		.uleb128 0x3a
+ 2388 0116 34       		.uleb128 0xb
+ 2389 0117 00       		.uleb128 0x3b
+ 2390 0118 03       		.uleb128 0xb
+ 2391 0119 08       		.uleb128 0x49
+ 2392 011a 3A       		.uleb128 0x13
+ 2393 011b 0B       		.uleb128 0x3f
+ 2394 011c 3B       		.uleb128 0xc
+ 2395 011d 0B       		.uleb128 0x3c
+ 2396 011e 49       		.uleb128 0xc
+ 2397 011f 13       		.byte	0x0
+ 2398 0120 3F       		.byte	0x0
+ 2399 0121 0C       		.byte	0x0
+ 2400 0122 3C       		.section	.debug_pubnames,"",%progbits
+ 2401 0123 0C       		.4byte	0xf9
+ 2402 0124 00       		.2byte	0x2
+ 2403 0125 00       		.4byte	.Ldebug_info0
+ 2404 0126 00       		.4byte	0x665
+ 2405              		.4byte	0x158
+ 2406 0000 F9000000 		.ascii	"_sbrk\000"
+ 2407 0004 0200     		.4byte	0x1b1
+ 2408 0006 00000000 		.ascii	"_wait\000"
+ 2409 000a 65060000 		.4byte	0x1e8
+ 2410 000e 58010000 		.ascii	"_exit\000"
+ 2411 0012 5F736272 		.4byte	0x215
+ 2411      6B00
+ 2412 0018 B1010000 		.ascii	"_kill\000"
+ 2413 001c 5F776169 		.4byte	0x251
+ 2413      7400
+ 2414 0022 E8010000 		.ascii	"_link\000"
+ 2415 0026 5F657869 		.4byte	0x292
+ 2415      7400
+ 2416 002c 15020000 		.ascii	"_unlink\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 50
+
+
+ 2417 0030 5F6B696C 		.4byte	0x2c3
+ 2417      6C00
+ 2418 0036 51020000 		.ascii	"_symlink\000"
+ 2419 003a 5F6C696E 		.4byte	0x314
+ 2419      6B00
+ 2420 0040 92020000 		.ascii	"_readlink\000"
+ 2421 0044 5F756E6C 		.4byte	0x36d
+ 2421      696E6B00 
+ 2422 004c C3020000 		.ascii	"_open\000"
+ 2423 0050 5F73796D 		.4byte	0x3ba
+ 2423      6C696E6B 
+ 2423      00
+ 2424 0059 14030000 		.ascii	"_close\000"
+ 2425 005d 5F726561 		.4byte	0x3f4
+ 2425      646C696E 
+ 2425      6B00
+ 2426 0067 6D030000 		.ascii	"isatty\000"
+ 2427 006b 5F6F7065 		.4byte	0x423
+ 2427      6E00
+ 2428 0071 BA030000 		.ascii	"_write\000"
+ 2429 0075 5F636C6F 		.4byte	0x475
+ 2429      736500
+ 2430 007c F4030000 		.ascii	"_read\000"
+ 2431 0080 69736174 		.4byte	0x4c2
+ 2431      747900
+ 2432 0087 23040000 		.ascii	"_lseek\000"
+ 2433 008b 5F777269 		.4byte	0x52d
+ 2433      746500
+ 2434 0092 75040000 		.ascii	"_fstat\000"
+ 2435 0096 5F726561 		.4byte	0x576
+ 2435      6400
+ 2436 009c C2040000 		.ascii	"_stat\000"
+ 2437 00a0 5F6C7365 		.4byte	0x5b1
+ 2437      656B00
+ 2438 00a7 2D050000 		.ascii	"_getpid\000"
+ 2439 00ab 5F667374 		.4byte	0x5ce
+ 2439      617400
+ 2440 00b2 76050000 		.ascii	"_fork\000"
+ 2441 00b6 5F737461 		.4byte	0x60e
+ 2441      7400
+ 2442 00bc B1050000 		.ascii	"__env\000"
+ 2443 00c0 5F676574 		.4byte	0x622
+ 2443      70696400 
+ 2444 00c8 CE050000 		.ascii	"environ\000"
+ 2445 00cc 5F666F72 		.4byte	0x64d
+ 2445      6B00
+ 2446 00d2 0E060000 		.ascii	"stackPointer\000"
+ 2447 00d6 5F5F656E 		.4byte	0x0
+ 2447      7600
+ 2448 00dc 22060000 		.section	.debug_aranges,"",%progbits
+ 2449 00e0 656E7669 		.4byte	0xa4
+ 2449      726F6E00 
+ 2450 00e8 4D060000 		.2byte	0x2
+ 2451 00ec 73746163 		.4byte	.Ldebug_info0
+ 2451      6B506F69 
+ 2451      6E746572 
+ 2451      00
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccYRaaaa.s 			page 51
+
+
+ 2452 00f9 00000000 		.byte	0x4
+ 2453              		.byte	0x0
+ 2454 0000 A4000000 		.2byte	0x0
+ 2455 0004 0200     		.2byte	0x0
+ 2456 0006 00000000 		.4byte	.LFB2
+ 2457 000a 04       		.4byte	.LFE2-.LFB2
+ 2458 000b 00       		.4byte	.LFB3
+ 2459 000c 0000     		.4byte	.LFE3-.LFB3
+ 2460 000e 0000     		.4byte	.LFB4
+ 2461 0010 00000000 		.4byte	.LFE4-.LFB4
+ 2462 0014 50000000 		.4byte	.LFB5
+ 2463 0018 00000000 		.4byte	.LFE5-.LFB5
+ 2464 001c 22000000 		.4byte	.LFB6
+ 2465 0020 00000000 		.4byte	.LFE6-.LFB6
+ 2466 0024 0A000000 		.4byte	.LFB7
+ 2467 0028 00000000 		.4byte	.LFE7-.LFB7
+ 2468 002c 24000000 		.4byte	.LFB8
+ 2469 0030 00000000 		.4byte	.LFE8-.LFB8
+ 2470 0034 24000000 		.4byte	.LFB9
+ 2471 0038 00000000 		.4byte	.LFE9-.LFB9
+ 2472 003c 22000000 		.4byte	.LFB10
+ 2473 0040 00000000 		.4byte	.LFE10-.LFB10
+ 2474 0044 24000000 		.4byte	.LFB11
+ 2475 0048 00000000 		.4byte	.LFE11-.LFB11
+ 2476 004c 26000000 		.4byte	.LFB12
+ 2477 0050 00000000 		.4byte	.LFE12-.LFB12
+ 2478 0054 26000000 		.4byte	.LFB13
+ 2479 0058 00000000 		.4byte	.LFE13-.LFB13
+ 2480 005c 22000000 		.4byte	.LFB14
+ 2481 0060 00000000 		.4byte	.LFE14-.LFB14
+ 2482 0064 22000000 		.4byte	.LFB15
+ 2483 0068 00000000 		.4byte	.LFE15-.LFB15
+ 2484 006c 26000000 		.4byte	.LFB16
+ 2485 0070 00000000 		.4byte	.LFE16-.LFB16
+ 2486 0074 26000000 		.4byte	.LFB17
+ 2487 0078 00000000 		.4byte	.LFE17-.LFB17
+ 2488 007c 26000000 		.4byte	.LFB18
+ 2489 0080 00000000 		.4byte	.LFE18-.LFB18
+ 2490 0084 24000000 		.4byte	.LFB19
+ 2491 0088 00000000 		.4byte	.LFE19-.LFB19
+ 2492 008c 24000000 		.4byte	0x0
+ 2493 0090 00000000 		.4byte	0x0
+ 2494 0094 1A000000 		.section	.debug_str,"",%progbits
+ 2495 0098 00000000 	.LASF0:
+ 2496 009c 1A000000 		.ascii	"file\000"
+ 2497 00a0 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 2498 00a4 00000000 	...

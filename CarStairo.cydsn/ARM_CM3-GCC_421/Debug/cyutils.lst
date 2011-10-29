@@ -1,0 +1,663 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"cyutils.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 61000000 		.text
+  20      02004600 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.text.CySetReg24,"ax",%progbits
+  23              		.align	2
+  24              		.global	CySetReg24
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	CySetReg24, %function
+  28              	CySetReg24:
+  29              	.LFB2:
+  30              		.file 1 "./Generated_Source/PSoC5/cyutils.c"
+   1:./Generated_Source/PSoC5/cyutils.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/cyutils.c **** * FILENAME: cyutils.c
+   3:./Generated_Source/PSoC5/cyutils.c **** * Version 1.40
+   4:./Generated_Source/PSoC5/cyutils.c **** *  
+   5:./Generated_Source/PSoC5/cyutils.c **** *  Description:
+   6:./Generated_Source/PSoC5/cyutils.c **** *   CyUtils provides functions to handles endian issues for 16 and 32-bit 
+   7:./Generated_Source/PSoC5/cyutils.c **** *   registers.
+   8:./Generated_Source/PSoC5/cyutils.c **** * 
+   9:./Generated_Source/PSoC5/cyutils.c **** *  Note:
+  10:./Generated_Source/PSoC5/cyutils.c **** *
+  11:./Generated_Source/PSoC5/cyutils.c **** *******************************************************************************
+  12:./Generated_Source/PSoC5/cyutils.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  13:./Generated_Source/PSoC5/cyutils.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:./Generated_Source/PSoC5/cyutils.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:./Generated_Source/PSoC5/cyutils.c **** * the software package with which this file was provided.
+  16:./Generated_Source/PSoC5/cyutils.c **** ********************************************************************************/
+  17:./Generated_Source/PSoC5/cyutils.c **** 
+  18:./Generated_Source/PSoC5/cyutils.c **** 
+  19:./Generated_Source/PSoC5/cyutils.c **** 
+  20:./Generated_Source/PSoC5/cyutils.c **** 
+  21:./Generated_Source/PSoC5/cyutils.c **** #include "cytypes.h"
+  22:./Generated_Source/PSoC5/cyutils.c **** 
+  23:./Generated_Source/PSoC5/cyutils.c **** typedef union
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 2
+
+
+  24:./Generated_Source/PSoC5/cyutils.c **** {
+  25:./Generated_Source/PSoC5/cyutils.c **** 	uint8 byte[2];
+  26:./Generated_Source/PSoC5/cyutils.c **** 	uint16 value;
+  27:./Generated_Source/PSoC5/cyutils.c **** } union_reg16;
+  28:./Generated_Source/PSoC5/cyutils.c **** 
+  29:./Generated_Source/PSoC5/cyutils.c **** typedef union
+  30:./Generated_Source/PSoC5/cyutils.c **** {
+  31:./Generated_Source/PSoC5/cyutils.c **** 	uint8 byte[4];
+  32:./Generated_Source/PSoC5/cyutils.c **** 	uint32 value;
+  33:./Generated_Source/PSoC5/cyutils.c **** } union_reg32;
+  34:./Generated_Source/PSoC5/cyutils.c **** 
+  35:./Generated_Source/PSoC5/cyutils.c **** /* unsigned short byte locations */
+  36:./Generated_Source/PSoC5/cyutils.c **** #define LE16_MSB_LOCATION	1
+  37:./Generated_Source/PSoC5/cyutils.c **** #define LE16_LSB_LOCATION	0	
+  38:./Generated_Source/PSoC5/cyutils.c **** 
+  39:./Generated_Source/PSoC5/cyutils.c **** #define BE16_MSB_LOCATION	0	
+  40:./Generated_Source/PSoC5/cyutils.c **** #define BE16_LSB_LOCATION	1	
+  41:./Generated_Source/PSoC5/cyutils.c **** 
+  42:./Generated_Source/PSoC5/cyutils.c **** /* uint32 byte locations */
+  43:./Generated_Source/PSoC5/cyutils.c **** /* NLSB (Next Least Significant Byte) */
+  44:./Generated_Source/PSoC5/cyutils.c **** /* NMSB (Next Most Significant Byte)  */
+  45:./Generated_Source/PSoC5/cyutils.c **** #define BE32_LSB_LOCATION 	3
+  46:./Generated_Source/PSoC5/cyutils.c **** #define BE32_NLSB_LOCATION 	2
+  47:./Generated_Source/PSoC5/cyutils.c **** #define BE32_NMSB_LOCATION 	1
+  48:./Generated_Source/PSoC5/cyutils.c **** #define BE32_MSB_LOCATION 	0
+  49:./Generated_Source/PSoC5/cyutils.c ****    
+  50:./Generated_Source/PSoC5/cyutils.c **** #define LE32_LSB_LOCATION 	0
+  51:./Generated_Source/PSoC5/cyutils.c **** #define LE32_NLSB_LOCATION 	1
+  52:./Generated_Source/PSoC5/cyutils.c **** #define LE32_NMSB_LOCATION 	2
+  53:./Generated_Source/PSoC5/cyutils.c **** #define LE32_MSB_LOCATION 	3
+  54:./Generated_Source/PSoC5/cyutils.c **** 
+  55:./Generated_Source/PSoC5/cyutils.c **** #if defined(__C51__)
+  56:./Generated_Source/PSoC5/cyutils.c **** 
+  57:./Generated_Source/PSoC5/cyutils.c **** /* Functions for register access of 16 and 32 bit for big endian compiler */
+  58:./Generated_Source/PSoC5/cyutils.c **** uint16 CyGetSwapReg16(uint16 xdata * addr)
+  59:./Generated_Source/PSoC5/cyutils.c **** {
+  60:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+  61:./Generated_Source/PSoC5/cyutils.c **** 	union_reg16 reg;
+  62:./Generated_Source/PSoC5/cyutils.c **** 	
+  63:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE16_MSB_LOCATION] = CY_GET_REG8((uint8 *)addr + LE16_MSB_LOCATION);
+  64:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE16_LSB_LOCATION] = CY_GET_REG8((uint8 *)addr + LE16_LSB_LOCATION);
+  65:./Generated_Source/PSoC5/cyutils.c **** 					 
+  66:./Generated_Source/PSoC5/cyutils.c **** 	return reg.value;
+  67:./Generated_Source/PSoC5/cyutils.c **** }
+  68:./Generated_Source/PSoC5/cyutils.c **** 
+  69:./Generated_Source/PSoC5/cyutils.c **** void CySetSwapReg16(uint16 xdata * addr, unsigned short value)
+  70:./Generated_Source/PSoC5/cyutils.c **** {
+  71:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+  72:./Generated_Source/PSoC5/cyutils.c **** 	union_reg16 reg;
+  73:./Generated_Source/PSoC5/cyutils.c **** 	reg.value = value;
+  74:./Generated_Source/PSoC5/cyutils.c **** 	
+  75:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8((uint8 *)addr + LE16_LSB_LOCATION, reg.byte[BE16_LSB_LOCATION]);
+  76:./Generated_Source/PSoC5/cyutils.c **** 	/* Address plus 1 */
+  77:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8((uint8 *)addr + LE16_MSB_LOCATION, reg.byte[BE16_MSB_LOCATION]);
+  78:./Generated_Source/PSoC5/cyutils.c **** 
+  79:./Generated_Source/PSoC5/cyutils.c **** 	return;
+  80:./Generated_Source/PSoC5/cyutils.c **** }
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 3
+
+
+  81:./Generated_Source/PSoC5/cyutils.c **** 
+  82:./Generated_Source/PSoC5/cyutils.c **** /* 24-bit register access functions */
+  83:./Generated_Source/PSoC5/cyutils.c **** uint32 CyGetSwapReg24(uint32 xdata * addr)
+  84:./Generated_Source/PSoC5/cyutils.c **** {
+  85:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+  86:./Generated_Source/PSoC5/cyutils.c **** 	union_reg32 reg;
+  87:./Generated_Source/PSoC5/cyutils.c **** 
+  88:./Generated_Source/PSoC5/cyutils.c ****     /* MSB of big endian value gets MSB of little endian 24-bit register, not MSB of 32-bit value r
+  89:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_LSB_LOCATION ] = CY_GET_REG8(((uint8 *)addr) + LE32_LSB_LOCATION);
+  90:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_NLSB_LOCATION] = CY_GET_REG8(((uint8 *)addr) + LE32_NLSB_LOCATION);
+  91:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_NMSB_LOCATION] = CY_GET_REG8(((uint8 *)addr) + LE32_NMSB_LOCATION);
+  92:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_MSB_LOCATION ] = 0;
+  93:./Generated_Source/PSoC5/cyutils.c **** 					 
+  94:./Generated_Source/PSoC5/cyutils.c **** 	return reg.value;
+  95:./Generated_Source/PSoC5/cyutils.c **** }
+  96:./Generated_Source/PSoC5/cyutils.c **** 
+  97:./Generated_Source/PSoC5/cyutils.c **** void CySetSwapReg24(uint32 xdata * addr, unsigned long value)
+  98:./Generated_Source/PSoC5/cyutils.c **** {
+  99:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+ 100:./Generated_Source/PSoC5/cyutils.c **** 	union_reg32 reg;
+ 101:./Generated_Source/PSoC5/cyutils.c **** 	reg.value = value;
+ 102:./Generated_Source/PSoC5/cyutils.c **** 
+ 103:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_LSB_LOCATION ,  reg.byte[BE32_LSB_LOCATION]);
+ 104:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NLSB_LOCATION,  reg.byte[BE32_NLSB_LOCATION]);
+ 105:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NMSB_LOCATION,  reg.byte[BE32_NMSB_LOCATION]);
+ 106:./Generated_Source/PSoC5/cyutils.c **** 
+ 107:./Generated_Source/PSoC5/cyutils.c **** 	return;
+ 108:./Generated_Source/PSoC5/cyutils.c **** }
+ 109:./Generated_Source/PSoC5/cyutils.c **** 
+ 110:./Generated_Source/PSoC5/cyutils.c **** /* 32-bit register access functions */
+ 111:./Generated_Source/PSoC5/cyutils.c **** uint32 CyGetSwapReg32(uint32 xdata * addr)
+ 112:./Generated_Source/PSoC5/cyutils.c **** {
+ 113:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+ 114:./Generated_Source/PSoC5/cyutils.c **** 	union_reg32 reg;
+ 115:./Generated_Source/PSoC5/cyutils.c **** 
+ 116:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_MSB_LOCATION] =  CY_GET_REG8(((uint8 *)addr) + LE32_MSB_LOCATION);
+ 117:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_NMSB_LOCATION] = CY_GET_REG8(((uint8 *)addr) + LE32_NMSB_LOCATION);
+ 118:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_NLSB_LOCATION] = CY_GET_REG8(((uint8 *)addr) + LE32_NLSB_LOCATION);
+ 119:./Generated_Source/PSoC5/cyutils.c **** 	reg.byte[BE32_LSB_LOCATION] =  CY_GET_REG8(((uint8 *)addr) + LE32_LSB_LOCATION);
+ 120:./Generated_Source/PSoC5/cyutils.c **** 					 
+ 121:./Generated_Source/PSoC5/cyutils.c **** 	return reg.value;
+ 122:./Generated_Source/PSoC5/cyutils.c **** }
+ 123:./Generated_Source/PSoC5/cyutils.c **** 
+ 124:./Generated_Source/PSoC5/cyutils.c **** void CySetSwapReg32(uint32 xdata * addr, uint32 value)
+ 125:./Generated_Source/PSoC5/cyutils.c **** {
+ 126:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+ 127:./Generated_Source/PSoC5/cyutils.c **** 	union_reg32 reg;
+ 128:./Generated_Source/PSoC5/cyutils.c **** 	reg.value = value;
+ 129:./Generated_Source/PSoC5/cyutils.c **** 
+ 130:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_LSB_LOCATION, reg.byte[BE32_LSB_LOCATION]);
+ 131:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NLSB_LOCATION, reg.byte[BE32_NLSB_LOCATION]);
+ 132:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NMSB_LOCATION, reg.byte[BE32_NMSB_LOCATION]);
+ 133:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_MSB_LOCATION,  reg.byte[BE32_MSB_LOCATION]);
+ 134:./Generated_Source/PSoC5/cyutils.c **** 
+ 135:./Generated_Source/PSoC5/cyutils.c **** 	return;
+ 136:./Generated_Source/PSoC5/cyutils.c **** }
+ 137:./Generated_Source/PSoC5/cyutils.c **** 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 4
+
+
+ 138:./Generated_Source/PSoC5/cyutils.c **** #endif
+ 139:./Generated_Source/PSoC5/cyutils.c **** 
+ 140:./Generated_Source/PSoC5/cyutils.c **** /* SetReg24 is for little endian compilers.*/
+ 141:./Generated_Source/PSoC5/cyutils.c **** void CySetReg24(uint32 XDATA * addr, uint32 value)
+ 142:./Generated_Source/PSoC5/cyutils.c **** {
+  31              	tend = 0, frame = 16
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		push	{r7}
+  35 0000 80B4     	.LCFI0:
+  36              		sub	sp, sp, #20
+  37 0002 85B0     	.LCFI1:
+  38              		add	r7, sp, #0
+  39 0004 00AF     	.LCFI2:
+  40              		@ lr needed for prologue
+  41              		str	r0, [r7, #4]
+  42 0006 7860     		str	r1, [r7, #0]
+  43 0008 3960     		.loc 1 145 0
+ 143:./Generated_Source/PSoC5/cyutils.c **** 	/* create a union reference to the address of the register.*/
+ 144:./Generated_Source/PSoC5/cyutils.c **** 	union_reg32 reg;
+ 145:./Generated_Source/PSoC5/cyutils.c **** 	reg.value = value;
+  44              	 #0]
+  45 000a 3B68     		str	r3, [r7, #12]
+  46 000c FB60     		.loc 1 148 0
+ 146:./Generated_Source/PSoC5/cyutils.c **** 
+ 147:./Generated_Source/PSoC5/cyutils.c ****     /* Writes 3, byte values in succession to the register's location.*/
+ 148:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_LSB_LOCATION, reg.byte[LE32_LSB_LOCATION]);
+  47              	r	r2, [r7, #4]
+  48 000e 7A68     		ldrb	r3, [r7, #12]	@ zero_extendqisi2
+  49 0010 3B7B     		strb	r3, [r2, #0]
+  50 0012 1370     		.loc 1 149 0
+ 149:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NLSB_LOCATION, reg.byte[LE32_NLSB_LOCATION]);
+  51              		r3, [r7, #4]
+  52 0014 7B68     		add	r2, r3, #1
+  53 0016 03F10102 		ldrb	r3, [r7, #13]	@ zero_extendqisi2
+  54 001a 7B7B     		strb	r3, [r2, #0]
+  55 001c 1370     		.loc 1 150 0
+ 150:./Generated_Source/PSoC5/cyutils.c **** 	CY_SET_REG8(((uint8 *)addr) + LE32_NMSB_LOCATION, reg.byte[LE32_NMSB_LOCATION]);
+  56              	r3, [r7, #4]
+  57 001e 7B68     		add	r2, r3, #2
+  58 0020 03F10202 		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+  59 0024 BB7B     		strb	r3, [r2, #0]
+  60 0026 1370     		.loc 1 153 0
+ 151:./Generated_Source/PSoC5/cyutils.c **** 	
+ 152:./Generated_Source/PSoC5/cyutils.c **** 	return;
+ 153:./Generated_Source/PSoC5/cyutils.c **** }
+  61              	r7, r7, #20
+  62 0028 07F11407 		mov	sp, r7
+  63 002c BD46     		pop	{r7}
+  64 002e 80BC     		bx	lr
+  65 0030 7047     	.LFE2:
+  66              		.size	CySetReg24, .-CySetReg24
+  67              		.section	.debug_frame,"",%progbits
+  68 0032 C046     	.Lframe0:
+  69              		.4byte	.LECIE0-.LSCIE0
+  70 0000 0C000000 	.LSCIE0:
+  71              		.4byte	0xffffffff
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 5
+
+
+  72 0004 FFFFFFFF 		.byte	0x1
+  73 0008 01       		.ascii	"\000"
+  74 0009 00       		.uleb128 0x1
+  75 000a 01       		.sleb128 -4
+  76 000b 7C       		.byte	0xe
+  77 000c 0E       		.byte	0xc
+  78 000d 0C       		.uleb128 0xd
+  79 000e 0D       		.uleb128 0x0
+  80 000f 00       		.align	2
+  81              	.LECIE0:
+  82              	.LSFDE0:
+  83              		.4byte	.LEFDE0-.LASFDE0
+  84 0010 18000000 	.LASFDE0:
+  85              		.4byte	.Lframe0
+  86 0014 00000000 		.4byte	.LFB2
+  87 0018 00000000 		.4byte	.LFE2-.LFB2
+  88 001c 32000000 		.byte	0x4
+  89 0020 42       		.4byte	.LCFI0-.LFB2
+  90              		.byte	0xe
+  91 0021 0E       		.uleb128 0x4
+  92 0022 04       		.byte	0x4
+  93 0023 42       		.4byte	.LCFI1-.LCFI0
+  94              		.byte	0xe
+  95 0024 0E       		.uleb128 0x18
+  96 0025 18       		.byte	0x87
+  97 0026 87       		.uleb128 0x1
+  98 0027 01       		.byte	0x4
+  99 0028 42       		.4byte	.LCFI2-.LCFI1
+ 100              		.byte	0xd
+ 101 0029 0D       		.uleb128 0x7
+ 102 002a 07       		.align	2
+ 103 002b 00       	.LEFDE0:
+ 104              		.text
+ 105              	.Letext0:
+ 106              		.section	.debug_loc,"",%progbits
+ 107              	.Ldebug_loc0:
+ 108              	.LLST0:
+ 109              		.4byte	.LFB2
+ 110 0000 00000000 		.4byte	.LCFI0
+ 111 0004 02000000 		.2byte	0x1
+ 112 0008 0100     		.byte	0x5d
+ 113 000a 5D       		.4byte	.LCFI0
+ 114 000b 02000000 		.4byte	.LCFI1
+ 115 000f 04000000 		.2byte	0x2
+ 116 0013 0200     		.byte	0x7d
+ 117 0015 7D       		.sleb128 4
+ 118 0016 04       		.4byte	.LCFI1
+ 119 0017 04000000 		.4byte	.LCFI2
+ 120 001b 06000000 		.2byte	0x2
+ 121 001f 0200     		.byte	0x7d
+ 122 0021 7D       		.sleb128 24
+ 123 0022 18       		.4byte	.LCFI2
+ 124 0023 06000000 		.4byte	.LFE2
+ 125 0027 32000000 		.2byte	0x2
+ 126 002b 0200     		.byte	0x77
+ 127 002d 77       		.sleb128 24
+ 128 002e 18       		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 6
+
+
+ 129 002f 00000000 		.4byte	0x0
+ 130 0033 00000000 		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 131              		.section	.debug_info
+ 132              		.4byte	0x19d
+ 133 0000 9D010000 		.2byte	0x2
+ 134 0004 0200     		.4byte	.Ldebug_abbrev0
+ 135 0006 00000000 		.byte	0x4
+ 136 000a 04       		.uleb128 0x1
+ 137 000b 01       		.ascii	"GNU C 4.2.1\000"
+ 138 000c 474E5520 		.byte	0x1
+ 138      4320342E 
+ 138      322E3100 
+ 139 0018 01       		.ascii	"./Generated_Source/PSoC5/cyutils.c\000"
+ 140 0019 2E2F4765 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 140      6E657261 
+ 140      7465645F 
+ 140      536F7572 
+ 140      63652F50 
+ 141 003c 433A5C55 		.ascii	"ro\\CarStairo.cydsn\000"
+ 141      73657273 
+ 141      5C626C69 
+ 141      6E6B795C 
+ 141      446F6375 
+ 142 006a 726F5C43 		.4byte	0x0
+ 142      61725374 
+ 142      6169726F 
+ 142      2E637964 
+ 142      736E00
+ 143 007d 00000000 		.4byte	.Ldebug_line0
+ 144 0081 00000000 		.uleb128 0x2
+ 145 0085 02       		.byte	0x1
+ 146 0086 01       		.byte	0x8
+ 147 0087 08       		.ascii	"unsigned char\000"
+ 148 0088 756E7369 		.uleb128 0x3
+ 148      676E6564 
+ 148      20636861 
+ 148      7200
+ 149 0096 03       		.ascii	"uint8\000"
+ 150 0097 75696E74 		.byte	0x2
+ 150      3800
+ 151 009d 02       		.byte	0x25
+ 152 009e 25       		.4byte	0x85
+ 153 009f 85000000 		.uleb128 0x2
+ 154 00a3 02       		.byte	0x2
+ 155 00a4 02       		.byte	0x7
+ 156 00a5 07       		.ascii	"short unsigned int\000"
+ 157 00a6 73686F72 		.uleb128 0x3
+ 157      7420756E 
+ 157      7369676E 
+ 157      65642069 
+ 157      6E7400
+ 158 00b9 03       		.ascii	"uint32\000"
+ 159 00ba 75696E74 		.byte	0x2
+ 159      333200
+ 160 00c1 02       		.byte	0x27
+ 161 00c2 27       		.4byte	0xc7
+ 162 00c3 C7000000 		.uleb128 0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 7
+
+
+ 163 00c7 02       		.byte	0x4
+ 164 00c8 04       		.byte	0x7
+ 165 00c9 07       		.ascii	"long unsigned int\000"
+ 166 00ca 6C6F6E67 		.uleb128 0x2
+ 166      20756E73 
+ 166      69676E65 
+ 166      6420696E 
+ 166      7400
+ 167 00dc 02       		.byte	0x1
+ 168 00dd 01       		.byte	0x6
+ 169 00de 06       		.ascii	"signed char\000"
+ 170 00df 7369676E 		.uleb128 0x2
+ 170      65642063 
+ 170      68617200 
+ 171 00eb 02       		.byte	0x2
+ 172 00ec 02       		.byte	0x5
+ 173 00ed 05       		.ascii	"short int\000"
+ 174 00ee 73686F72 		.uleb128 0x2
+ 174      7420696E 
+ 174      7400
+ 175 00f8 02       		.byte	0x4
+ 176 00f9 04       		.byte	0x5
+ 177 00fa 05       		.ascii	"long int\000"
+ 178 00fb 6C6F6E67 		.uleb128 0x4
+ 178      20696E74 
+ 178      00
+ 179 0104 04       		.byte	0x4
+ 180 0105 04       		.byte	0x7
+ 181 0106 07       		.uleb128 0x5
+ 182 0107 05       		.byte	0x4
+ 183 0108 04       		.byte	0x1
+ 184 0109 01       		.byte	0x1e
+ 185 010a 1E       		.4byte	0x129
+ 186 010b 29010000 		.uleb128 0x6
+ 187 010f 06       		.ascii	"byte\000"
+ 188 0110 62797465 		.byte	0x1
+ 188      00
+ 189 0115 01       		.byte	0x1f
+ 190 0116 1F       		.4byte	0x129
+ 191 0117 29010000 		.uleb128 0x6
+ 192 011b 06       		.ascii	"value\000"
+ 193 011c 76616C75 		.byte	0x1
+ 193      6500
+ 194 0122 01       		.byte	0x20
+ 195 0123 20       		.4byte	0xb9
+ 196 0124 B9000000 		.byte	0x0
+ 197 0128 00       		.uleb128 0x7
+ 198 0129 07       		.4byte	0x96
+ 199 012a 96000000 		.4byte	0x139
+ 200 012e 39010000 		.uleb128 0x8
+ 201 0132 08       		.4byte	0x104
+ 202 0133 04010000 		.byte	0x3
+ 203 0137 03       		.byte	0x0
+ 204 0138 00       		.uleb128 0x3
+ 205 0139 03       		.ascii	"union_reg32\000"
+ 206 013a 756E696F 		.byte	0x1
+ 206      6E5F7265 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 8
+
+
+ 206      67333200 
+ 207 0146 01       		.byte	0x21
+ 208 0147 21       		.4byte	0x107
+ 209 0148 07010000 		.uleb128 0x9
+ 210 014c 09       		.byte	0x1
+ 211 014d 01       		.ascii	"CySetReg24\000"
+ 212 014e 43795365 		.byte	0x1
+ 212      74526567 
+ 212      323400
+ 213 0159 01       		.byte	0x8e
+ 214 015a 8E       		.byte	0x1
+ 215 015b 01       		.4byte	.LFB2
+ 216 015c 00000000 		.4byte	.LFE2
+ 217 0160 32000000 		.4byte	.LLST0
+ 218 0164 00000000 		.4byte	0x19a
+ 219 0168 9A010000 		.uleb128 0xa
+ 220 016c 0A       		.ascii	"addr\000"
+ 221 016d 61646472 		.byte	0x1
+ 221      00
+ 222 0172 01       		.byte	0x8d
+ 223 0173 8D       		.4byte	0x19a
+ 224 0174 9A010000 		.byte	0x2
+ 225 0178 02       		.byte	0x91
+ 226 0179 91       		.sleb128 -20
+ 227 017a 6C       		.uleb128 0xa
+ 228 017b 0A       		.ascii	"value\000"
+ 229 017c 76616C75 		.byte	0x1
+ 229      6500
+ 230 0182 01       		.byte	0x8d
+ 231 0183 8D       		.4byte	0xb9
+ 232 0184 B9000000 		.byte	0x2
+ 233 0188 02       		.byte	0x91
+ 234 0189 91       		.sleb128 -24
+ 235 018a 68       		.uleb128 0xb
+ 236 018b 0B       		.ascii	"reg\000"
+ 237 018c 72656700 		.byte	0x1
+ 238 0190 01       		.byte	0x90
+ 239 0191 90       		.4byte	0x139
+ 240 0192 39010000 		.byte	0x2
+ 241 0196 02       		.byte	0x91
+ 242 0197 91       		.sleb128 -12
+ 243 0198 74       		.byte	0x0
+ 244 0199 00       		.uleb128 0xc
+ 245 019a 0C       		.byte	0x4
+ 246 019b 04       		.4byte	0xb9
+ 247 019c B9000000 		.byte	0x0
+ 248 01a0 00       		.section	.debug_abbrev
+ 249              		.uleb128 0x1
+ 250 0000 01       		.uleb128 0x11
+ 251 0001 11       		.byte	0x1
+ 252 0002 01       		.uleb128 0x25
+ 253 0003 25       		.uleb128 0x8
+ 254 0004 08       		.uleb128 0x13
+ 255 0005 13       		.uleb128 0xb
+ 256 0006 0B       		.uleb128 0x3
+ 257 0007 03       		.uleb128 0x8
+ 258 0008 08       		.uleb128 0x1b
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 9
+
+
+ 259 0009 1B       		.uleb128 0x8
+ 260 000a 08       		.uleb128 0x52
+ 261 000b 52       		.uleb128 0x1
+ 262 000c 01       		.uleb128 0x10
+ 263 000d 10       		.uleb128 0x6
+ 264 000e 06       		.byte	0x0
+ 265 000f 00       		.byte	0x0
+ 266 0010 00       		.uleb128 0x2
+ 267 0011 02       		.uleb128 0x24
+ 268 0012 24       		.byte	0x0
+ 269 0013 00       		.uleb128 0xb
+ 270 0014 0B       		.uleb128 0xb
+ 271 0015 0B       		.uleb128 0x3e
+ 272 0016 3E       		.uleb128 0xb
+ 273 0017 0B       		.uleb128 0x3
+ 274 0018 03       		.uleb128 0x8
+ 275 0019 08       		.byte	0x0
+ 276 001a 00       		.byte	0x0
+ 277 001b 00       		.uleb128 0x3
+ 278 001c 03       		.uleb128 0x16
+ 279 001d 16       		.byte	0x0
+ 280 001e 00       		.uleb128 0x3
+ 281 001f 03       		.uleb128 0x8
+ 282 0020 08       		.uleb128 0x3a
+ 283 0021 3A       		.uleb128 0xb
+ 284 0022 0B       		.uleb128 0x3b
+ 285 0023 3B       		.uleb128 0xb
+ 286 0024 0B       		.uleb128 0x49
+ 287 0025 49       		.uleb128 0x13
+ 288 0026 13       		.byte	0x0
+ 289 0027 00       		.byte	0x0
+ 290 0028 00       		.uleb128 0x4
+ 291 0029 04       		.uleb128 0x24
+ 292 002a 24       		.byte	0x0
+ 293 002b 00       		.uleb128 0xb
+ 294 002c 0B       		.uleb128 0xb
+ 295 002d 0B       		.uleb128 0x3e
+ 296 002e 3E       		.uleb128 0xb
+ 297 002f 0B       		.byte	0x0
+ 298 0030 00       		.byte	0x0
+ 299 0031 00       		.uleb128 0x5
+ 300 0032 05       		.uleb128 0x17
+ 301 0033 17       		.byte	0x1
+ 302 0034 01       		.uleb128 0xb
+ 303 0035 0B       		.uleb128 0xb
+ 304 0036 0B       		.uleb128 0x3a
+ 305 0037 3A       		.uleb128 0xb
+ 306 0038 0B       		.uleb128 0x3b
+ 307 0039 3B       		.uleb128 0xb
+ 308 003a 0B       		.uleb128 0x1
+ 309 003b 01       		.uleb128 0x13
+ 310 003c 13       		.byte	0x0
+ 311 003d 00       		.byte	0x0
+ 312 003e 00       		.uleb128 0x6
+ 313 003f 06       		.uleb128 0xd
+ 314 0040 0D       		.byte	0x0
+ 315 0041 00       		.uleb128 0x3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 10
+
+
+ 316 0042 03       		.uleb128 0x8
+ 317 0043 08       		.uleb128 0x3a
+ 318 0044 3A       		.uleb128 0xb
+ 319 0045 0B       		.uleb128 0x3b
+ 320 0046 3B       		.uleb128 0xb
+ 321 0047 0B       		.uleb128 0x49
+ 322 0048 49       		.uleb128 0x13
+ 323 0049 13       		.byte	0x0
+ 324 004a 00       		.byte	0x0
+ 325 004b 00       		.uleb128 0x7
+ 326 004c 07       		.uleb128 0x1
+ 327 004d 01       		.byte	0x1
+ 328 004e 01       		.uleb128 0x49
+ 329 004f 49       		.uleb128 0x13
+ 330 0050 13       		.uleb128 0x1
+ 331 0051 01       		.uleb128 0x13
+ 332 0052 13       		.byte	0x0
+ 333 0053 00       		.byte	0x0
+ 334 0054 00       		.uleb128 0x8
+ 335 0055 08       		.uleb128 0x21
+ 336 0056 21       		.byte	0x0
+ 337 0057 00       		.uleb128 0x49
+ 338 0058 49       		.uleb128 0x13
+ 339 0059 13       		.uleb128 0x2f
+ 340 005a 2F       		.uleb128 0xb
+ 341 005b 0B       		.byte	0x0
+ 342 005c 00       		.byte	0x0
+ 343 005d 00       		.uleb128 0x9
+ 344 005e 09       		.uleb128 0x2e
+ 345 005f 2E       		.byte	0x1
+ 346 0060 01       		.uleb128 0x3f
+ 347 0061 3F       		.uleb128 0xc
+ 348 0062 0C       		.uleb128 0x3
+ 349 0063 03       		.uleb128 0x8
+ 350 0064 08       		.uleb128 0x3a
+ 351 0065 3A       		.uleb128 0xb
+ 352 0066 0B       		.uleb128 0x3b
+ 353 0067 3B       		.uleb128 0xb
+ 354 0068 0B       		.uleb128 0x27
+ 355 0069 27       		.uleb128 0xc
+ 356 006a 0C       		.uleb128 0x11
+ 357 006b 11       		.uleb128 0x1
+ 358 006c 01       		.uleb128 0x12
+ 359 006d 12       		.uleb128 0x1
+ 360 006e 01       		.uleb128 0x40
+ 361 006f 40       		.uleb128 0x6
+ 362 0070 06       		.uleb128 0x1
+ 363 0071 01       		.uleb128 0x13
+ 364 0072 13       		.byte	0x0
+ 365 0073 00       		.byte	0x0
+ 366 0074 00       		.uleb128 0xa
+ 367 0075 0A       		.uleb128 0x5
+ 368 0076 05       		.byte	0x0
+ 369 0077 00       		.uleb128 0x3
+ 370 0078 03       		.uleb128 0x8
+ 371 0079 08       		.uleb128 0x3a
+ 372 007a 3A       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 11
+
+
+ 373 007b 0B       		.uleb128 0x3b
+ 374 007c 3B       		.uleb128 0xb
+ 375 007d 0B       		.uleb128 0x49
+ 376 007e 49       		.uleb128 0x13
+ 377 007f 13       		.uleb128 0x2
+ 378 0080 02       		.uleb128 0xa
+ 379 0081 0A       		.byte	0x0
+ 380 0082 00       		.byte	0x0
+ 381 0083 00       		.uleb128 0xb
+ 382 0084 0B       		.uleb128 0x34
+ 383 0085 34       		.byte	0x0
+ 384 0086 00       		.uleb128 0x3
+ 385 0087 03       		.uleb128 0x8
+ 386 0088 08       		.uleb128 0x3a
+ 387 0089 3A       		.uleb128 0xb
+ 388 008a 0B       		.uleb128 0x3b
+ 389 008b 3B       		.uleb128 0xb
+ 390 008c 0B       		.uleb128 0x49
+ 391 008d 49       		.uleb128 0x13
+ 392 008e 13       		.uleb128 0x2
+ 393 008f 02       		.uleb128 0xa
+ 394 0090 0A       		.byte	0x0
+ 395 0091 00       		.byte	0x0
+ 396 0092 00       		.uleb128 0xc
+ 397 0093 0C       		.uleb128 0xf
+ 398 0094 0F       		.byte	0x0
+ 399 0095 00       		.uleb128 0xb
+ 400 0096 0B       		.uleb128 0xb
+ 401 0097 0B       		.uleb128 0x49
+ 402 0098 49       		.uleb128 0x13
+ 403 0099 13       		.byte	0x0
+ 404 009a 00       		.byte	0x0
+ 405 009b 00       		.byte	0x0
+ 406 009c 00       		.section	.debug_pubnames,"",%progbits
+ 407              		.4byte	0x1d
+ 408 0000 1D000000 		.2byte	0x2
+ 409 0004 0200     		.4byte	.Ldebug_info0
+ 410 0006 00000000 		.4byte	0x1a1
+ 411 000a A1010000 		.4byte	0x14c
+ 412 000e 4C010000 		.ascii	"CySetReg24\000"
+ 413 0012 43795365 		.4byte	0x0
+ 413      74526567 
+ 413      323400
+ 414 001d 00000000 		.section	.debug_aranges,"",%progbits
+ 415              		.4byte	0x1c
+ 416 0000 1C000000 		.2byte	0x2
+ 417 0004 0200     		.4byte	.Ldebug_info0
+ 418 0006 00000000 		.byte	0x4
+ 419 000a 04       		.byte	0x0
+ 420 000b 00       		.2byte	0x0
+ 421 000c 0000     		.2byte	0x0
+ 422 000e 0000     		.4byte	.LFB2
+ 423 0010 00000000 		.4byte	.LFE2-.LFB2
+ 424 0014 32000000 		.4byte	0x0
+ 425 0018 00000000 		.4byte	0x0
+ 426 001c 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 427              	...
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/cckvaaaa.s 			page 12
+
+

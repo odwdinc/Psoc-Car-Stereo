@@ -1,0 +1,702 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"main.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 90000000 		.text
+  20      02004500 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.rodata
+  23              		.align	2
+  24              	.LC0:
+  25 0000 566F6C55 		.ascii	"VolUp\012\000"
+  25      700A00
+  26 0007 00       		.align	2
+  27              	.LC1:
+  28 0008 566F6C64 		.ascii	"Voldown\012\000"
+  28      6F776E0A 
+  28      00
+  29 0011 000000   		.align	2
+  30              	.LC2:
+  31 0014 706C6179 		.ascii	"play/pause\012\000"
+  31      2F706175 
+  31      73650A00 
+  32              		.align	2
+  33              	.LC3:
+  34 0020 50726554 		.ascii	"PreTrack\012\000"
+  34      7261636B 
+  34      0A00
+  35 002a 0000     		.align	2
+  36              	.LC4:
+  37 002c 4E657874 		.ascii	"NextTrack\012\000"
+  37      54726163 
+  37      6B0A00
+  38 0037 00       		.section	.text.main,"ax",%progbits
+  39              		.align	2
+  40              		.global	main
+  41              		.thumb
+  42              		.thumb_func
+  43              		.type	main, %function
+  44              	main:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 2
+
+
+  45              	.LFB2:
+  46              		.file 1 "./main.c"
+   1:./main.c      **** /* ========================================
+   2:./main.c      ****  *
+   3:./main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:./main.c      ****  * All Rights Reserved
+   5:./main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:./main.c      ****  *
+   7:./main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:./main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:./main.c      ****  *
+  10:./main.c      ****  * ========================================
+  11:./main.c      **** */
+  12:./main.c      **** #include <device.h>
+  13:./main.c      **** 
+  14:./main.c      **** void main()
+  15:./main.c      **** {
+  47              	 8
+  48              		@ frame_needed = 1, uses_anonymous_args = 0
+  49              		push	{r4, r7, lr}
+  50 0000 90B5     	.LCFI0:
+  51              		sub	sp, sp, #12
+  52 0002 83B0     	.LCFI1:
+  53              		add	r7, sp, #0
+  54 0004 00AF     	.LCFI2:
+  55              		.loc 1 17 0
+  16:./main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  17:./main.c      **** 	Volume_ADC_Start();
+  56              	e_ADC_Start
+  57 0006 FFF7FEFF 		.loc 1 18 0
+  18:./main.c      **** 	UART_Start();
+  58              	l	UART_Start
+  59 000a FFF7FEFF 		.loc 1 19 0
+  19:./main.c      **** 	timer_clock_Start();
+  60              	l	timer_clock_Start
+  61 000e FFF7FEFF 		.loc 1 20 0
+  20:./main.c      **** 	Counter_1_Start();
+  62              	l	Counter_1_Start
+  63 0012 FFF7FEFF 		.loc 1 21 0
+  21:./main.c      **** 	LED_Control_Reg_Write(42);
+  64              	ov	r0, #42
+  65 0016 4FF02A00 		bl	LED_Control_Reg_Write
+  66 001a FFF7FEFF 		.loc 1 22 0
+  22:./main.c      **** 	Volume_ADC_StartConvert();
+  67              		Volume_ADC_StartConvert
+  68 001e FFF7FEFF 		.loc 1 24 0
+  23:./main.c      **** 	uint8 i;
+  24:./main.c      **** 	uint8 setting = 0;
+  69              	ov	r3, #0
+  70 0022 4FF00003 		strb	r3, [r7, #7]
+  71 0026 FB71     		.loc 1 25 0
+  25:./main.c      **** 	Counter_1_WritePeriod(75);
+  72              	v	r0, #75
+  73 0028 4FF04B00 		bl	Counter_1_WritePeriod
+  74 002c FFF7FEFF 	.L2:
+  75              		.loc 1 30 0
+  26:./main.c      ****     /* CYGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 3
+
+
+  27:./main.c      ****     for(;;)
+  28:./main.c      ****     {
+  29:./main.c      **** 	
+  30:./main.c      ****         if ( Volume_ADC_IsEndConversion(Volume_ADC_WAIT_FOR_RESULT) > 0){
+  76              		r0, #0
+  77 0030 4FF00000 		bl	Volume_ADC_IsEndConversion
+  78 0034 FFF7FEFF 		mov	r3, r0
+  79 0038 0346     		cmp	r3, #0
+  80 003a 002B     		beq	.L3
+  81 003c 01D0     		.loc 1 31 0
+  31:./main.c      **** 			Volume_ADC_StartConvert();
+  82              	lume_ADC_StartConvert
+  83 003e FFF7FEFF 	.L3:
+  84              		.loc 1 34 0
+  32:./main.c      **** 		}
+  33:./main.c      **** 		
+  34:./main.c      **** 		if(Counter_1_ReadCounter() == Counter_1_ReadPeriod() ){
+  85              		Counter_1_ReadCounter
+  86 0042 FFF7FEFF 		mov	r3, r0
+  87 0046 0346     		mov	r4, r3
+  88 0048 1C46     		bl	Counter_1_ReadPeriod
+  89 004a FFF7FEFF 		mov	r3, r0
+  90 004e 0346     		cmp	r4, r3
+  91 0050 9C42     		bne	.L5
+  92 0052 42D1     		.loc 1 35 0
+  35:./main.c      **** 			i = Volume_ADC_GetResult8();
+  93              	me_ADC_GetResult8
+  94 0054 FFF7FEFF 		mov	r3, r0
+  95 0058 0346     		uxtb	r3, r3
+  96 005a DBB2     		strb	r3, [r7, #6]
+  97 005c BB71     		.loc 1 37 0
+  36:./main.c      **** 			
+  37:./main.c      **** 			if(setting == 1){
+  98              		r3, [r7, #7]	@ zero_extendqisi2
+  99 005e FB79     		cmp	r3, #1
+ 100 0060 012B     		bne	.L7
+ 101 0062 08D1     		.loc 1 38 0
+  38:./main.c      **** 				if(Button_Read() < 1){
+ 102              	Button_Read
+ 103 0064 FFF7FEFF 		mov	r3, r0
+ 104 0068 0346     		cmp	r3, #0
+ 105 006a 002B     		bne	.L5
+ 106 006c 35D1     		.loc 1 39 0
+  39:./main.c      **** 					setting = 0;
+ 107              	r3, #0
+ 108 006e 4FF00003 		strb	r3, [r7, #7]
+ 109 0072 FB71     		b	.L5
+ 110 0074 31E0     	.L7:
+ 111              		.loc 1 41 0
+  40:./main.c      **** 				}
+  41:./main.c      **** 			}else if(setting == 2){
+ 112              		r3, [r7, #7]	@ zero_extendqisi2
+ 113 0076 FB79     		cmp	r3, #2
+ 114 0078 022B     		bne	.L11
+ 115 007a 21D1     		.loc 1 42 0
+  42:./main.c      **** 				if( i < 103 && i > 80){
+ 116              	b	r3, [r7, #6]	@ zero_extendqisi2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 4
+
+
+ 117 007c BB79     		cmp	r3, #102
+ 118 007e 662B     		bhi	.L13
+ 119 0080 0BD8     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 120 0082 BB79     		cmp	r3, #80
+ 121 0084 502B     		bls	.L13
+ 122 0086 08D9     		.loc 1 43 0
+  43:./main.c      **** 					LED_Control_Reg_Write(3);
+ 123              	, #3
+ 124 0088 4FF00300 		bl	LED_Control_Reg_Write
+ 125 008c FFF7FEFF 		.loc 1 44 0
+  44:./main.c      **** 					UART_PutString("VolUp\n");
+ 126              	r	r3, .L41
+ 127 0090 494B     		mov	r0, r3
+ 128 0092 1846     		bl	UART_PutString
+ 129 0094 FFF7FEFF 		.loc 1 42 0
+ 130              		b	.L5
+ 131 0098 1FE0     	.L13:
+ 132              		.loc 1 45 0
+  45:./main.c      **** 				}else if( i > 151 && i < 180){
+ 133              	3, [r7, #6]	@ zero_extendqisi2
+ 134 009a BB79     		cmp	r3, #151
+ 135 009c 972B     		bls	.L17
+ 136 009e 0BD9     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 137 00a0 BB79     		cmp	r3, #179
+ 138 00a2 B32B     		bhi	.L17
+ 139 00a4 08D8     		.loc 1 46 0
+  46:./main.c      **** 					LED_Control_Reg_Write(129);
+ 140              	, #129
+ 141 00a6 4FF08100 		bl	LED_Control_Reg_Write
+ 142 00aa FFF7FEFF 		.loc 1 47 0
+  47:./main.c      **** 					UART_PutString("Voldown\n");
+ 143              	r	r3, .L41+4
+ 144 00ae 434B     		mov	r0, r3
+ 145 00b0 1846     		bl	UART_PutString
+ 146 00b2 FFF7FEFF 		.loc 1 45 0
+ 147              		b	.L5
+ 148 00b6 10E0     	.L17:
+ 149              		.loc 1 49 0
+  48:./main.c      **** 				}else {
+  49:./main.c      **** 					setting = 0;
+ 150              	, #0
+ 151 00b8 4FF00003 		strb	r3, [r7, #7]
+ 152 00bc FB71     		b	.L5
+ 153 00be 0CE0     	.L11:
+ 154              		.loc 1 52 0
+  50:./main.c      **** 				}
+  51:./main.c      **** 			}else {
+  52:./main.c      **** 				if( i>128 && i < 134){
+ 155              		r3, [r7, #6]	@ zero_extendqisi2
+ 156 00c0 BB79     		cmp	r3, #128
+ 157 00c2 802B     		bls	.L5
+ 158 00c4 09D9     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 159 00c6 BB79     		cmp	r3, #133
+ 160 00c8 852B     		bhi	.L5
+ 161 00ca 06D8     		.loc 1 53 0
+  53:./main.c      **** 					setting = 0;
+ 162              	, #0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 5
+
+
+ 163 00cc 4FF00003 		strb	r3, [r7, #7]
+ 164 00d0 FB71     		.loc 1 54 0
+  54:./main.c      **** 					LED_Control_Reg_Write(0);
+ 165              	v	r0, #0
+ 166 00d2 4FF00000 		bl	LED_Control_Reg_Write
+ 167 00d6 FFF7FEFF 	.L5:
+ 168              		.loc 1 59 0
+  55:./main.c      **** 				}
+  56:./main.c      **** 			}
+  57:./main.c      **** 		}
+  58:./main.c      **** 		
+  59:./main.c      **** 			if(Button_Read() > 0 && setting == 0){
+ 169              	Button_Read
+ 170 00da FFF7FEFF 		mov	r3, r0
+ 171 00de 0346     		cmp	r3, #0
+ 172 00e0 002B     		beq	.L22
+ 173 00e2 11D0     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 174 00e4 FB79     		cmp	r3, #0
+ 175 00e6 002B     		bne	.L22
+ 176 00e8 0ED1     		.loc 1 60 0
+  60:./main.c      **** 				LED_Control_Reg_Write(255);
+ 177              	 #255
+ 178 00ea 4FF0FF00 		bl	LED_Control_Reg_Write
+ 179 00ee FFF7FEFF 		.loc 1 61 0
+  61:./main.c      **** 				UART_PutString("play/pause\n");
+ 180              	r	r3, .L41+8
+ 181 00f2 334B     		mov	r0, r3
+ 182 00f4 1846     		bl	UART_PutString
+ 183 00f6 FFF7FEFF 		.loc 1 62 0
+  62:./main.c      **** 				setting =1;
+ 184              		r3, #1
+ 185 00fa 4FF00103 		strb	r3, [r7, #7]
+ 186 00fe FB71     		.loc 1 63 0
+  63:./main.c      **** 				Counter_1_WriteCounter(0);
+ 187              	v	r0, #0
+ 188 0100 4FF00000 		bl	Counter_1_WriteCounter
+ 189 0104 FFF7FEFF 	.L22:
+ 190              		.loc 1 65 0
+  64:./main.c      **** 			}
+  65:./main.c      **** 			if( i > 180 && setting == 0){
+ 191              	b	r3, [r7, #6]	@ zero_extendqisi2
+ 192 0108 BB79     		cmp	r3, #180
+ 193 010a B42B     		bls	.L25
+ 194 010c 16D9     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 195 010e FB79     		cmp	r3, #0
+ 196 0110 002B     		bne	.L25
+ 197 0112 13D1     		.loc 1 66 0
+  66:./main.c      **** 				LED_Control_Reg_Write(142);
+ 198              	, #142
+ 199 0114 4FF08E00 		bl	LED_Control_Reg_Write
+ 200 0118 FFF7FEFF 		.loc 1 67 0
+  67:./main.c      **** 				UART_PutString("PreTrack\n");
+ 201              	r	r3, .L41+12
+ 202 011c 294B     		mov	r0, r3
+ 203 011e 1846     		bl	UART_PutString
+ 204 0120 FFF7FEFF 		.loc 1 68 0
+  68:./main.c      **** 				UART_PutString("PreTrack\n");
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 6
+
+
+ 205              		r3, .L41+12
+ 206 0124 274B     		mov	r0, r3
+ 207 0126 1846     		bl	UART_PutString
+ 208 0128 FFF7FEFF 		.loc 1 69 0
+  69:./main.c      **** 				setting = 3;
+ 209              		r3, #3
+ 210 012c 4FF00303 		strb	r3, [r7, #7]
+ 211 0130 FB71     		.loc 1 70 0
+  70:./main.c      **** 				Counter_1_WriteCounter(0);
+ 212              	v	r0, #0
+ 213 0132 4FF00000 		bl	Counter_1_WriteCounter
+ 214 0136 FFF7FEFF 		.loc 1 65 0
+ 215              		b	.L2
+ 216 013a 79E7     	.L25:
+ 217              		.loc 1 71 0
+  71:./main.c      **** 			}else if( i < 80 && i>0 && setting == 0){
+ 218              	r3, [r7, #6]	@ zero_extendqisi2
+ 219 013c BB79     		cmp	r3, #79
+ 220 013e 4F2B     		bhi	.L29
+ 221 0140 15D8     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 222 0142 BB79     		cmp	r3, #0
+ 223 0144 002B     		beq	.L29
+ 224 0146 12D0     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 225 0148 FB79     		cmp	r3, #0
+ 226 014a 002B     		bne	.L29
+ 227 014c 0FD1     		.loc 1 72 0
+  72:./main.c      **** 				LED_Control_Reg_Write(42);
+ 228              	42
+ 229 014e 4FF02A00 		bl	LED_Control_Reg_Write
+ 230 0152 FFF7FEFF 		.loc 1 73 0
+  73:./main.c      **** 				UART_PutString("NextTrack\n");
+ 231              	r	r3, .L41+16
+ 232 0156 1C4B     		mov	r0, r3
+ 233 0158 1846     		bl	UART_PutString
+ 234 015a FFF7FEFF 		.loc 1 75 0
+  74:./main.c      **** 				//UART_PutString("Voldown\n");
+  75:./main.c      **** 				setting = 3;
+ 235              		r3, #3
+ 236 015e 4FF00303 		strb	r3, [r7, #7]
+ 237 0162 FB71     		.loc 1 76 0
+  76:./main.c      **** 				Counter_1_WriteCounter(0);
+ 238              	v	r0, #0
+ 239 0164 4FF00000 		bl	Counter_1_WriteCounter
+ 240 0168 FFF7FEFF 		.loc 1 71 0
+ 241              		b	.L2
+ 242 016c 60E7     	.L29:
+ 243              		.loc 1 77 0
+  77:./main.c      **** 			}else if( i < 103 && i > 80 && setting == 0){
+ 244              	r3, [r7, #6]	@ zero_extendqisi2
+ 245 016e BB79     		cmp	r3, #102
+ 246 0170 662B     		bhi	.L33
+ 247 0172 0DD8     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 248 0174 BB79     		cmp	r3, #80
+ 249 0176 502B     		bls	.L33
+ 250 0178 0AD9     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 251 017a FB79     		cmp	r3, #0
+ 252 017c 002B     		bne	.L33
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 7
+
+
+ 253 017e 07D1     		.loc 1 78 0
+  78:./main.c      **** 				setting = 2;
+ 254              	2
+ 255 0180 4FF00203 		strb	r3, [r7, #7]
+ 256 0184 FB71     		.loc 1 79 0
+  79:./main.c      **** 				Counter_1_WriteCounter(0);
+ 257              	v	r0, #0
+ 258 0186 4FF00000 		bl	Counter_1_WriteCounter
+ 259 018a FFF7FEFF 		.loc 1 77 0
+ 260              		b	.L2
+ 261 018e 4FE7     	.L33:
+ 262              		.loc 1 80 0
+  80:./main.c      **** 			}else if( i > 151 && i < 180 && setting == 0){
+ 263              	r3, [r7, #6]	@ zero_extendqisi2
+ 264 0190 BB79     		cmp	r3, #151
+ 265 0192 972B     		bls	.L2
+ 266 0194 7FF64CAF 		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 267 0198 BB79     		cmp	r3, #179
+ 268 019a B32B     		bhi	.L2
+ 269 019c 3FF648AF 		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 270 01a0 FB79     		cmp	r3, #0
+ 271 01a2 002B     		bne	.L2
+ 272 01a4 7FF444AF 		.loc 1 81 0
+  81:./main.c      **** 				setting = 2;
+ 273              	#0
+ 274 01a8 4FF00203 		bl	Counter_1_WriteCounter
+ 275 01ac FB71     		.loc 1 77 0
+  82:./main.c      **** 				Counter_1_WriteCounter(0);
+ 276              	.L2
+ 277 01ae 4FF00000 	.L33:
+ 278 01b2 FFF7FEFF 		.loc 1 80 0
+  83:./main.c      **** 			}			
+  84:./main.c      ****     }
+ 279              	rb	r3, [r7, #6]	@ zero_extendqisi2
+ 280 01b6 3BE7     		cmp	r3, #151
+ 281              		bls	.L2
+ 282              		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 283              		cmp	r3, #179
+ 284 01b8 00000000 		bhi	.L2
+ 285 01bc 08000000 		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 286 01c0 14000000 		cmp	r3, #0
+ 287 01c4 20000000 		bne	.L2
+ 288 01c8 2C000000 		.loc 1 81 0
+ 289              		mov	r3, #2
+ 290              		strb	r3, [r7, #7]
+ 291              		.loc 1 82 0
+ 292              		mov	r0, #0
+ 293 0000 0C000000 		bl	Counter_1_WriteCounter
+ 294              		.loc 1 84 0
+ 295 0004 FFFFFFFF 		b	.L2
+ 296 0008 01       	.L42:
+ 297 0009 00       		.align	2
+ 298 000a 01       	.L41:
+ 299 000b 7C       		.word	.LC0
+ 300 000c 0E       		.word	.LC1
+ 301 000d 0C       		.word	.LC2
+ 302 000e 0D       		.word	.LC3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 8
+
+
+ 303 000f 00       		.word	.LC4
+ 304              	.LFE2:
+ 305              		.size	main, .-main
+ 306              		.section	.debug_frame,"",%progbits
+ 307 0010 1C000000 	.Lframe0:
+ 308              		.4byte	.LECIE0-.LSCIE0
+ 309 0014 00000000 	.LSCIE0:
+ 310 0018 00000000 		.4byte	0xffffffff
+ 311 001c CC010000 		.byte	0x1
+ 312 0020 42       		.ascii	"\000"
+ 313              		.uleb128 0x1
+ 314 0021 0E       		.sleb128 -4
+ 315 0022 0C       		.byte	0xe
+ 316 0023 42       		.byte	0xc
+ 317              		.uleb128 0xd
+ 318 0024 0E       		.uleb128 0x0
+ 319 0025 18       		.align	2
+ 320 0026 8E       	.LECIE0:
+ 321 0027 01       	.LSFDE0:
+ 322 0028 87       		.4byte	.LEFDE0-.LASFDE0
+ 323 0029 02       	.LASFDE0:
+ 324 002a 84       		.4byte	.Lframe0
+ 325 002b 03       		.4byte	.LFB2
+ 326 002c 42       		.4byte	.LFE2-.LFB2
+ 327              		.byte	0x4
+ 328 002d 0D       		.4byte	.LCFI0-.LFB2
+ 329 002e 07       		.byte	0xe
+ 330 002f 00       		.uleb128 0xc
+ 331              		.byte	0x4
+ 332              		.4byte	.LCFI1-.LCFI0
+ 333              		.byte	0xe
+ 334              		.uleb128 0x18
+ 335              		.byte	0x8e
+ 336              		.uleb128 0x1
+ 337 0000 00000000 		.byte	0x87
+ 338 0004 02000000 		.uleb128 0x2
+ 339 0008 0100     		.byte	0x84
+ 340 000a 5D       		.uleb128 0x3
+ 341 000b 02000000 		.byte	0x4
+ 342 000f 04000000 		.4byte	.LCFI2-.LCFI1
+ 343 0013 0200     		.byte	0xd
+ 344 0015 7D       		.uleb128 0x7
+ 345 0016 0C       		.align	2
+ 346 0017 04000000 	.LEFDE0:
+ 347 001b 06000000 		.text
+ 348 001f 0200     	.Letext0:
+ 349 0021 7D       		.section	.debug_loc,"",%progbits
+ 350 0022 18       	.Ldebug_loc0:
+ 351 0023 06000000 	.LLST0:
+ 352 0027 CC010000 		.4byte	.LFB2
+ 353 002b 0200     		.4byte	.LCFI0
+ 354 002d 77       		.2byte	0x1
+ 355 002e 18       		.byte	0x5d
+ 356 002f 00000000 		.4byte	.LCFI0
+ 357 0033 00000000 		.4byte	.LCFI1
+ 358              		.2byte	0x2
+ 359              		.byte	0x7d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 9
+
+
+ 360 0000 10010000 		.sleb128 12
+ 361 0004 0200     		.4byte	.LCFI1
+ 362 0006 00000000 		.4byte	.LCFI2
+ 363 000a 04       		.2byte	0x2
+ 364 000b 01       		.byte	0x7d
+ 365 000c 474E5520 		.sleb128 24
+ 365      4320342E 
+ 365      322E3100 
+ 366 0018 01       		.4byte	.LCFI2
+ 367 0019 2E2F6D61 		.4byte	.LFE2
+ 367      696E2E63 
+ 367      00
+ 368 0022 433A5C55 		.2byte	0x2
+ 368      73657273 
+ 368      5C626C69 
+ 368      6E6B795C 
+ 368      446F6375 
+ 369 0050 726F5C43 		.byte	0x77
+ 369      61725374 
+ 369      6169726F 
+ 369      2E637964 
+ 369      736E00
+ 370 0063 00000000 		.sleb128 24
+ 371 0067 00000000 		.4byte	0x0
+ 372 006b 02       		.4byte	0x0
+ 373 006c 01       		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 374 006d 08       		.section	.debug_info
+ 375 006e 756E7369 		.4byte	0x110
+ 375      676E6564 
+ 375      20636861 
+ 375      7200
+ 376 007c 03       		.2byte	0x2
+ 377 007d 75696E74 		.4byte	.Ldebug_abbrev0
+ 377      3800
+ 378 0083 02       		.byte	0x4
+ 379 0084 25       		.uleb128 0x1
+ 380 0085 6B000000 		.ascii	"GNU C 4.2.1\000"
+ 381 0089 02       		.byte	0x1
+ 382 008a 02       		.ascii	"./main.c\000"
+ 383 008b 07       		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 384 008c 73686F72 		.ascii	"ro\\CarStairo.cydsn\000"
+ 384      7420756E 
+ 384      7369676E 
+ 384      65642069 
+ 384      6E7400
+ 385 009f 02       		.4byte	0x0
+ 386 00a0 04       		.4byte	.Ldebug_line0
+ 387 00a1 07       		.uleb128 0x2
+ 388 00a2 6C6F6E67 		.byte	0x1
+ 388      20756E73 
+ 388      69676E65 
+ 388      6420696E 
+ 388      7400
+ 389 00b4 02       		.byte	0x8
+ 390 00b5 01       		.ascii	"unsigned char\000"
+ 391 00b6 06       		.uleb128 0x3
+ 392 00b7 7369676E 		.ascii	"uint8\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 10
+
+
+ 392      65642063 
+ 392      68617200 
+ 393 00c3 02       		.byte	0x2
+ 394 00c4 02       		.byte	0x25
+ 395 00c5 05       		.4byte	0x6b
+ 396 00c6 73686F72 		.uleb128 0x2
+ 396      7420696E 
+ 396      7400
+ 397 00d0 02       		.byte	0x2
+ 398 00d1 04       		.byte	0x7
+ 399 00d2 05       		.ascii	"short unsigned int\000"
+ 400 00d3 6C6F6E67 		.uleb128 0x2
+ 400      20696E74 
+ 400      00
+ 401 00dc 04       		.byte	0x4
+ 402 00dd 04       		.byte	0x7
+ 403 00de 07       		.ascii	"long unsigned int\000"
+ 404 00df 05       		.uleb128 0x2
+ 405 00e0 01       		.byte	0x1
+ 406 00e1 6D61696E 		.byte	0x6
+ 406      00
+ 407 00e6 01       		.ascii	"signed char\000"
+ 408 00e7 0F       		.uleb128 0x2
+ 409 00e8 00000000 		.byte	0x2
+ 410 00ec CC010000 		.byte	0x5
+ 411 00f0 00000000 		.ascii	"short int\000"
+ 412 00f4 06       		.uleb128 0x2
+ 413 00f5 6900     		.byte	0x4
+ 414 00f7 01       		.byte	0x5
+ 415 00f8 17       		.ascii	"long int\000"
+ 416 00f9 7C000000 		.uleb128 0x4
+ 417 00fd 02       		.byte	0x4
+ 418 00fe 91       		.byte	0x7
+ 419 00ff 6E       		.uleb128 0x5
+ 420 0100 06       		.byte	0x1
+ 421 0101 73657474 		.ascii	"main\000"
+ 421      696E6700 
+ 422 0109 01       		.byte	0x1
+ 423 010a 18       		.byte	0xf
+ 424 010b 7C000000 		.4byte	.LFB2
+ 425 010f 02       		.4byte	.LFE2
+ 426 0110 91       		.4byte	.LLST0
+ 427 0111 6F       		.uleb128 0x6
+ 428 0112 00       		.ascii	"i\000"
+ 429 0113 00       		.byte	0x1
+ 430              		.byte	0x17
+ 431 0000 01       		.4byte	0x7c
+ 432 0001 11       		.byte	0x2
+ 433 0002 01       		.byte	0x91
+ 434 0003 25       		.sleb128 -18
+ 435 0004 08       		.uleb128 0x6
+ 436 0005 13       		.ascii	"setting\000"
+ 437 0006 0B       		.byte	0x1
+ 438 0007 03       		.byte	0x18
+ 439 0008 08       		.4byte	0x7c
+ 440 0009 1B       		.byte	0x2
+ 441 000a 08       		.byte	0x91
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 11
+
+
+ 442 000b 52       		.sleb128 -17
+ 443 000c 01       		.byte	0x0
+ 444 000d 10       		.byte	0x0
+ 445 000e 06       		.section	.debug_abbrev
+ 446 000f 00       		.uleb128 0x1
+ 447 0010 00       		.uleb128 0x11
+ 448 0011 02       		.byte	0x1
+ 449 0012 24       		.uleb128 0x25
+ 450 0013 00       		.uleb128 0x8
+ 451 0014 0B       		.uleb128 0x13
+ 452 0015 0B       		.uleb128 0xb
+ 453 0016 3E       		.uleb128 0x3
+ 454 0017 0B       		.uleb128 0x8
+ 455 0018 03       		.uleb128 0x1b
+ 456 0019 08       		.uleb128 0x8
+ 457 001a 00       		.uleb128 0x52
+ 458 001b 00       		.uleb128 0x1
+ 459 001c 03       		.uleb128 0x10
+ 460 001d 16       		.uleb128 0x6
+ 461 001e 00       		.byte	0x0
+ 462 001f 03       		.byte	0x0
+ 463 0020 08       		.uleb128 0x2
+ 464 0021 3A       		.uleb128 0x24
+ 465 0022 0B       		.byte	0x0
+ 466 0023 3B       		.uleb128 0xb
+ 467 0024 0B       		.uleb128 0xb
+ 468 0025 49       		.uleb128 0x3e
+ 469 0026 13       		.uleb128 0xb
+ 470 0027 00       		.uleb128 0x3
+ 471 0028 00       		.uleb128 0x8
+ 472 0029 04       		.byte	0x0
+ 473 002a 24       		.byte	0x0
+ 474 002b 00       		.uleb128 0x3
+ 475 002c 0B       		.uleb128 0x16
+ 476 002d 0B       		.byte	0x0
+ 477 002e 3E       		.uleb128 0x3
+ 478 002f 0B       		.uleb128 0x8
+ 479 0030 00       		.uleb128 0x3a
+ 480 0031 00       		.uleb128 0xb
+ 481 0032 05       		.uleb128 0x3b
+ 482 0033 2E       		.uleb128 0xb
+ 483 0034 01       		.uleb128 0x49
+ 484 0035 3F       		.uleb128 0x13
+ 485 0036 0C       		.byte	0x0
+ 486 0037 03       		.byte	0x0
+ 487 0038 08       		.uleb128 0x4
+ 488 0039 3A       		.uleb128 0x24
+ 489 003a 0B       		.byte	0x0
+ 490 003b 3B       		.uleb128 0xb
+ 491 003c 0B       		.uleb128 0xb
+ 492 003d 11       		.uleb128 0x3e
+ 493 003e 01       		.uleb128 0xb
+ 494 003f 12       		.byte	0x0
+ 495 0040 01       		.byte	0x0
+ 496 0041 40       		.uleb128 0x5
+ 497 0042 06       		.uleb128 0x2e
+ 498 0043 00       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccGebaaa.s 			page 12
+
+
+ 499 0044 00       		.uleb128 0x3f
+ 500 0045 06       		.uleb128 0xc
+ 501 0046 34       		.uleb128 0x3
+ 502 0047 00       		.uleb128 0x8
+ 503 0048 03       		.uleb128 0x3a
+ 504 0049 08       		.uleb128 0xb
+ 505 004a 3A       		.uleb128 0x3b
+ 506 004b 0B       		.uleb128 0xb
+ 507 004c 3B       		.uleb128 0x11
+ 508 004d 0B       		.uleb128 0x1
+ 509 004e 49       		.uleb128 0x12
+ 510 004f 13       		.uleb128 0x1
+ 511 0050 02       		.uleb128 0x40
+ 512 0051 0A       		.uleb128 0x6
+ 513 0052 00       		.byte	0x0
+ 514 0053 00       		.byte	0x0
+ 515 0054 00       		.uleb128 0x6
+ 516              		.uleb128 0x34
+ 517 0000 17000000 		.byte	0x0
+ 518 0004 0200     		.uleb128 0x3
+ 519 0006 00000000 		.uleb128 0x8
+ 520 000a 14010000 		.uleb128 0x3a
+ 521 000e DF000000 		.uleb128 0xb
+ 522 0012 6D61696E 		.uleb128 0x3b
+ 522      00
+ 523 0017 00000000 		.uleb128 0xb
+ 524              		.uleb128 0x49
+ 525 0000 1C000000 		.uleb128 0x13
+ 526 0004 0200     		.uleb128 0x2
+ 527 0006 00000000 		.uleb128 0xa
+ 528 000a 04       		.byte	0x0
+ 529 000b 00       		.byte	0x0
+ 530 000c 0000     		.byte	0x0
+ 531 000e 0000     		.section	.debug_pubnames,"",%progbits
+ 532 0010 00000000 		.4byte	0x17
+ 533 0014 CC010000 		.2byte	0x2
+ 534 0018 00000000 		.4byte	.Ldebug_info0
+ 535 001c 00000000 		.4byte	0x114
+ 536              		.4byte	0xdf

@@ -1,0 +1,12 @@
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/ARM_CM3-GCC_421/Debug/LED_Control_Reg.o : C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/LED_Control_Reg.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/LED_Control_Reg.c 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/LED_Control_Reg.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/LED_Control_Reg.c : 
+

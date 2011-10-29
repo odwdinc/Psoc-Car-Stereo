@@ -1,0 +1,823 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"Button.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 92000000 		.text
+  20      02004500 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.text.Button_Write,"ax",%progbits
+  23              		.align	2
+  24              		.global	Button_Write
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	Button_Write, %function
+  28              	Button_Write:
+  29              	.LFB2:
+  30              		.file 1 "./Generated_Source/PSoC5/Button.c"
+   1:./Generated_Source/PSoC5/Button.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/Button.c **** * File Name: Button.c  
+   3:./Generated_Source/PSoC5/Button.c **** * Version 1.20
+   4:./Generated_Source/PSoC5/Button.c **** *
+   5:./Generated_Source/PSoC5/Button.c **** * Description:
+   6:./Generated_Source/PSoC5/Button.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:./Generated_Source/PSoC5/Button.c **** *
+   8:./Generated_Source/PSoC5/Button.c **** * Note:
+   9:./Generated_Source/PSoC5/Button.c **** *
+  10:./Generated_Source/PSoC5/Button.c **** ********************************************************************************
+  11:./Generated_Source/PSoC5/Button.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  12:./Generated_Source/PSoC5/Button.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:./Generated_Source/PSoC5/Button.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:./Generated_Source/PSoC5/Button.c **** * the software package with which this file was provided.
+  15:./Generated_Source/PSoC5/Button.c **** ********************************************************************************/
+  16:./Generated_Source/PSoC5/Button.c **** 
+  17:./Generated_Source/PSoC5/Button.c **** #include "cytypes.h"
+  18:./Generated_Source/PSoC5/Button.c **** #include "Button.h"
+  19:./Generated_Source/PSoC5/Button.c **** 
+  20:./Generated_Source/PSoC5/Button.c **** 
+  21:./Generated_Source/PSoC5/Button.c **** /*******************************************************************************
+  22:./Generated_Source/PSoC5/Button.c **** * Function Name: Button_Write
+  23:./Generated_Source/PSoC5/Button.c **** ********************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 2
+
+
+  24:./Generated_Source/PSoC5/Button.c **** * Summary:
+  25:./Generated_Source/PSoC5/Button.c **** *  Assign a new value to the digital port's data output register.  
+  26:./Generated_Source/PSoC5/Button.c **** *
+  27:./Generated_Source/PSoC5/Button.c **** * Parameters:  
+  28:./Generated_Source/PSoC5/Button.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  29:./Generated_Source/PSoC5/Button.c **** *
+  30:./Generated_Source/PSoC5/Button.c **** * Return: 
+  31:./Generated_Source/PSoC5/Button.c **** *  void 
+  32:./Generated_Source/PSoC5/Button.c **** *  
+  33:./Generated_Source/PSoC5/Button.c **** *******************************************************************************/
+  34:./Generated_Source/PSoC5/Button.c **** void Button_Write(uint8 value)
+  35:./Generated_Source/PSoC5/Button.c **** {
+  31              	end = 0, frame = 16
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		push	{r7}
+  35 0000 80B4     	.LCFI0:
+  36              		sub	sp, sp, #20
+  37 0002 85B0     	.LCFI1:
+  38              		add	r7, sp, #0
+  39 0004 00AF     	.LCFI2:
+  40              		@ lr needed for prologue
+  41              		mov	r3, r0
+  42 0006 0346     		strb	r3, [r7, #7]
+  43 0008 FB71     		.loc 1 36 0
+  36:./Generated_Source/PSoC5/Button.c ****     uint8 staticBits = Button_DR & ~Button_MASK;
+  44              		ldrb	r3, [r3, #0]
+  45 000a 0B4B     		uxtb	r3, r3
+  46 000c 1B78     		bic	r3, r3, #32
+  47 000e DBB2     		strb	r3, [r7, #15]
+  48 0010 23F02003 		.loc 1 37 0
+  49 0014 FB73     		ldr	r1, .L3
+  37:./Generated_Source/PSoC5/Button.c ****     Button_DR = staticBits | ((value << Button_SHIFT) & Button_MASK);
+  50              	r3, [r7, #7]
+  51 0016 0849     		lsl	r3, r3, #5
+  52 0018 FB79     		uxtb	r3, r3
+  53 001a 4FEA4313 		and	r3, r3, #32
+  54 001e DBB2     		ldrb	r2, [r7, #15]
+  55 0020 03F02003 		orr	r3, r3, r2
+  56 0024 FA7B     		uxtb	r3, r3
+  57 0026 43EA0203 		strb	r3, [r1, #0]
+  58 002a DBB2     		.loc 1 38 0
+  59 002c 0B70     		add	r7, r7, #20
+  38:./Generated_Source/PSoC5/Button.c **** }
+  60              	7
+  61 002e 07F11407 		pop	{r7}
+  62 0032 BD46     		bx	lr
+  63 0034 80BC     	.L4:
+  64 0036 7047     		.align	2
+  65              	.L3:
+  66              		.word	1073762560
+  67              	.LFE2:
+  68 0038 00510040 		.size	Button_Write, .-Button_Write
+  69              		.section	.text.Button_SetDriveMode,"ax",%progbits
+  70              		.align	2
+  71              		.global	Button_SetDriveMode
+  72              		.thumb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 3
+
+
+  73              		.thumb_func
+  74              		.type	Button_SetDriveMode, %function
+  75              	Button_SetDriveMode:
+  76              	.LFB3:
+  77              		.loc 1 55 0
+  78              		@ args = 0, pretend = 0, frame = 8
+  39:./Generated_Source/PSoC5/Button.c **** 
+  40:./Generated_Source/PSoC5/Button.c **** 
+  41:./Generated_Source/PSoC5/Button.c **** /*******************************************************************************
+  42:./Generated_Source/PSoC5/Button.c **** * Function Name: Button_SetDriveMode
+  43:./Generated_Source/PSoC5/Button.c **** ********************************************************************************
+  44:./Generated_Source/PSoC5/Button.c **** * Summary:
+  45:./Generated_Source/PSoC5/Button.c **** *  Change the drive mode on the pins of the port.
+  46:./Generated_Source/PSoC5/Button.c **** * 
+  47:./Generated_Source/PSoC5/Button.c **** * Parameters:  
+  48:./Generated_Source/PSoC5/Button.c **** *  mode:  Change the pins to this drive mode.
+  49:./Generated_Source/PSoC5/Button.c **** *
+  50:./Generated_Source/PSoC5/Button.c **** * Return: 
+  51:./Generated_Source/PSoC5/Button.c **** *  void
+  52:./Generated_Source/PSoC5/Button.c **** *
+  53:./Generated_Source/PSoC5/Button.c **** *******************************************************************************/
+  54:./Generated_Source/PSoC5/Button.c **** void Button_SetDriveMode(uint8 mode)
+  55:./Generated_Source/PSoC5/Button.c **** {
+  79              	, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81              		push	{r7}
+  82              	.LCFI3:
+  83 0000 80B4     		sub	sp, sp, #12
+  84              	.LCFI4:
+  85 0002 83B0     		add	r7, sp, #0
+  86              	.LCFI5:
+  87 0004 00AF     		@ lr needed for prologue
+  88              		mov	r3, r0
+  89              		strb	r3, [r7, #7]
+  90 0006 0346     		.loc 1 56 0
+  91 0008 FB71     		ldr	r1, .L7
+  56:./Generated_Source/PSoC5/Button.c **** 	CyPins_SetPinDriveMode(Button_0, mode);
+  92              		ldrb	r3, [r3, #0]
+  93 000a 0949     		uxtb	r3, r3
+  94 000c 084B     		mov	r2, r3
+  95 000e 1B78     		and	r2, r2, #241
+  96 0010 DBB2     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  97 0012 1A46     		and	r3, r3, #14
+  98 0014 02F0F102 		orr	r3, r2, r3
+  99 0018 FB79     		uxtb	r3, r3
+ 100 001a 03F00E03 		strb	r3, [r1, #0]
+ 101 001e 42EA0303 		.loc 1 57 0
+ 102 0022 DBB2     		add	r7, r7, #12
+ 103 0024 0B70     		mov	sp, r7
+  57:./Generated_Source/PSoC5/Button.c **** }
+ 104              	x	lr
+ 105 0026 07F10C07 	.L8:
+ 106 002a BD46     		.align	2
+ 107 002c 80BC     	.L7:
+ 108 002e 7047     		.word	1073762309
+ 109              	.LFE3:
+ 110              		.size	Button_SetDriveMode, .-Button_SetDriveMode
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 4
+
+
+ 111              		.section	.text.Button_Read,"ax",%progbits
+ 112 0030 05500040 		.align	2
+ 113              		.global	Button_Read
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.type	Button_Read, %function
+ 117              	Button_Read:
+ 118              	.LFB4:
+ 119              		.loc 1 78 0
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 1, uses_anonymous_args = 0
+ 122              		@ link register save eliminated.
+  58:./Generated_Source/PSoC5/Button.c **** 
+  59:./Generated_Source/PSoC5/Button.c **** 
+  60:./Generated_Source/PSoC5/Button.c **** /*******************************************************************************
+  61:./Generated_Source/PSoC5/Button.c **** * Function Name: Button_Read
+  62:./Generated_Source/PSoC5/Button.c **** ********************************************************************************
+  63:./Generated_Source/PSoC5/Button.c **** * Summary:
+  64:./Generated_Source/PSoC5/Button.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  65:./Generated_Source/PSoC5/Button.c **** *  form.
+  66:./Generated_Source/PSoC5/Button.c **** *
+  67:./Generated_Source/PSoC5/Button.c **** * Parameters:  
+  68:./Generated_Source/PSoC5/Button.c **** *  void 
+  69:./Generated_Source/PSoC5/Button.c **** *
+  70:./Generated_Source/PSoC5/Button.c **** * Return: 
+  71:./Generated_Source/PSoC5/Button.c **** *  Returns the current value of the Digital Port as a right justified number
+  72:./Generated_Source/PSoC5/Button.c **** *  
+  73:./Generated_Source/PSoC5/Button.c **** * Note:
+  74:./Generated_Source/PSoC5/Button.c **** *  Macro Button_ReadPS calls this function. 
+  75:./Generated_Source/PSoC5/Button.c **** *  
+  76:./Generated_Source/PSoC5/Button.c **** *******************************************************************************/
+  77:./Generated_Source/PSoC5/Button.c **** uint8 Button_Read(void)
+  78:./Generated_Source/PSoC5/Button.c **** {
+ 123              		add	r7, sp, #0
+ 124              	.LCFI7:
+ 125              		@ lr needed for prologue
+ 126              		.loc 1 79 0
+ 127 0000 80B4     		ldr	r3, .L11
+ 128              		ldrb	r3, [r3, #0]
+ 129 0002 00AF     		uxtb	r3, r3
+ 130              		and	r3, r3, #32
+ 131              		lsr	r3, r3, #5
+  79:./Generated_Source/PSoC5/Button.c ****     return (Button_PS & Button_MASK) >> Button_SHIFT;
+ 132              	 r3
+ 133 0004 054B     		.loc 1 80 0
+ 134 0006 1B78     		mov	r0, r3
+ 135 0008 DBB2     		mov	sp, r7
+ 136 000a 03F02003 		pop	{r7}
+ 137 000e 4FEA5313 		bx	lr
+ 138 0012 DBB2     	.L12:
+  80:./Generated_Source/PSoC5/Button.c **** }
+ 139              		2
+ 140 0014 1846     	.L11:
+ 141 0016 BD46     		.word	1073762561
+ 142 0018 80BC     	.LFE4:
+ 143 001a 7047     		.size	Button_Read, .-Button_Read
+ 144              		.section	.text.Button_ReadDataReg,"ax",%progbits
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 5
+
+
+ 145              		.align	2
+ 146              		.global	Button_ReadDataReg
+ 147 001c 01510040 		.thumb
+ 148              		.thumb_func
+ 149              		.type	Button_ReadDataReg, %function
+ 150              	Button_ReadDataReg:
+ 151              	.LFB5:
+ 152              		.loc 1 97 0
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156              		push	{r7}
+ 157              	.LCFI8:
+  81:./Generated_Source/PSoC5/Button.c **** 
+  82:./Generated_Source/PSoC5/Button.c **** 
+  83:./Generated_Source/PSoC5/Button.c **** /*******************************************************************************
+  84:./Generated_Source/PSoC5/Button.c **** * Function Name: Button_ReadDataReg
+  85:./Generated_Source/PSoC5/Button.c **** ********************************************************************************
+  86:./Generated_Source/PSoC5/Button.c **** * Summary:
+  87:./Generated_Source/PSoC5/Button.c **** *  Read the current value assigned to a Digital Port's data output register
+  88:./Generated_Source/PSoC5/Button.c **** *
+  89:./Generated_Source/PSoC5/Button.c **** * Parameters:  
+  90:./Generated_Source/PSoC5/Button.c **** *  void 
+  91:./Generated_Source/PSoC5/Button.c **** *
+  92:./Generated_Source/PSoC5/Button.c **** * Return: 
+  93:./Generated_Source/PSoC5/Button.c **** *  Returns the current value assigned to the Digital Port's data output register
+  94:./Generated_Source/PSoC5/Button.c **** *  
+  95:./Generated_Source/PSoC5/Button.c **** *******************************************************************************/
+  96:./Generated_Source/PSoC5/Button.c **** uint8 Button_ReadDataReg(void)
+  97:./Generated_Source/PSoC5/Button.c **** {
+ 158              	FI9:
+ 159              		@ lr needed for prologue
+ 160              		.loc 1 98 0
+ 161              		ldr	r3, .L15
+ 162 0000 80B4     		ldrb	r3, [r3, #0]
+ 163              		uxtb	r3, r3
+ 164 0002 00AF     		and	r3, r3, #32
+ 165              		lsr	r3, r3, #5
+ 166              		uxtb	r3, r3
+  98:./Generated_Source/PSoC5/Button.c ****     return (Button_DR & Button_MASK) >> Button_SHIFT;
+ 167              	9 0
+ 168 0004 054B     		mov	r0, r3
+ 169 0006 1B78     		mov	sp, r7
+ 170 0008 DBB2     		pop	{r7}
+ 171 000a 03F02003 		bx	lr
+ 172 000e 4FEA5313 	.L16:
+ 173 0012 DBB2     		.align	2
+  99:./Generated_Source/PSoC5/Button.c **** }
+ 174              	.word	1073762560
+ 175 0014 1846     	.LFE5:
+ 176 0016 BD46     		.size	Button_ReadDataReg, .-Button_ReadDataReg
+ 177 0018 80BC     		.section	.debug_frame,"",%progbits
+ 178 001a 7047     	.Lframe0:
+ 179              		.4byte	.LECIE0-.LSCIE0
+ 180              	.LSCIE0:
+ 181              		.4byte	0xffffffff
+ 182 001c 00510040 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 6
+
+
+ 183              		.ascii	"\000"
+ 184              		.uleb128 0x1
+ 185              		.sleb128 -4
+ 186              		.byte	0xe
+ 187 0000 0C000000 		.byte	0xc
+ 188              		.uleb128 0xd
+ 189 0004 FFFFFFFF 		.uleb128 0x0
+ 190 0008 01       		.align	2
+ 191 0009 00       	.LECIE0:
+ 192 000a 01       	.LSFDE0:
+ 193 000b 7C       		.4byte	.LEFDE0-.LASFDE0
+ 194 000c 0E       	.LASFDE0:
+ 195 000d 0C       		.4byte	.Lframe0
+ 196 000e 0D       		.4byte	.LFB2
+ 197 000f 00       		.4byte	.LFE2-.LFB2
+ 198              		.byte	0x4
+ 199              		.4byte	.LCFI0-.LFB2
+ 200              		.byte	0xe
+ 201 0010 18000000 		.uleb128 0x4
+ 202              		.byte	0x4
+ 203 0014 00000000 		.4byte	.LCFI1-.LCFI0
+ 204 0018 00000000 		.byte	0xe
+ 205 001c 3C000000 		.uleb128 0x18
+ 206 0020 42       		.byte	0x87
+ 207              		.uleb128 0x1
+ 208 0021 0E       		.byte	0x4
+ 209 0022 04       		.4byte	.LCFI2-.LCFI1
+ 210 0023 42       		.byte	0xd
+ 211              		.uleb128 0x7
+ 212 0024 0E       		.align	2
+ 213 0025 18       	.LEFDE0:
+ 214 0026 87       	.LSFDE2:
+ 215 0027 01       		.4byte	.LEFDE2-.LASFDE2
+ 216 0028 42       	.LASFDE2:
+ 217              		.4byte	.Lframe0
+ 218 0029 0D       		.4byte	.LFB3
+ 219 002a 07       		.4byte	.LFE3-.LFB3
+ 220 002b 00       		.byte	0x4
+ 221              		.4byte	.LCFI3-.LFB3
+ 222              		.byte	0xe
+ 223 002c 18000000 		.uleb128 0x4
+ 224              		.byte	0x4
+ 225 0030 00000000 		.4byte	.LCFI4-.LCFI3
+ 226 0034 00000000 		.byte	0xe
+ 227 0038 34000000 		.uleb128 0x10
+ 228 003c 42       		.byte	0x87
+ 229              		.uleb128 0x1
+ 230 003d 0E       		.byte	0x4
+ 231 003e 04       		.4byte	.LCFI5-.LCFI4
+ 232 003f 42       		.byte	0xd
+ 233              		.uleb128 0x7
+ 234 0040 0E       		.align	2
+ 235 0041 10       	.LEFDE2:
+ 236 0042 87       	.LSFDE4:
+ 237 0043 01       		.4byte	.LEFDE4-.LASFDE4
+ 238 0044 42       	.LASFDE4:
+ 239              		.4byte	.Lframe0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 7
+
+
+ 240 0045 0D       		.4byte	.LFB4
+ 241 0046 07       		.4byte	.LFE4-.LFB4
+ 242 0047 00       		.byte	0x4
+ 243              		.4byte	.LCFI6-.LFB4
+ 244              		.byte	0xe
+ 245 0048 14000000 		.uleb128 0x4
+ 246              		.byte	0x87
+ 247 004c 00000000 		.uleb128 0x1
+ 248 0050 00000000 		.byte	0x4
+ 249 0054 20000000 		.4byte	.LCFI7-.LCFI6
+ 250 0058 42       		.byte	0xd
+ 251              		.uleb128 0x7
+ 252 0059 0E       		.align	2
+ 253 005a 04       	.LEFDE4:
+ 254 005b 87       	.LSFDE6:
+ 255 005c 01       		.4byte	.LEFDE6-.LASFDE6
+ 256 005d 42       	.LASFDE6:
+ 257              		.4byte	.Lframe0
+ 258 005e 0D       		.4byte	.LFB5
+ 259 005f 07       		.4byte	.LFE5-.LFB5
+ 260              		.byte	0x4
+ 261              		.4byte	.LCFI8-.LFB5
+ 262              		.byte	0xe
+ 263 0060 14000000 		.uleb128 0x4
+ 264              		.byte	0x87
+ 265 0064 00000000 		.uleb128 0x1
+ 266 0068 00000000 		.byte	0x4
+ 267 006c 20000000 		.4byte	.LCFI9-.LCFI8
+ 268 0070 42       		.byte	0xd
+ 269              		.uleb128 0x7
+ 270 0071 0E       		.align	2
+ 271 0072 04       	.LEFDE6:
+ 272 0073 87       		.text
+ 273 0074 01       	.Letext0:
+ 274 0075 42       		.section	.debug_loc,"",%progbits
+ 275              	.Ldebug_loc0:
+ 276 0076 0D       	.LLST0:
+ 277 0077 07       		.4byte	.LFB2
+ 278              		.4byte	.LCFI0
+ 279              		.2byte	0x1
+ 280              		.byte	0x5d
+ 281              		.4byte	.LCFI0
+ 282              		.4byte	.LCFI1
+ 283              		.2byte	0x2
+ 284              		.byte	0x7d
+ 285 0000 00000000 		.sleb128 4
+ 286 0004 02000000 		.4byte	.LCFI1
+ 287 0008 0100     		.4byte	.LCFI2
+ 288 000a 5D       		.2byte	0x2
+ 289 000b 02000000 		.byte	0x7d
+ 290 000f 04000000 		.sleb128 24
+ 291 0013 0200     		.4byte	.LCFI2
+ 292 0015 7D       		.4byte	.LFE2
+ 293 0016 04       		.2byte	0x2
+ 294 0017 04000000 		.byte	0x77
+ 295 001b 06000000 		.sleb128 24
+ 296 001f 0200     		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 8
+
+
+ 297 0021 7D       		.4byte	0x0
+ 298 0022 18       	.LLST1:
+ 299 0023 06000000 		.4byte	.LFB3
+ 300 0027 3C000000 		.4byte	.LCFI3
+ 301 002b 0200     		.2byte	0x1
+ 302 002d 77       		.byte	0x5d
+ 303 002e 18       		.4byte	.LCFI3
+ 304 002f 00000000 		.4byte	.LCFI4
+ 305 0033 00000000 		.2byte	0x2
+ 306              		.byte	0x7d
+ 307 0037 00000000 		.sleb128 4
+ 308 003b 02000000 		.4byte	.LCFI4
+ 309 003f 0100     		.4byte	.LCFI5
+ 310 0041 5D       		.2byte	0x2
+ 311 0042 02000000 		.byte	0x7d
+ 312 0046 04000000 		.sleb128 16
+ 313 004a 0200     		.4byte	.LCFI5
+ 314 004c 7D       		.4byte	.LFE3
+ 315 004d 04       		.2byte	0x2
+ 316 004e 04000000 		.byte	0x77
+ 317 0052 06000000 		.sleb128 16
+ 318 0056 0200     		.4byte	0x0
+ 319 0058 7D       		.4byte	0x0
+ 320 0059 10       	.LLST2:
+ 321 005a 06000000 		.4byte	.LFB4
+ 322 005e 34000000 		.4byte	.LCFI6
+ 323 0062 0200     		.2byte	0x1
+ 324 0064 77       		.byte	0x5d
+ 325 0065 10       		.4byte	.LCFI6
+ 326 0066 00000000 		.4byte	.LCFI7
+ 327 006a 00000000 		.2byte	0x2
+ 328              		.byte	0x7d
+ 329 006e 00000000 		.sleb128 4
+ 330 0072 02000000 		.4byte	.LCFI7
+ 331 0076 0100     		.4byte	.LFE4
+ 332 0078 5D       		.2byte	0x2
+ 333 0079 02000000 		.byte	0x77
+ 334 007d 04000000 		.sleb128 4
+ 335 0081 0200     		.4byte	0x0
+ 336 0083 7D       		.4byte	0x0
+ 337 0084 04       	.LLST3:
+ 338 0085 04000000 		.4byte	.LFB5
+ 339 0089 20000000 		.4byte	.LCFI8
+ 340 008d 0200     		.2byte	0x1
+ 341 008f 77       		.byte	0x5d
+ 342 0090 04       		.4byte	.LCFI8
+ 343 0091 00000000 		.4byte	.LCFI9
+ 344 0095 00000000 		.2byte	0x2
+ 345              		.byte	0x7d
+ 346 0099 00000000 		.sleb128 4
+ 347 009d 02000000 		.4byte	.LCFI9
+ 348 00a1 0100     		.4byte	.LFE5
+ 349 00a3 5D       		.2byte	0x2
+ 350 00a4 02000000 		.byte	0x77
+ 351 00a8 04000000 		.sleb128 4
+ 352 00ac 0200     		.4byte	0x0
+ 353 00ae 7D       		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 9
+
+
+ 354 00af 04       		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 355 00b0 04000000 		.section	.debug_info
+ 356 00b4 20000000 		.4byte	0x1bc
+ 357 00b8 0200     		.2byte	0x2
+ 358 00ba 77       		.4byte	.Ldebug_abbrev0
+ 359 00bb 04       		.byte	0x4
+ 360 00bc 00000000 		.uleb128 0x1
+ 361 00c0 00000000 		.ascii	"GNU C 4.2.1\000"
+ 362              		.byte	0x1
+ 363              		.ascii	"./Generated_Source/PSoC5/Button.c\000"
+ 364 0000 BC010000 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 365 0004 0200     		.ascii	"ro\\CarStairo.cydsn\000"
+ 366 0006 00000000 		.4byte	0x0
+ 367 000a 04       		.4byte	.Ldebug_line0
+ 368 000b 01       		.uleb128 0x2
+ 369 000c 474E5520 		.byte	0x1
+ 369      4320342E 
+ 369      322E3100 
+ 370 0018 01       		.byte	0x8
+ 371 0019 2E2F4765 		.ascii	"unsigned char\000"
+ 371      6E657261 
+ 371      7465645F 
+ 371      536F7572 
+ 371      63652F50 
+ 372 003b 433A5C55 		.uleb128 0x3
+ 372      73657273 
+ 372      5C626C69 
+ 372      6E6B795C 
+ 372      446F6375 
+ 373 0069 726F5C43 		.ascii	"uint8\000"
+ 373      61725374 
+ 373      6169726F 
+ 373      2E637964 
+ 373      736E00
+ 374 007c 00000000 		.byte	0x2
+ 375 0080 00000000 		.byte	0x25
+ 376 0084 02       		.4byte	0x84
+ 377 0085 01       		.uleb128 0x2
+ 378 0086 08       		.byte	0x2
+ 379 0087 756E7369 		.byte	0x7
+ 379      676E6564 
+ 379      20636861 
+ 379      7200
+ 380 0095 03       		.ascii	"short unsigned int\000"
+ 381 0096 75696E74 		.uleb128 0x2
+ 381      3800
+ 382 009c 02       		.byte	0x4
+ 383 009d 25       		.byte	0x7
+ 384 009e 84000000 		.ascii	"long unsigned int\000"
+ 385 00a2 02       		.uleb128 0x2
+ 386 00a3 02       		.byte	0x1
+ 387 00a4 07       		.byte	0x6
+ 388 00a5 73686F72 		.ascii	"signed char\000"
+ 388      7420756E 
+ 388      7369676E 
+ 388      65642069 
+ 388      6E7400
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 10
+
+
+ 389 00b8 02       		.uleb128 0x2
+ 390 00b9 04       		.byte	0x2
+ 391 00ba 07       		.byte	0x5
+ 392 00bb 6C6F6E67 		.ascii	"short int\000"
+ 392      20756E73 
+ 392      69676E65 
+ 392      6420696E 
+ 392      7400
+ 393 00cd 02       		.uleb128 0x2
+ 394 00ce 01       		.byte	0x4
+ 395 00cf 06       		.byte	0x5
+ 396 00d0 7369676E 		.ascii	"long int\000"
+ 396      65642063 
+ 396      68617200 
+ 397 00dc 02       		.uleb128 0x4
+ 398 00dd 02       		.byte	0x1
+ 399 00de 05       		.ascii	"Button_Write\000"
+ 400 00df 73686F72 		.byte	0x1
+ 400      7420696E 
+ 400      7400
+ 401 00e9 02       		.byte	0x23
+ 402 00ea 04       		.byte	0x1
+ 403 00eb 05       		.4byte	.LFB2
+ 404 00ec 6C6F6E67 		.4byte	.LFE2
+ 404      20696E74 
+ 404      00
+ 405 00f5 04       		.4byte	.LLST0
+ 406 00f6 01       		.4byte	0x13d
+ 407 00f7 42757474 		.uleb128 0x5
+ 407      6F6E5F57 
+ 407      72697465 
+ 407      00
+ 408 0104 01       		.ascii	"value\000"
+ 409 0105 23       		.byte	0x1
+ 410 0106 01       		.byte	0x22
+ 411 0107 00000000 		.4byte	0x95
+ 412 010b 3C000000 		.byte	0x2
+ 413 010f 00000000 		.byte	0x91
+ 414 0113 3D010000 		.sleb128 -17
+ 415 0117 05       		.uleb128 0x6
+ 416 0118 76616C75 		.ascii	"staticBits\000"
+ 416      6500
+ 417 011e 01       		.byte	0x1
+ 418 011f 22       		.byte	0x24
+ 419 0120 95000000 		.4byte	0x95
+ 420 0124 02       		.byte	0x2
+ 421 0125 91       		.byte	0x91
+ 422 0126 6F       		.sleb128 -9
+ 423 0127 06       		.byte	0x0
+ 424 0128 73746174 		.uleb128 0x4
+ 424      69634269 
+ 424      747300
+ 425 0133 01       		.byte	0x1
+ 426 0134 24       		.ascii	"Button_SetDriveMode\000"
+ 427 0135 95000000 		.byte	0x1
+ 428 0139 02       		.byte	0x37
+ 429 013a 91       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 11
+
+
+ 430 013b 77       		.4byte	.LFB3
+ 431 013c 00       		.4byte	.LFE3
+ 432 013d 04       		.4byte	.LLST1
+ 433 013e 01       		.4byte	0x176
+ 434 013f 42757474 		.uleb128 0x5
+ 434      6F6E5F53 
+ 434      65744472 
+ 434      6976654D 
+ 434      6F646500 
+ 435 0153 01       		.ascii	"mode\000"
+ 436 0154 37       		.byte	0x1
+ 437 0155 01       		.byte	0x36
+ 438 0156 00000000 		.4byte	0x95
+ 439 015a 34000000 		.byte	0x2
+ 440 015e 37000000 		.byte	0x91
+ 441 0162 76010000 		.sleb128 -9
+ 442 0166 05       		.byte	0x0
+ 443 0167 6D6F6465 		.uleb128 0x7
+ 443      00
+ 444 016c 01       		.byte	0x1
+ 445 016d 36       		.ascii	"Button_Read\000"
+ 446 016e 95000000 		.byte	0x1
+ 447 0172 02       		.byte	0x4e
+ 448 0173 91       		.byte	0x1
+ 449 0174 77       		.4byte	0x95
+ 450 0175 00       		.4byte	.LFB4
+ 451 0176 07       		.4byte	.LFE4
+ 452 0177 01       		.4byte	.LLST2
+ 453 0178 42757474 		.uleb128 0x7
+ 453      6F6E5F52 
+ 453      65616400 
+ 454 0184 01       		.byte	0x1
+ 455 0185 4E       		.ascii	"Button_ReadDataReg\000"
+ 456 0186 01       		.byte	0x1
+ 457 0187 95000000 		.byte	0x61
+ 458 018b 00000000 		.byte	0x1
+ 459 018f 20000000 		.4byte	0x95
+ 460 0193 6E000000 		.4byte	.LFB5
+ 461 0197 07       		.4byte	.LFE5
+ 462 0198 01       		.4byte	.LLST3
+ 463 0199 42757474 		.byte	0x0
+ 463      6F6E5F52 
+ 463      65616444 
+ 463      61746152 
+ 463      656700
+ 464 01ac 01       		.section	.debug_abbrev
+ 465 01ad 61       		.uleb128 0x1
+ 466 01ae 01       		.uleb128 0x11
+ 467 01af 95000000 		.byte	0x1
+ 468 01b3 00000000 		.uleb128 0x25
+ 469 01b7 20000000 		.uleb128 0x8
+ 470 01bb 99000000 		.uleb128 0x13
+ 471 01bf 00       		.uleb128 0xb
+ 472              		.uleb128 0x3
+ 473 0000 01       		.uleb128 0x8
+ 474 0001 11       		.uleb128 0x1b
+ 475 0002 01       		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 12
+
+
+ 476 0003 25       		.uleb128 0x52
+ 477 0004 08       		.uleb128 0x1
+ 478 0005 13       		.uleb128 0x10
+ 479 0006 0B       		.uleb128 0x6
+ 480 0007 03       		.byte	0x0
+ 481 0008 08       		.byte	0x0
+ 482 0009 1B       		.uleb128 0x2
+ 483 000a 08       		.uleb128 0x24
+ 484 000b 52       		.byte	0x0
+ 485 000c 01       		.uleb128 0xb
+ 486 000d 10       		.uleb128 0xb
+ 487 000e 06       		.uleb128 0x3e
+ 488 000f 00       		.uleb128 0xb
+ 489 0010 00       		.uleb128 0x3
+ 490 0011 02       		.uleb128 0x8
+ 491 0012 24       		.byte	0x0
+ 492 0013 00       		.byte	0x0
+ 493 0014 0B       		.uleb128 0x3
+ 494 0015 0B       		.uleb128 0x16
+ 495 0016 3E       		.byte	0x0
+ 496 0017 0B       		.uleb128 0x3
+ 497 0018 03       		.uleb128 0x8
+ 498 0019 08       		.uleb128 0x3a
+ 499 001a 00       		.uleb128 0xb
+ 500 001b 00       		.uleb128 0x3b
+ 501 001c 03       		.uleb128 0xb
+ 502 001d 16       		.uleb128 0x49
+ 503 001e 00       		.uleb128 0x13
+ 504 001f 03       		.byte	0x0
+ 505 0020 08       		.byte	0x0
+ 506 0021 3A       		.uleb128 0x4
+ 507 0022 0B       		.uleb128 0x2e
+ 508 0023 3B       		.byte	0x1
+ 509 0024 0B       		.uleb128 0x3f
+ 510 0025 49       		.uleb128 0xc
+ 511 0026 13       		.uleb128 0x3
+ 512 0027 00       		.uleb128 0x8
+ 513 0028 00       		.uleb128 0x3a
+ 514 0029 04       		.uleb128 0xb
+ 515 002a 2E       		.uleb128 0x3b
+ 516 002b 01       		.uleb128 0xb
+ 517 002c 3F       		.uleb128 0x27
+ 518 002d 0C       		.uleb128 0xc
+ 519 002e 03       		.uleb128 0x11
+ 520 002f 08       		.uleb128 0x1
+ 521 0030 3A       		.uleb128 0x12
+ 522 0031 0B       		.uleb128 0x1
+ 523 0032 3B       		.uleb128 0x40
+ 524 0033 0B       		.uleb128 0x6
+ 525 0034 27       		.uleb128 0x1
+ 526 0035 0C       		.uleb128 0x13
+ 527 0036 11       		.byte	0x0
+ 528 0037 01       		.byte	0x0
+ 529 0038 12       		.uleb128 0x5
+ 530 0039 01       		.uleb128 0x5
+ 531 003a 40       		.byte	0x0
+ 532 003b 06       		.uleb128 0x3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 13
+
+
+ 533 003c 01       		.uleb128 0x8
+ 534 003d 13       		.uleb128 0x3a
+ 535 003e 00       		.uleb128 0xb
+ 536 003f 00       		.uleb128 0x3b
+ 537 0040 05       		.uleb128 0xb
+ 538 0041 05       		.uleb128 0x49
+ 539 0042 00       		.uleb128 0x13
+ 540 0043 03       		.uleb128 0x2
+ 541 0044 08       		.uleb128 0xa
+ 542 0045 3A       		.byte	0x0
+ 543 0046 0B       		.byte	0x0
+ 544 0047 3B       		.uleb128 0x6
+ 545 0048 0B       		.uleb128 0x34
+ 546 0049 49       		.byte	0x0
+ 547 004a 13       		.uleb128 0x3
+ 548 004b 02       		.uleb128 0x8
+ 549 004c 0A       		.uleb128 0x3a
+ 550 004d 00       		.uleb128 0xb
+ 551 004e 00       		.uleb128 0x3b
+ 552 004f 06       		.uleb128 0xb
+ 553 0050 34       		.uleb128 0x49
+ 554 0051 00       		.uleb128 0x13
+ 555 0052 03       		.uleb128 0x2
+ 556 0053 08       		.uleb128 0xa
+ 557 0054 3A       		.byte	0x0
+ 558 0055 0B       		.byte	0x0
+ 559 0056 3B       		.uleb128 0x7
+ 560 0057 0B       		.uleb128 0x2e
+ 561 0058 49       		.byte	0x0
+ 562 0059 13       		.uleb128 0x3f
+ 563 005a 02       		.uleb128 0xc
+ 564 005b 0A       		.uleb128 0x3
+ 565 005c 00       		.uleb128 0x8
+ 566 005d 00       		.uleb128 0x3a
+ 567 005e 07       		.uleb128 0xb
+ 568 005f 2E       		.uleb128 0x3b
+ 569 0060 00       		.uleb128 0xb
+ 570 0061 3F       		.uleb128 0x27
+ 571 0062 0C       		.uleb128 0xc
+ 572 0063 03       		.uleb128 0x49
+ 573 0064 08       		.uleb128 0x13
+ 574 0065 3A       		.uleb128 0x11
+ 575 0066 0B       		.uleb128 0x1
+ 576 0067 3B       		.uleb128 0x12
+ 577 0068 0B       		.uleb128 0x1
+ 578 0069 27       		.uleb128 0x40
+ 579 006a 0C       		.uleb128 0x6
+ 580 006b 49       		.byte	0x0
+ 581 006c 13       		.byte	0x0
+ 582 006d 11       		.byte	0x0
+ 583 006e 01       		.section	.debug_pubnames,"",%progbits
+ 584 006f 12       		.4byte	0x5e
+ 585 0070 01       		.2byte	0x2
+ 586 0071 40       		.4byte	.Ldebug_info0
+ 587 0072 06       		.4byte	0x1c0
+ 588 0073 00       		.4byte	0xf5
+ 589 0074 00       		.ascii	"Button_Write\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWEbaaa.s 			page 14
+
+
+ 590 0075 00       		.4byte	0x13d
+ 591              		.ascii	"Button_SetDriveMode\000"
+ 592 0000 5E000000 		.4byte	0x176
+ 593 0004 0200     		.ascii	"Button_Read\000"
+ 594 0006 00000000 		.4byte	0x197
+ 595 000a C0010000 		.ascii	"Button_ReadDataReg\000"
+ 596 000e F5000000 		.4byte	0x0
+ 597 0012 42757474 		.section	.debug_aranges,"",%progbits
+ 597      6F6E5F57 
+ 597      72697465 
+ 597      00
+ 598 001f 3D010000 		.4byte	0x34
+ 599 0023 42757474 		.2byte	0x2
+ 599      6F6E5F53 
+ 599      65744472 
+ 599      6976654D 
+ 599      6F646500 
+ 600 0037 76010000 		.4byte	.Ldebug_info0
+ 601 003b 42757474 		.byte	0x4
+ 601      6F6E5F52 
+ 601      65616400 
+ 602 0047 97010000 		.byte	0x0
+ 603 004b 42757474 		.2byte	0x0
+ 603      6F6E5F52 
+ 603      65616444 
+ 603      61746152 
+ 603      656700
+ 604 005e 00000000 		.2byte	0x0
+ 605              		.4byte	.LFB2
+ 606 0000 34000000 		.4byte	.LFE2-.LFB2
+ 607 0004 0200     		.4byte	.LFB3
+ 608 0006 00000000 		.4byte	.LFE3-.LFB3
+ 609 000a 04       		.4byte	.LFB4
+ 610 000b 00       		.4byte	.LFE4-.LFB4
+ 611 000c 0000     		.4byte	.LFB5
+ 612 000e 0000     		.4byte	.LFE5-.LFB5
+ 613 0010 00000000 		.4byte	0x0
+ 614 0014 3C000000 		.4byte	0x0
+ 615 0018 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 616 001c 34000000 	...

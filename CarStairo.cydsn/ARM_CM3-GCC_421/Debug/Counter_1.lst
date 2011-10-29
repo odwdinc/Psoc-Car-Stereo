@@ -1,0 +1,2124 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"Counter_1.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 36010000 		.text
+  20      02004800 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.global	Counter_1_initvar
+  23              		.bss
+  24              		.type	Counter_1_initvar, %object
+  25              		.size	Counter_1_initvar, 1
+  26              	Counter_1_initvar:
+  27 0000 00       		.space	1
+  28              		.section	.text.Counter_1_Start,"ax",%progbits
+  29              		.align	2
+  30              		.global	Counter_1_Start
+  31              		.thumb
+  32              		.thumb_func
+  33              		.type	Counter_1_Start, %function
+  34              	Counter_1_Start:
+  35              	.LFB2:
+  36              		.file 1 "./Generated_Source/PSoC5/Counter_1.c"
+   1:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/Counter_1.c **** * File Name: Counter_1.c  
+   3:./Generated_Source/PSoC5/Counter_1.c **** * Version 1.20
+   4:./Generated_Source/PSoC5/Counter_1.c **** *
+   5:./Generated_Source/PSoC5/Counter_1.c **** *  Description:
+   6:./Generated_Source/PSoC5/Counter_1.c **** *     The Counter User Module consists of a 8, 16, 24 or 32-bit counter with
+   7:./Generated_Source/PSoC5/Counter_1.c **** *     a selectable period between 2 and 2^Width - 1.  
+   8:./Generated_Source/PSoC5/Counter_1.c **** *
+   9:./Generated_Source/PSoC5/Counter_1.c **** *   Note:
+  10:./Generated_Source/PSoC5/Counter_1.c **** *     None
+  11:./Generated_Source/PSoC5/Counter_1.c **** *
+  12:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************
+  13:./Generated_Source/PSoC5/Counter_1.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  14:./Generated_Source/PSoC5/Counter_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  15:./Generated_Source/PSoC5/Counter_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  16:./Generated_Source/PSoC5/Counter_1.c **** * the software package with which this file was provided.
+  17:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************/
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 2
+
+
+  18:./Generated_Source/PSoC5/Counter_1.c **** 
+  19:./Generated_Source/PSoC5/Counter_1.c **** 
+  20:./Generated_Source/PSoC5/Counter_1.c **** #include "cytypes.h"
+  21:./Generated_Source/PSoC5/Counter_1.c **** #include "Counter_1.h"
+  22:./Generated_Source/PSoC5/Counter_1.c **** 
+  23:./Generated_Source/PSoC5/Counter_1.c **** uint8 Counter_1_initvar = 0;
+  24:./Generated_Source/PSoC5/Counter_1.c **** 
+  25:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+  26:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_Start
+  27:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+  28:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+  29:./Generated_Source/PSoC5/Counter_1.c **** *  Enables the counter for operation 
+  30:./Generated_Source/PSoC5/Counter_1.c **** *
+  31:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+  32:./Generated_Source/PSoC5/Counter_1.c **** *  void:  
+  33:./Generated_Source/PSoC5/Counter_1.c **** *
+  34:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+  35:./Generated_Source/PSoC5/Counter_1.c **** *  (void)
+  36:./Generated_Source/PSoC5/Counter_1.c **** *
+  37:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+  38:./Generated_Source/PSoC5/Counter_1.c **** *
+  39:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+  40:./Generated_Source/PSoC5/Counter_1.c **** *               has no effect on the operation of the counter.
+  41:./Generated_Source/PSoC5/Counter_1.c **** *
+  42:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+  43:./Generated_Source/PSoC5/Counter_1.c **** void Counter_1_Start(void) 
+  44:./Generated_Source/PSoC5/Counter_1.c **** {
+  37              	0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39              		push	{r7, lr}
+  40 0000 80B5     	.LCFI0:
+  41              		add	r7, sp, #0
+  42 0002 00AF     	.LCFI1:
+  43              		.loc 1 45 0
+  45:./Generated_Source/PSoC5/Counter_1.c ****     if(Counter_1_initvar == 0)
+  44              	, .L5
+  45 0004 214B     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  46 0006 1B78     		cmp	r3, #0
+  47 0008 002B     		bne	.L2
+  48 000a 35D1     		.loc 1 51 0
+  46:./Generated_Source/PSoC5/Counter_1.c ****     {
+  47:./Generated_Source/PSoC5/Counter_1.c ****         #if (!Counter_1_UsingFixedFunction && !Counter_1_ControlRegRemoved)
+  48:./Generated_Source/PSoC5/Counter_1.c ****             uint8 ctrl;
+  49:./Generated_Source/PSoC5/Counter_1.c ****         #endif
+  50:./Generated_Source/PSoC5/Counter_1.c ****         
+  51:./Generated_Source/PSoC5/Counter_1.c ****         Counter_1_initvar = 1; /* Clear this bit for Initialization */
+  49              	r2, .L5
+  50 000c 1F4A     		mov	r3, #1
+  51 000e 4FF00103 		strb	r3, [r2, #0]
+  52 0012 1370     		.loc 1 55 0
+  52:./Generated_Source/PSoC5/Counter_1.c ****         
+  53:./Generated_Source/PSoC5/Counter_1.c ****         #if (Counter_1_UsingFixedFunction)
+  54:./Generated_Source/PSoC5/Counter_1.c ****             /* Clear all bits but the enable bit (if it's already set for Timer operation */
+  55:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL &= Counter_1_CTRL_ENABLE;
+  53              		r2, .L5+4
+  54 0014 1E4A     		ldr	r3, .L5+4
+  55 0016 1E4B     		ldrb	r3, [r3, #0]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 3
+
+
+  56 0018 1B78     		uxtb	r3, r3
+  57 001a DBB2     		and	r3, r3, #1
+  58 001c 03F00103 		strb	r3, [r2, #0]
+  59 0020 1370     		.loc 1 58 0
+  56:./Generated_Source/PSoC5/Counter_1.c ****             
+  57:./Generated_Source/PSoC5/Counter_1.c ****             /* Clear the mode bits to be 000 for continuous mode */
+  58:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL2 &= ~Counter_1_CTRL_CMPMODE_MASK; 
+  60              	, .L5+8
+  61 0022 1C4A     		ldr	r3, .L5+8
+  62 0024 1B4B     		ldrb	r3, [r3, #0]
+  63 0026 1B78     		uxtb	r3, r3
+  64 0028 DBB2     		and	r3, r3, #241
+  65 002a 03F0F103 		strb	r3, [r2, #0]
+  66 002e 1370     		.loc 1 62 0
+  59:./Generated_Source/PSoC5/Counter_1.c ****             /* Compare Mode is not available with Fixed Function block so don't set the compare mod
+  60:./Generated_Source/PSoC5/Counter_1.c ****             
+  61:./Generated_Source/PSoC5/Counter_1.c ****             /* Set the IRQ to use the status register interrupts */
+  62:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL2 |= Counter_1_CTRL2_IRQ_SEL;
+  67              	, .L5+8
+  68 0030 184A     		ldr	r3, .L5+8
+  69 0032 184B     		ldrb	r3, [r3, #0]
+  70 0034 1B78     		uxtb	r3, r3
+  71 0036 DBB2     		orr	r3, r3, #1
+  72 0038 43F00103 		uxtb	r3, r3
+  73 003c DBB2     		strb	r3, [r2, #0]
+  74 003e 1370     		.loc 1 81 0
+  63:./Generated_Source/PSoC5/Counter_1.c ****         #else
+  64:./Generated_Source/PSoC5/Counter_1.c ****             #if(!Counter_1_ControlRegRemoved)
+  65:./Generated_Source/PSoC5/Counter_1.c ****             /* Set the default compare mode defined in the parameter */
+  66:./Generated_Source/PSoC5/Counter_1.c ****             ctrl = Counter_1_CONTROL & ~Counter_1_CTRL_CMPMODE_MASK;
+  67:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL = ctrl | Counter_1_DEFAULT_COMPARE_MODE;
+  68:./Generated_Source/PSoC5/Counter_1.c ****             
+  69:./Generated_Source/PSoC5/Counter_1.c ****             /* Set the default capture mode defined in the parameter */
+  70:./Generated_Source/PSoC5/Counter_1.c ****             ctrl = Counter_1_CONTROL & ~Counter_1_CTRL_CAPMODE_MASK;
+  71:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL = ctrl | Counter_1_DEFAULT_CAPTURE_MODE;
+  72:./Generated_Source/PSoC5/Counter_1.c ****             #endif
+  73:./Generated_Source/PSoC5/Counter_1.c ****         #endif 
+  74:./Generated_Source/PSoC5/Counter_1.c ****         
+  75:./Generated_Source/PSoC5/Counter_1.c ****         /* Clear all data in the FIFO's */
+  76:./Generated_Source/PSoC5/Counter_1.c ****         #if (!Counter_1_UsingFixedFunction)
+  77:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_ClearFIFO();
+  78:./Generated_Source/PSoC5/Counter_1.c ****         #endif
+  79:./Generated_Source/PSoC5/Counter_1.c ****         
+  80:./Generated_Source/PSoC5/Counter_1.c ****          /* Set Initial values from Configuration */
+  81:./Generated_Source/PSoC5/Counter_1.c ****         Counter_1_WritePeriod(Counter_1_INIT_PERIOD_VALUE);
+  75              	 #75
+  76 0040 4FF04B00 		bl	Counter_1_WritePeriod
+  77 0044 FFF7FEFF 		.loc 1 82 0
+  82:./Generated_Source/PSoC5/Counter_1.c ****         Counter_1_WriteCounter(Counter_1_INIT_COUNTER_VALUE);
+  78              	v	r0, #0
+  79 0048 4FF00000 		bl	Counter_1_WriteCounter
+  80 004c FFF7FEFF 		.loc 1 83 0
+  83:./Generated_Source/PSoC5/Counter_1.c ****         Counter_1_SetInterruptMode(Counter_1_INIT_INTERRUPTS_MASK);
+  81              	v	r0, #0
+  82 0050 4FF00000 		bl	Counter_1_SetInterruptMode
+  83 0054 FFF7FEFF 		.loc 1 87 0
+  84:./Generated_Source/PSoC5/Counter_1.c ****         
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 4
+
+
+  85:./Generated_Source/PSoC5/Counter_1.c ****         #if (Counter_1_UsingFixedFunction)
+  86:./Generated_Source/PSoC5/Counter_1.c ****             /* Globally Enable the Fixed Function Block chosen */
+  87:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_GLOBAL_ENABLE |= Counter_1_BLOCK_EN_MASK;
+  84              	r	r2, .L5+12
+  85 0058 0F4A     		ldr	r3, .L5+12
+  86 005a 0F4B     		ldrb	r3, [r3, #0]
+  87 005c 1B78     		uxtb	r3, r3
+  88 005e DBB2     		orr	r3, r3, #1
+  89 0060 43F00103 		uxtb	r3, r3
+  90 0064 DBB2     		strb	r3, [r2, #0]
+  91 0066 1370     		.loc 1 89 0
+  88:./Generated_Source/PSoC5/Counter_1.c ****             /* Set the Interrupt source to come from the status register */
+  89:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_CONTROL2 |= Counter_1_CTRL2_IRQ_SEL;
+  92              	 .L5+8
+  93 0068 0A4A     		ldr	r3, .L5+8
+  94 006a 0A4B     		ldrb	r3, [r3, #0]
+  95 006c 1B78     		uxtb	r3, r3
+  96 006e DBB2     		orr	r3, r3, #1
+  97 0070 43F00103 		uxtb	r3, r3
+  98 0074 DBB2     		strb	r3, [r2, #0]
+  99 0076 1370     	.L2:
+ 100              		.loc 1 103 0
+  90:./Generated_Source/PSoC5/Counter_1.c ****         #else
+  91:./Generated_Source/PSoC5/Counter_1.c ****             /* Set the compare value (only available to non-fixed function implementation */
+  92:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_WriteCompare(Counter_1_INIT_COMPARE_VALUE);
+  93:./Generated_Source/PSoC5/Counter_1.c ****             /* Use the interrupt output of the status register for IRQ output */
+  94:./Generated_Source/PSoC5/Counter_1.c ****             Counter_1_STATUS_AUX_CTRL |= Counter_1_STATUS_ACTL_INT_EN_MASK;
+  95:./Generated_Source/PSoC5/Counter_1.c ****         #endif
+  96:./Generated_Source/PSoC5/Counter_1.c **** 
+  97:./Generated_Source/PSoC5/Counter_1.c ****     }
+  98:./Generated_Source/PSoC5/Counter_1.c ****     
+  99:./Generated_Source/PSoC5/Counter_1.c ****     /* Enable the counter from the control register  */
+ 100:./Generated_Source/PSoC5/Counter_1.c ****     /* If Fixed Function then make sure Mode is set correctly */
+ 101:./Generated_Source/PSoC5/Counter_1.c ****     /* else make sure reset is clear */
+ 102:./Generated_Source/PSoC5/Counter_1.c ****     #if(!Counter_1_ControlRegRemoved || Counter_1_UsingFixedFunction)
+ 103:./Generated_Source/PSoC5/Counter_1.c ****    Counter_1_CONTROL |= Counter_1_CTRL_ENABLE;
+ 101              	.L5+4
+ 102 0078 054A     		ldr	r3, .L5+4
+ 103 007a 054B     		ldrb	r3, [r3, #0]
+ 104 007c 1B78     		uxtb	r3, r3
+ 105 007e DBB2     		orr	r3, r3, #1
+ 106 0080 43F00103 		uxtb	r3, r3
+ 107 0084 DBB2     		strb	r3, [r2, #0]
+ 108 0086 1370     		.loc 1 105 0
+ 104:./Generated_Source/PSoC5/Counter_1.c ****    #endif
+ 105:./Generated_Source/PSoC5/Counter_1.c **** }
+ 109              	 r7
+ 110 0088 BD46     		pop	{r7, pc}
+ 111 008a 80BD     	.L6:
+ 112              		.align	2
+ 113              	.L5:
+ 114              		.word	Counter_1_initvar
+ 115 008c 00000000 		.word	1073762048
+ 116 0090 004F0040 		.word	1073762049
+ 117 0094 014F0040 		.word	1073759139
+ 118 0098 A3430040 	.LFE2:
+ 119              		.size	Counter_1_Start, .-Counter_1_Start
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 5
+
+
+ 120              		.section	.text.Counter_1_Stop,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	Counter_1_Stop
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	Counter_1_Stop, %function
+ 126              	Counter_1_Stop:
+ 127              	.LFB3:
+ 128              		.loc 1 127 0
+ 106:./Generated_Source/PSoC5/Counter_1.c **** 
+ 107:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 108:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_Stop
+ 109:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 110:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 111:./Generated_Source/PSoC5/Counter_1.c **** * Halts the counter, but does not change any modes or disable
+ 112:./Generated_Source/PSoC5/Counter_1.c **** * interrupts.
+ 113:./Generated_Source/PSoC5/Counter_1.c **** *
+ 114:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 115:./Generated_Source/PSoC5/Counter_1.c **** *  void:  
+ 116:./Generated_Source/PSoC5/Counter_1.c **** *
+ 117:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 118:./Generated_Source/PSoC5/Counter_1.c **** *  (void)
+ 119:./Generated_Source/PSoC5/Counter_1.c **** *
+ 120:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 121:./Generated_Source/PSoC5/Counter_1.c **** *
+ 122:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects: If the Enable mode is set to Hardware only then this function
+ 123:./Generated_Source/PSoC5/Counter_1.c **** *               has no effect on the operation of the counter.
+ 124:./Generated_Source/PSoC5/Counter_1.c **** *
+ 125:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 126:./Generated_Source/PSoC5/Counter_1.c **** void Counter_1_Stop(void)
+ 127:./Generated_Source/PSoC5/Counter_1.c **** {
+ 129              	 = 0, frame = 0
+ 130              		@ frame_needed = 1, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ 132              		push	{r7}
+ 133 0000 80B4     	.LCFI2:
+ 134              		add	r7, sp, #0
+ 135 0002 00AF     	.LCFI3:
+ 136              		@ lr needed for prologue
+ 137              		.loc 1 129 0
+ 128:./Generated_Source/PSoC5/Counter_1.c ****     #if(!Counter_1_ControlRegRemoved || Counter_1_UsingFixedFunction)
+ 129:./Generated_Source/PSoC5/Counter_1.c ****         Counter_1_CONTROL &= ~Counter_1_CTRL_ENABLE;
+ 138              	.L9
+ 139 0004 044A     		ldr	r3, .L9
+ 140 0006 044B     		ldrb	r3, [r3, #0]
+ 141 0008 1B78     		uxtb	r3, r3
+ 142 000a DBB2     		and	r3, r3, #254
+ 143 000c 03F0FE03 		strb	r3, [r2, #0]
+ 144 0010 1370     		.loc 1 131 0
+ 130:./Generated_Source/PSoC5/Counter_1.c ****     #endif
+ 131:./Generated_Source/PSoC5/Counter_1.c **** }
+ 145              	, r7
+ 146 0012 BD46     		pop	{r7}
+ 147 0014 80BC     		bx	lr
+ 148 0016 7047     	.L10:
+ 149              		.align	2
+ 150              	.L9:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 6
+
+
+ 151              		.word	1073762048
+ 152 0018 004F0040 	.LFE3:
+ 153              		.size	Counter_1_Stop, .-Counter_1_Stop
+ 154              		.section	.text.Counter_1_SetInterruptMode,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	Counter_1_SetInterruptMode
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	Counter_1_SetInterruptMode, %function
+ 160              	Counter_1_SetInterruptMode:
+ 161              	.LFB4:
+ 162              		.loc 1 152 0
+ 132:./Generated_Source/PSoC5/Counter_1.c **** 
+ 133:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 134:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_SetInterruptMode
+ 135:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 136:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 137:./Generated_Source/PSoC5/Counter_1.c **** * Configures which interrupt sources are enabled to generate the final interrupt
+ 138:./Generated_Source/PSoC5/Counter_1.c **** *
+ 139:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 140:./Generated_Source/PSoC5/Counter_1.c **** *  InterruptsMask: This parameter is an or'd collection of the status bits
+ 141:./Generated_Source/PSoC5/Counter_1.c **** *                   which will be allowed to generate the counters interrupt.   
+ 142:./Generated_Source/PSoC5/Counter_1.c **** *
+ 143:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 144:./Generated_Source/PSoC5/Counter_1.c **** *  (void)
+ 145:./Generated_Source/PSoC5/Counter_1.c **** *
+ 146:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 147:./Generated_Source/PSoC5/Counter_1.c **** *
+ 148:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 149:./Generated_Source/PSoC5/Counter_1.c **** *
+ 150:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 151:./Generated_Source/PSoC5/Counter_1.c **** void Counter_1_SetInterruptMode(uint8 interruptsMask)
+ 152:./Generated_Source/PSoC5/Counter_1.c **** {
+ 163              	nd = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166              		push	{r7}
+ 167 0000 80B4     	.LCFI4:
+ 168              		sub	sp, sp, #12
+ 169 0002 83B0     	.LCFI5:
+ 170              		add	r7, sp, #0
+ 171 0004 00AF     	.LCFI6:
+ 172              		@ lr needed for prologue
+ 173              		mov	r3, r0
+ 174 0006 0346     		strb	r3, [r7, #7]
+ 175 0008 FB71     		.loc 1 153 0
+ 153:./Generated_Source/PSoC5/Counter_1.c ****     Counter_1_STATUS_MASK = interruptsMask;
+ 176              	
+ 177 000a 044A     		ldrb	r3, [r7, #7]
+ 178 000c FB79     		strb	r3, [r2, #0]
+ 179 000e 1370     		.loc 1 154 0
+ 154:./Generated_Source/PSoC5/Counter_1.c **** }
+ 180              	d	r7, r7, #12
+ 181 0010 07F10C07 		mov	sp, r7
+ 182 0014 BD46     		pop	{r7}
+ 183 0016 80BC     		bx	lr
+ 184 0018 7047     	.L14:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 7
+
+
+ 185              		.align	2
+ 186 001a C046     	.L13:
+ 187              		.word	1073762056
+ 188 001c 084F0040 	.LFE4:
+ 189              		.size	Counter_1_SetInterruptMode, .-Counter_1_SetInterruptMode
+ 190              		.section	.text.Counter_1_GetInterruptSource,"ax",%progbits
+ 191              		.align	2
+ 192              		.global	Counter_1_GetInterruptSource
+ 193              		.thumb
+ 194              		.thumb_func
+ 195              		.type	Counter_1_GetInterruptSource, %function
+ 196              	Counter_1_GetInterruptSource:
+ 197              	.LFB5:
+ 198              		.loc 1 175 0
+ 155:./Generated_Source/PSoC5/Counter_1.c **** 
+ 156:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 157:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_GetInterruptSource
+ 158:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 159:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 160:./Generated_Source/PSoC5/Counter_1.c **** * Returns the status register with data about the interrupt source.
+ 161:./Generated_Source/PSoC5/Counter_1.c **** *
+ 162:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 163:./Generated_Source/PSoC5/Counter_1.c **** *  void:  
+ 164:./Generated_Source/PSoC5/Counter_1.c **** *
+ 165:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 166:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8): Status Register Bit-Field of interrupt source(s)
+ 167:./Generated_Source/PSoC5/Counter_1.c **** *
+ 168:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 169:./Generated_Source/PSoC5/Counter_1.c **** *
+ 170:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:  The Status register may be clear on read and all interrupt sources
+ 171:./Generated_Source/PSoC5/Counter_1.c **** *                    must be handled.
+ 172:./Generated_Source/PSoC5/Counter_1.c **** *
+ 173:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 174:./Generated_Source/PSoC5/Counter_1.c **** uint8 Counter_1_GetInterruptSource(void)
+ 175:./Generated_Source/PSoC5/Counter_1.c **** {
+ 199              	d = 0, frame = 0
+ 200              		@ frame_needed = 1, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+ 202              		push	{r7}
+ 203 0000 80B4     	.LCFI7:
+ 204              		add	r7, sp, #0
+ 205 0002 00AF     	.LCFI8:
+ 206              		@ lr needed for prologue
+ 207              		.loc 1 176 0
+ 176:./Generated_Source/PSoC5/Counter_1.c ****     return Counter_1_STATUS;
+ 208              	.L17
+ 209 0004 034B     		ldrb	r3, [r3, #0]
+ 210 0006 1B78     		uxtb	r3, r3
+ 211 0008 DBB2     		.loc 1 177 0
+ 177:./Generated_Source/PSoC5/Counter_1.c **** }
+ 212              		r0, r3
+ 213 000a 1846     		mov	sp, r7
+ 214 000c BD46     		pop	{r7}
+ 215 000e 80BC     		bx	lr
+ 216 0010 7047     	.L18:
+ 217              		.align	2
+ 218 0012 C046     	.L17:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 8
+
+
+ 219              		.word	1073762056
+ 220 0014 084F0040 	.LFE5:
+ 221              		.size	Counter_1_GetInterruptSource, .-Counter_1_GetInterruptSource
+ 222              		.section	.text.Counter_1_ReadStatusRegister,"ax",%progbits
+ 223              		.align	2
+ 224              		.global	Counter_1_ReadStatusRegister
+ 225              		.thumb
+ 226              		.thumb_func
+ 227              		.type	Counter_1_ReadStatusRegister, %function
+ 228              	Counter_1_ReadStatusRegister:
+ 229              	.LFB6:
+ 230              		.loc 1 199 0
+ 178:./Generated_Source/PSoC5/Counter_1.c **** 
+ 179:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 180:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_ReadStatusRegister
+ 181:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 182:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 183:./Generated_Source/PSoC5/Counter_1.c **** *   Reads the status register and returns it's state. This function should use
+ 184:./Generated_Source/PSoC5/Counter_1.c **** *       defined types for the bit-field information as the bits in this
+ 185:./Generated_Source/PSoC5/Counter_1.c **** *       register may be permuteable.
+ 186:./Generated_Source/PSoC5/Counter_1.c **** *
+ 187:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 188:./Generated_Source/PSoC5/Counter_1.c **** *  void
+ 189:./Generated_Source/PSoC5/Counter_1.c **** *
+ 190:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 191:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) The contents of the status register
+ 192:./Generated_Source/PSoC5/Counter_1.c **** *
+ 193:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 194:./Generated_Source/PSoC5/Counter_1.c **** *
+ 195:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 196:./Generated_Source/PSoC5/Counter_1.c **** *   Status register bits may be clear on read. 
+ 197:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 198:./Generated_Source/PSoC5/Counter_1.c **** uint8   Counter_1_ReadStatusRegister(void)
+ 199:./Generated_Source/PSoC5/Counter_1.c **** {
+ 231              	d = 0, frame = 0
+ 232              		@ frame_needed = 1, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234              		push	{r7}
+ 235 0000 80B4     	.LCFI9:
+ 236              		add	r7, sp, #0
+ 237 0002 00AF     	.LCFI10:
+ 238              		@ lr needed for prologue
+ 239              		.loc 1 200 0
+ 200:./Generated_Source/PSoC5/Counter_1.c ****     return Counter_1_STATUS;
+ 240              	.L21
+ 241 0004 034B     		ldrb	r3, [r3, #0]
+ 242 0006 1B78     		uxtb	r3, r3
+ 243 0008 DBB2     		.loc 1 201 0
+ 201:./Generated_Source/PSoC5/Counter_1.c **** }
+ 244              		r0, r3
+ 245 000a 1846     		mov	sp, r7
+ 246 000c BD46     		pop	{r7}
+ 247 000e 80BC     		bx	lr
+ 248 0010 7047     	.L22:
+ 249              		.align	2
+ 250 0012 C046     	.L21:
+ 251              		.word	1073762056
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 9
+
+
+ 252 0014 084F0040 	.LFE6:
+ 253              		.size	Counter_1_ReadStatusRegister, .-Counter_1_ReadStatusRegister
+ 254              		.section	.text.Counter_1_ReadControlRegister,"ax",%progbits
+ 255              		.align	2
+ 256              		.global	Counter_1_ReadControlRegister
+ 257              		.thumb
+ 258              		.thumb_func
+ 259              		.type	Counter_1_ReadControlRegister, %function
+ 260              	Counter_1_ReadControlRegister:
+ 261              	.LFB7:
+ 262              		.loc 1 224 0
+ 202:./Generated_Source/PSoC5/Counter_1.c **** 
+ 203:./Generated_Source/PSoC5/Counter_1.c **** #if(!Counter_1_ControlRegRemoved)
+ 204:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 205:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_ReadControlRegister
+ 206:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 207:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 208:./Generated_Source/PSoC5/Counter_1.c **** *   Reads the control register and returns it's state. This function should use
+ 209:./Generated_Source/PSoC5/Counter_1.c **** *       defined types for the bit-field information as the bits in this
+ 210:./Generated_Source/PSoC5/Counter_1.c **** *       register may be permuteable.
+ 211:./Generated_Source/PSoC5/Counter_1.c **** *
+ 212:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 213:./Generated_Source/PSoC5/Counter_1.c **** *  void
+ 214:./Generated_Source/PSoC5/Counter_1.c **** *
+ 215:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 216:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) The contents of the control register
+ 217:./Generated_Source/PSoC5/Counter_1.c **** *
+ 218:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 219:./Generated_Source/PSoC5/Counter_1.c **** *
+ 220:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 221:./Generated_Source/PSoC5/Counter_1.c **** *   
+ 222:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 223:./Generated_Source/PSoC5/Counter_1.c **** uint8   Counter_1_ReadControlRegister(void)
+ 224:./Generated_Source/PSoC5/Counter_1.c **** {
+ 263              	d = 0, frame = 0
+ 264              		@ frame_needed = 1, uses_anonymous_args = 0
+ 265              		@ link register save eliminated.
+ 266              		push	{r7}
+ 267 0000 80B4     	.LCFI11:
+ 268              		add	r7, sp, #0
+ 269 0002 00AF     	.LCFI12:
+ 270              		@ lr needed for prologue
+ 271              		.loc 1 225 0
+ 225:./Generated_Source/PSoC5/Counter_1.c ****     return Counter_1_CONTROL;
+ 272              	.L25
+ 273 0004 034B     		ldrb	r3, [r3, #0]
+ 274 0006 1B78     		uxtb	r3, r3
+ 275 0008 DBB2     		.loc 1 226 0
+ 226:./Generated_Source/PSoC5/Counter_1.c **** }
+ 276              		r0, r3
+ 277 000a 1846     		mov	sp, r7
+ 278 000c BD46     		pop	{r7}
+ 279 000e 80BC     		bx	lr
+ 280 0010 7047     	.L26:
+ 281              		.align	2
+ 282 0012 C046     	.L25:
+ 283              		.word	1073762048
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 10
+
+
+ 284 0014 004F0040 	.LFE7:
+ 285              		.size	Counter_1_ReadControlRegister, .-Counter_1_ReadControlRegister
+ 286              		.section	.text.Counter_1_WriteControlRegister,"ax",%progbits
+ 287              		.align	2
+ 288              		.global	Counter_1_WriteControlRegister
+ 289              		.thumb
+ 290              		.thumb_func
+ 291              		.type	Counter_1_WriteControlRegister, %function
+ 292              	Counter_1_WriteControlRegister:
+ 293              	.LFB8:
+ 294              		.loc 1 248 0
+ 227:./Generated_Source/PSoC5/Counter_1.c **** 
+ 228:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 229:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_WriteControlRegister
+ 230:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 231:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 232:./Generated_Source/PSoC5/Counter_1.c **** *   Sets the bit-field of the control register.  This function should use
+ 233:./Generated_Source/PSoC5/Counter_1.c **** *       defined types for the bit-field information as the bits in this
+ 234:./Generated_Source/PSoC5/Counter_1.c **** *       register may be permuteable.
+ 235:./Generated_Source/PSoC5/Counter_1.c **** *
+ 236:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 237:./Generated_Source/PSoC5/Counter_1.c **** *  void
+ 238:./Generated_Source/PSoC5/Counter_1.c **** *
+ 239:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 240:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) The contents of the control register
+ 241:./Generated_Source/PSoC5/Counter_1.c **** *
+ 242:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 243:./Generated_Source/PSoC5/Counter_1.c **** *
+ 244:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 245:./Generated_Source/PSoC5/Counter_1.c **** *   
+ 246:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 247:./Generated_Source/PSoC5/Counter_1.c **** void    Counter_1_WriteControlRegister(uint8 control)
+ 248:./Generated_Source/PSoC5/Counter_1.c **** {
+ 295              	d = 0, frame = 8
+ 296              		@ frame_needed = 1, uses_anonymous_args = 0
+ 297              		@ link register save eliminated.
+ 298              		push	{r7}
+ 299 0000 80B4     	.LCFI13:
+ 300              		sub	sp, sp, #12
+ 301 0002 83B0     	.LCFI14:
+ 302              		add	r7, sp, #0
+ 303 0004 00AF     	.LCFI15:
+ 304              		@ lr needed for prologue
+ 305              		mov	r3, r0
+ 306 0006 0346     		strb	r3, [r7, #7]
+ 307 0008 FB71     		.loc 1 249 0
+ 249:./Generated_Source/PSoC5/Counter_1.c ****     Counter_1_CONTROL = control;
+ 308              	
+ 309 000a 044A     		ldrb	r3, [r7, #7]
+ 310 000c FB79     		strb	r3, [r2, #0]
+ 311 000e 1370     		.loc 1 250 0
+ 250:./Generated_Source/PSoC5/Counter_1.c **** }
+ 312              	d	r7, r7, #12
+ 313 0010 07F10C07 		mov	sp, r7
+ 314 0014 BD46     		pop	{r7}
+ 315 0016 80BC     		bx	lr
+ 316 0018 7047     	.L30:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 11
+
+
+ 317              		.align	2
+ 318 001a C046     	.L29:
+ 319              		.word	1073762048
+ 320 001c 004F0040 	.LFE8:
+ 321              		.size	Counter_1_WriteControlRegister, .-Counter_1_WriteControlRegister
+ 322              		.section	.text.Counter_1_WriteCounter,"ax",%progbits
+ 323              		.align	2
+ 324              		.global	Counter_1_WriteCounter
+ 325              		.thumb
+ 326              		.thumb_func
+ 327              		.type	Counter_1_WriteCounter, %function
+ 328              	Counter_1_WriteCounter:
+ 329              	.LFB9:
+ 330              		.loc 1 271 0
+ 251:./Generated_Source/PSoC5/Counter_1.c **** #endif
+ 252:./Generated_Source/PSoC5/Counter_1.c **** 
+ 253:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 254:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_WriteCounter
+ 255:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 256:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 257:./Generated_Source/PSoC5/Counter_1.c **** *   This funtion is used to set the counter to a specific value
+ 258:./Generated_Source/PSoC5/Counter_1.c **** *
+ 259:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 260:./Generated_Source/PSoC5/Counter_1.c **** *  counter:  New counter value. 
+ 261:./Generated_Source/PSoC5/Counter_1.c **** *
+ 262:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 263:./Generated_Source/PSoC5/Counter_1.c **** *  (void) 
+ 264:./Generated_Source/PSoC5/Counter_1.c **** *
+ 265:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 266:./Generated_Source/PSoC5/Counter_1.c **** *
+ 267:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 268:./Generated_Source/PSoC5/Counter_1.c **** *   
+ 269:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 270:./Generated_Source/PSoC5/Counter_1.c **** void Counter_1_WriteCounter(uint8 counter )
+ 271:./Generated_Source/PSoC5/Counter_1.c **** {
+ 331              	d = 0, frame = 16
+ 332              		@ frame_needed = 1, uses_anonymous_args = 0
+ 333              		@ link register save eliminated.
+ 334              		push	{r7}
+ 335 0000 80B4     	.LCFI16:
+ 336              		sub	sp, sp, #20
+ 337 0002 85B0     	.LCFI17:
+ 338              		add	r7, sp, #0
+ 339 0004 00AF     	.LCFI18:
+ 340              		@ lr needed for prologue
+ 341              		mov	r3, r0
+ 342 0006 0346     		strb	r3, [r7, #7]
+ 343 0008 FB71     		.loc 1 273 0
+ 272:./Generated_Source/PSoC5/Counter_1.c ****     #if(Counter_1_UsingFixedFunction)
+ 273:./Generated_Source/PSoC5/Counter_1.c ****         uint16 counter_temp = (uint16)counter;
+ 344              	, #7]	@ zero_extendqisi2
+ 345 000a FB79     		strh	r3, [r7, #14]	@ movhi
+ 346 000c FB81     		.loc 1 274 0
+ 274:./Generated_Source/PSoC5/Counter_1.c ****         CY_SET_REG16(Counter_1_COUNTER_LSB_PTR, counter_temp);
+ 347              	r	r2, .L33
+ 348 000e 044A     		ldrh	r3, [r7, #14]	@ movhi
+ 349 0010 FB89     		strh	r3, [r2, #0]	@ movhi
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 12
+
+
+ 350 0012 1380     		.loc 1 278 0
+ 275:./Generated_Source/PSoC5/Counter_1.c ****     #else
+ 276:./Generated_Source/PSoC5/Counter_1.c ****         CY_SET_REG8(Counter_1_COUNTER_LSB_PTR, counter);
+ 277:./Generated_Source/PSoC5/Counter_1.c ****     #endif
+ 278:./Generated_Source/PSoC5/Counter_1.c **** }
+ 351              		r7, r7, #20
+ 352 0014 07F11407 		mov	sp, r7
+ 353 0018 BD46     		pop	{r7}
+ 354 001a 80BC     		bx	lr
+ 355 001c 7047     	.L34:
+ 356              		.align	2
+ 357 001e C046     	.L33:
+ 358              		.word	1073762052
+ 359 0020 044F0040 	.LFE9:
+ 360              		.size	Counter_1_WriteCounter, .-Counter_1_WriteCounter
+ 361              		.section	.text.Counter_1_ReadCounter,"ax",%progbits
+ 362              		.align	2
+ 363              		.global	Counter_1_ReadCounter
+ 364              		.thumb
+ 365              		.thumb_func
+ 366              		.type	Counter_1_ReadCounter, %function
+ 367              	Counter_1_ReadCounter:
+ 368              	.LFB10:
+ 369              		.loc 1 299 0
+ 279:./Generated_Source/PSoC5/Counter_1.c **** 
+ 280:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 281:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_ReadCounter
+ 282:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 283:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 284:./Generated_Source/PSoC5/Counter_1.c **** * Returns the current value of the counter.  It doesn't matter
+ 285:./Generated_Source/PSoC5/Counter_1.c **** * if the counter is enabled or running.
+ 286:./Generated_Source/PSoC5/Counter_1.c **** *
+ 287:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 288:./Generated_Source/PSoC5/Counter_1.c **** *  void:  
+ 289:./Generated_Source/PSoC5/Counter_1.c **** *
+ 290:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 291:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) The present value of the counter.
+ 292:./Generated_Source/PSoC5/Counter_1.c **** *
+ 293:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 294:./Generated_Source/PSoC5/Counter_1.c **** *
+ 295:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 296:./Generated_Source/PSoC5/Counter_1.c **** *
+ 297:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 298:./Generated_Source/PSoC5/Counter_1.c **** uint8 Counter_1_ReadCounter(void)
+ 299:./Generated_Source/PSoC5/Counter_1.c **** {
+ 370              	d = 0, frame = 0
+ 371              		@ frame_needed = 1, uses_anonymous_args = 0
+ 372              		@ link register save eliminated.
+ 373              		push	{r7}
+ 374 0000 80B4     	.LCFI19:
+ 375              		add	r7, sp, #0
+ 376 0002 00AF     	.LCFI20:
+ 377              		@ lr needed for prologue
+ 378              		.loc 1 301 0
+ 300:./Generated_Source/PSoC5/Counter_1.c ****     
+ 301:./Generated_Source/PSoC5/Counter_1.c ****     CY_GET_REG8(Counter_1_COUNTER_LSB_PTR);
+ 379              	.L37
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 13
+
+
+ 380 0004 044B     		ldrb	r3, [r3, #0]
+ 381 0006 1B78     		.loc 1 304 0
+ 302:./Generated_Source/PSoC5/Counter_1.c ****     
+ 303:./Generated_Source/PSoC5/Counter_1.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 304:./Generated_Source/PSoC5/Counter_1.c ****     return (CY_GET_REG8(Counter_1_STATICCOUNT_LSB_PTR));
+ 382              	r	r3, .L37+4
+ 383 0008 044B     		ldrb	r3, [r3, #0]
+ 384 000a 1B78     		uxtb	r3, r3
+ 385 000c DBB2     		.loc 1 305 0
+ 305:./Generated_Source/PSoC5/Counter_1.c **** }
+ 386              		r0, r3
+ 387 000e 1846     		mov	sp, r7
+ 388 0010 BD46     		pop	{r7}
+ 389 0012 80BC     		bx	lr
+ 390 0014 7047     	.L38:
+ 391              		.align	2
+ 392 0016 C046     	.L37:
+ 393              		.word	1073762052
+ 394 0018 044F0040 		.word	1073762054
+ 395 001c 064F0040 	.LFE10:
+ 396              		.size	Counter_1_ReadCounter, .-Counter_1_ReadCounter
+ 397              		.section	.text.Counter_1_ReadCapture,"ax",%progbits
+ 398              		.align	2
+ 399              		.global	Counter_1_ReadCapture
+ 400              		.thumb
+ 401              		.thumb_func
+ 402              		.type	Counter_1_ReadCapture, %function
+ 403              	Counter_1_ReadCapture:
+ 404              	.LFB11:
+ 405              		.loc 1 325 0
+ 306:./Generated_Source/PSoC5/Counter_1.c **** 
+ 307:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 308:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_ReadCapture
+ 309:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 310:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 311:./Generated_Source/PSoC5/Counter_1.c **** *   This function returns the last value captured.
+ 312:./Generated_Source/PSoC5/Counter_1.c **** *
+ 313:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 314:./Generated_Source/PSoC5/Counter_1.c **** *  void: 
+ 315:./Generated_Source/PSoC5/Counter_1.c **** *
+ 316:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 317:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) Present Capture value.
+ 318:./Generated_Source/PSoC5/Counter_1.c **** *
+ 319:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 320:./Generated_Source/PSoC5/Counter_1.c **** *
+ 321:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 322:./Generated_Source/PSoC5/Counter_1.c **** *  
+ 323:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 324:./Generated_Source/PSoC5/Counter_1.c **** uint8 Counter_1_ReadCapture( void )
+ 325:./Generated_Source/PSoC5/Counter_1.c **** {
+ 406              	 = 0, frame = 0
+ 407              		@ frame_needed = 1, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 409              		push	{r7}
+ 410 0000 80B4     	.LCFI21:
+ 411              		add	r7, sp, #0
+ 412 0002 00AF     	.LCFI22:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 14
+
+
+ 413              		@ lr needed for prologue
+ 414              		.loc 1 326 0
+ 326:./Generated_Source/PSoC5/Counter_1.c ****    return ( CY_GET_REG8(Counter_1_STATICCOUNT_LSB_PTR) );  
+ 415              	.L41
+ 416 0004 034B     		ldrb	r3, [r3, #0]
+ 417 0006 1B78     		uxtb	r3, r3
+ 418 0008 DBB2     		.loc 1 327 0
+ 327:./Generated_Source/PSoC5/Counter_1.c **** }
+ 419              		r0, r3
+ 420 000a 1846     		mov	sp, r7
+ 421 000c BD46     		pop	{r7}
+ 422 000e 80BC     		bx	lr
+ 423 0010 7047     	.L42:
+ 424              		.align	2
+ 425 0012 C046     	.L41:
+ 426              		.word	1073762054
+ 427 0014 064F0040 	.LFE11:
+ 428              		.size	Counter_1_ReadCapture, .-Counter_1_ReadCapture
+ 429              		.section	.text.Counter_1_WritePeriod,"ax",%progbits
+ 430              		.align	2
+ 431              		.global	Counter_1_WritePeriod
+ 432              		.thumb
+ 433              		.thumb_func
+ 434              		.type	Counter_1_WritePeriod, %function
+ 435              	Counter_1_WritePeriod:
+ 436              	.LFB12:
+ 437              		.loc 1 349 0
+ 328:./Generated_Source/PSoC5/Counter_1.c **** 
+ 329:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 330:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_WritePeriod
+ 331:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 332:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 333:./Generated_Source/PSoC5/Counter_1.c **** * Changes the period of the counter.  The new period 
+ 334:./Generated_Source/PSoC5/Counter_1.c **** * will be loaded the next time terminal count is detected.
+ 335:./Generated_Source/PSoC5/Counter_1.c **** *
+ 336:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 337:./Generated_Source/PSoC5/Counter_1.c **** *  period: (uint8) A value of 0 will result in
+ 338:./Generated_Source/PSoC5/Counter_1.c **** *         the counter remaining at zero.  
+ 339:./Generated_Source/PSoC5/Counter_1.c **** *
+ 340:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 341:./Generated_Source/PSoC5/Counter_1.c **** *  (void)
+ 342:./Generated_Source/PSoC5/Counter_1.c **** *
+ 343:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 344:./Generated_Source/PSoC5/Counter_1.c **** *
+ 345:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 346:./Generated_Source/PSoC5/Counter_1.c **** *
+ 347:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 348:./Generated_Source/PSoC5/Counter_1.c **** void Counter_1_WritePeriod(uint8 period)
+ 349:./Generated_Source/PSoC5/Counter_1.c **** {
+ 438              	d = 0, frame = 16
+ 439              		@ frame_needed = 1, uses_anonymous_args = 0
+ 440              		@ link register save eliminated.
+ 441              		push	{r7}
+ 442 0000 80B4     	.LCFI23:
+ 443              		sub	sp, sp, #20
+ 444 0002 85B0     	.LCFI24:
+ 445              		add	r7, sp, #0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 15
+
+
+ 446 0004 00AF     	.LCFI25:
+ 447              		@ lr needed for prologue
+ 448              		mov	r3, r0
+ 449 0006 0346     		strb	r3, [r7, #7]
+ 450 0008 FB71     		.loc 1 351 0
+ 350:./Generated_Source/PSoC5/Counter_1.c ****     #if(Counter_1_UsingFixedFunction)
+ 351:./Generated_Source/PSoC5/Counter_1.c ****         uint16 period_temp = (uint16)period;
+ 451              	, #7]	@ zero_extendqisi2
+ 452 000a FB79     		strh	r3, [r7, #14]	@ movhi
+ 453 000c FB81     		.loc 1 352 0
+ 352:./Generated_Source/PSoC5/Counter_1.c ****         CY_SET_REG16(Counter_1_PERIOD_LSB_PTR,period_temp);
+ 454              	r	r2, .L45
+ 455 000e 044A     		ldrh	r3, [r7, #14]	@ movhi
+ 456 0010 FB89     		strh	r3, [r2, #0]	@ movhi
+ 457 0012 1380     		.loc 1 356 0
+ 353:./Generated_Source/PSoC5/Counter_1.c ****     #else
+ 354:./Generated_Source/PSoC5/Counter_1.c ****         CY_SET_REG8(Counter_1_PERIOD_LSB_PTR,period);
+ 355:./Generated_Source/PSoC5/Counter_1.c ****     #endif
+ 356:./Generated_Source/PSoC5/Counter_1.c **** }
+ 458              		r7, r7, #20
+ 459 0014 07F11407 		mov	sp, r7
+ 460 0018 BD46     		pop	{r7}
+ 461 001a 80BC     		bx	lr
+ 462 001c 7047     	.L46:
+ 463              		.align	2
+ 464 001e C046     	.L45:
+ 465              		.word	1073762050
+ 466 0020 024F0040 	.LFE12:
+ 467              		.size	Counter_1_WritePeriod, .-Counter_1_WritePeriod
+ 468              		.section	.text.Counter_1_ReadPeriod,"ax",%progbits
+ 469              		.align	2
+ 470              		.global	Counter_1_ReadPeriod
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.type	Counter_1_ReadPeriod, %function
+ 474              	Counter_1_ReadPeriod:
+ 475              	.LFB13:
+ 476              		.loc 1 376 0
+ 357:./Generated_Source/PSoC5/Counter_1.c **** 
+ 358:./Generated_Source/PSoC5/Counter_1.c **** /*******************************************************************************
+ 359:./Generated_Source/PSoC5/Counter_1.c **** * Function Name: Counter_1_ReadPeriod
+ 360:./Generated_Source/PSoC5/Counter_1.c **** ********************************************************************************
+ 361:./Generated_Source/PSoC5/Counter_1.c **** * Summary:
+ 362:./Generated_Source/PSoC5/Counter_1.c **** * Reads the current period value without affecting counter operation.
+ 363:./Generated_Source/PSoC5/Counter_1.c **** *
+ 364:./Generated_Source/PSoC5/Counter_1.c **** * Parameters:  
+ 365:./Generated_Source/PSoC5/Counter_1.c **** *  void:  
+ 366:./Generated_Source/PSoC5/Counter_1.c **** *
+ 367:./Generated_Source/PSoC5/Counter_1.c **** * Return: 
+ 368:./Generated_Source/PSoC5/Counter_1.c **** *  (uint8) Present period value.
+ 369:./Generated_Source/PSoC5/Counter_1.c **** *
+ 370:./Generated_Source/PSoC5/Counter_1.c **** * Theory: 
+ 371:./Generated_Source/PSoC5/Counter_1.c **** *
+ 372:./Generated_Source/PSoC5/Counter_1.c **** * Side Effects:
+ 373:./Generated_Source/PSoC5/Counter_1.c **** *
+ 374:./Generated_Source/PSoC5/Counter_1.c **** *******************************************************************************/
+ 375:./Generated_Source/PSoC5/Counter_1.c **** uint8 Counter_1_ReadPeriod(void)
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 16
+
+
+ 376:./Generated_Source/PSoC5/Counter_1.c **** {
+ 477              	d = 0, frame = 0
+ 478              		@ frame_needed = 1, uses_anonymous_args = 0
+ 479              		@ link register save eliminated.
+ 480              		push	{r7}
+ 481 0000 80B4     	.LCFI26:
+ 482              		add	r7, sp, #0
+ 483 0002 00AF     	.LCFI27:
+ 484              		@ lr needed for prologue
+ 485              		.loc 1 377 0
+ 377:./Generated_Source/PSoC5/Counter_1.c ****    return ( CY_GET_REG8(Counter_1_PERIOD_LSB_PTR));
+ 486              	.L49
+ 487 0004 034B     		ldrb	r3, [r3, #0]
+ 488 0006 1B78     		uxtb	r3, r3
+ 489 0008 DBB2     		.loc 1 378 0
+ 378:./Generated_Source/PSoC5/Counter_1.c **** }
+ 490              		r0, r3
+ 491 000a 1846     		mov	sp, r7
+ 492 000c BD46     		pop	{r7}
+ 493 000e 80BC     		bx	lr
+ 494 0010 7047     	.L50:
+ 495              		.align	2
+ 496 0012 C046     	.L49:
+ 497              		.word	1073762050
+ 498 0014 024F0040 	.LFE13:
+ 499              		.size	Counter_1_ReadPeriod, .-Counter_1_ReadPeriod
+ 500              		.section	.debug_frame,"",%progbits
+ 501              	.Lframe0:
+ 502              		.4byte	.LECIE0-.LSCIE0
+ 503 0000 0C000000 	.LSCIE0:
+ 504              		.4byte	0xffffffff
+ 505 0004 FFFFFFFF 		.byte	0x1
+ 506 0008 01       		.ascii	"\000"
+ 507 0009 00       		.uleb128 0x1
+ 508 000a 01       		.sleb128 -4
+ 509 000b 7C       		.byte	0xe
+ 510 000c 0E       		.byte	0xc
+ 511 000d 0C       		.uleb128 0xd
+ 512 000e 0D       		.uleb128 0x0
+ 513 000f 00       		.align	2
+ 514              	.LECIE0:
+ 515              	.LSFDE0:
+ 516              		.4byte	.LEFDE0-.LASFDE0
+ 517 0010 18000000 	.LASFDE0:
+ 518              		.4byte	.Lframe0
+ 519 0014 00000000 		.4byte	.LFB2
+ 520 0018 00000000 		.4byte	.LFE2-.LFB2
+ 521 001c 9C000000 		.byte	0x4
+ 522 0020 42       		.4byte	.LCFI0-.LFB2
+ 523              		.byte	0xe
+ 524 0021 0E       		.uleb128 0x8
+ 525 0022 08       		.byte	0x8e
+ 526 0023 8E       		.uleb128 0x1
+ 527 0024 01       		.byte	0x87
+ 528 0025 87       		.uleb128 0x2
+ 529 0026 02       		.byte	0x4
+ 530 0027 42       		.4byte	.LCFI1-.LCFI0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 17
+
+
+ 531              		.byte	0xd
+ 532 0028 0D       		.uleb128 0x7
+ 533 0029 07       		.align	2
+ 534 002a 0000     	.LEFDE0:
+ 535              	.LSFDE2:
+ 536              		.4byte	.LEFDE2-.LASFDE2
+ 537 002c 14000000 	.LASFDE2:
+ 538              		.4byte	.Lframe0
+ 539 0030 00000000 		.4byte	.LFB3
+ 540 0034 00000000 		.4byte	.LFE3-.LFB3
+ 541 0038 1C000000 		.byte	0x4
+ 542 003c 42       		.4byte	.LCFI2-.LFB3
+ 543              		.byte	0xe
+ 544 003d 0E       		.uleb128 0x4
+ 545 003e 04       		.byte	0x87
+ 546 003f 87       		.uleb128 0x1
+ 547 0040 01       		.byte	0x4
+ 548 0041 42       		.4byte	.LCFI3-.LCFI2
+ 549              		.byte	0xd
+ 550 0042 0D       		.uleb128 0x7
+ 551 0043 07       		.align	2
+ 552              	.LEFDE2:
+ 553              	.LSFDE4:
+ 554              		.4byte	.LEFDE4-.LASFDE4
+ 555 0044 18000000 	.LASFDE4:
+ 556              		.4byte	.Lframe0
+ 557 0048 00000000 		.4byte	.LFB4
+ 558 004c 00000000 		.4byte	.LFE4-.LFB4
+ 559 0050 20000000 		.byte	0x4
+ 560 0054 42       		.4byte	.LCFI4-.LFB4
+ 561              		.byte	0xe
+ 562 0055 0E       		.uleb128 0x4
+ 563 0056 04       		.byte	0x4
+ 564 0057 42       		.4byte	.LCFI5-.LCFI4
+ 565              		.byte	0xe
+ 566 0058 0E       		.uleb128 0x10
+ 567 0059 10       		.byte	0x87
+ 568 005a 87       		.uleb128 0x1
+ 569 005b 01       		.byte	0x4
+ 570 005c 42       		.4byte	.LCFI6-.LCFI5
+ 571              		.byte	0xd
+ 572 005d 0D       		.uleb128 0x7
+ 573 005e 07       		.align	2
+ 574 005f 00       	.LEFDE4:
+ 575              	.LSFDE6:
+ 576              		.4byte	.LEFDE6-.LASFDE6
+ 577 0060 14000000 	.LASFDE6:
+ 578              		.4byte	.Lframe0
+ 579 0064 00000000 		.4byte	.LFB5
+ 580 0068 00000000 		.4byte	.LFE5-.LFB5
+ 581 006c 18000000 		.byte	0x4
+ 582 0070 42       		.4byte	.LCFI7-.LFB5
+ 583              		.byte	0xe
+ 584 0071 0E       		.uleb128 0x4
+ 585 0072 04       		.byte	0x87
+ 586 0073 87       		.uleb128 0x1
+ 587 0074 01       		.byte	0x4
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 18
+
+
+ 588 0075 42       		.4byte	.LCFI8-.LCFI7
+ 589              		.byte	0xd
+ 590 0076 0D       		.uleb128 0x7
+ 591 0077 07       		.align	2
+ 592              	.LEFDE6:
+ 593              	.LSFDE8:
+ 594              		.4byte	.LEFDE8-.LASFDE8
+ 595 0078 14000000 	.LASFDE8:
+ 596              		.4byte	.Lframe0
+ 597 007c 00000000 		.4byte	.LFB6
+ 598 0080 00000000 		.4byte	.LFE6-.LFB6
+ 599 0084 18000000 		.byte	0x4
+ 600 0088 42       		.4byte	.LCFI9-.LFB6
+ 601              		.byte	0xe
+ 602 0089 0E       		.uleb128 0x4
+ 603 008a 04       		.byte	0x87
+ 604 008b 87       		.uleb128 0x1
+ 605 008c 01       		.byte	0x4
+ 606 008d 42       		.4byte	.LCFI10-.LCFI9
+ 607              		.byte	0xd
+ 608 008e 0D       		.uleb128 0x7
+ 609 008f 07       		.align	2
+ 610              	.LEFDE8:
+ 611              	.LSFDE10:
+ 612              		.4byte	.LEFDE10-.LASFDE10
+ 613 0090 14000000 	.LASFDE10:
+ 614              		.4byte	.Lframe0
+ 615 0094 00000000 		.4byte	.LFB7
+ 616 0098 00000000 		.4byte	.LFE7-.LFB7
+ 617 009c 18000000 		.byte	0x4
+ 618 00a0 42       		.4byte	.LCFI11-.LFB7
+ 619              		.byte	0xe
+ 620 00a1 0E       		.uleb128 0x4
+ 621 00a2 04       		.byte	0x87
+ 622 00a3 87       		.uleb128 0x1
+ 623 00a4 01       		.byte	0x4
+ 624 00a5 42       		.4byte	.LCFI12-.LCFI11
+ 625              		.byte	0xd
+ 626 00a6 0D       		.uleb128 0x7
+ 627 00a7 07       		.align	2
+ 628              	.LEFDE10:
+ 629              	.LSFDE12:
+ 630              		.4byte	.LEFDE12-.LASFDE12
+ 631 00a8 18000000 	.LASFDE12:
+ 632              		.4byte	.Lframe0
+ 633 00ac 00000000 		.4byte	.LFB8
+ 634 00b0 00000000 		.4byte	.LFE8-.LFB8
+ 635 00b4 20000000 		.byte	0x4
+ 636 00b8 42       		.4byte	.LCFI13-.LFB8
+ 637              		.byte	0xe
+ 638 00b9 0E       		.uleb128 0x4
+ 639 00ba 04       		.byte	0x4
+ 640 00bb 42       		.4byte	.LCFI14-.LCFI13
+ 641              		.byte	0xe
+ 642 00bc 0E       		.uleb128 0x10
+ 643 00bd 10       		.byte	0x87
+ 644 00be 87       		.uleb128 0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 19
+
+
+ 645 00bf 01       		.byte	0x4
+ 646 00c0 42       		.4byte	.LCFI15-.LCFI14
+ 647              		.byte	0xd
+ 648 00c1 0D       		.uleb128 0x7
+ 649 00c2 07       		.align	2
+ 650 00c3 00       	.LEFDE12:
+ 651              	.LSFDE14:
+ 652              		.4byte	.LEFDE14-.LASFDE14
+ 653 00c4 18000000 	.LASFDE14:
+ 654              		.4byte	.Lframe0
+ 655 00c8 00000000 		.4byte	.LFB9
+ 656 00cc 00000000 		.4byte	.LFE9-.LFB9
+ 657 00d0 24000000 		.byte	0x4
+ 658 00d4 42       		.4byte	.LCFI16-.LFB9
+ 659              		.byte	0xe
+ 660 00d5 0E       		.uleb128 0x4
+ 661 00d6 04       		.byte	0x4
+ 662 00d7 42       		.4byte	.LCFI17-.LCFI16
+ 663              		.byte	0xe
+ 664 00d8 0E       		.uleb128 0x18
+ 665 00d9 18       		.byte	0x87
+ 666 00da 87       		.uleb128 0x1
+ 667 00db 01       		.byte	0x4
+ 668 00dc 42       		.4byte	.LCFI18-.LCFI17
+ 669              		.byte	0xd
+ 670 00dd 0D       		.uleb128 0x7
+ 671 00de 07       		.align	2
+ 672 00df 00       	.LEFDE14:
+ 673              	.LSFDE16:
+ 674              		.4byte	.LEFDE16-.LASFDE16
+ 675 00e0 14000000 	.LASFDE16:
+ 676              		.4byte	.Lframe0
+ 677 00e4 00000000 		.4byte	.LFB10
+ 678 00e8 00000000 		.4byte	.LFE10-.LFB10
+ 679 00ec 20000000 		.byte	0x4
+ 680 00f0 42       		.4byte	.LCFI19-.LFB10
+ 681              		.byte	0xe
+ 682 00f1 0E       		.uleb128 0x4
+ 683 00f2 04       		.byte	0x87
+ 684 00f3 87       		.uleb128 0x1
+ 685 00f4 01       		.byte	0x4
+ 686 00f5 42       		.4byte	.LCFI20-.LCFI19
+ 687              		.byte	0xd
+ 688 00f6 0D       		.uleb128 0x7
+ 689 00f7 07       		.align	2
+ 690              	.LEFDE16:
+ 691              	.LSFDE18:
+ 692              		.4byte	.LEFDE18-.LASFDE18
+ 693 00f8 14000000 	.LASFDE18:
+ 694              		.4byte	.Lframe0
+ 695 00fc 00000000 		.4byte	.LFB11
+ 696 0100 00000000 		.4byte	.LFE11-.LFB11
+ 697 0104 18000000 		.byte	0x4
+ 698 0108 42       		.4byte	.LCFI21-.LFB11
+ 699              		.byte	0xe
+ 700 0109 0E       		.uleb128 0x4
+ 701 010a 04       		.byte	0x87
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 20
+
+
+ 702 010b 87       		.uleb128 0x1
+ 703 010c 01       		.byte	0x4
+ 704 010d 42       		.4byte	.LCFI22-.LCFI21
+ 705              		.byte	0xd
+ 706 010e 0D       		.uleb128 0x7
+ 707 010f 07       		.align	2
+ 708              	.LEFDE18:
+ 709              	.LSFDE20:
+ 710              		.4byte	.LEFDE20-.LASFDE20
+ 711 0110 18000000 	.LASFDE20:
+ 712              		.4byte	.Lframe0
+ 713 0114 00000000 		.4byte	.LFB12
+ 714 0118 00000000 		.4byte	.LFE12-.LFB12
+ 715 011c 24000000 		.byte	0x4
+ 716 0120 42       		.4byte	.LCFI23-.LFB12
+ 717              		.byte	0xe
+ 718 0121 0E       		.uleb128 0x4
+ 719 0122 04       		.byte	0x4
+ 720 0123 42       		.4byte	.LCFI24-.LCFI23
+ 721              		.byte	0xe
+ 722 0124 0E       		.uleb128 0x18
+ 723 0125 18       		.byte	0x87
+ 724 0126 87       		.uleb128 0x1
+ 725 0127 01       		.byte	0x4
+ 726 0128 42       		.4byte	.LCFI25-.LCFI24
+ 727              		.byte	0xd
+ 728 0129 0D       		.uleb128 0x7
+ 729 012a 07       		.align	2
+ 730 012b 00       	.LEFDE20:
+ 731              	.LSFDE22:
+ 732              		.4byte	.LEFDE22-.LASFDE22
+ 733 012c 14000000 	.LASFDE22:
+ 734              		.4byte	.Lframe0
+ 735 0130 00000000 		.4byte	.LFB13
+ 736 0134 00000000 		.4byte	.LFE13-.LFB13
+ 737 0138 18000000 		.byte	0x4
+ 738 013c 42       		.4byte	.LCFI26-.LFB13
+ 739              		.byte	0xe
+ 740 013d 0E       		.uleb128 0x4
+ 741 013e 04       		.byte	0x87
+ 742 013f 87       		.uleb128 0x1
+ 743 0140 01       		.byte	0x4
+ 744 0141 42       		.4byte	.LCFI27-.LCFI26
+ 745              		.byte	0xd
+ 746 0142 0D       		.uleb128 0x7
+ 747 0143 07       		.align	2
+ 748              	.LEFDE22:
+ 749              		.text
+ 750              	.Letext0:
+ 751              		.section	.debug_loc,"",%progbits
+ 752              	.Ldebug_loc0:
+ 753              	.LLST0:
+ 754              		.4byte	.LFB2
+ 755 0000 00000000 		.4byte	.LCFI0
+ 756 0004 02000000 		.2byte	0x1
+ 757 0008 0100     		.byte	0x5d
+ 758 000a 5D       		.4byte	.LCFI0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 21
+
+
+ 759 000b 02000000 		.4byte	.LCFI1
+ 760 000f 04000000 		.2byte	0x2
+ 761 0013 0200     		.byte	0x7d
+ 762 0015 7D       		.sleb128 8
+ 763 0016 08       		.4byte	.LCFI1
+ 764 0017 04000000 		.4byte	.LFE2
+ 765 001b 9C000000 		.2byte	0x2
+ 766 001f 0200     		.byte	0x77
+ 767 0021 77       		.sleb128 8
+ 768 0022 08       		.4byte	0x0
+ 769 0023 00000000 		.4byte	0x0
+ 770 0027 00000000 	.LLST1:
+ 771              		.4byte	.LFB3
+ 772 002b 00000000 		.4byte	.LCFI2
+ 773 002f 02000000 		.2byte	0x1
+ 774 0033 0100     		.byte	0x5d
+ 775 0035 5D       		.4byte	.LCFI2
+ 776 0036 02000000 		.4byte	.LCFI3
+ 777 003a 04000000 		.2byte	0x2
+ 778 003e 0200     		.byte	0x7d
+ 779 0040 7D       		.sleb128 4
+ 780 0041 04       		.4byte	.LCFI3
+ 781 0042 04000000 		.4byte	.LFE3
+ 782 0046 1C000000 		.2byte	0x2
+ 783 004a 0200     		.byte	0x77
+ 784 004c 77       		.sleb128 4
+ 785 004d 04       		.4byte	0x0
+ 786 004e 00000000 		.4byte	0x0
+ 787 0052 00000000 	.LLST2:
+ 788              		.4byte	.LFB4
+ 789 0056 00000000 		.4byte	.LCFI4
+ 790 005a 02000000 		.2byte	0x1
+ 791 005e 0100     		.byte	0x5d
+ 792 0060 5D       		.4byte	.LCFI4
+ 793 0061 02000000 		.4byte	.LCFI5
+ 794 0065 04000000 		.2byte	0x2
+ 795 0069 0200     		.byte	0x7d
+ 796 006b 7D       		.sleb128 4
+ 797 006c 04       		.4byte	.LCFI5
+ 798 006d 04000000 		.4byte	.LCFI6
+ 799 0071 06000000 		.2byte	0x2
+ 800 0075 0200     		.byte	0x7d
+ 801 0077 7D       		.sleb128 16
+ 802 0078 10       		.4byte	.LCFI6
+ 803 0079 06000000 		.4byte	.LFE4
+ 804 007d 20000000 		.2byte	0x2
+ 805 0081 0200     		.byte	0x77
+ 806 0083 77       		.sleb128 16
+ 807 0084 10       		.4byte	0x0
+ 808 0085 00000000 		.4byte	0x0
+ 809 0089 00000000 	.LLST3:
+ 810              		.4byte	.LFB5
+ 811 008d 00000000 		.4byte	.LCFI7
+ 812 0091 02000000 		.2byte	0x1
+ 813 0095 0100     		.byte	0x5d
+ 814 0097 5D       		.4byte	.LCFI7
+ 815 0098 02000000 		.4byte	.LCFI8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 22
+
+
+ 816 009c 04000000 		.2byte	0x2
+ 817 00a0 0200     		.byte	0x7d
+ 818 00a2 7D       		.sleb128 4
+ 819 00a3 04       		.4byte	.LCFI8
+ 820 00a4 04000000 		.4byte	.LFE5
+ 821 00a8 18000000 		.2byte	0x2
+ 822 00ac 0200     		.byte	0x77
+ 823 00ae 77       		.sleb128 4
+ 824 00af 04       		.4byte	0x0
+ 825 00b0 00000000 		.4byte	0x0
+ 826 00b4 00000000 	.LLST4:
+ 827              		.4byte	.LFB6
+ 828 00b8 00000000 		.4byte	.LCFI9
+ 829 00bc 02000000 		.2byte	0x1
+ 830 00c0 0100     		.byte	0x5d
+ 831 00c2 5D       		.4byte	.LCFI9
+ 832 00c3 02000000 		.4byte	.LCFI10
+ 833 00c7 04000000 		.2byte	0x2
+ 834 00cb 0200     		.byte	0x7d
+ 835 00cd 7D       		.sleb128 4
+ 836 00ce 04       		.4byte	.LCFI10
+ 837 00cf 04000000 		.4byte	.LFE6
+ 838 00d3 18000000 		.2byte	0x2
+ 839 00d7 0200     		.byte	0x77
+ 840 00d9 77       		.sleb128 4
+ 841 00da 04       		.4byte	0x0
+ 842 00db 00000000 		.4byte	0x0
+ 843 00df 00000000 	.LLST5:
+ 844              		.4byte	.LFB7
+ 845 00e3 00000000 		.4byte	.LCFI11
+ 846 00e7 02000000 		.2byte	0x1
+ 847 00eb 0100     		.byte	0x5d
+ 848 00ed 5D       		.4byte	.LCFI11
+ 849 00ee 02000000 		.4byte	.LCFI12
+ 850 00f2 04000000 		.2byte	0x2
+ 851 00f6 0200     		.byte	0x7d
+ 852 00f8 7D       		.sleb128 4
+ 853 00f9 04       		.4byte	.LCFI12
+ 854 00fa 04000000 		.4byte	.LFE7
+ 855 00fe 18000000 		.2byte	0x2
+ 856 0102 0200     		.byte	0x77
+ 857 0104 77       		.sleb128 4
+ 858 0105 04       		.4byte	0x0
+ 859 0106 00000000 		.4byte	0x0
+ 860 010a 00000000 	.LLST6:
+ 861              		.4byte	.LFB8
+ 862 010e 00000000 		.4byte	.LCFI13
+ 863 0112 02000000 		.2byte	0x1
+ 864 0116 0100     		.byte	0x5d
+ 865 0118 5D       		.4byte	.LCFI13
+ 866 0119 02000000 		.4byte	.LCFI14
+ 867 011d 04000000 		.2byte	0x2
+ 868 0121 0200     		.byte	0x7d
+ 869 0123 7D       		.sleb128 4
+ 870 0124 04       		.4byte	.LCFI14
+ 871 0125 04000000 		.4byte	.LCFI15
+ 872 0129 06000000 		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 23
+
+
+ 873 012d 0200     		.byte	0x7d
+ 874 012f 7D       		.sleb128 16
+ 875 0130 10       		.4byte	.LCFI15
+ 876 0131 06000000 		.4byte	.LFE8
+ 877 0135 20000000 		.2byte	0x2
+ 878 0139 0200     		.byte	0x77
+ 879 013b 77       		.sleb128 16
+ 880 013c 10       		.4byte	0x0
+ 881 013d 00000000 		.4byte	0x0
+ 882 0141 00000000 	.LLST7:
+ 883              		.4byte	.LFB9
+ 884 0145 00000000 		.4byte	.LCFI16
+ 885 0149 02000000 		.2byte	0x1
+ 886 014d 0100     		.byte	0x5d
+ 887 014f 5D       		.4byte	.LCFI16
+ 888 0150 02000000 		.4byte	.LCFI17
+ 889 0154 04000000 		.2byte	0x2
+ 890 0158 0200     		.byte	0x7d
+ 891 015a 7D       		.sleb128 4
+ 892 015b 04       		.4byte	.LCFI17
+ 893 015c 04000000 		.4byte	.LCFI18
+ 894 0160 06000000 		.2byte	0x2
+ 895 0164 0200     		.byte	0x7d
+ 896 0166 7D       		.sleb128 24
+ 897 0167 18       		.4byte	.LCFI18
+ 898 0168 06000000 		.4byte	.LFE9
+ 899 016c 24000000 		.2byte	0x2
+ 900 0170 0200     		.byte	0x77
+ 901 0172 77       		.sleb128 24
+ 902 0173 18       		.4byte	0x0
+ 903 0174 00000000 		.4byte	0x0
+ 904 0178 00000000 	.LLST8:
+ 905              		.4byte	.LFB10
+ 906 017c 00000000 		.4byte	.LCFI19
+ 907 0180 02000000 		.2byte	0x1
+ 908 0184 0100     		.byte	0x5d
+ 909 0186 5D       		.4byte	.LCFI19
+ 910 0187 02000000 		.4byte	.LCFI20
+ 911 018b 04000000 		.2byte	0x2
+ 912 018f 0200     		.byte	0x7d
+ 913 0191 7D       		.sleb128 4
+ 914 0192 04       		.4byte	.LCFI20
+ 915 0193 04000000 		.4byte	.LFE10
+ 916 0197 20000000 		.2byte	0x2
+ 917 019b 0200     		.byte	0x77
+ 918 019d 77       		.sleb128 4
+ 919 019e 04       		.4byte	0x0
+ 920 019f 00000000 		.4byte	0x0
+ 921 01a3 00000000 	.LLST9:
+ 922              		.4byte	.LFB11
+ 923 01a7 00000000 		.4byte	.LCFI21
+ 924 01ab 02000000 		.2byte	0x1
+ 925 01af 0100     		.byte	0x5d
+ 926 01b1 5D       		.4byte	.LCFI21
+ 927 01b2 02000000 		.4byte	.LCFI22
+ 928 01b6 04000000 		.2byte	0x2
+ 929 01ba 0200     		.byte	0x7d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 24
+
+
+ 930 01bc 7D       		.sleb128 4
+ 931 01bd 04       		.4byte	.LCFI22
+ 932 01be 04000000 		.4byte	.LFE11
+ 933 01c2 18000000 		.2byte	0x2
+ 934 01c6 0200     		.byte	0x77
+ 935 01c8 77       		.sleb128 4
+ 936 01c9 04       		.4byte	0x0
+ 937 01ca 00000000 		.4byte	0x0
+ 938 01ce 00000000 	.LLST10:
+ 939              		.4byte	.LFB12
+ 940 01d2 00000000 		.4byte	.LCFI23
+ 941 01d6 02000000 		.2byte	0x1
+ 942 01da 0100     		.byte	0x5d
+ 943 01dc 5D       		.4byte	.LCFI23
+ 944 01dd 02000000 		.4byte	.LCFI24
+ 945 01e1 04000000 		.2byte	0x2
+ 946 01e5 0200     		.byte	0x7d
+ 947 01e7 7D       		.sleb128 4
+ 948 01e8 04       		.4byte	.LCFI24
+ 949 01e9 04000000 		.4byte	.LCFI25
+ 950 01ed 06000000 		.2byte	0x2
+ 951 01f1 0200     		.byte	0x7d
+ 952 01f3 7D       		.sleb128 24
+ 953 01f4 18       		.4byte	.LCFI25
+ 954 01f5 06000000 		.4byte	.LFE12
+ 955 01f9 24000000 		.2byte	0x2
+ 956 01fd 0200     		.byte	0x77
+ 957 01ff 77       		.sleb128 24
+ 958 0200 18       		.4byte	0x0
+ 959 0201 00000000 		.4byte	0x0
+ 960 0205 00000000 	.LLST11:
+ 961              		.4byte	.LFB13
+ 962 0209 00000000 		.4byte	.LCFI26
+ 963 020d 02000000 		.2byte	0x1
+ 964 0211 0100     		.byte	0x5d
+ 965 0213 5D       		.4byte	.LCFI26
+ 966 0214 02000000 		.4byte	.LCFI27
+ 967 0218 04000000 		.2byte	0x2
+ 968 021c 0200     		.byte	0x7d
+ 969 021e 7D       		.sleb128 4
+ 970 021f 04       		.4byte	.LCFI27
+ 971 0220 04000000 		.4byte	.LFE13
+ 972 0224 18000000 		.2byte	0x2
+ 973 0228 0200     		.byte	0x77
+ 974 022a 77       		.sleb128 4
+ 975 022b 04       		.4byte	0x0
+ 976 022c 00000000 		.4byte	0x0
+ 977 0230 00000000 		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 978              		.section	.debug_info
+ 979              		.4byte	0x3be
+ 980 0000 BE030000 		.2byte	0x2
+ 981 0004 0200     		.4byte	.Ldebug_abbrev0
+ 982 0006 00000000 		.byte	0x4
+ 983 000a 04       		.uleb128 0x1
+ 984 000b 01       		.ascii	"GNU C 4.2.1\000"
+ 985 000c 474E5520 		.byte	0x1
+ 985      4320342E 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 25
+
+
+ 985      322E3100 
+ 986 0018 01       		.ascii	"./Generated_Source/PSoC5/Counter_1.c\000"
+ 987 0019 2E2F4765 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 987      6E657261 
+ 987      7465645F 
+ 987      536F7572 
+ 987      63652F50 
+ 988 003e 433A5C55 		.ascii	"ro\\CarStairo.cydsn\000"
+ 988      73657273 
+ 988      5C626C69 
+ 988      6E6B795C 
+ 988      446F6375 
+ 989 006c 726F5C43 		.4byte	0x0
+ 989      61725374 
+ 989      6169726F 
+ 989      2E637964 
+ 989      736E00
+ 990 007f 00000000 		.4byte	.Ldebug_line0
+ 991 0083 00000000 		.uleb128 0x2
+ 992 0087 02       		.byte	0x1
+ 993 0088 01       		.byte	0x8
+ 994 0089 08       		.ascii	"unsigned char\000"
+ 995 008a 756E7369 		.uleb128 0x3
+ 995      676E6564 
+ 995      20636861 
+ 995      7200
+ 996 0098 03       		.ascii	"uint8\000"
+ 997 0099 75696E74 		.byte	0x2
+ 997      3800
+ 998 009f 02       		.byte	0x25
+ 999 00a0 25       		.4byte	0x87
+ 1000 00a1 87000000 		.uleb128 0x3
+ 1001 00a5 03       		.ascii	"uint16\000"
+ 1002 00a6 75696E74 		.byte	0x2
+ 1002      313600
+ 1003 00ad 02       		.byte	0x26
+ 1004 00ae 26       		.4byte	0xb3
+ 1005 00af B3000000 		.uleb128 0x2
+ 1006 00b3 02       		.byte	0x2
+ 1007 00b4 02       		.byte	0x7
+ 1008 00b5 07       		.ascii	"short unsigned int\000"
+ 1009 00b6 73686F72 		.uleb128 0x2
+ 1009      7420756E 
+ 1009      7369676E 
+ 1009      65642069 
+ 1009      6E7400
+ 1010 00c9 02       		.byte	0x4
+ 1011 00ca 04       		.byte	0x7
+ 1012 00cb 07       		.ascii	"long unsigned int\000"
+ 1013 00cc 6C6F6E67 		.uleb128 0x2
+ 1013      20756E73 
+ 1013      69676E65 
+ 1013      6420696E 
+ 1013      7400
+ 1014 00de 02       		.byte	0x1
+ 1015 00df 01       		.byte	0x6
+ 1016 00e0 06       		.ascii	"signed char\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 26
+
+
+ 1017 00e1 7369676E 		.uleb128 0x2
+ 1017      65642063 
+ 1017      68617200 
+ 1018 00ed 02       		.byte	0x2
+ 1019 00ee 02       		.byte	0x5
+ 1020 00ef 05       		.ascii	"short int\000"
+ 1021 00f0 73686F72 		.uleb128 0x2
+ 1021      7420696E 
+ 1021      7400
+ 1022 00fa 02       		.byte	0x4
+ 1023 00fb 04       		.byte	0x5
+ 1024 00fc 05       		.ascii	"long int\000"
+ 1025 00fd 6C6F6E67 		.uleb128 0x4
+ 1025      20696E74 
+ 1025      00
+ 1026 0106 04       		.byte	0x1
+ 1027 0107 01       		.ascii	"Counter_1_Start\000"
+ 1028 0108 436F756E 		.byte	0x1
+ 1028      7465725F 
+ 1028      315F5374 
+ 1028      61727400 
+ 1029 0118 01       		.byte	0x2c
+ 1030 0119 2C       		.byte	0x1
+ 1031 011a 01       		.4byte	.LFB2
+ 1032 011b 00000000 		.4byte	.LFE2
+ 1033 011f 9C000000 		.4byte	.LLST0
+ 1034 0123 00000000 		.uleb128 0x4
+ 1035 0127 04       		.byte	0x1
+ 1036 0128 01       		.ascii	"Counter_1_Stop\000"
+ 1037 0129 436F756E 		.byte	0x1
+ 1037      7465725F 
+ 1037      315F5374 
+ 1037      6F7000
+ 1038 0138 01       		.byte	0x7f
+ 1039 0139 7F       		.byte	0x1
+ 1040 013a 01       		.4byte	.LFB3
+ 1041 013b 00000000 		.4byte	.LFE3
+ 1042 013f 1C000000 		.4byte	.LLST1
+ 1043 0143 2B000000 		.uleb128 0x5
+ 1044 0147 05       		.byte	0x1
+ 1045 0148 01       		.ascii	"Counter_1_SetInterruptMode\000"
+ 1046 0149 436F756E 		.byte	0x1
+ 1046      7465725F 
+ 1046      315F5365 
+ 1046      74496E74 
+ 1046      65727275 
+ 1047 0164 01       		.byte	0x98
+ 1048 0165 98       		.byte	0x1
+ 1049 0166 01       		.4byte	.LFB4
+ 1050 0167 00000000 		.4byte	.LFE4
+ 1051 016b 20000000 		.4byte	.LLST2
+ 1052 016f 56000000 		.4byte	0x191
+ 1053 0173 91010000 		.uleb128 0x6
+ 1054 0177 06       		.ascii	"interruptsMask\000"
+ 1055 0178 696E7465 		.byte	0x1
+ 1055      72727570 
+ 1055      74734D61 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 27
+
+
+ 1055      736B00
+ 1056 0187 01       		.byte	0x97
+ 1057 0188 97       		.4byte	0x98
+ 1058 0189 98000000 		.byte	0x2
+ 1059 018d 02       		.byte	0x91
+ 1060 018e 91       		.sleb128 -9
+ 1061 018f 77       		.byte	0x0
+ 1062 0190 00       		.uleb128 0x7
+ 1063 0191 07       		.byte	0x1
+ 1064 0192 01       		.ascii	"Counter_1_GetInterruptSource\000"
+ 1065 0193 436F756E 		.byte	0x1
+ 1065      7465725F 
+ 1065      315F4765 
+ 1065      74496E74 
+ 1065      65727275 
+ 1066 01b0 01       		.byte	0xaf
+ 1067 01b1 AF       		.byte	0x1
+ 1068 01b2 01       		.4byte	0x98
+ 1069 01b3 98000000 		.4byte	.LFB5
+ 1070 01b7 00000000 		.4byte	.LFE5
+ 1071 01bb 18000000 		.4byte	.LLST3
+ 1072 01bf 8D000000 		.uleb128 0x7
+ 1073 01c3 07       		.byte	0x1
+ 1074 01c4 01       		.ascii	"Counter_1_ReadStatusRegister\000"
+ 1075 01c5 436F756E 		.byte	0x1
+ 1075      7465725F 
+ 1075      315F5265 
+ 1075      61645374 
+ 1075      61747573 
+ 1076 01e2 01       		.byte	0xc7
+ 1077 01e3 C7       		.byte	0x1
+ 1078 01e4 01       		.4byte	0x98
+ 1079 01e5 98000000 		.4byte	.LFB6
+ 1080 01e9 00000000 		.4byte	.LFE6
+ 1081 01ed 18000000 		.4byte	.LLST4
+ 1082 01f1 B8000000 		.uleb128 0x7
+ 1083 01f5 07       		.byte	0x1
+ 1084 01f6 01       		.ascii	"Counter_1_ReadControlRegister\000"
+ 1085 01f7 436F756E 		.byte	0x1
+ 1085      7465725F 
+ 1085      315F5265 
+ 1085      6164436F 
+ 1085      6E74726F 
+ 1086 0215 01       		.byte	0xe0
+ 1087 0216 E0       		.byte	0x1
+ 1088 0217 01       		.4byte	0x98
+ 1089 0218 98000000 		.4byte	.LFB7
+ 1090 021c 00000000 		.4byte	.LFE7
+ 1091 0220 18000000 		.4byte	.LLST5
+ 1092 0224 E3000000 		.uleb128 0x5
+ 1093 0228 05       		.byte	0x1
+ 1094 0229 01       		.ascii	"Counter_1_WriteControlRegister\000"
+ 1095 022a 436F756E 		.byte	0x1
+ 1095      7465725F 
+ 1095      315F5772 
+ 1095      69746543 
+ 1095      6F6E7472 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 28
+
+
+ 1096 0249 01       		.byte	0xf8
+ 1097 024a F8       		.byte	0x1
+ 1098 024b 01       		.4byte	.LFB8
+ 1099 024c 00000000 		.4byte	.LFE8
+ 1100 0250 20000000 		.4byte	.LLST6
+ 1101 0254 0E010000 		.4byte	0x26f
+ 1102 0258 6F020000 		.uleb128 0x6
+ 1103 025c 06       		.ascii	"control\000"
+ 1104 025d 636F6E74 		.byte	0x1
+ 1104      726F6C00 
+ 1105 0265 01       		.byte	0xf7
+ 1106 0266 F7       		.4byte	0x98
+ 1107 0267 98000000 		.byte	0x2
+ 1108 026b 02       		.byte	0x91
+ 1109 026c 91       		.sleb128 -9
+ 1110 026d 77       		.byte	0x0
+ 1111 026e 00       		.uleb128 0x8
+ 1112 026f 08       		.byte	0x1
+ 1113 0270 01       		.ascii	"Counter_1_WriteCounter\000"
+ 1114 0271 436F756E 		.byte	0x1
+ 1114      7465725F 
+ 1114      315F5772 
+ 1114      69746543 
+ 1114      6F756E74 
+ 1115 0288 01       		.2byte	0x10f
+ 1116 0289 0F01     		.byte	0x1
+ 1117 028b 01       		.4byte	.LFB9
+ 1118 028c 00000000 		.4byte	.LFE9
+ 1119 0290 24000000 		.4byte	.LLST7
+ 1120 0294 45010000 		.4byte	0x2c8
+ 1121 0298 C8020000 		.uleb128 0x9
+ 1122 029c 09       		.ascii	"counter\000"
+ 1123 029d 636F756E 		.byte	0x1
+ 1123      74657200 
+ 1124 02a5 01       		.2byte	0x10e
+ 1125 02a6 0E01     		.4byte	0x98
+ 1126 02a8 98000000 		.byte	0x2
+ 1127 02ac 02       		.byte	0x91
+ 1128 02ad 91       		.sleb128 -17
+ 1129 02ae 6F       		.uleb128 0xa
+ 1130 02af 0A       		.ascii	"counter_temp\000"
+ 1131 02b0 636F756E 		.byte	0x1
+ 1131      7465725F 
+ 1131      74656D70 
+ 1131      00
+ 1132 02bd 01       		.2byte	0x111
+ 1133 02be 1101     		.4byte	0xa5
+ 1134 02c0 A5000000 		.byte	0x2
+ 1135 02c4 02       		.byte	0x91
+ 1136 02c5 91       		.sleb128 -10
+ 1137 02c6 76       		.byte	0x0
+ 1138 02c7 00       		.uleb128 0xb
+ 1139 02c8 0B       		.byte	0x1
+ 1140 02c9 01       		.ascii	"Counter_1_ReadCounter\000"
+ 1141 02ca 436F756E 		.byte	0x1
+ 1141      7465725F 
+ 1141      315F5265 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 29
+
+
+ 1141      6164436F 
+ 1141      756E7465 
+ 1142 02e0 01       		.2byte	0x12b
+ 1143 02e1 2B01     		.byte	0x1
+ 1144 02e3 01       		.4byte	0x98
+ 1145 02e4 98000000 		.4byte	.LFB10
+ 1146 02e8 00000000 		.4byte	.LFE10
+ 1147 02ec 20000000 		.4byte	.LLST8
+ 1148 02f0 7C010000 		.uleb128 0xb
+ 1149 02f4 0B       		.byte	0x1
+ 1150 02f5 01       		.ascii	"Counter_1_ReadCapture\000"
+ 1151 02f6 436F756E 		.byte	0x1
+ 1151      7465725F 
+ 1151      315F5265 
+ 1151      61644361 
+ 1151      70747572 
+ 1152 030c 01       		.2byte	0x145
+ 1153 030d 4501     		.byte	0x1
+ 1154 030f 01       		.4byte	0x98
+ 1155 0310 98000000 		.4byte	.LFB11
+ 1156 0314 00000000 		.4byte	.LFE11
+ 1157 0318 18000000 		.4byte	.LLST9
+ 1158 031c A7010000 		.uleb128 0x8
+ 1159 0320 08       		.byte	0x1
+ 1160 0321 01       		.ascii	"Counter_1_WritePeriod\000"
+ 1161 0322 436F756E 		.byte	0x1
+ 1161      7465725F 
+ 1161      315F5772 
+ 1161      69746550 
+ 1161      6572696F 
+ 1162 0338 01       		.2byte	0x15d
+ 1163 0339 5D01     		.byte	0x1
+ 1164 033b 01       		.4byte	.LFB12
+ 1165 033c 00000000 		.4byte	.LFE12
+ 1166 0340 24000000 		.4byte	.LLST10
+ 1167 0344 D2010000 		.4byte	0x376
+ 1168 0348 76030000 		.uleb128 0x9
+ 1169 034c 09       		.ascii	"period\000"
+ 1170 034d 70657269 		.byte	0x1
+ 1170      6F6400
+ 1171 0354 01       		.2byte	0x15c
+ 1172 0355 5C01     		.4byte	0x98
+ 1173 0357 98000000 		.byte	0x2
+ 1174 035b 02       		.byte	0x91
+ 1175 035c 91       		.sleb128 -17
+ 1176 035d 6F       		.uleb128 0xa
+ 1177 035e 0A       		.ascii	"period_temp\000"
+ 1178 035f 70657269 		.byte	0x1
+ 1178      6F645F74 
+ 1178      656D7000 
+ 1179 036b 01       		.2byte	0x15f
+ 1180 036c 5F01     		.4byte	0xa5
+ 1181 036e A5000000 		.byte	0x2
+ 1182 0372 02       		.byte	0x91
+ 1183 0373 91       		.sleb128 -10
+ 1184 0374 76       		.byte	0x0
+ 1185 0375 00       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 30
+
+
+ 1186 0376 0B       		.byte	0x1
+ 1187 0377 01       		.ascii	"Counter_1_ReadPeriod\000"
+ 1188 0378 436F756E 		.byte	0x1
+ 1188      7465725F 
+ 1188      315F5265 
+ 1188      61645065 
+ 1188      72696F64 
+ 1189 038d 01       		.2byte	0x178
+ 1190 038e 7801     		.byte	0x1
+ 1191 0390 01       		.4byte	0x98
+ 1192 0391 98000000 		.4byte	.LFB13
+ 1193 0395 00000000 		.4byte	.LFE13
+ 1194 0399 18000000 		.4byte	.LLST11
+ 1195 039d 09020000 		.uleb128 0xc
+ 1196 03a1 0C       		.ascii	"Counter_1_initvar\000"
+ 1197 03a2 436F756E 		.byte	0x1
+ 1197      7465725F 
+ 1197      315F696E 
+ 1197      69747661 
+ 1197      7200
+ 1198 03b4 01       		.byte	0x17
+ 1199 03b5 17       		.4byte	0x98
+ 1200 03b6 98000000 		.byte	0x1
+ 1201 03ba 01       		.byte	0x5
+ 1202 03bb 05       		.byte	0x3
+ 1203 03bc 03       		.4byte	Counter_1_initvar
+ 1204 03bd 00000000 		.byte	0x0
+ 1205 03c1 00       		.section	.debug_abbrev
+ 1206              		.uleb128 0x1
+ 1207 0000 01       		.uleb128 0x11
+ 1208 0001 11       		.byte	0x1
+ 1209 0002 01       		.uleb128 0x25
+ 1210 0003 25       		.uleb128 0x8
+ 1211 0004 08       		.uleb128 0x13
+ 1212 0005 13       		.uleb128 0xb
+ 1213 0006 0B       		.uleb128 0x3
+ 1214 0007 03       		.uleb128 0x8
+ 1215 0008 08       		.uleb128 0x1b
+ 1216 0009 1B       		.uleb128 0x8
+ 1217 000a 08       		.uleb128 0x52
+ 1218 000b 52       		.uleb128 0x1
+ 1219 000c 01       		.uleb128 0x10
+ 1220 000d 10       		.uleb128 0x6
+ 1221 000e 06       		.byte	0x0
+ 1222 000f 00       		.byte	0x0
+ 1223 0010 00       		.uleb128 0x2
+ 1224 0011 02       		.uleb128 0x24
+ 1225 0012 24       		.byte	0x0
+ 1226 0013 00       		.uleb128 0xb
+ 1227 0014 0B       		.uleb128 0xb
+ 1228 0015 0B       		.uleb128 0x3e
+ 1229 0016 3E       		.uleb128 0xb
+ 1230 0017 0B       		.uleb128 0x3
+ 1231 0018 03       		.uleb128 0x8
+ 1232 0019 08       		.byte	0x0
+ 1233 001a 00       		.byte	0x0
+ 1234 001b 00       		.uleb128 0x3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 31
+
+
+ 1235 001c 03       		.uleb128 0x16
+ 1236 001d 16       		.byte	0x0
+ 1237 001e 00       		.uleb128 0x3
+ 1238 001f 03       		.uleb128 0x8
+ 1239 0020 08       		.uleb128 0x3a
+ 1240 0021 3A       		.uleb128 0xb
+ 1241 0022 0B       		.uleb128 0x3b
+ 1242 0023 3B       		.uleb128 0xb
+ 1243 0024 0B       		.uleb128 0x49
+ 1244 0025 49       		.uleb128 0x13
+ 1245 0026 13       		.byte	0x0
+ 1246 0027 00       		.byte	0x0
+ 1247 0028 00       		.uleb128 0x4
+ 1248 0029 04       		.uleb128 0x2e
+ 1249 002a 2E       		.byte	0x0
+ 1250 002b 00       		.uleb128 0x3f
+ 1251 002c 3F       		.uleb128 0xc
+ 1252 002d 0C       		.uleb128 0x3
+ 1253 002e 03       		.uleb128 0x8
+ 1254 002f 08       		.uleb128 0x3a
+ 1255 0030 3A       		.uleb128 0xb
+ 1256 0031 0B       		.uleb128 0x3b
+ 1257 0032 3B       		.uleb128 0xb
+ 1258 0033 0B       		.uleb128 0x27
+ 1259 0034 27       		.uleb128 0xc
+ 1260 0035 0C       		.uleb128 0x11
+ 1261 0036 11       		.uleb128 0x1
+ 1262 0037 01       		.uleb128 0x12
+ 1263 0038 12       		.uleb128 0x1
+ 1264 0039 01       		.uleb128 0x40
+ 1265 003a 40       		.uleb128 0x6
+ 1266 003b 06       		.byte	0x0
+ 1267 003c 00       		.byte	0x0
+ 1268 003d 00       		.uleb128 0x5
+ 1269 003e 05       		.uleb128 0x2e
+ 1270 003f 2E       		.byte	0x1
+ 1271 0040 01       		.uleb128 0x3f
+ 1272 0041 3F       		.uleb128 0xc
+ 1273 0042 0C       		.uleb128 0x3
+ 1274 0043 03       		.uleb128 0x8
+ 1275 0044 08       		.uleb128 0x3a
+ 1276 0045 3A       		.uleb128 0xb
+ 1277 0046 0B       		.uleb128 0x3b
+ 1278 0047 3B       		.uleb128 0xb
+ 1279 0048 0B       		.uleb128 0x27
+ 1280 0049 27       		.uleb128 0xc
+ 1281 004a 0C       		.uleb128 0x11
+ 1282 004b 11       		.uleb128 0x1
+ 1283 004c 01       		.uleb128 0x12
+ 1284 004d 12       		.uleb128 0x1
+ 1285 004e 01       		.uleb128 0x40
+ 1286 004f 40       		.uleb128 0x6
+ 1287 0050 06       		.uleb128 0x1
+ 1288 0051 01       		.uleb128 0x13
+ 1289 0052 13       		.byte	0x0
+ 1290 0053 00       		.byte	0x0
+ 1291 0054 00       		.uleb128 0x6
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 32
+
+
+ 1292 0055 06       		.uleb128 0x5
+ 1293 0056 05       		.byte	0x0
+ 1294 0057 00       		.uleb128 0x3
+ 1295 0058 03       		.uleb128 0x8
+ 1296 0059 08       		.uleb128 0x3a
+ 1297 005a 3A       		.uleb128 0xb
+ 1298 005b 0B       		.uleb128 0x3b
+ 1299 005c 3B       		.uleb128 0xb
+ 1300 005d 0B       		.uleb128 0x49
+ 1301 005e 49       		.uleb128 0x13
+ 1302 005f 13       		.uleb128 0x2
+ 1303 0060 02       		.uleb128 0xa
+ 1304 0061 0A       		.byte	0x0
+ 1305 0062 00       		.byte	0x0
+ 1306 0063 00       		.uleb128 0x7
+ 1307 0064 07       		.uleb128 0x2e
+ 1308 0065 2E       		.byte	0x0
+ 1309 0066 00       		.uleb128 0x3f
+ 1310 0067 3F       		.uleb128 0xc
+ 1311 0068 0C       		.uleb128 0x3
+ 1312 0069 03       		.uleb128 0x8
+ 1313 006a 08       		.uleb128 0x3a
+ 1314 006b 3A       		.uleb128 0xb
+ 1315 006c 0B       		.uleb128 0x3b
+ 1316 006d 3B       		.uleb128 0xb
+ 1317 006e 0B       		.uleb128 0x27
+ 1318 006f 27       		.uleb128 0xc
+ 1319 0070 0C       		.uleb128 0x49
+ 1320 0071 49       		.uleb128 0x13
+ 1321 0072 13       		.uleb128 0x11
+ 1322 0073 11       		.uleb128 0x1
+ 1323 0074 01       		.uleb128 0x12
+ 1324 0075 12       		.uleb128 0x1
+ 1325 0076 01       		.uleb128 0x40
+ 1326 0077 40       		.uleb128 0x6
+ 1327 0078 06       		.byte	0x0
+ 1328 0079 00       		.byte	0x0
+ 1329 007a 00       		.uleb128 0x8
+ 1330 007b 08       		.uleb128 0x2e
+ 1331 007c 2E       		.byte	0x1
+ 1332 007d 01       		.uleb128 0x3f
+ 1333 007e 3F       		.uleb128 0xc
+ 1334 007f 0C       		.uleb128 0x3
+ 1335 0080 03       		.uleb128 0x8
+ 1336 0081 08       		.uleb128 0x3a
+ 1337 0082 3A       		.uleb128 0xb
+ 1338 0083 0B       		.uleb128 0x3b
+ 1339 0084 3B       		.uleb128 0x5
+ 1340 0085 05       		.uleb128 0x27
+ 1341 0086 27       		.uleb128 0xc
+ 1342 0087 0C       		.uleb128 0x11
+ 1343 0088 11       		.uleb128 0x1
+ 1344 0089 01       		.uleb128 0x12
+ 1345 008a 12       		.uleb128 0x1
+ 1346 008b 01       		.uleb128 0x40
+ 1347 008c 40       		.uleb128 0x6
+ 1348 008d 06       		.uleb128 0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 33
+
+
+ 1349 008e 01       		.uleb128 0x13
+ 1350 008f 13       		.byte	0x0
+ 1351 0090 00       		.byte	0x0
+ 1352 0091 00       		.uleb128 0x9
+ 1353 0092 09       		.uleb128 0x5
+ 1354 0093 05       		.byte	0x0
+ 1355 0094 00       		.uleb128 0x3
+ 1356 0095 03       		.uleb128 0x8
+ 1357 0096 08       		.uleb128 0x3a
+ 1358 0097 3A       		.uleb128 0xb
+ 1359 0098 0B       		.uleb128 0x3b
+ 1360 0099 3B       		.uleb128 0x5
+ 1361 009a 05       		.uleb128 0x49
+ 1362 009b 49       		.uleb128 0x13
+ 1363 009c 13       		.uleb128 0x2
+ 1364 009d 02       		.uleb128 0xa
+ 1365 009e 0A       		.byte	0x0
+ 1366 009f 00       		.byte	0x0
+ 1367 00a0 00       		.uleb128 0xa
+ 1368 00a1 0A       		.uleb128 0x34
+ 1369 00a2 34       		.byte	0x0
+ 1370 00a3 00       		.uleb128 0x3
+ 1371 00a4 03       		.uleb128 0x8
+ 1372 00a5 08       		.uleb128 0x3a
+ 1373 00a6 3A       		.uleb128 0xb
+ 1374 00a7 0B       		.uleb128 0x3b
+ 1375 00a8 3B       		.uleb128 0x5
+ 1376 00a9 05       		.uleb128 0x49
+ 1377 00aa 49       		.uleb128 0x13
+ 1378 00ab 13       		.uleb128 0x2
+ 1379 00ac 02       		.uleb128 0xa
+ 1380 00ad 0A       		.byte	0x0
+ 1381 00ae 00       		.byte	0x0
+ 1382 00af 00       		.uleb128 0xb
+ 1383 00b0 0B       		.uleb128 0x2e
+ 1384 00b1 2E       		.byte	0x0
+ 1385 00b2 00       		.uleb128 0x3f
+ 1386 00b3 3F       		.uleb128 0xc
+ 1387 00b4 0C       		.uleb128 0x3
+ 1388 00b5 03       		.uleb128 0x8
+ 1389 00b6 08       		.uleb128 0x3a
+ 1390 00b7 3A       		.uleb128 0xb
+ 1391 00b8 0B       		.uleb128 0x3b
+ 1392 00b9 3B       		.uleb128 0x5
+ 1393 00ba 05       		.uleb128 0x27
+ 1394 00bb 27       		.uleb128 0xc
+ 1395 00bc 0C       		.uleb128 0x49
+ 1396 00bd 49       		.uleb128 0x13
+ 1397 00be 13       		.uleb128 0x11
+ 1398 00bf 11       		.uleb128 0x1
+ 1399 00c0 01       		.uleb128 0x12
+ 1400 00c1 12       		.uleb128 0x1
+ 1401 00c2 01       		.uleb128 0x40
+ 1402 00c3 40       		.uleb128 0x6
+ 1403 00c4 06       		.byte	0x0
+ 1404 00c5 00       		.byte	0x0
+ 1405 00c6 00       		.uleb128 0xc
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 34
+
+
+ 1406 00c7 0C       		.uleb128 0x34
+ 1407 00c8 34       		.byte	0x0
+ 1408 00c9 00       		.uleb128 0x3
+ 1409 00ca 03       		.uleb128 0x8
+ 1410 00cb 08       		.uleb128 0x3a
+ 1411 00cc 3A       		.uleb128 0xb
+ 1412 00cd 0B       		.uleb128 0x3b
+ 1413 00ce 3B       		.uleb128 0xb
+ 1414 00cf 0B       		.uleb128 0x49
+ 1415 00d0 49       		.uleb128 0x13
+ 1416 00d1 13       		.uleb128 0x3f
+ 1417 00d2 3F       		.uleb128 0xc
+ 1418 00d3 0C       		.uleb128 0x2
+ 1419 00d4 02       		.uleb128 0xa
+ 1420 00d5 0A       		.byte	0x0
+ 1421 00d6 00       		.byte	0x0
+ 1422 00d7 00       		.byte	0x0
+ 1423 00d8 00       		.section	.debug_pubnames,"",%progbits
+ 1424              		.4byte	0x173
+ 1425 0000 73010000 		.2byte	0x2
+ 1426 0004 0200     		.4byte	.Ldebug_info0
+ 1427 0006 00000000 		.4byte	0x3c2
+ 1428 000a C2030000 		.4byte	0x106
+ 1429 000e 06010000 		.ascii	"Counter_1_Start\000"
+ 1430 0012 436F756E 		.4byte	0x127
+ 1430      7465725F 
+ 1430      315F5374 
+ 1430      61727400 
+ 1431 0022 27010000 		.ascii	"Counter_1_Stop\000"
+ 1432 0026 436F756E 		.4byte	0x147
+ 1432      7465725F 
+ 1432      315F5374 
+ 1432      6F7000
+ 1433 0035 47010000 		.ascii	"Counter_1_SetInterruptMode\000"
+ 1434 0039 436F756E 		.4byte	0x191
+ 1434      7465725F 
+ 1434      315F5365 
+ 1434      74496E74 
+ 1434      65727275 
+ 1435 0054 91010000 		.ascii	"Counter_1_GetInterruptSource\000"
+ 1436 0058 436F756E 		.4byte	0x1c3
+ 1436      7465725F 
+ 1436      315F4765 
+ 1436      74496E74 
+ 1436      65727275 
+ 1437 0075 C3010000 		.ascii	"Counter_1_ReadStatusRegister\000"
+ 1438 0079 436F756E 		.4byte	0x1f5
+ 1438      7465725F 
+ 1438      315F5265 
+ 1438      61645374 
+ 1438      61747573 
+ 1439 0096 F5010000 		.ascii	"Counter_1_ReadControlRegister\000"
+ 1440 009a 436F756E 		.4byte	0x228
+ 1440      7465725F 
+ 1440      315F5265 
+ 1440      6164436F 
+ 1440      6E74726F 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 35
+
+
+ 1441 00b8 28020000 		.ascii	"Counter_1_WriteControlRegister\000"
+ 1442 00bc 436F756E 		.4byte	0x26f
+ 1442      7465725F 
+ 1442      315F5772 
+ 1442      69746543 
+ 1442      6F6E7472 
+ 1443 00db 6F020000 		.ascii	"Counter_1_WriteCounter\000"
+ 1444 00df 436F756E 		.4byte	0x2c8
+ 1444      7465725F 
+ 1444      315F5772 
+ 1444      69746543 
+ 1444      6F756E74 
+ 1445 00f6 C8020000 		.ascii	"Counter_1_ReadCounter\000"
+ 1446 00fa 436F756E 		.4byte	0x2f4
+ 1446      7465725F 
+ 1446      315F5265 
+ 1446      6164436F 
+ 1446      756E7465 
+ 1447 0110 F4020000 		.ascii	"Counter_1_ReadCapture\000"
+ 1448 0114 436F756E 		.4byte	0x320
+ 1448      7465725F 
+ 1448      315F5265 
+ 1448      61644361 
+ 1448      70747572 
+ 1449 012a 20030000 		.ascii	"Counter_1_WritePeriod\000"
+ 1450 012e 436F756E 		.4byte	0x376
+ 1450      7465725F 
+ 1450      315F5772 
+ 1450      69746550 
+ 1450      6572696F 
+ 1451 0144 76030000 		.ascii	"Counter_1_ReadPeriod\000"
+ 1452 0148 436F756E 		.4byte	0x3a1
+ 1452      7465725F 
+ 1452      315F5265 
+ 1452      61645065 
+ 1452      72696F64 
+ 1453 015d A1030000 		.ascii	"Counter_1_initvar\000"
+ 1454 0161 436F756E 		.4byte	0x0
+ 1454      7465725F 
+ 1454      315F696E 
+ 1454      69747661 
+ 1454      7200
+ 1455 0173 00000000 		.section	.debug_aranges,"",%progbits
+ 1456              		.4byte	0x74
+ 1457 0000 74000000 		.2byte	0x2
+ 1458 0004 0200     		.4byte	.Ldebug_info0
+ 1459 0006 00000000 		.byte	0x4
+ 1460 000a 04       		.byte	0x0
+ 1461 000b 00       		.2byte	0x0
+ 1462 000c 0000     		.2byte	0x0
+ 1463 000e 0000     		.4byte	.LFB2
+ 1464 0010 00000000 		.4byte	.LFE2-.LFB2
+ 1465 0014 9C000000 		.4byte	.LFB3
+ 1466 0018 00000000 		.4byte	.LFE3-.LFB3
+ 1467 001c 1C000000 		.4byte	.LFB4
+ 1468 0020 00000000 		.4byte	.LFE4-.LFB4
+ 1469 0024 20000000 		.4byte	.LFB5
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgjbaaa.s 			page 36
+
+
+ 1470 0028 00000000 		.4byte	.LFE5-.LFB5
+ 1471 002c 18000000 		.4byte	.LFB6
+ 1472 0030 00000000 		.4byte	.LFE6-.LFB6
+ 1473 0034 18000000 		.4byte	.LFB7
+ 1474 0038 00000000 		.4byte	.LFE7-.LFB7
+ 1475 003c 18000000 		.4byte	.LFB8
+ 1476 0040 00000000 		.4byte	.LFE8-.LFB8
+ 1477 0044 20000000 		.4byte	.LFB9
+ 1478 0048 00000000 		.4byte	.LFE9-.LFB9
+ 1479 004c 24000000 		.4byte	.LFB10
+ 1480 0050 00000000 		.4byte	.LFE10-.LFB10
+ 1481 0054 20000000 		.4byte	.LFB11
+ 1482 0058 00000000 		.4byte	.LFE11-.LFB11
+ 1483 005c 18000000 		.4byte	.LFB12
+ 1484 0060 00000000 		.4byte	.LFE12-.LFB12
+ 1485 0064 24000000 		.4byte	.LFB13
+ 1486 0068 00000000 		.4byte	.LFE13-.LFB13
+ 1487 006c 18000000 		.4byte	0x0
+ 1488 0070 00000000 		.4byte	0x0
+ 1489 0074 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 1490              	...

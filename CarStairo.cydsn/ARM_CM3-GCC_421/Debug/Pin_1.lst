@@ -1,0 +1,821 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"Pin_1.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 91000000 		.text
+  20      02004400 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.text.Pin_1_Write,"ax",%progbits
+  23              		.align	2
+  24              		.global	Pin_1_Write
+  25              		.thumb
+  26              		.thumb_func
+  27              		.type	Pin_1_Write, %function
+  28              	Pin_1_Write:
+  29              	.LFB2:
+  30              		.file 1 "./Generated_Source/PSoC5/Pin_1.c"
+   1:./Generated_Source/PSoC5/Pin_1.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/Pin_1.c **** * File Name: Pin_1.c  
+   3:./Generated_Source/PSoC5/Pin_1.c **** * Version 1.20
+   4:./Generated_Source/PSoC5/Pin_1.c **** *
+   5:./Generated_Source/PSoC5/Pin_1.c **** * Description:
+   6:./Generated_Source/PSoC5/Pin_1.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:./Generated_Source/PSoC5/Pin_1.c **** *
+   8:./Generated_Source/PSoC5/Pin_1.c **** * Note:
+   9:./Generated_Source/PSoC5/Pin_1.c **** *
+  10:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************
+  11:./Generated_Source/PSoC5/Pin_1.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  12:./Generated_Source/PSoC5/Pin_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:./Generated_Source/PSoC5/Pin_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:./Generated_Source/PSoC5/Pin_1.c **** * the software package with which this file was provided.
+  15:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************/
+  16:./Generated_Source/PSoC5/Pin_1.c **** 
+  17:./Generated_Source/PSoC5/Pin_1.c **** #include "cytypes.h"
+  18:./Generated_Source/PSoC5/Pin_1.c **** #include "Pin_1.h"
+  19:./Generated_Source/PSoC5/Pin_1.c **** 
+  20:./Generated_Source/PSoC5/Pin_1.c **** 
+  21:./Generated_Source/PSoC5/Pin_1.c **** /*******************************************************************************
+  22:./Generated_Source/PSoC5/Pin_1.c **** * Function Name: Pin_1_Write
+  23:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 2
+
+
+  24:./Generated_Source/PSoC5/Pin_1.c **** * Summary:
+  25:./Generated_Source/PSoC5/Pin_1.c **** *  Assign a new value to the digital port's data output register.  
+  26:./Generated_Source/PSoC5/Pin_1.c **** *
+  27:./Generated_Source/PSoC5/Pin_1.c **** * Parameters:  
+  28:./Generated_Source/PSoC5/Pin_1.c **** *  prtValue:  The value to be assigned to the Digital Port. 
+  29:./Generated_Source/PSoC5/Pin_1.c **** *
+  30:./Generated_Source/PSoC5/Pin_1.c **** * Return: 
+  31:./Generated_Source/PSoC5/Pin_1.c **** *  void 
+  32:./Generated_Source/PSoC5/Pin_1.c **** *  
+  33:./Generated_Source/PSoC5/Pin_1.c **** *******************************************************************************/
+  34:./Generated_Source/PSoC5/Pin_1.c **** void Pin_1_Write(uint8 value)
+  35:./Generated_Source/PSoC5/Pin_1.c **** {
+  31              	end = 0, frame = 16
+  32              		@ frame_needed = 1, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		push	{r7}
+  35 0000 80B4     	.LCFI0:
+  36              		sub	sp, sp, #20
+  37 0002 85B0     	.LCFI1:
+  38              		add	r7, sp, #0
+  39 0004 00AF     	.LCFI2:
+  40              		@ lr needed for prologue
+  41              		mov	r3, r0
+  42 0006 0346     		strb	r3, [r7, #7]
+  43 0008 FB71     		.loc 1 36 0
+  36:./Generated_Source/PSoC5/Pin_1.c ****     uint8 staticBits = Pin_1_DR & ~Pin_1_MASK;
+  44              		ldrb	r3, [r3, #0]
+  45 000a 0B4B     		uxtb	r3, r3
+  46 000c 1B78     		and	r3, r3, #127
+  47 000e DBB2     		strb	r3, [r7, #15]
+  48 0010 03F07F03 		.loc 1 37 0
+  49 0014 FB73     		ldr	r1, .L3
+  37:./Generated_Source/PSoC5/Pin_1.c ****     Pin_1_DR = staticBits | ((value << Pin_1_SHIFT) & Pin_1_MASK);
+  50              	r3, [r7, #7]
+  51 0016 0849     		lsl	r3, r3, #7
+  52 0018 FB79     		uxtb	r3, r3
+  53 001a 4FEAC313 		and	r3, r3, #128
+  54 001e DBB2     		ldrb	r2, [r7, #15]
+  55 0020 03F08003 		orr	r3, r3, r2
+  56 0024 FA7B     		uxtb	r3, r3
+  57 0026 43EA0203 		strb	r3, [r1, #0]
+  58 002a DBB2     		.loc 1 38 0
+  59 002c 0B70     		add	r7, r7, #20
+  38:./Generated_Source/PSoC5/Pin_1.c **** }
+  60              	7
+  61 002e 07F11407 		pop	{r7}
+  62 0032 BD46     		bx	lr
+  63 0034 80BC     	.L4:
+  64 0036 7047     		.align	2
+  65              	.L3:
+  66              		.word	1073762656
+  67              	.LFE2:
+  68 0038 60510040 		.size	Pin_1_Write, .-Pin_1_Write
+  69              		.section	.text.Pin_1_SetDriveMode,"ax",%progbits
+  70              		.align	2
+  71              		.global	Pin_1_SetDriveMode
+  72              		.thumb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 3
+
+
+  73              		.thumb_func
+  74              		.type	Pin_1_SetDriveMode, %function
+  75              	Pin_1_SetDriveMode:
+  76              	.LFB3:
+  77              		.loc 1 55 0
+  78              		@ args = 0, pretend = 0, frame = 8
+  39:./Generated_Source/PSoC5/Pin_1.c **** 
+  40:./Generated_Source/PSoC5/Pin_1.c **** 
+  41:./Generated_Source/PSoC5/Pin_1.c **** /*******************************************************************************
+  42:./Generated_Source/PSoC5/Pin_1.c **** * Function Name: Pin_1_SetDriveMode
+  43:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************
+  44:./Generated_Source/PSoC5/Pin_1.c **** * Summary:
+  45:./Generated_Source/PSoC5/Pin_1.c **** *  Change the drive mode on the pins of the port.
+  46:./Generated_Source/PSoC5/Pin_1.c **** * 
+  47:./Generated_Source/PSoC5/Pin_1.c **** * Parameters:  
+  48:./Generated_Source/PSoC5/Pin_1.c **** *  mode:  Change the pins to this drive mode.
+  49:./Generated_Source/PSoC5/Pin_1.c **** *
+  50:./Generated_Source/PSoC5/Pin_1.c **** * Return: 
+  51:./Generated_Source/PSoC5/Pin_1.c **** *  void
+  52:./Generated_Source/PSoC5/Pin_1.c **** *
+  53:./Generated_Source/PSoC5/Pin_1.c **** *******************************************************************************/
+  54:./Generated_Source/PSoC5/Pin_1.c **** void Pin_1_SetDriveMode(uint8 mode)
+  55:./Generated_Source/PSoC5/Pin_1.c **** {
+  79              	, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81              		push	{r7}
+  82              	.LCFI3:
+  83 0000 80B4     		sub	sp, sp, #12
+  84              	.LCFI4:
+  85 0002 83B0     		add	r7, sp, #0
+  86              	.LCFI5:
+  87 0004 00AF     		@ lr needed for prologue
+  88              		mov	r3, r0
+  89              		strb	r3, [r7, #7]
+  90 0006 0346     		.loc 1 56 0
+  91 0008 FB71     		ldr	r1, .L7
+  56:./Generated_Source/PSoC5/Pin_1.c **** 	CyPins_SetPinDriveMode(Pin_1_0, mode);
+  92              		ldrb	r3, [r3, #0]
+  93 000a 0949     		uxtb	r3, r3
+  94 000c 084B     		mov	r2, r3
+  95 000e 1B78     		and	r2, r2, #241
+  96 0010 DBB2     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+  97 0012 1A46     		and	r3, r3, #14
+  98 0014 02F0F102 		orr	r3, r2, r3
+  99 0018 FB79     		uxtb	r3, r3
+ 100 001a 03F00E03 		strb	r3, [r1, #0]
+ 101 001e 42EA0303 		.loc 1 57 0
+ 102 0022 DBB2     		add	r7, r7, #12
+ 103 0024 0B70     		mov	sp, r7
+  57:./Generated_Source/PSoC5/Pin_1.c **** }
+ 104              	x	lr
+ 105 0026 07F10C07 	.L8:
+ 106 002a BD46     		.align	2
+ 107 002c 80BC     	.L7:
+ 108 002e 7047     		.word	1073762359
+ 109              	.LFE3:
+ 110              		.size	Pin_1_SetDriveMode, .-Pin_1_SetDriveMode
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 4
+
+
+ 111              		.section	.text.Pin_1_Read,"ax",%progbits
+ 112 0030 37500040 		.align	2
+ 113              		.global	Pin_1_Read
+ 114              		.thumb
+ 115              		.thumb_func
+ 116              		.type	Pin_1_Read, %function
+ 117              	Pin_1_Read:
+ 118              	.LFB4:
+ 119              		.loc 1 78 0
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 1, uses_anonymous_args = 0
+ 122              		@ link register save eliminated.
+  58:./Generated_Source/PSoC5/Pin_1.c **** 
+  59:./Generated_Source/PSoC5/Pin_1.c **** 
+  60:./Generated_Source/PSoC5/Pin_1.c **** /*******************************************************************************
+  61:./Generated_Source/PSoC5/Pin_1.c **** * Function Name: Pin_1_Read
+  62:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************
+  63:./Generated_Source/PSoC5/Pin_1.c **** * Summary:
+  64:./Generated_Source/PSoC5/Pin_1.c **** *  Read the current value on the pins of the Digital Port in right justified 
+  65:./Generated_Source/PSoC5/Pin_1.c **** *  form.
+  66:./Generated_Source/PSoC5/Pin_1.c **** *
+  67:./Generated_Source/PSoC5/Pin_1.c **** * Parameters:  
+  68:./Generated_Source/PSoC5/Pin_1.c **** *  void 
+  69:./Generated_Source/PSoC5/Pin_1.c **** *
+  70:./Generated_Source/PSoC5/Pin_1.c **** * Return: 
+  71:./Generated_Source/PSoC5/Pin_1.c **** *  Returns the current value of the Digital Port as a right justified number
+  72:./Generated_Source/PSoC5/Pin_1.c **** *  
+  73:./Generated_Source/PSoC5/Pin_1.c **** * Note:
+  74:./Generated_Source/PSoC5/Pin_1.c **** *  Macro Pin_1_ReadPS calls this function. 
+  75:./Generated_Source/PSoC5/Pin_1.c **** *  
+  76:./Generated_Source/PSoC5/Pin_1.c **** *******************************************************************************/
+  77:./Generated_Source/PSoC5/Pin_1.c **** uint8 Pin_1_Read(void)
+  78:./Generated_Source/PSoC5/Pin_1.c **** {
+ 123              		add	r7, sp, #0
+ 124              	.LCFI7:
+ 125              		@ lr needed for prologue
+ 126              		.loc 1 79 0
+ 127 0000 80B4     		ldr	r3, .L11
+ 128              		ldrb	r3, [r3, #0]
+ 129 0002 00AF     		uxtb	r3, r3
+ 130              		and	r3, r3, #128
+ 131              		lsr	r3, r3, #7
+  79:./Generated_Source/PSoC5/Pin_1.c ****     return (Pin_1_PS & Pin_1_MASK) >> Pin_1_SHIFT;
+ 132              	 r3
+ 133 0004 054B     		.loc 1 80 0
+ 134 0006 1B78     		mov	r0, r3
+ 135 0008 DBB2     		mov	sp, r7
+ 136 000a 03F08003 		pop	{r7}
+ 137 000e 4FEAD313 		bx	lr
+ 138 0012 DBB2     	.L12:
+  80:./Generated_Source/PSoC5/Pin_1.c **** }
+ 139              		2
+ 140 0014 1846     	.L11:
+ 141 0016 BD46     		.word	1073762657
+ 142 0018 80BC     	.LFE4:
+ 143 001a 7047     		.size	Pin_1_Read, .-Pin_1_Read
+ 144              		.section	.text.Pin_1_ReadDataReg,"ax",%progbits
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 5
+
+
+ 145              		.align	2
+ 146              		.global	Pin_1_ReadDataReg
+ 147 001c 61510040 		.thumb
+ 148              		.thumb_func
+ 149              		.type	Pin_1_ReadDataReg, %function
+ 150              	Pin_1_ReadDataReg:
+ 151              	.LFB5:
+ 152              		.loc 1 97 0
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 1, uses_anonymous_args = 0
+ 155              		@ link register save eliminated.
+ 156              		push	{r7}
+ 157              	.LCFI8:
+  81:./Generated_Source/PSoC5/Pin_1.c **** 
+  82:./Generated_Source/PSoC5/Pin_1.c **** 
+  83:./Generated_Source/PSoC5/Pin_1.c **** /*******************************************************************************
+  84:./Generated_Source/PSoC5/Pin_1.c **** * Function Name: Pin_1_ReadDataReg
+  85:./Generated_Source/PSoC5/Pin_1.c **** ********************************************************************************
+  86:./Generated_Source/PSoC5/Pin_1.c **** * Summary:
+  87:./Generated_Source/PSoC5/Pin_1.c **** *  Read the current value assigned to a Digital Port's data output register
+  88:./Generated_Source/PSoC5/Pin_1.c **** *
+  89:./Generated_Source/PSoC5/Pin_1.c **** * Parameters:  
+  90:./Generated_Source/PSoC5/Pin_1.c **** *  void 
+  91:./Generated_Source/PSoC5/Pin_1.c **** *
+  92:./Generated_Source/PSoC5/Pin_1.c **** * Return: 
+  93:./Generated_Source/PSoC5/Pin_1.c **** *  Returns the current value assigned to the Digital Port's data output register
+  94:./Generated_Source/PSoC5/Pin_1.c **** *  
+  95:./Generated_Source/PSoC5/Pin_1.c **** *******************************************************************************/
+  96:./Generated_Source/PSoC5/Pin_1.c **** uint8 Pin_1_ReadDataReg(void)
+  97:./Generated_Source/PSoC5/Pin_1.c **** {
+ 158              	FI9:
+ 159              		@ lr needed for prologue
+ 160              		.loc 1 98 0
+ 161              		ldr	r3, .L15
+ 162 0000 80B4     		ldrb	r3, [r3, #0]
+ 163              		uxtb	r3, r3
+ 164 0002 00AF     		and	r3, r3, #128
+ 165              		lsr	r3, r3, #7
+ 166              		uxtb	r3, r3
+  98:./Generated_Source/PSoC5/Pin_1.c ****     return (Pin_1_DR & Pin_1_MASK) >> Pin_1_SHIFT;
+ 167              	9 0
+ 168 0004 054B     		mov	r0, r3
+ 169 0006 1B78     		mov	sp, r7
+ 170 0008 DBB2     		pop	{r7}
+ 171 000a 03F08003 		bx	lr
+ 172 000e 4FEAD313 	.L16:
+ 173 0012 DBB2     		.align	2
+  99:./Generated_Source/PSoC5/Pin_1.c **** }
+ 174              	.word	1073762656
+ 175 0014 1846     	.LFE5:
+ 176 0016 BD46     		.size	Pin_1_ReadDataReg, .-Pin_1_ReadDataReg
+ 177 0018 80BC     		.section	.debug_frame,"",%progbits
+ 178 001a 7047     	.Lframe0:
+ 179              		.4byte	.LECIE0-.LSCIE0
+ 180              	.LSCIE0:
+ 181              		.4byte	0xffffffff
+ 182 001c 60510040 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 6
+
+
+ 183              		.ascii	"\000"
+ 184              		.uleb128 0x1
+ 185              		.sleb128 -4
+ 186              		.byte	0xe
+ 187 0000 0C000000 		.byte	0xc
+ 188              		.uleb128 0xd
+ 189 0004 FFFFFFFF 		.uleb128 0x0
+ 190 0008 01       		.align	2
+ 191 0009 00       	.LECIE0:
+ 192 000a 01       	.LSFDE0:
+ 193 000b 7C       		.4byte	.LEFDE0-.LASFDE0
+ 194 000c 0E       	.LASFDE0:
+ 195 000d 0C       		.4byte	.Lframe0
+ 196 000e 0D       		.4byte	.LFB2
+ 197 000f 00       		.4byte	.LFE2-.LFB2
+ 198              		.byte	0x4
+ 199              		.4byte	.LCFI0-.LFB2
+ 200              		.byte	0xe
+ 201 0010 18000000 		.uleb128 0x4
+ 202              		.byte	0x4
+ 203 0014 00000000 		.4byte	.LCFI1-.LCFI0
+ 204 0018 00000000 		.byte	0xe
+ 205 001c 3C000000 		.uleb128 0x18
+ 206 0020 42       		.byte	0x87
+ 207              		.uleb128 0x1
+ 208 0021 0E       		.byte	0x4
+ 209 0022 04       		.4byte	.LCFI2-.LCFI1
+ 210 0023 42       		.byte	0xd
+ 211              		.uleb128 0x7
+ 212 0024 0E       		.align	2
+ 213 0025 18       	.LEFDE0:
+ 214 0026 87       	.LSFDE2:
+ 215 0027 01       		.4byte	.LEFDE2-.LASFDE2
+ 216 0028 42       	.LASFDE2:
+ 217              		.4byte	.Lframe0
+ 218 0029 0D       		.4byte	.LFB3
+ 219 002a 07       		.4byte	.LFE3-.LFB3
+ 220 002b 00       		.byte	0x4
+ 221              		.4byte	.LCFI3-.LFB3
+ 222              		.byte	0xe
+ 223 002c 18000000 		.uleb128 0x4
+ 224              		.byte	0x4
+ 225 0030 00000000 		.4byte	.LCFI4-.LCFI3
+ 226 0034 00000000 		.byte	0xe
+ 227 0038 34000000 		.uleb128 0x10
+ 228 003c 42       		.byte	0x87
+ 229              		.uleb128 0x1
+ 230 003d 0E       		.byte	0x4
+ 231 003e 04       		.4byte	.LCFI5-.LCFI4
+ 232 003f 42       		.byte	0xd
+ 233              		.uleb128 0x7
+ 234 0040 0E       		.align	2
+ 235 0041 10       	.LEFDE2:
+ 236 0042 87       	.LSFDE4:
+ 237 0043 01       		.4byte	.LEFDE4-.LASFDE4
+ 238 0044 42       	.LASFDE4:
+ 239              		.4byte	.Lframe0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 7
+
+
+ 240 0045 0D       		.4byte	.LFB4
+ 241 0046 07       		.4byte	.LFE4-.LFB4
+ 242 0047 00       		.byte	0x4
+ 243              		.4byte	.LCFI6-.LFB4
+ 244              		.byte	0xe
+ 245 0048 14000000 		.uleb128 0x4
+ 246              		.byte	0x87
+ 247 004c 00000000 		.uleb128 0x1
+ 248 0050 00000000 		.byte	0x4
+ 249 0054 20000000 		.4byte	.LCFI7-.LCFI6
+ 250 0058 42       		.byte	0xd
+ 251              		.uleb128 0x7
+ 252 0059 0E       		.align	2
+ 253 005a 04       	.LEFDE4:
+ 254 005b 87       	.LSFDE6:
+ 255 005c 01       		.4byte	.LEFDE6-.LASFDE6
+ 256 005d 42       	.LASFDE6:
+ 257              		.4byte	.Lframe0
+ 258 005e 0D       		.4byte	.LFB5
+ 259 005f 07       		.4byte	.LFE5-.LFB5
+ 260              		.byte	0x4
+ 261              		.4byte	.LCFI8-.LFB5
+ 262              		.byte	0xe
+ 263 0060 14000000 		.uleb128 0x4
+ 264              		.byte	0x87
+ 265 0064 00000000 		.uleb128 0x1
+ 266 0068 00000000 		.byte	0x4
+ 267 006c 20000000 		.4byte	.LCFI9-.LCFI8
+ 268 0070 42       		.byte	0xd
+ 269              		.uleb128 0x7
+ 270 0071 0E       		.align	2
+ 271 0072 04       	.LEFDE6:
+ 272 0073 87       		.text
+ 273 0074 01       	.Letext0:
+ 274 0075 42       		.section	.debug_loc,"",%progbits
+ 275              	.Ldebug_loc0:
+ 276 0076 0D       	.LLST0:
+ 277 0077 07       		.4byte	.LFB2
+ 278              		.4byte	.LCFI0
+ 279              		.2byte	0x1
+ 280              		.byte	0x5d
+ 281              		.4byte	.LCFI0
+ 282              		.4byte	.LCFI1
+ 283              		.2byte	0x2
+ 284              		.byte	0x7d
+ 285 0000 00000000 		.sleb128 4
+ 286 0004 02000000 		.4byte	.LCFI1
+ 287 0008 0100     		.4byte	.LCFI2
+ 288 000a 5D       		.2byte	0x2
+ 289 000b 02000000 		.byte	0x7d
+ 290 000f 04000000 		.sleb128 24
+ 291 0013 0200     		.4byte	.LCFI2
+ 292 0015 7D       		.4byte	.LFE2
+ 293 0016 04       		.2byte	0x2
+ 294 0017 04000000 		.byte	0x77
+ 295 001b 06000000 		.sleb128 24
+ 296 001f 0200     		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 8
+
+
+ 297 0021 7D       		.4byte	0x0
+ 298 0022 18       	.LLST1:
+ 299 0023 06000000 		.4byte	.LFB3
+ 300 0027 3C000000 		.4byte	.LCFI3
+ 301 002b 0200     		.2byte	0x1
+ 302 002d 77       		.byte	0x5d
+ 303 002e 18       		.4byte	.LCFI3
+ 304 002f 00000000 		.4byte	.LCFI4
+ 305 0033 00000000 		.2byte	0x2
+ 306              		.byte	0x7d
+ 307 0037 00000000 		.sleb128 4
+ 308 003b 02000000 		.4byte	.LCFI4
+ 309 003f 0100     		.4byte	.LCFI5
+ 310 0041 5D       		.2byte	0x2
+ 311 0042 02000000 		.byte	0x7d
+ 312 0046 04000000 		.sleb128 16
+ 313 004a 0200     		.4byte	.LCFI5
+ 314 004c 7D       		.4byte	.LFE3
+ 315 004d 04       		.2byte	0x2
+ 316 004e 04000000 		.byte	0x77
+ 317 0052 06000000 		.sleb128 16
+ 318 0056 0200     		.4byte	0x0
+ 319 0058 7D       		.4byte	0x0
+ 320 0059 10       	.LLST2:
+ 321 005a 06000000 		.4byte	.LFB4
+ 322 005e 34000000 		.4byte	.LCFI6
+ 323 0062 0200     		.2byte	0x1
+ 324 0064 77       		.byte	0x5d
+ 325 0065 10       		.4byte	.LCFI6
+ 326 0066 00000000 		.4byte	.LCFI7
+ 327 006a 00000000 		.2byte	0x2
+ 328              		.byte	0x7d
+ 329 006e 00000000 		.sleb128 4
+ 330 0072 02000000 		.4byte	.LCFI7
+ 331 0076 0100     		.4byte	.LFE4
+ 332 0078 5D       		.2byte	0x2
+ 333 0079 02000000 		.byte	0x77
+ 334 007d 04000000 		.sleb128 4
+ 335 0081 0200     		.4byte	0x0
+ 336 0083 7D       		.4byte	0x0
+ 337 0084 04       	.LLST3:
+ 338 0085 04000000 		.4byte	.LFB5
+ 339 0089 20000000 		.4byte	.LCFI8
+ 340 008d 0200     		.2byte	0x1
+ 341 008f 77       		.byte	0x5d
+ 342 0090 04       		.4byte	.LCFI8
+ 343 0091 00000000 		.4byte	.LCFI9
+ 344 0095 00000000 		.2byte	0x2
+ 345              		.byte	0x7d
+ 346 0099 00000000 		.sleb128 4
+ 347 009d 02000000 		.4byte	.LCFI9
+ 348 00a1 0100     		.4byte	.LFE5
+ 349 00a3 5D       		.2byte	0x2
+ 350 00a4 02000000 		.byte	0x77
+ 351 00a8 04000000 		.sleb128 4
+ 352 00ac 0200     		.4byte	0x0
+ 353 00ae 7D       		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 9
+
+
+ 354 00af 04       		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 355 00b0 04000000 		.section	.debug_info
+ 356 00b4 20000000 		.4byte	0x1b7
+ 357 00b8 0200     		.2byte	0x2
+ 358 00ba 77       		.4byte	.Ldebug_abbrev0
+ 359 00bb 04       		.byte	0x4
+ 360 00bc 00000000 		.uleb128 0x1
+ 361 00c0 00000000 		.ascii	"GNU C 4.2.1\000"
+ 362              		.byte	0x1
+ 363              		.ascii	"./Generated_Source/PSoC5/Pin_1.c\000"
+ 364 0000 B7010000 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 365 0004 0200     		.ascii	"ro\\CarStairo.cydsn\000"
+ 366 0006 00000000 		.4byte	0x0
+ 367 000a 04       		.4byte	.Ldebug_line0
+ 368 000b 01       		.uleb128 0x2
+ 369 000c 474E5520 		.byte	0x1
+ 369      4320342E 
+ 369      322E3100 
+ 370 0018 01       		.byte	0x8
+ 371 0019 2E2F4765 		.ascii	"unsigned char\000"
+ 371      6E657261 
+ 371      7465645F 
+ 371      536F7572 
+ 371      63652F50 
+ 372 003a 433A5C55 		.uleb128 0x3
+ 372      73657273 
+ 372      5C626C69 
+ 372      6E6B795C 
+ 372      446F6375 
+ 373 0068 726F5C43 		.ascii	"uint8\000"
+ 373      61725374 
+ 373      6169726F 
+ 373      2E637964 
+ 373      736E00
+ 374 007b 00000000 		.byte	0x2
+ 375 007f 00000000 		.byte	0x25
+ 376 0083 02       		.4byte	0x83
+ 377 0084 01       		.uleb128 0x2
+ 378 0085 08       		.byte	0x2
+ 379 0086 756E7369 		.byte	0x7
+ 379      676E6564 
+ 379      20636861 
+ 379      7200
+ 380 0094 03       		.ascii	"short unsigned int\000"
+ 381 0095 75696E74 		.uleb128 0x2
+ 381      3800
+ 382 009b 02       		.byte	0x4
+ 383 009c 25       		.byte	0x7
+ 384 009d 83000000 		.ascii	"long unsigned int\000"
+ 385 00a1 02       		.uleb128 0x2
+ 386 00a2 02       		.byte	0x1
+ 387 00a3 07       		.byte	0x6
+ 388 00a4 73686F72 		.ascii	"signed char\000"
+ 388      7420756E 
+ 388      7369676E 
+ 388      65642069 
+ 388      6E7400
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 10
+
+
+ 389 00b7 02       		.uleb128 0x2
+ 390 00b8 04       		.byte	0x2
+ 391 00b9 07       		.byte	0x5
+ 392 00ba 6C6F6E67 		.ascii	"short int\000"
+ 392      20756E73 
+ 392      69676E65 
+ 392      6420696E 
+ 392      7400
+ 393 00cc 02       		.uleb128 0x2
+ 394 00cd 01       		.byte	0x4
+ 395 00ce 06       		.byte	0x5
+ 396 00cf 7369676E 		.ascii	"long int\000"
+ 396      65642063 
+ 396      68617200 
+ 397 00db 02       		.uleb128 0x4
+ 398 00dc 02       		.byte	0x1
+ 399 00dd 05       		.ascii	"Pin_1_Write\000"
+ 400 00de 73686F72 		.byte	0x1
+ 400      7420696E 
+ 400      7400
+ 401 00e8 02       		.byte	0x23
+ 402 00e9 04       		.byte	0x1
+ 403 00ea 05       		.4byte	.LFB2
+ 404 00eb 6C6F6E67 		.4byte	.LFE2
+ 404      20696E74 
+ 404      00
+ 405 00f4 04       		.4byte	.LLST0
+ 406 00f5 01       		.4byte	0x13b
+ 407 00f6 50696E5F 		.uleb128 0x5
+ 407      315F5772 
+ 407      69746500 
+ 408 0102 01       		.ascii	"value\000"
+ 409 0103 23       		.byte	0x1
+ 410 0104 01       		.byte	0x22
+ 411 0105 00000000 		.4byte	0x94
+ 412 0109 3C000000 		.byte	0x2
+ 413 010d 00000000 		.byte	0x91
+ 414 0111 3B010000 		.sleb128 -17
+ 415 0115 05       		.uleb128 0x6
+ 416 0116 76616C75 		.ascii	"staticBits\000"
+ 416      6500
+ 417 011c 01       		.byte	0x1
+ 418 011d 22       		.byte	0x24
+ 419 011e 94000000 		.4byte	0x94
+ 420 0122 02       		.byte	0x2
+ 421 0123 91       		.byte	0x91
+ 422 0124 6F       		.sleb128 -9
+ 423 0125 06       		.byte	0x0
+ 424 0126 73746174 		.uleb128 0x4
+ 424      69634269 
+ 424      747300
+ 425 0131 01       		.byte	0x1
+ 426 0132 24       		.ascii	"Pin_1_SetDriveMode\000"
+ 427 0133 94000000 		.byte	0x1
+ 428 0137 02       		.byte	0x37
+ 429 0138 91       		.byte	0x1
+ 430 0139 77       		.4byte	.LFB3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 11
+
+
+ 431 013a 00       		.4byte	.LFE3
+ 432 013b 04       		.4byte	.LLST1
+ 433 013c 01       		.4byte	0x173
+ 434 013d 50696E5F 		.uleb128 0x5
+ 434      315F5365 
+ 434      74447269 
+ 434      76654D6F 
+ 434      646500
+ 435 0150 01       		.ascii	"mode\000"
+ 436 0151 37       		.byte	0x1
+ 437 0152 01       		.byte	0x36
+ 438 0153 00000000 		.4byte	0x94
+ 439 0157 34000000 		.byte	0x2
+ 440 015b 37000000 		.byte	0x91
+ 441 015f 73010000 		.sleb128 -9
+ 442 0163 05       		.byte	0x0
+ 443 0164 6D6F6465 		.uleb128 0x7
+ 443      00
+ 444 0169 01       		.byte	0x1
+ 445 016a 36       		.ascii	"Pin_1_Read\000"
+ 446 016b 94000000 		.byte	0x1
+ 447 016f 02       		.byte	0x4e
+ 448 0170 91       		.byte	0x1
+ 449 0171 77       		.4byte	0x94
+ 450 0172 00       		.4byte	.LFB4
+ 451 0173 07       		.4byte	.LFE4
+ 452 0174 01       		.4byte	.LLST2
+ 453 0175 50696E5F 		.uleb128 0x7
+ 453      315F5265 
+ 453      616400
+ 454 0180 01       		.byte	0x1
+ 455 0181 4E       		.ascii	"Pin_1_ReadDataReg\000"
+ 456 0182 01       		.byte	0x1
+ 457 0183 94000000 		.byte	0x61
+ 458 0187 00000000 		.byte	0x1
+ 459 018b 20000000 		.4byte	0x94
+ 460 018f 6E000000 		.4byte	.LFB5
+ 461 0193 07       		.4byte	.LFE5
+ 462 0194 01       		.4byte	.LLST3
+ 463 0195 50696E5F 		.byte	0x0
+ 463      315F5265 
+ 463      61644461 
+ 463      74615265 
+ 463      6700
+ 464 01a7 01       		.section	.debug_abbrev
+ 465 01a8 61       		.uleb128 0x1
+ 466 01a9 01       		.uleb128 0x11
+ 467 01aa 94000000 		.byte	0x1
+ 468 01ae 00000000 		.uleb128 0x25
+ 469 01b2 20000000 		.uleb128 0x8
+ 470 01b6 99000000 		.uleb128 0x13
+ 471 01ba 00       		.uleb128 0xb
+ 472              		.uleb128 0x3
+ 473 0000 01       		.uleb128 0x8
+ 474 0001 11       		.uleb128 0x1b
+ 475 0002 01       		.uleb128 0x8
+ 476 0003 25       		.uleb128 0x52
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 12
+
+
+ 477 0004 08       		.uleb128 0x1
+ 478 0005 13       		.uleb128 0x10
+ 479 0006 0B       		.uleb128 0x6
+ 480 0007 03       		.byte	0x0
+ 481 0008 08       		.byte	0x0
+ 482 0009 1B       		.uleb128 0x2
+ 483 000a 08       		.uleb128 0x24
+ 484 000b 52       		.byte	0x0
+ 485 000c 01       		.uleb128 0xb
+ 486 000d 10       		.uleb128 0xb
+ 487 000e 06       		.uleb128 0x3e
+ 488 000f 00       		.uleb128 0xb
+ 489 0010 00       		.uleb128 0x3
+ 490 0011 02       		.uleb128 0x8
+ 491 0012 24       		.byte	0x0
+ 492 0013 00       		.byte	0x0
+ 493 0014 0B       		.uleb128 0x3
+ 494 0015 0B       		.uleb128 0x16
+ 495 0016 3E       		.byte	0x0
+ 496 0017 0B       		.uleb128 0x3
+ 497 0018 03       		.uleb128 0x8
+ 498 0019 08       		.uleb128 0x3a
+ 499 001a 00       		.uleb128 0xb
+ 500 001b 00       		.uleb128 0x3b
+ 501 001c 03       		.uleb128 0xb
+ 502 001d 16       		.uleb128 0x49
+ 503 001e 00       		.uleb128 0x13
+ 504 001f 03       		.byte	0x0
+ 505 0020 08       		.byte	0x0
+ 506 0021 3A       		.uleb128 0x4
+ 507 0022 0B       		.uleb128 0x2e
+ 508 0023 3B       		.byte	0x1
+ 509 0024 0B       		.uleb128 0x3f
+ 510 0025 49       		.uleb128 0xc
+ 511 0026 13       		.uleb128 0x3
+ 512 0027 00       		.uleb128 0x8
+ 513 0028 00       		.uleb128 0x3a
+ 514 0029 04       		.uleb128 0xb
+ 515 002a 2E       		.uleb128 0x3b
+ 516 002b 01       		.uleb128 0xb
+ 517 002c 3F       		.uleb128 0x27
+ 518 002d 0C       		.uleb128 0xc
+ 519 002e 03       		.uleb128 0x11
+ 520 002f 08       		.uleb128 0x1
+ 521 0030 3A       		.uleb128 0x12
+ 522 0031 0B       		.uleb128 0x1
+ 523 0032 3B       		.uleb128 0x40
+ 524 0033 0B       		.uleb128 0x6
+ 525 0034 27       		.uleb128 0x1
+ 526 0035 0C       		.uleb128 0x13
+ 527 0036 11       		.byte	0x0
+ 528 0037 01       		.byte	0x0
+ 529 0038 12       		.uleb128 0x5
+ 530 0039 01       		.uleb128 0x5
+ 531 003a 40       		.byte	0x0
+ 532 003b 06       		.uleb128 0x3
+ 533 003c 01       		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 13
+
+
+ 534 003d 13       		.uleb128 0x3a
+ 535 003e 00       		.uleb128 0xb
+ 536 003f 00       		.uleb128 0x3b
+ 537 0040 05       		.uleb128 0xb
+ 538 0041 05       		.uleb128 0x49
+ 539 0042 00       		.uleb128 0x13
+ 540 0043 03       		.uleb128 0x2
+ 541 0044 08       		.uleb128 0xa
+ 542 0045 3A       		.byte	0x0
+ 543 0046 0B       		.byte	0x0
+ 544 0047 3B       		.uleb128 0x6
+ 545 0048 0B       		.uleb128 0x34
+ 546 0049 49       		.byte	0x0
+ 547 004a 13       		.uleb128 0x3
+ 548 004b 02       		.uleb128 0x8
+ 549 004c 0A       		.uleb128 0x3a
+ 550 004d 00       		.uleb128 0xb
+ 551 004e 00       		.uleb128 0x3b
+ 552 004f 06       		.uleb128 0xb
+ 553 0050 34       		.uleb128 0x49
+ 554 0051 00       		.uleb128 0x13
+ 555 0052 03       		.uleb128 0x2
+ 556 0053 08       		.uleb128 0xa
+ 557 0054 3A       		.byte	0x0
+ 558 0055 0B       		.byte	0x0
+ 559 0056 3B       		.uleb128 0x7
+ 560 0057 0B       		.uleb128 0x2e
+ 561 0058 49       		.byte	0x0
+ 562 0059 13       		.uleb128 0x3f
+ 563 005a 02       		.uleb128 0xc
+ 564 005b 0A       		.uleb128 0x3
+ 565 005c 00       		.uleb128 0x8
+ 566 005d 00       		.uleb128 0x3a
+ 567 005e 07       		.uleb128 0xb
+ 568 005f 2E       		.uleb128 0x3b
+ 569 0060 00       		.uleb128 0xb
+ 570 0061 3F       		.uleb128 0x27
+ 571 0062 0C       		.uleb128 0xc
+ 572 0063 03       		.uleb128 0x49
+ 573 0064 08       		.uleb128 0x13
+ 574 0065 3A       		.uleb128 0x11
+ 575 0066 0B       		.uleb128 0x1
+ 576 0067 3B       		.uleb128 0x12
+ 577 0068 0B       		.uleb128 0x1
+ 578 0069 27       		.uleb128 0x40
+ 579 006a 0C       		.uleb128 0x6
+ 580 006b 49       		.byte	0x0
+ 581 006c 13       		.byte	0x0
+ 582 006d 11       		.byte	0x0
+ 583 006e 01       		.section	.debug_pubnames,"",%progbits
+ 584 006f 12       		.4byte	0x5a
+ 585 0070 01       		.2byte	0x2
+ 586 0071 40       		.4byte	.Ldebug_info0
+ 587 0072 06       		.4byte	0x1bb
+ 588 0073 00       		.4byte	0xf4
+ 589 0074 00       		.ascii	"Pin_1_Write\000"
+ 590 0075 00       		.4byte	0x13b
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccyabaaa.s 			page 14
+
+
+ 591              		.ascii	"Pin_1_SetDriveMode\000"
+ 592 0000 5A000000 		.4byte	0x173
+ 593 0004 0200     		.ascii	"Pin_1_Read\000"
+ 594 0006 00000000 		.4byte	0x193
+ 595 000a BB010000 		.ascii	"Pin_1_ReadDataReg\000"
+ 596 000e F4000000 		.4byte	0x0
+ 597 0012 50696E5F 		.section	.debug_aranges,"",%progbits
+ 597      315F5772 
+ 597      69746500 
+ 598 001e 3B010000 		.4byte	0x34
+ 599 0022 50696E5F 		.2byte	0x2
+ 599      315F5365 
+ 599      74447269 
+ 599      76654D6F 
+ 599      646500
+ 600 0035 73010000 		.4byte	.Ldebug_info0
+ 601 0039 50696E5F 		.byte	0x4
+ 601      315F5265 
+ 601      616400
+ 602 0044 93010000 		.byte	0x0
+ 603 0048 50696E5F 		.2byte	0x0
+ 603      315F5265 
+ 603      61644461 
+ 603      74615265 
+ 603      6700
+ 604 005a 00000000 		.2byte	0x0
+ 605              		.4byte	.LFB2
+ 606 0000 34000000 		.4byte	.LFE2-.LFB2
+ 607 0004 0200     		.4byte	.LFB3
+ 608 0006 00000000 		.4byte	.LFE3-.LFB3
+ 609 000a 04       		.4byte	.LFB4
+ 610 000b 00       		.4byte	.LFE4-.LFB4
+ 611 000c 0000     		.4byte	.LFB5
+ 612 000e 0000     		.4byte	.LFE5-.LFB5
+ 613 0010 00000000 		.4byte	0x0
+ 614 0014 3C000000 		.4byte	0x0
+ 615 0018 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 616 001c 34000000 	...

@@ -1,0 +1,16 @@
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/ARM_CM3-GCC_421/Debug/timer_clock.o : C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYDEVICE.H C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYFITTER.H C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYTYPES.H C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/timer_clock.H C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/timer_clock.c 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYDEVICE.H : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYFITTER.H : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/CYTYPES.H : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/timer_clock.H : 
+
+C:/Users/blinky/Documents/PSoC\ Creator/CarStairo/CarStairo.cydsn/Generated_Source/PSoC5/timer_clock.c : 
+

@@ -1,0 +1,2211 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"Timer_1.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 46010000 		.text
+  20      02004600 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.global	Timer_1_initvar
+  23              		.bss
+  24              		.type	Timer_1_initvar, %object
+  25              		.size	Timer_1_initvar, 1
+  26              	Timer_1_initvar:
+  27 0000 00       		.space	1
+  28              		.section	.text.Timer_1_Start,"ax",%progbits
+  29              		.align	2
+  30              		.global	Timer_1_Start
+  31              		.thumb
+  32              		.thumb_func
+  33              		.type	Timer_1_Start, %function
+  34              	Timer_1_Start:
+  35              	.LFB2:
+  36              		.file 1 "./Generated_Source/PSoC5/Timer_1.c"
+   1:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/Timer_1.c **** * File Name: Timer_1.c  
+   3:./Generated_Source/PSoC5/Timer_1.c **** * Version 1.20
+   4:./Generated_Source/PSoC5/Timer_1.c **** *
+   5:./Generated_Source/PSoC5/Timer_1.c **** * Description:
+   6:./Generated_Source/PSoC5/Timer_1.c **** *  The Timer User Module consists of a 8, 16, 24 or 32-bit timer with
+   7:./Generated_Source/PSoC5/Timer_1.c **** *  a selectable period between 2 and 2^Width - 1.  The timer may free run
+   8:./Generated_Source/PSoC5/Timer_1.c **** *  or be used as a capture timer as well.  The capture can be initiated
+   9:./Generated_Source/PSoC5/Timer_1.c **** *  by a positive or negative edge signal as well as via software.
+  10:./Generated_Source/PSoC5/Timer_1.c **** *  A trigger input can be programmed to enable the timer on rising edge
+  11:./Generated_Source/PSoC5/Timer_1.c **** *  falling edge, either edge or continous run.
+  12:./Generated_Source/PSoC5/Timer_1.c **** *  Interrupts may be generated due to a terminal count condition
+  13:./Generated_Source/PSoC5/Timer_1.c **** *  or a capture event.
+  14:./Generated_Source/PSoC5/Timer_1.c **** *
+  15:./Generated_Source/PSoC5/Timer_1.c **** * Note:
+  16:./Generated_Source/PSoC5/Timer_1.c **** *
+  17:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 2
+
+
+  18:./Generated_Source/PSoC5/Timer_1.c **** * Copyright 2008-2009, Cypress Semiconductor Corporation.  All rights reserved.
+  19:./Generated_Source/PSoC5/Timer_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  20:./Generated_Source/PSoC5/Timer_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  21:./Generated_Source/PSoC5/Timer_1.c **** * the software package with which this file was provided.
+  22:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************/
+  23:./Generated_Source/PSoC5/Timer_1.c **** 
+  24:./Generated_Source/PSoC5/Timer_1.c **** 
+  25:./Generated_Source/PSoC5/Timer_1.c **** 
+  26:./Generated_Source/PSoC5/Timer_1.c **** #include "cytypes.h"
+  27:./Generated_Source/PSoC5/Timer_1.c **** #include "Timer_1.h"
+  28:./Generated_Source/PSoC5/Timer_1.c **** 
+  29:./Generated_Source/PSoC5/Timer_1.c **** uint8 Timer_1_initvar = 0;
+  30:./Generated_Source/PSoC5/Timer_1.c **** 
+  31:./Generated_Source/PSoC5/Timer_1.c **** 
+  32:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+  33:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_Start
+  34:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+  35:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+  36:./Generated_Source/PSoC5/Timer_1.c **** *  The start function initializes the timer with the default values, the 
+  37:./Generated_Source/PSoC5/Timer_1.c **** *  enables the timerto begin counting.  It does not enable interrupts,
+  38:./Generated_Source/PSoC5/Timer_1.c **** *  the EnableInt command should be called if interrupt generation is required.
+  39:./Generated_Source/PSoC5/Timer_1.c **** *
+  40:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+  41:./Generated_Source/PSoC5/Timer_1.c **** *  void:  
+  42:./Generated_Source/PSoC5/Timer_1.c **** *
+  43:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+  44:./Generated_Source/PSoC5/Timer_1.c **** *  void
+  45:./Generated_Source/PSoC5/Timer_1.c **** *
+  46:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+  47:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_Start(void) 
+  48:./Generated_Source/PSoC5/Timer_1.c **** {
+  37              	0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39              		push	{r7, lr}
+  40 0000 80B5     	.LCFI0:
+  41              		add	r7, sp, #0
+  42 0002 00AF     	.LCFI1:
+  43              		.loc 1 49 0
+  49:./Generated_Source/PSoC5/Timer_1.c ****     if(Timer_1_initvar == 0)
+  44              	, .L5
+  45 0004 214B     		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+  46 0006 1B78     		cmp	r3, #0
+  47 0008 002B     		bne	.L2
+  48 000a 35D1     		.loc 1 51 0
+  50:./Generated_Source/PSoC5/Timer_1.c ****     {
+  51:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_initvar = 1;   /* Clear this bit for Initialization */
+  49              	r2, .L5
+  50 000c 1F4A     		mov	r3, #1
+  51 000e 4FF00103 		strb	r3, [r2, #0]
+  52 0012 1370     		.loc 1 56 0
+  52:./Generated_Source/PSoC5/Timer_1.c ****         
+  53:./Generated_Source/PSoC5/Timer_1.c ****         #if (Timer_1_UsingFixedFunction)
+  54:./Generated_Source/PSoC5/Timer_1.c ****             #if !defined(Timer_1_TimerUDB_ctrlreg__REMOVED)  /* Remove assignment if control regist
+  55:./Generated_Source/PSoC5/Timer_1.c ****                 /* Clear all bits but the enable bit (if it's already set) for Timer operation */
+  56:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_CONTROL &= Timer_1_CTRL_ENABLE;
+  53              		r2, .L5+4
+  54 0014 1E4A     		ldr	r3, .L5+4
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 3
+
+
+  55 0016 1E4B     		ldrb	r3, [r3, #0]
+  56 0018 1B78     		uxtb	r3, r3
+  57 001a DBB2     		and	r3, r3, #1
+  58 001c 03F00103 		strb	r3, [r2, #0]
+  59 0020 1370     		.loc 1 59 0
+  57:./Generated_Source/PSoC5/Timer_1.c ****             #endif 
+  58:./Generated_Source/PSoC5/Timer_1.c ****             /* Clear the mode bits to be 000 for continuous mode */
+  59:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_CONTROL2 &= ~Timer_1_CTRL_MODE_MASK; 
+  60              	, .L5+8
+  61 0022 1C4A     		ldr	r3, .L5+8
+  62 0024 1B4B     		ldrb	r3, [r3, #0]
+  63 0026 1B78     		uxtb	r3, r3
+  64 0028 DBB2     		and	r3, r3, #241
+  65 002a 03F0F103 		strb	r3, [r2, #0]
+  66 002e 1370     		.loc 1 78 0
+  60:./Generated_Source/PSoC5/Timer_1.c ****             
+  61:./Generated_Source/PSoC5/Timer_1.c ****             /* Check if One Shot mode is enabled i.e. RunMode !=0*/
+  62:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_RunModeUsed != 0)
+  63:./Generated_Source/PSoC5/Timer_1.c ****                 /* Set 3rd bit of Control register to enable one shot mode */
+  64:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_CONTROL |= 0x04u;
+  65:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+  66:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_RunModeUsed == 2)
+  67:./Generated_Source/PSoC5/Timer_1.c ****                 /* Set last 2 bits of control2 register if one shot(halt on 
+  68:./Generated_Source/PSoC5/Timer_1.c ****                 interrupt) is enabled*/
+  69:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_CONTROL2 |= 0x03u;
+  70:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+  71:./Generated_Source/PSoC5/Timer_1.c ****             
+  72:./Generated_Source/PSoC5/Timer_1.c ****             /* If the Enable HW controllable, then set bit one of CONTROL2 */
+  73:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_UsingHWEnable != 0)
+  74:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_CONTROL2 |= Timer_1_CTRL_MODE_PULSEWIDTH; 
+  75:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+  76:./Generated_Source/PSoC5/Timer_1.c ****             
+  77:./Generated_Source/PSoC5/Timer_1.c ****             /* Set the IRQ to use the status register interrupts */
+  78:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_CONTROL2 |= Timer_1_CTRL2_IRQ_SEL;
+  67              	, .L5+8
+  68 0030 184A     		ldr	r3, .L5+8
+  69 0032 184B     		ldrb	r3, [r3, #0]
+  70 0034 1B78     		uxtb	r3, r3
+  71 0036 DBB2     		orr	r3, r3, #1
+  72 0038 43F00103 		uxtb	r3, r3
+  73 003c DBB2     		strb	r3, [r2, #0]
+  74 003e 1370     		.loc 1 82 0
+  79:./Generated_Source/PSoC5/Timer_1.c ****         #endif 
+  80:./Generated_Source/PSoC5/Timer_1.c ****         
+  81:./Generated_Source/PSoC5/Timer_1.c ****         /* Set Initial values from Configuration */
+  82:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_WritePeriod(Timer_1_INIT_PERIOD);
+  75              	 #255
+  76 0040 4FF0FF00 		bl	Timer_1_WritePeriod
+  77 0044 FFF7FEFF 		.loc 1 83 0
+  83:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_WriteCounter(Timer_1_INIT_PERIOD);
+  78              	v	r0, #255
+  79 0048 4FF0FF00 		bl	Timer_1_WriteCounter
+  80 004c FFF7FEFF 		.loc 1 118 0
+  84:./Generated_Source/PSoC5/Timer_1.c ****         
+  85:./Generated_Source/PSoC5/Timer_1.c ****         #if (Timer_1_UsingHWCaptureCounter)/* Capture counter is enabled */
+  86:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_CAPTURE_COUNT_CTRL |= Timer_1_CNTR_ENABLE;
+  87:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_SetCaptureCount(Timer_1_INIT_CAPTURE_COUNT);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 4
+
+
+  88:./Generated_Source/PSoC5/Timer_1.c ****         #endif
+  89:./Generated_Source/PSoC5/Timer_1.c ****             
+  90:./Generated_Source/PSoC5/Timer_1.c ****         #if (!Timer_1_UsingFixedFunction)
+  91:./Generated_Source/PSoC5/Timer_1.c ****             /* Initialize the Configuration bits of the Control Register */
+  92:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_SoftwareCaptureMode)
+  93:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_SetCaptureMode(Timer_1_INIT_CAPTURE_MODE);
+  94:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+  95:./Generated_Source/PSoC5/Timer_1.c ****             
+  96:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_SoftwareTriggerMode)
+  97:./Generated_Source/PSoC5/Timer_1.c ****                 if (!(Timer_1_CONTROL & Timer_1__B_TIMER__TM_SOFTWARE))
+  98:./Generated_Source/PSoC5/Timer_1.c ****                 {
+  99:./Generated_Source/PSoC5/Timer_1.c ****                     Timer_1_SetTriggerMode(Timer_1_INIT_TRIGGER_MODE);
+ 100:./Generated_Source/PSoC5/Timer_1.c ****                 }
+ 101:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+ 102:./Generated_Source/PSoC5/Timer_1.c ****             
+ 103:./Generated_Source/PSoC5/Timer_1.c ****                 /* Use the interrupt output of the status register for IRQ output */
+ 104:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_STATUS_AUX_CTRL |= Timer_1_STATUS_ACTL_INT_EN_MASK;
+ 105:./Generated_Source/PSoC5/Timer_1.c **** 
+ 106:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_EnableTriggerMode)
+ 107:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_EnableTrigger();
+ 108:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+ 109:./Generated_Source/PSoC5/Timer_1.c **** 
+ 110:./Generated_Source/PSoC5/Timer_1.c ****             #if (Timer_1_InterruptOnCaptureCount)
+ 111:./Generated_Source/PSoC5/Timer_1.c ****                 Timer_1_SetInterruptCount(Timer_1_INIT_INT_CAPTURE_COUNT);
+ 112:./Generated_Source/PSoC5/Timer_1.c ****             #endif
+ 113:./Generated_Source/PSoC5/Timer_1.c ****             
+ 114:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_ClearFIFO();        
+ 115:./Generated_Source/PSoC5/Timer_1.c **** 
+ 116:./Generated_Source/PSoC5/Timer_1.c ****         #else /* (Timer_1_UsingFixedFunction) */
+ 117:./Generated_Source/PSoC5/Timer_1.c ****             /* Globally Enable the Fixed Function Block chosen */
+ 118:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_GLOBAL_ENABLE |= Timer_1_BLOCK_EN_MASK;
+  81              	r	r2, .L5+12
+  82 0050 114A     		ldr	r3, .L5+12
+  83 0052 114B     		ldrb	r3, [r3, #0]
+  84 0054 1B78     		uxtb	r3, r3
+  85 0056 DBB2     		orr	r3, r3, #1
+  86 0058 43F00103 		uxtb	r3, r3
+  87 005c DBB2     		strb	r3, [r2, #0]
+  88 005e 1370     		.loc 1 120 0
+ 119:./Generated_Source/PSoC5/Timer_1.c ****             /* Set the Interrupt source to come from the status register */
+ 120:./Generated_Source/PSoC5/Timer_1.c ****             Timer_1_CONTROL2 |= Timer_1_CTRL2_IRQ_SEL;
+  89              	 .L5+8
+  90 0060 0C4A     		ldr	r3, .L5+8
+  91 0062 0C4B     		ldrb	r3, [r3, #0]
+  92 0064 1B78     		uxtb	r3, r3
+  93 0066 DBB2     		orr	r3, r3, #1
+  94 0068 43F00103 		uxtb	r3, r3
+  95 006c DBB2     		strb	r3, [r2, #0]
+  96 006e 1370     		.loc 1 123 0
+ 121:./Generated_Source/PSoC5/Timer_1.c ****         #endif
+ 122:./Generated_Source/PSoC5/Timer_1.c **** 
+ 123:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_SetInterruptMode(Timer_1_INIT_INTERRUPT_MODE);
+  97              	 #0
+  98 0070 4FF00000 		bl	Timer_1_SetInterruptMode
+  99 0074 FFF7FEFF 	.L2:
+ 100              		.loc 1 126 0
+ 124:./Generated_Source/PSoC5/Timer_1.c ****     }
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 5
+
+
+ 125:./Generated_Source/PSoC5/Timer_1.c ****     #if !defined(Timer_1_TimerUDB_ctrlreg__REMOVED) /* Remove assignment if control register is rem
+ 126:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_CONTROL |= Timer_1_CTRL_ENABLE;
+ 101              		r2, .L5+4
+ 102 0078 054A     		ldr	r3, .L5+4
+ 103 007a 054B     		ldrb	r3, [r3, #0]
+ 104 007c 1B78     		uxtb	r3, r3
+ 105 007e DBB2     		orr	r3, r3, #1
+ 106 0080 43F00103 		uxtb	r3, r3
+ 107 0084 DBB2     		strb	r3, [r2, #0]
+ 108 0086 1370     		.loc 1 128 0
+ 127:./Generated_Source/PSoC5/Timer_1.c ****     #endif
+ 128:./Generated_Source/PSoC5/Timer_1.c **** }
+ 109              	 r7
+ 110 0088 BD46     		pop	{r7, pc}
+ 111 008a 80BD     	.L6:
+ 112              		.align	2
+ 113              	.L5:
+ 114              		.word	Timer_1_initvar
+ 115 008c 00000000 		.word	1073762048
+ 116 0090 004F0040 		.word	1073762049
+ 117 0094 014F0040 		.word	1073759139
+ 118 0098 A3430040 	.LFE2:
+ 119              		.size	Timer_1_Start, .-Timer_1_Start
+ 120              		.section	.text.Timer_1_Stop,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	Timer_1_Stop
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	Timer_1_Stop, %function
+ 126              	Timer_1_Stop:
+ 127              	.LFB3:
+ 128              		.loc 1 146 0
+ 129:./Generated_Source/PSoC5/Timer_1.c **** 
+ 130:./Generated_Source/PSoC5/Timer_1.c **** 
+ 131:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 132:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_Stop
+ 133:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 134:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 135:./Generated_Source/PSoC5/Timer_1.c **** *  The stop function halts the timer, but does not change any modes or disable
+ 136:./Generated_Source/PSoC5/Timer_1.c **** *  interrupts.
+ 137:./Generated_Source/PSoC5/Timer_1.c **** *
+ 138:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 139:./Generated_Source/PSoC5/Timer_1.c **** *  void:  
+ 140:./Generated_Source/PSoC5/Timer_1.c **** *
+ 141:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 142:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 143:./Generated_Source/PSoC5/Timer_1.c **** *
+ 144:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 145:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_Stop(void)
+ 146:./Generated_Source/PSoC5/Timer_1.c **** {
+ 129              	 = 0, frame = 0
+ 130              		@ frame_needed = 1, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ 132              		push	{r7}
+ 133 0000 80B4     	.LCFI2:
+ 134              		add	r7, sp, #0
+ 135 0002 00AF     	.LCFI3:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 6
+
+
+ 136              		@ lr needed for prologue
+ 137              		.loc 1 148 0
+ 147:./Generated_Source/PSoC5/Timer_1.c ****     #if !defined(Timer_1_TimerUDB_ctrlreg__REMOVED)   /* Remove assignment if control register is r
+ 148:./Generated_Source/PSoC5/Timer_1.c ****         Timer_1_CONTROL &= ~Timer_1_CTRL_ENABLE;
+ 138              	.L9
+ 139 0004 044A     		ldr	r3, .L9
+ 140 0006 044B     		ldrb	r3, [r3, #0]
+ 141 0008 1B78     		uxtb	r3, r3
+ 142 000a DBB2     		and	r3, r3, #254
+ 143 000c 03F0FE03 		strb	r3, [r2, #0]
+ 144 0010 1370     		.loc 1 150 0
+ 149:./Generated_Source/PSoC5/Timer_1.c ****     #endif  
+ 150:./Generated_Source/PSoC5/Timer_1.c **** }
+ 145              	, r7
+ 146 0012 BD46     		pop	{r7}
+ 147 0014 80BC     		bx	lr
+ 148 0016 7047     	.L10:
+ 149              		.align	2
+ 150              	.L9:
+ 151              		.word	1073762048
+ 152 0018 004F0040 	.LFE3:
+ 153              		.size	Timer_1_Stop, .-Timer_1_Stop
+ 154              		.section	.text.Timer_1_SetInterruptMode,"ax",%progbits
+ 155              		.align	2
+ 156              		.global	Timer_1_SetInterruptMode
+ 157              		.thumb
+ 158              		.thumb_func
+ 159              		.type	Timer_1_SetInterruptMode, %function
+ 160              	Timer_1_SetInterruptMode:
+ 161              	.LFB4:
+ 162              		.loc 1 170 0
+ 151:./Generated_Source/PSoC5/Timer_1.c **** 
+ 152:./Generated_Source/PSoC5/Timer_1.c **** 
+ 153:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 154:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_SetInterruptMode
+ 155:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 156:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 157:./Generated_Source/PSoC5/Timer_1.c **** *  This function selects which of the interrupt inputs may cause an interrupt.  
+ 158:./Generated_Source/PSoC5/Timer_1.c **** *  The twosources are caputure and terminal.  One, both or neither may 
+ 159:./Generated_Source/PSoC5/Timer_1.c **** *  be selected.
+ 160:./Generated_Source/PSoC5/Timer_1.c **** *
+ 161:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 162:./Generated_Source/PSoC5/Timer_1.c **** *  interruptsource: This parameter is used to enable interrups on either/or 
+ 163:./Generated_Source/PSoC5/Timer_1.c **** *                   terminal count or capture.  
+ 164:./Generated_Source/PSoC5/Timer_1.c **** *
+ 165:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 166:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 167:./Generated_Source/PSoC5/Timer_1.c **** *
+ 168:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 169:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_SetInterruptMode( uint8 interruptMode )
+ 170:./Generated_Source/PSoC5/Timer_1.c **** {
+ 163              	nd = 0, frame = 8
+ 164              		@ frame_needed = 1, uses_anonymous_args = 0
+ 165              		@ link register save eliminated.
+ 166              		push	{r7}
+ 167 0000 80B4     	.LCFI4:
+ 168              		sub	sp, sp, #12
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 7
+
+
+ 169 0002 83B0     	.LCFI5:
+ 170              		add	r7, sp, #0
+ 171 0004 00AF     	.LCFI6:
+ 172              		@ lr needed for prologue
+ 173              		mov	r3, r0
+ 174 0006 0346     		strb	r3, [r7, #7]
+ 175 0008 FB71     		.loc 1 171 0
+ 171:./Generated_Source/PSoC5/Timer_1.c ****     Timer_1_STATUS_MASK = interruptMode;
+ 176              	
+ 177 000a 044A     		ldrb	r3, [r7, #7]
+ 178 000c FB79     		strb	r3, [r2, #0]
+ 179 000e 1370     		.loc 1 172 0
+ 172:./Generated_Source/PSoC5/Timer_1.c **** }
+ 180              	d	r7, r7, #12
+ 181 0010 07F10C07 		mov	sp, r7
+ 182 0014 BD46     		pop	{r7}
+ 183 0016 80BC     		bx	lr
+ 184 0018 7047     	.L14:
+ 185              		.align	2
+ 186 001a C046     	.L13:
+ 187              		.word	1073762056
+ 188 001c 084F0040 	.LFE4:
+ 189              		.size	Timer_1_SetInterruptMode, .-Timer_1_SetInterruptMode
+ 190              		.section	.text.Timer_1_GetInterruptSource,"ax",%progbits
+ 191              		.align	2
+ 192              		.global	Timer_1_GetInterruptSource
+ 193              		.thumb
+ 194              		.thumb_func
+ 195              		.type	Timer_1_GetInterruptSource, %function
+ 196              	Timer_1_GetInterruptSource:
+ 197              	.LFB5:
+ 198              		.loc 1 193 0
+ 173:./Generated_Source/PSoC5/Timer_1.c **** 
+ 174:./Generated_Source/PSoC5/Timer_1.c **** 
+ 175:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 176:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_GetInterruptSource
+ 177:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 178:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 179:./Generated_Source/PSoC5/Timer_1.c **** *  Returns the status register with the information on the interrupt source
+ 180:./Generated_Source/PSoC5/Timer_1.c **** *
+ 181:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 182:./Generated_Source/PSoC5/Timer_1.c **** *  void:  
+ 183:./Generated_Source/PSoC5/Timer_1.c **** *
+ 184:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 185:./Generated_Source/PSoC5/Timer_1.c **** *  Status register bit-field containing the interrupt source
+ 186:./Generated_Source/PSoC5/Timer_1.c **** *
+ 187:./Generated_Source/PSoC5/Timer_1.c **** * Side Effects: 
+ 188:./Generated_Source/PSoC5/Timer_1.c **** *  Status register is clear on Read, therefore all interrupt sources must be 
+ 189:./Generated_Source/PSoC5/Timer_1.c **** *  handled.
+ 190:./Generated_Source/PSoC5/Timer_1.c **** *
+ 191:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 192:./Generated_Source/PSoC5/Timer_1.c **** uint8 Timer_1_GetInterruptSource()
+ 193:./Generated_Source/PSoC5/Timer_1.c **** {
+ 199              	d = 0, frame = 0
+ 200              		@ frame_needed = 1, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+ 202              		push	{r7}
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 8
+
+
+ 203 0000 80B4     	.LCFI7:
+ 204              		add	r7, sp, #0
+ 205 0002 00AF     	.LCFI8:
+ 206              		@ lr needed for prologue
+ 207              		.loc 1 194 0
+ 194:./Generated_Source/PSoC5/Timer_1.c ****     return Timer_1_STATUS;
+ 208              	.L17
+ 209 0004 034B     		ldrb	r3, [r3, #0]
+ 210 0006 1B78     		uxtb	r3, r3
+ 211 0008 DBB2     		.loc 1 195 0
+ 195:./Generated_Source/PSoC5/Timer_1.c **** }
+ 212              		r0, r3
+ 213 000a 1846     		mov	sp, r7
+ 214 000c BD46     		pop	{r7}
+ 215 000e 80BC     		bx	lr
+ 216 0010 7047     	.L18:
+ 217              		.align	2
+ 218 0012 C046     	.L17:
+ 219              		.word	1073762056
+ 220 0014 084F0040 	.LFE5:
+ 221              		.size	Timer_1_GetInterruptSource, .-Timer_1_GetInterruptSource
+ 222              		.section	.text.Timer_1_SoftwareCapture,"ax",%progbits
+ 223              		.align	2
+ 224              		.global	Timer_1_SoftwareCapture
+ 225              		.thumb
+ 226              		.thumb_func
+ 227              		.type	Timer_1_SoftwareCapture, %function
+ 228              	Timer_1_SoftwareCapture:
+ 229              	.LFB6:
+ 230              		.loc 1 215 0
+ 196:./Generated_Source/PSoC5/Timer_1.c **** 
+ 197:./Generated_Source/PSoC5/Timer_1.c **** 
+ 198:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 199:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_SoftwareCapture
+ 200:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 201:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 202:./Generated_Source/PSoC5/Timer_1.c **** *  This function forces a capture independent of the capture signal.
+ 203:./Generated_Source/PSoC5/Timer_1.c **** *
+ 204:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 205:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 206:./Generated_Source/PSoC5/Timer_1.c **** *
+ 207:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 208:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 209:./Generated_Source/PSoC5/Timer_1.c **** *
+ 210:./Generated_Source/PSoC5/Timer_1.c **** * Side Effects:
+ 211:./Generated_Source/PSoC5/Timer_1.c **** *  An existing hardware capture could be overwritten.
+ 212:./Generated_Source/PSoC5/Timer_1.c **** *
+ 213:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 214:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_SoftwareCapture(void)
+ 215:./Generated_Source/PSoC5/Timer_1.c **** {
+ 231              	d = 0, frame = 0
+ 232              		@ frame_needed = 1, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234              		push	{r7}
+ 235 0000 80B4     	.LCFI9:
+ 236              		add	r7, sp, #0
+ 237 0002 00AF     	.LCFI10:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 9
+
+
+ 238              		@ lr needed for prologue
+ 239              		.loc 1 217 0
+ 216:./Generated_Source/PSoC5/Timer_1.c ****     /* Generate a software capture by reading the counter register */
+ 217:./Generated_Source/PSoC5/Timer_1.c ****     CY_GET_REG8(Timer_1_COUNTER_LSB_PTR);
+ 240              	.L21
+ 241 0004 024B     		ldrb	r3, [r3, #0]
+ 242 0006 1B78     		.loc 1 219 0
+ 218:./Generated_Source/PSoC5/Timer_1.c ****     /* Capture Data is now in the FIFO */
+ 219:./Generated_Source/PSoC5/Timer_1.c **** }
+ 243              	v	sp, r7
+ 244 0008 BD46     		pop	{r7}
+ 245 000a 80BC     		bx	lr
+ 246 000c 7047     	.L22:
+ 247              		.align	2
+ 248 000e C046     	.L21:
+ 249              		.word	1073762052
+ 250 0010 044F0040 	.LFE6:
+ 251              		.size	Timer_1_SoftwareCapture, .-Timer_1_SoftwareCapture
+ 252              		.section	.text.Timer_1_ReadStatusRegister,"ax",%progbits
+ 253              		.align	2
+ 254              		.global	Timer_1_ReadStatusRegister
+ 255              		.thumb
+ 256              		.thumb_func
+ 257              		.type	Timer_1_ReadStatusRegister, %function
+ 258              	Timer_1_ReadStatusRegister:
+ 259              	.LFB7:
+ 260              		.loc 1 241 0
+ 220:./Generated_Source/PSoC5/Timer_1.c **** 
+ 221:./Generated_Source/PSoC5/Timer_1.c **** 
+ 222:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 223:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_ReadStatusRegister
+ 224:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 225:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 226:./Generated_Source/PSoC5/Timer_1.c **** *  Reads the status register and returns it's state. This function should use
+ 227:./Generated_Source/PSoC5/Timer_1.c **** *  defined types for the bit-field information as the bits in this register may
+ 228:./Generated_Source/PSoC5/Timer_1.c **** *  be permuteable.
+ 229:./Generated_Source/PSoC5/Timer_1.c **** *
+ 230:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 231:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 232:./Generated_Source/PSoC5/Timer_1.c **** *
+ 233:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 234:./Generated_Source/PSoC5/Timer_1.c **** *  The contents of the status register
+ 235:./Generated_Source/PSoC5/Timer_1.c **** *
+ 236:./Generated_Source/PSoC5/Timer_1.c **** * Side Effects:
+ 237:./Generated_Source/PSoC5/Timer_1.c **** *  Status register bits may be clear on read. 
+ 238:./Generated_Source/PSoC5/Timer_1.c **** *
+ 239:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 240:./Generated_Source/PSoC5/Timer_1.c **** uint8   Timer_1_ReadStatusRegister(void)
+ 241:./Generated_Source/PSoC5/Timer_1.c **** {
+ 261              	nd = 0, frame = 0
+ 262              		@ frame_needed = 1, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 264              		push	{r7}
+ 265 0000 80B4     	.LCFI11:
+ 266              		add	r7, sp, #0
+ 267 0002 00AF     	.LCFI12:
+ 268              		@ lr needed for prologue
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 10
+
+
+ 269              		.loc 1 242 0
+ 242:./Generated_Source/PSoC5/Timer_1.c ****     return Timer_1_STATUS;
+ 270              	.L25
+ 271 0004 034B     		ldrb	r3, [r3, #0]
+ 272 0006 1B78     		uxtb	r3, r3
+ 273 0008 DBB2     		.loc 1 243 0
+ 243:./Generated_Source/PSoC5/Timer_1.c **** }
+ 274              		r0, r3
+ 275 000a 1846     		mov	sp, r7
+ 276 000c BD46     		pop	{r7}
+ 277 000e 80BC     		bx	lr
+ 278 0010 7047     	.L26:
+ 279              		.align	2
+ 280 0012 C046     	.L25:
+ 281              		.word	1073762056
+ 282 0014 084F0040 	.LFE7:
+ 283              		.size	Timer_1_ReadStatusRegister, .-Timer_1_ReadStatusRegister
+ 284              		.section	.text.Timer_1_ReadControlRegister,"ax",%progbits
+ 285              		.align	2
+ 286              		.global	Timer_1_ReadControlRegister
+ 287              		.thumb
+ 288              		.thumb_func
+ 289              		.type	Timer_1_ReadControlRegister, %function
+ 290              	Timer_1_ReadControlRegister:
+ 291              	.LFB8:
+ 292              		.loc 1 262 0
+ 244:./Generated_Source/PSoC5/Timer_1.c **** 
+ 245:./Generated_Source/PSoC5/Timer_1.c **** 
+ 246:./Generated_Source/PSoC5/Timer_1.c **** #if !defined(Timer_1_TimerUDB_ctrlreg__REMOVED)   /* Remove API if control register is removed */
+ 247:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 248:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_ReadControlRegister
+ 249:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 250:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 251:./Generated_Source/PSoC5/Timer_1.c **** *  Reads the control register and returns it's value. 
+ 252:./Generated_Source/PSoC5/Timer_1.c **** *
+ 253:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 254:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 255:./Generated_Source/PSoC5/Timer_1.c **** *
+ 256:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 257:./Generated_Source/PSoC5/Timer_1.c **** *  The contents of the control register
+ 258:./Generated_Source/PSoC5/Timer_1.c **** *
+ 259:./Generated_Source/PSoC5/Timer_1.c **** *
+ 260:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 261:./Generated_Source/PSoC5/Timer_1.c **** uint8   Timer_1_ReadControlRegister(void)
+ 262:./Generated_Source/PSoC5/Timer_1.c **** {
+ 293              	d = 0, frame = 0
+ 294              		@ frame_needed = 1, uses_anonymous_args = 0
+ 295              		@ link register save eliminated.
+ 296              		push	{r7}
+ 297 0000 80B4     	.LCFI13:
+ 298              		add	r7, sp, #0
+ 299 0002 00AF     	.LCFI14:
+ 300              		@ lr needed for prologue
+ 301              		.loc 1 263 0
+ 263:./Generated_Source/PSoC5/Timer_1.c ****         return Timer_1_CONTROL;
+ 302              	.L29
+ 303 0004 034B     		ldrb	r3, [r3, #0]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 11
+
+
+ 304 0006 1B78     		uxtb	r3, r3
+ 305 0008 DBB2     		.loc 1 264 0
+ 264:./Generated_Source/PSoC5/Timer_1.c **** }
+ 306              		r0, r3
+ 307 000a 1846     		mov	sp, r7
+ 308 000c BD46     		pop	{r7}
+ 309 000e 80BC     		bx	lr
+ 310 0010 7047     	.L30:
+ 311              		.align	2
+ 312 0012 C046     	.L29:
+ 313              		.word	1073762048
+ 314 0014 004F0040 	.LFE8:
+ 315              		.size	Timer_1_ReadControlRegister, .-Timer_1_ReadControlRegister
+ 316              		.section	.text.Timer_1_WriteControlRegister,"ax",%progbits
+ 317              		.align	2
+ 318              		.global	Timer_1_WriteControlRegister
+ 319              		.thumb
+ 320              		.thumb_func
+ 321              		.type	Timer_1_WriteControlRegister, %function
+ 322              	Timer_1_WriteControlRegister:
+ 323              	.LFB9:
+ 324              		.loc 1 281 0
+ 265:./Generated_Source/PSoC5/Timer_1.c **** 
+ 266:./Generated_Source/PSoC5/Timer_1.c **** 
+ 267:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 268:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_WriteControlRegister
+ 269:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 270:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 271:./Generated_Source/PSoC5/Timer_1.c **** *  Sets the bit-field of the control register.  
+ 272:./Generated_Source/PSoC5/Timer_1.c **** *
+ 273:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 274:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 275:./Generated_Source/PSoC5/Timer_1.c **** *
+ 276:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 277:./Generated_Source/PSoC5/Timer_1.c **** *  The contents of the control register
+ 278:./Generated_Source/PSoC5/Timer_1.c **** *
+ 279:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 280:./Generated_Source/PSoC5/Timer_1.c **** void    Timer_1_WriteControlRegister(uint8 control)
+ 281:./Generated_Source/PSoC5/Timer_1.c **** {
+ 325              	d = 0, frame = 8
+ 326              		@ frame_needed = 1, uses_anonymous_args = 0
+ 327              		@ link register save eliminated.
+ 328              		push	{r7}
+ 329 0000 80B4     	.LCFI15:
+ 330              		sub	sp, sp, #12
+ 331 0002 83B0     	.LCFI16:
+ 332              		add	r7, sp, #0
+ 333 0004 00AF     	.LCFI17:
+ 334              		@ lr needed for prologue
+ 335              		mov	r3, r0
+ 336 0006 0346     		strb	r3, [r7, #7]
+ 337 0008 FB71     		.loc 1 282 0
+ 282:./Generated_Source/PSoC5/Timer_1.c ****     Timer_1_CONTROL = control;
+ 338              	
+ 339 000a 044A     		ldrb	r3, [r7, #7]
+ 340 000c FB79     		strb	r3, [r2, #0]
+ 341 000e 1370     		.loc 1 283 0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 12
+
+
+ 283:./Generated_Source/PSoC5/Timer_1.c **** }
+ 342              	d	r7, r7, #12
+ 343 0010 07F10C07 		mov	sp, r7
+ 344 0014 BD46     		pop	{r7}
+ 345 0016 80BC     		bx	lr
+ 346 0018 7047     	.L34:
+ 347              		.align	2
+ 348 001a C046     	.L33:
+ 349              		.word	1073762048
+ 350 001c 004F0040 	.LFE9:
+ 351              		.size	Timer_1_WriteControlRegister, .-Timer_1_WriteControlRegister
+ 352              		.section	.text.Timer_1_ReadPeriod,"ax",%progbits
+ 353              		.align	2
+ 354              		.global	Timer_1_ReadPeriod
+ 355              		.thumb
+ 356              		.thumb_func
+ 357              		.type	Timer_1_ReadPeriod, %function
+ 358              	Timer_1_ReadPeriod:
+ 359              	.LFB10:
+ 360              		.loc 1 301 0
+ 284:./Generated_Source/PSoC5/Timer_1.c **** #endif /* Remove API if control register is removed */
+ 285:./Generated_Source/PSoC5/Timer_1.c **** 
+ 286:./Generated_Source/PSoC5/Timer_1.c **** 
+ 287:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 288:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_ReadPeriod
+ 289:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 290:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 291:./Generated_Source/PSoC5/Timer_1.c **** *  This function returns the current value of the Period.
+ 292:./Generated_Source/PSoC5/Timer_1.c **** *
+ 293:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 294:./Generated_Source/PSoC5/Timer_1.c **** *  void:
+ 295:./Generated_Source/PSoC5/Timer_1.c **** *
+ 296:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 297:./Generated_Source/PSoC5/Timer_1.c **** *  The present value of the counter.
+ 298:./Generated_Source/PSoC5/Timer_1.c **** *
+ 299:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 300:./Generated_Source/PSoC5/Timer_1.c **** uint8 Timer_1_ReadPeriod(void)
+ 301:./Generated_Source/PSoC5/Timer_1.c **** {
+ 361              	d = 0, frame = 0
+ 362              		@ frame_needed = 1, uses_anonymous_args = 0
+ 363              		@ link register save eliminated.
+ 364              		push	{r7}
+ 365 0000 80B4     	.LCFI18:
+ 366              		add	r7, sp, #0
+ 367 0002 00AF     	.LCFI19:
+ 368              		@ lr needed for prologue
+ 369              		.loc 1 302 0
+ 302:./Generated_Source/PSoC5/Timer_1.c ****    return ( CY_GET_REG8(Timer_1_PERIOD_LSB_PTR) );  
+ 370              	.L37
+ 371 0004 034B     		ldrb	r3, [r3, #0]
+ 372 0006 1B78     		uxtb	r3, r3
+ 373 0008 DBB2     		.loc 1 303 0
+ 303:./Generated_Source/PSoC5/Timer_1.c **** }
+ 374              		r0, r3
+ 375 000a 1846     		mov	sp, r7
+ 376 000c BD46     		pop	{r7}
+ 377 000e 80BC     		bx	lr
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 13
+
+
+ 378 0010 7047     	.L38:
+ 379              		.align	2
+ 380 0012 C046     	.L37:
+ 381              		.word	1073762050
+ 382 0014 024F0040 	.LFE10:
+ 383              		.size	Timer_1_ReadPeriod, .-Timer_1_ReadPeriod
+ 384              		.section	.text.Timer_1_WritePeriod,"ax",%progbits
+ 385              		.align	2
+ 386              		.global	Timer_1_WritePeriod
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.type	Timer_1_WritePeriod, %function
+ 390              	Timer_1_WritePeriod:
+ 391              	.LFB11:
+ 392              		.loc 1 322 0
+ 304:./Generated_Source/PSoC5/Timer_1.c **** 
+ 305:./Generated_Source/PSoC5/Timer_1.c **** 
+ 306:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 307:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_WritePeriod
+ 308:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 309:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 310:./Generated_Source/PSoC5/Timer_1.c **** *  This function is used to change the period of the counter.  The new period 
+ 311:./Generated_Source/PSoC5/Timer_1.c **** *  will be loaded the next time terminal count is detected.
+ 312:./Generated_Source/PSoC5/Timer_1.c **** *
+ 313:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 314:./Generated_Source/PSoC5/Timer_1.c **** *  period: This value may be between 1 and (2^Resolution)-1.  A value of 0 will result in
+ 315:./Generated_Source/PSoC5/Timer_1.c **** *          the counter remaining at zero.
+ 316:./Generated_Source/PSoC5/Timer_1.c **** *
+ 317:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 318:./Generated_Source/PSoC5/Timer_1.c **** *  void
+ 319:./Generated_Source/PSoC5/Timer_1.c **** *
+ 320:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 321:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_WritePeriod(uint8 period)
+ 322:./Generated_Source/PSoC5/Timer_1.c **** {
+ 393              	d = 0, frame = 16
+ 394              		@ frame_needed = 1, uses_anonymous_args = 0
+ 395              		@ link register save eliminated.
+ 396              		push	{r7}
+ 397 0000 80B4     	.LCFI20:
+ 398              		sub	sp, sp, #20
+ 399 0002 85B0     	.LCFI21:
+ 400              		add	r7, sp, #0
+ 401 0004 00AF     	.LCFI22:
+ 402              		@ lr needed for prologue
+ 403              		mov	r3, r0
+ 404 0006 0346     		strb	r3, [r7, #7]
+ 405 0008 FB71     		.loc 1 324 0
+ 323:./Generated_Source/PSoC5/Timer_1.c ****     #if(Timer_1_UsingFixedFunction)
+ 324:./Generated_Source/PSoC5/Timer_1.c ****         uint16 period_temp = (uint16)period;
+ 406              	, #7]	@ zero_extendqisi2
+ 407 000a FB79     		strh	r3, [r7, #14]	@ movhi
+ 408 000c FB81     		.loc 1 325 0
+ 325:./Generated_Source/PSoC5/Timer_1.c ****         CY_SET_REG16(Timer_1_PERIOD_LSB_PTR, period_temp);
+ 409              	r	r2, .L41
+ 410 000e 044A     		ldrh	r3, [r7, #14]	@ movhi
+ 411 0010 FB89     		strh	r3, [r2, #0]	@ movhi
+ 412 0012 1380     		.loc 1 329 0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 14
+
+
+ 326:./Generated_Source/PSoC5/Timer_1.c ****     #else
+ 327:./Generated_Source/PSoC5/Timer_1.c ****         CY_SET_REG8(Timer_1_PERIOD_LSB_PTR, period);
+ 328:./Generated_Source/PSoC5/Timer_1.c ****     #endif
+ 329:./Generated_Source/PSoC5/Timer_1.c **** }
+ 413              		r7, r7, #20
+ 414 0014 07F11407 		mov	sp, r7
+ 415 0018 BD46     		pop	{r7}
+ 416 001a 80BC     		bx	lr
+ 417 001c 7047     	.L42:
+ 418              		.align	2
+ 419 001e C046     	.L41:
+ 420              		.word	1073762050
+ 421 0020 024F0040 	.LFE11:
+ 422              		.size	Timer_1_WritePeriod, .-Timer_1_WritePeriod
+ 423              		.section	.text.Timer_1_ReadCapture,"ax",%progbits
+ 424              		.align	2
+ 425              		.global	Timer_1_ReadCapture
+ 426              		.thumb
+ 427              		.thumb_func
+ 428              		.type	Timer_1_ReadCapture, %function
+ 429              	Timer_1_ReadCapture:
+ 430              	.LFB12:
+ 431              		.loc 1 346 0
+ 330:./Generated_Source/PSoC5/Timer_1.c **** 
+ 331:./Generated_Source/PSoC5/Timer_1.c **** 
+ 332:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 333:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_ReadCapture
+ 334:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 335:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 336:./Generated_Source/PSoC5/Timer_1.c **** *  This function returns the last value captured.
+ 337:./Generated_Source/PSoC5/Timer_1.c **** *
+ 338:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 339:./Generated_Source/PSoC5/Timer_1.c **** *  void: 
+ 340:./Generated_Source/PSoC5/Timer_1.c **** *
+ 341:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 342:./Generated_Source/PSoC5/Timer_1.c **** *  Present Capture value.
+ 343:./Generated_Source/PSoC5/Timer_1.c **** *
+ 344:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 345:./Generated_Source/PSoC5/Timer_1.c **** uint8 Timer_1_ReadCapture( void )
+ 346:./Generated_Source/PSoC5/Timer_1.c **** {
+ 432              	d = 0, frame = 0
+ 433              		@ frame_needed = 1, uses_anonymous_args = 0
+ 434              		@ link register save eliminated.
+ 435              		push	{r7}
+ 436 0000 80B4     	.LCFI23:
+ 437              		add	r7, sp, #0
+ 438 0002 00AF     	.LCFI24:
+ 439              		@ lr needed for prologue
+ 440              		.loc 1 347 0
+ 347:./Generated_Source/PSoC5/Timer_1.c ****    return ( CY_GET_REG8(Timer_1_CAPTURE_LSB_PTR) );  
+ 441              	.L45
+ 442 0004 034B     		ldrb	r3, [r3, #0]
+ 443 0006 1B78     		uxtb	r3, r3
+ 444 0008 DBB2     		.loc 1 348 0
+ 348:./Generated_Source/PSoC5/Timer_1.c **** }
+ 445              		r0, r3
+ 446 000a 1846     		mov	sp, r7
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 15
+
+
+ 447 000c BD46     		pop	{r7}
+ 448 000e 80BC     		bx	lr
+ 449 0010 7047     	.L46:
+ 450              		.align	2
+ 451 0012 C046     	.L45:
+ 452              		.word	1073762054
+ 453 0014 064F0040 	.LFE12:
+ 454              		.size	Timer_1_ReadCapture, .-Timer_1_ReadCapture
+ 455              		.section	.text.Timer_1_WriteCounter,"ax",%progbits
+ 456              		.align	2
+ 457              		.global	Timer_1_WriteCounter
+ 458              		.thumb
+ 459              		.thumb_func
+ 460              		.type	Timer_1_WriteCounter, %function
+ 461              	Timer_1_WriteCounter:
+ 462              	.LFB13:
+ 463              		.loc 1 365 0
+ 349:./Generated_Source/PSoC5/Timer_1.c **** 
+ 350:./Generated_Source/PSoC5/Timer_1.c **** 
+ 351:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 352:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_WriteCounter
+ 353:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 354:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 355:./Generated_Source/PSoC5/Timer_1.c **** *  This funtion is used to set the counter to a specific value
+ 356:./Generated_Source/PSoC5/Timer_1.c **** *
+ 357:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 358:./Generated_Source/PSoC5/Timer_1.c **** *  counter:  New counter value. 
+ 359:./Generated_Source/PSoC5/Timer_1.c **** *
+ 360:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 361:./Generated_Source/PSoC5/Timer_1.c **** *  void 
+ 362:./Generated_Source/PSoC5/Timer_1.c **** *
+ 363:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 364:./Generated_Source/PSoC5/Timer_1.c **** void Timer_1_WriteCounter(uint8 counter )
+ 365:./Generated_Source/PSoC5/Timer_1.c **** {
+ 464              	d = 0, frame = 8
+ 465              		@ frame_needed = 1, uses_anonymous_args = 0
+ 466              		@ link register save eliminated.
+ 467              		push	{r7}
+ 468 0000 80B4     	.LCFI25:
+ 469              		sub	sp, sp, #12
+ 470 0002 83B0     	.LCFI26:
+ 471              		add	r7, sp, #0
+ 472 0004 00AF     	.LCFI27:
+ 473              		@ lr needed for prologue
+ 474              		mov	r3, r0
+ 475 0006 0346     		strb	r3, [r7, #7]
+ 476 0008 FB71     		.loc 1 377 0
+ 366:./Generated_Source/PSoC5/Timer_1.c ****     #if(Timer_1_UsingFixedFunction)
+ 367:./Generated_Source/PSoC5/Timer_1.c ****         counter = counter;
+ 368:./Generated_Source/PSoC5/Timer_1.c ****         /* This functionality is removed until a FixedFunction HW update to 
+ 369:./Generated_Source/PSoC5/Timer_1.c ****          * allow this register to be written 
+ 370:./Generated_Source/PSoC5/Timer_1.c ****          */
+ 371:./Generated_Source/PSoC5/Timer_1.c ****         /* uint16 counter_temp = (uint16)counter;
+ 372:./Generated_Source/PSoC5/Timer_1.c ****          * CY_SET_REG16(Timer_1_COUNTER_LSB_PTR, counter_temp);
+ 373:./Generated_Source/PSoC5/Timer_1.c ****          */
+ 374:./Generated_Source/PSoC5/Timer_1.c ****     #else
+ 375:./Generated_Source/PSoC5/Timer_1.c ****         CY_SET_REG8(Timer_1_COUNTER_LSB_PTR, counter);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 16
+
+
+ 376:./Generated_Source/PSoC5/Timer_1.c ****     #endif
+ 377:./Generated_Source/PSoC5/Timer_1.c **** }
+ 477              	#12
+ 478 000a 07F10C07 		mov	sp, r7
+ 479 000e BD46     		pop	{r7}
+ 480 0010 80BC     		bx	lr
+ 481 0012 7047     	.LFE13:
+ 482              		.size	Timer_1_WriteCounter, .-Timer_1_WriteCounter
+ 483              		.section	.text.Timer_1_ReadCounter,"ax",%progbits
+ 484              		.align	2
+ 485              		.global	Timer_1_ReadCounter
+ 486              		.thumb
+ 487              		.thumb_func
+ 488              		.type	Timer_1_ReadCounter, %function
+ 489              	Timer_1_ReadCounter:
+ 490              	.LFB14:
+ 491              		.loc 1 394 0
+ 378:./Generated_Source/PSoC5/Timer_1.c **** 
+ 379:./Generated_Source/PSoC5/Timer_1.c **** 
+ 380:./Generated_Source/PSoC5/Timer_1.c **** /*******************************************************************************
+ 381:./Generated_Source/PSoC5/Timer_1.c **** * Function Name: Timer_1_ReadCounter
+ 382:./Generated_Source/PSoC5/Timer_1.c **** ********************************************************************************
+ 383:./Generated_Source/PSoC5/Timer_1.c **** * Summary:
+ 384:./Generated_Source/PSoC5/Timer_1.c **** *  This function returns the current counter value.
+ 385:./Generated_Source/PSoC5/Timer_1.c **** *
+ 386:./Generated_Source/PSoC5/Timer_1.c **** * Parameters:  
+ 387:./Generated_Source/PSoC5/Timer_1.c **** *  void:
+ 388:./Generated_Source/PSoC5/Timer_1.c **** *
+ 389:./Generated_Source/PSoC5/Timer_1.c **** * Return: 
+ 390:./Generated_Source/PSoC5/Timer_1.c **** *  Present compare value. 
+ 391:./Generated_Source/PSoC5/Timer_1.c **** *
+ 392:./Generated_Source/PSoC5/Timer_1.c **** *******************************************************************************/
+ 393:./Generated_Source/PSoC5/Timer_1.c **** uint8 Timer_1_ReadCounter( void )
+ 394:./Generated_Source/PSoC5/Timer_1.c **** {
+ 492              	etend = 0, frame = 0
+ 493              		@ frame_needed = 1, uses_anonymous_args = 0
+ 494              		@ link register save eliminated.
+ 495              		push	{r7}
+ 496 0000 80B4     	.LCFI28:
+ 497              		add	r7, sp, #0
+ 498 0002 00AF     	.LCFI29:
+ 499              		@ lr needed for prologue
+ 500              		.loc 1 398 0
+ 395:./Generated_Source/PSoC5/Timer_1.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
+ 396:./Generated_Source/PSoC5/Timer_1.c ****     /* Must first do a software capture to be able to read the counter */
+ 397:./Generated_Source/PSoC5/Timer_1.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 398:./Generated_Source/PSoC5/Timer_1.c ****     CY_GET_REG8(Timer_1_COUNTER_LSB_PTR);
+ 501              	.L51
+ 502 0004 044B     		ldrb	r3, [r3, #0]
+ 503 0006 1B78     		.loc 1 399 0
+ 399:./Generated_Source/PSoC5/Timer_1.c ****     return (CY_GET_REG8(Timer_1_CAPTURE_LSB_PTR));
+ 504              	r	r3, .L51+4
+ 505 0008 044B     		ldrb	r3, [r3, #0]
+ 506 000a 1B78     		uxtb	r3, r3
+ 507 000c DBB2     		.loc 1 400 0
+ 400:./Generated_Source/PSoC5/Timer_1.c **** }
+ 508              		r0, r3
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 17
+
+
+ 509 000e 1846     		mov	sp, r7
+ 510 0010 BD46     		pop	{r7}
+ 511 0012 80BC     		bx	lr
+ 512 0014 7047     	.L52:
+ 513              		.align	2
+ 514 0016 C046     	.L51:
+ 515              		.word	1073762052
+ 516 0018 044F0040 		.word	1073762054
+ 517 001c 064F0040 	.LFE14:
+ 518              		.size	Timer_1_ReadCounter, .-Timer_1_ReadCounter
+ 519              		.section	.debug_frame,"",%progbits
+ 520              	.Lframe0:
+ 521              		.4byte	.LECIE0-.LSCIE0
+ 522 0000 0C000000 	.LSCIE0:
+ 523              		.4byte	0xffffffff
+ 524 0004 FFFFFFFF 		.byte	0x1
+ 525 0008 01       		.ascii	"\000"
+ 526 0009 00       		.uleb128 0x1
+ 527 000a 01       		.sleb128 -4
+ 528 000b 7C       		.byte	0xe
+ 529 000c 0E       		.byte	0xc
+ 530 000d 0C       		.uleb128 0xd
+ 531 000e 0D       		.uleb128 0x0
+ 532 000f 00       		.align	2
+ 533              	.LECIE0:
+ 534              	.LSFDE0:
+ 535              		.4byte	.LEFDE0-.LASFDE0
+ 536 0010 18000000 	.LASFDE0:
+ 537              		.4byte	.Lframe0
+ 538 0014 00000000 		.4byte	.LFB2
+ 539 0018 00000000 		.4byte	.LFE2-.LFB2
+ 540 001c 9C000000 		.byte	0x4
+ 541 0020 42       		.4byte	.LCFI0-.LFB2
+ 542              		.byte	0xe
+ 543 0021 0E       		.uleb128 0x8
+ 544 0022 08       		.byte	0x8e
+ 545 0023 8E       		.uleb128 0x1
+ 546 0024 01       		.byte	0x87
+ 547 0025 87       		.uleb128 0x2
+ 548 0026 02       		.byte	0x4
+ 549 0027 42       		.4byte	.LCFI1-.LCFI0
+ 550              		.byte	0xd
+ 551 0028 0D       		.uleb128 0x7
+ 552 0029 07       		.align	2
+ 553 002a 0000     	.LEFDE0:
+ 554              	.LSFDE2:
+ 555              		.4byte	.LEFDE2-.LASFDE2
+ 556 002c 14000000 	.LASFDE2:
+ 557              		.4byte	.Lframe0
+ 558 0030 00000000 		.4byte	.LFB3
+ 559 0034 00000000 		.4byte	.LFE3-.LFB3
+ 560 0038 1C000000 		.byte	0x4
+ 561 003c 42       		.4byte	.LCFI2-.LFB3
+ 562              		.byte	0xe
+ 563 003d 0E       		.uleb128 0x4
+ 564 003e 04       		.byte	0x87
+ 565 003f 87       		.uleb128 0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 18
+
+
+ 566 0040 01       		.byte	0x4
+ 567 0041 42       		.4byte	.LCFI3-.LCFI2
+ 568              		.byte	0xd
+ 569 0042 0D       		.uleb128 0x7
+ 570 0043 07       		.align	2
+ 571              	.LEFDE2:
+ 572              	.LSFDE4:
+ 573              		.4byte	.LEFDE4-.LASFDE4
+ 574 0044 18000000 	.LASFDE4:
+ 575              		.4byte	.Lframe0
+ 576 0048 00000000 		.4byte	.LFB4
+ 577 004c 00000000 		.4byte	.LFE4-.LFB4
+ 578 0050 20000000 		.byte	0x4
+ 579 0054 42       		.4byte	.LCFI4-.LFB4
+ 580              		.byte	0xe
+ 581 0055 0E       		.uleb128 0x4
+ 582 0056 04       		.byte	0x4
+ 583 0057 42       		.4byte	.LCFI5-.LCFI4
+ 584              		.byte	0xe
+ 585 0058 0E       		.uleb128 0x10
+ 586 0059 10       		.byte	0x87
+ 587 005a 87       		.uleb128 0x1
+ 588 005b 01       		.byte	0x4
+ 589 005c 42       		.4byte	.LCFI6-.LCFI5
+ 590              		.byte	0xd
+ 591 005d 0D       		.uleb128 0x7
+ 592 005e 07       		.align	2
+ 593 005f 00       	.LEFDE4:
+ 594              	.LSFDE6:
+ 595              		.4byte	.LEFDE6-.LASFDE6
+ 596 0060 14000000 	.LASFDE6:
+ 597              		.4byte	.Lframe0
+ 598 0064 00000000 		.4byte	.LFB5
+ 599 0068 00000000 		.4byte	.LFE5-.LFB5
+ 600 006c 18000000 		.byte	0x4
+ 601 0070 42       		.4byte	.LCFI7-.LFB5
+ 602              		.byte	0xe
+ 603 0071 0E       		.uleb128 0x4
+ 604 0072 04       		.byte	0x87
+ 605 0073 87       		.uleb128 0x1
+ 606 0074 01       		.byte	0x4
+ 607 0075 42       		.4byte	.LCFI8-.LCFI7
+ 608              		.byte	0xd
+ 609 0076 0D       		.uleb128 0x7
+ 610 0077 07       		.align	2
+ 611              	.LEFDE6:
+ 612              	.LSFDE8:
+ 613              		.4byte	.LEFDE8-.LASFDE8
+ 614 0078 14000000 	.LASFDE8:
+ 615              		.4byte	.Lframe0
+ 616 007c 00000000 		.4byte	.LFB6
+ 617 0080 00000000 		.4byte	.LFE6-.LFB6
+ 618 0084 14000000 		.byte	0x4
+ 619 0088 42       		.4byte	.LCFI9-.LFB6
+ 620              		.byte	0xe
+ 621 0089 0E       		.uleb128 0x4
+ 622 008a 04       		.byte	0x87
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 19
+
+
+ 623 008b 87       		.uleb128 0x1
+ 624 008c 01       		.byte	0x4
+ 625 008d 42       		.4byte	.LCFI10-.LCFI9
+ 626              		.byte	0xd
+ 627 008e 0D       		.uleb128 0x7
+ 628 008f 07       		.align	2
+ 629              	.LEFDE8:
+ 630              	.LSFDE10:
+ 631              		.4byte	.LEFDE10-.LASFDE10
+ 632 0090 14000000 	.LASFDE10:
+ 633              		.4byte	.Lframe0
+ 634 0094 00000000 		.4byte	.LFB7
+ 635 0098 00000000 		.4byte	.LFE7-.LFB7
+ 636 009c 18000000 		.byte	0x4
+ 637 00a0 42       		.4byte	.LCFI11-.LFB7
+ 638              		.byte	0xe
+ 639 00a1 0E       		.uleb128 0x4
+ 640 00a2 04       		.byte	0x87
+ 641 00a3 87       		.uleb128 0x1
+ 642 00a4 01       		.byte	0x4
+ 643 00a5 42       		.4byte	.LCFI12-.LCFI11
+ 644              		.byte	0xd
+ 645 00a6 0D       		.uleb128 0x7
+ 646 00a7 07       		.align	2
+ 647              	.LEFDE10:
+ 648              	.LSFDE12:
+ 649              		.4byte	.LEFDE12-.LASFDE12
+ 650 00a8 14000000 	.LASFDE12:
+ 651              		.4byte	.Lframe0
+ 652 00ac 00000000 		.4byte	.LFB8
+ 653 00b0 00000000 		.4byte	.LFE8-.LFB8
+ 654 00b4 18000000 		.byte	0x4
+ 655 00b8 42       		.4byte	.LCFI13-.LFB8
+ 656              		.byte	0xe
+ 657 00b9 0E       		.uleb128 0x4
+ 658 00ba 04       		.byte	0x87
+ 659 00bb 87       		.uleb128 0x1
+ 660 00bc 01       		.byte	0x4
+ 661 00bd 42       		.4byte	.LCFI14-.LCFI13
+ 662              		.byte	0xd
+ 663 00be 0D       		.uleb128 0x7
+ 664 00bf 07       		.align	2
+ 665              	.LEFDE12:
+ 666              	.LSFDE14:
+ 667              		.4byte	.LEFDE14-.LASFDE14
+ 668 00c0 18000000 	.LASFDE14:
+ 669              		.4byte	.Lframe0
+ 670 00c4 00000000 		.4byte	.LFB9
+ 671 00c8 00000000 		.4byte	.LFE9-.LFB9
+ 672 00cc 20000000 		.byte	0x4
+ 673 00d0 42       		.4byte	.LCFI15-.LFB9
+ 674              		.byte	0xe
+ 675 00d1 0E       		.uleb128 0x4
+ 676 00d2 04       		.byte	0x4
+ 677 00d3 42       		.4byte	.LCFI16-.LCFI15
+ 678              		.byte	0xe
+ 679 00d4 0E       		.uleb128 0x10
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 20
+
+
+ 680 00d5 10       		.byte	0x87
+ 681 00d6 87       		.uleb128 0x1
+ 682 00d7 01       		.byte	0x4
+ 683 00d8 42       		.4byte	.LCFI17-.LCFI16
+ 684              		.byte	0xd
+ 685 00d9 0D       		.uleb128 0x7
+ 686 00da 07       		.align	2
+ 687 00db 00       	.LEFDE14:
+ 688              	.LSFDE16:
+ 689              		.4byte	.LEFDE16-.LASFDE16
+ 690 00dc 14000000 	.LASFDE16:
+ 691              		.4byte	.Lframe0
+ 692 00e0 00000000 		.4byte	.LFB10
+ 693 00e4 00000000 		.4byte	.LFE10-.LFB10
+ 694 00e8 18000000 		.byte	0x4
+ 695 00ec 42       		.4byte	.LCFI18-.LFB10
+ 696              		.byte	0xe
+ 697 00ed 0E       		.uleb128 0x4
+ 698 00ee 04       		.byte	0x87
+ 699 00ef 87       		.uleb128 0x1
+ 700 00f0 01       		.byte	0x4
+ 701 00f1 42       		.4byte	.LCFI19-.LCFI18
+ 702              		.byte	0xd
+ 703 00f2 0D       		.uleb128 0x7
+ 704 00f3 07       		.align	2
+ 705              	.LEFDE16:
+ 706              	.LSFDE18:
+ 707              		.4byte	.LEFDE18-.LASFDE18
+ 708 00f4 18000000 	.LASFDE18:
+ 709              		.4byte	.Lframe0
+ 710 00f8 00000000 		.4byte	.LFB11
+ 711 00fc 00000000 		.4byte	.LFE11-.LFB11
+ 712 0100 24000000 		.byte	0x4
+ 713 0104 42       		.4byte	.LCFI20-.LFB11
+ 714              		.byte	0xe
+ 715 0105 0E       		.uleb128 0x4
+ 716 0106 04       		.byte	0x4
+ 717 0107 42       		.4byte	.LCFI21-.LCFI20
+ 718              		.byte	0xe
+ 719 0108 0E       		.uleb128 0x18
+ 720 0109 18       		.byte	0x87
+ 721 010a 87       		.uleb128 0x1
+ 722 010b 01       		.byte	0x4
+ 723 010c 42       		.4byte	.LCFI22-.LCFI21
+ 724              		.byte	0xd
+ 725 010d 0D       		.uleb128 0x7
+ 726 010e 07       		.align	2
+ 727 010f 00       	.LEFDE18:
+ 728              	.LSFDE20:
+ 729              		.4byte	.LEFDE20-.LASFDE20
+ 730 0110 14000000 	.LASFDE20:
+ 731              		.4byte	.Lframe0
+ 732 0114 00000000 		.4byte	.LFB12
+ 733 0118 00000000 		.4byte	.LFE12-.LFB12
+ 734 011c 18000000 		.byte	0x4
+ 735 0120 42       		.4byte	.LCFI23-.LFB12
+ 736              		.byte	0xe
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 21
+
+
+ 737 0121 0E       		.uleb128 0x4
+ 738 0122 04       		.byte	0x87
+ 739 0123 87       		.uleb128 0x1
+ 740 0124 01       		.byte	0x4
+ 741 0125 42       		.4byte	.LCFI24-.LCFI23
+ 742              		.byte	0xd
+ 743 0126 0D       		.uleb128 0x7
+ 744 0127 07       		.align	2
+ 745              	.LEFDE20:
+ 746              	.LSFDE22:
+ 747              		.4byte	.LEFDE22-.LASFDE22
+ 748 0128 18000000 	.LASFDE22:
+ 749              		.4byte	.Lframe0
+ 750 012c 00000000 		.4byte	.LFB13
+ 751 0130 00000000 		.4byte	.LFE13-.LFB13
+ 752 0134 14000000 		.byte	0x4
+ 753 0138 42       		.4byte	.LCFI25-.LFB13
+ 754              		.byte	0xe
+ 755 0139 0E       		.uleb128 0x4
+ 756 013a 04       		.byte	0x4
+ 757 013b 42       		.4byte	.LCFI26-.LCFI25
+ 758              		.byte	0xe
+ 759 013c 0E       		.uleb128 0x10
+ 760 013d 10       		.byte	0x87
+ 761 013e 87       		.uleb128 0x1
+ 762 013f 01       		.byte	0x4
+ 763 0140 42       		.4byte	.LCFI27-.LCFI26
+ 764              		.byte	0xd
+ 765 0141 0D       		.uleb128 0x7
+ 766 0142 07       		.align	2
+ 767 0143 00       	.LEFDE22:
+ 768              	.LSFDE24:
+ 769              		.4byte	.LEFDE24-.LASFDE24
+ 770 0144 14000000 	.LASFDE24:
+ 771              		.4byte	.Lframe0
+ 772 0148 00000000 		.4byte	.LFB14
+ 773 014c 00000000 		.4byte	.LFE14-.LFB14
+ 774 0150 20000000 		.byte	0x4
+ 775 0154 42       		.4byte	.LCFI28-.LFB14
+ 776              		.byte	0xe
+ 777 0155 0E       		.uleb128 0x4
+ 778 0156 04       		.byte	0x87
+ 779 0157 87       		.uleb128 0x1
+ 780 0158 01       		.byte	0x4
+ 781 0159 42       		.4byte	.LCFI29-.LCFI28
+ 782              		.byte	0xd
+ 783 015a 0D       		.uleb128 0x7
+ 784 015b 07       		.align	2
+ 785              	.LEFDE24:
+ 786              		.text
+ 787              	.Letext0:
+ 788              		.section	.debug_loc,"",%progbits
+ 789              	.Ldebug_loc0:
+ 790              	.LLST0:
+ 791              		.4byte	.LFB2
+ 792 0000 00000000 		.4byte	.LCFI0
+ 793 0004 02000000 		.2byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 22
+
+
+ 794 0008 0100     		.byte	0x5d
+ 795 000a 5D       		.4byte	.LCFI0
+ 796 000b 02000000 		.4byte	.LCFI1
+ 797 000f 04000000 		.2byte	0x2
+ 798 0013 0200     		.byte	0x7d
+ 799 0015 7D       		.sleb128 8
+ 800 0016 08       		.4byte	.LCFI1
+ 801 0017 04000000 		.4byte	.LFE2
+ 802 001b 9C000000 		.2byte	0x2
+ 803 001f 0200     		.byte	0x77
+ 804 0021 77       		.sleb128 8
+ 805 0022 08       		.4byte	0x0
+ 806 0023 00000000 		.4byte	0x0
+ 807 0027 00000000 	.LLST1:
+ 808              		.4byte	.LFB3
+ 809 002b 00000000 		.4byte	.LCFI2
+ 810 002f 02000000 		.2byte	0x1
+ 811 0033 0100     		.byte	0x5d
+ 812 0035 5D       		.4byte	.LCFI2
+ 813 0036 02000000 		.4byte	.LCFI3
+ 814 003a 04000000 		.2byte	0x2
+ 815 003e 0200     		.byte	0x7d
+ 816 0040 7D       		.sleb128 4
+ 817 0041 04       		.4byte	.LCFI3
+ 818 0042 04000000 		.4byte	.LFE3
+ 819 0046 1C000000 		.2byte	0x2
+ 820 004a 0200     		.byte	0x77
+ 821 004c 77       		.sleb128 4
+ 822 004d 04       		.4byte	0x0
+ 823 004e 00000000 		.4byte	0x0
+ 824 0052 00000000 	.LLST2:
+ 825              		.4byte	.LFB4
+ 826 0056 00000000 		.4byte	.LCFI4
+ 827 005a 02000000 		.2byte	0x1
+ 828 005e 0100     		.byte	0x5d
+ 829 0060 5D       		.4byte	.LCFI4
+ 830 0061 02000000 		.4byte	.LCFI5
+ 831 0065 04000000 		.2byte	0x2
+ 832 0069 0200     		.byte	0x7d
+ 833 006b 7D       		.sleb128 4
+ 834 006c 04       		.4byte	.LCFI5
+ 835 006d 04000000 		.4byte	.LCFI6
+ 836 0071 06000000 		.2byte	0x2
+ 837 0075 0200     		.byte	0x7d
+ 838 0077 7D       		.sleb128 16
+ 839 0078 10       		.4byte	.LCFI6
+ 840 0079 06000000 		.4byte	.LFE4
+ 841 007d 20000000 		.2byte	0x2
+ 842 0081 0200     		.byte	0x77
+ 843 0083 77       		.sleb128 16
+ 844 0084 10       		.4byte	0x0
+ 845 0085 00000000 		.4byte	0x0
+ 846 0089 00000000 	.LLST3:
+ 847              		.4byte	.LFB5
+ 848 008d 00000000 		.4byte	.LCFI7
+ 849 0091 02000000 		.2byte	0x1
+ 850 0095 0100     		.byte	0x5d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 23
+
+
+ 851 0097 5D       		.4byte	.LCFI7
+ 852 0098 02000000 		.4byte	.LCFI8
+ 853 009c 04000000 		.2byte	0x2
+ 854 00a0 0200     		.byte	0x7d
+ 855 00a2 7D       		.sleb128 4
+ 856 00a3 04       		.4byte	.LCFI8
+ 857 00a4 04000000 		.4byte	.LFE5
+ 858 00a8 18000000 		.2byte	0x2
+ 859 00ac 0200     		.byte	0x77
+ 860 00ae 77       		.sleb128 4
+ 861 00af 04       		.4byte	0x0
+ 862 00b0 00000000 		.4byte	0x0
+ 863 00b4 00000000 	.LLST4:
+ 864              		.4byte	.LFB6
+ 865 00b8 00000000 		.4byte	.LCFI9
+ 866 00bc 02000000 		.2byte	0x1
+ 867 00c0 0100     		.byte	0x5d
+ 868 00c2 5D       		.4byte	.LCFI9
+ 869 00c3 02000000 		.4byte	.LCFI10
+ 870 00c7 04000000 		.2byte	0x2
+ 871 00cb 0200     		.byte	0x7d
+ 872 00cd 7D       		.sleb128 4
+ 873 00ce 04       		.4byte	.LCFI10
+ 874 00cf 04000000 		.4byte	.LFE6
+ 875 00d3 14000000 		.2byte	0x2
+ 876 00d7 0200     		.byte	0x77
+ 877 00d9 77       		.sleb128 4
+ 878 00da 04       		.4byte	0x0
+ 879 00db 00000000 		.4byte	0x0
+ 880 00df 00000000 	.LLST5:
+ 881              		.4byte	.LFB7
+ 882 00e3 00000000 		.4byte	.LCFI11
+ 883 00e7 02000000 		.2byte	0x1
+ 884 00eb 0100     		.byte	0x5d
+ 885 00ed 5D       		.4byte	.LCFI11
+ 886 00ee 02000000 		.4byte	.LCFI12
+ 887 00f2 04000000 		.2byte	0x2
+ 888 00f6 0200     		.byte	0x7d
+ 889 00f8 7D       		.sleb128 4
+ 890 00f9 04       		.4byte	.LCFI12
+ 891 00fa 04000000 		.4byte	.LFE7
+ 892 00fe 18000000 		.2byte	0x2
+ 893 0102 0200     		.byte	0x77
+ 894 0104 77       		.sleb128 4
+ 895 0105 04       		.4byte	0x0
+ 896 0106 00000000 		.4byte	0x0
+ 897 010a 00000000 	.LLST6:
+ 898              		.4byte	.LFB8
+ 899 010e 00000000 		.4byte	.LCFI13
+ 900 0112 02000000 		.2byte	0x1
+ 901 0116 0100     		.byte	0x5d
+ 902 0118 5D       		.4byte	.LCFI13
+ 903 0119 02000000 		.4byte	.LCFI14
+ 904 011d 04000000 		.2byte	0x2
+ 905 0121 0200     		.byte	0x7d
+ 906 0123 7D       		.sleb128 4
+ 907 0124 04       		.4byte	.LCFI14
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 24
+
+
+ 908 0125 04000000 		.4byte	.LFE8
+ 909 0129 18000000 		.2byte	0x2
+ 910 012d 0200     		.byte	0x77
+ 911 012f 77       		.sleb128 4
+ 912 0130 04       		.4byte	0x0
+ 913 0131 00000000 		.4byte	0x0
+ 914 0135 00000000 	.LLST7:
+ 915              		.4byte	.LFB9
+ 916 0139 00000000 		.4byte	.LCFI15
+ 917 013d 02000000 		.2byte	0x1
+ 918 0141 0100     		.byte	0x5d
+ 919 0143 5D       		.4byte	.LCFI15
+ 920 0144 02000000 		.4byte	.LCFI16
+ 921 0148 04000000 		.2byte	0x2
+ 922 014c 0200     		.byte	0x7d
+ 923 014e 7D       		.sleb128 4
+ 924 014f 04       		.4byte	.LCFI16
+ 925 0150 04000000 		.4byte	.LCFI17
+ 926 0154 06000000 		.2byte	0x2
+ 927 0158 0200     		.byte	0x7d
+ 928 015a 7D       		.sleb128 16
+ 929 015b 10       		.4byte	.LCFI17
+ 930 015c 06000000 		.4byte	.LFE9
+ 931 0160 20000000 		.2byte	0x2
+ 932 0164 0200     		.byte	0x77
+ 933 0166 77       		.sleb128 16
+ 934 0167 10       		.4byte	0x0
+ 935 0168 00000000 		.4byte	0x0
+ 936 016c 00000000 	.LLST8:
+ 937              		.4byte	.LFB10
+ 938 0170 00000000 		.4byte	.LCFI18
+ 939 0174 02000000 		.2byte	0x1
+ 940 0178 0100     		.byte	0x5d
+ 941 017a 5D       		.4byte	.LCFI18
+ 942 017b 02000000 		.4byte	.LCFI19
+ 943 017f 04000000 		.2byte	0x2
+ 944 0183 0200     		.byte	0x7d
+ 945 0185 7D       		.sleb128 4
+ 946 0186 04       		.4byte	.LCFI19
+ 947 0187 04000000 		.4byte	.LFE10
+ 948 018b 18000000 		.2byte	0x2
+ 949 018f 0200     		.byte	0x77
+ 950 0191 77       		.sleb128 4
+ 951 0192 04       		.4byte	0x0
+ 952 0193 00000000 		.4byte	0x0
+ 953 0197 00000000 	.LLST9:
+ 954              		.4byte	.LFB11
+ 955 019b 00000000 		.4byte	.LCFI20
+ 956 019f 02000000 		.2byte	0x1
+ 957 01a3 0100     		.byte	0x5d
+ 958 01a5 5D       		.4byte	.LCFI20
+ 959 01a6 02000000 		.4byte	.LCFI21
+ 960 01aa 04000000 		.2byte	0x2
+ 961 01ae 0200     		.byte	0x7d
+ 962 01b0 7D       		.sleb128 4
+ 963 01b1 04       		.4byte	.LCFI21
+ 964 01b2 04000000 		.4byte	.LCFI22
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 25
+
+
+ 965 01b6 06000000 		.2byte	0x2
+ 966 01ba 0200     		.byte	0x7d
+ 967 01bc 7D       		.sleb128 24
+ 968 01bd 18       		.4byte	.LCFI22
+ 969 01be 06000000 		.4byte	.LFE11
+ 970 01c2 24000000 		.2byte	0x2
+ 971 01c6 0200     		.byte	0x77
+ 972 01c8 77       		.sleb128 24
+ 973 01c9 18       		.4byte	0x0
+ 974 01ca 00000000 		.4byte	0x0
+ 975 01ce 00000000 	.LLST10:
+ 976              		.4byte	.LFB12
+ 977 01d2 00000000 		.4byte	.LCFI23
+ 978 01d6 02000000 		.2byte	0x1
+ 979 01da 0100     		.byte	0x5d
+ 980 01dc 5D       		.4byte	.LCFI23
+ 981 01dd 02000000 		.4byte	.LCFI24
+ 982 01e1 04000000 		.2byte	0x2
+ 983 01e5 0200     		.byte	0x7d
+ 984 01e7 7D       		.sleb128 4
+ 985 01e8 04       		.4byte	.LCFI24
+ 986 01e9 04000000 		.4byte	.LFE12
+ 987 01ed 18000000 		.2byte	0x2
+ 988 01f1 0200     		.byte	0x77
+ 989 01f3 77       		.sleb128 4
+ 990 01f4 04       		.4byte	0x0
+ 991 01f5 00000000 		.4byte	0x0
+ 992 01f9 00000000 	.LLST11:
+ 993              		.4byte	.LFB13
+ 994 01fd 00000000 		.4byte	.LCFI25
+ 995 0201 02000000 		.2byte	0x1
+ 996 0205 0100     		.byte	0x5d
+ 997 0207 5D       		.4byte	.LCFI25
+ 998 0208 02000000 		.4byte	.LCFI26
+ 999 020c 04000000 		.2byte	0x2
+ 1000 0210 0200     		.byte	0x7d
+ 1001 0212 7D       		.sleb128 4
+ 1002 0213 04       		.4byte	.LCFI26
+ 1003 0214 04000000 		.4byte	.LCFI27
+ 1004 0218 06000000 		.2byte	0x2
+ 1005 021c 0200     		.byte	0x7d
+ 1006 021e 7D       		.sleb128 16
+ 1007 021f 10       		.4byte	.LCFI27
+ 1008 0220 06000000 		.4byte	.LFE13
+ 1009 0224 14000000 		.2byte	0x2
+ 1010 0228 0200     		.byte	0x77
+ 1011 022a 77       		.sleb128 16
+ 1012 022b 10       		.4byte	0x0
+ 1013 022c 00000000 		.4byte	0x0
+ 1014 0230 00000000 	.LLST12:
+ 1015              		.4byte	.LFB14
+ 1016 0234 00000000 		.4byte	.LCFI28
+ 1017 0238 02000000 		.2byte	0x1
+ 1018 023c 0100     		.byte	0x5d
+ 1019 023e 5D       		.4byte	.LCFI28
+ 1020 023f 02000000 		.4byte	.LCFI29
+ 1021 0243 04000000 		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 26
+
+
+ 1022 0247 0200     		.byte	0x7d
+ 1023 0249 7D       		.sleb128 4
+ 1024 024a 04       		.4byte	.LCFI29
+ 1025 024b 04000000 		.4byte	.LFE14
+ 1026 024f 20000000 		.2byte	0x2
+ 1027 0253 0200     		.byte	0x77
+ 1028 0255 77       		.sleb128 4
+ 1029 0256 04       		.4byte	0x0
+ 1030 0257 00000000 		.4byte	0x0
+ 1031 025b 00000000 		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 1032              		.section	.debug_info
+ 1033              		.4byte	0x3b5
+ 1034 0000 B5030000 		.2byte	0x2
+ 1035 0004 0200     		.4byte	.Ldebug_abbrev0
+ 1036 0006 00000000 		.byte	0x4
+ 1037 000a 04       		.uleb128 0x1
+ 1038 000b 01       		.ascii	"GNU C 4.2.1\000"
+ 1039 000c 474E5520 		.byte	0x1
+ 1039      4320342E 
+ 1039      322E3100 
+ 1040 0018 01       		.ascii	"./Generated_Source/PSoC5/Timer_1.c\000"
+ 1041 0019 2E2F4765 		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 1041      6E657261 
+ 1041      7465645F 
+ 1041      536F7572 
+ 1041      63652F50 
+ 1042 003c 433A5C55 		.ascii	"ro\\CarStairo.cydsn\000"
+ 1042      73657273 
+ 1042      5C626C69 
+ 1042      6E6B795C 
+ 1042      446F6375 
+ 1043 006a 726F5C43 		.4byte	0x0
+ 1043      61725374 
+ 1043      6169726F 
+ 1043      2E637964 
+ 1043      736E00
+ 1044 007d 00000000 		.4byte	.Ldebug_line0
+ 1045 0081 00000000 		.uleb128 0x2
+ 1046 0085 02       		.byte	0x1
+ 1047 0086 01       		.byte	0x8
+ 1048 0087 08       		.ascii	"unsigned char\000"
+ 1049 0088 756E7369 		.uleb128 0x3
+ 1049      676E6564 
+ 1049      20636861 
+ 1049      7200
+ 1050 0096 03       		.ascii	"uint8\000"
+ 1051 0097 75696E74 		.byte	0x2
+ 1051      3800
+ 1052 009d 02       		.byte	0x25
+ 1053 009e 25       		.4byte	0x85
+ 1054 009f 85000000 		.uleb128 0x3
+ 1055 00a3 03       		.ascii	"uint16\000"
+ 1056 00a4 75696E74 		.byte	0x2
+ 1056      313600
+ 1057 00ab 02       		.byte	0x26
+ 1058 00ac 26       		.4byte	0xb1
+ 1059 00ad B1000000 		.uleb128 0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 27
+
+
+ 1060 00b1 02       		.byte	0x2
+ 1061 00b2 02       		.byte	0x7
+ 1062 00b3 07       		.ascii	"short unsigned int\000"
+ 1063 00b4 73686F72 		.uleb128 0x2
+ 1063      7420756E 
+ 1063      7369676E 
+ 1063      65642069 
+ 1063      6E7400
+ 1064 00c7 02       		.byte	0x4
+ 1065 00c8 04       		.byte	0x7
+ 1066 00c9 07       		.ascii	"long unsigned int\000"
+ 1067 00ca 6C6F6E67 		.uleb128 0x2
+ 1067      20756E73 
+ 1067      69676E65 
+ 1067      6420696E 
+ 1067      7400
+ 1068 00dc 02       		.byte	0x1
+ 1069 00dd 01       		.byte	0x6
+ 1070 00de 06       		.ascii	"signed char\000"
+ 1071 00df 7369676E 		.uleb128 0x2
+ 1071      65642063 
+ 1071      68617200 
+ 1072 00eb 02       		.byte	0x2
+ 1073 00ec 02       		.byte	0x5
+ 1074 00ed 05       		.ascii	"short int\000"
+ 1075 00ee 73686F72 		.uleb128 0x2
+ 1075      7420696E 
+ 1075      7400
+ 1076 00f8 02       		.byte	0x4
+ 1077 00f9 04       		.byte	0x5
+ 1078 00fa 05       		.ascii	"long int\000"
+ 1079 00fb 6C6F6E67 		.uleb128 0x4
+ 1079      20696E74 
+ 1079      00
+ 1080 0104 04       		.byte	0x1
+ 1081 0105 01       		.ascii	"Timer_1_Start\000"
+ 1082 0106 54696D65 		.byte	0x1
+ 1082      725F315F 
+ 1082      53746172 
+ 1082      7400
+ 1083 0114 01       		.byte	0x30
+ 1084 0115 30       		.byte	0x1
+ 1085 0116 01       		.4byte	.LFB2
+ 1086 0117 00000000 		.4byte	.LFE2
+ 1087 011b 9C000000 		.4byte	.LLST0
+ 1088 011f 00000000 		.uleb128 0x4
+ 1089 0123 04       		.byte	0x1
+ 1090 0124 01       		.ascii	"Timer_1_Stop\000"
+ 1091 0125 54696D65 		.byte	0x1
+ 1091      725F315F 
+ 1091      53746F70 
+ 1091      00
+ 1092 0132 01       		.byte	0x92
+ 1093 0133 92       		.byte	0x1
+ 1094 0134 01       		.4byte	.LFB3
+ 1095 0135 00000000 		.4byte	.LFE3
+ 1096 0139 1C000000 		.4byte	.LLST1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 28
+
+
+ 1097 013d 2B000000 		.uleb128 0x5
+ 1098 0141 05       		.byte	0x1
+ 1099 0142 01       		.ascii	"Timer_1_SetInterruptMode\000"
+ 1100 0143 54696D65 		.byte	0x1
+ 1100      725F315F 
+ 1100      53657449 
+ 1100      6E746572 
+ 1100      72757074 
+ 1101 015c 01       		.byte	0xaa
+ 1102 015d AA       		.byte	0x1
+ 1103 015e 01       		.4byte	.LFB4
+ 1104 015f 00000000 		.4byte	.LFE4
+ 1105 0163 20000000 		.4byte	.LLST2
+ 1106 0167 56000000 		.4byte	0x188
+ 1107 016b 88010000 		.uleb128 0x6
+ 1108 016f 06       		.ascii	"interruptMode\000"
+ 1109 0170 696E7465 		.byte	0x1
+ 1109      72727570 
+ 1109      744D6F64 
+ 1109      6500
+ 1110 017e 01       		.byte	0xa9
+ 1111 017f A9       		.4byte	0x96
+ 1112 0180 96000000 		.byte	0x2
+ 1113 0184 02       		.byte	0x91
+ 1114 0185 91       		.sleb128 -9
+ 1115 0186 77       		.byte	0x0
+ 1116 0187 00       		.uleb128 0x7
+ 1117 0188 07       		.byte	0x1
+ 1118 0189 01       		.ascii	"Timer_1_GetInterruptSource\000"
+ 1119 018a 54696D65 		.byte	0x1
+ 1119      725F315F 
+ 1119      47657449 
+ 1119      6E746572 
+ 1119      72757074 
+ 1120 01a5 01       		.byte	0xc1
+ 1121 01a6 C1       		.byte	0x1
+ 1122 01a7 01       		.4byte	0x96
+ 1123 01a8 96000000 		.4byte	.LFB5
+ 1124 01ac 00000000 		.4byte	.LFE5
+ 1125 01b0 18000000 		.4byte	.LLST3
+ 1126 01b4 8D000000 		.uleb128 0x4
+ 1127 01b8 04       		.byte	0x1
+ 1128 01b9 01       		.ascii	"Timer_1_SoftwareCapture\000"
+ 1129 01ba 54696D65 		.byte	0x1
+ 1129      725F315F 
+ 1129      536F6674 
+ 1129      77617265 
+ 1129      43617074 
+ 1130 01d2 01       		.byte	0xd7
+ 1131 01d3 D7       		.byte	0x1
+ 1132 01d4 01       		.4byte	.LFB6
+ 1133 01d5 00000000 		.4byte	.LFE6
+ 1134 01d9 14000000 		.4byte	.LLST4
+ 1135 01dd B8000000 		.uleb128 0x7
+ 1136 01e1 07       		.byte	0x1
+ 1137 01e2 01       		.ascii	"Timer_1_ReadStatusRegister\000"
+ 1138 01e3 54696D65 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 29
+
+
+ 1138      725F315F 
+ 1138      52656164 
+ 1138      53746174 
+ 1138      75735265 
+ 1139 01fe 01       		.byte	0xf1
+ 1140 01ff F1       		.byte	0x1
+ 1141 0200 01       		.4byte	0x96
+ 1142 0201 96000000 		.4byte	.LFB7
+ 1143 0205 00000000 		.4byte	.LFE7
+ 1144 0209 18000000 		.4byte	.LLST5
+ 1145 020d E3000000 		.uleb128 0x8
+ 1146 0211 08       		.byte	0x1
+ 1147 0212 01       		.ascii	"Timer_1_ReadControlRegister\000"
+ 1148 0213 54696D65 		.byte	0x1
+ 1148      725F315F 
+ 1148      52656164 
+ 1148      436F6E74 
+ 1148      726F6C52 
+ 1149 022f 01       		.2byte	0x106
+ 1150 0230 0601     		.byte	0x1
+ 1151 0232 01       		.4byte	0x96
+ 1152 0233 96000000 		.4byte	.LFB8
+ 1153 0237 00000000 		.4byte	.LFE8
+ 1154 023b 18000000 		.4byte	.LLST6
+ 1155 023f 0E010000 		.uleb128 0x9
+ 1156 0243 09       		.byte	0x1
+ 1157 0244 01       		.ascii	"Timer_1_WriteControlRegister\000"
+ 1158 0245 54696D65 		.byte	0x1
+ 1158      725F315F 
+ 1158      57726974 
+ 1158      65436F6E 
+ 1158      74726F6C 
+ 1159 0262 01       		.2byte	0x119
+ 1160 0263 1901     		.byte	0x1
+ 1161 0265 01       		.4byte	.LFB9
+ 1162 0266 00000000 		.4byte	.LFE9
+ 1163 026a 20000000 		.4byte	.LLST7
+ 1164 026e 39010000 		.4byte	0x28a
+ 1165 0272 8A020000 		.uleb128 0xa
+ 1166 0276 0A       		.ascii	"control\000"
+ 1167 0277 636F6E74 		.byte	0x1
+ 1167      726F6C00 
+ 1168 027f 01       		.2byte	0x118
+ 1169 0280 1801     		.4byte	0x96
+ 1170 0282 96000000 		.byte	0x2
+ 1171 0286 02       		.byte	0x91
+ 1172 0287 91       		.sleb128 -9
+ 1173 0288 77       		.byte	0x0
+ 1174 0289 00       		.uleb128 0x8
+ 1175 028a 08       		.byte	0x1
+ 1176 028b 01       		.ascii	"Timer_1_ReadPeriod\000"
+ 1177 028c 54696D65 		.byte	0x1
+ 1177      725F315F 
+ 1177      52656164 
+ 1177      50657269 
+ 1177      6F6400
+ 1178 029f 01       		.2byte	0x12d
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 30
+
+
+ 1179 02a0 2D01     		.byte	0x1
+ 1180 02a2 01       		.4byte	0x96
+ 1181 02a3 96000000 		.4byte	.LFB10
+ 1182 02a7 00000000 		.4byte	.LFE10
+ 1183 02ab 18000000 		.4byte	.LLST8
+ 1184 02af 70010000 		.uleb128 0x9
+ 1185 02b3 09       		.byte	0x1
+ 1186 02b4 01       		.ascii	"Timer_1_WritePeriod\000"
+ 1187 02b5 54696D65 		.byte	0x1
+ 1187      725F315F 
+ 1187      57726974 
+ 1187      65506572 
+ 1187      696F6400 
+ 1188 02c9 01       		.2byte	0x142
+ 1189 02ca 4201     		.byte	0x1
+ 1190 02cc 01       		.4byte	.LFB11
+ 1191 02cd 00000000 		.4byte	.LFE11
+ 1192 02d1 24000000 		.4byte	.LLST9
+ 1193 02d5 9B010000 		.4byte	0x307
+ 1194 02d9 07030000 		.uleb128 0xa
+ 1195 02dd 0A       		.ascii	"period\000"
+ 1196 02de 70657269 		.byte	0x1
+ 1196      6F6400
+ 1197 02e5 01       		.2byte	0x141
+ 1198 02e6 4101     		.4byte	0x96
+ 1199 02e8 96000000 		.byte	0x2
+ 1200 02ec 02       		.byte	0x91
+ 1201 02ed 91       		.sleb128 -17
+ 1202 02ee 6F       		.uleb128 0xb
+ 1203 02ef 0B       		.ascii	"period_temp\000"
+ 1204 02f0 70657269 		.byte	0x1
+ 1204      6F645F74 
+ 1204      656D7000 
+ 1205 02fc 01       		.2byte	0x144
+ 1206 02fd 4401     		.4byte	0xa3
+ 1207 02ff A3000000 		.byte	0x2
+ 1208 0303 02       		.byte	0x91
+ 1209 0304 91       		.sleb128 -10
+ 1210 0305 76       		.byte	0x0
+ 1211 0306 00       		.uleb128 0x8
+ 1212 0307 08       		.byte	0x1
+ 1213 0308 01       		.ascii	"Timer_1_ReadCapture\000"
+ 1214 0309 54696D65 		.byte	0x1
+ 1214      725F315F 
+ 1214      52656164 
+ 1214      43617074 
+ 1214      75726500 
+ 1215 031d 01       		.2byte	0x15a
+ 1216 031e 5A01     		.byte	0x1
+ 1217 0320 01       		.4byte	0x96
+ 1218 0321 96000000 		.4byte	.LFB12
+ 1219 0325 00000000 		.4byte	.LFE12
+ 1220 0329 18000000 		.4byte	.LLST10
+ 1221 032d D2010000 		.uleb128 0x9
+ 1222 0331 09       		.byte	0x1
+ 1223 0332 01       		.ascii	"Timer_1_WriteCounter\000"
+ 1224 0333 54696D65 		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 31
+
+
+ 1224      725F315F 
+ 1224      57726974 
+ 1224      65436F75 
+ 1224      6E746572 
+ 1225 0348 01       		.2byte	0x16d
+ 1226 0349 6D01     		.byte	0x1
+ 1227 034b 01       		.4byte	.LFB13
+ 1228 034c 00000000 		.4byte	.LFE13
+ 1229 0350 14000000 		.4byte	.LLST11
+ 1230 0354 FD010000 		.4byte	0x370
+ 1231 0358 70030000 		.uleb128 0xa
+ 1232 035c 0A       		.ascii	"counter\000"
+ 1233 035d 636F756E 		.byte	0x1
+ 1233      74657200 
+ 1234 0365 01       		.2byte	0x16c
+ 1235 0366 6C01     		.4byte	0x96
+ 1236 0368 96000000 		.byte	0x2
+ 1237 036c 02       		.byte	0x91
+ 1238 036d 91       		.sleb128 -9
+ 1239 036e 77       		.byte	0x0
+ 1240 036f 00       		.uleb128 0x8
+ 1241 0370 08       		.byte	0x1
+ 1242 0371 01       		.ascii	"Timer_1_ReadCounter\000"
+ 1243 0372 54696D65 		.byte	0x1
+ 1243      725F315F 
+ 1243      52656164 
+ 1243      436F756E 
+ 1243      74657200 
+ 1244 0386 01       		.2byte	0x18a
+ 1245 0387 8A01     		.byte	0x1
+ 1246 0389 01       		.4byte	0x96
+ 1247 038a 96000000 		.4byte	.LFB14
+ 1248 038e 00000000 		.4byte	.LFE14
+ 1249 0392 20000000 		.4byte	.LLST12
+ 1250 0396 34020000 		.uleb128 0xc
+ 1251 039a 0C       		.ascii	"Timer_1_initvar\000"
+ 1252 039b 54696D65 		.byte	0x1
+ 1252      725F315F 
+ 1252      696E6974 
+ 1252      76617200 
+ 1253 03ab 01       		.byte	0x1d
+ 1254 03ac 1D       		.4byte	0x96
+ 1255 03ad 96000000 		.byte	0x1
+ 1256 03b1 01       		.byte	0x5
+ 1257 03b2 05       		.byte	0x3
+ 1258 03b3 03       		.4byte	Timer_1_initvar
+ 1259 03b4 00000000 		.byte	0x0
+ 1260 03b8 00       		.section	.debug_abbrev
+ 1261              		.uleb128 0x1
+ 1262 0000 01       		.uleb128 0x11
+ 1263 0001 11       		.byte	0x1
+ 1264 0002 01       		.uleb128 0x25
+ 1265 0003 25       		.uleb128 0x8
+ 1266 0004 08       		.uleb128 0x13
+ 1267 0005 13       		.uleb128 0xb
+ 1268 0006 0B       		.uleb128 0x3
+ 1269 0007 03       		.uleb128 0x8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 32
+
+
+ 1270 0008 08       		.uleb128 0x1b
+ 1271 0009 1B       		.uleb128 0x8
+ 1272 000a 08       		.uleb128 0x52
+ 1273 000b 52       		.uleb128 0x1
+ 1274 000c 01       		.uleb128 0x10
+ 1275 000d 10       		.uleb128 0x6
+ 1276 000e 06       		.byte	0x0
+ 1277 000f 00       		.byte	0x0
+ 1278 0010 00       		.uleb128 0x2
+ 1279 0011 02       		.uleb128 0x24
+ 1280 0012 24       		.byte	0x0
+ 1281 0013 00       		.uleb128 0xb
+ 1282 0014 0B       		.uleb128 0xb
+ 1283 0015 0B       		.uleb128 0x3e
+ 1284 0016 3E       		.uleb128 0xb
+ 1285 0017 0B       		.uleb128 0x3
+ 1286 0018 03       		.uleb128 0x8
+ 1287 0019 08       		.byte	0x0
+ 1288 001a 00       		.byte	0x0
+ 1289 001b 00       		.uleb128 0x3
+ 1290 001c 03       		.uleb128 0x16
+ 1291 001d 16       		.byte	0x0
+ 1292 001e 00       		.uleb128 0x3
+ 1293 001f 03       		.uleb128 0x8
+ 1294 0020 08       		.uleb128 0x3a
+ 1295 0021 3A       		.uleb128 0xb
+ 1296 0022 0B       		.uleb128 0x3b
+ 1297 0023 3B       		.uleb128 0xb
+ 1298 0024 0B       		.uleb128 0x49
+ 1299 0025 49       		.uleb128 0x13
+ 1300 0026 13       		.byte	0x0
+ 1301 0027 00       		.byte	0x0
+ 1302 0028 00       		.uleb128 0x4
+ 1303 0029 04       		.uleb128 0x2e
+ 1304 002a 2E       		.byte	0x0
+ 1305 002b 00       		.uleb128 0x3f
+ 1306 002c 3F       		.uleb128 0xc
+ 1307 002d 0C       		.uleb128 0x3
+ 1308 002e 03       		.uleb128 0x8
+ 1309 002f 08       		.uleb128 0x3a
+ 1310 0030 3A       		.uleb128 0xb
+ 1311 0031 0B       		.uleb128 0x3b
+ 1312 0032 3B       		.uleb128 0xb
+ 1313 0033 0B       		.uleb128 0x27
+ 1314 0034 27       		.uleb128 0xc
+ 1315 0035 0C       		.uleb128 0x11
+ 1316 0036 11       		.uleb128 0x1
+ 1317 0037 01       		.uleb128 0x12
+ 1318 0038 12       		.uleb128 0x1
+ 1319 0039 01       		.uleb128 0x40
+ 1320 003a 40       		.uleb128 0x6
+ 1321 003b 06       		.byte	0x0
+ 1322 003c 00       		.byte	0x0
+ 1323 003d 00       		.uleb128 0x5
+ 1324 003e 05       		.uleb128 0x2e
+ 1325 003f 2E       		.byte	0x1
+ 1326 0040 01       		.uleb128 0x3f
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 33
+
+
+ 1327 0041 3F       		.uleb128 0xc
+ 1328 0042 0C       		.uleb128 0x3
+ 1329 0043 03       		.uleb128 0x8
+ 1330 0044 08       		.uleb128 0x3a
+ 1331 0045 3A       		.uleb128 0xb
+ 1332 0046 0B       		.uleb128 0x3b
+ 1333 0047 3B       		.uleb128 0xb
+ 1334 0048 0B       		.uleb128 0x27
+ 1335 0049 27       		.uleb128 0xc
+ 1336 004a 0C       		.uleb128 0x11
+ 1337 004b 11       		.uleb128 0x1
+ 1338 004c 01       		.uleb128 0x12
+ 1339 004d 12       		.uleb128 0x1
+ 1340 004e 01       		.uleb128 0x40
+ 1341 004f 40       		.uleb128 0x6
+ 1342 0050 06       		.uleb128 0x1
+ 1343 0051 01       		.uleb128 0x13
+ 1344 0052 13       		.byte	0x0
+ 1345 0053 00       		.byte	0x0
+ 1346 0054 00       		.uleb128 0x6
+ 1347 0055 06       		.uleb128 0x5
+ 1348 0056 05       		.byte	0x0
+ 1349 0057 00       		.uleb128 0x3
+ 1350 0058 03       		.uleb128 0x8
+ 1351 0059 08       		.uleb128 0x3a
+ 1352 005a 3A       		.uleb128 0xb
+ 1353 005b 0B       		.uleb128 0x3b
+ 1354 005c 3B       		.uleb128 0xb
+ 1355 005d 0B       		.uleb128 0x49
+ 1356 005e 49       		.uleb128 0x13
+ 1357 005f 13       		.uleb128 0x2
+ 1358 0060 02       		.uleb128 0xa
+ 1359 0061 0A       		.byte	0x0
+ 1360 0062 00       		.byte	0x0
+ 1361 0063 00       		.uleb128 0x7
+ 1362 0064 07       		.uleb128 0x2e
+ 1363 0065 2E       		.byte	0x0
+ 1364 0066 00       		.uleb128 0x3f
+ 1365 0067 3F       		.uleb128 0xc
+ 1366 0068 0C       		.uleb128 0x3
+ 1367 0069 03       		.uleb128 0x8
+ 1368 006a 08       		.uleb128 0x3a
+ 1369 006b 3A       		.uleb128 0xb
+ 1370 006c 0B       		.uleb128 0x3b
+ 1371 006d 3B       		.uleb128 0xb
+ 1372 006e 0B       		.uleb128 0x27
+ 1373 006f 27       		.uleb128 0xc
+ 1374 0070 0C       		.uleb128 0x49
+ 1375 0071 49       		.uleb128 0x13
+ 1376 0072 13       		.uleb128 0x11
+ 1377 0073 11       		.uleb128 0x1
+ 1378 0074 01       		.uleb128 0x12
+ 1379 0075 12       		.uleb128 0x1
+ 1380 0076 01       		.uleb128 0x40
+ 1381 0077 40       		.uleb128 0x6
+ 1382 0078 06       		.byte	0x0
+ 1383 0079 00       		.byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 34
+
+
+ 1384 007a 00       		.uleb128 0x8
+ 1385 007b 08       		.uleb128 0x2e
+ 1386 007c 2E       		.byte	0x0
+ 1387 007d 00       		.uleb128 0x3f
+ 1388 007e 3F       		.uleb128 0xc
+ 1389 007f 0C       		.uleb128 0x3
+ 1390 0080 03       		.uleb128 0x8
+ 1391 0081 08       		.uleb128 0x3a
+ 1392 0082 3A       		.uleb128 0xb
+ 1393 0083 0B       		.uleb128 0x3b
+ 1394 0084 3B       		.uleb128 0x5
+ 1395 0085 05       		.uleb128 0x27
+ 1396 0086 27       		.uleb128 0xc
+ 1397 0087 0C       		.uleb128 0x49
+ 1398 0088 49       		.uleb128 0x13
+ 1399 0089 13       		.uleb128 0x11
+ 1400 008a 11       		.uleb128 0x1
+ 1401 008b 01       		.uleb128 0x12
+ 1402 008c 12       		.uleb128 0x1
+ 1403 008d 01       		.uleb128 0x40
+ 1404 008e 40       		.uleb128 0x6
+ 1405 008f 06       		.byte	0x0
+ 1406 0090 00       		.byte	0x0
+ 1407 0091 00       		.uleb128 0x9
+ 1408 0092 09       		.uleb128 0x2e
+ 1409 0093 2E       		.byte	0x1
+ 1410 0094 01       		.uleb128 0x3f
+ 1411 0095 3F       		.uleb128 0xc
+ 1412 0096 0C       		.uleb128 0x3
+ 1413 0097 03       		.uleb128 0x8
+ 1414 0098 08       		.uleb128 0x3a
+ 1415 0099 3A       		.uleb128 0xb
+ 1416 009a 0B       		.uleb128 0x3b
+ 1417 009b 3B       		.uleb128 0x5
+ 1418 009c 05       		.uleb128 0x27
+ 1419 009d 27       		.uleb128 0xc
+ 1420 009e 0C       		.uleb128 0x11
+ 1421 009f 11       		.uleb128 0x1
+ 1422 00a0 01       		.uleb128 0x12
+ 1423 00a1 12       		.uleb128 0x1
+ 1424 00a2 01       		.uleb128 0x40
+ 1425 00a3 40       		.uleb128 0x6
+ 1426 00a4 06       		.uleb128 0x1
+ 1427 00a5 01       		.uleb128 0x13
+ 1428 00a6 13       		.byte	0x0
+ 1429 00a7 00       		.byte	0x0
+ 1430 00a8 00       		.uleb128 0xa
+ 1431 00a9 0A       		.uleb128 0x5
+ 1432 00aa 05       		.byte	0x0
+ 1433 00ab 00       		.uleb128 0x3
+ 1434 00ac 03       		.uleb128 0x8
+ 1435 00ad 08       		.uleb128 0x3a
+ 1436 00ae 3A       		.uleb128 0xb
+ 1437 00af 0B       		.uleb128 0x3b
+ 1438 00b0 3B       		.uleb128 0x5
+ 1439 00b1 05       		.uleb128 0x49
+ 1440 00b2 49       		.uleb128 0x13
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 35
+
+
+ 1441 00b3 13       		.uleb128 0x2
+ 1442 00b4 02       		.uleb128 0xa
+ 1443 00b5 0A       		.byte	0x0
+ 1444 00b6 00       		.byte	0x0
+ 1445 00b7 00       		.uleb128 0xb
+ 1446 00b8 0B       		.uleb128 0x34
+ 1447 00b9 34       		.byte	0x0
+ 1448 00ba 00       		.uleb128 0x3
+ 1449 00bb 03       		.uleb128 0x8
+ 1450 00bc 08       		.uleb128 0x3a
+ 1451 00bd 3A       		.uleb128 0xb
+ 1452 00be 0B       		.uleb128 0x3b
+ 1453 00bf 3B       		.uleb128 0x5
+ 1454 00c0 05       		.uleb128 0x49
+ 1455 00c1 49       		.uleb128 0x13
+ 1456 00c2 13       		.uleb128 0x2
+ 1457 00c3 02       		.uleb128 0xa
+ 1458 00c4 0A       		.byte	0x0
+ 1459 00c5 00       		.byte	0x0
+ 1460 00c6 00       		.uleb128 0xc
+ 1461 00c7 0C       		.uleb128 0x34
+ 1462 00c8 34       		.byte	0x0
+ 1463 00c9 00       		.uleb128 0x3
+ 1464 00ca 03       		.uleb128 0x8
+ 1465 00cb 08       		.uleb128 0x3a
+ 1466 00cc 3A       		.uleb128 0xb
+ 1467 00cd 0B       		.uleb128 0x3b
+ 1468 00ce 3B       		.uleb128 0xb
+ 1469 00cf 0B       		.uleb128 0x49
+ 1470 00d0 49       		.uleb128 0x13
+ 1471 00d1 13       		.uleb128 0x3f
+ 1472 00d2 3F       		.uleb128 0xc
+ 1473 00d3 0C       		.uleb128 0x2
+ 1474 00d4 02       		.uleb128 0xa
+ 1475 00d5 0A       		.byte	0x0
+ 1476 00d6 00       		.byte	0x0
+ 1477 00d7 00       		.byte	0x0
+ 1478 00d8 00       		.section	.debug_pubnames,"",%progbits
+ 1479              		.4byte	0x175
+ 1480 0000 75010000 		.2byte	0x2
+ 1481 0004 0200     		.4byte	.Ldebug_info0
+ 1482 0006 00000000 		.4byte	0x3b9
+ 1483 000a B9030000 		.4byte	0x104
+ 1484 000e 04010000 		.ascii	"Timer_1_Start\000"
+ 1485 0012 54696D65 		.4byte	0x123
+ 1485      725F315F 
+ 1485      53746172 
+ 1485      7400
+ 1486 0020 23010000 		.ascii	"Timer_1_Stop\000"
+ 1487 0024 54696D65 		.4byte	0x141
+ 1487      725F315F 
+ 1487      53746F70 
+ 1487      00
+ 1488 0031 41010000 		.ascii	"Timer_1_SetInterruptMode\000"
+ 1489 0035 54696D65 		.4byte	0x188
+ 1489      725F315F 
+ 1489      53657449 
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 36
+
+
+ 1489      6E746572 
+ 1489      72757074 
+ 1490 004e 88010000 		.ascii	"Timer_1_GetInterruptSource\000"
+ 1491 0052 54696D65 		.4byte	0x1b8
+ 1491      725F315F 
+ 1491      47657449 
+ 1491      6E746572 
+ 1491      72757074 
+ 1492 006d B8010000 		.ascii	"Timer_1_SoftwareCapture\000"
+ 1493 0071 54696D65 		.4byte	0x1e1
+ 1493      725F315F 
+ 1493      536F6674 
+ 1493      77617265 
+ 1493      43617074 
+ 1494 0089 E1010000 		.ascii	"Timer_1_ReadStatusRegister\000"
+ 1495 008d 54696D65 		.4byte	0x211
+ 1495      725F315F 
+ 1495      52656164 
+ 1495      53746174 
+ 1495      75735265 
+ 1496 00a8 11020000 		.ascii	"Timer_1_ReadControlRegister\000"
+ 1497 00ac 54696D65 		.4byte	0x243
+ 1497      725F315F 
+ 1497      52656164 
+ 1497      436F6E74 
+ 1497      726F6C52 
+ 1498 00c8 43020000 		.ascii	"Timer_1_WriteControlRegister\000"
+ 1499 00cc 54696D65 		.4byte	0x28a
+ 1499      725F315F 
+ 1499      57726974 
+ 1499      65436F6E 
+ 1499      74726F6C 
+ 1500 00e9 8A020000 		.ascii	"Timer_1_ReadPeriod\000"
+ 1501 00ed 54696D65 		.4byte	0x2b3
+ 1501      725F315F 
+ 1501      52656164 
+ 1501      50657269 
+ 1501      6F6400
+ 1502 0100 B3020000 		.ascii	"Timer_1_WritePeriod\000"
+ 1503 0104 54696D65 		.4byte	0x307
+ 1503      725F315F 
+ 1503      57726974 
+ 1503      65506572 
+ 1503      696F6400 
+ 1504 0118 07030000 		.ascii	"Timer_1_ReadCapture\000"
+ 1505 011c 54696D65 		.4byte	0x331
+ 1505      725F315F 
+ 1505      52656164 
+ 1505      43617074 
+ 1505      75726500 
+ 1506 0130 31030000 		.ascii	"Timer_1_WriteCounter\000"
+ 1507 0134 54696D65 		.4byte	0x370
+ 1507      725F315F 
+ 1507      57726974 
+ 1507      65436F75 
+ 1507      6E746572 
+ 1508 0149 70030000 		.ascii	"Timer_1_ReadCounter\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccgvbaaa.s 			page 37
+
+
+ 1509 014d 54696D65 		.4byte	0x39a
+ 1509      725F315F 
+ 1509      52656164 
+ 1509      436F756E 
+ 1509      74657200 
+ 1510 0161 9A030000 		.ascii	"Timer_1_initvar\000"
+ 1511 0165 54696D65 		.4byte	0x0
+ 1511      725F315F 
+ 1511      696E6974 
+ 1511      76617200 
+ 1512 0175 00000000 		.section	.debug_aranges,"",%progbits
+ 1513              		.4byte	0x7c
+ 1514 0000 7C000000 		.2byte	0x2
+ 1515 0004 0200     		.4byte	.Ldebug_info0
+ 1516 0006 00000000 		.byte	0x4
+ 1517 000a 04       		.byte	0x0
+ 1518 000b 00       		.2byte	0x0
+ 1519 000c 0000     		.2byte	0x0
+ 1520 000e 0000     		.4byte	.LFB2
+ 1521 0010 00000000 		.4byte	.LFE2-.LFB2
+ 1522 0014 9C000000 		.4byte	.LFB3
+ 1523 0018 00000000 		.4byte	.LFE3-.LFB3
+ 1524 001c 1C000000 		.4byte	.LFB4
+ 1525 0020 00000000 		.4byte	.LFE4-.LFB4
+ 1526 0024 20000000 		.4byte	.LFB5
+ 1527 0028 00000000 		.4byte	.LFE5-.LFB5
+ 1528 002c 18000000 		.4byte	.LFB6
+ 1529 0030 00000000 		.4byte	.LFE6-.LFB6
+ 1530 0034 14000000 		.4byte	.LFB7
+ 1531 0038 00000000 		.4byte	.LFE7-.LFB7
+ 1532 003c 18000000 		.4byte	.LFB8
+ 1533 0040 00000000 		.4byte	.LFE8-.LFB8
+ 1534 0044 18000000 		.4byte	.LFB9
+ 1535 0048 00000000 		.4byte	.LFE9-.LFB9
+ 1536 004c 20000000 		.4byte	.LFB10
+ 1537 0050 00000000 		.4byte	.LFE10-.LFB10
+ 1538 0054 18000000 		.4byte	.LFB11
+ 1539 0058 00000000 		.4byte	.LFE11-.LFB11
+ 1540 005c 24000000 		.4byte	.LFB12
+ 1541 0060 00000000 		.4byte	.LFE12-.LFB12
+ 1542 0064 18000000 		.4byte	.LFB13
+ 1543 0068 00000000 		.4byte	.LFE13-.LFB13
+ 1544 006c 14000000 		.4byte	.LFB14
+ 1545 0070 00000000 		.4byte	.LFE14-.LFB14
+ 1546 0074 20000000 		.4byte	0x0
+ 1547 0078 00000000 		.4byte	0x0
+ 1548 007c 00000000 		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 1549              	...

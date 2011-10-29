@@ -1,0 +1,3336 @@
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 18, 4
+  12              		.thumb
+  13              		.file	"cyfitter_cfg.c"
+  14              		.section	.debug_abbrev,"",%progbits
+  15              	.Ldebug_abbrev0:
+  16              		.section	.debug_info,"",%progbits
+  17              	.Ldebug_info0:
+  18              		.section	.debug_line,"",%progbits
+  19              	.Ldebug_line0:
+  20 0000 19010000 		.text
+  20      02004B00 
+  20      00000201 
+  20      FB0E0D00 
+  20      01010101 
+  21              	.Ltext0:
+  22              		.section	.rodata
+  23              		.type	cfg_memset_list, %object
+  24              		.size	cfg_memset_list, 60
+  25              	cfg_memset_list:
+  26 0000 004F0040 		.4byte	1073762048
+  27 0004 0B00     		.2byte	11
+  28 0006 10510040 		.4byte	1073762576
+  29 000a 1000     		.2byte	16
+  30 000c 30510040 		.4byte	1073762608
+  31 0010 1000     		.2byte	16
+  32 0012 50510040 		.4byte	1073762640
+  33 0016 2000     		.2byte	32
+  34 0018 C0510040 		.4byte	1073762752
+  35 001c 1000     		.2byte	16
+  36 001e F0510040 		.4byte	1073762800
+  37 0022 1000     		.2byte	16
+  38 0024 00000140 		.4byte	1073807360
+  39 0028 0010     		.2byte	4096
+  40 002a 00140140 		.4byte	1073812480
+  41 002e 0008     		.2byte	2048
+  42 0030 00400140 		.4byte	1073823744
+  43 0034 000A     		.2byte	2560
+  44 0036 004C0140 		.4byte	1073826816
+  45 003a 0002     		.2byte	512
+  46              		.align	2
+  47              		.type	cy_cfg_addr_table, %object
+  48              		.size	cy_cfg_addr_table, 100
+  49              	cy_cfg_addr_table:
+  50 003c 024F0040 		.word	1073762050
+  51 0040 015B0040 		.word	1073765121
+  52 0044 01640040 		.word	1073767425
+  53 0048 01050140 		.word	1073808641
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 2
+
+
+  54 004c 01070140 		.word	1073809153
+  55 0050 11080140 		.word	1073809425
+  56 0054 10090140 		.word	1073809680
+  57 0058 3B0A0140 		.word	1073809979
+  58 005c 370B0140 		.word	1073810231
+  59 0060 0E0C0140 		.word	1073810446
+  60 0064 0A0D0140 		.word	1073810698
+  61 0068 06190140 		.word	1073813766
+  62 006c 0B1A0140 		.word	1073814027
+  63 0070 121B0140 		.word	1073814290
+  64 0074 02410140 		.word	1073824002
+  65 0078 05420140 		.word	1073824261
+  66 007c 01430140 		.word	1073824513
+  67 0080 02440140 		.word	1073824770
+  68 0084 09450140 		.word	1073825033
+  69 0088 09460140 		.word	1073825289
+  70 008c 05470140 		.word	1073825541
+  71 0090 064C0140 		.word	1073826822
+  72 0094 0E4D0140 		.word	1073827086
+  73 0098 06500140 		.word	1073827846
+  74 009c 01510140 		.word	1073828097
+  75              		.type	cy_cfg_data_table, %object
+  76              		.size	cy_cfg_data_table, 544
+  77              	cy_cfg_data_table:
+  78 00a0 01       		.byte	1
+  79 00a1 20       		.byte	32
+  80 00a2 09       		.byte	9
+  81 00a3 1B       		.byte	27
+  82 00a4 27       		.byte	39
+  83 00a5 84       		.byte	-124
+  84 00a6 8A       		.byte	-118
+  85 00a7 0F       		.byte	15
+  86 00a8 E2       		.byte	-30
+  87 00a9 02       		.byte	2
+  88 00aa EC       		.byte	-20
+  89 00ab 80       		.byte	-128
+  90 00ac C0       		.byte	-64
+  91 00ad 03       		.byte	3
+  92 00ae C7       		.byte	-57
+  93 00af 15       		.byte	21
+  94 00b0 C8       		.byte	-56
+  95 00b1 30       		.byte	48
+  96 00b2 C9       		.byte	-55
+  97 00b3 FF       		.byte	-1
+  98 00b4 CA       		.byte	-54
+  99 00b5 07       		.byte	7
+ 100 00b6 CB       		.byte	-53
+ 101 00b7 FF       		.byte	-1
+ 102 00b8 CC       		.byte	-52
+ 103 00b9 40       		.byte	64
+ 104 00ba CD       		.byte	-51
+ 105 00bb 20       		.byte	32
+ 106 00bc CE       		.byte	-50
+ 107 00bd F0       		.byte	-16
+ 108 00be CF       		.byte	-49
+ 109 00bf 05       		.byte	5
+ 110 00c0 D0       		.byte	-48
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 3
+
+
+ 111 00c1 08       		.byte	8
+ 112 00c2 DA       		.byte	-38
+ 113 00c3 04       		.byte	4
+ 114 00c4 DD       		.byte	-35
+ 115 00c5 01       		.byte	1
+ 116 00c6 E0       		.byte	-32
+ 117 00c7 40       		.byte	64
+ 118 00c8 E1       		.byte	-31
+ 119 00c9 A8       		.byte	-88
+ 120 00ca E2       		.byte	-30
+ 121 00cb 40       		.byte	64
+ 122 00cc E3       		.byte	-29
+ 123 00cd 20       		.byte	32
+ 124 00ce 41       		.byte	65
+ 125 00cf 08       		.byte	8
+ 126 00d0 50       		.byte	80
+ 127 00d1 04       		.byte	4
+ 128 00d2 52       		.byte	82
+ 129 00d3 02       		.byte	2
+ 130 00d4 53       		.byte	83
+ 131 00d5 04       		.byte	4
+ 132 00d6 92       		.byte	-110
+ 133 00d7 01       		.byte	1
+ 134 00d8 94       		.byte	-108
+ 135 00d9 08       		.byte	8
+ 136 00da 97       		.byte	-105
+ 137 00db 08       		.byte	8
+ 138 00dc 9D       		.byte	-99
+ 139 00dd 08       		.byte	8
+ 140 00de A0       		.byte	-96
+ 141 00df 24       		.byte	36
+ 142 00e0 A1       		.byte	-95
+ 143 00e1 08       		.byte	8
+ 144 00e2 A3       		.byte	-93
+ 145 00e3 20       		.byte	32
+ 146 00e4 A7       		.byte	-89
+ 147 00e5 04       		.byte	4
+ 148 00e6 AF       		.byte	-81
+ 149 00e7 40       		.byte	64
+ 150 00e8 B7       		.byte	-73
+ 151 00e9 08       		.byte	8
+ 152 00ea D0       		.byte	-48
+ 153 00eb 02       		.byte	2
+ 154 00ec EC       		.byte	-20
+ 155 00ed 82       		.byte	-126
+ 156 00ee 00       		.byte	0
+ 157 00ef 80       		.byte	-128
+ 158 00f0 01       		.byte	1
+ 159 00f1 94       		.byte	-108
+ 160 00f2 03       		.byte	3
+ 161 00f3 2B       		.byte	43
+ 162 00f4 04       		.byte	4
+ 163 00f5 09       		.byte	9
+ 164 00f6 05       		.byte	5
+ 165 00f7 20       		.byte	32
+ 166 00f8 06       		.byte	6
+ 167 00f9 10       		.byte	16
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 4
+
+
+ 168 00fa 07       		.byte	7
+ 169 00fb 08       		.byte	8
+ 170 00fc 08       		.byte	8
+ 171 00fd 2A       		.byte	42
+ 172 00fe 09       		.byte	9
+ 173 00ff FC       		.byte	-4
+ 174 0100 0A       		.byte	10
+ 175 0101 44       		.byte	68
+ 176 0102 0B       		.byte	11
+ 177 0103 02       		.byte	2
+ 178 0104 0D       		.byte	13
+ 179 0105 18       		.byte	24
+ 180 0106 10       		.byte	16
+ 181 0107 62       		.byte	98
+ 182 0108 11       		.byte	17
+ 183 0109 88       		.byte	-120
+ 184 010a 12       		.byte	18
+ 185 010b 05       		.byte	5
+ 186 010c 13       		.byte	19
+ 187 010d 54       		.byte	84
+ 188 010e 14       		.byte	20
+ 189 010f 02       		.byte	2
+ 190 0110 16       		.byte	22
+ 191 0111 40       		.byte	64
+ 192 0112 1A       		.byte	26
+ 193 0113 20       		.byte	32
+ 194 0114 1D       		.byte	29
+ 195 0115 03       		.byte	3
+ 196 0116 24       		.byte	36
+ 197 0117 52       		.byte	82
+ 198 0118 26       		.byte	38
+ 199 0119 04       		.byte	4
+ 200 011a 29       		.byte	41
+ 201 011b 05       		.byte	5
+ 202 011c 2B       		.byte	43
+ 203 011d 68       		.byte	104
+ 204 011e 30       		.byte	48
+ 205 011f 07       		.byte	7
+ 206 0120 31       		.byte	49
+ 207 0121 1F       		.byte	31
+ 208 0122 32       		.byte	50
+ 209 0123 38       		.byte	56
+ 210 0124 33       		.byte	51
+ 211 0125 80       		.byte	-128
+ 212 0126 34       		.byte	52
+ 213 0127 80       		.byte	-128
+ 214 0128 35       		.byte	53
+ 215 0129 60       		.byte	96
+ 216 012a 36       		.byte	54
+ 217 012b 40       		.byte	64
+ 218 012c 37       		.byte	55
+ 219 012d 1F       		.byte	31
+ 220 012e 38       		.byte	56
+ 221 012f 08       		.byte	8
+ 222 0130 39       		.byte	57
+ 223 0131 8A       		.byte	-118
+ 224 0132 3B       		.byte	59
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 5
+
+
+ 225 0133 20       		.byte	32
+ 226 0134 3E       		.byte	62
+ 227 0135 50       		.byte	80
+ 228 0136 3F       		.byte	63
+ 229 0137 04       		.byte	4
+ 230 0138 40       		.byte	64
+ 231 0139 54       		.byte	84
+ 232 013a 41       		.byte	65
+ 233 013b 03       		.byte	3
+ 234 013c 45       		.byte	69
+ 235 013d E0       		.byte	-32
+ 236 013e 46       		.byte	70
+ 237 013f CB       		.byte	-53
+ 238 0140 47       		.byte	71
+ 239 0141 0C       		.byte	12
+ 240 0142 48       		.byte	72
+ 241 0143 1E       		.byte	30
+ 242 0144 49       		.byte	73
+ 243 0145 FF       		.byte	-1
+ 244 0146 4A       		.byte	74
+ 245 0147 FF       		.byte	-1
+ 246 0148 4B       		.byte	75
+ 247 0149 FF       		.byte	-1
+ 248 014a 4E       		.byte	78
+ 249 014b F0       		.byte	-16
+ 250 014c 4F       		.byte	79
+ 251 014d 44       		.byte	68
+ 252 014e 50       		.byte	80
+ 253 014f 08       		.byte	8
+ 254 0150 54       		.byte	84
+ 255 0151 01       		.byte	1
+ 256 0152 58       		.byte	88
+ 257 0153 04       		.byte	4
+ 258 0154 59       		.byte	89
+ 259 0155 04       		.byte	4
+ 260 0156 5A       		.byte	90
+ 261 0157 09       		.byte	9
+ 262 0158 5B       		.byte	91
+ 263 0159 04       		.byte	4
+ 264 015a 5C       		.byte	92
+ 265 015b 11       		.byte	17
+ 266 015c 5D       		.byte	93
+ 267 015d 19       		.byte	25
+ 268 015e 62       		.byte	98
+ 269 015f C0       		.byte	-64
+ 270 0160 64       		.byte	100
+ 271 0161 40       		.byte	64
+ 272 0162 65       		.byte	101
+ 273 0163 02       		.byte	2
+ 274 0164 00       		.byte	0
+ 275 0165 12       		.byte	18
+ 276 0166 01       		.byte	1
+ 277 0167 08       		.byte	8
+ 278 0168 0A       		.byte	10
+ 279 0169 80       		.byte	-128
+ 280 016a 0B       		.byte	11
+ 281 016b 28       		.byte	40
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 6
+
+
+ 282 016c 13       		.byte	19
+ 283 016d 08       		.byte	8
+ 284 016e 18       		.byte	24
+ 285 016f 10       		.byte	16
+ 286 0170 19       		.byte	25
+ 287 0171 80       		.byte	-128
+ 288 0172 1A       		.byte	26
+ 289 0173 80       		.byte	-128
+ 290 0174 1B       		.byte	27
+ 291 0175 22       		.byte	34
+ 292 0176 21       		.byte	33
+ 293 0177 08       		.byte	8
+ 294 0178 22       		.byte	34
+ 295 0179 80       		.byte	-128
+ 296 017a 23       		.byte	35
+ 297 017b 48       		.byte	72
+ 298 017c 2B       		.byte	43
+ 299 017d 04       		.byte	4
+ 300 017e 32       		.byte	50
+ 301 017f 80       		.byte	-128
+ 302 0180 33       		.byte	51
+ 303 0181 02       		.byte	2
+ 304 0182 38       		.byte	56
+ 305 0183 98       		.byte	-104
+ 306 0184 3A       		.byte	58
+ 307 0185 01       		.byte	1
+ 308 0186 40       		.byte	64
+ 309 0187 10       		.byte	16
+ 310 0188 43       		.byte	67
+ 311 0189 02       		.byte	2
+ 312 018a 48       		.byte	72
+ 313 018b 02       		.byte	2
+ 314 018c 49       		.byte	73
+ 315 018d 02       		.byte	2
+ 316 018e 50       		.byte	80
+ 317 018f 40       		.byte	64
+ 318 0190 52       		.byte	82
+ 319 0191 08       		.byte	8
+ 320 0192 53       		.byte	83
+ 321 0193 10       		.byte	16
+ 322 0194 58       		.byte	88
+ 323 0195 22       		.byte	34
+ 324 0196 59       		.byte	89
+ 325 0197 82       		.byte	-126
+ 326 0198 5A       		.byte	90
+ 327 0199 08       		.byte	8
+ 328 019a 68       		.byte	104
+ 329 019b 25       		.byte	37
+ 330 019c 6A       		.byte	106
+ 331 019d 01       		.byte	1
+ 332 019e 71       		.byte	113
+ 333 019f A0       		.byte	-96
+ 334 01a0 73       		.byte	115
+ 335 01a1 A0       		.byte	-96
+ 336 01a2 7B       		.byte	123
+ 337 01a3 04       		.byte	4
+ 338 01a4 7C       		.byte	124
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 7
+
+
+ 339 01a5 20       		.byte	32
+ 340 01a6 7E       		.byte	126
+ 341 01a7 08       		.byte	8
+ 342 01a8 80       		.byte	-128
+ 343 01a9 02       		.byte	2
+ 344 01aa 82       		.byte	-126
+ 345 01ab 01       		.byte	1
+ 346 01ac 92       		.byte	-110
+ 347 01ad 08       		.byte	8
+ 348 01ae 9C       		.byte	-100
+ 349 01af 02       		.byte	2
+ 350 01b0 9F       		.byte	-97
+ 351 01b1 A0       		.byte	-96
+ 352 01b2 A5       		.byte	-91
+ 353 01b3 A0       		.byte	-96
+ 354 01b4 AB       		.byte	-85
+ 355 01b5 50       		.byte	80
+ 356 01b6 B3       		.byte	-77
+ 357 01b7 02       		.byte	2
+ 358 01b8 C0       		.byte	-64
+ 359 01b9 0E       		.byte	14
+ 360 01ba C2       		.byte	-62
+ 361 01bb 0E       		.byte	14
+ 362 01bc C4       		.byte	-60
+ 363 01bd 04       		.byte	4
+ 364 01be CA       		.byte	-54
+ 365 01bf 04       		.byte	4
+ 366 01c0 CC       		.byte	-52
+ 367 01c1 09       		.byte	9
+ 368 01c2 CE       		.byte	-50
+ 369 01c3 0F       		.byte	15
+ 370 01c4 D0       		.byte	-48
+ 371 01c5 03       		.byte	3
+ 372 01c6 D2       		.byte	-46
+ 373 01c7 08       		.byte	8
+ 374 01c8 D6       		.byte	-42
+ 375 01c9 0F       		.byte	15
+ 376 01ca DE       		.byte	-34
+ 377 01cb 04       		.byte	4
+ 378 01cc E2       		.byte	-30
+ 379 01cd 06       		.byte	6
+ 380 01ce E8       		.byte	-24
+ 381 01cf 04       		.byte	4
+ 382 01d0 EC       		.byte	-20
+ 383 01d1 01       		.byte	1
+ 384 01d2 98       		.byte	-104
+ 385 01d3 02       		.byte	2
+ 386 01d4 9C       		.byte	-100
+ 387 01d5 01       		.byte	1
+ 388 01d6 A8       		.byte	-88
+ 389 01d7 04       		.byte	4
+ 390 01d8 AC       		.byte	-84
+ 391 01d9 08       		.byte	8
+ 392 01da AD       		.byte	-83
+ 393 01db 01       		.byte	1
+ 394 01dc B0       		.byte	-80
+ 395 01dd 08       		.byte	8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 8
+
+
+ 396 01de B2       		.byte	-78
+ 397 01df 04       		.byte	4
+ 398 01e0 B3       		.byte	-77
+ 399 01e1 01       		.byte	1
+ 400 01e2 B4       		.byte	-76
+ 401 01e3 02       		.byte	2
+ 402 01e4 B6       		.byte	-74
+ 403 01e5 01       		.byte	1
+ 404 01e6 BE       		.byte	-66
+ 405 01e7 55       		.byte	85
+ 406 01e8 BF       		.byte	-65
+ 407 01e9 04       		.byte	4
+ 408 01ea D8       		.byte	-40
+ 409 01eb 04       		.byte	4
+ 410 01ec D9       		.byte	-39
+ 411 01ed 04       		.byte	4
+ 412 01ee 09       		.byte	9
+ 413 01ef A0       		.byte	-96
+ 414 01f0 13       		.byte	19
+ 415 01f1 A0       		.byte	-96
+ 416 01f2 1A       		.byte	26
+ 417 01f3 20       		.byte	32
+ 418 01f4 1B       		.byte	27
+ 419 01f5 52       		.byte	82
+ 420 01f6 22       		.byte	34
+ 421 01f7 04       		.byte	4
+ 422 01f8 28       		.byte	40
+ 423 01f9 02       		.byte	2
+ 424 01fa 8E       		.byte	-114
+ 425 01fb 10       		.byte	16
+ 426 01fc C2       		.byte	-62
+ 427 01fd 03       		.byte	3
+ 428 01fe C4       		.byte	-60
+ 429 01ff 03       		.byte	3
+ 430 0200 CA       		.byte	-54
+ 431 0201 08       		.byte	8
+ 432 0202 92       		.byte	-110
+ 433 0203 01       		.byte	1
+ 434 0204 9D       		.byte	-99
+ 435 0205 08       		.byte	8
+ 436 0206 A0       		.byte	-96
+ 437 0207 24       		.byte	36
+ 438 0208 A2       		.byte	-94
+ 439 0209 02       		.byte	2
+ 440 020a A7       		.byte	-89
+ 441 020b 04       		.byte	4
+ 442 020c B7       		.byte	-73
+ 443 020d 20       		.byte	32
+ 444 020e 04       		.byte	4
+ 445 020f 02       		.byte	2
+ 446 0210 0C       		.byte	12
+ 447 0211 01       		.byte	1
+ 448 0212 1C       		.byte	28
+ 449 0213 08       		.byte	8
+ 450 0214 24       		.byte	36
+ 451 0215 04       		.byte	4
+ 452 0216 30       		.byte	48
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 9
+
+
+ 453 0217 04       		.byte	4
+ 454 0218 32       		.byte	50
+ 455 0219 01       		.byte	1
+ 456 021a 34       		.byte	52
+ 457 021b 08       		.byte	8
+ 458 021c 36       		.byte	54
+ 459 021d 02       		.byte	2
+ 460 021e 3E       		.byte	62
+ 461 021f 51       		.byte	81
+ 462 0220 58       		.byte	88
+ 463 0221 04       		.byte	4
+ 464 0222 5C       		.byte	92
+ 465 0223 01       		.byte	1
+ 466 0224 00       		.byte	0
+ 467 0225 08       		.byte	8
+ 468 0226 02       		.byte	2
+ 469 0227 02       		.byte	2
+ 470 0228 0A       		.byte	10
+ 471 0229 01       		.byte	1
+ 472 022a 10       		.byte	16
+ 473 022b 20       		.byte	32
+ 474 022c 19       		.byte	25
+ 475 022d 08       		.byte	8
+ 476 022e 1B       		.byte	27
+ 477 022f 66       		.byte	102
+ 478 0230 87       		.byte	-121
+ 479 0231 22       		.byte	34
+ 480 0232 8F       		.byte	-113
+ 481 0233 40       		.byte	64
+ 482 0234 92       		.byte	-110
+ 483 0235 01       		.byte	1
+ 484 0236 9D       		.byte	-99
+ 485 0237 08       		.byte	8
+ 486 0238 A0       		.byte	-96
+ 487 0239 24       		.byte	36
+ 488 023a A2       		.byte	-94
+ 489 023b 02       		.byte	2
+ 490 023c A7       		.byte	-89
+ 491 023d 04       		.byte	4
+ 492 023e C0       		.byte	-64
+ 493 023f 05       		.byte	5
+ 494 0240 C2       		.byte	-62
+ 495 0241 01       		.byte	1
+ 496 0242 C4       		.byte	-60
+ 497 0243 04       		.byte	4
+ 498 0244 E0       		.byte	-32
+ 499 0245 08       		.byte	8
+ 500 0246 E4       		.byte	-28
+ 501 0247 08       		.byte	8
+ 502 0248 13       		.byte	19
+ 503 0249 08       		.byte	8
+ 504 024a C4       		.byte	-60
+ 505 024b 10       		.byte	16
+ 506 024c 30       		.byte	48
+ 507 024d 08       		.byte	8
+ 508 024e 84       		.byte	-124
+ 509 024f 08       		.byte	8
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 10
+
+
+ 510 0250 9B       		.byte	-101
+ 511 0251 08       		.byte	8
+ 512 0252 CC       		.byte	-52
+ 513 0253 40       		.byte	64
+ 514 0254 E2       		.byte	-30
+ 515 0255 40       		.byte	64
+ 516 0256 B3       		.byte	-77
+ 517 0257 08       		.byte	8
+ 518 0258 54       		.byte	84
+ 519 0259 04       		.byte	4
+ 520 025a D4       		.byte	-44
+ 521 025b 02       		.byte	2
+ 522 025c 50       		.byte	80
+ 523 025d 02       		.byte	2
+ 524 025e 52       		.byte	82
+ 525 025f 08       		.byte	8
+ 526 0260 55       		.byte	85
+ 527 0261 80       		.byte	-128
+ 528 0262 5C       		.byte	92
+ 529 0263 40       		.byte	64
+ 530 0264 8C       		.byte	-116
+ 531 0265 40       		.byte	64
+ 532 0266 A4       		.byte	-92
+ 533 0267 04       		.byte	4
+ 534 0268 D4       		.byte	-44
+ 535 0269 07       		.byte	7
+ 536 026a D6       		.byte	-42
+ 537 026b 04       		.byte	4
+ 538 026c E0       		.byte	-32
+ 539 026d 02       		.byte	2
+ 540 026e 2A       		.byte	42
+ 541 026f 10       		.byte	16
+ 542 0270 80       		.byte	-128
+ 543 0271 04       		.byte	4
+ 544 0272 86       		.byte	-122
+ 545 0273 10       		.byte	16
+ 546 0274 A4       		.byte	-92
+ 547 0275 04       		.byte	4
+ 548 0276 A9       		.byte	-87
+ 549 0277 80       		.byte	-128
+ 550 0278 AA       		.byte	-86
+ 551 0279 08       		.byte	8
+ 552 027a B0       		.byte	-80
+ 553 027b 02       		.byte	2
+ 554 027c CA       		.byte	-54
+ 555 027d 08       		.byte	8
+ 556 027e EC       		.byte	-20
+ 557 027f 01       		.byte	1
+ 558 0280 A1       		.byte	-95
+ 559 0281 20       		.byte	32
+ 560 0282 AC       		.byte	-84
+ 561 0283 04       		.byte	4
+ 562 0284 B1       		.byte	-79
+ 563 0285 20       		.byte	32
+ 564 0286 B4       		.byte	-76
+ 565 0287 04       		.byte	4
+ 566 0288 EC       		.byte	-20
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 11
+
+
+ 567 0289 03       		.byte	3
+ 568 028a 31       		.byte	49
+ 569 028b 20       		.byte	32
+ 570 028c 90       		.byte	-112
+ 571 028d 02       		.byte	2
+ 572 028e A1       		.byte	-95
+ 573 028f 20       		.byte	32
+ 574 0290 B4       		.byte	-76
+ 575 0291 01       		.byte	1
+ 576 0292 CC       		.byte	-52
+ 577 0293 08       		.byte	8
+ 578 0294 E8       		.byte	-24
+ 579 0295 02       		.byte	2
+ 580 0296 40       		.byte	64
+ 581 0297 04       		.byte	4
+ 582 0298 41       		.byte	65
+ 583 0299 10       		.byte	16
+ 584 029a 4C       		.byte	76
+ 585 029b 02       		.byte	2
+ 586 029c 4F       		.byte	79
+ 587 029d 20       		.byte	32
+ 588 029e 50       		.byte	80
+ 589 029f 01       		.byte	1
+ 590 02a0 51       		.byte	81
+ 591 02a1 10       		.byte	16
+ 592 02a2 54       		.byte	84
+ 593 02a3 01       		.byte	1
+ 594 02a4 57       		.byte	87
+ 595 02a5 10       		.byte	16
+ 596 02a6 84       		.byte	-124
+ 597 02a7 03       		.byte	3
+ 598 02a8 8C       		.byte	-116
+ 599 02a9 04       		.byte	4
+ 600 02aa 90       		.byte	-112
+ 601 02ab 02       		.byte	2
+ 602 02ac D4       		.byte	-44
+ 603 02ad 07       		.byte	7
+ 604 02ae D6       		.byte	-42
+ 605 02af 04       		.byte	4
+ 606 02b0 E4       		.byte	-28
+ 607 02b1 02       		.byte	2
+ 608 02b2 00       		.byte	0
+ 609 02b3 02       		.byte	2
+ 610 02b4 01       		.byte	1
+ 611 02b5 01       		.byte	1
+ 612 02b6 0C       		.byte	12
+ 613 02b7 02       		.byte	2
+ 614 02b8 0D       		.byte	13
+ 615 02b9 01       		.byte	1
+ 616 02ba 10       		.byte	16
+ 617 02bb 02       		.byte	2
+ 618 02bc 1C       		.byte	28
+ 619 02bd 02       		.byte	2
+ 620 02be 03       		.byte	3
+ 621 02bf 03       		.byte	3
+ 622              		.section	.dma_init,"a",%progbits
+ 623              		.type	BS_IOPINS0_0_VAL, %object
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 12
+
+
+ 624              		.size	BS_IOPINS0_0_VAL, 8
+ 625              	BS_IOPINS0_0_VAL:
+ 626 0000 20       		.byte	32
+ 627 0001 22       		.byte	34
+ 628 0002 02       		.byte	2
+ 629 0003 00       		.byte	0
+ 630 0004 02       		.byte	2
+ 631 0005 00       		.byte	0
+ 632 0006 80       		.byte	-128
+ 633 0007 00       		.byte	0
+ 634              		.type	BS_IOPINS0_2_VAL, %object
+ 635              		.size	BS_IOPINS0_2_VAL, 8
+ 636              	BS_IOPINS0_2_VAL:
+ 637 0008 00       		.byte	0
+ 638 0009 0F       		.byte	15
+ 639 000a 0F       		.byte	15
+ 640 000b 00       		.byte	0
+ 641 000c 0F       		.byte	15
+ 642 000d 00       		.byte	0
+ 643 000e 00       		.byte	0
+ 644 000f 00       		.byte	0
+ 645              		.type	BS_IOPINS0_4_VAL, %object
+ 646              		.size	BS_IOPINS0_4_VAL, 8
+ 647              	BS_IOPINS0_4_VAL:
+ 648 0010 00       		.byte	0
+ 649 0011 0F       		.byte	15
+ 650 0012 0F       		.byte	15
+ 651 0013 00       		.byte	0
+ 652 0014 0F       		.byte	15
+ 653 0015 00       		.byte	0
+ 654 0016 00       		.byte	0
+ 655 0017 00       		.byte	0
+ 656              		.type	BS_IOPORT_0_VAL, %object
+ 657              		.size	BS_IOPORT_0_VAL, 7
+ 658              	BS_IOPORT_0_VAL:
+ 659 0018 02       		.byte	2
+ 660 0019 00       		.byte	0
+ 661 001a 00       		.byte	0
+ 662 001b 00       		.byte	0
+ 663 001c 20       		.byte	32
+ 664 001d 00       		.byte	0
+ 665 001e 00       		.byte	0
+ 666              		.type	BS_IOPORT_2_VAL, %object
+ 667              		.size	BS_IOPORT_2_VAL, 7
+ 668              	BS_IOPORT_2_VAL:
+ 669 001f 0C       		.byte	12
+ 670 0020 09       		.byte	9
+ 671 0021 00       		.byte	0
+ 672 0022 00       		.byte	0
+ 673 0023 00       		.byte	0
+ 674 0024 00       		.byte	0
+ 675 0025 00       		.byte	0
+ 676              		.type	BS_IOPORT_4_VAL, %object
+ 677              		.size	BS_IOPORT_4_VAL, 7
+ 678              	BS_IOPORT_4_VAL:
+ 679 0026 06       		.byte	6
+ 680 0027 0C       		.byte	12
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 13
+
+
+ 681 0028 00       		.byte	0
+ 682 0029 00       		.byte	0
+ 683 002a 00       		.byte	0
+ 684 002b 00       		.byte	0
+ 685 002c 00       		.byte	0
+ 686              		.section	.text.cfg_write_bytes32,"ax",%progbits
+ 687              		.align	2
+ 688              		.thumb
+ 689              		.thumb_func
+ 690              		.type	cfg_write_bytes32, %function
+ 691              	cfg_write_bytes32:
+ 692              	.LFB2:
+ 693              		.file 1 "./Generated_Source/PSoC5/cyfitter_cfg.c"
+   1:./Generated_Source/PSoC5/cyfitter_cfg.c **** /*******************************************************************************
+   2:./Generated_Source/PSoC5/cyfitter_cfg.c **** * Copyright 2009, Cypress Semiconductor Corporation.  All rights reserved.
+   3:./Generated_Source/PSoC5/cyfitter_cfg.c **** * You may use this file only in accordance with the license, terms, conditions, 
+   4:./Generated_Source/PSoC5/cyfitter_cfg.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+   5:./Generated_Source/PSoC5/cyfitter_cfg.c **** * the software package with which this file was provided.
+   6:./Generated_Source/PSoC5/cyfitter_cfg.c **** ********************************************************************************/
+   7:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+   8:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This header exports the configuration method(s) defined by this file. */
+   9:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <cyfitter_cfg.h>
+  10:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  11:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This header includes all of the necessary type definitions. */
+  12:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <cytypes.h>
+  13:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  14:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* Standard system includes */
+  15:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if !defined(__ARMCC_VERSION)
+  16:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <string.h>
+  17:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+  18:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  19:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This header contains all of the macros necessary for accessing registers on the device */
+  20:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <cydevice.h>
+  21:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  22:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This header contains all of the macros defined based on the users choices in the System DWR as w
+  23:./Generated_Source/PSoC5/cyfitter_cfg.c ****    based macros for register access. */
+  24:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <cyfitter.h>
+  25:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  26:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This header contains functions needed to enable the digital array */
+  27:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <CyLib.h>
+  28:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  29:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* The section below contains all of the data used to initialize the device. */
+  30:./Generated_Source/PSoC5/cyfitter_cfg.c **** #include <CyDmac.h>
+  31:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  32:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__C51__) || defined(__CX51__)
+  33:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCODE code
+  34:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYDATA data
+  35:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYXDATA xdata
+  36:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYFAR far
+  37:./Generated_Source/PSoC5/cyfitter_cfg.c **** extern void cymemzero(void CYFAR *addr, uint16 size);
+  38:./Generated_Source/PSoC5/cyfitter_cfg.c **** extern void cyconfigcpy(uint16 size, const void CYFAR *src, void CYFAR *dest) small;
+  39:./Generated_Source/PSoC5/cyfitter_cfg.c **** extern void cyconfigcpycode(uint16 size, const void CYCODE *src, void CYFAR *dest);
+  40:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYMEMZERO(a,c) cymemzero((a),(c))
+  41:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPY(d,s,c) cyconfigcpy((c),(s),(d))
+  42:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPYCODE(d,s,c) cyconfigcpycode((c),(s),(d))
+  43:./Generated_Source/PSoC5/cyfitter_cfg.c **** #else
+  44:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCODE
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 14
+
+
+  45:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYDATA
+  46:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYXDATA
+  47:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYFAR
+  48:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYMEMZERO(a,c) cymemset((a),0,(c))
+  49:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPY(d,s,c) cymemcpy((d),(s),(c))
+  50:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPYCODE(d,s,c) cymemcpy((d),(s),(c))
+  51:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+  52:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  53:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* Disable warnings about pointer truncation and pointer to integer conversion */
+  54:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__ARMCC_VERSION)
+  55:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  56:./Generated_Source/PSoC5/cyfitter_cfg.c **** #pragma diag_suppress 767,69
+  57:./Generated_Source/PSoC5/cyfitter_cfg.c **** #elif defined(__GNUC__)
+  58:./Generated_Source/PSoC5/cyfitter_cfg.c **** #pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
+  59:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+  60:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  61:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
+  62:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYPACKED __attribute__ ((packed))
+  63:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define DMAINITSEC __attribute__ ((section (".dma_init")))
+  64:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__ARMCC_VERSION)
+  65:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CY_CFG_MEMORY_BARRIER() __memory_changed()
+  66:./Generated_Source/PSoC5/cyfitter_cfg.c **** #else
+  67:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CY_CFG_MEMORY_BARRIER() __sync_synchronize()
+  68:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+  69:./Generated_Source/PSoC5/cyfitter_cfg.c **** #else
+  70:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYPACKED
+  71:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define DMAINITSEC
+  72:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CY_CFG_MEMORY_BARRIER()
+  73:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+  74:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  75:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYDATADECL(name) const uint8 CYCODE name
+  76:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  77:./Generated_Source/PSoC5/cyfitter_cfg.c **** typedef struct {
+  78:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	void CYFAR *address;
+  79:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint16 size;
+  80:./Generated_Source/PSoC5/cyfitter_cfg.c **** } CYPACKED cfg_memset_t;
+  81:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  82:./Generated_Source/PSoC5/cyfitter_cfg.c **** typedef struct {
+  83:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	void CYFAR *dest;
+  84:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	const void CYCODE *src;
+  85:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint16 size;
+  86:./Generated_Source/PSoC5/cyfitter_cfg.c **** } CYPACKED cfg_memcpy_t;
+  87:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+  88:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CFG_MEMSET_COUNT (sizeof(cfg_memset_list)/sizeof(*cfg_memset_list))
+  89:./Generated_Source/PSoC5/cyfitter_cfg.c **** static const cfg_memset_t CYCODE cfg_memset_list [] = {
+  90:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	/* address, size */
+  91:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_TMR0_CFG0), 11},
+  92:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_IO_PRT_PRT1_DR), 16},
+  93:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_IO_PRT_PRT3_DR), 16},
+  94:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_IO_PRT_PRT5_DR), 32},
+  95:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_IO_PRT_PRT12_DR), 16},
+  96:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_IO_PRT_PRT15_DR), 16},
+  97:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_UCFG_B0_P0_U0_BASE), 4096},
+  98:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_UCFG_B1_P2_U0_BASE), 2048},
+  99:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_UCFG_DSI0_BASE), 2560},
+ 100:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{(void CYFAR *)(CYDEV_UCFG_DSI12_BASE), 512},
+ 101:./Generated_Source/PSoC5/cyfitter_cfg.c **** };
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 15
+
+
+ 102:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 103:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CY_CFG_BASE_ADDR_COUNT 25
+ 104:./Generated_Source/PSoC5/cyfitter_cfg.c **** typedef struct
+ 105:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 106:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint8 offset;
+ 107:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint8 value;
+ 108:./Generated_Source/PSoC5/cyfitter_cfg.c **** } CYPACKED cy_cfg_addrvalue_t;
+ 109:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 110:./Generated_Source/PSoC5/cyfitter_cfg.c **** static const uint32 CYCODE cy_cfg_addr_table[] = {
+ 111:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40004F02u, /* Base address: 0x40004F00 Count: 2 */
+ 112:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40005B01u, /* Base address: 0x40005B00 Count: 1 */
+ 113:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40006401u, /* Base address: 0x40006400 Count: 1 */
+ 114:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010501u, /* Base address: 0x40010500 Count: 1 */
+ 115:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010701u, /* Base address: 0x40010700 Count: 1 */
+ 116:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010811u, /* Base address: 0x40010800 Count: 17 */
+ 117:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010910u, /* Base address: 0x40010900 Count: 16 */
+ 118:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010A3Bu, /* Base address: 0x40010A00 Count: 59 */
+ 119:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010B37u, /* Base address: 0x40010B00 Count: 55 */
+ 120:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010C0Eu, /* Base address: 0x40010C00 Count: 14 */
+ 121:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40010D0Au, /* Base address: 0x40010D00 Count: 10 */
+ 122:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40011906u, /* Base address: 0x40011900 Count: 6 */
+ 123:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40011A0Bu, /* Base address: 0x40011A00 Count: 11 */
+ 124:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40011B12u, /* Base address: 0x40011B00 Count: 18 */
+ 125:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014102u, /* Base address: 0x40014100 Count: 2 */
+ 126:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014205u, /* Base address: 0x40014200 Count: 5 */
+ 127:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014301u, /* Base address: 0x40014300 Count: 1 */
+ 128:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014402u, /* Base address: 0x40014400 Count: 2 */
+ 129:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014509u, /* Base address: 0x40014500 Count: 9 */
+ 130:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014609u, /* Base address: 0x40014600 Count: 9 */
+ 131:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014705u, /* Base address: 0x40014700 Count: 5 */
+ 132:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014C06u, /* Base address: 0x40014C00 Count: 6 */
+ 133:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40014D0Eu, /* Base address: 0x40014D00 Count: 14 */
+ 134:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40015006u, /* Base address: 0x40015000 Count: 6 */
+ 135:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x40015101u, /* Base address: 0x40015100 Count: 1 */
+ 136:./Generated_Source/PSoC5/cyfitter_cfg.c **** };
+ 137:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 138:./Generated_Source/PSoC5/cyfitter_cfg.c **** static const cy_cfg_addrvalue_t CYCODE cy_cfg_data_table[] = {
+ 139:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x01u, 0x20u},
+ 140:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x09u, 0x1Bu},
+ 141:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x27u, 0x84u},
+ 142:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x8Au, 0x0Fu},
+ 143:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE2u, 0x02u},
+ 144:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xECu, 0x80u},
+ 145:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC0u, 0x03u},
+ 146:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC7u, 0x15u},
+ 147:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC8u, 0x30u},
+ 148:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC9u, 0xFFu},
+ 149:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCAu, 0x07u},
+ 150:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCBu, 0xFFu},
+ 151:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCCu, 0x40u},
+ 152:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCDu, 0x20u},
+ 153:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCEu, 0xF0u},
+ 154:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCFu, 0x05u},
+ 155:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD0u, 0x08u},
+ 156:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xDAu, 0x04u},
+ 157:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xDDu, 0x01u},
+ 158:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE0u, 0x40u},
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 16
+
+
+ 159:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE1u, 0xA8u},
+ 160:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE2u, 0x40u},
+ 161:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE3u, 0x20u},
+ 162:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x41u, 0x08u},
+ 163:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x50u, 0x04u},
+ 164:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x52u, 0x02u},
+ 165:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x53u, 0x04u},
+ 166:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x92u, 0x01u},
+ 167:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x94u, 0x08u},
+ 168:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x97u, 0x08u},
+ 169:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Du, 0x08u},
+ 170:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA0u, 0x24u},
+ 171:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA1u, 0x08u},
+ 172:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA3u, 0x20u},
+ 173:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA7u, 0x04u},
+ 174:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xAFu, 0x40u},
+ 175:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB7u, 0x08u},
+ 176:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD0u, 0x02u},
+ 177:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xECu, 0x82u},
+ 178:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x00u, 0x80u},
+ 179:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x01u, 0x94u},
+ 180:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x03u, 0x2Bu},
+ 181:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x04u, 0x09u},
+ 182:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x05u, 0x20u},
+ 183:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x06u, 0x10u},
+ 184:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x07u, 0x08u},
+ 185:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x08u, 0x2Au},
+ 186:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x09u, 0xFCu},
+ 187:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Au, 0x44u},
+ 188:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Bu, 0x02u},
+ 189:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Du, 0x18u},
+ 190:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x10u, 0x62u},
+ 191:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x11u, 0x88u},
+ 192:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x12u, 0x05u},
+ 193:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x13u, 0x54u},
+ 194:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x14u, 0x02u},
+ 195:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x16u, 0x40u},
+ 196:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Au, 0x20u},
+ 197:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Du, 0x03u},
+ 198:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x24u, 0x52u},
+ 199:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x26u, 0x04u},
+ 200:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x29u, 0x05u},
+ 201:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x2Bu, 0x68u},
+ 202:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x30u, 0x07u},
+ 203:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x31u, 0x1Fu},
+ 204:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x32u, 0x38u},
+ 205:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x33u, 0x80u},
+ 206:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x34u, 0x80u},
+ 207:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x35u, 0x60u},
+ 208:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x36u, 0x40u},
+ 209:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x37u, 0x1Fu},
+ 210:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x38u, 0x08u},
+ 211:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x39u, 0x8Au},
+ 212:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x3Bu, 0x20u},
+ 213:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x3Eu, 0x50u},
+ 214:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x3Fu, 0x04u},
+ 215:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x40u, 0x54u},
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 17
+
+
+ 216:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x41u, 0x03u},
+ 217:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x45u, 0xE0u},
+ 218:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x46u, 0xCBu},
+ 219:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x47u, 0x0Cu},
+ 220:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x48u, 0x1Eu},
+ 221:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x49u, 0xFFu},
+ 222:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Au, 0xFFu},
+ 223:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Bu, 0xFFu},
+ 224:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Eu, 0xF0u},
+ 225:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Fu, 0x44u},
+ 226:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x50u, 0x08u},
+ 227:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x54u, 0x01u},
+ 228:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x58u, 0x04u},
+ 229:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x59u, 0x04u},
+ 230:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Au, 0x09u},
+ 231:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Bu, 0x04u},
+ 232:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Cu, 0x11u},
+ 233:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Du, 0x19u},
+ 234:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x62u, 0xC0u},
+ 235:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x64u, 0x40u},
+ 236:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x65u, 0x02u},
+ 237:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x00u, 0x12u},
+ 238:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x01u, 0x08u},
+ 239:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Au, 0x80u},
+ 240:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Bu, 0x28u},
+ 241:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x13u, 0x08u},
+ 242:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x18u, 0x10u},
+ 243:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x19u, 0x80u},
+ 244:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Au, 0x80u},
+ 245:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Bu, 0x22u},
+ 246:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x21u, 0x08u},
+ 247:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x22u, 0x80u},
+ 248:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x23u, 0x48u},
+ 249:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x2Bu, 0x04u},
+ 250:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x32u, 0x80u},
+ 251:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x33u, 0x02u},
+ 252:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x38u, 0x98u},
+ 253:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x3Au, 0x01u},
+ 254:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x40u, 0x10u},
+ 255:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x43u, 0x02u},
+ 256:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x48u, 0x02u},
+ 257:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x49u, 0x02u},
+ 258:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x50u, 0x40u},
+ 259:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x52u, 0x08u},
+ 260:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x53u, 0x10u},
+ 261:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x58u, 0x22u},
+ 262:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x59u, 0x82u},
+ 263:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Au, 0x08u},
+ 264:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x68u, 0x25u},
+ 265:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x6Au, 0x01u},
+ 266:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x71u, 0xA0u},
+ 267:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x73u, 0xA0u},
+ 268:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x7Bu, 0x04u},
+ 269:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x7Cu, 0x20u},
+ 270:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x7Eu, 0x08u},
+ 271:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x80u, 0x02u},
+ 272:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x82u, 0x01u},
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 18
+
+
+ 273:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x92u, 0x08u},
+ 274:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Cu, 0x02u},
+ 275:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Fu, 0xA0u},
+ 276:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA5u, 0xA0u},
+ 277:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xABu, 0x50u},
+ 278:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB3u, 0x02u},
+ 279:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC0u, 0x0Eu},
+ 280:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC2u, 0x0Eu},
+ 281:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC4u, 0x04u},
+ 282:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCAu, 0x04u},
+ 283:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCCu, 0x09u},
+ 284:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCEu, 0x0Fu},
+ 285:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD0u, 0x03u},
+ 286:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD2u, 0x08u},
+ 287:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD6u, 0x0Fu},
+ 288:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xDEu, 0x04u},
+ 289:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE2u, 0x06u},
+ 290:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE8u, 0x04u},
+ 291:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xECu, 0x01u},
+ 292:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x98u, 0x02u},
+ 293:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Cu, 0x01u},
+ 294:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA8u, 0x04u},
+ 295:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xACu, 0x08u},
+ 296:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xADu, 0x01u},
+ 297:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB0u, 0x08u},
+ 298:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB2u, 0x04u},
+ 299:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB3u, 0x01u},
+ 300:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB4u, 0x02u},
+ 301:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB6u, 0x01u},
+ 302:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xBEu, 0x55u},
+ 303:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xBFu, 0x04u},
+ 304:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD8u, 0x04u},
+ 305:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD9u, 0x04u},
+ 306:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x09u, 0xA0u},
+ 307:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x13u, 0xA0u},
+ 308:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Au, 0x20u},
+ 309:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Bu, 0x52u},
+ 310:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x22u, 0x04u},
+ 311:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x28u, 0x02u},
+ 312:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x8Eu, 0x10u},
+ 313:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC2u, 0x03u},
+ 314:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC4u, 0x03u},
+ 315:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCAu, 0x08u},
+ 316:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x92u, 0x01u},
+ 317:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Du, 0x08u},
+ 318:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA0u, 0x24u},
+ 319:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA2u, 0x02u},
+ 320:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA7u, 0x04u},
+ 321:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB7u, 0x20u},
+ 322:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x04u, 0x02u},
+ 323:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Cu, 0x01u},
+ 324:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Cu, 0x08u},
+ 325:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x24u, 0x04u},
+ 326:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x30u, 0x04u},
+ 327:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x32u, 0x01u},
+ 328:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x34u, 0x08u},
+ 329:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x36u, 0x02u},
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 19
+
+
+ 330:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x3Eu, 0x51u},
+ 331:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x58u, 0x04u},
+ 332:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Cu, 0x01u},
+ 333:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x00u, 0x08u},
+ 334:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x02u, 0x02u},
+ 335:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Au, 0x01u},
+ 336:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x10u, 0x20u},
+ 337:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x19u, 0x08u},
+ 338:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Bu, 0x66u},
+ 339:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x87u, 0x22u},
+ 340:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x8Fu, 0x40u},
+ 341:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x92u, 0x01u},
+ 342:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Du, 0x08u},
+ 343:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA0u, 0x24u},
+ 344:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA2u, 0x02u},
+ 345:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA7u, 0x04u},
+ 346:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC0u, 0x05u},
+ 347:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC2u, 0x01u},
+ 348:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC4u, 0x04u},
+ 349:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE0u, 0x08u},
+ 350:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE4u, 0x08u},
+ 351:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x13u, 0x08u},
+ 352:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xC4u, 0x10u},
+ 353:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x30u, 0x08u},
+ 354:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x84u, 0x08u},
+ 355:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x9Bu, 0x08u},
+ 356:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCCu, 0x40u},
+ 357:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE2u, 0x40u},
+ 358:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB3u, 0x08u},
+ 359:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x54u, 0x04u},
+ 360:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD4u, 0x02u},
+ 361:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x50u, 0x02u},
+ 362:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x52u, 0x08u},
+ 363:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x55u, 0x80u},
+ 364:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x5Cu, 0x40u},
+ 365:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x8Cu, 0x40u},
+ 366:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA4u, 0x04u},
+ 367:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD4u, 0x07u},
+ 368:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD6u, 0x04u},
+ 369:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE0u, 0x02u},
+ 370:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x2Au, 0x10u},
+ 371:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x80u, 0x04u},
+ 372:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x86u, 0x10u},
+ 373:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA4u, 0x04u},
+ 374:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA9u, 0x80u},
+ 375:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xAAu, 0x08u},
+ 376:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB0u, 0x02u},
+ 377:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCAu, 0x08u},
+ 378:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xECu, 0x01u},
+ 379:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA1u, 0x20u},
+ 380:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xACu, 0x04u},
+ 381:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB1u, 0x20u},
+ 382:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB4u, 0x04u},
+ 383:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xECu, 0x03u},
+ 384:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x31u, 0x20u},
+ 385:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x90u, 0x02u},
+ 386:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xA1u, 0x20u},
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 20
+
+
+ 387:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xB4u, 0x01u},
+ 388:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xCCu, 0x08u},
+ 389:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE8u, 0x02u},
+ 390:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x40u, 0x04u},
+ 391:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x41u, 0x10u},
+ 392:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Cu, 0x02u},
+ 393:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x4Fu, 0x20u},
+ 394:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x50u, 0x01u},
+ 395:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x51u, 0x10u},
+ 396:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x54u, 0x01u},
+ 397:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x57u, 0x10u},
+ 398:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x84u, 0x03u},
+ 399:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x8Cu, 0x04u},
+ 400:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x90u, 0x02u},
+ 401:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD4u, 0x07u},
+ 402:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xD6u, 0x04u},
+ 403:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0xE4u, 0x02u},
+ 404:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x00u, 0x02u},
+ 405:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x01u, 0x01u},
+ 406:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Cu, 0x02u},
+ 407:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x0Du, 0x01u},
+ 408:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x10u, 0x02u},
+ 409:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x1Cu, 0x02u},
+ 410:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{0x03u, 0x03u},
+ 411:./Generated_Source/PSoC5/cyfitter_cfg.c **** };
+ 412:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 413:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 414:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPINS0_0 Address: CYDEV_IO_PRT_PRT0_DM0 Size (bytes): 8 */
+ 415:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPINS0_0_VAL) [] DMAINITSEC = {
+ 416:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x20, 0x22, 0x02, 0x00, 0x02, 0x00, 0x80, 0x00};
+ 417:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 418:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPINS0_2 Address: CYDEV_IO_PRT_PRT2_DM0 Size (bytes): 8 */
+ 419:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPINS0_2_VAL) [] DMAINITSEC = {
+ 420:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x00, 0x0F, 0x0F, 0x00, 0x0F, 0x00, 0x00, 0x00};
+ 421:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 422:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPINS0_4 Address: CYDEV_IO_PRT_PRT4_DM0 Size (bytes): 8 */
+ 423:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPINS0_4_VAL) [] DMAINITSEC = {
+ 424:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x00, 0x0F, 0x0F, 0x00, 0x0F, 0x00, 0x00, 0x00};
+ 425:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 426:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPORT_0 Address: CYDEV_PRTDSI_PRT0_BASE Size (bytes): 7 */
+ 427:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPORT_0_VAL) [] DMAINITSEC = {
+ 428:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x02, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00};
+ 429:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 430:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPORT_2 Address: CYDEV_PRTDSI_PRT2_BASE Size (bytes): 7 */
+ 431:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPORT_2_VAL) [] DMAINITSEC = {
+ 432:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x0C, 0x09, 0x00, 0x00, 0x00, 0x00, 0x00};
+ 433:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 434:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* IOPORT_4 Address: CYDEV_PRTDSI_PRT4_BASE Size (bytes): 7 */
+ 435:./Generated_Source/PSoC5/cyfitter_cfg.c **** static CYDATADECL(BS_IOPORT_4_VAL) [] DMAINITSEC = {
+ 436:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	0x06, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00};
+ 437:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 438:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 439:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__C51__) || defined(__CX51__)
+ 440:./Generated_Source/PSoC5/cyfitter_cfg.c **** extern void cfg_write_bytes_code(void CYCODE *table);
+ 441:./Generated_Source/PSoC5/cyfitter_cfg.c **** extern void cfg_write_bytes(void CYFAR *table);
+ 442:./Generated_Source/PSoC5/cyfitter_cfg.c **** #else
+ 443:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* For 32-bit little-endian architectures */
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 21
+
+
+ 444:./Generated_Source/PSoC5/cyfitter_cfg.c **** static void cfg_write_bytes32(void)
+ 445:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 694              	r7, #0]
+ 695              		ldr	r3, .L9
+ 696              		ldr	r3, [r3, r2, lsl #2]
+ 697              		str	r3, [r7, #8]
+ 698 0000 80B4     		.loc 1 450 0
+ 699              		ldr	r3, [r7, #8]
+ 700 0002 85B0     		strb	r3, [r7, #15]
+ 701              		.loc 1 451 0
+ 702 0004 00AF     		ldr	r3, [r7, #8]
+ 703              		bic	r3, r3, #255
+ 704              		str	r3, [r7, #8]
+ 446:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	unsigned int i, j = 0;
+ 705              	 0
+ 706 0006 4FF00003 		b	.L4
+ 707 000a 7B60     	.L5:
+ 447:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	for (i = 0; i < CY_CFG_BASE_ADDR_COUNT; i++)
+ 708              	oc 1 454 0
+ 709 000c 4FF00003 		ldr	r2, [r7, #4]
+ 710 0010 3B60     		ldr	r3, .L9+4
+ 711 0012 2EE0     		ldrb	r3, [r3, r2, lsl #1]	@ zero_extendqisi2
+ 712              		mov	r2, r3
+ 713              		ldr	r3, [r7, #8]
+ 448:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{
+ 449:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		uint32 baseAddr = cy_cfg_addr_table[i];
+ 714              	3, r2, r3
+ 715 0014 3A68     		mov	r1, r3
+ 716 0016 1B4B     		ldr	r3, [r7, #4]
+ 717 0018 53F82230 		ldr	r2, .L9+4
+ 718 001c BB60     		lsl	r3, r3, #1
+ 450:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		uint8 count = baseAddr & 0xFFu;
+ 719              	r3, r3, r2
+ 720 001e BB68     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 721 0020 FB73     		strb	r3, [r1, #0]
+ 451:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		baseAddr &= 0xFFFFFF00u;
+ 722              	oc 1 455 0
+ 723 0022 BB68     		ldr	r3, [r7, #4]
+ 724 0024 23F0FF03 		add	r3, r3, #1
+ 725 0028 BB60     		str	r3, [r7, #4]
+ 452:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		while (count--)
+ 726              	
+ 727 002a 12E0     		.loc 1 452 0
+ 728              		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 453:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		{
+ 454:./Generated_Source/PSoC5/cyfitter_cfg.c **** 			CY_SET_XTND_REG8((void CYFAR *)(baseAddr + cy_cfg_data_table[j].offset), cy_cfg_data_table[j].va
+ 729              	mp	r3, #0
+ 730 002c 7A68     		ite	eq
+ 731 002e 164B     		moveq	r3, #0
+ 732 0030 13F81230 		movne	r3, #1
+ 733 0034 1A46     		uxtb	r2, r3
+ 734 0036 BB68     		ldrb	r3, [r7, #15]
+ 735 0038 1344     		add	r3, r3, #-1
+ 736 003a 1946     		strb	r3, [r7, #15]
+ 737 003c 7B68     		cmp	r2, #0
+ 738 003e 124A     		bne	.L5
+ 739 0040 4FEA4303 	.LBE2:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 22
+
+
+ 740 0044 1344     		.loc 1 447 0
+ 741 0046 5B78     		ldr	r3, [r7, #0]
+ 742 0048 0B70     		add	r3, r3, #1
+ 455:./Generated_Source/PSoC5/cyfitter_cfg.c **** 			j++;
+ 743              	#0]
+ 744 004a 7B68     	.L2:
+ 745 004c 03F10103 		ldr	r3, [r7, #0]
+ 746 0050 7B60     		cmp	r3, #24
+ 747              		bls	.L3
+ 748              		.loc 1 458 0
+ 749 0052 FB7B     		add	r7, r7, #20
+ 750 0054 002B     		mov	sp, r7
+ 751 0056 0CBF     		pop	{r7}
+ 752 0058 0023     		bx	lr
+ 753 005a 0123     	.L10:
+ 754 005c DAB2     		.align	2
+ 755 005e FB7B     	.L9:
+ 756 0060 03F1FF33 		.word	cy_cfg_addr_table
+ 757 0064 FB73     		.word	cy_cfg_data_table
+ 758 0066 002A     	.LFE2:
+ 759 0068 E0D1     		.size	cfg_write_bytes32, .-cfg_write_bytes32
+ 760              		.section	.text.cymemzero8,"ax",%progbits
+ 761              		.align	2
+ 762 006a 3B68     		.thumb
+ 763 006c 03F10103 		.thumb_func
+ 764 0070 3B60     		.type	cymemzero8, %function
+ 765              	cymemzero8:
+ 766 0072 3B68     	.LFB3:
+ 767 0074 182B     		.loc 1 470 0
+ 768 0076 CDD9     		@ args = 0, pretend = 0, frame = 16
+ 456:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		}
+ 457:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	}
+ 458:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 769              	anonymous_args = 0
+ 770 0078 07F11407 		@ link register save eliminated.
+ 771 007c BD46     		push	{r7}
+ 772 007e 80BC     	.LCFI3:
+ 773 0080 7047     		sub	sp, sp, #20
+ 774              	.LCFI4:
+ 775 0082 C046     		add	r7, sp, #0
+ 776              	.LCFI5:
+ 777 0084 3C000000 		@ lr needed for prologue
+ 778 0088 A0000000 		str	r0, [r7, #4]
+ 779              		str	r1, [r7, #0]
+ 780              		.loc 1 471 0
+ 781              		ldr	r3, [r7, #4]
+ 782              		str	r3, [r7, #12]
+ 783              		.loc 1 472 0
+ 784              		b	.L12
+ 785              	.L13:
+ 786              		.loc 1 474 0
+ 787              		ldr	r2, [r7, #12]
+ 459:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+ 460:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 461:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__C51__) || defined(__CX51__)
+ 462:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYMEMZERO8(a,c) cymemzero((a),(c))
+ 463:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPY8(d,s,c) cyconfigcpy((c),(s),(d))
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 23
+
+
+ 464:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPYCODE8(d,s,c) cyconfigcpycode((c),(s),(d))
+ 465:./Generated_Source/PSoC5/cyfitter_cfg.c **** #else
+ 466:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
+ 467:./Generated_Source/PSoC5/cyfitter_cfg.c **** __attribute__ ((unused))
+ 468:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+ 469:./Generated_Source/PSoC5/cyfitter_cfg.c **** static void cymemzero8(void *addr, unsigned int count)
+ 470:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 788              	3, [r2, #0]
+ 789              		.loc 1 475 0
+ 790              		ldr	r3, [r7, #12]
+ 791              		add	r3, r3, #1
+ 792 0000 80B4     		str	r3, [r7, #12]
+ 793              	.L12:
+ 794 0002 85B0     		.loc 1 472 0
+ 795              		ldr	r3, [r7, #0]
+ 796 0004 00AF     		cmp	r3, #0
+ 797              		ite	eq
+ 798              		moveq	r3, #0
+ 799 0006 7860     		movne	r3, #1
+ 800 0008 3960     		uxtb	r2, r3
+ 471:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint8 *addr8 = (uint8 *)addr;
+ 801              	 #0]
+ 802 000a 7B68     		add	r3, r3, #-1
+ 803 000c FB60     		str	r3, [r7, #0]
+ 472:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	while (count--)
+ 804              	p	r2, #0
+ 805 000e 07E0     		bne	.L13
+ 806              		.loc 1 477 0
+ 473:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{
+ 474:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		*addr8 = 0;
+ 807              	d	r7, r7, #20
+ 808 0010 FA68     		mov	sp, r7
+ 809 0012 4FF00003 		pop	{r7}
+ 810 0016 1370     		bx	lr
+ 475:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		addr8++;
+ 811              	3:
+ 812 0018 FB68     		.size	cymemzero8, .-cymemzero8
+ 813 001a 03F10103 		.section	.text.cymemcpy8,"ax",%progbits
+ 814 001e FB60     		.align	2
+ 815              		.thumb
+ 816              		.thumb_func
+ 817 0020 3B68     		.type	cymemcpy8, %function
+ 818 0022 002B     	cymemcpy8:
+ 819 0024 0CBF     	.LFB4:
+ 820 0026 0023     		.loc 1 483 0
+ 821 0028 0123     		@ args = 0, pretend = 0, frame = 24
+ 822 002a DAB2     		@ frame_needed = 1, uses_anonymous_args = 0
+ 823 002c 3B68     		@ link register save eliminated.
+ 824 002e 03F1FF33 		push	{r7}
+ 825 0032 3B60     	.LCFI6:
+ 826 0034 002A     		sub	sp, sp, #28
+ 827 0036 EBD1     	.LCFI7:
+ 476:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	}
+ 477:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 828              	LCFI8:
+ 829 0038 07F11407 		@ lr needed for prologue
+ 830 003c BD46     		str	r0, [r7, #12]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 24
+
+
+ 831 003e 80BC     		str	r1, [r7, #8]
+ 832 0040 7047     		str	r2, [r7, #4]
+ 833              		.loc 1 484 0
+ 834              		ldr	r3, [r7, #12]
+ 835 0042 C046     		str	r3, [r7, #16]
+ 836              		.loc 1 485 0
+ 837              		ldr	r3, [r7, #8]
+ 838              		str	r3, [r7, #20]
+ 839              		.loc 1 487 0
+ 840              		b	.L17
+ 841              	.L18:
+ 478:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 479:./Generated_Source/PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
+ 480:./Generated_Source/PSoC5/cyfitter_cfg.c **** __attribute__ ((unused))
+ 481:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+ 482:./Generated_Source/PSoC5/cyfitter_cfg.c **** static void cymemcpy8(void *dest, const void *src, unsigned int count)
+ 483:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 842              		ldr	r3, [r7, #20]
+ 843              		ldrb	r3, [r3, #0]	@ zero_extendqisi2
+ 844              		ldr	r2, [r7, #16]
+ 845              		strb	r3, [r2, #0]
+ 846 0000 80B4     		.loc 1 490 0
+ 847              		ldr	r3, [r7, #16]
+ 848 0002 87B0     		add	r3, r3, #1
+ 849              		str	r3, [r7, #16]
+ 850 0004 00AF     		.loc 1 491 0
+ 851              		ldr	r3, [r7, #20]
+ 852              		add	r3, r3, #1
+ 853 0006 F860     		str	r3, [r7, #20]
+ 854 0008 B960     	.L17:
+ 855 000a 7A60     		.loc 1 487 0
+ 484:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint8 *dest8 = (uint8 *)dest;
+ 856              	#4]
+ 857 000c FB68     		cmp	r3, #0
+ 858 000e 3B61     		ite	eq
+ 485:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	const uint8 *src8 = (const uint8 *)src;
+ 859              	veq	r3, #0
+ 860 0010 BB68     		movne	r3, #1
+ 861 0012 7B61     		uxtb	r2, r3
+ 486:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 487:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	while (count--)
+ 862              	r	r3, [r7, #4]
+ 863 0014 0BE0     		add	r3, r3, #-1
+ 864              		str	r3, [r7, #4]
+ 488:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{
+ 489:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		*dest8 = *src8;
+ 865              	p	r2, #0
+ 866 0016 7B69     		bne	.L18
+ 867 0018 1B78     		.loc 1 493 0
+ 868 001a 3A69     		add	r7, r7, #28
+ 869 001c 1370     		mov	sp, r7
+ 490:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		dest8++;
+ 870              	{r7}
+ 871 001e 3B69     		bx	lr
+ 872 0020 03F10103 	.LFE4:
+ 873 0024 3B61     		.size	cymemcpy8, .-cymemcpy8
+ 491:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		src8++;
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 25
+
+
+ 874              	ction	.text.ClockSetup,"ax",%progbits
+ 875 0026 7B69     		.align	2
+ 876 0028 03F10103 		.thumb
+ 877 002c 7B61     		.thumb_func
+ 878              		.type	ClockSetup, %function
+ 879              	ClockSetup:
+ 880 002e 7B68     	.LFB5:
+ 881 0030 002B     		.loc 1 501 0
+ 882 0032 0CBF     		@ args = 0, pretend = 0, frame = 16
+ 883 0034 0023     		@ frame_needed = 1, uses_anonymous_args = 0
+ 884 0036 0123     		push	{r7, lr}
+ 885 0038 DAB2     	.LCFI9:
+ 886 003a 7B68     		sub	sp, sp, #16
+ 887 003c 03F1FF33 	.LCFI10:
+ 888 0040 7B60     		add	r7, sp, #0
+ 889 0042 002A     	.LCFI11:
+ 890 0044 E7D1     		.loc 1 503 0
+ 492:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	}
+ 493:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 891              	str	r3, [r7, #12]
+ 892 0046 07F11C07 		.loc 1 505 0
+ 893 004a BD46     		ldr	r0, .L27
+ 894 004c 80BC     		ldr	r1, .L27+4
+ 895 004e 7047     		bl	CySetReg24
+ 896              		.loc 1 506 0
+ 897              		ldr	r0, .L27+8
+ 898              		ldr	r1, .L27+12
+ 899              		bl	CySetReg24
+ 900              		.loc 1 507 0
+ 901              		ldr	r0, .L27+16
+ 902              		ldr	r1, .L27+20
+ 903              		bl	CySetReg24
+ 904              		.loc 1 508 0
+ 494:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 495:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYMEMZERO8(a,c) cymemzero8((a),(c))
+ 496:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPY8(d,s,c) cymemcpy8((d),(s),(c))
+ 497:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CYCONFIGCPYCODE8(d,s,c) cymemcpy8((d),(s),(c))
+ 498:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+ 499:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 500:./Generated_Source/PSoC5/cyfitter_cfg.c **** static void ClockSetup(void)
+ 501:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 905              	24
+ 906              		mov	r3, #2
+ 907              		strb	r3, [r2, #0]
+ 908 0000 80B5     		.loc 1 509 0
+ 909              		ldr	r2, .L27+28
+ 910 0002 84B0     		mov	r3, #8
+ 911              		strb	r3, [r2, #0]
+ 912 0004 00AF     		.loc 1 510 0
+ 913              		ldr	r2, .L27+32
+ 502:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	reg32  timeout;
+ 503:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	reg32* timeout_p = &timeout;
+ 914              	#3
+ 915 0006 07F10803 		strb	r3, [r2, #0]
+ 916 000a FB60     		.loc 1 511 0
+ 504:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	reg8   pllLock;
+ 505:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG24((void CYFAR *)(CYDEV_CLKDIST_DCFG0_CFG0), 0x180001);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 26
+
+
+ 917              	r	r2, .L27+36
+ 918 000c 3548     		ldr	r3, .L27+40
+ 919 000e 3649     		ldrb	r3, [r3, #0]
+ 920 0010 FFF7FEFF 		uxtb	r3, r3
+ 506:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG24((void CYFAR *)(CYDEV_CLKDIST_DCFG1_CFG0), 0x190026);
+ 921              	b	r3, [r2, #0]
+ 922 0014 3548     		.loc 1 512 0
+ 923 0016 3649     		ldr	r2, .L27+44
+ 924 0018 FFF7FEFF 		mov	r3, #8
+ 507:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG24((void CYFAR *)(CYDEV_CLKDIST_DCFG2_CFG0), 0x193414);
+ 925              	h	r3, [r2, #0]	@ movhi
+ 926 001c 3548     		.loc 1 513 0
+ 927 001e 3649     		ldr	r2, .L27+28
+ 928 0020 FFF7FEFF 		mov	r3, #8
+ 508:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_SLOWCLK_ILO_CR0), 0x02);
+ 929              	b	r3, [r2, #0]
+ 930 0024 354A     		.loc 1 514 0
+ 931 0026 4FF00203 		ldr	r2, .L27+48
+ 932 002a 1370     		movw	r3, #4177
+ 509:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_CR), 0x08);
+ 933              	h	r3, [r2, #0]	@ movhi
+ 934 002c 344A     		.loc 1 515 0
+ 935 002e 4FF00803 		mov	r3, #0
+ 936 0032 1370     		strb	r3, [r7, #7]
+ 510:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_FASTCLK_IMO_CR), 0x03);
+ 937              	c 1 516 0
+ 938 0034 334A     		mov	r3, #304
+ 939 0036 4FF00303 		str	r3, [r7, #8]
+ 940 003a 1370     		b	.L22
+ 511:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_MFGCFG_IMO_TR1), (CY_GET_XTND_REG8(CYDEV_FLSHID_BASE + 0x108
+ 941              	:
+ 942 003c 324A     		ldrb	r3, [r7, #7]
+ 943 003e 334B     		uxtb	r3, r3
+ 944 0040 1B78     		lsl	r3, r3, #1
+ 945 0042 DBB2     		uxtb	r2, r3
+ 946 0044 1370     		ldr	r3, .L27+52
+ 512:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYDEV_FASTCLK_PLL_P), 0x0008);
+ 947              	r3, [r3, #0]
+ 948 0046 324A     		uxtb	r3, r3
+ 949 0048 4FF00803 		and	r3, r3, #1
+ 950 004c 1380     		orr	r3, r2, r3
+ 513:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_CR), 0x08);
+ 951              	b	r3, r3
+ 952 004e 2C4A     		and	r3, r3, #3
+ 953 0050 4FF00803 		strb	r3, [r7, #7]
+ 954 0054 1370     		ldr	r3, [r7, #8]
+ 514:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYDEV_FASTCLK_PLL_CFG0), 0x1051);
+ 955              		r3, r3, #-1
+ 956 0056 2F4A     		str	r3, [r7, #8]
+ 957 0058 41F25103 	.L22:
+ 958 005c 1380     		ldr	r3, [r7, #12]
+ 515:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	pllLock = 0;
+ 959              		r3, [r3, #0]
+ 960 005e 4FF00003 		cmp	r3, #0
+ 961 0062 FB71     		beq	.L24
+ 516:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	for (timeout = 304; *timeout_p && (pllLock != 0x03u); timeout--) { pllLock = 0x03u & ((pllLock << 
+ 962              	rb	r3, [r7, #7]
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 27
+
+
+ 963 0064 4FF49873 		uxtb	r3, r3
+ 964 0068 BB60     		cmp	r3, #3
+ 965 006a 13E0     		bne	.L23
+ 966              	.L24:
+ 967 006c FB79     		.loc 1 517 0
+ 968 006e DBB2     		ldr	r2, .L27+56
+ 969 0070 4FEA4303 		movw	r3, #259
+ 970 0074 DAB2     		strh	r3, [r2, #0]	@ movhi
+ 971 0076 284B     		.loc 1 518 0
+ 972 0078 1B78     		ldr	r2, .L27+56
+ 973 007a DBB2     		mov	r3, #0
+ 974 007c 03F00103 		strb	r3, [r2, #0]
+ 975 0080 42EA0303 		.loc 1 519 0
+ 976 0084 DBB2     		ldr	r2, .L27+60
+ 977 0086 03F00303 		mov	r3, #0
+ 978 008a FB71     		strb	r3, [r2, #0]
+ 979 008c BB68     		.loc 1 520 0
+ 980 008e 03F1FF33 		ldr	r2, .L27+64
+ 981 0092 BB60     		mov	r3, #72
+ 982              		strb	r3, [r2, #0]
+ 983 0094 FB68     		.loc 1 521 0
+ 984 0096 1B68     		ldr	r2, .L27+68
+ 985 0098 002B     		mov	r3, #2
+ 986 009a 03D0     		strb	r3, [r2, #0]
+ 987 009c FB79     		.loc 1 523 0
+ 988 009e DBB2     		ldr	r2, .L27+72
+ 989 00a0 032B     		ldr	r3, .L27+72
+ 990 00a2 E3D1     		ldrb	r3, [r3, #0]
+ 991              		uxtb	r3, r3
+ 517:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYDEV_CLKDIST_MSTR0), 0x0103);
+ 992              	strb	r3, [r2, #0]
+ 993 00a4 1D4A     		.loc 1 524 0
+ 994 00a6 40F20313 		add	r7, r7, #16
+ 995 00aa 1380     		mov	sp, r7
+ 518:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_MSTR0), 0x00);
+ 996              		{r7, pc}
+ 997 00ac 1B4A     	.L28:
+ 998 00ae 4FF00003 		.align	2
+ 999 00b2 1370     	.L27:
+ 519:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_BCFG0), 0x00);
+ 1000              	rd	1073758336
+ 1001 00b4 1A4A     		.word	1572865
+ 1002 00b6 4FF00003 		.word	1073758340
+ 1003 00ba 1370     		.word	1638438
+ 520:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_BCFG2), 0x48);
+ 1004              	rd	1073758344
+ 1005 00bc 194A     		.word	1651732
+ 1006 00be 4FF04803 		.word	1073758976
+ 1007 00c2 1370     		.word	1073758208
+ 521:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CLKDIST_LD), 0x02);
+ 1008              	rd	1073758720
+ 1009 00c4 184A     		.word	1073759905
+ 1010 00c6 4FF00203 		.word	1224737032
+ 1011 00ca 1370     		.word	1073758754
+ 522:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 523:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_PM_ACT_CFG2), ((CY_GET_XTND_REG8(CYDEV_PM_ACT_CFG2) | 0x07))
+ 1012              	rd	1073758752
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 28
+
+
+ 1013 00cc 174A     		.word	1073758757
+ 1014 00ce 174B     		.word	1073758212
+ 1015 00d0 1B78     		.word	1073758214
+ 1016 00d2 DBB2     		.word	1073758216
+ 1017 00d4 43F00703 		.word	1073758209
+ 1018 00d8 DBB2     		.word	1073759138
+ 1019 00da 1370     	.LFE5:
+ 524:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 1020              	lockSetup, .-ClockSetup
+ 1021 00dc 07F11007 		.section	.text.AnalogSetDefault,"ax",%progbits
+ 1022 00e0 BD46     		.align	2
+ 1023 00e2 80BD     		.global	AnalogSetDefault
+ 1024              		.thumb
+ 1025              		.thumb_func
+ 1026              		.type	AnalogSetDefault, %function
+ 1027 00e4 80400040 	AnalogSetDefault:
+ 1028 00e8 01001800 	.LFB6:
+ 1029 00ec 84400040 		.loc 1 528 0
+ 1030 00f0 26001900 		@ args = 0, pretend = 0, frame = 0
+ 1031 00f4 88400040 		@ frame_needed = 1, uses_anonymous_args = 0
+ 1032 00f8 14341900 		@ link register save eliminated.
+ 1033 00fc 00430040 		push	{r7}
+ 1034 0100 00400040 	.LCFI12:
+ 1035 0104 00420040 		add	r7, sp, #0
+ 1036 0108 A1460040 	.LCFI13:
+ 1037 010c 08010049 		@ lr needed for prologue
+ 1038 0110 22420040 		.loc 1 529 0
+ 1039 0114 20420040 		ldr	r2, .L31
+ 1040 0118 25420040 		mvn	r3, #127
+ 1041 011c 04400040 		strb	r3, [r2, #0]
+ 1042 0120 06400040 		.loc 1 530 0
+ 1043 0124 08400040 		ldr	r2, .L31+4
+ 1044 0128 01400040 		mov	r3, #8
+ 1045 012c A2430040 		strb	r3, [r2, #0]
+ 1046              		.loc 1 531 0
+ 1047              		ldr	r2, .L31+8
+ 1048              		mov	r3, #64
+ 1049              		strb	r3, [r2, #0]
+ 1050              		.loc 1 532 0
+ 1051              		ldr	r2, .L31+12
+ 1052              		mvn	r3, #127
+ 1053              		strb	r3, [r2, #0]
+ 1054              		.loc 1 533 0
+ 1055              		ldr	r2, .L31+16
+ 525:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 526:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* Analog API Functions */
+ 527:./Generated_Source/PSoC5/cyfitter_cfg.c **** void AnalogSetDefault(void)
+ 528:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 1056              	c 1 534 0
+ 1057              		ldr	r2, .L31+20
+ 1058              		mov	r3, #68
+ 1059              		strb	r3, [r2, #0]
+ 1060 0000 80B4     		.loc 1 535 0
+ 1061              		mov	sp, r7
+ 1062 0002 00AF     		pop	{r7}
+ 1063              		bx	lr
+ 1064              	.L32:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 29
+
+
+ 529:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_IO_PRT_PRT0_AG, 0x80);
+ 1065              	
+ 1066 0004 0D4A     	.L31:
+ 1067 0006 6FF07F03 		.word	1073762573
+ 1068 000a 1370     		.word	1073764460
+ 530:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_ANAIF_CFG_BG_CR0, 0x08);
+ 1069              	ord	1073764609
+ 1070 000c 0C4A     		.word	1073765152
+ 1071 000e 4FF00803 		.word	1073765155
+ 1072 0012 1370     		.word	1073764470
+ 531:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_ANAIF_CFG_SAR0_CSR1, 0x40);
+ 1073              	6:
+ 1074 0014 0B4A     		.size	AnalogSetDefault, .-AnalogSetDefault
+ 1075 0016 4FF04003 		.section	.text.EnableDigitalRouting,"ax",%progbits
+ 1076 001a 1370     		.align	2
+ 532:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_ANAIF_RT_SAR0_SW0, 0x80);
+ 1077              	umb
+ 1078 001c 0A4A     		.thumb_func
+ 1079 001e 6FF07F03 		.type	EnableDigitalRouting, %function
+ 1080 0022 1370     	EnableDigitalRouting:
+ 533:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_ANAIF_RT_SAR0_SW3, 0x20);
+ 1081              	7:
+ 1082 0024 094A     		.loc 1 540 0
+ 1083 0026 4FF02003 		@ args = 0, pretend = 0, frame = 0
+ 1084 002a 1370     		@ frame_needed = 1, uses_anonymous_args = 0
+ 534:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_ANAIF_CFG_PUMP_CR0, 0x44);
+ 1085              	ink register save eliminated.
+ 1086 002c 084A     		push	{r7}
+ 1087 002e 4FF04403 	.LCFI14:
+ 1088 0032 1370     		add	r7, sp, #0
+ 535:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 1089              	I15:
+ 1090 0034 BD46     		@ lr needed for prologue
+ 1091 0036 80BC     		.loc 1 541 0
+ 1092 0038 7047     		ldr	r2, .L35
+ 1093              		ldr	r3, .L35
+ 1094 003a C046     		ldrb	r3, [r3, #0]
+ 1095              		uxtb	r3, r3
+ 1096 003c 0D510040 		orr	r3, r3, #2
+ 1097 0040 6C580040 		uxtb	r3, r3
+ 1098 0044 01590040 		strb	r3, [r2, #0]
+ 1099 0048 205B0040 		.loc 1 542 0
+ 1100 004c 235B0040 		ldr	r2, .L35+4
+ 1101 0050 76580040 		ldr	r3, .L35+4
+ 1102              		ldrb	r3, [r3, #0]
+ 1103              		uxtb	r3, r3
+ 1104              		orr	r3, r3, #2
+ 1105              		uxtb	r3, r3
+ 1106              		strb	r3, [r2, #0]
+ 1107              		.loc 1 543 0
+ 1108              		mov	sp, r7
+ 1109              		pop	{r7}
+ 1110              		bx	lr
+ 536:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 537:./Generated_Source/PSoC5/cyfitter_cfg.c **** #define CY_AMUX_UNUSED CYDEV_BOOST_SR
+ 538:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 539:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* Digital routing enable Functions */
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 30
+
+
+ 540:./Generated_Source/PSoC5/cyfitter_cfg.c **** static void EnableDigitalRouting() {
+ 1111              		.word	1073827843
+ 1112              		.word	1073827859
+ 1113              	.LFE7:
+ 1114              		.size	EnableDigitalRouting, .-EnableDigitalRouting
+ 1115 0000 80B4     		.section	.text.cyfitter_cfg,"ax",%progbits
+ 1116              		.align	2
+ 1117 0002 00AF     		.global	cyfitter_cfg
+ 1118              		.thumb
+ 1119              		.thumb_func
+ 541:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_UCFG_BCTL0_BANK_CTL, CY_GET_XTND_REG8(CYDEV_UCFG_BCTL0_BANK_CTL) | 0x02);
+ 1120              	fitter_cfg, %function
+ 1121 0004 094A     	cyfitter_cfg:
+ 1122 0006 094B     	.LFB8:
+ 1123 0008 1B78     		.loc 1 547 0
+ 1124 000a DBB2     		@ args = 0, pretend = 0, frame = 8
+ 1125 000c 43F00203 		@ frame_needed = 1, uses_anonymous_args = 0
+ 1126 0010 DBB2     		push	{r7, lr}
+ 1127 0012 1370     	.LCFI16:
+ 542:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_UCFG_BCTL1_BANK_CTL, CY_GET_XTND_REG8(CYDEV_UCFG_BCTL1_BANK_CTL) | 0x02);
+ 1128              	 sp, #8
+ 1129 0014 064A     	.LCFI17:
+ 1130 0016 064B     		add	r7, sp, #0
+ 1131 0018 1B78     	.LCFI18:
+ 1132 001a DBB2     		.loc 1 551 0
+ 1133 001c 43F00203 		CPSID   i
+ 1134 0020 DBB2     		.loc 1 554 0
+ 1135 0022 1370     		.thumb
+ 543:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 1136              	 .L42
+ 1137 0024 BD46     		mov	r3, #64
+ 1138 0026 80BC     		strb	r3, [r2, #0]
+ 1139 0028 7047     		.loc 1 555 0
+ 1140              		ldr	r2, .L42+4
+ 1141 002a C046     		mov	r3, #0
+ 1142              		strb	r3, [r2, #0]
+ 1143 002c 03500140 		.loc 1 556 0
+ 1144 0030 13500140 		ldr	r2, .L42+8
+ 1145              		mov	r3, #0
+ 1146              		strb	r3, [r2, #0]
+ 1147              		.loc 1 558 0
+ 1148              		ldr	r2, .L42+12
+ 1149              		ldr	r3, .L42+12
+ 1150              		ldrb	r3, [r3, #0]
+ 1151              		uxtb	r3, r3
+ 1152              		orr	r3, r3, #1
+ 1153              		uxtb	r3, r3
+ 1154              		strb	r3, [r2, #0]
+ 544:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 545:./Generated_Source/PSoC5/cyfitter_cfg.c **** /* This function is called by the start-up code for the selected device. */
+ 546:./Generated_Source/PSoC5/cyfitter_cfg.c **** void cyfitter_cfg(void)
+ 547:./Generated_Source/PSoC5/cyfitter_cfg.c **** {
+ 1155              	r3, #0
+ 1156              		strb	r3, [r7, #3]
+ 1157              		b	.L38
+ 1158 0000 80B5     	.L39:
+ 1159              	.LBB3:
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 31
+
+
+ 1160 0002 82B0     		.loc 1 561 0
+ 1161              		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1162 0004 00AF     		lsl	r2, r3, #1
+ 1163              		lsl	r3, r2, #2
+ 548:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	uint8 CYDATA i;
+ 549:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 550:./Generated_Source/PSoC5/cyfitter_cfg.c **** #ifdef CYGlobalIntDisable
+ 551:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYGlobalIntDisable;
+ 1164              	r2, r3
+ 1165 0006 72B6     		mov	r2, r3
+ 552:./Generated_Source/PSoC5/cyfitter_cfg.c **** #endif
+ 553:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 554:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CACHE_CC_CTL), ((CYDEV_INSTRUCT_CACHE_ENABLED) ? 0x40 : 0x41
+ 1166              	dr	r3, .L42+16
+ 1167              		add	r3, r2, r3
+ 1168 0008 504A     		str	r3, [r7, #4]
+ 1169 000a 4FF04003 		.loc 1 562 0
+ 1170 000e 1370     		ldr	r2, [r7, #4]
+ 555:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_PHUB_CH0_BASIC_CFG), 0x00);
+ 1171              		r1, [r2, #0]	@ zero_extendqisi2
+ 1172 0010 4F4A     		ldrb	r3, [r2, #1]	@ zero_extendqisi2
+ 1173 0012 4FF00003 		lsl	r3, r3, #8
+ 1174 0016 1370     		orr	r1, r3, r1
+ 556:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_PHUB_CH1_BASIC_CFG), 0x00);
+ 1175              	b	r3, [r2, #2]	@ zero_extendqisi2
+ 1176 0018 4E4A     		lsl	r3, r3, #16
+ 1177 001a 4FF00003 		orr	r1, r3, r1
+ 1178 001e 1370     		ldrb	r3, [r2, #3]	@ zero_extendqisi2
+ 557:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 558:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8(CYDEV_MFGCFG_MLOGIC_DBG_DBE, (CY_GET_XTND_REG8(CYDEV_MFGCFG_MLOGIC_DBG_DBE) | 0x0
+ 1179              		r3, r3, #24
+ 1180 0020 4D4A     		orr	r3, r3, r1
+ 1181 0022 4D4B     		mov	r1, r3
+ 1182 0024 1B78     		ldr	r3, [r7, #4]
+ 1183 0026 DBB2     		ldrb	r2, [r3, #4]	@ zero_extendqisi2
+ 1184 0028 43F00103 		ldrb	r3, [r3, #5]	@ zero_extendqisi2
+ 1185 002c DBB2     		lsl	r3, r3, #8
+ 1186 002e 1370     		orr	r3, r3, r2
+ 559:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	for (i = 0; i < CFG_MEMSET_COUNT; i++)
+ 1187              	, r3
+ 1188 0030 4FF00003 		mov	r0, r1
+ 1189 0034 FB70     		mov	r1, #0
+ 1190 0036 2EE0     		mov	r2, r3
+ 1191              		bl	cymemset
+ 1192              	.LBE3:
+ 560:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	{
+ 561:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		const cfg_memset_t CYCODE * CYDATA ms = &cfg_memset_list[i];
+ 1193              	1 559 0
+ 1194 0038 FB78     		ldrb	r3, [r7, #3]
+ 1195 003a 4FEA4302 		add	r3, r3, #1
+ 1196 003e 4FEA8203 		strb	r3, [r7, #3]
+ 1197 0042 C2EB0303 	.L38:
+ 1198 0046 1A46     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 1199 0048 444B     		cmp	r3, #9
+ 1200 004a 1344     		bls	.L39
+ 1201 004c 7B60     		.loc 1 565 0
+ 562:./Generated_Source/PSoC5/cyfitter_cfg.c **** 		CYMEMZERO(ms->address, ms->size);
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 32
+
+
+ 1202              	rite_bytes32
+ 1203 004e 7A68     		.loc 1 567 0
+ 1204 0050 1178     		ldr	r0, .L42+20
+ 1205 0052 5378     		ldr	r1, .L42+24
+ 1206 0054 4FEA0323 		mov	r2, #7
+ 1207 0058 43EA0101 		bl	cymemcpy8
+ 1208 005c 9378     		.loc 1 568 0
+ 1209 005e 4FEA0343 		ldr	r0, .L42+28
+ 1210 0062 43EA0101 		mov	r1, #7
+ 1211 0066 D378     		bl	cymemzero8
+ 1212 0068 4FEA0363 		.loc 1 569 0
+ 1213 006c 43EA0103 		ldr	r0, .L42+32
+ 1214 0070 1946     		ldr	r1, .L42+36
+ 1215 0072 7B68     		mov	r2, #7
+ 1216 0074 1A79     		bl	cymemcpy8
+ 1217 0076 5B79     		.loc 1 570 0
+ 1218 0078 4FEA0323 		ldr	r0, .L42+40
+ 1219 007c 43EA0203 		mov	r1, #7
+ 1220 0080 9BB2     		bl	cymemzero8
+ 1221 0082 0846     		.loc 1 571 0
+ 1222 0084 4FF00001 		ldr	r0, .L42+44
+ 1223 0088 1A46     		ldr	r1, .L42+48
+ 1224 008a FFF7FEFF 		mov	r2, #7
+ 1225              		bl	cymemcpy8
+ 1226              		.loc 1 572 0
+ 1227 008e FB78     		ldr	r0, .L42+52
+ 1228 0090 03F10103 		mov	r1, #7
+ 1229 0094 FB70     		bl	cymemzero8
+ 1230              		.loc 1 573 0
+ 1231 0096 FB78     		ldr	r0, .L42+56
+ 1232 0098 092B     		mov	r1, #7
+ 1233 009a CDD9     		bl	cymemzero8
+ 563:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	}
+ 564:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 565:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	cfg_write_bytes32();
+ 1234              	mov	r1, #6
+ 1235 009c FFF7FEFF 		bl	cymemzero8
+ 566:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 567:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE8((void CYFAR *)(CYDEV_PRTDSI_PRT0_BASE), (void CYCODE *)(BS_IOPORT_0_VAL), 7);
+ 1236              	loc 1 575 0
+ 1237 00a0 2F48     		ldr	r0, .L42+64
+ 1238 00a2 3049     		mov	r1, #7
+ 1239 00a4 4FF00702 		bl	cymemzero8
+ 1240 00a8 FFF7FEFF 		.loc 1 577 0
+ 568:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT1_BASE), 7);
+ 1241              	nableDigitalRouting
+ 1242 00ac 2E48     		.loc 1 579 0
+ 1243 00ae 4FF00701 		bl	CyEnableDigitalArray
+ 1244 00b2 FFF7FEFF 		.loc 1 581 0
+ 569:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE8((void CYFAR *)(CYDEV_PRTDSI_PRT2_BASE), (void CYCODE *)(BS_IOPORT_2_VAL), 7);
+ 1245              		r0, .L42+68
+ 1246 00b6 2D48     		ldr	r1, .L42+72
+ 1247 00b8 2D49     		mov	r2, #8
+ 1248 00ba 4FF00702 		bl	cymemcpy
+ 1249 00be FFF7FEFF 		.loc 1 582 0
+ 570:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT3_BASE), 7);
+ 1250              	r0, .L42+76
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 33
+
+
+ 1251 00c2 2C48     		ldr	r1, .L42+80
+ 1252 00c4 4FF00701 		mov	r2, #8
+ 1253 00c8 FFF7FEFF 		bl	cymemcpy
+ 571:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE8((void CYFAR *)(CYDEV_PRTDSI_PRT4_BASE), (void CYCODE *)(BS_IOPORT_4_VAL), 7);
+ 1254              	c 1 583 0
+ 1255 00cc 2A48     		ldr	r0, .L42+84
+ 1256 00ce 2B49     		ldr	r1, .L42+88
+ 1257 00d0 4FF00702 		mov	r2, #8
+ 1258 00d4 FFF7FEFF 		bl	cymemcpy
+ 572:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT5_BASE), 7);
+ 1259              	 1 586 0
+ 1260 00d8 2948     		ldr	r2, .L42
+ 1261 00da 4FF00701 		mov	r3, #0
+ 1262 00de FFF7FEFF 		strb	r3, [r2, #0]
+ 573:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT6_BASE), 7);
+ 1263              	c 1 587 0
+ 1264 00e2 2848     		bl	ClockSetup
+ 1265 00e4 4FF00701 		.loc 1 588 0
+ 1266 00e8 FFF7FEFF 		ldr	r2, .L42
+ 574:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT12_BASE), 6);
+ 1267              		r3, #64
+ 1268 00ec 2648     		strb	r3, [r2, #0]
+ 1269 00ee 4FF00601 		.loc 1 590 0
+ 1270 00f2 FFF7FEFF 		bl	AnalogSetDefault
+ 575:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYMEMZERO8((void CYFAR *)(CYDEV_PRTDSI_PRT15_BASE), 7);
+ 1271              	c 1 591 0
+ 1272 00f6 2548     		add	r7, r7, #8
+ 1273 00f8 4FF00701 		mov	sp, r7
+ 1274 00fc FFF7FEFF 		pop	{r7, pc}
+ 576:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	/* BYTES WRITTEN: 62 */
+ 577:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	EnableDigitalRouting();
+ 1275              	:
+ 1276 0100 FFF7FEFF 		.align	2
+ 578:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 579:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CyEnableDigitalArray();
+ 1277              	42:
+ 1278 0104 FFF7FEFF 		.word	1073760256
+ 580:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 581:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE((void CYFAR *)(CYDEV_IO_PRT_PRT0_DM0), (void CYCODE *)(BS_IOPINS0_0_VAL), 8);
+ 1279              	word	1073770512
+ 1280 0108 2148     		.word	1073770528
+ 1281 010a 2249     		.word	1073759976
+ 1282 010c 4FF00802 		.word	cfg_memset_list
+ 1283 0110 FFF7FEFF 		.word	1073762816
+ 582:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE((void CYFAR *)(CYDEV_IO_PRT_PRT2_DM0), (void CYCODE *)(BS_IOPINS0_2_VAL), 8);
+ 1284              	d	BS_IOPORT_0_VAL
+ 1285 0114 2048     		.word	1073762824
+ 1286 0116 2149     		.word	1073762832
+ 1287 0118 4FF00802 		.word	BS_IOPORT_2_VAL
+ 1288 011c FFF7FEFF 		.word	1073762840
+ 583:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CYCONFIGCPYCODE((void CYFAR *)(CYDEV_IO_PRT_PRT4_DM0), (void CYCODE *)(BS_IOPINS0_4_VAL), 8);
+ 1289              	d	1073762848
+ 1290 0120 1F48     		.word	BS_IOPORT_4_VAL
+ 1291 0122 2049     		.word	1073762856
+ 1292 0124 4FF00802 		.word	1073762864
+ 1293 0128 FFF7FEFF 		.word	1073762912
+ 584:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	/* BYTES WRITTEN: 24 */
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 34
+
+
+ 585:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 586:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CACHE_CC_CTL), ((CYDEV_INSTRUCT_CACHE_ENABLED) ? 0x00 : 0x01
+ 1294              	d	1073762936
+ 1295 012c 074A     		.word	1073762562
+ 1296 012e 4FF00003 		.word	BS_IOPINS0_0_VAL
+ 1297 0132 1370     		.word	1073762594
+ 587:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	ClockSetup();
+ 1298              	rd	BS_IOPINS0_2_VAL
+ 1299 0134 FFF7FEFF 		.word	1073762626
+ 588:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYDEV_CACHE_CC_CTL), ((CYDEV_INSTRUCT_CACHE_ENABLED) ? 0x40 : 0x41
+ 1300              	word	BS_IOPINS0_4_VAL
+ 1301 0138 044A     	.LFE8:
+ 1302 013a 4FF04003 		.size	cyfitter_cfg, .-cyfitter_cfg
+ 1303 013e 1370     		.section	.debug_frame,"",%progbits
+ 589:./Generated_Source/PSoC5/cyfitter_cfg.c **** 
+ 590:./Generated_Source/PSoC5/cyfitter_cfg.c **** 	AnalogSetDefault();
+ 1304              	ame0:
+ 1305 0140 FFF7FEFF 		.4byte	.LECIE0-.LSCIE0
+ 591:./Generated_Source/PSoC5/cyfitter_cfg.c **** }
+ 1306              	SCIE0:
+ 1307 0144 07F10807 		.4byte	0xffffffff
+ 1308 0148 BD46     		.byte	0x1
+ 1309 014a 80BD     		.ascii	"\000"
+ 1310              		.uleb128 0x1
+ 1311              		.sleb128 -4
+ 1312              		.byte	0xe
+ 1313 014c 00480040 		.byte	0xc
+ 1314 0150 10700040 		.uleb128 0xd
+ 1315 0154 20700040 		.uleb128 0x0
+ 1316 0158 E8460040 		.align	2
+ 1317 015c 00000000 	.LECIE0:
+ 1318 0160 00520040 	.LSFDE0:
+ 1319 0164 18000000 		.4byte	.LEFDE0-.LASFDE0
+ 1320 0168 08520040 	.LASFDE0:
+ 1321 016c 10520040 		.4byte	.Lframe0
+ 1322 0170 1F000000 		.4byte	.LFB2
+ 1323 0174 18520040 		.4byte	.LFE2-.LFB2
+ 1324 0178 20520040 		.byte	0x4
+ 1325 017c 26000000 		.4byte	.LCFI0-.LFB2
+ 1326 0180 28520040 		.byte	0xe
+ 1327 0184 30520040 		.uleb128 0x4
+ 1328 0188 60520040 		.byte	0x4
+ 1329 018c 78520040 		.4byte	.LCFI1-.LCFI0
+ 1330 0190 02510040 		.byte	0xe
+ 1331 0194 00000000 		.uleb128 0x18
+ 1332 0198 22510040 		.byte	0x87
+ 1333 019c 08000000 		.uleb128 0x1
+ 1334 01a0 42510040 		.byte	0x4
+ 1335 01a4 10000000 		.4byte	.LCFI2-.LCFI1
+ 1336              		.byte	0xd
+ 1337              		.uleb128 0x7
+ 1338              		.align	2
+ 1339              	.LEFDE0:
+ 1340 0000 0C000000 	.LSFDE2:
+ 1341              		.4byte	.LEFDE2-.LASFDE2
+ 1342 0004 FFFFFFFF 	.LASFDE2:
+ 1343 0008 01       		.4byte	.Lframe0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 35
+
+
+ 1344 0009 00       		.4byte	.LFB3
+ 1345 000a 01       		.4byte	.LFE3-.LFB3
+ 1346 000b 7C       		.byte	0x4
+ 1347 000c 0E       		.4byte	.LCFI3-.LFB3
+ 1348 000d 0C       		.byte	0xe
+ 1349 000e 0D       		.uleb128 0x4
+ 1350 000f 00       		.byte	0x4
+ 1351              		.4byte	.LCFI4-.LCFI3
+ 1352              		.byte	0xe
+ 1353              		.uleb128 0x18
+ 1354 0010 18000000 		.byte	0x87
+ 1355              		.uleb128 0x1
+ 1356 0014 00000000 		.byte	0x4
+ 1357 0018 00000000 		.4byte	.LCFI5-.LCFI4
+ 1358 001c 8C000000 		.byte	0xd
+ 1359 0020 42       		.uleb128 0x7
+ 1360              		.align	2
+ 1361 0021 0E       	.LEFDE2:
+ 1362 0022 04       	.LSFDE4:
+ 1363 0023 42       		.4byte	.LEFDE4-.LASFDE4
+ 1364              	.LASFDE4:
+ 1365 0024 0E       		.4byte	.Lframe0
+ 1366 0025 18       		.4byte	.LFB4
+ 1367 0026 87       		.4byte	.LFE4-.LFB4
+ 1368 0027 01       		.byte	0x4
+ 1369 0028 42       		.4byte	.LCFI6-.LFB4
+ 1370              		.byte	0xe
+ 1371 0029 0D       		.uleb128 0x4
+ 1372 002a 07       		.byte	0x4
+ 1373 002b 00       		.4byte	.LCFI7-.LCFI6
+ 1374              		.byte	0xe
+ 1375              		.uleb128 0x20
+ 1376 002c 18000000 		.byte	0x87
+ 1377              		.uleb128 0x1
+ 1378 0030 00000000 		.byte	0x4
+ 1379 0034 00000000 		.4byte	.LCFI8-.LCFI7
+ 1380 0038 42000000 		.byte	0xd
+ 1381 003c 42       		.uleb128 0x7
+ 1382              		.align	2
+ 1383 003d 0E       	.LEFDE4:
+ 1384 003e 04       	.LSFDE6:
+ 1385 003f 42       		.4byte	.LEFDE6-.LASFDE6
+ 1386              	.LASFDE6:
+ 1387 0040 0E       		.4byte	.Lframe0
+ 1388 0041 18       		.4byte	.LFB5
+ 1389 0042 87       		.4byte	.LFE5-.LFB5
+ 1390 0043 01       		.byte	0x4
+ 1391 0044 42       		.4byte	.LCFI9-.LFB5
+ 1392              		.byte	0xe
+ 1393 0045 0D       		.uleb128 0x8
+ 1394 0046 07       		.byte	0x4
+ 1395 0047 00       		.4byte	.LCFI10-.LCFI9
+ 1396              		.byte	0xe
+ 1397              		.uleb128 0x18
+ 1398 0048 18000000 		.byte	0x8e
+ 1399              		.uleb128 0x1
+ 1400 004c 00000000 		.byte	0x87
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 36
+
+
+ 1401 0050 00000000 		.uleb128 0x2
+ 1402 0054 50000000 		.byte	0x4
+ 1403 0058 42       		.4byte	.LCFI11-.LCFI10
+ 1404              		.byte	0xd
+ 1405 0059 0E       		.uleb128 0x7
+ 1406 005a 04       		.align	2
+ 1407 005b 42       	.LEFDE6:
+ 1408              	.LSFDE8:
+ 1409 005c 0E       		.4byte	.LEFDE8-.LASFDE8
+ 1410 005d 20       	.LASFDE8:
+ 1411 005e 87       		.4byte	.Lframe0
+ 1412 005f 01       		.4byte	.LFB6
+ 1413 0060 42       		.4byte	.LFE6-.LFB6
+ 1414              		.byte	0x4
+ 1415 0061 0D       		.4byte	.LCFI12-.LFB6
+ 1416 0062 07       		.byte	0xe
+ 1417 0063 00       		.uleb128 0x4
+ 1418              		.byte	0x87
+ 1419              		.uleb128 0x1
+ 1420 0064 1C000000 		.byte	0x4
+ 1421              		.4byte	.LCFI13-.LCFI12
+ 1422 0068 00000000 		.byte	0xd
+ 1423 006c 00000000 		.uleb128 0x7
+ 1424 0070 30010000 		.align	2
+ 1425 0074 42       	.LEFDE8:
+ 1426              	.LSFDE10:
+ 1427 0075 0E       		.4byte	.LEFDE10-.LASFDE10
+ 1428 0076 08       	.LASFDE10:
+ 1429 0077 42       		.4byte	.Lframe0
+ 1430              		.4byte	.LFB7
+ 1431 0078 0E       		.4byte	.LFE7-.LFB7
+ 1432 0079 18       		.byte	0x4
+ 1433 007a 8E       		.4byte	.LCFI14-.LFB7
+ 1434 007b 01       		.byte	0xe
+ 1435 007c 87       		.uleb128 0x4
+ 1436 007d 02       		.byte	0x87
+ 1437 007e 42       		.uleb128 0x1
+ 1438              		.byte	0x4
+ 1439 007f 0D       		.4byte	.LCFI15-.LCFI14
+ 1440 0080 07       		.byte	0xd
+ 1441 0081 000000   		.uleb128 0x7
+ 1442              		.align	2
+ 1443              	.LEFDE10:
+ 1444 0084 14000000 	.LSFDE12:
+ 1445              		.4byte	.LEFDE12-.LASFDE12
+ 1446 0088 00000000 	.LASFDE12:
+ 1447 008c 00000000 		.4byte	.Lframe0
+ 1448 0090 54000000 		.4byte	.LFB8
+ 1449 0094 42       		.4byte	.LFE8-.LFB8
+ 1450              		.byte	0x4
+ 1451 0095 0E       		.4byte	.LCFI16-.LFB8
+ 1452 0096 04       		.byte	0xe
+ 1453 0097 87       		.uleb128 0x8
+ 1454 0098 01       		.byte	0x4
+ 1455 0099 42       		.4byte	.LCFI17-.LCFI16
+ 1456              		.byte	0xe
+ 1457 009a 0D       		.uleb128 0x10
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 37
+
+
+ 1458 009b 07       		.byte	0x8e
+ 1459              		.uleb128 0x1
+ 1460              		.byte	0x87
+ 1461              		.uleb128 0x2
+ 1462 009c 14000000 		.byte	0x4
+ 1463              		.4byte	.LCFI18-.LCFI17
+ 1464 00a0 00000000 		.byte	0xd
+ 1465 00a4 00000000 		.uleb128 0x7
+ 1466 00a8 34000000 		.align	2
+ 1467 00ac 42       	.LEFDE12:
+ 1468              		.text
+ 1469 00ad 0E       	.Letext0:
+ 1470 00ae 04       		.section	.debug_loc,"",%progbits
+ 1471 00af 87       	.Ldebug_loc0:
+ 1472 00b0 01       	.LLST0:
+ 1473 00b1 42       		.4byte	.LFB2
+ 1474              		.4byte	.LCFI0
+ 1475 00b2 0D       		.2byte	0x1
+ 1476 00b3 07       		.byte	0x5d
+ 1477              		.4byte	.LCFI0
+ 1478              		.4byte	.LCFI1
+ 1479              		.2byte	0x2
+ 1480 00b4 1C000000 		.byte	0x7d
+ 1481              		.sleb128 4
+ 1482 00b8 00000000 		.4byte	.LCFI1
+ 1483 00bc 00000000 		.4byte	.LCFI2
+ 1484 00c0 A8010000 		.2byte	0x2
+ 1485 00c4 42       		.byte	0x7d
+ 1486              		.sleb128 24
+ 1487 00c5 0E       		.4byte	.LCFI2
+ 1488 00c6 08       		.4byte	.LFE2
+ 1489 00c7 42       		.2byte	0x2
+ 1490              		.byte	0x77
+ 1491 00c8 0E       		.sleb128 24
+ 1492 00c9 10       		.4byte	0x0
+ 1493 00ca 8E       		.4byte	0x0
+ 1494 00cb 01       	.LLST1:
+ 1495 00cc 87       		.4byte	.LFB3
+ 1496 00cd 02       		.4byte	.LCFI3
+ 1497 00ce 42       		.2byte	0x1
+ 1498              		.byte	0x5d
+ 1499 00cf 0D       		.4byte	.LCFI3
+ 1500 00d0 07       		.4byte	.LCFI4
+ 1501 00d1 000000   		.2byte	0x2
+ 1502              		.byte	0x7d
+ 1503              		.sleb128 4
+ 1504              		.4byte	.LCFI4
+ 1505              		.4byte	.LCFI5
+ 1506              		.2byte	0x2
+ 1507              		.byte	0x7d
+ 1508 0000 00000000 		.sleb128 24
+ 1509 0004 02000000 		.4byte	.LCFI5
+ 1510 0008 0100     		.4byte	.LFE3
+ 1511 000a 5D       		.2byte	0x2
+ 1512 000b 02000000 		.byte	0x77
+ 1513 000f 04000000 		.sleb128 24
+ 1514 0013 0200     		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 38
+
+
+ 1515 0015 7D       		.4byte	0x0
+ 1516 0016 04       	.LLST2:
+ 1517 0017 04000000 		.4byte	.LFB4
+ 1518 001b 06000000 		.4byte	.LCFI6
+ 1519 001f 0200     		.2byte	0x1
+ 1520 0021 7D       		.byte	0x5d
+ 1521 0022 18       		.4byte	.LCFI6
+ 1522 0023 06000000 		.4byte	.LCFI7
+ 1523 0027 8C000000 		.2byte	0x2
+ 1524 002b 0200     		.byte	0x7d
+ 1525 002d 77       		.sleb128 4
+ 1526 002e 18       		.4byte	.LCFI7
+ 1527 002f 00000000 		.4byte	.LCFI8
+ 1528 0033 00000000 		.2byte	0x2
+ 1529              		.byte	0x7d
+ 1530 0037 00000000 		.sleb128 32
+ 1531 003b 02000000 		.4byte	.LCFI8
+ 1532 003f 0100     		.4byte	.LFE4
+ 1533 0041 5D       		.2byte	0x2
+ 1534 0042 02000000 		.byte	0x77
+ 1535 0046 04000000 		.sleb128 32
+ 1536 004a 0200     		.4byte	0x0
+ 1537 004c 7D       		.4byte	0x0
+ 1538 004d 04       	.LLST3:
+ 1539 004e 04000000 		.4byte	.LFB5
+ 1540 0052 06000000 		.4byte	.LCFI9
+ 1541 0056 0200     		.2byte	0x1
+ 1542 0058 7D       		.byte	0x5d
+ 1543 0059 18       		.4byte	.LCFI9
+ 1544 005a 06000000 		.4byte	.LCFI10
+ 1545 005e 42000000 		.2byte	0x2
+ 1546 0062 0200     		.byte	0x7d
+ 1547 0064 77       		.sleb128 8
+ 1548 0065 18       		.4byte	.LCFI10
+ 1549 0066 00000000 		.4byte	.LCFI11
+ 1550 006a 00000000 		.2byte	0x2
+ 1551              		.byte	0x7d
+ 1552 006e 00000000 		.sleb128 24
+ 1553 0072 02000000 		.4byte	.LCFI11
+ 1554 0076 0100     		.4byte	.LFE5
+ 1555 0078 5D       		.2byte	0x2
+ 1556 0079 02000000 		.byte	0x77
+ 1557 007d 04000000 		.sleb128 24
+ 1558 0081 0200     		.4byte	0x0
+ 1559 0083 7D       		.4byte	0x0
+ 1560 0084 04       	.LLST4:
+ 1561 0085 04000000 		.4byte	.LFB6
+ 1562 0089 06000000 		.4byte	.LCFI12
+ 1563 008d 0200     		.2byte	0x1
+ 1564 008f 7D       		.byte	0x5d
+ 1565 0090 20       		.4byte	.LCFI12
+ 1566 0091 06000000 		.4byte	.LCFI13
+ 1567 0095 50000000 		.2byte	0x2
+ 1568 0099 0200     		.byte	0x7d
+ 1569 009b 77       		.sleb128 4
+ 1570 009c 20       		.4byte	.LCFI13
+ 1571 009d 00000000 		.4byte	.LFE6
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 39
+
+
+ 1572 00a1 00000000 		.2byte	0x2
+ 1573              		.byte	0x77
+ 1574 00a5 00000000 		.sleb128 4
+ 1575 00a9 02000000 		.4byte	0x0
+ 1576 00ad 0100     		.4byte	0x0
+ 1577 00af 5D       	.LLST5:
+ 1578 00b0 02000000 		.4byte	.LFB7
+ 1579 00b4 04000000 		.4byte	.LCFI14
+ 1580 00b8 0200     		.2byte	0x1
+ 1581 00ba 7D       		.byte	0x5d
+ 1582 00bb 08       		.4byte	.LCFI14
+ 1583 00bc 04000000 		.4byte	.LCFI15
+ 1584 00c0 06000000 		.2byte	0x2
+ 1585 00c4 0200     		.byte	0x7d
+ 1586 00c6 7D       		.sleb128 4
+ 1587 00c7 18       		.4byte	.LCFI15
+ 1588 00c8 06000000 		.4byte	.LFE7
+ 1589 00cc 30010000 		.2byte	0x2
+ 1590 00d0 0200     		.byte	0x77
+ 1591 00d2 77       		.sleb128 4
+ 1592 00d3 18       		.4byte	0x0
+ 1593 00d4 00000000 		.4byte	0x0
+ 1594 00d8 00000000 	.LLST6:
+ 1595              		.4byte	.LFB8
+ 1596 00dc 00000000 		.4byte	.LCFI16
+ 1597 00e0 02000000 		.2byte	0x1
+ 1598 00e4 0100     		.byte	0x5d
+ 1599 00e6 5D       		.4byte	.LCFI16
+ 1600 00e7 02000000 		.4byte	.LCFI17
+ 1601 00eb 04000000 		.2byte	0x2
+ 1602 00ef 0200     		.byte	0x7d
+ 1603 00f1 7D       		.sleb128 8
+ 1604 00f2 04       		.4byte	.LCFI17
+ 1605 00f3 04000000 		.4byte	.LCFI18
+ 1606 00f7 54000000 		.2byte	0x2
+ 1607 00fb 0200     		.byte	0x7d
+ 1608 00fd 77       		.sleb128 16
+ 1609 00fe 04       		.4byte	.LCFI18
+ 1610 00ff 00000000 		.4byte	.LFE8
+ 1611 0103 00000000 		.2byte	0x2
+ 1612              		.byte	0x77
+ 1613 0107 00000000 		.sleb128 16
+ 1614 010b 02000000 		.4byte	0x0
+ 1615 010f 0100     		.4byte	0x0
+ 1616 0111 5D       		.file 2 "./Generated_Source/PSoC5/cytypes.h"
+ 1617 0112 02000000 		.section	.debug_info
+ 1618 0116 04000000 		.4byte	0x60a
+ 1619 011a 0200     		.2byte	0x2
+ 1620 011c 7D       		.4byte	.Ldebug_abbrev0
+ 1621 011d 04       		.byte	0x4
+ 1622 011e 04000000 		.uleb128 0x1
+ 1623 0122 34000000 		.ascii	"GNU C 4.2.1\000"
+ 1624 0126 0200     		.byte	0x1
+ 1625 0128 77       		.ascii	"./Generated_Source/PSoC5/cyfitter_cfg.c\000"
+ 1626 0129 04       		.ascii	"C:\\Users\\blinky\\Documents\\PSoC Creator\\CarStai"
+ 1627 012a 00000000 		.ascii	"ro\\CarStairo.cydsn\000"
+ 1628 012e 00000000 		.4byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 40
+
+
+ 1629              		.4byte	.Ldebug_line0
+ 1630 0132 00000000 		.uleb128 0x2
+ 1631 0136 02000000 		.byte	0x1
+ 1632 013a 0100     		.byte	0x8
+ 1633 013c 5D       		.ascii	"unsigned char\000"
+ 1634 013d 02000000 		.uleb128 0x3
+ 1635 0141 04000000 		.ascii	"uint8\000"
+ 1636 0145 0200     		.byte	0x2
+ 1637 0147 7D       		.byte	0x25
+ 1638 0148 08       		.4byte	0x8a
+ 1639 0149 04000000 		.uleb128 0x3
+ 1640 014d 06000000 		.ascii	"uint16\000"
+ 1641 0151 0200     		.byte	0x2
+ 1642 0153 7D       		.byte	0x26
+ 1643 0154 10       		.4byte	0xb6
+ 1644 0155 06000000 		.uleb128 0x2
+ 1645 0159 A8010000 		.byte	0x2
+ 1646 015d 0200     		.byte	0x7
+ 1647 015f 77       		.ascii	"short unsigned int\000"
+ 1648 0160 10       		.uleb128 0x3
+ 1649 0161 00000000 		.ascii	"uint32\000"
+ 1650 0165 00000000 		.byte	0x2
+ 1651              		.byte	0x27
+ 1652              		.4byte	0xda
+ 1653 0000 0A060000 		.uleb128 0x2
+ 1654 0004 0200     		.byte	0x4
+ 1655 0006 00000000 		.byte	0x7
+ 1656 000a 04       		.ascii	"long unsigned int\000"
+ 1657 000b 01       		.uleb128 0x2
+ 1658 000c 474E5520 		.byte	0x1
+ 1658      4320342E 
+ 1658      322E3100 
+ 1659 0018 01       		.byte	0x6
+ 1660 0019 2E2F4765 		.ascii	"signed char\000"
+ 1660      6E657261 
+ 1660      7465645F 
+ 1660      536F7572 
+ 1660      63652F50 
+ 1661 0041 433A5C55 		.uleb128 0x2
+ 1661      73657273 
+ 1661      5C626C69 
+ 1661      6E6B795C 
+ 1661      446F6375 
+ 1662 006f 726F5C43 		.byte	0x2
+ 1662      61725374 
+ 1662      6169726F 
+ 1662      2E637964 
+ 1662      736E00
+ 1663 0082 00000000 		.byte	0x5
+ 1664 0086 00000000 		.ascii	"short int\000"
+ 1665 008a 02       		.uleb128 0x2
+ 1666 008b 01       		.byte	0x4
+ 1667 008c 08       		.byte	0x5
+ 1668 008d 756E7369 		.ascii	"long int\000"
+ 1668      676E6564 
+ 1668      20636861 
+ 1668      7200
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 41
+
+
+ 1669 009b 03       		.uleb128 0x4
+ 1670 009c 75696E74 		.4byte	0x8a
+ 1670      3800
+ 1671 00a2 02       		.uleb128 0x4
+ 1672 00a3 25       		.4byte	0xda
+ 1673 00a4 8A000000 		.uleb128 0x2
+ 1674 00a8 03       		.byte	0x4
+ 1675 00a9 75696E74 		.byte	0x5
+ 1675      313600
+ 1676 00b0 02       		.ascii	"int\000"
+ 1677 00b1 26       		.uleb128 0x2
+ 1678 00b2 B6000000 		.byte	0x8
+ 1679 00b6 02       		.byte	0x5
+ 1680 00b7 02       		.ascii	"long long int\000"
+ 1681 00b8 07       		.uleb128 0x2
+ 1682 00b9 73686F72 		.byte	0x4
+ 1682      7420756E 
+ 1682      7369676E 
+ 1682      65642069 
+ 1682      6E7400
+ 1683 00cc 03       		.byte	0x7
+ 1684 00cd 75696E74 		.ascii	"unsigned int\000"
+ 1684      333200
+ 1685 00d4 02       		.uleb128 0x5
+ 1686 00d5 27       		.byte	0x4
+ 1687 00d6 DA000000 		.byte	0x7
+ 1688 00da 02       		.uleb128 0x6
+ 1689 00db 04       		.byte	0x4
+ 1690 00dc 07       		.uleb128 0x2
+ 1691 00dd 6C6F6E67 		.byte	0x1
+ 1691      20756E73 
+ 1691      69676E65 
+ 1691      6420696E 
+ 1691      7400
+ 1692 00ef 02       		.byte	0x8
+ 1693 00f0 01       		.ascii	"char\000"
+ 1694 00f1 06       		.uleb128 0x2
+ 1695 00f2 7369676E 		.byte	0x8
+ 1695      65642063 
+ 1695      68617200 
+ 1696 00fe 02       		.byte	0x7
+ 1697 00ff 02       		.ascii	"long long unsigned int\000"
+ 1698 0100 05       		.uleb128 0x7
+ 1699 0101 73686F72 		.byte	0x6
+ 1699      7420696E 
+ 1699      7400
+ 1700 010b 02       		.byte	0x1
+ 1701 010c 04       		.byte	0x4d
+ 1702 010d 05       		.4byte	0x19a
+ 1703 010e 6C6F6E67 		.uleb128 0x8
+ 1703      20696E74 
+ 1703      00
+ 1704 0117 04       		.ascii	"address\000"
+ 1705 0118 8A000000 		.byte	0x1
+ 1706 011c 04       		.byte	0x4e
+ 1707 011d DA000000 		.4byte	0x14c
+ 1708 0121 02       		.byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 42
+
+
+ 1709 0122 04       		.byte	0x23
+ 1710 0123 05       		.uleb128 0x0
+ 1711 0124 696E7400 		.uleb128 0x8
+ 1712 0128 02       		.ascii	"size\000"
+ 1713 0129 08       		.byte	0x1
+ 1714 012a 05       		.byte	0x4f
+ 1715 012b 6C6F6E67 		.4byte	0xa8
+ 1715      206C6F6E 
+ 1715      6720696E 
+ 1715      7400
+ 1716 0139 02       		.byte	0x2
+ 1717 013a 04       		.byte	0x23
+ 1718 013b 07       		.uleb128 0x4
+ 1719 013c 756E7369 		.byte	0x0
+ 1719      676E6564 
+ 1719      20696E74 
+ 1719      00
+ 1720 0149 05       		.uleb128 0x3
+ 1721 014a 04       		.ascii	"cfg_memset_t\000"
+ 1722 014b 07       		.byte	0x1
+ 1723 014c 06       		.byte	0x50
+ 1724 014d 04       		.4byte	0x170
+ 1725 014e 02       		.uleb128 0x9
+ 1726 014f 01       		.byte	0x4
+ 1727 0150 08       		.4byte	0x1b4
+ 1728 0151 63686172 		.uleb128 0xa
+ 1728      00
+ 1729 0156 02       		.uleb128 0x7
+ 1730 0157 08       		.byte	0x2
+ 1731 0158 07       		.byte	0x1
+ 1732 0159 6C6F6E67 		.byte	0x69
+ 1732      206C6F6E 
+ 1732      6720756E 
+ 1732      7369676E 
+ 1732      65642069 
+ 1733 0170 07       		.4byte	0x1df
+ 1734 0171 06       		.uleb128 0x8
+ 1735 0172 01       		.ascii	"offset\000"
+ 1736 0173 4D       		.byte	0x1
+ 1737 0174 9A010000 		.byte	0x6a
+ 1738 0178 08       		.4byte	0x9b
+ 1739 0179 61646472 		.byte	0x2
+ 1739      65737300 
+ 1740 0181 01       		.byte	0x23
+ 1741 0182 4E       		.uleb128 0x0
+ 1742 0183 4C010000 		.uleb128 0x8
+ 1743 0187 02       		.ascii	"value\000"
+ 1744 0188 23       		.byte	0x1
+ 1745 0189 00       		.byte	0x6b
+ 1746 018a 08       		.4byte	0x9b
+ 1747 018b 73697A65 		.byte	0x2
+ 1747      00
+ 1748 0190 01       		.byte	0x23
+ 1749 0191 4F       		.uleb128 0x1
+ 1750 0192 A8000000 		.byte	0x0
+ 1751 0196 02       		.uleb128 0x3
+ 1752 0197 23       		.ascii	"cy_cfg_addrvalue_t\000"
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 43
+
+
+ 1753 0198 04       		.byte	0x1
+ 1754 0199 00       		.byte	0x6c
+ 1755 019a 03       		.4byte	0x1b5
+ 1756 019b 6366675F 		.uleb128 0xb
+ 1756      6D656D73 
+ 1756      65745F74 
+ 1756      00
+ 1757 01a8 01       		.ascii	"cfg_write_bytes32\000"
+ 1758 01a9 50       		.byte	0x1
+ 1759 01aa 70010000 		.2byte	0x1bd
+ 1760 01ae 09       		.byte	0x1
+ 1761 01af 04       		.4byte	.LFB2
+ 1762 01b0 B4010000 		.4byte	.LFE2
+ 1763 01b4 0A       		.4byte	.LLST0
+ 1764 01b5 07       		.4byte	0x26a
+ 1765 01b6 02       		.uleb128 0xc
+ 1766 01b7 01       		.ascii	"i\000"
+ 1767 01b8 69       		.byte	0x1
+ 1768 01b9 DF010000 		.2byte	0x1be
+ 1769 01bd 08       		.4byte	0x139
+ 1770 01be 6F666673 		.byte	0x2
+ 1770      657400
+ 1771 01c5 01       		.byte	0x91
+ 1772 01c6 6A       		.sleb128 -24
+ 1773 01c7 9B000000 		.uleb128 0xc
+ 1774 01cb 02       		.ascii	"j\000"
+ 1775 01cc 23       		.byte	0x1
+ 1776 01cd 00       		.2byte	0x1be
+ 1777 01ce 08       		.4byte	0x139
+ 1778 01cf 76616C75 		.byte	0x2
+ 1778      6500
+ 1779 01d5 01       		.byte	0x91
+ 1780 01d6 6B       		.sleb128 -20
+ 1781 01d7 9B000000 		.uleb128 0xd
+ 1782 01db 02       		.4byte	.LBB2
+ 1783 01dc 23       		.4byte	.LBE2
+ 1784 01dd 01       		.uleb128 0xc
+ 1785 01de 00       		.ascii	"baseAddr\000"
+ 1786 01df 03       		.byte	0x1
+ 1787 01e0 63795F63 		.2byte	0x1c1
+ 1787      66675F61 
+ 1787      64647276 
+ 1787      616C7565 
+ 1787      5F7400
+ 1788 01f3 01       		.4byte	0xcc
+ 1789 01f4 6C       		.byte	0x2
+ 1790 01f5 B5010000 		.byte	0x91
+ 1791 01f9 0B       		.sleb128 -16
+ 1792 01fa 6366675F 		.uleb128 0xc
+ 1792      77726974 
+ 1792      655F6279 
+ 1792      74657333 
+ 1792      3200
+ 1793 020c 01       		.ascii	"count\000"
+ 1794 020d BD01     		.byte	0x1
+ 1795 020f 01       		.2byte	0x1c2
+ 1796 0210 00000000 		.4byte	0x9b
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 44
+
+
+ 1797 0214 8C000000 		.byte	0x2
+ 1798 0218 00000000 		.byte	0x91
+ 1799 021c 6A020000 		.sleb128 -9
+ 1800 0220 0C       		.byte	0x0
+ 1801 0221 6900     		.byte	0x0
+ 1802 0223 01       		.uleb128 0xb
+ 1803 0224 BE01     		.ascii	"cymemzero8\000"
+ 1804 0226 39010000 		.byte	0x1
+ 1805 022a 02       		.2byte	0x1d6
+ 1806 022b 91       		.byte	0x1
+ 1807 022c 68       		.4byte	.LFB3
+ 1808 022d 0C       		.4byte	.LFE3
+ 1809 022e 6A00     		.4byte	.LLST1
+ 1810 0230 01       		.4byte	0x2bd
+ 1811 0231 BE01     		.uleb128 0xe
+ 1812 0233 39010000 		.ascii	"addr\000"
+ 1813 0237 02       		.byte	0x1
+ 1814 0238 91       		.2byte	0x1d5
+ 1815 0239 6C       		.4byte	0x14c
+ 1816 023a 0D       		.byte	0x2
+ 1817 023b 14000000 		.byte	0x91
+ 1818 023f 6A000000 		.sleb128 -20
+ 1819 0243 0C       		.uleb128 0xe
+ 1820 0244 62617365 		.ascii	"count\000"
+ 1820      41646472 
+ 1820      00
+ 1821 024d 01       		.byte	0x1
+ 1822 024e C101     		.2byte	0x1d5
+ 1823 0250 CC000000 		.4byte	0x139
+ 1824 0254 02       		.byte	0x2
+ 1825 0255 91       		.byte	0x91
+ 1826 0256 70       		.sleb128 -24
+ 1827 0257 0C       		.uleb128 0xc
+ 1828 0258 636F756E 		.ascii	"addr8\000"
+ 1828      7400
+ 1829 025e 01       		.byte	0x1
+ 1830 025f C201     		.2byte	0x1d7
+ 1831 0261 9B000000 		.4byte	0x2bd
+ 1832 0265 02       		.byte	0x2
+ 1833 0266 91       		.byte	0x91
+ 1834 0267 77       		.sleb128 -12
+ 1835 0268 00       		.byte	0x0
+ 1836 0269 00       		.uleb128 0x9
+ 1837 026a 0B       		.byte	0x4
+ 1838 026b 63796D65 		.4byte	0x9b
+ 1838      6D7A6572 
+ 1838      6F3800
+ 1839 0276 01       		.uleb128 0xb
+ 1840 0277 D601     		.ascii	"cymemcpy8\000"
+ 1841 0279 01       		.byte	0x1
+ 1842 027a 00000000 		.2byte	0x1e3
+ 1843 027e 42000000 		.byte	0x1
+ 1844 0282 37000000 		.4byte	.LFB4
+ 1845 0286 BD020000 		.4byte	.LFE4
+ 1846 028a 0E       		.4byte	.LLST2
+ 1847 028b 61646472 		.4byte	0x334
+ 1847      00
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 45
+
+
+ 1848 0290 01       		.uleb128 0xe
+ 1849 0291 D501     		.ascii	"dest\000"
+ 1850 0293 4C010000 		.byte	0x1
+ 1851 0297 02       		.2byte	0x1e2
+ 1852 0298 91       		.4byte	0x14c
+ 1853 0299 6C       		.byte	0x2
+ 1854 029a 0E       		.byte	0x91
+ 1855 029b 636F756E 		.sleb128 -20
+ 1855      7400
+ 1856 02a1 01       		.uleb128 0xe
+ 1857 02a2 D501     		.ascii	"src\000"
+ 1858 02a4 39010000 		.byte	0x1
+ 1859 02a8 02       		.2byte	0x1e2
+ 1860 02a9 91       		.4byte	0x1ae
+ 1861 02aa 68       		.byte	0x2
+ 1862 02ab 0C       		.byte	0x91
+ 1863 02ac 61646472 		.sleb128 -24
+ 1863      3800
+ 1864 02b2 01       		.uleb128 0xe
+ 1865 02b3 D701     		.ascii	"count\000"
+ 1866 02b5 BD020000 		.byte	0x1
+ 1867 02b9 02       		.2byte	0x1e2
+ 1868 02ba 91       		.4byte	0x139
+ 1869 02bb 74       		.byte	0x2
+ 1870 02bc 00       		.byte	0x91
+ 1871 02bd 09       		.sleb128 -28
+ 1872 02be 04       		.uleb128 0xc
+ 1873 02bf 9B000000 		.ascii	"dest8\000"
+ 1874 02c3 0B       		.byte	0x1
+ 1875 02c4 63796D65 		.2byte	0x1e4
+ 1875      6D637079 
+ 1875      3800
+ 1876 02ce 01       		.4byte	0x2bd
+ 1877 02cf E301     		.byte	0x2
+ 1878 02d1 01       		.byte	0x91
+ 1879 02d2 00000000 		.sleb128 -16
+ 1880 02d6 50000000 		.uleb128 0xc
+ 1881 02da 6E000000 		.ascii	"src8\000"
+ 1882 02de 34030000 		.byte	0x1
+ 1883 02e2 0E       		.2byte	0x1e5
+ 1884 02e3 64657374 		.4byte	0x334
+ 1884      00
+ 1885 02e8 01       		.byte	0x2
+ 1886 02e9 E201     		.byte	0x91
+ 1887 02eb 4C010000 		.sleb128 -12
+ 1888 02ef 02       		.byte	0x0
+ 1889 02f0 91       		.uleb128 0x9
+ 1890 02f1 6C       		.byte	0x4
+ 1891 02f2 0E       		.4byte	0x33a
+ 1892 02f3 73726300 		.uleb128 0xf
+ 1893 02f7 01       		.4byte	0x9b
+ 1894 02f8 E201     		.uleb128 0xb
+ 1895 02fa AE010000 		.ascii	"ClockSetup\000"
+ 1896 02fe 02       		.byte	0x1
+ 1897 02ff 91       		.2byte	0x1f5
+ 1898 0300 68       		.byte	0x1
+ 1899 0301 0E       		.4byte	.LFB5
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 46
+
+
+ 1900 0302 636F756E 		.4byte	.LFE5
+ 1900      7400
+ 1901 0308 01       		.4byte	.LLST3
+ 1902 0309 E201     		.4byte	0x39b
+ 1903 030b 39010000 		.uleb128 0xc
+ 1904 030f 02       		.ascii	"timeout\000"
+ 1905 0310 91       		.byte	0x1
+ 1906 0311 64       		.2byte	0x1f6
+ 1907 0312 0C       		.4byte	0x11c
+ 1908 0313 64657374 		.byte	0x2
+ 1908      3800
+ 1909 0319 01       		.byte	0x91
+ 1910 031a E401     		.sleb128 -16
+ 1911 031c BD020000 		.uleb128 0xc
+ 1912 0320 02       		.ascii	"timeout_p\000"
+ 1913 0321 91       		.byte	0x1
+ 1914 0322 70       		.2byte	0x1f7
+ 1915 0323 0C       		.4byte	0x39b
+ 1916 0324 73726338 		.byte	0x2
+ 1916      00
+ 1917 0329 01       		.byte	0x91
+ 1918 032a E501     		.sleb128 -12
+ 1919 032c 34030000 		.uleb128 0xc
+ 1920 0330 02       		.ascii	"pllLock\000"
+ 1921 0331 91       		.byte	0x1
+ 1922 0332 74       		.2byte	0x1f8
+ 1923 0333 00       		.4byte	0x117
+ 1924 0334 09       		.byte	0x2
+ 1925 0335 04       		.byte	0x91
+ 1926 0336 3A030000 		.sleb128 -17
+ 1927 033a 0F       		.byte	0x0
+ 1928 033b 9B000000 		.uleb128 0x9
+ 1929 033f 0B       		.byte	0x4
+ 1930 0340 436C6F63 		.4byte	0x11c
+ 1930      6B536574 
+ 1930      757000
+ 1931 034b 01       		.uleb128 0x10
+ 1932 034c F501     		.byte	0x1
+ 1933 034e 01       		.ascii	"AnalogSetDefault\000"
+ 1934 034f 00000000 		.byte	0x1
+ 1935 0353 30010000 		.2byte	0x210
+ 1936 0357 A5000000 		.byte	0x1
+ 1937 035b 9B030000 		.4byte	.LFB6
+ 1938 035f 0C       		.4byte	.LFE6
+ 1939 0360 74696D65 		.4byte	.LLST4
+ 1939      6F757400 
+ 1940 0368 01       		.uleb128 0x11
+ 1941 0369 F601     		.ascii	"EnableDigitalRouting\000"
+ 1942 036b 1C010000 		.byte	0x1
+ 1943 036f 02       		.2byte	0x21c
+ 1944 0370 91       		.4byte	.LFB7
+ 1945 0371 70       		.4byte	.LFE7
+ 1946 0372 0C       		.4byte	.LLST5
+ 1947 0373 74696D65 		.uleb128 0x12
+ 1947      6F75745F 
+ 1947      7000
+ 1948 037d 01       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 47
+
+
+ 1949 037e F701     		.ascii	"cyfitter_cfg\000"
+ 1950 0380 9B030000 		.byte	0x1
+ 1951 0384 02       		.2byte	0x223
+ 1952 0385 91       		.byte	0x1
+ 1953 0386 74       		.4byte	.LFB8
+ 1954 0387 0C       		.4byte	.LFE8
+ 1955 0388 706C6C4C 		.4byte	.LLST6
+ 1955      6F636B00 
+ 1956 0390 01       		.4byte	0x432
+ 1957 0391 F801     		.uleb128 0xc
+ 1958 0393 17010000 		.ascii	"i\000"
+ 1959 0397 02       		.byte	0x1
+ 1960 0398 91       		.2byte	0x224
+ 1961 0399 6F       		.4byte	0x9b
+ 1962 039a 00       		.byte	0x2
+ 1963 039b 09       		.byte	0x91
+ 1964 039c 04       		.sleb128 -13
+ 1965 039d 1C010000 		.uleb128 0xd
+ 1966 03a1 10       		.4byte	.LBB3
+ 1967 03a2 01       		.4byte	.LBE3
+ 1968 03a3 416E616C 		.uleb128 0xc
+ 1968      6F675365 
+ 1968      74446566 
+ 1968      61756C74 
+ 1968      00
+ 1969 03b4 01       		.ascii	"ms\000"
+ 1970 03b5 1002     		.byte	0x1
+ 1971 03b7 01       		.2byte	0x231
+ 1972 03b8 00000000 		.4byte	0x432
+ 1973 03bc 54000000 		.byte	0x2
+ 1974 03c0 DC000000 		.byte	0x91
+ 1975 03c4 11       		.sleb128 -12
+ 1976 03c5 456E6162 		.byte	0x0
+ 1976      6C654469 
+ 1976      67697461 
+ 1976      6C526F75 
+ 1976      74696E67 
+ 1977 03da 01       		.byte	0x0
+ 1978 03db 1C02     		.uleb128 0x9
+ 1979 03dd 00000000 		.byte	0x4
+ 1980 03e1 34000000 		.4byte	0x438
+ 1981 03e5 07010000 		.uleb128 0xf
+ 1982 03e9 12       		.4byte	0x19a
+ 1983 03ea 01       		.uleb128 0x13
+ 1984 03eb 63796669 		.4byte	0x19a
+ 1984      74746572 
+ 1984      5F636667 
+ 1984      00
+ 1985 03f8 01       		.4byte	0x44d
+ 1986 03f9 2302     		.uleb128 0x14
+ 1987 03fb 01       		.4byte	0x149
+ 1988 03fc 00000000 		.byte	0x9
+ 1989 0400 A8010000 		.byte	0x0
+ 1990 0404 32010000 		.uleb128 0x15
+ 1991 0408 32040000 		.ascii	"cfg_memset_list\000"
+ 1992 040c 0C       		.byte	0x1
+ 1993 040d 6900     		.byte	0x59
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 48
+
+
+ 1994 040f 01       		.4byte	0x46a
+ 1995 0410 2402     		.byte	0x5
+ 1996 0412 9B000000 		.byte	0x3
+ 1997 0416 02       		.4byte	cfg_memset_list
+ 1998 0417 91       		.uleb128 0xf
+ 1999 0418 73       		.4byte	0x43d
+ 2000 0419 0D       		.uleb128 0x13
+ 2001 041a 38000000 		.4byte	0xcc
+ 2002 041e 8E000000 		.4byte	0x47f
+ 2003 0422 0C       		.uleb128 0x14
+ 2004 0423 6D7300   		.4byte	0x149
+ 2005 0426 01       		.byte	0x18
+ 2006 0427 3102     		.byte	0x0
+ 2007 0429 32040000 		.uleb128 0x15
+ 2008 042d 02       		.ascii	"cy_cfg_addr_table\000"
+ 2009 042e 91       		.byte	0x1
+ 2010 042f 74       		.byte	0x6e
+ 2011 0430 00       		.4byte	0x49e
+ 2012 0431 00       		.byte	0x5
+ 2013 0432 09       		.byte	0x3
+ 2014 0433 04       		.4byte	cy_cfg_addr_table
+ 2015 0434 38040000 		.uleb128 0xf
+ 2016 0438 0F       		.4byte	0x46f
+ 2017 0439 9A010000 		.uleb128 0x13
+ 2018 043d 13       		.4byte	0x1df
+ 2019 043e 9A010000 		.4byte	0x4b4
+ 2020 0442 4D040000 		.uleb128 0x16
+ 2021 0446 14       		.4byte	0x149
+ 2022 0447 49010000 		.2byte	0x10f
+ 2023 044b 09       		.byte	0x0
+ 2024 044c 00       		.uleb128 0x15
+ 2025 044d 15       		.ascii	"cy_cfg_data_table\000"
+ 2026 044e 6366675F 		.byte	0x1
+ 2026      6D656D73 
+ 2026      65745F6C 
+ 2026      69737400 
+ 2027 045e 01       		.byte	0x8a
+ 2028 045f 59       		.4byte	0x4d3
+ 2029 0460 6A040000 		.byte	0x5
+ 2030 0464 05       		.byte	0x3
+ 2031 0465 03       		.4byte	cy_cfg_data_table
+ 2032 0466 00000000 		.uleb128 0xf
+ 2033 046a 0F       		.4byte	0x4a3
+ 2034 046b 3D040000 		.uleb128 0x13
+ 2035 046f 13       		.4byte	0x9b
+ 2036 0470 CC000000 		.4byte	0x4e8
+ 2037 0474 7F040000 		.uleb128 0x14
+ 2038 0478 14       		.4byte	0x149
+ 2039 0479 49010000 		.byte	0x7
+ 2040 047d 18       		.byte	0x0
+ 2041 047e 00       		.uleb128 0xc
+ 2042 047f 15       		.ascii	"BS_IOPINS0_0_VAL\000"
+ 2043 0480 63795F63 		.byte	0x1
+ 2043      66675F61 
+ 2043      6464725F 
+ 2043      7461626C 
+ 2043      6500
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 49
+
+
+ 2044 0492 01       		.2byte	0x19f
+ 2045 0493 6E       		.4byte	0x507
+ 2046 0494 9E040000 		.byte	0x5
+ 2047 0498 05       		.byte	0x3
+ 2048 0499 03       		.4byte	BS_IOPINS0_0_VAL
+ 2049 049a 3C000000 		.uleb128 0xf
+ 2050 049e 0F       		.4byte	0x4d8
+ 2051 049f 6F040000 		.uleb128 0x13
+ 2052 04a3 13       		.4byte	0x9b
+ 2053 04a4 DF010000 		.4byte	0x51c
+ 2054 04a8 B4040000 		.uleb128 0x14
+ 2055 04ac 16       		.4byte	0x149
+ 2056 04ad 49010000 		.byte	0x7
+ 2057 04b1 0F01     		.byte	0x0
+ 2058 04b3 00       		.uleb128 0xc
+ 2059 04b4 15       		.ascii	"BS_IOPINS0_2_VAL\000"
+ 2060 04b5 63795F63 		.byte	0x1
+ 2060      66675F64 
+ 2060      6174615F 
+ 2060      7461626C 
+ 2060      6500
+ 2061 04c7 01       		.2byte	0x1a3
+ 2062 04c8 8A       		.4byte	0x53b
+ 2063 04c9 D3040000 		.byte	0x5
+ 2064 04cd 05       		.byte	0x3
+ 2065 04ce 03       		.4byte	BS_IOPINS0_2_VAL
+ 2066 04cf A0000000 		.uleb128 0xf
+ 2067 04d3 0F       		.4byte	0x50c
+ 2068 04d4 A3040000 		.uleb128 0x13
+ 2069 04d8 13       		.4byte	0x9b
+ 2070 04d9 9B000000 		.4byte	0x550
+ 2071 04dd E8040000 		.uleb128 0x14
+ 2072 04e1 14       		.4byte	0x149
+ 2073 04e2 49010000 		.byte	0x7
+ 2074 04e6 07       		.byte	0x0
+ 2075 04e7 00       		.uleb128 0xc
+ 2076 04e8 0C       		.ascii	"BS_IOPINS0_4_VAL\000"
+ 2077 04e9 42535F49 		.byte	0x1
+ 2077      4F50494E 
+ 2077      53305F30 
+ 2077      5F56414C 
+ 2077      00
+ 2078 04fa 01       		.2byte	0x1a7
+ 2079 04fb 9F01     		.4byte	0x56f
+ 2080 04fd 07050000 		.byte	0x5
+ 2081 0501 05       		.byte	0x3
+ 2082 0502 03       		.4byte	BS_IOPINS0_4_VAL
+ 2083 0503 00000000 		.uleb128 0xf
+ 2084 0507 0F       		.4byte	0x540
+ 2085 0508 D8040000 		.uleb128 0x13
+ 2086 050c 13       		.4byte	0x9b
+ 2087 050d 9B000000 		.4byte	0x584
+ 2088 0511 1C050000 		.uleb128 0x14
+ 2089 0515 14       		.4byte	0x149
+ 2090 0516 49010000 		.byte	0x6
+ 2091 051a 07       		.byte	0x0
+ 2092 051b 00       		.uleb128 0xc
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 50
+
+
+ 2093 051c 0C       		.ascii	"BS_IOPORT_0_VAL\000"
+ 2094 051d 42535F49 		.byte	0x1
+ 2094      4F50494E 
+ 2094      53305F32 
+ 2094      5F56414C 
+ 2094      00
+ 2095 052e 01       		.2byte	0x1ab
+ 2096 052f A301     		.4byte	0x5a2
+ 2097 0531 3B050000 		.byte	0x5
+ 2098 0535 05       		.byte	0x3
+ 2099 0536 03       		.4byte	BS_IOPORT_0_VAL
+ 2100 0537 08000000 		.uleb128 0xf
+ 2101 053b 0F       		.4byte	0x574
+ 2102 053c 0C050000 		.uleb128 0x13
+ 2103 0540 13       		.4byte	0x9b
+ 2104 0541 9B000000 		.4byte	0x5b7
+ 2105 0545 50050000 		.uleb128 0x14
+ 2106 0549 14       		.4byte	0x149
+ 2107 054a 49010000 		.byte	0x6
+ 2108 054e 07       		.byte	0x0
+ 2109 054f 00       		.uleb128 0xc
+ 2110 0550 0C       		.ascii	"BS_IOPORT_2_VAL\000"
+ 2111 0551 42535F49 		.byte	0x1
+ 2111      4F50494E 
+ 2111      53305F34 
+ 2111      5F56414C 
+ 2111      00
+ 2112 0562 01       		.2byte	0x1af
+ 2113 0563 A701     		.4byte	0x5d5
+ 2114 0565 6F050000 		.byte	0x5
+ 2115 0569 05       		.byte	0x3
+ 2116 056a 03       		.4byte	BS_IOPORT_2_VAL
+ 2117 056b 10000000 		.uleb128 0xf
+ 2118 056f 0F       		.4byte	0x5a7
+ 2119 0570 40050000 		.uleb128 0x13
+ 2120 0574 13       		.4byte	0x9b
+ 2121 0575 9B000000 		.4byte	0x5ea
+ 2122 0579 84050000 		.uleb128 0x14
+ 2123 057d 14       		.4byte	0x149
+ 2124 057e 49010000 		.byte	0x6
+ 2125 0582 06       		.byte	0x0
+ 2126 0583 00       		.uleb128 0xc
+ 2127 0584 0C       		.ascii	"BS_IOPORT_4_VAL\000"
+ 2128 0585 42535F49 		.byte	0x1
+ 2128      4F504F52 
+ 2128      545F305F 
+ 2128      56414C00 
+ 2129 0595 01       		.2byte	0x1b3
+ 2130 0596 AB01     		.4byte	0x608
+ 2131 0598 A2050000 		.byte	0x5
+ 2132 059c 05       		.byte	0x3
+ 2133 059d 03       		.4byte	BS_IOPORT_4_VAL
+ 2134 059e 18000000 		.uleb128 0xf
+ 2135 05a2 0F       		.4byte	0x5da
+ 2136 05a3 74050000 		.byte	0x0
+ 2137 05a7 13       		.section	.debug_abbrev
+ 2138 05a8 9B000000 		.uleb128 0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 51
+
+
+ 2139 05ac B7050000 		.uleb128 0x11
+ 2140 05b0 14       		.byte	0x1
+ 2141 05b1 49010000 		.uleb128 0x25
+ 2142 05b5 06       		.uleb128 0x8
+ 2143 05b6 00       		.uleb128 0x13
+ 2144 05b7 0C       		.uleb128 0xb
+ 2145 05b8 42535F49 		.uleb128 0x3
+ 2145      4F504F52 
+ 2145      545F325F 
+ 2145      56414C00 
+ 2146 05c8 01       		.uleb128 0x8
+ 2147 05c9 AF01     		.uleb128 0x1b
+ 2148 05cb D5050000 		.uleb128 0x8
+ 2149 05cf 05       		.uleb128 0x52
+ 2150 05d0 03       		.uleb128 0x1
+ 2151 05d1 1F000000 		.uleb128 0x10
+ 2152 05d5 0F       		.uleb128 0x6
+ 2153 05d6 A7050000 		.byte	0x0
+ 2154 05da 13       		.byte	0x0
+ 2155 05db 9B000000 		.uleb128 0x2
+ 2156 05df EA050000 		.uleb128 0x24
+ 2157 05e3 14       		.byte	0x0
+ 2158 05e4 49010000 		.uleb128 0xb
+ 2159 05e8 06       		.uleb128 0xb
+ 2160 05e9 00       		.uleb128 0x3e
+ 2161 05ea 0C       		.uleb128 0xb
+ 2162 05eb 42535F49 		.uleb128 0x3
+ 2162      4F504F52 
+ 2162      545F345F 
+ 2162      56414C00 
+ 2163 05fb 01       		.uleb128 0x8
+ 2164 05fc B301     		.byte	0x0
+ 2165 05fe 08060000 		.byte	0x0
+ 2166 0602 05       		.uleb128 0x3
+ 2167 0603 03       		.uleb128 0x16
+ 2168 0604 26000000 		.byte	0x0
+ 2169 0608 0F       		.uleb128 0x3
+ 2170 0609 DA050000 		.uleb128 0x8
+ 2171 060d 00       		.uleb128 0x3a
+ 2172              		.uleb128 0xb
+ 2173 0000 01       		.uleb128 0x3b
+ 2174 0001 11       		.uleb128 0xb
+ 2175 0002 01       		.uleb128 0x49
+ 2176 0003 25       		.uleb128 0x13
+ 2177 0004 08       		.byte	0x0
+ 2178 0005 13       		.byte	0x0
+ 2179 0006 0B       		.uleb128 0x4
+ 2180 0007 03       		.uleb128 0x35
+ 2181 0008 08       		.byte	0x0
+ 2182 0009 1B       		.uleb128 0x49
+ 2183 000a 08       		.uleb128 0x13
+ 2184 000b 52       		.byte	0x0
+ 2185 000c 01       		.byte	0x0
+ 2186 000d 10       		.uleb128 0x5
+ 2187 000e 06       		.uleb128 0x24
+ 2188 000f 00       		.byte	0x0
+ 2189 0010 00       		.uleb128 0xb
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 52
+
+
+ 2190 0011 02       		.uleb128 0xb
+ 2191 0012 24       		.uleb128 0x3e
+ 2192 0013 00       		.uleb128 0xb
+ 2193 0014 0B       		.byte	0x0
+ 2194 0015 0B       		.byte	0x0
+ 2195 0016 3E       		.uleb128 0x6
+ 2196 0017 0B       		.uleb128 0xf
+ 2197 0018 03       		.byte	0x0
+ 2198 0019 08       		.uleb128 0xb
+ 2199 001a 00       		.uleb128 0xb
+ 2200 001b 00       		.byte	0x0
+ 2201 001c 03       		.byte	0x0
+ 2202 001d 16       		.uleb128 0x7
+ 2203 001e 00       		.uleb128 0x13
+ 2204 001f 03       		.byte	0x1
+ 2205 0020 08       		.uleb128 0xb
+ 2206 0021 3A       		.uleb128 0xb
+ 2207 0022 0B       		.uleb128 0x3a
+ 2208 0023 3B       		.uleb128 0xb
+ 2209 0024 0B       		.uleb128 0x3b
+ 2210 0025 49       		.uleb128 0xb
+ 2211 0026 13       		.uleb128 0x1
+ 2212 0027 00       		.uleb128 0x13
+ 2213 0028 00       		.byte	0x0
+ 2214 0029 04       		.byte	0x0
+ 2215 002a 35       		.uleb128 0x8
+ 2216 002b 00       		.uleb128 0xd
+ 2217 002c 49       		.byte	0x0
+ 2218 002d 13       		.uleb128 0x3
+ 2219 002e 00       		.uleb128 0x8
+ 2220 002f 00       		.uleb128 0x3a
+ 2221 0030 05       		.uleb128 0xb
+ 2222 0031 24       		.uleb128 0x3b
+ 2223 0032 00       		.uleb128 0xb
+ 2224 0033 0B       		.uleb128 0x49
+ 2225 0034 0B       		.uleb128 0x13
+ 2226 0035 3E       		.uleb128 0x38
+ 2227 0036 0B       		.uleb128 0xa
+ 2228 0037 00       		.byte	0x0
+ 2229 0038 00       		.byte	0x0
+ 2230 0039 06       		.uleb128 0x9
+ 2231 003a 0F       		.uleb128 0xf
+ 2232 003b 00       		.byte	0x0
+ 2233 003c 0B       		.uleb128 0xb
+ 2234 003d 0B       		.uleb128 0xb
+ 2235 003e 00       		.uleb128 0x49
+ 2236 003f 00       		.uleb128 0x13
+ 2237 0040 07       		.byte	0x0
+ 2238 0041 13       		.byte	0x0
+ 2239 0042 01       		.uleb128 0xa
+ 2240 0043 0B       		.uleb128 0x26
+ 2241 0044 0B       		.byte	0x0
+ 2242 0045 3A       		.byte	0x0
+ 2243 0046 0B       		.byte	0x0
+ 2244 0047 3B       		.uleb128 0xb
+ 2245 0048 0B       		.uleb128 0x2e
+ 2246 0049 01       		.byte	0x1
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 53
+
+
+ 2247 004a 13       		.uleb128 0x3
+ 2248 004b 00       		.uleb128 0x8
+ 2249 004c 00       		.uleb128 0x3a
+ 2250 004d 08       		.uleb128 0xb
+ 2251 004e 0D       		.uleb128 0x3b
+ 2252 004f 00       		.uleb128 0x5
+ 2253 0050 03       		.uleb128 0x27
+ 2254 0051 08       		.uleb128 0xc
+ 2255 0052 3A       		.uleb128 0x11
+ 2256 0053 0B       		.uleb128 0x1
+ 2257 0054 3B       		.uleb128 0x12
+ 2258 0055 0B       		.uleb128 0x1
+ 2259 0056 49       		.uleb128 0x40
+ 2260 0057 13       		.uleb128 0x6
+ 2261 0058 38       		.uleb128 0x1
+ 2262 0059 0A       		.uleb128 0x13
+ 2263 005a 00       		.byte	0x0
+ 2264 005b 00       		.byte	0x0
+ 2265 005c 09       		.uleb128 0xc
+ 2266 005d 0F       		.uleb128 0x34
+ 2267 005e 00       		.byte	0x0
+ 2268 005f 0B       		.uleb128 0x3
+ 2269 0060 0B       		.uleb128 0x8
+ 2270 0061 49       		.uleb128 0x3a
+ 2271 0062 13       		.uleb128 0xb
+ 2272 0063 00       		.uleb128 0x3b
+ 2273 0064 00       		.uleb128 0x5
+ 2274 0065 0A       		.uleb128 0x49
+ 2275 0066 26       		.uleb128 0x13
+ 2276 0067 00       		.uleb128 0x2
+ 2277 0068 00       		.uleb128 0xa
+ 2278 0069 00       		.byte	0x0
+ 2279 006a 0B       		.byte	0x0
+ 2280 006b 2E       		.uleb128 0xd
+ 2281 006c 01       		.uleb128 0xb
+ 2282 006d 03       		.byte	0x1
+ 2283 006e 08       		.uleb128 0x11
+ 2284 006f 3A       		.uleb128 0x1
+ 2285 0070 0B       		.uleb128 0x12
+ 2286 0071 3B       		.uleb128 0x1
+ 2287 0072 05       		.byte	0x0
+ 2288 0073 27       		.byte	0x0
+ 2289 0074 0C       		.uleb128 0xe
+ 2290 0075 11       		.uleb128 0x5
+ 2291 0076 01       		.byte	0x0
+ 2292 0077 12       		.uleb128 0x3
+ 2293 0078 01       		.uleb128 0x8
+ 2294 0079 40       		.uleb128 0x3a
+ 2295 007a 06       		.uleb128 0xb
+ 2296 007b 01       		.uleb128 0x3b
+ 2297 007c 13       		.uleb128 0x5
+ 2298 007d 00       		.uleb128 0x49
+ 2299 007e 00       		.uleb128 0x13
+ 2300 007f 0C       		.uleb128 0x2
+ 2301 0080 34       		.uleb128 0xa
+ 2302 0081 00       		.byte	0x0
+ 2303 0082 03       		.byte	0x0
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 54
+
+
+ 2304 0083 08       		.uleb128 0xf
+ 2305 0084 3A       		.uleb128 0x26
+ 2306 0085 0B       		.byte	0x0
+ 2307 0086 3B       		.uleb128 0x49
+ 2308 0087 05       		.uleb128 0x13
+ 2309 0088 49       		.byte	0x0
+ 2310 0089 13       		.byte	0x0
+ 2311 008a 02       		.uleb128 0x10
+ 2312 008b 0A       		.uleb128 0x2e
+ 2313 008c 00       		.byte	0x0
+ 2314 008d 00       		.uleb128 0x3f
+ 2315 008e 0D       		.uleb128 0xc
+ 2316 008f 0B       		.uleb128 0x3
+ 2317 0090 01       		.uleb128 0x8
+ 2318 0091 11       		.uleb128 0x3a
+ 2319 0092 01       		.uleb128 0xb
+ 2320 0093 12       		.uleb128 0x3b
+ 2321 0094 01       		.uleb128 0x5
+ 2322 0095 00       		.uleb128 0x27
+ 2323 0096 00       		.uleb128 0xc
+ 2324 0097 0E       		.uleb128 0x11
+ 2325 0098 05       		.uleb128 0x1
+ 2326 0099 00       		.uleb128 0x12
+ 2327 009a 03       		.uleb128 0x1
+ 2328 009b 08       		.uleb128 0x40
+ 2329 009c 3A       		.uleb128 0x6
+ 2330 009d 0B       		.byte	0x0
+ 2331 009e 3B       		.byte	0x0
+ 2332 009f 05       		.uleb128 0x11
+ 2333 00a0 49       		.uleb128 0x2e
+ 2334 00a1 13       		.byte	0x0
+ 2335 00a2 02       		.uleb128 0x3
+ 2336 00a3 0A       		.uleb128 0x8
+ 2337 00a4 00       		.uleb128 0x3a
+ 2338 00a5 00       		.uleb128 0xb
+ 2339 00a6 0F       		.uleb128 0x3b
+ 2340 00a7 26       		.uleb128 0x5
+ 2341 00a8 00       		.uleb128 0x11
+ 2342 00a9 49       		.uleb128 0x1
+ 2343 00aa 13       		.uleb128 0x12
+ 2344 00ab 00       		.uleb128 0x1
+ 2345 00ac 00       		.uleb128 0x40
+ 2346 00ad 10       		.uleb128 0x6
+ 2347 00ae 2E       		.byte	0x0
+ 2348 00af 00       		.byte	0x0
+ 2349 00b0 3F       		.uleb128 0x12
+ 2350 00b1 0C       		.uleb128 0x2e
+ 2351 00b2 03       		.byte	0x1
+ 2352 00b3 08       		.uleb128 0x3f
+ 2353 00b4 3A       		.uleb128 0xc
+ 2354 00b5 0B       		.uleb128 0x3
+ 2355 00b6 3B       		.uleb128 0x8
+ 2356 00b7 05       		.uleb128 0x3a
+ 2357 00b8 27       		.uleb128 0xb
+ 2358 00b9 0C       		.uleb128 0x3b
+ 2359 00ba 11       		.uleb128 0x5
+ 2360 00bb 01       		.uleb128 0x27
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 55
+
+
+ 2361 00bc 12       		.uleb128 0xc
+ 2362 00bd 01       		.uleb128 0x11
+ 2363 00be 40       		.uleb128 0x1
+ 2364 00bf 06       		.uleb128 0x12
+ 2365 00c0 00       		.uleb128 0x1
+ 2366 00c1 00       		.uleb128 0x40
+ 2367 00c2 11       		.uleb128 0x6
+ 2368 00c3 2E       		.uleb128 0x1
+ 2369 00c4 00       		.uleb128 0x13
+ 2370 00c5 03       		.byte	0x0
+ 2371 00c6 08       		.byte	0x0
+ 2372 00c7 3A       		.uleb128 0x13
+ 2373 00c8 0B       		.uleb128 0x1
+ 2374 00c9 3B       		.byte	0x1
+ 2375 00ca 05       		.uleb128 0x49
+ 2376 00cb 11       		.uleb128 0x13
+ 2377 00cc 01       		.uleb128 0x1
+ 2378 00cd 12       		.uleb128 0x13
+ 2379 00ce 01       		.byte	0x0
+ 2380 00cf 40       		.byte	0x0
+ 2381 00d0 06       		.uleb128 0x14
+ 2382 00d1 00       		.uleb128 0x21
+ 2383 00d2 00       		.byte	0x0
+ 2384 00d3 12       		.uleb128 0x49
+ 2385 00d4 2E       		.uleb128 0x13
+ 2386 00d5 01       		.uleb128 0x2f
+ 2387 00d6 3F       		.uleb128 0xb
+ 2388 00d7 0C       		.byte	0x0
+ 2389 00d8 03       		.byte	0x0
+ 2390 00d9 08       		.uleb128 0x15
+ 2391 00da 3A       		.uleb128 0x34
+ 2392 00db 0B       		.byte	0x0
+ 2393 00dc 3B       		.uleb128 0x3
+ 2394 00dd 05       		.uleb128 0x8
+ 2395 00de 27       		.uleb128 0x3a
+ 2396 00df 0C       		.uleb128 0xb
+ 2397 00e0 11       		.uleb128 0x3b
+ 2398 00e1 01       		.uleb128 0xb
+ 2399 00e2 12       		.uleb128 0x49
+ 2400 00e3 01       		.uleb128 0x13
+ 2401 00e4 40       		.uleb128 0x2
+ 2402 00e5 06       		.uleb128 0xa
+ 2403 00e6 01       		.byte	0x0
+ 2404 00e7 13       		.byte	0x0
+ 2405 00e8 00       		.uleb128 0x16
+ 2406 00e9 00       		.uleb128 0x21
+ 2407 00ea 13       		.byte	0x0
+ 2408 00eb 01       		.uleb128 0x49
+ 2409 00ec 01       		.uleb128 0x13
+ 2410 00ed 49       		.uleb128 0x2f
+ 2411 00ee 13       		.uleb128 0x5
+ 2412 00ef 01       		.byte	0x0
+ 2413 00f0 13       		.byte	0x0
+ 2414 00f1 00       		.byte	0x0
+ 2415 00f2 00       		.section	.debug_pubnames,"",%progbits
+ 2416 00f3 14       		.4byte	0x34
+ 2417 00f4 21       		.2byte	0x2
+ARM GAS  C:\Users\blinky\AppData\Local\Temp/ccWubaaa.s 			page 56
+
+
+ 2418 00f5 00       		.4byte	.Ldebug_info0
+ 2419 00f6 49       		.4byte	0x60e
+ 2420 00f7 13       		.4byte	0x3a1
+ 2421 00f8 2F       		.ascii	"AnalogSetDefault\000"
+ 2422 00f9 0B       		.4byte	0x3e9
+ 2423 00fa 00       		.ascii	"cyfitter_cfg\000"
+ 2424 00fb 00       		.4byte	0x0
+ 2425 00fc 15       		.section	.debug_aranges,"",%progbits
+ 2426 00fd 34       		.4byte	0x4c
+ 2427 00fe 00       		.2byte	0x2
+ 2428 00ff 03       		.4byte	.Ldebug_info0
+ 2429 0100 08       		.byte	0x4
+ 2430 0101 3A       		.byte	0x0
+ 2431 0102 0B       		.2byte	0x0
+ 2432 0103 3B       		.2byte	0x0
+ 2433 0104 0B       		.4byte	.LFB2
+ 2434 0105 49       		.4byte	.LFE2-.LFB2
+ 2435 0106 13       		.4byte	.LFB3
+ 2436 0107 02       		.4byte	.LFE3-.LFB3
+ 2437 0108 0A       		.4byte	.LFB4
+ 2438 0109 00       		.4byte	.LFE4-.LFB4
+ 2439 010a 00       		.4byte	.LFB5
+ 2440 010b 16       		.4byte	.LFE5-.LFB5
+ 2441 010c 21       		.4byte	.LFB6
+ 2442 010d 00       		.4byte	.LFE6-.LFB6
+ 2443 010e 49       		.4byte	.LFB7
+ 2444 010f 13       		.4byte	.LFE7-.LFB7
+ 2445 0110 2F       		.4byte	.LFB8
+ 2446 0111 05       		.4byte	.LFE8-.LFB8
+ 2447 0112 00       		.4byte	0x0
+ 2448 0113 00       		.4byte	0x0
+ 2449 0114 00       		.ident	"GCC: (CodeSourcery Sourcery G++ Lite 2007q3-53) 4.2.1"
+ 2450              	...
